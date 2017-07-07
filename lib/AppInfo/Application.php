@@ -22,6 +22,7 @@
 namespace OCA\TermsAndConditions\AppInfo;
 
 use OC\Files\Filesystem;
+use OCA\Files_Trashbin\Storage;
 use OCA\TermsAndConditions\Checker;
 use OCA\TermsAndConditions\CountryDetector;
 use OCA\TermsAndConditions\Db\Mapper\SignatoryMapper;
@@ -71,7 +72,7 @@ class Application extends App {
 	 * @return StorageWrapper|IStorage
 	 */
 	public function addStorageWrapperCallback($mountPoint, IStorage $storage) {
-		if (!\OC::$CLI) {
+		if (!\OC::$CLI  && !$storage->instanceOfStorage(Storage::class)) {
 			return new StorageWrapper([
 				'storage' => $storage,
 				'mountPoint' => $mountPoint,
