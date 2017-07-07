@@ -1,0 +1,98 @@
+<?xml version="1.0"?>
+<database
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xsi:noNamespaceSchemaLocation="https://apps.nextcloud.com/schema/apps/database.xsd">
+	<name>*dbname*</name>
+	<create>true</create>
+	<overwrite>false</overwrite>
+	<charset>utf8</charset>
+
+	<!--
+	termsandconditions_terms contains all terms and conditions
+	-->
+	<table>
+		<name>*dbprefix*termsandconditions_terms</name>
+		<declaration>
+			<field>
+				<name>id</name>
+				<type>integer</type>
+				<notnull>true</notnull>
+				<autoincrement>true</autoincrement>
+				<primary>true</primary>
+			</field>
+
+			<field>
+				<name>country_code</name>
+				<type>string</type>
+				<length>2</length>
+				<notnull>true</notnull>
+			</field>
+
+			<field>
+				<name>language_code</name>
+				<type>string</type>
+				<length>2</length>
+				<notnull>true</notnull>
+			</field>
+
+			<field>
+				<name>body</name>
+				<type>text</type>
+				<notnull>true</notnull>
+			</field>
+		</declaration>
+	</table>
+
+	<!--
+	termsandconditions_signatories contains an audit log of all signing actions
+	-->
+	<table>
+		<name>*dbprefix*termsandconditions_signatories</name>
+		
+		<declaration>
+			<field>
+				<name>id</name>
+				<type>integer</type>
+				<notnull>true</notnull>
+				<autoincrement>true</autoincrement>
+				<primary>true</primary>
+			</field>
+
+			<field>
+				<name>terms_id</name>
+				<type>integer</type>
+				<notnull>true</notnull>
+			</field>
+
+			<field>
+				<name>user_id</name>
+				<type>text</type>
+				<notnull>true</notnull>
+			</field>
+
+			<field>
+				<name>remote_ip</name>
+				<type>text</type>
+				<notnull>true</notnull>
+			</field>
+
+			<field>
+				<name>access_type</name>
+				<type>integer</type>
+				<notnull>true</notnull>
+			</field>
+
+			<field>
+				<name>metadata</name>
+				<type>text</type>
+				<notnull>false</notnull>
+			</field>
+
+			<field>
+				<name>timestamp</name>
+				<type>integer</type>
+				<notnull>true</notnull>
+			</field>
+		</declaration>
+	</table>
+</database>

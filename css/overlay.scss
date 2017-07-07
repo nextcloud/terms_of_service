@@ -1,0 +1,19 @@
+#tos-overlay {
+  p {
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+
+  ul {
+    list-style-type: disc;
+    padding-left: 25px;
+  }
+
+  a {
+    color: $color-primary;
+  }
+
+  h3 {
+    font-weight: 800;
+  }
+}

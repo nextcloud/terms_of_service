@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<info>
+	<id>termsandconditions</id>
+	<name>Terms &amp; Conditions</name>
+	<description><![CDATA[Requires users to accept the terms and conditions before accessing data.
+This product includes GeoLite2 data created by MaxMind, available from [maxmind.com](http://www.maxmind.com)]]></description>
+	<licence>AGPL</licence>
+	<author>Lukas Reschke</author>
+
+	<dependencies>
+		<nextcloud min-version="12" max-version="13" />
+	</dependencies>
+
+	<settings>
+		<admin>OCA\TermsAndConditions\Settings\Admin</admin>
+	</settings>
+
+	<types>
+		<filesystem/>
+	</types>
+
+	<namespace>TermsAndConditions</namespace>
+	<version>0.1.5</version>
+</info>
