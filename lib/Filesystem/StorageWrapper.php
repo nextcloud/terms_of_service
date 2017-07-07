@@ -60,7 +60,7 @@ class StorageWrapper extends Wrapper {
 	}
 
 	public function isCreatable($path) {
-		if($this->helper->isBlockable($this->storage, $path) && !$this->helper->verifyAccess($path, $this->mountPoint)) {
+		if(!$this->helper->verifyAccess($path, $this->mountPoint) && $this->helper->isBlockable($this->storage, $path)) {
 			return false;
 		}
 
@@ -68,7 +68,7 @@ class StorageWrapper extends Wrapper {
 	}
 
 	public function isUpdatable($path) {
-		if($this->helper->isBlockable($this->storage, $path) && !$this->helper->verifyAccess($path, $this->mountPoint)) {
+		if(!$this->helper->verifyAccess($path, $this->mountPoint) && $this->helper->isBlockable($this->storage, $path)) {
 			return false;
 		}
 
@@ -76,7 +76,7 @@ class StorageWrapper extends Wrapper {
 	}
 
 	public function isDeletable($path) {
-		if($this->helper->isBlockable($this->storage, $path) && !$this->helper->verifyAccess($path, $this->mountPoint)) {
+		if(!$this->helper->verifyAccess($path, $this->mountPoint) && $this->helper->isBlockable($this->storage, $path)) {
 			return false;
 		}
 
@@ -84,7 +84,7 @@ class StorageWrapper extends Wrapper {
 	}
 
 	public function isReadable($path) {
-		if($this->helper->isBlockable($this->storage, $path) && !$this->helper->verifyAccess($path, $this->mountPoint)) {
+		if(!$this->helper->verifyAccess($path, $this->mountPoint) && $this->helper->isBlockable($this->storage, $path)) {
 			return false;
 		}
 
@@ -92,7 +92,7 @@ class StorageWrapper extends Wrapper {
 	}
 
 	public function isSharable($path) {
-		if($this->helper->isBlockable($this->storage, $path) && !$this->helper->verifyAccess($path, $this->mountPoint)) {
+		if(!$this->helper->verifyAccess($path, $this->mountPoint) && $this->helper->isBlockable($this->storage, $path)) {
 			return false;
 		}
 
