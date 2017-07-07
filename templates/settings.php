@@ -18,7 +18,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
  */
-script('termsandconditions', 'admin/merged');
+script('termsandconditions', 'admin/admin-merged');
 style('termsandconditions', 'admin');
 
 /** @var \OCP\IL10N $l */
