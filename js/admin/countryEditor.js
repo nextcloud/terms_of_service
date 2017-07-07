@@ -67,9 +67,9 @@
 	};
 })(OCA);
 
-(function () {
+$(document).ready(function() {
 	$('#termsofservice-countryspecific-save').click(function() {
 		var countryEditor = OCA.TermsAndConditions.AdminCountryEditor;
 		countryEditor.saveTerms();
 	});
-})();
+});

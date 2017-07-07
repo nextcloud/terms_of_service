@@ -45,7 +45,7 @@ var cachedTermsAndConditions = [];
 	};
 })(OCA);
 
-(function () {
+$(document).ready(function() {
 	var loader = OCA.TermsAndConditions.AdminLoading;
 	loader.load();
-})();
+});

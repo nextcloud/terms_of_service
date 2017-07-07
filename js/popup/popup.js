@@ -158,8 +158,8 @@
 	}
 })(OCA);
 
-(function () {
+$(document).ready(function() {
 	var popup = OCA.TermsAndConditions.Popup;
 	popup.initialize();
 	popup.loadTerms();
-})();
+});
