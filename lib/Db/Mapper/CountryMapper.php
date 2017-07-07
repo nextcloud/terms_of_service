@@ -49,7 +49,32 @@ class CountryMapper {
 	public function getCountries() {
 		$countries = [
 			'--' => (string)$this->l10n->t('Global'),
-			'AF' => (string)$this->l10n->t('Afghanistan'),
+			'AU' => 'Australia',
+			'AT' => 'Austria',
+			'BE' => 'Belgium',
+			'BR' => 'Brazil',
+			'CA' => 'Canada',
+			'CN' => 'China',
+			'AE' => 'United Arab Emirates',
+			'DK' => 'Denmark',
+			'FR' => 'France',
+			'DE' => 'Germany',
+			'GR' => 'Greece',
+			'IN' => 'India',
+			'IT' => 'Italy',
+			'JP' => 'Japan',
+			'KR' => 'Korea',
+			'MX' => 'Mexico',
+			'NL' => 'Netherlands',
+			'NO' => 'Norway',
+			'PT' => 'Portugal',
+			'SA' => 'Saudi Arabia',
+			'CH' => 'Switzerland',
+			'ES' => 'Spain',
+			'TR' => 'Turkey',
+			'UK' => 'United Kingdom',
+			'US' => 'USA',
+			/*'AF' => (string)$this->l10n->t('Afghanistan'),
 			'AX' => (string)$this->l10n->t('Aland Islands'),
 			'AL' => (string)$this->l10n->t('Albania'),
 			'DZ' => (string)$this->l10n->t('Algeria'),
@@ -297,7 +322,7 @@ class CountryMapper {
 			'EH' => (string)$this->l10n->t('Western Sahara'),
 			'YE' => (string)$this->l10n->t('Yemen'),
 			'ZM' => (string)$this->l10n->t('Zambia'),
-			'ZW' => (string)$this->l10n->t('Zimbabwe'),
+			'ZW' => (string)$this->l10n->t('Zimbabwe'),*/
 		];
 
 		return $countries;

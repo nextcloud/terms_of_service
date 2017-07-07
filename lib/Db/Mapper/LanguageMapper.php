@@ -32,7 +32,12 @@ class LanguageMapper {
 
 	public function getLanguages() {
 		$mappedLanguages = [
-			'aa' => (string)$this->l10n->t('Afar'),
+			'en' => 'English',
+			'de' => 'German',
+			'cn' => 'Chinese',
+			'fr' => 'France',
+			'es' => 'Spanish',
+			/*'aa' => (string)$this->l10n->t('Afar'),
 			'ab' => (string)$this->l10n->t('Abkhazian'),
 			'ae' => (string)$this->l10n->t('Avestan'),
 			'af' => (string)$this->l10n->t('Afrikaans'),
@@ -215,7 +220,7 @@ class LanguageMapper {
 			'yo' => (string)$this->l10n->t('Yoruba'),
 			'za' => (string)$this->l10n->t('Zhuang; Chuang'),
 			'zh' => (string)$this->l10n->t('Chinese'),
-			'zu' => (string)$this->l10n->t('Zulu'),
+			'zu' => (string)$this->l10n->t('Zulu'),*/
 		];
 
 		return $mappedLanguages;
