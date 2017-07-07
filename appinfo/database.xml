@@ -37,7 +37,7 @@
 
 			<field>
 				<name>body</name>
-				<type>text</type>
+				<type>blob</type>
 				<notnull>true</notnull>
 			</field>
 		</declaration>
