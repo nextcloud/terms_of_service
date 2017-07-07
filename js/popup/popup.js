@@ -95,12 +95,18 @@
 		loadTerms: function() {
 			$.get(OC.generateUrl('/apps/termsandconditions/terms')).done(function (response) {
 				OCA.TermsAndConditions.Popup.serverResponse = response;
+				var hasTerms = false;
 				$.each(response.terms, function(id, terms) {
+					hasTerms = true;
 					if (typeof OCA.TermsAndConditions.Popup.mappings[terms.countryCode] === "undefined") {
 						OCA.TermsAndConditions.Popup.mappings[terms.countryCode] = [];
 					}
 					OCA.TermsAndConditions.Popup.mappings[terms.countryCode][terms.languageCode] = terms;
 				});
+
+				if(hasTerms === false) {
+					return;
+				}
 
 				// Create the country divs
 				Object.keys(OCA.TermsAndConditions.Popup.mappings).forEach(function(key) {
