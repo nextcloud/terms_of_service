@@ -71,7 +71,7 @@ class Application extends App {
 	 * @return StorageWrapper|IStorage
 	 */
 	public function addStorageWrapperCallback($mountPoint, IStorage $storage) {
-		if (!\OC::$CLI) {
+		if (!\OC::$CLI && !$storage->instanceOfStorage('OC\Files\Storage\Shared')) {
 			return new StorageWrapper([
 				'storage' => $storage,
 				'mountPoint' => $mountPoint,
