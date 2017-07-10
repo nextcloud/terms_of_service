@@ -57,7 +57,7 @@ class CacheWrapper extends Wrapper {
 	}
 
 	protected function formatCacheEntry($entry) {
-		if(!$this->helper->isBlockable($this->storage, $entry['path'])) {
+		if(!$this->helper->isBlockable($this->storage, $entry['path'], $this->mountPoint)) {
 			return $entry;
 		}
 

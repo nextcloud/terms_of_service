@@ -48,13 +48,8 @@ class Helper {
 		$this->urlGenerator = $urlGenerator;
 	}
 
-	protected function isBlockablePath(IStorage $storage, $path) {
-		if (property_exists($storage, 'mountPoint')) {
-			/** @var StorageWrapper $storage */
-			$fullPath = $storage->mountPoint . $path;
-		} else {
-			$fullPath = $path;
-		}
+	protected function isBlockablePath(IStorage $storage, $path, $mountPoint) {
+		$fullPath = $mountPoint . $path;
 
 		if (substr_count($fullPath, '/') < 3) {
 			return false;
@@ -87,12 +82,13 @@ class Helper {
 
 
 	public function isBlockable(IStorage $storage,
-								$path) {
+								$path,
+								$mountPoint) {
 		if($this->isCreatingSkeletonFiles()) {
 			return false;
 		}
 
-		return $this->isBlockablePath($storage, $path);
+		return $this->isBlockablePath($storage, $path, $mountPoint);
 	}
 
 	private function getPublicLinkShareToken() {
