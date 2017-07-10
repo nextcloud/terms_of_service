@@ -22,12 +22,15 @@
 namespace OCA\TermsAndConditions\AppInfo;
 
 use OC\Files\Filesystem;
+use OC\Files\Storage\Home;
+use OC\Files\Storage\Wrapper\Wrapper;
 use OCA\TermsAndConditions\Checker;
 use OCA\TermsAndConditions\CountryDetector;
 use OCA\TermsAndConditions\Db\Mapper\SignatoryMapper;
 use OCA\TermsAndConditions\Db\Mapper\TermsMapper;
 use OCA\TermsAndConditions\Filesystem\StorageWrapper;
 use OCP\AppFramework\App;
+use OCP\Files\IHomeStorage;
 use OCP\Files\Storage\IStorage;
 use OCP\IRequest;
 use OCP\IUserSession;
@@ -67,11 +70,11 @@ class Application extends App {
 	/**
 	 * @internal
 	 * @param $mountPoint
-	 * @param IStorage $storage
+	 * @param IStorage|Wrapper $storage
 	 * @return StorageWrapper|IStorage
 	 */
 	public function addStorageWrapperCallback($mountPoint, IStorage $storage) {
-		if (!\OC::$CLI) {
+		if (!\OC::$CLI && get_class($storage->getWrapperStorage()) !== Home::class) {
 			return new StorageWrapper([
 				'storage' => $storage,
 				'mountPoint' => $mountPoint,
