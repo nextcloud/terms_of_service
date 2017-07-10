@@ -22,6 +22,7 @@
 namespace OCA\TermsAndConditions\Filesystem;
 
 use OCA\TermsAndConditions\Checker;
+use OCP\Files\Folder;
 use OCP\Files\Storage\IStorage;
 use OCP\IRequest;
 use OCP\IURLGenerator;
@@ -94,8 +95,8 @@ class Helper {
 		return $this->isBlockablePath($storage, $path);
 	}
 
-
 	private function getPublicLinkShareToken() {
+		// Regular public sharing URLs
 		$shareUrlStart =$this->urlGenerator->linkToRouteAbsolute('files_sharing.sharecontroller.showShare', ['token' => 'token']);
 		$shareUrlStart = substr($shareUrlStart,0, -5);
 		$currentUrl = $this->request->getServerProtocol() . '://' . $this->request->getServerHost() . $this->request->getRequestUri();
@@ -104,6 +105,11 @@ class Helper {
 			return strstr(substr($currentUrl, strlen($shareUrlStart)), '/', true);
 		}
 
+		// /public.php/webdav
+		$publicWebdavUrl = $this->urlGenerator->getAbsoluteURL('/public.php/webdav');
+		if(substr($currentUrl, 0, strlen($publicWebdavUrl)) === $publicWebdavUrl) {
+			return $_SERVER['PHP_AUTH_USER'];
+		}
 		return null;
 	}
 
@@ -116,12 +122,15 @@ class Helper {
 
 		// Check if it is a shared storage and if the terms of conditions have been
 		// signed already for it
-		$path = preg_replace('/^files\//', '', $path);
-		$node = \OC::$server->getUserFolder()->get($path);
-		if($node->getOwner() !== $this->userSession->getUser()) {
-			$mountpointPath = $mountPoint;
-			$node = \OC::$server->getRootFolder()->get($mountpointPath);
-			return $this->checker->currentUserHasSignedForStorage($node->getId());
+		$userfolder = \OC::$server->getUserFolder();
+		if($userfolder instanceof Folder) {
+			$path = preg_replace('/^files\//', '', $path);
+			$node = $userfolder->get($path);
+			if ($node->getOwner() !== $this->userSession->getUser()) {
+				$mountpointPath = $mountPoint;
+				$node = \OC::$server->getRootFolder()->get($mountpointPath);
+				return $this->checker->currentUserHasSignedForStorage($node->getId());
+			}
 		}
 
 		// Check if the user has signed the terms and conditions already
