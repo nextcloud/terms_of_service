@@ -21,8 +21,12 @@
 
 namespace OCA\TermsAndConditions\Filesystem;
 
+use OC\Files\Storage\Wrapper\Wrapper;
+use OCA\Files_Sharing\SharedStorage;
 use OCA\TermsAndConditions\Checker;
 use OCP\Files\Folder;
+use OCP\Files\IHomeStorage;
+use OCP\Files\Node;
 use OCP\Files\Storage\IStorage;
 use OCP\IRequest;
 use OCP\IURLGenerator;
@@ -48,13 +52,8 @@ class Helper {
 		$this->urlGenerator = $urlGenerator;
 	}
 
-	protected function isBlockablePath(IStorage $storage, $path) {
-		if (property_exists($storage, 'mountPoint')) {
-			/** @var StorageWrapper $storage */
-			$fullPath = $storage->mountPoint . $path;
-		} else {
-			$fullPath = $path;
-		}
+	protected function isBlockablePath($path, $mountPoint) {
+		$fullPath = $mountPoint . $path;
 
 		if (substr_count($fullPath, '/') < 3) {
 			return false;
@@ -86,13 +85,13 @@ class Helper {
 	}
 
 
-	public function isBlockable(IStorage $storage,
-								$path) {
+	public function isBlockable($path,
+								$mountPoint) {
 		if($this->isCreatingSkeletonFiles()) {
 			return false;
 		}
 
-		return $this->isBlockablePath($storage, $path);
+		return $this->isBlockablePath($path, $mountPoint);
 	}
 
 	private function getPublicLinkShareToken() {
@@ -107,13 +106,14 @@ class Helper {
 
 		// /public.php/webdav
 		$publicWebdavUrl = $this->urlGenerator->getAbsoluteURL('/public.php/webdav');
+
 		if(substr($currentUrl, 0, strlen($publicWebdavUrl)) === $publicWebdavUrl) {
 			return $_SERVER['PHP_AUTH_USER'];
 		}
 		return null;
 	}
 
-	public function verifyAccess($path, $mountPoint) {
+	public function verifyAccess($path, $mountPoint, Wrapper $storage) {
 		// Check if it is a public link
 		$publicShareToken = $this->getPublicLinkShareToken();
 		if($publicShareToken !== null) {
@@ -122,14 +122,14 @@ class Helper {
 
 		// Check if it is a shared storage and if the terms of conditions have been
 		// signed already for it
-		$userfolder = \OC::$server->getUserFolder();
-		if($userfolder instanceof Folder) {
-			$path = preg_replace('/^files\//', '', $path);
-			$node = $userfolder->get($path);
-			if ($node->getOwner() !== $this->userSession->getUser()) {
-				$mountpointPath = $mountPoint;
-				$node = \OC::$server->getRootFolder()->get($mountpointPath);
-				return $this->checker->currentUserHasSignedForStorage($node->getId());
+		$userFolder = \OC::$server->getUserFolder();
+		if($userFolder instanceof Folder) {
+			$node = \OC::$server->getRootFolder()->get($mountPoint);
+
+			if($storage->getWrapperStorage() instanceof SharedStorage) {
+				if ($node->getOwner() !== $this->userSession->getUser()) {
+					return $this->checker->currentUserHasSignedForStorage($node->getId());
+				}
 			}
 		}
 
