@@ -41,7 +41,7 @@
 				var data = $(this).data();
 
 				if(data.mounttype === 'shared-root') {
-					if(!OCA.TermsAndConditions.Popup.serverResponse.signatories.signedStorages.includes(data.id)) {
+					if($.inArray(data.id, OCA.TermsAndConditions.Popup.serverResponse.signatories.signedStorages) === -1) {
 						OCA.TermsAndConditions.Popup.show(OCA.TermsAndConditions.AccessTypes.INTERNAL_SHARE, data.id);
 					}
 				}
@@ -51,7 +51,7 @@
 		accessPublicShares: function() {
 			var currentToken = $('#sharingToken').val();
 			if(typeof currentToken !== "undefined") {
-				if(!OCA.TermsAndConditions.Popup.serverResponse.signatories.signedPublicLinks.includes(currentToken)) {
+				if($.inArray(currentToken, OCA.TermsAndConditions.Popup.serverResponse.signatories.signedPublicLinks) === -1) {
 					OCA.TermsAndConditions.Popup.show(OCA.TermsAndConditions.AccessTypes.PUBLIC_SHARE, currentToken);
 				}
 			}
