@@ -25,8 +25,6 @@ use OC\Files\Storage\Wrapper\Wrapper;
 use OCA\Files_Sharing\SharedStorage;
 use OCA\TermsAndConditions\Checker;
 use OCP\Files\Folder;
-use OCP\Files\IHomeStorage;
-use OCP\Files\Node;
 use OCP\Files\Storage\IStorage;
 use OCP\IRequest;
 use OCP\IURLGenerator;
@@ -113,7 +111,7 @@ class Helper {
 		return null;
 	}
 
-	public function verifyAccess($path, $mountPoint, Wrapper $storage) {
+	public function verifyAccess($path, $mountPoint, IStorage $storage) {
 		// Check if it is a public link
 		$publicShareToken = $this->getPublicLinkShareToken();
 		if($publicShareToken !== null) {
@@ -126,7 +124,8 @@ class Helper {
 		if($userFolder instanceof Folder) {
 			$node = \OC::$server->getRootFolder()->get($mountPoint);
 
-			if($storage->getWrapperStorage() instanceof SharedStorage) {
+			$storageType = ($storage instanceof Wrapper) ? $storage->getWrapperStorage() : $storage;
+			if($storageType instanceof SharedStorage) {
 				if ($node->getOwner() !== $this->userSession->getUser()) {
 					return $this->checker->currentUserHasSignedForStorage($node->getId());
 				}
