@@ -74,7 +74,7 @@ class Application extends App {
 	 * @return StorageWrapper|IStorage
 	 */
 	public function addStorageWrapperCallback($mountPoint, IStorage $storage) {
-		if (!\OC::$CLI && get_class($storage->getWrapperStorage()) !== Home::class) {
+		if (!\OC::$CLI && ($storage instanceof Wrapper && get_class($storage->getWrapperStorage()) !== Home::class)) {
 			return new StorageWrapper([
 				'storage' => $storage,
 				'mountPoint' => $mountPoint,
