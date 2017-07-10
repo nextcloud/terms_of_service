@@ -21,6 +21,7 @@
 
 namespace OCA\TermsAndConditions\Filesystem;
 
+use OCA\Files_Trashbin\Storage;
 use OCA\TermsAndConditions\Checker;
 use OCP\Files\Storage\IStorage;
 use OCP\IRequest;
@@ -48,7 +49,7 @@ class Helper {
 	}
 
 	protected function isBlockablePath(IStorage $storage, $path) {
-		if (property_exists($storage, 'mountPoint')) {
+		if (get_class($storage) !== Storage::class && property_exists($storage, 'mountPoint')) {
 			/** @var StorageWrapper $storage */
 			$fullPath = $storage->mountPoint . $path;
 		} else {
