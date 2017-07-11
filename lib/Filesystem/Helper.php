@@ -124,7 +124,13 @@ class Helper {
 		if($userFolder instanceof Folder) {
 			$node = \OC::$server->getRootFolder()->get($mountPoint);
 
-			$storageType = ($storage instanceof Wrapper) ? $storage->getWrapperStorage() : $storage;
+			$storageType = $storage;
+			if(get_class($storage) === SharedStorage::class) {
+				$storageType = $storage;
+			} elseif ($storage instanceof Wrapper) {
+				$storageType = $storage->getWrapperStorage();
+			}
+
 			if($storageType instanceof SharedStorage) {
 				if ($node->getOwner() !== $this->userSession->getUser()) {
 					return $this->checker->currentUserHasSignedForStorage($node->getId());
