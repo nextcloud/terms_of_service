@@ -77,6 +77,9 @@ class SigningController extends Controller {
 		$signatory->setTimestamp(time());
 		$signatory->setMetadata($shareId);
 
+		// Also sign the login terms in case a user switched their country here
+		$this->signLoginTerms($termId);
+
 		$this->signatoryMapper->insert($signatory);
 		return new JSONResponse();
 	}
