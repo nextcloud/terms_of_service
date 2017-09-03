@@ -27,7 +27,7 @@
 		signingId: null,
 
 		OVERLAY_TEMPLATE: '' +
-		'<div id="tos-overlay" class="hidden" style="background-color: white; border-radius: 4px; width: 70%">' +
+		'<div id="tos-overlay" class="hidden" style="background-color: white; border-radius: 4px; width: 90%">' +
 		'	<div style="padding: 20px;">' +
 		'		<h3 style="float: left;">' + t('termsandconditions', 'Terms and Conditions') + '</h3>' +
 		'		<select style="float:right;" id="tos-language-chooser"></select>' +
