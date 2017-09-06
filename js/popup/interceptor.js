@@ -46,6 +46,22 @@
 					}
 				}
 			});
+
+			var previousFileId = FileList.dirInfo.id;
+
+			// FIXME: Don't run on subfolders
+			function checkSharedFilePermissions() {
+				if(previousFileId !== FileList.dirInfo.id) {
+					previousFileId = FileList.dirInfo.id;
+					if(FileList.dirInfo.mountType === 'shared' && $.inArray(FileList.dirInfo.id, OCA.TermsAndConditions.Popup.serverResponse.signatories.signedStorages) === -1) {
+						OCA.TermsAndConditions.Popup.show(OCA.TermsAndConditions.AccessTypes.INTERNAL_SHARE, FileList.dirInfo.id);
+					}
+					setTimeout(checkSharedFilePermissions, 50);
+					return;
+				}
+			}
+
+			checkSharedFilePermissions();
 		},
 
 		accessPublicShares: function() {
