@@ -50,18 +50,19 @@
 			var previousFileId = FileList.dirInfo.id;
 
 			// FIXME: Don't run on subfolders
-			function checkSharedFilePermissions(firstRun) {
-				if(firstRun === true || previousFileId !== FileList.dirInfo.id) {
+			function checkSharedFilePermissions() {
+				if(isNaN(previousFileId)) {
 					previousFileId = FileList.dirInfo.id;
-					if(FileList.dirInfo.mountType === 'shared' && $.inArray(FileList.dirInfo.id, OCA.TermsAndConditions.Popup.serverResponse.signatories.signedStorages) === -1) {
-						OCA.TermsAndConditions.Popup.show(OCA.TermsAndConditions.AccessTypes.INTERNAL_SHARE, FileList.dirInfo.id);
-					}
-					setTimeout(checkSharedFilePermissions(false), 50);
+					setTimeout(checkSharedFilePermissions, 50);
 					return;
+				}
+
+				if(FileList.dirInfo.mountType === 'shared' && $.inArray(FileList.dirInfo.id, OCA.TermsAndConditions.Popup.serverResponse.signatories.signedStorages) === -1) {
+						OCA.TermsAndConditions.Popup.show(OCA.TermsAndConditions.AccessTypes.INTERNAL_SHARE, FileList.dirInfo.id);
 				}
 			}
 
-			checkSharedFilePermissions(true);
+			checkSharedFilePermissions();
 		},
 
 		accessPublicShares: function() {
