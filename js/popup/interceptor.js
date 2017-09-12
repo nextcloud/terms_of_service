@@ -43,6 +43,7 @@
 				if(data.mounttype === 'shared-root') {
 					if($.inArray(data.id, OCA.TermsAndConditions.Popup.serverResponse.signatories.signedStorages) === -1) {
 						OCA.TermsAndConditions.Popup.show(OCA.TermsAndConditions.AccessTypes.INTERNAL_SHARE, data.id);
+						e.preventDefault();
 					}
 				}
 			});
