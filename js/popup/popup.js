@@ -26,6 +26,11 @@
 		signingType: null,
 		signingId: null,
 
+		acceptButtonLanguages : {
+			'DE': 'Ich bestätige, dass ich die obigen Allgemeinen Geschäftsbedingungen gelesen habe und akzeptiere.',
+			'DEFAULT':  t('termsandconditions', 'I acknowledge that I have read and agree to the above Terms and Conditions'),
+		},
+
 		OVERLAY_TEMPLATE: '' +
 		'<div id="tos-overlay" class="hidden" style="background-color: white; border-radius: 4px; width: 90%">' +
 		'	<div style="padding: 20px;">' +
@@ -37,7 +42,7 @@
 		'		<span class="text-content"></span>' +
 		'		<img style="display: block; margin-left: auto; margin-right: auto;" class="float-spinner" alt="" src="' + OC.imagePath('core', 'loading-dark.gif') + '"/>' +
 		'		<div style="clear: both;"></div>' +
-		'		<button style="width: 100%">' + t('termsandconditions', 'I acknowledge that I have read and agree to the above Terms and Conditions') + '</button>' +
+		'		<button id="tos-accept-button" style="width: 100%">' + t('termsandconditions', 'I acknowledge that I have read and agree to the above Terms and Conditions') + '</button>' +
 		'	</div>' +
 		'</div>',
 
@@ -85,6 +90,12 @@
 			var bestLanguage = OCA.TermsAndConditions.Popup.serverResponse.currentSession.languageCode;
 			if($("#tos-language-chooser option[value='"+bestLanguage+"']").length > 0) {
 				$("#tos-language-chooser option[value='"+bestLanguage+"']").attr('selected','selected');
+			}
+
+			if($("#tos-language-chooser").val() === 'de') {
+				$('#tos-accept-button').html(OCA.TermsAndConditions.Popup.acceptButtonLanguages.DE);
+			} else {
+				$('#tos-accept-button').html(OCA.TermsAndConditions.Popup.acceptButtonLanguages.DEFAULT);
 			}
 			$("#tos-country-chooser option[value='"+countryCode+"']").attr('selected','selected');
 
