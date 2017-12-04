@@ -37,14 +37,14 @@ $languages = $_['languages'];
 		<span id="terms_of_service_settings_msg" class="msg success" style="display: none;"><?php p($l->t('Saved')) ?></span>
 	</div>
 
-	<p>
+	<!--<p>
 		<input type="checkbox" id="requireForAccessingInternalShares" class="checkbox" value="1" checked>
 		<label for="requireForAccessingInternalShares"><?php p($l->t('Require accepting terms of service before accessing new internal shares')) ?></label><br>
 	</p>
 	<p>
 		<input type="checkbox" id="requireForAccessingLinkShares" class="checkbox" value="1" checked>
 		<label for="requireForAccessingLinkShares"><?php p($l->t('Require accepting terms of service before accessing public link shares')) ?></label><br>
-	</p>
+	</p> -->
 
 	<h3><?php p($l->t('Existing terms and conditions')) ?></h3>
 	<p class="settings-hint"><?php p($l->t('For formatting purposes Markdown is supported.')); ?></p>
