@@ -44,7 +44,7 @@ class SignatoryMapper extends Mapper {
 	public function getSignatories() {
 		$query = $this->db->getQueryBuilder();
 		$query->select('*')
-			->from($this->tableName);
+			->from(self::TABLENAME);
 
 		$entities = [];
 		$result = $query->execute();
@@ -67,7 +67,7 @@ class SignatoryMapper extends Mapper {
 										 $accessType) {
 		$query = $this->db->getQueryBuilder();
 		$query->select('*')
-			->from($this->tableName)
+			->from(self::TABLENAME)
 			->where($query->expr()->eq('user_id', $query->createNamedParameter($user->getUID())))
 			->andWhere($query->expr()->eq('access_type', $query->createNamedParameter($accessType)));
 
@@ -92,7 +92,7 @@ class SignatoryMapper extends Mapper {
 												  $accessType) {
 		$query = $this->db->getQueryBuilder();
 		$query->select('*')
-			->from($this->tableName)
+			->from(self::TABLENAME)
 			->where($query->expr()->eq('remote_ip', $query->createNamedParameter($remoteAddress)))
 			->andWhere($query->expr()->eq('access_type', $query->createNamedParameter($accessType)));
 

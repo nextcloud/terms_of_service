@@ -45,7 +45,7 @@ class TermsMapper extends Mapper {
 	public function getTermsForCountryCode($countryCode) {
 		$query = $this->db->getQueryBuilder();
 		$query->select('*')
-			->from($this->tableName)
+			->from(self::TABLENAME)
 			->where($query->expr()->eq('country_code', $query->createNamedParameter($countryCode)));
 
 		$entities = [];
@@ -70,7 +70,7 @@ class TermsMapper extends Mapper {
 	public function getTermsForCountryCodeAndLanguageCode($countryCode, $languageCode) {
 		$query = $this->db->getQueryBuilder();
 		$query->select('*')
-			->from($this->tableName)
+			->from(self::TABLENAME)
 			->where($query->expr()->eq('country_code', $query->createNamedParameter($countryCode)))
 			->andWhere($query->expr()->eq('language_code', $query->createNamedParameter($languageCode)));
 		$result = $query->execute();
@@ -91,7 +91,7 @@ class TermsMapper extends Mapper {
 	public function getTerms() {
 		$query = $this->db->getQueryBuilder();
 		$query->select('*')
-			->from($this->tableName);
+			->from(self::TABLENAME);
 
 		$entities = [];
 		$result = $query->execute();
