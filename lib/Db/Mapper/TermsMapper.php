@@ -26,6 +26,9 @@ use OCA\TermsAndConditions\Exceptions\TermsNotFoundException;
 use OCP\AppFramework\Db\Mapper;
 use OCP\IDBConnection;
 
+/**
+ * @method Terms mapRowToEntity(array $row)
+ */
 class TermsMapper extends Mapper {
 	const TABLENAME = 'termsandconditions_terms';
 
@@ -38,15 +41,21 @@ class TermsMapper extends Mapper {
 	 *
 	 * @param string $countryCode
 	 * @return Terms[]
-	 * @throws TermsNotFoundException
 	 */
 	public function getTermsForCountryCode($countryCode) {
-		$qb = $this->db->getQueryBuilder();
-		$qb
-			->select('*')
+		$query = $this->db->getQueryBuilder();
+		$query->select('*')
 			->from($this->tableName)
-			->where($qb->expr()->eq('country_code', $qb->createParameter('countryCode')));
-		return $this->findEntities($qb->getSQL(), ['countryCode' => $countryCode]);
+			->where($query->expr()->eq('country_code', $query->createNamedParameter($countryCode)));
+
+		$entities = [];
+		$result = $query->execute();
+		while ($row = $result->fetch()){
+			$entities[] = $this->mapRowToEntity($row);
+		}
+		$result->closeCursor();
+
+		return $entities;
 	}
 
 	/**
@@ -59,19 +68,19 @@ class TermsMapper extends Mapper {
 	 * @throws TermsNotFoundException
 	 */
 	public function getTermsForCountryCodeAndLanguageCode($countryCode, $languageCode) {
-		$qb = $this->db->getQueryBuilder();
-		$qb
-			->select('*')
+		$query = $this->db->getQueryBuilder();
+		$query->select('*')
 			->from($this->tableName)
-			->where($qb->expr()->eq('country_code', $qb->createNamedParameter($countryCode)))
-			->andWhere($qb->expr()->eq('language_code', $qb->createNamedParameter($languageCode)));
-		$result = $qb->execute();
+			->where($query->expr()->eq('country_code', $query->createNamedParameter($countryCode)))
+			->andWhere($query->expr()->eq('language_code', $query->createNamedParameter($languageCode)));
+		$result = $query->execute();
 		$row = $result->fetch();
 		$result->closeCursor();
-		if($row === false) {
+
+		if ($row === false) {
 			throw new TermsNotFoundException();
 		}
-		return Terms::fromRow($row);
+		return $this->mapRowToEntity($row);
 	}
 
 	/**
@@ -80,11 +89,17 @@ class TermsMapper extends Mapper {
 	 * @return Terms[]
 	 */
 	public function getTerms() {
-		$qb = $this->db->getQueryBuilder();
-		$qb
-			->select('*')
+		$query = $this->db->getQueryBuilder();
+		$query->select('*')
 			->from($this->tableName);
 
-		return $this->findEntities($qb->getSQL());
+		$entities = [];
+		$result = $query->execute();
+		while ($row = $result->fetch()){
+			$entities[] = $this->mapRowToEntity($row);
+		}
+		$result->closeCursor();
+
+		return $entities;
 	}
 }
