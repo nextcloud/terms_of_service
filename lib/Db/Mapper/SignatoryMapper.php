@@ -62,7 +62,7 @@ class SignatoryMapper extends Mapper {
 			->from($this->tableName)
 			->where($qb->expr()->eq('user_id', $qb->createParameter('uid')))
 			->andWhere($qb->expr()->eq('access_type', $qb->createParameter('accessType')));
-		return $this->findEntities($qb->getSQL(), [$user->getUID(), $accessType]);
+		return $this->findEntities($qb->getSQL(), ['uid' => $user->getUID(), 'accessType' => $accessType]);
 	}
 
 	/**
@@ -80,6 +80,6 @@ class SignatoryMapper extends Mapper {
 			->from($this->tableName)
 			->where($qb->expr()->eq('remote_ip', $qb->createParameter('remoteIp')))
 			->andWhere($qb->expr()->eq('access_type', $qb->createParameter('accessType')));
-		return $this->findEntities($qb->getSQL(), [$remoteAddress, $accessType]);
+		return $this->findEntities($qb->getSQL(), ['remoteIp' => $remoteAddress, 'accessType' => $accessType]);
 	}
 }

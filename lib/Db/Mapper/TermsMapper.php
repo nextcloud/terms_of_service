@@ -46,7 +46,7 @@ class TermsMapper extends Mapper {
 			->select('*')
 			->from($this->tableName)
 			->where($qb->expr()->eq('country_code', $qb->createParameter('countryCode')));
-		return $this->findEntities($qb->getSQL(), [$countryCode]);
+		return $this->findEntities($qb->getSQL(), ['countryCode' => $countryCode]);
 	}
 
 	/**
