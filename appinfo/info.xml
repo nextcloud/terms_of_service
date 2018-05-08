@@ -1,24 +1,34 @@
 <?xml version="1.0"?>
-<info>
+<info xmlns:xsi= "http://www.w3.org/2001/XMLSchema-instance"
+	  xsi:noNamespaceSchemaLocation="https://apps.nextcloud.com/schema/apps/info.xsd">
 	<id>termsandconditions</id>
 	<name>Terms &amp; Conditions</name>
+	<summary><![CDATA[Requires users to accept the terms and conditions before accessing data.]]></summary>
 	<description><![CDATA[Requires users to accept the terms and conditions before accessing data.
 This product includes GeoLite2 data created by MaxMind, available from [maxmind.com](http://www.maxmind.com)]]></description>
-	<licence>AGPL</licence>
+
+	<version>0.1.8</version>
+	<licence>agpl</licence>
 	<author>Lukas Reschke</author>
 
-	<dependencies>
-		<nextcloud min-version="12" max-version="13" />
-	</dependencies>
-
-	<settings>
-		<admin>OCA\TermsAndConditions\Settings\Admin</admin>
-	</settings>
+	<namespace>TermsAndConditions</namespace>
 
 	<types>
 		<filesystem/>
 	</types>
 
-	<namespace>TermsAndConditions</namespace>
-	<version>0.1.8</version>
+	<category>files</category>
+	<category>security</category>
+
+	<website>https://github.com/nextcloud/termsandconditions/</website>
+	<bugs>https://github.com/nextcloud/termsandconditions/issues</bugs>
+	<repository>https://github.com/nextcloud/termsandconditions.git</repository>
+
+	<dependencies>
+		<nextcloud min-version="13" max-version="14" />
+	</dependencies>
+
+	<settings>
+		<admin>OCA\TermsAndConditions\Settings\Admin</admin>
+	</settings>
 </info>
