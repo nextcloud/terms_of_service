@@ -26,6 +26,9 @@ use OCP\AppFramework\Db\Mapper;
 use OCP\IDBConnection;
 use OCP\IUser;
 
+/**
+ * @method Signatory mapRowToEntity(array $row)
+ */
 class SignatoryMapper extends Mapper {
 	const TABLENAME = 'termsandconditions_signatories';
 
@@ -39,12 +42,18 @@ class SignatoryMapper extends Mapper {
 	 * @return Signatory[]
 	 */
 	public function getSignatories() {
-		$qb = $this->db->getQueryBuilder();
-		$qb
-			->select('*')
-			->from($this->tableName);
+		$query = $this->db->getQueryBuilder();
+		$query->select('*')
+			->from(self::TABLENAME);
 
-		return $this->findEntities($qb->getSQL());
+		$entities = [];
+		$result = $query->execute();
+		while ($row = $result->fetch()){
+			$entities[] = $this->mapRowToEntity($row);
+		}
+		$result->closeCursor();
+
+		return $entities;
 	}
 
 	/**
@@ -56,13 +65,20 @@ class SignatoryMapper extends Mapper {
 	 */
 	public function getSignatoriesByUser(IUser $user,
 										 $accessType) {
-		$qb = $this->db->getQueryBuilder();
-		$qb
-			->select('*')
-			->from($this->tableName)
-			->where($qb->expr()->eq('user_id', $qb->createParameter('uid')))
-			->andWhere($qb->expr()->eq('access_type', $qb->createParameter('accessType')));
-		return $this->findEntities($qb->getSQL(), [$user->getUID(), $accessType]);
+		$query = $this->db->getQueryBuilder();
+		$query->select('*')
+			->from(self::TABLENAME)
+			->where($query->expr()->eq('user_id', $query->createNamedParameter($user->getUID())))
+			->andWhere($query->expr()->eq('access_type', $query->createNamedParameter($accessType)));
+
+		$entities = [];
+		$result = $query->execute();
+		while ($row = $result->fetch()){
+			$entities[] = $this->mapRowToEntity($row);
+		}
+		$result->closeCursor();
+
+		return $entities;
 	}
 
 	/**
@@ -74,12 +90,19 @@ class SignatoryMapper extends Mapper {
 	 */
 	public function getSignatoriesByRemoteAddress($remoteAddress,
 												  $accessType) {
-		$qb = $this->db->getQueryBuilder();
-		$qb
-			->select('*')
-			->from($this->tableName)
-			->where($qb->expr()->eq('remote_ip', $qb->createParameter('remoteIp')))
-			->andWhere($qb->expr()->eq('access_type', $qb->createParameter('accessType')));
-		return $this->findEntities($qb->getSQL(), [$remoteAddress, $accessType]);
+		$query = $this->db->getQueryBuilder();
+		$query->select('*')
+			->from(self::TABLENAME)
+			->where($query->expr()->eq('remote_ip', $query->createNamedParameter($remoteAddress)))
+			->andWhere($query->expr()->eq('access_type', $query->createNamedParameter($accessType)));
+
+		$entities = [];
+		$result = $query->execute();
+		while ($row = $result->fetch()){
+			$entities[] = $this->mapRowToEntity($row);
+		}
+		$result->closeCursor();
+
+		return $entities;
 	}
 }
