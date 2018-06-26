@@ -30,7 +30,7 @@ $languages = $_['languages'];
 ?>
 
 <div id="termsofservice" class="section">
-	<h2><?php p($l->t('Terms and Conditions')) ?></h2>
+	<h2><?php p($l->t('Terms and conditions')) ?></h2>
 	<p class="settings-hint"><?php p($l->t('Require users to accept the terms of service before accessing the service.')); ?></p>
 	<div id="terms_of_service_settings_status">
 		<div id="terms_of_service_settings_loading" class="icon-loading-small" style="display: none;"></div>
