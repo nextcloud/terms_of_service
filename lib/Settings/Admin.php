@@ -57,7 +57,7 @@ class Admin implements ISettings {
 	 * {@inheritdoc}
 	 */
 	public function getSection() {
-		return 'additional';
+		return 'termsandconditions';
 	}
 
 	/**

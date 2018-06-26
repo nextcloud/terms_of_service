@@ -7,7 +7,7 @@
 	<description><![CDATA[Requires users to accept the terms and conditions before accessing data.
 This product includes GeoLite2 data created by MaxMind, available from [maxmind.com](http://www.maxmind.com)]]></description>
 
-	<version>0.1.8</version>
+	<version>0.1.9</version>
 	<licence>agpl</licence>
 	<author>Lukas Reschke</author>
 
@@ -30,5 +30,6 @@ This product includes GeoLite2 data created by MaxMind, available from [maxmind.
 
 	<settings>
 		<admin>OCA\TermsAndConditions\Settings\Admin</admin>
+		<admin-section>OCA\TermsAndConditions\Settings\AdminSection</admin-section>
 	</settings>
 </info>
