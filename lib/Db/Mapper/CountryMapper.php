@@ -34,10 +34,10 @@ class CountryMapper {
 	/**
 	 * Whether the specified country code exists
 	 *
-	 * @param string $countryCode
+	 * @param string|null $countryCode
 	 * @return bool
 	 */
-	public function isValidCountry(string $countryCode): bool {
+	public function isValidCountry($countryCode): bool {
 		return isset($this->getCountries()[$countryCode]);
 	}
 
