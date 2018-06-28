@@ -1,5 +1,7 @@
-/**
- * @copyright Copyright (c) 2017 Lukas Reschke <lukas@statuscode.ch>
+/*
+ * @copyright Copyright (c) 2018 Joas Schilling <coding@schilljs.com>
+ *
+ * @author Joas Schilling <coding@schilljs.com>
  *
  * @license GNU AGPL version 3 or any later version
  *
@@ -14,20 +16,19 @@
  * GNU Affero General Public License for more details.
  *
  * You should have received a copy of the GNU Affero General Public License
- * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ * along with this program. If not, see <http://www.gnu.org/licenses/>.
  *
  */
 
-$(document).ready(function() {
-	$('#country-selector').select2({
-		placeholder: t('firstrunwizard', 'Select country…'),
-	});
+import Vue from 'vue';
+import App from './App';
 
-	$('#language-selector').select2({
-		placeholder: t('firstrunwizard', 'Select language…'),
-	});
+Vue.prototype.t = t;
+Vue.prototype.n = n;
+Vue.prototype.OC = OC;
+Vue.prototype.OCA = OCA;
 
-	$('#country-selector').on("select2-selecting", function(e) {
-		console.log(e.value);
-	});
+new Vue({
+  el: '#termsandconditions',
+  render: h => h(App)
 });
