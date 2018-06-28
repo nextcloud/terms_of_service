@@ -46,13 +46,14 @@
 		<h3 v-if="hasTerms">{{ t('termsandconditions', 'Existing terms and conditions') }}</h3>
 
 		<ul id="termsofservice-countryspecific-list" v-if="hasTerms">
-			<term v-for="(t, key) in terms" v-bind="t" :key="t.id" @remove="onRemove"></term>
+			<term v-for="(t, key) in terms" v-bind="t" :key="t.id"></term>
 		</ul>
 	</div>
 </template>
 
 <script>
 import term from './components/term';
+import axios from 'axios';
 
 export default {
 	name: 'app',
@@ -69,26 +70,22 @@ export default {
 	},
 
 	methods: {
-		onRemove (index) {
-			this.terms.splice(index, 1);
-		},
 		onSubmit () {
 			if (!this.country || !this.language || !this.body) {
 				return;
 			}
 
-			$.ajax({
-				url: OC.generateUrl('/apps/termsandconditions/terms'),
-				type: 'POST',
-				data: {
-					countryCode: this.country,
-					languageCode: this.language,
-					body: this.body
-				},
-				success: function(response) {
-					this.$set(this.terms, response.id, response);
-				}.bind(this)
-			});
+			axios
+				.post(OC.generateUrl('/apps/termsandconditions/terms'),
+					{
+						countryCode: this.country,
+						languageCode: this.language,
+						body: this.body
+					},
+					this.tokenHeaders)
+				.then(response => {
+					this.$set(this.terms, response.data.id, response.data);
+				});
 		}
 	},
 
@@ -99,15 +96,20 @@ export default {
 	computed: {
 		hasTerms () {
 			return Object.keys(this.terms).length > 0;
+		},
+		tokenHeaders () {
+			return { headers: { requesttoken: OC.requestToken } };
 		}
 	},
 
 	mounted () {
-		$.get(OC.generateUrl('/apps/termsandconditions/terms')).done(function (response) {
-			this.terms = response.terms;
-			this.countries = response.countryCodes;
-			this.languages = response.languageCodes;
-		}.bind(this));
+		axios
+			.get(OC.generateUrl('/apps/termsandconditions/terms'), this.tokenHeaders)
+			.then(response => {
+				this.terms = response.data.terms;
+				this.countries = response.data.countryCodes;
+				this.languages = response.data.languageCodes;
+			});
 	}
 }
 </script>

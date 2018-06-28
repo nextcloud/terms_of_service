@@ -7,6 +7,8 @@
 </template>
 
 <script>
+	import axios from 'axios';
+
 	export default {
 		name: 'term',
 
@@ -24,6 +26,9 @@
 			},
 			language () {
 				return this.$parent.languages[this.languageCode];
+			},
+			tokenHeaders () {
+				return { headers: { requesttoken: OC.requestToken } };
 			}
 		},
 
@@ -34,14 +39,11 @@
 				this.$parent.body = this.body;
 			},
 			onDelete: function() {
-				$.ajax({
-					url: OC.generateUrl('/apps/termsandconditions/terms/' + this.id),
-					type: 'DELETE',
-					success: function () {
-						this._$el.fadeOut(OC.menuSpeed);
-						this.$emit('remove');
-					}.bind(this)
-				});
+				axios
+					.delete(OC.generateUrl('/apps/termsandconditions/terms/' + this.id), this.tokenHeaders)
+					.then(response => {
+						this.$delete(this.$parent.terms, this.id);
+					});
 			}
 		}
 	}
