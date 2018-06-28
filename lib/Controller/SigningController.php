@@ -34,8 +34,8 @@ class SigningController extends Controller {
 	/** @var SignatoryMapper */
 	private $signatoryMapper;
 
-	public function __construct($appName,
-								$UserId,
+	public function __construct(string $appName,
+								string $UserId,
 								IRequest $request,
 								SignatoryMapper $signatoryMapper) {
 		parent::__construct($appName, $request);
@@ -49,7 +49,7 @@ class SigningController extends Controller {
 	 * @param int $termId
 	 * @return JSONResponse
 	 */
-	public function signLoginTerms($termId) {
+	public function signLoginTerms(int $termId): JSONResponse {
 		$signatory = new Signatory();
 		$signatory->setUserId($this->userId);
 		$signatory->setAccessType(AccessTypes::LOGIN);
@@ -68,7 +68,7 @@ class SigningController extends Controller {
 	 * @param int $shareId
 	 * @return JSONResponse
 	 */
-	public function signInternalShare($termId, $shareId) {
+	public function signInternalShare(int $termId, int $shareId): JSONResponse {
 		$signatory = new Signatory();
 		$signatory->setUserId($this->userId);
 		$signatory->setAccessType(AccessTypes::INTERNAL_SHARE);
@@ -91,7 +91,7 @@ class SigningController extends Controller {
 	 * @param string $publicShareId
 	 * @return JSONResponse
 	 */
-	public function signPublicLinkShare($termId, $publicShareId) {
+	public function signPublicLinkShare(int $termId, string $publicShareId): JSONResponse {
 		$signatory = new Signatory();
 		$signatory->setUserId('');
 		$signatory->setAccessType(AccessTypes::PUBLIC_SHARE);

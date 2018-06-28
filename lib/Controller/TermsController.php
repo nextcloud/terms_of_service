@@ -48,7 +48,7 @@ class TermsController extends Controller {
 	/** @var Checker */
 	private $checker;
 
-	public function __construct($appName,
+	public function __construct(string $appName,
 								IRequest $request,
 								IFactory $factory,
 								TermsMapper $termsMapper,
@@ -69,7 +69,7 @@ class TermsController extends Controller {
 	 * @PublicPage
 	 * @return JSONResponse
 	 */
-	public function index() {
+	public function index(): JSONResponse {
 		$unsortedTerms = $this->termsMapper->getTerms();
 		$terms = [];
 		foreach($unsortedTerms as $term) {
@@ -97,7 +97,7 @@ class TermsController extends Controller {
 	 * @param int $id
 	 * @return JSONResponse
 	 */
-	public function destroy($id) {
+	public function destroy(int $id): JSONResponse {
 		$terms = new Terms();
 		$terms->setId($id);
 		$this->termsMapper->delete($terms);
@@ -110,9 +110,9 @@ class TermsController extends Controller {
 	 * @param string $body
 	 * @return JSONResponse
 	 */
-	public function create($countryCode,
-						   $languageCode,
-						   $body) {
+	public function create(string $countryCode,
+						   string $languageCode,
+						   string $body): JSONResponse {
 		$update = false;
 		try {
 			// Update terms
