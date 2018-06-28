@@ -22,6 +22,7 @@
 namespace OCA\TermsAndConditions\Db\Mapper;
 
 use OCA\TermsAndConditions\Db\Entities\Signatory;
+use OCA\TermsAndConditions\Db\Entities\Terms;
 use OCP\AppFramework\Db\QBMapper;
 use OCP\IDBConnection;
 use OCP\IUser;
@@ -104,5 +105,16 @@ class SignatoryMapper extends QBMapper {
 		$result->closeCursor();
 
 		return $entities;
+	}
+
+	/**
+	 * Delete all signatories for a given Terms
+	 * @param Terms $terms
+	 */
+	public function deleteTerm(Terms $terms) {
+		$query = $this->db->getQueryBuilder();
+		$query->delete(self::TABLENAME)
+			->where($query->expr()->eq('terms_id', $query->createNamedParameter($terms->getId())));
+		$query->execute();
 	}
 }

@@ -26,6 +26,7 @@ use OCA\TermsAndConditions\CountryDetector;
 use OCA\TermsAndConditions\Db\Entities\Terms;
 use OCA\TermsAndConditions\Db\Mapper\CountryMapper;
 use OCA\TermsAndConditions\Db\Mapper\LanguageMapper;
+use OCA\TermsAndConditions\Db\Mapper\SignatoryMapper;
 use OCA\TermsAndConditions\Db\Mapper\TermsMapper;
 use OCA\TermsAndConditions\Exceptions\TermsNotFoundException;
 use OCP\AppFramework\Controller;
@@ -39,6 +40,8 @@ class TermsController extends Controller {
 	private $factory;
 	/** @var TermsMapper */
 	private $termsMapper;
+	/** @var SignatoryMapper */
+	private $signatoryMapper;
 	/** @var CountryMapper */
 	private $countryMapper;
 	/** @var LanguageMapper */
@@ -52,6 +55,7 @@ class TermsController extends Controller {
 								IRequest $request,
 								IFactory $factory,
 								TermsMapper $termsMapper,
+								SignatoryMapper $signatoryMapper,
 								CountryMapper $countryMapper,
 								LanguageMapper $languageMapper,
 								CountryDetector $countryDetector,
@@ -59,6 +63,7 @@ class TermsController extends Controller {
 		parent::__construct($appName, $request);
 		$this->factory = $factory;
 		$this->termsMapper = $termsMapper;
+		$this->signatoryMapper = $signatoryMapper;
 		$this->countryMapper = $countryMapper;
 		$this->languageMapper = $languageMapper;
 		$this->countryDetector = $countryDetector;
@@ -100,7 +105,10 @@ class TermsController extends Controller {
 	public function destroy(int $id): JSONResponse {
 		$terms = new Terms();
 		$terms->setId($id);
+
 		$this->termsMapper->delete($terms);
+		$this->signatoryMapper->deleteTerm($terms);
+
 		return new JSONResponse();
 	}
 
