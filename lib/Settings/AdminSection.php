@@ -44,7 +44,7 @@ class AdminSection implements IIconSection {
 	 *
 	 * @returns string
 	 */
-	public function getID() {
+	public function getID(): string {
 		return 'termsandconditions';
 	}
 
@@ -54,7 +54,7 @@ class AdminSection implements IIconSection {
 	 *
 	 * @return string
 	 */
-	public function getName() {
+	public function getName(): string {
 		return $this->l->t('Terms and conditions');
 	}
 
@@ -63,14 +63,14 @@ class AdminSection implements IIconSection {
 	 * the settings navigation. The sections are arranged in ascending order of
 	 * the priority values. It is required to return a value between 0 and 99.
 	 */
-	public function getPriority() {
+	public function getPriority(): int {
 		return 60;
 	}
 
 	/**
 	 * {@inheritdoc}
 	 */
-	public function getIcon() {
+	public function getIcon(): string {
 		return $this->url->imagePath('termsandconditions', 'app-dark.svg');
 	}
 }
