@@ -23,13 +23,13 @@ namespace OCA\TermsAndConditions\Db\Mapper;
 
 use OCA\TermsAndConditions\Db\Entities\Terms;
 use OCA\TermsAndConditions\Exceptions\TermsNotFoundException;
-use OCP\AppFramework\Db\Mapper;
+use OCP\AppFramework\Db\QBMapper;
 use OCP\IDBConnection;
 
 /**
  * @method Terms mapRowToEntity(array $row)
  */
-class TermsMapper extends Mapper {
+class TermsMapper extends QBMapper {
 	const TABLENAME = 'termsandconditions_terms';
 
 	public function __construct(IDBConnection $db) {
@@ -42,7 +42,7 @@ class TermsMapper extends Mapper {
 	 * @param string $countryCode
 	 * @return Terms[]
 	 */
-	public function getTermsForCountryCode($countryCode) {
+	public function getTermsForCountryCode(string $countryCode): array {
 		$query = $this->db->getQueryBuilder();
 		$query->select('*')
 			->from(self::TABLENAME)
@@ -67,7 +67,7 @@ class TermsMapper extends Mapper {
 	 * @return Terms
 	 * @throws TermsNotFoundException
 	 */
-	public function getTermsForCountryCodeAndLanguageCode($countryCode, $languageCode) {
+	public function getTermsForCountryCodeAndLanguageCode(string $countryCode, string $languageCode): Terms {
 		$query = $this->db->getQueryBuilder();
 		$query->select('*')
 			->from(self::TABLENAME)
@@ -84,11 +84,11 @@ class TermsMapper extends Mapper {
 	}
 
 	/**
-	 * Returns all terms of service
+	 * Returns all terms and conditions
 	 *
 	 * @return Terms[]
 	 */
-	public function getTerms() {
+	public function getTerms(): array {
 		$query = $this->db->getQueryBuilder();
 		$query->select('*')
 			->from(self::TABLENAME);

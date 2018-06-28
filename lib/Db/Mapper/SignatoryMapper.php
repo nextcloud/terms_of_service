@@ -22,14 +22,14 @@
 namespace OCA\TermsAndConditions\Db\Mapper;
 
 use OCA\TermsAndConditions\Db\Entities\Signatory;
-use OCP\AppFramework\Db\Mapper;
+use OCP\AppFramework\Db\QBMapper;
 use OCP\IDBConnection;
 use OCP\IUser;
 
 /**
  * @method Signatory mapRowToEntity(array $row)
  */
-class SignatoryMapper extends Mapper {
+class SignatoryMapper extends QBMapper {
 	const TABLENAME = 'termsandconditions_signatories';
 
 	public function __construct(IDBConnection $db) {
@@ -41,7 +41,7 @@ class SignatoryMapper extends Mapper {
 	 *
 	 * @return Signatory[]
 	 */
-	public function getSignatories() {
+	public function getSignatories(): array {
 		$query = $this->db->getQueryBuilder();
 		$query->select('*')
 			->from(self::TABLENAME);
@@ -64,7 +64,7 @@ class SignatoryMapper extends Mapper {
 	 * @return Signatory[]
 	 */
 	public function getSignatoriesByUser(IUser $user,
-										 $accessType) {
+										 int $accessType): array {
 		$query = $this->db->getQueryBuilder();
 		$query->select('*')
 			->from(self::TABLENAME)
@@ -88,8 +88,8 @@ class SignatoryMapper extends Mapper {
 	 * @param int $accessType
 	 * @return Signatory[]
 	 */
-	public function getSignatoriesByRemoteAddress($remoteAddress,
-												  $accessType) {
+	public function getSignatoriesByRemoteAddress(string $remoteAddress,
+												  int $accessType): array {
 		$query = $this->db->getQueryBuilder();
 		$query->select('*')
 			->from(self::TABLENAME)
