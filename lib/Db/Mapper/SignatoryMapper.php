@@ -117,4 +117,10 @@ class SignatoryMapper extends QBMapper {
 			->where($query->expr()->eq('terms_id', $query->createNamedParameter($terms->getId())));
 		$query->execute();
 	}
+
+	public function deleteAllSignatories() {
+		$query = $this->db->getQueryBuilder();
+		$query->delete(self::TABLENAME);
+		$query->execute();
+	}
 }
