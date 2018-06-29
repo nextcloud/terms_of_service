@@ -29,6 +29,8 @@ use OCP\IUser;
 use OCP\IUserSession;
 
 class Checker {
+	/** @var IRequest */
+	private $request;
 	/** @var IUserSession */
 	private $userSession;
 	/** @var SignatoryMapper */
@@ -56,7 +58,7 @@ class Checker {
 	 *
 	 * @return bool
 	 */
-	public function currentUserHasSigned() {
+	public function currentUserHasSigned(): bool {
 		$user = $this->userSession->getUser();
 		if(!($user instanceof IUser)) {
 			return false;
@@ -64,7 +66,7 @@ class Checker {
 
 		$countryCode = $this->countryDetector->getCountry();
 		$signatories = $this->signatoryMapper->getSignatoriesByUser($user, AccessTypes::LOGIN);
-		if(count($signatories) > 0) {
+		if (!empty($signatories)) {
 			$terms = $this->termsMapper->getTermsForCountryCode($countryCode);
 			foreach($signatories as $signatory) {
 				foreach($terms as $term) {
@@ -78,7 +80,7 @@ class Checker {
 		return false;
 	}
 
-	public function getSignedStorageIds() {
+	public function getSignedStorageIds(): array {
 		$user = $this->userSession->getUser();
 		if(!($user instanceof IUser)) {
 			return [];
@@ -106,11 +108,11 @@ class Checker {
 	 * @param int $storageId
 	 * @return bool
 	 */
-	public function currentUserHasSignedForStorage($storageId) {
-		return in_array($storageId, $this->getSignedStorageIds(), true);
+	public function currentUserHasSignedForStorage(int $storageId): bool {
+		return \in_array($storageId, $this->getSignedStorageIds(), true);
 	}
 
-	public function getSignedPublicShareIds() {
+	public function getSignedPublicShareIds(): array {
 		$countryCode = $this->countryDetector->getCountry();
 		$signatories = $this->signatoryMapper->getSignatoriesByRemoteAddress($this->request->getRemoteAddress(), AccessTypes::PUBLIC_SHARE);
 
@@ -120,17 +122,15 @@ class Checker {
 			return [];
 		}
 		$claimedSignatures = json_decode($cookieValue, true);
-		if(!is_array($claimedSignatures)) {
+		if(!\is_array($claimedSignatures)) {
 			return [];
 		}
 
 		$terms = $this->termsMapper->getTerms();
 		foreach($signatories as $signatory) {
 			foreach($terms as $term) {
-				if($term->getCountryCode() === $countryCode) {
-					if(in_array($signatory->getMetadata(), $claimedSignatures, true)) {
-						$publicShareIds[] = $signatory->getMetadata();
-					}
+				if ($term->getCountryCode() === $countryCode && \in_array($signatory->getMetadata(), $claimedSignatures, true)) {
+					$publicShareIds[] = $signatory->getMetadata();
 				}
 			}
 		}
@@ -144,7 +144,7 @@ class Checker {
 	 * @param string $shareToken
 	 * @return bool
 	 */
-	public function currentRequestHasSignedForPublicShare($shareToken) {
-		return in_array($shareToken, $this->getSignedPublicShareIds(), true);
+	public function currentRequestHasSignedForPublicShare(string $shareToken): bool {
+		return \in_array($shareToken, $this->getSignedPublicShareIds(), true);
 	}
 }

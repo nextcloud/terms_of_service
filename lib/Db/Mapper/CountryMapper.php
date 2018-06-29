@@ -34,10 +34,10 @@ class CountryMapper {
 	/**
 	 * Whether the specified country code exists
 	 *
-	 * @param string $countryCode
+	 * @param string|null $countryCode
 	 * @return bool
 	 */
-	public function isValidCountry($countryCode) {
+	public function isValidCountry($countryCode): bool {
 		return isset($this->getCountries()[$countryCode]);
 	}
 
@@ -46,7 +46,7 @@ class CountryMapper {
 	 *
 	 * @return array
 	 */
-	public function getCountries() {
+	public function getCountries(): array {
 		$countries = [
 			'--' => (string)$this->l10n->t('Global'),
 			'AF' => (string)$this->l10n->t('Afghanistan'),

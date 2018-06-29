@@ -41,7 +41,7 @@ class Admin implements ISettings {
 	/**
 	 * {@inheritdoc}
 	 */
-	public function getForm() {
+	public function getForm(): TemplateResponse {
 		return new TemplateResponse(
 			'termsandconditions',
 			'settings',
@@ -56,14 +56,14 @@ class Admin implements ISettings {
 	/**
 	 * {@inheritdoc}
 	 */
-	public function getSection() {
+	public function getSection(): string {
 		return 'termsandconditions';
 	}
 
 	/**
 	 * {@inheritdoc}
 	 */
-	public function getPriority() {
+	public function getPriority(): int {
 		return 100;
 	}
 }

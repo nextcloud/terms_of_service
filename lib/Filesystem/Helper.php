@@ -50,7 +50,7 @@ class Helper {
 		$this->urlGenerator = $urlGenerator;
 	}
 
-	protected function isBlockablePath($path, $mountPoint) {
+	protected function isBlockablePath(string $path, string $mountPoint): bool {
 		$fullPath = $mountPoint . $path;
 
 		if (substr_count($fullPath, '/') < 3) {
@@ -70,7 +70,7 @@ class Helper {
 	 * Check if we are in the LoginController and if so, ignore the firewall
 	 * @return bool
 	 */
-	protected function isCreatingSkeletonFiles() {
+	protected function isCreatingSkeletonFiles(): bool {
 		$exception = new \Exception();
 		$trace = $exception->getTrace();
 		foreach ($trace as $step) {
@@ -83,8 +83,8 @@ class Helper {
 	}
 
 
-	public function isBlockable($path,
-								$mountPoint) {
+	public function isBlockable(string $path,
+								string $mountPoint): bool {
 		if($this->isCreatingSkeletonFiles()) {
 			return false;
 		}
@@ -111,7 +111,7 @@ class Helper {
 		return null;
 	}
 
-	public function verifyAccess($path, $mountPoint, IStorage $storage) {
+	public function verifyAccess(string $path, string $mountPoint, IStorage $storage): bool {
 		// Check if it is a public link
 		$publicShareToken = $this->getPublicLinkShareToken();
 		if($publicShareToken !== null) {

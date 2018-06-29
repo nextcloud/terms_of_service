@@ -39,7 +39,7 @@ class Terms extends Entity implements \JsonSerializable {
 	/** @var string */
 	public $body;
 
-	public function jsonSerialize() {
+	public function jsonSerialize(): array {
 		$parsedown = new \Parsedown();
 
 		return [

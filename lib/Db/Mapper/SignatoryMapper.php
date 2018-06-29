@@ -22,14 +22,15 @@
 namespace OCA\TermsAndConditions\Db\Mapper;
 
 use OCA\TermsAndConditions\Db\Entities\Signatory;
-use OCP\AppFramework\Db\Mapper;
+use OCA\TermsAndConditions\Db\Entities\Terms;
+use OCP\AppFramework\Db\QBMapper;
 use OCP\IDBConnection;
 use OCP\IUser;
 
 /**
  * @method Signatory mapRowToEntity(array $row)
  */
-class SignatoryMapper extends Mapper {
+class SignatoryMapper extends QBMapper {
 	const TABLENAME = 'termsandconditions_signatories';
 
 	public function __construct(IDBConnection $db) {
@@ -41,7 +42,7 @@ class SignatoryMapper extends Mapper {
 	 *
 	 * @return Signatory[]
 	 */
-	public function getSignatories() {
+	public function getSignatories(): array {
 		$query = $this->db->getQueryBuilder();
 		$query->select('*')
 			->from(self::TABLENAME);
@@ -64,7 +65,7 @@ class SignatoryMapper extends Mapper {
 	 * @return Signatory[]
 	 */
 	public function getSignatoriesByUser(IUser $user,
-										 $accessType) {
+										 int $accessType): array {
 		$query = $this->db->getQueryBuilder();
 		$query->select('*')
 			->from(self::TABLENAME)
@@ -88,8 +89,8 @@ class SignatoryMapper extends Mapper {
 	 * @param int $accessType
 	 * @return Signatory[]
 	 */
-	public function getSignatoriesByRemoteAddress($remoteAddress,
-												  $accessType) {
+	public function getSignatoriesByRemoteAddress(string $remoteAddress,
+												  int $accessType): array {
 		$query = $this->db->getQueryBuilder();
 		$query->select('*')
 			->from(self::TABLENAME)
@@ -104,5 +105,22 @@ class SignatoryMapper extends Mapper {
 		$result->closeCursor();
 
 		return $entities;
+	}
+
+	/**
+	 * Delete all signatories for a given Terms
+	 * @param Terms $terms
+	 */
+	public function deleteTerm(Terms $terms) {
+		$query = $this->db->getQueryBuilder();
+		$query->delete(self::TABLENAME)
+			->where($query->expr()->eq('terms_id', $query->createNamedParameter($terms->getId())));
+		$query->execute();
+	}
+
+	public function deleteAllSignatories() {
+		$query = $this->db->getQueryBuilder();
+		$query->delete(self::TABLENAME);
+		$query->execute();
 	}
 }
