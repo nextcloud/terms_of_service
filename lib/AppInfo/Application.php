@@ -28,6 +28,7 @@ use OCA\TermsOfService\CountryDetector;
 use OCA\TermsOfService\Db\Mapper\SignatoryMapper;
 use OCA\TermsOfService\Db\Mapper\TermsMapper;
 use OCA\TermsOfService\Filesystem\StorageWrapper;
+use OCA\TermsOfService\Notifications\Notifier;
 use OCP\AppFramework\App;
 use OCP\Files\Storage\IStorage;
 use OCP\IRequest;
@@ -86,5 +87,21 @@ class Application extends App {
 			]);
 		}
 		return $storage;
+	}
+
+	public function register() {
+		$this->registerAdminNotifications();
+	}
+
+	protected function registerAdminNotifications() {
+		$this->getContainer()->getServer()->getNotificationManager()->registerNotifier(function() {
+			return $this->getContainer()->query(Notifier::class);
+		}, function() {
+			$l = $this->getContainer()->getServer()->getL10NFactory()->get('terms_of_service');
+			return [
+				'id' => 'terms_of_service',
+				'name' => $l->t('Terms of service'),
+			];
+		});
 	}
 }

@@ -31,5 +31,6 @@ $app = new \OCA\TermsOfService\AppInfo\Application(
 	\OC::$server->query(\OCA\TermsOfService\Db\Mapper\TermsMapper::class),
 	\OC::$server->query(\OCA\TermsOfService\CountryDetector::class)
 );
+$app->register();
 \OCP\Util::connectHook('OC_Filesystem', 'preSetup', $app, 'addStorageWrapper');
 
