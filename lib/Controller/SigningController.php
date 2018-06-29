@@ -22,6 +22,7 @@
 namespace OCA\TermsAndConditions\Controller;
 
 use OCA\TermsAndConditions\Db\Entities\Signatory;
+use OCA\TermsAndConditions\Db\Entities\Terms;
 use OCA\TermsAndConditions\Db\Mapper\SignatoryMapper;
 use OCA\TermsAndConditions\Types\AccessTypes;
 use OCP\AppFramework\Controller;
@@ -101,6 +102,14 @@ class SigningController extends Controller {
 		$signatory->setMetadata($publicShareId);
 
 		$this->signatoryMapper->insert($signatory);
+		return new JSONResponse();
+	}
+
+	/**
+	 * @return JSONResponse
+	 */
+	public function resetAllSignatories(): JSONResponse {
+		$this->signatoryMapper->deleteAllSignatories();
 		return new JSONResponse();
 	}
 }

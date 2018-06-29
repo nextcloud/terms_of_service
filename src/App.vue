@@ -29,21 +29,16 @@
 		<p class="settings-hint">{{ t('termsandconditions', 'For formatting purposes Markdown is supported.') }}</p>
 
 		<span>
-			<select id="country-selector" v-model="country">
-				<option value="">{{ t('termsandconditions', 'Select a region') }}</option>
-				<option v-for="(value, key) in countries" :value="key">{{value}} ({{key}})</option>
-			</select>
-
-			<select id="language-selector" v-model="language">
-				<option value="">{{ t('termsandconditions', 'Select a language') }}</option>
-				<option v-for="(value, key) in languages" :value="key">{{value}} ({{key}})</option>
-			</select>
+			<v-select v-model="country" :options="countryOptions" :placeholder="t('termsandconditions', 'Select a region')"></v-select>
+			<v-select v-model="language" :options="languageOptions" :placeholder="t('termsandconditions', 'Select a language')"></v-select>
 		</span>
 
 		<textarea id="termsofservice-countryspecific-textarea" v-model="body" :placeholder="t('termsandconditions', 'By using this service …')"></textarea>
-		<button @click="onSubmit">{{ t('termsandconditions', 'Save') }}</button>
+		<button @click="onSubmit" :disabled="saveButtonDisabled">{{saveButtonText}}</button>
 
 		<h3 v-if="hasTerms">{{ t('termsandconditions', 'Existing terms and conditions') }}</h3>
+
+		<button @click="onResetSignatories" :disabled="resetButtonDisabled">{{resetButtonText}}</button>
 
 		<ul id="termsofservice-countryspecific-list" v-if="hasTerms">
 			<term v-for="(t, key) in terms" v-bind="t" :key="t.id"></term>
@@ -54,18 +49,25 @@
 <script>
 import term from './components/term';
 import axios from 'axios';
+import vSelect from 'vue-select';
 
 export default {
 	name: 'app',
 
 	data () {
 		return {
-			country: '',
-			language: '',
+			country: null,
+			language: null,
 			body: '',
-			countries: [],
-			languages: [],
-			terms: {}
+			countries: {},
+			countryOptions: [],
+			languages: {},
+			languageOptions: [],
+			terms: {},
+			saveButtonText: '',
+			saveButtonDisabled: true,
+			resetButtonText: '',
+			resetButtonDisabled: false
 		}
 	},
 
@@ -75,22 +77,46 @@ export default {
 				return;
 			}
 
+			this.saveButtonDisabled = true;
+			this.saveButtonText = t('termsandconditions', 'Saving …');
+
 			axios
 				.post(OC.generateUrl('/apps/termsandconditions/terms'),
 					{
-						countryCode: this.country,
-						languageCode: this.language,
+						countryCode: this.country.value,
+						languageCode: this.language.value,
 						body: this.body
 					},
 					this.tokenHeaders)
 				.then(response => {
 					this.$set(this.terms, response.data.id, response.data);
+
+					this.saveButtonText = t('termsandconditions', 'Saved!');
+					setTimeout(() => {
+						this.saveButtonText = t('termsandconditions', 'Save');
+						this.saveButtonDisabled = false;
+					}, 2000);
+				});
+		},
+		onResetSignatories () {
+			this.resetButtonDisabled = true;
+			this.resetButtonText = t('termsandconditions', 'Resetting …');
+
+			axios
+				.delete(OC.generateUrl('/apps/termsandconditions/sign'), this.tokenHeaders)
+				.then(response => {
+					this.resetButtonText = t('termsandconditions', 'Reset!');
+					setTimeout(() => {
+						this.resetButtonText = t('termsandconditions', 'Reset all signatories');
+						this.resetButtonDisabled = false;
+					}, 2000);
 				});
 		}
 	},
 
 	components: {
-		term
+		term,
+		vSelect
 	},
 
 	computed: {
@@ -103,12 +129,29 @@ export default {
 	},
 
 	mounted () {
+		this.saveButtonText = t('termsandconditions', 'Loading …');
+		this.resetButtonText = t('termsandconditions', 'Reset all signatories');
 		axios
 			.get(OC.generateUrl('/apps/termsandconditions/terms'), this.tokenHeaders)
 			.then(response => {
 				this.terms = response.data.terms;
 				this.countries = response.data.countryCodes;
 				this.languages = response.data.languageCodes;
+				Object.keys(this.countries).forEach((countryCode) => {
+					this.countryOptions.push({
+						value: countryCode,
+						label: response.data.countryCodes[countryCode] + ' (' + countryCode + ')'
+					});
+				});
+				Object.keys(this.languages).forEach((languageCode) => {
+					this.languageOptions.push({
+						value: languageCode,
+						label: this.languages[languageCode] + ' (' + languageCode + ')'
+					});
+				});
+
+				this.saveButtonText = t('termsandconditions', 'Save');
+				this.saveButtonDisabled = false;
 			});
 	}
 }

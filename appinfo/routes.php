@@ -41,5 +41,10 @@ return [
 			'url' => '/sign/publicShare',
 			'verb' => 'POST',
 		],
+		[
+			'name' => 'Signing#resetAllSignatories',
+			'url' => '/sign',
+			'verb' => 'DELETE',
+		],
 	],
 ];

@@ -2,7 +2,7 @@
 	<li>
 		{{country}} ({{language}})
 		<button @click="onEdit">{{ t('termsandconditions', 'Edit') }}</button>
-		<button @click="onDelete">{{ t('termsandconditions', 'Delete') }}</button>
+		<button @click="onDelete" :disabled="deleteButtonDisabled">{{deleteButtonText}}</button>
 	</li>
 </template>
 
@@ -20,6 +20,13 @@
 			'renderedBody'
 		],
 
+		data () {
+			return {
+				deleteButtonText: t('termsandconditions', 'Delete'),
+				deleteButtonDisabled: false
+			};
+		},
+
 		computed: {
 			country () {
 				return this.$parent.countries[this.countryCode];
@@ -34,11 +41,19 @@
 
 		methods: {
 			onEdit: function() {
-				this.$parent.country = this.countryCode;
-				this.$parent.language = this.languageCode;
+				this.$parent.country = {
+					value: this.countryCode,
+					label: this.$parent.countries[this.countryCode] + ' (' + this.countryCode + ')'
+				};
+				this.$parent.language = {
+					value: this.languageCode,
+					label: this.$parent.languages[this.languageCode] + ' (' + this.languageCode + ')'
+				};
 				this.$parent.body = this.body;
 			},
 			onDelete: function() {
+				this.deleteButtonDisabled = true;
+				this.deleteButtonText = t('termsandconditions', 'Deleting …');
 				axios
 					.delete(OC.generateUrl('/apps/termsandconditions/terms/' + this.id), this.tokenHeaders)
 					.then(response => {
