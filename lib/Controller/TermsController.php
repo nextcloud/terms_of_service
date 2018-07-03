@@ -89,11 +89,7 @@ class TermsController extends Controller {
 				'languageCode' => strtolower(substr($this->factory->findLanguage(), 0, 2)),
 				'countryCode' => $this->countryDetector->getCountry(),
 			],
-			'signatories' => [
-				'hasSignedLogin' => $this->checker->currentUserHasSigned(),
-				'signedStorages' => $this->checker->getSignedStorageIds(),
-				'signedPublicLinks' => $this->checker->getSignedPublicShareIds(),
-			],
+			'hasSigned' => $this->checker->currentUserHasSigned(),
 		];
 		return new JSONResponse($response);
 	}

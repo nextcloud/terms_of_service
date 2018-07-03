@@ -69,15 +69,6 @@ class Version1000Date20180503135440 extends SimpleMigrationStep {
 			$table->addColumn('user_id', 'string', [
 				'notnull' => true,
 			]);
-			$table->addColumn('remote_ip', 'string', [
-				'notnull' => true,
-			]);
-			$table->addColumn('access_type', 'integer', [
-				'notnull' => true,
-			]);
-			$table->addColumn('metadata', 'string', [
-				'notnull' => false,
-			]);
 			$table->addColumn('timestamp', 'integer', [
 				'notnull' => true,
 			]);

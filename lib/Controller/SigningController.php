@@ -22,9 +22,7 @@
 namespace OCA\TermsOfService\Controller;
 
 use OCA\TermsOfService\Db\Entities\Signatory;
-use OCA\TermsOfService\Db\Entities\Terms;
 use OCA\TermsOfService\Db\Mapper\SignatoryMapper;
-use OCA\TermsOfService\Types\AccessTypes;
 use OCP\AppFramework\Controller;
 use OCP\AppFramework\Http\JSONResponse;
 use OCP\IRequest;
@@ -50,56 +48,11 @@ class SigningController extends Controller {
 	 * @param int $termId
 	 * @return JSONResponse
 	 */
-	public function signLoginTerms(int $termId): JSONResponse {
+	public function signTerms(int $termId): JSONResponse {
 		$signatory = new Signatory();
 		$signatory->setUserId($this->userId);
-		$signatory->setAccessType(AccessTypes::LOGIN);
-		$signatory->setRemoteIp($this->request->getRemoteAddress());
 		$signatory->setTermsId($termId);
 		$signatory->setTimestamp(time());
-
-		$this->signatoryMapper->insert($signatory);
-		return new JSONResponse();
-	}
-
-	/**
-	 * @NoAdminRequired
-	 *
-	 * @param int $termId
-	 * @param int $shareId
-	 * @return JSONResponse
-	 */
-	public function signInternalShare(int $termId, int $shareId): JSONResponse {
-		$signatory = new Signatory();
-		$signatory->setUserId($this->userId);
-		$signatory->setAccessType(AccessTypes::INTERNAL_SHARE);
-		$signatory->setRemoteIp($this->request->getRemoteAddress());
-		$signatory->setTermsId($termId);
-		$signatory->setTimestamp(time());
-		$signatory->setMetadata($shareId);
-
-		// Also sign the login terms in case a user switched their country here
-		$this->signLoginTerms($termId);
-
-		$this->signatoryMapper->insert($signatory);
-		return new JSONResponse();
-	}
-
-	/**
-	 * @PublicPage
-	 *
-	 * @param int $termId
-	 * @param string $publicShareId
-	 * @return JSONResponse
-	 */
-	public function signPublicLinkShare(int $termId, string $publicShareId): JSONResponse {
-		$signatory = new Signatory();
-		$signatory->setUserId('');
-		$signatory->setAccessType(AccessTypes::PUBLIC_SHARE);
-		$signatory->setRemoteIp($this->request->getRemoteAddress());
-		$signatory->setTermsId($termId);
-		$signatory->setTimestamp(time());
-		$signatory->setMetadata($publicShareId);
 
 		$this->signatoryMapper->insert($signatory);
 		return new JSONResponse();

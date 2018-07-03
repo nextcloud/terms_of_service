@@ -27,18 +27,8 @@ return [
 	],
 	'routes' => [
 		[
-			'name' => 'Signing#signLoginTerms',
-			'url' => '/sign/login',
-			'verb' => 'POST',
-		],
-		[
-			'name' => 'Signing#signInternalShare',
-			'url' => '/sign/internalShare',
-			'verb' => 'POST',
-		],
-		[
-			'name' => 'Signing#signPublicLinkShare',
-			'url' => '/sign/publicShare',
+			'name' => 'Signing#signTerms',
+			'url' => '/sign',
 			'verb' => 'POST',
 		],
 		[

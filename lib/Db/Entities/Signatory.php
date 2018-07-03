@@ -28,14 +28,6 @@ use OCP\AppFramework\Db\Entity;
  * @method void setTermsId(int $id)
  * @method string getUserId()
  * @method void setUserId(string $userId)
- * @method string getRemoteIp()
- * @method void setRemoteIp(string $remoteIp)
- * @method string getUrl()
- * @method void setUrl($url)
- * @method int getAccessType()
- * @method void setAccessType(int $accessType)
- * @method string getMetadata()
- * @method void setMetadata(string $metadata)
  * @method int getTimestamp()
  * @method void setTimestamp(int $timestamp)
  */
@@ -44,14 +36,6 @@ class Signatory extends Entity {
 	public $termsId;
 	/** @var string */
 	public $userId;
-	/** @var string */
-	public $remoteIp;
-	/** @var string */
-	public $url;
-	/** @var integer */
-	public $accessType;
-	/** @var string */
-	public $metadata;
 	/** @var int */
 	public $timestamp;
 }

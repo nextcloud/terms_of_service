@@ -140,8 +140,10 @@
 				}
 				$('#tos-overlay > div > .float-spinner').css('display', 'none');
 
-				var interceptor = OCA.TermsOfService.Interceptor;
-				interceptor.initialize();
+				// Guest visiting a public page or a logged in user that has not signed
+				if (!OC.getCurrentUser().uid && !OCA.TermsOfService.Popup.serverResponse.hasSigned) {
+					OCA.TermsOfService.Popup.show();
+				}
 			});
 		},
 
@@ -156,10 +158,21 @@
 		},
 
 		sign : function() {
-			OCA.TermsOfService.Signer.sign(
-				OCA.TermsOfService.Popup.signingType,
-				OCA.TermsOfService.Popup.signingId
-			);
+			if (!OC.getCurrentUser().uid) {
+				OCA.TermsOfService.Popup.hide();
+				return;
+			}
+
+			$.ajax({
+				url: OC.generateUrl('/apps/terms_of_service/sign'),
+				type: 'POST',
+				data: {
+					termId: $('#tos-current-selected-id').val()
+				},
+				success: function() {
+					OCA.TermsOfService.Popup.hide();
+				}
+			});
 		},
 
 		hide : function() {

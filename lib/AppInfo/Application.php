@@ -78,7 +78,6 @@ class Application extends App {
 				'mountPoint' => $mountPoint,
 				'request' => $this->request,
 				'checker' => new Checker(
-					$this->request,
 					$this->userSession,
 					$this->signatoryMapper,
 					$this->termsMapper,

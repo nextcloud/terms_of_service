@@ -21,33 +21,19 @@
 
 namespace OCA\TermsOfService\Filesystem;
 
-use OC\Files\Storage\Wrapper\Wrapper;
-use OCA\Files_Sharing\SharedStorage;
 use OCA\TermsOfService\Checker;
-use OCP\Files\Folder;
-use OCP\Files\Storage\IStorage;
-use OCP\IRequest;
-use OCP\IURLGenerator;
 use OCP\IUserSession;
 
 class Helper {
 	/** @var Checker */
 	private $checker;
-	/** @var IRequest */
-	private $request;
 	/** @var IUserSession */
 	private $userSession;
-	/** @var IURLGenerator */
-	private $urlGenerator;
 
 	public function __construct(Checker $checker,
-								IRequest $request,
-								IUserSession $userSession,
-								IURLGenerator $urlGenerator) {
+								IUserSession $userSession) {
 		$this->checker = $checker;
-		$this->request = $request;
 		$this->userSession = $userSession;
-		$this->urlGenerator = $urlGenerator;
 	}
 
 	protected function isBlockablePath(string $path, string $mountPoint): bool {
@@ -92,43 +78,9 @@ class Helper {
 		return $this->isBlockablePath($path, $mountPoint);
 	}
 
-	private function getPublicLinkShareToken() {
-		// Regular public sharing URLs
-		$shareUrlStart =$this->urlGenerator->linkToRouteAbsolute('files_sharing.sharecontroller.showShare', ['token' => 'token']);
-		$shareUrlStart = substr($shareUrlStart,0, -5);
-		$currentUrl = $this->request->getServerProtocol() . '://' . $this->request->getServerHost() . $this->request->getRequestUri();
-
-		if(substr($currentUrl, 0, strlen($shareUrlStart)) === $shareUrlStart) {
-			return strstr(substr($currentUrl, strlen($shareUrlStart)), '/', true);
-		}
-
-		// /public.php/webdav
-		$publicWebdavUrl = $this->urlGenerator->getAbsoluteURL('/public.php/webdav');
-
-		if(substr($currentUrl, 0, strlen($publicWebdavUrl)) === $publicWebdavUrl) {
-			return $_SERVER['PHP_AUTH_USER'];
-		}
-		return null;
-	}
-
-	public function verifyAccess(string $path, string $mountPoint, IStorage $storage): bool {
-		// Check if it is a public link
-		$publicShareToken = $this->getPublicLinkShareToken();
-		if($publicShareToken !== null) {
-			return $this->checker->currentRequestHasSignedForPublicShare($publicShareToken);
-		}
-
-		// Check if it is a shared storage and if the terms of conditions have been
-		// signed already for it
-		$userFolder = \OC::$server->getUserFolder();
-		if($userFolder instanceof Folder) {
-			$node = \OC::$server->getRootFolder()->get($mountPoint);
-
-			if ($storage->instanceOfStorage(SharedStorage::class)) {
-				if ($node->getOwner() !== $this->userSession->getUser()) {
-					return $this->checker->currentUserHasSignedForStorage($node->getId());
-				}
-			}
+	public function verifyAccess(string $path, string $mountPoint): bool {
+		if (!$this->userSession->isLoggedIn() || !$this->isBlockable($path, $mountPoint)) {
+			return true;
 		}
 
 		// Check if the user has signed the terms and conditions already

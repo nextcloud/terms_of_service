@@ -1,7 +1,4 @@
 [
-  "AccessTypes.js",
-  "Signer.js",
   "jquery.popupoverlay.js",
-  "popup.js",
-  "interceptor.js"
+  "popup.js"
 ]

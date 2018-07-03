@@ -61,41 +61,13 @@ class SignatoryMapper extends QBMapper {
 	 * Get all signatories of a specific type for an user
 	 *
 	 * @param IUser $user
-	 * @param int $accessType
 	 * @return Signatory[]
 	 */
-	public function getSignatoriesByUser(IUser $user,
-										 int $accessType): array {
+	public function getSignatoriesByUser(IUser $user): array {
 		$query = $this->db->getQueryBuilder();
 		$query->select('*')
 			->from(self::TABLENAME)
-			->where($query->expr()->eq('user_id', $query->createNamedParameter($user->getUID())))
-			->andWhere($query->expr()->eq('access_type', $query->createNamedParameter($accessType)));
-
-		$entities = [];
-		$result = $query->execute();
-		while ($row = $result->fetch()){
-			$entities[] = $this->mapRowToEntity($row);
-		}
-		$result->closeCursor();
-
-		return $entities;
-	}
-
-	/**
-	 * Get all signatories of a specific type for an IP address
-	 *
-	 * @param string $remoteAddress
-	 * @param int $accessType
-	 * @return Signatory[]
-	 */
-	public function getSignatoriesByRemoteAddress(string $remoteAddress,
-												  int $accessType): array {
-		$query = $this->db->getQueryBuilder();
-		$query->select('*')
-			->from(self::TABLENAME)
-			->where($query->expr()->eq('remote_ip', $query->createNamedParameter($remoteAddress)))
-			->andWhere($query->expr()->eq('access_type', $query->createNamedParameter($accessType)));
+			->where($query->expr()->eq('user_id', $query->createNamedParameter($user->getUID())));
 
 		$entities = [];
 		$result = $query->execute();

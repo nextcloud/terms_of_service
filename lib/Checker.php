@@ -23,14 +23,10 @@ namespace OCA\TermsOfService;
 
 use OCA\TermsOfService\Db\Mapper\SignatoryMapper;
 use OCA\TermsOfService\Db\Mapper\TermsMapper;
-use OCA\TermsOfService\Types\AccessTypes;
-use OCP\IRequest;
 use OCP\IUser;
 use OCP\IUserSession;
 
 class Checker {
-	/** @var IRequest */
-	private $request;
 	/** @var IUserSession */
 	private $userSession;
 	/** @var SignatoryMapper */
@@ -40,12 +36,10 @@ class Checker {
 	/** @var CountryDetector */
 	private $countryDetector;
 
-	public function __construct(IRequest $request,
-								IUserSession $userSession,
+	public function __construct(IUserSession $userSession,
 								SignatoryMapper $signatoryMapper,
 								TermsMapper $termsMapper,
 								CountryDetector $countryDetector) {
-		$this->request = $request;
 		$this->userSession = $userSession;
 		$this->signatoryMapper = $signatoryMapper;
 		$this->termsMapper = $termsMapper;
@@ -65,9 +59,18 @@ class Checker {
 		}
 
 		$countryCode = $this->countryDetector->getCountry();
-		$signatories = $this->signatoryMapper->getSignatoriesByUser($user, AccessTypes::LOGIN);
+		$signatories = $this->signatoryMapper->getSignatoriesByUser($user);
 		if (!empty($signatories)) {
 			$terms = $this->termsMapper->getTermsForCountryCode($countryCode);
+			if (empty($terms)) {
+				// No terms for the country, check for global terms
+				$terms = $this->termsMapper->getTermsForCountryCode($countryCode);
+				if (empty($terms)) {
+					// No terms that would need accepting
+					return true;
+				}
+			}
+
 			foreach($signatories as $signatory) {
 				foreach($terms as $term) {
 					if((int)$term->getId() === (int)$signatory->getTermsId()) {
@@ -78,73 +81,5 @@ class Checker {
 		}
 
 		return false;
-	}
-
-	public function getSignedStorageIds(): array {
-		$user = $this->userSession->getUser();
-		if(!($user instanceof IUser)) {
-			return [];
-		}
-
-		$countryCode = $this->countryDetector->getCountry();
-		$signatories = $this->signatoryMapper->getSignatoriesByUser($user, AccessTypes::INTERNAL_SHARE);
-
-		$storageIds = [];
-		$terms = $this->termsMapper->getTerms();
-		foreach($signatories as $signatory) {
-			foreach($terms as $term) {
-				if($term->getCountryCode() === $countryCode) {
-					$storageIds[] = (int)$signatory->getMetadata();
-				}
-			}
-		}
-
-		return $storageIds;
-	}
-
-	/**
-	 * Whether the current user has signed for a specific file id
-	 *
-	 * @param int $storageId
-	 * @return bool
-	 */
-	public function currentUserHasSignedForStorage(int $storageId): bool {
-		return \in_array($storageId, $this->getSignedStorageIds(), true);
-	}
-
-	public function getSignedPublicShareIds(): array {
-		$countryCode = $this->countryDetector->getCountry();
-		$signatories = $this->signatoryMapper->getSignatoriesByRemoteAddress($this->request->getRemoteAddress(), AccessTypes::PUBLIC_SHARE);
-
-		$publicShareIds = [];
-		$cookieValue = $this->request->getCookie('TermsOfServiceShareIdCookie');
-		if($cookieValue === null) {
-			return [];
-		}
-		$claimedSignatures = json_decode($cookieValue, true);
-		if(!\is_array($claimedSignatures)) {
-			return [];
-		}
-
-		$terms = $this->termsMapper->getTerms();
-		foreach($signatories as $signatory) {
-			foreach($terms as $term) {
-				if ($term->getCountryCode() === $countryCode && \in_array($signatory->getMetadata(), $claimedSignatures, true)) {
-					$publicShareIds[] = $signatory->getMetadata();
-				}
-			}
-		}
-
-		return $publicShareIds;
-	}
-
-	/**
-	 * Whether the current user has signed for a public share identifier
-	 *
-	 * @param string $shareToken
-	 * @return bool
-	 */
-	public function currentRequestHasSignedForPublicShare(string $shareToken): bool {
-		return \in_array($shareToken, $this->getSignedPublicShareIds(), true);
 	}
 }

@@ -22,45 +22,26 @@
 namespace OCA\TermsOfService\Filesystem;
 
 use OC\Files\Storage\Wrapper\Wrapper;
-use OCA\TermsOfService\Checker;
 use OCP\Files\ForbiddenException;
-use OCP\IRequest;
 
 class StorageWrapper extends Wrapper {
 	/** @var string */
 	public $mountPoint;
-	/** @var IRequest|null */
-	private $request;
-	/** @var Checker */
-	private $checker;
 	/** @var Helper */
 	private $helper;
 
 	public function __construct($parameters) {
 		parent::__construct($parameters);
 		$this->mountPoint = $parameters['mountPoint'];
-		$this->request = $parameters['request'];
-		$this->checker = $parameters['checker'];
 
 		$this->helper = new Helper(
-			$this->checker,
-			$this->request,
-			\OC::$server->getUserSession(),
-			\OC::$server->getURLGenerator()
+			$parameters['checker'],
+			\OC::$server->getUserSession()
 		);
 	}
 
-	public function getCache($path = '',
-							 $storage = null) {
-		if (!$storage) {
-			$storage = $this;
-		}
-		$cache = $this->storage->getCache($path, $storage);
-		return new CacheWrapper($cache, $storage, $this->helper, $this->mountPoint);
-	}
-
 	public function isCreatable($path) {
-		if(!$this->helper->verifyAccess($path, $this->mountPoint, $this->storage) && $this->helper->isBlockable($path, $this->mountPoint)) {
+		if(!$this->helper->verifyAccess($path, $this->mountPoint)) {
 			return false;
 		}
 
@@ -68,7 +49,7 @@ class StorageWrapper extends Wrapper {
 	}
 
 	public function isUpdatable($path) {
-		if(!$this->helper->verifyAccess($path, $this->mountPoint, $this->storage) && $this->helper->isBlockable($path, $this->mountPoint)) {
+		if(!$this->helper->verifyAccess($path, $this->mountPoint)) {
 			return false;
 		}
 
@@ -76,7 +57,7 @@ class StorageWrapper extends Wrapper {
 	}
 
 	public function isDeletable($path) {
-		if(!$this->helper->verifyAccess($path, $this->mountPoint, $this->storage) && $this->helper->isBlockable($path, $this->mountPoint)) {
+		if(!$this->helper->verifyAccess($path, $this->mountPoint)) {
 			return false;
 		}
 
@@ -84,7 +65,7 @@ class StorageWrapper extends Wrapper {
 	}
 
 	public function isReadable($path) {
-		if(!$this->helper->verifyAccess($path, $this->mountPoint, $this->storage) && $this->helper->isBlockable($path, $this->mountPoint)) {
+		if(!$this->helper->verifyAccess($path, $this->mountPoint)) {
 			return false;
 		}
 
@@ -92,7 +73,7 @@ class StorageWrapper extends Wrapper {
 	}
 
 	public function isSharable($path) {
-		if(!$this->helper->verifyAccess($path, $this->mountPoint, $this->storage) && $this->helper->isBlockable($path, $this->mountPoint)) {
+		if(!$this->helper->verifyAccess($path, $this->mountPoint)) {
 			return false;
 		}
 
@@ -100,11 +81,7 @@ class StorageWrapper extends Wrapper {
 	}
 
 	public function fopen($path, $mode) {
-		if($this->helper->verifyAccess($path, $this->mountPoint, $this->storage)) {
-			return $this->storage->fopen($path, $mode);
-		}
-
-		if(!$this->helper->isBlockable($path, $this->mountPoint)) {
+		if ($this->helper->verifyAccess($path, $this->mountPoint)) {
 			return $this->storage->fopen($path, $mode);
 		}
 
