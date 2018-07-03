@@ -19,11 +19,11 @@
  *
  */
 
-namespace OCA\TermsAndConditions\Filesystem;
+namespace OCA\TermsOfService\Filesystem;
 
 use OC\Files\Storage\Wrapper\Wrapper;
 use OCA\Files_Sharing\SharedStorage;
-use OCA\TermsAndConditions\Checker;
+use OCA\TermsOfService\Checker;
 use OCP\Files\Folder;
 use OCP\Files\Storage\IStorage;
 use OCP\IRequest;

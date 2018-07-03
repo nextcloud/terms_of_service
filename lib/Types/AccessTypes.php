@@ -19,7 +19,7 @@
  *
  */
 
-namespace OCA\TermsAndConditions\Types;
+namespace OCA\TermsOfService\Types;
 
 class AccessTypes {
 	const LOGIN = 1;

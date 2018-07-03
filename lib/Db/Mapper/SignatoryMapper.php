@@ -19,10 +19,10 @@
  *
  */
 
-namespace OCA\TermsAndConditions\Db\Mapper;
+namespace OCA\TermsOfService\Db\Mapper;
 
-use OCA\TermsAndConditions\Db\Entities\Signatory;
-use OCA\TermsAndConditions\Db\Entities\Terms;
+use OCA\TermsOfService\Db\Entities\Signatory;
+use OCA\TermsOfService\Db\Entities\Terms;
 use OCP\AppFramework\Db\QBMapper;
 use OCP\IDBConnection;
 use OCP\IUser;
@@ -31,7 +31,7 @@ use OCP\IUser;
  * @method Signatory mapRowToEntity(array $row)
  */
 class SignatoryMapper extends QBMapper {
-	const TABLENAME = 'termsandconditions_signatories';
+	const TABLENAME = 'termsofservice_signatories';
 
 	public function __construct(IDBConnection $db) {
 		parent::__construct($db, self::TABLENAME, Signatory::class);

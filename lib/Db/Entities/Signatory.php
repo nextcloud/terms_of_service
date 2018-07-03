@@ -19,7 +19,7 @@
  *
  */
 
-namespace OCA\TermsAndConditions\Db\Entities;
+namespace OCA\TermsOfService\Db\Entities;
 
 use OCP\AppFramework\Db\Entity;
 

@@ -21,26 +21,26 @@
  -->
 
 <template>
-	<div id="termsandconditions" class="section">
-		<h2>{{ t('termsandconditions', 'Terms and conditions') }}</h2>
+	<div id="terms_of_service" class="section">
+		<h2>{{ t('terms_of_service', 'Terms of service') }}</h2>
 
-		<p class="settings-hint">{{ t('termsandconditions', 'Require users to accept the terms of service before accessing the service.') }}</p>
+		<p class="settings-hint">{{ t('terms_of_service', 'Require users to accept the terms of service before accessing the service.') }}</p>
 
-		<p class="settings-hint">{{ t('termsandconditions', 'For formatting purposes Markdown is supported.') }}</p>
+		<p class="settings-hint">{{ t('terms_of_service', 'For formatting purposes Markdown is supported.') }}</p>
 
 		<span>
-			<v-select v-model="country" :options="countryOptions" :placeholder="t('termsandconditions', 'Select a region')"></v-select>
-			<v-select v-model="language" :options="languageOptions" :placeholder="t('termsandconditions', 'Select a language')"></v-select>
+			<v-select v-model="country" :options="countryOptions" :placeholder="t('terms_of_service', 'Select a region')"></v-select>
+			<v-select v-model="language" :options="languageOptions" :placeholder="t('terms_of_service', 'Select a language')"></v-select>
 		</span>
 
-		<textarea id="termsofservice-countryspecific-textarea" v-model="body" :placeholder="t('termsandconditions', 'By using this service …')"></textarea>
+		<textarea id="terms_of_service-countryspecific-textarea" v-model="body" :placeholder="t('terms_of_service', 'By using this service …')"></textarea>
 		<button @click="onSubmit" :disabled="saveButtonDisabled">{{saveButtonText}}</button>
 
-		<h3 v-if="hasTerms">{{ t('termsandconditions', 'Existing terms and conditions') }}</h3>
+		<h3 v-if="hasTerms">{{ t('terms_of_service', 'Existing terms of service') }}</h3>
 
 		<button @click="onResetSignatories" :disabled="resetButtonDisabled">{{resetButtonText}}</button>
 
-		<ul id="termsofservice-countryspecific-list" v-if="hasTerms">
+		<ul id="terms_of_service-countryspecific-list" v-if="hasTerms">
 			<term v-for="(t, key) in terms" v-bind="t" :key="t.id"></term>
 		</ul>
 	</div>
@@ -78,10 +78,10 @@ export default {
 			}
 
 			this.saveButtonDisabled = true;
-			this.saveButtonText = t('termsandconditions', 'Saving …');
+			this.saveButtonText = t('terms_of_service', 'Saving …');
 
 			axios
-				.post(OC.generateUrl('/apps/termsandconditions/terms'),
+				.post(OC.generateUrl('/apps/terms_of_service/terms'),
 					{
 						countryCode: this.country.value,
 						languageCode: this.language.value,
@@ -91,23 +91,23 @@ export default {
 				.then(response => {
 					this.$set(this.terms, response.data.id, response.data);
 
-					this.saveButtonText = t('termsandconditions', 'Saved!');
+					this.saveButtonText = t('terms_of_service', 'Saved!');
 					setTimeout(() => {
-						this.saveButtonText = t('termsandconditions', 'Save');
+						this.saveButtonText = t('terms_of_service', 'Save');
 						this.saveButtonDisabled = false;
 					}, 2000);
 				});
 		},
 		onResetSignatories () {
 			this.resetButtonDisabled = true;
-			this.resetButtonText = t('termsandconditions', 'Resetting …');
+			this.resetButtonText = t('terms_of_service', 'Resetting …');
 
 			axios
-				.delete(OC.generateUrl('/apps/termsandconditions/sign'), this.tokenHeaders)
+				.delete(OC.generateUrl('/apps/terms_of_service/sign'), this.tokenHeaders)
 				.then(response => {
-					this.resetButtonText = t('termsandconditions', 'Reset!');
+					this.resetButtonText = t('terms_of_service', 'Reset!');
 					setTimeout(() => {
-						this.resetButtonText = t('termsandconditions', 'Reset all signatories');
+						this.resetButtonText = t('terms_of_service', 'Reset all signatories');
 						this.resetButtonDisabled = false;
 					}, 2000);
 				});
@@ -129,10 +129,10 @@ export default {
 	},
 
 	mounted () {
-		this.saveButtonText = t('termsandconditions', 'Loading …');
-		this.resetButtonText = t('termsandconditions', 'Reset all signatories');
+		this.saveButtonText = t('terms_of_service', 'Loading …');
+		this.resetButtonText = t('terms_of_service', 'Reset all signatories');
 		axios
-			.get(OC.generateUrl('/apps/termsandconditions/terms'), this.tokenHeaders)
+			.get(OC.generateUrl('/apps/terms_of_service/terms'), this.tokenHeaders)
 			.then(response => {
 				this.terms = response.data.terms;
 				this.countries = response.data.countryCodes;
@@ -150,7 +150,7 @@ export default {
 					});
 				});
 
-				this.saveButtonText = t('termsandconditions', 'Save');
+				this.saveButtonText = t('terms_of_service', 'Save');
 				this.saveButtonDisabled = false;
 			});
 	}

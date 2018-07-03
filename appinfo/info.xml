@@ -1,17 +1,17 @@
 <?xml version="1.0"?>
 <info xmlns:xsi= "http://www.w3.org/2001/XMLSchema-instance"
 	  xsi:noNamespaceSchemaLocation="https://apps.nextcloud.com/schema/apps/info.xsd">
-	<id>termsandconditions</id>
-	<name>Terms &amp; Conditions</name>
-	<summary><![CDATA[Requires users to accept the terms and conditions before accessing data.]]></summary>
-	<description><![CDATA[Requires users to accept the terms and conditions before accessing data.
+	<id>terms_of_service</id>
+	<name>Terms of service</name>
+	<summary><![CDATA[Requires users to accept the terms of service before accessing data.]]></summary>
+	<description><![CDATA[Requires users to accept the terms of service before accessing data.
 This product includes GeoLite2 data created by MaxMind, available from [maxmind.com](http://www.maxmind.com)]]></description>
 
 	<version>0.2.0</version>
 	<licence>agpl</licence>
 	<author>Lukas Reschke</author>
 
-	<namespace>TermsAndConditions</namespace>
+	<namespace>TermsOfService</namespace>
 
 	<types>
 		<filesystem/>
@@ -20,16 +20,16 @@ This product includes GeoLite2 data created by MaxMind, available from [maxmind.
 	<category>files</category>
 	<category>security</category>
 
-	<website>https://github.com/nextcloud/termsandconditions/</website>
-	<bugs>https://github.com/nextcloud/termsandconditions/issues</bugs>
-	<repository>https://github.com/nextcloud/termsandconditions.git</repository>
+	<website>https://github.com/nextcloud/terms_of_service/</website>
+	<bugs>https://github.com/nextcloud/terms_of_service/issues</bugs>
+	<repository>https://github.com/nextcloud/terms_of_service.git</repository>
 
 	<dependencies>
 		<nextcloud min-version="14" max-version="14" />
 	</dependencies>
 
 	<settings>
-		<admin>OCA\TermsAndConditions\Settings\Admin</admin>
-		<admin-section>OCA\TermsAndConditions\Settings\AdminSection</admin-section>
+		<admin>OCA\TermsOfService\Settings\Admin</admin>
+		<admin-section>OCA\TermsOfService\Settings\AdminSection</admin-section>
 	</settings>
 </info>

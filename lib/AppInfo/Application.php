@@ -19,15 +19,15 @@
  *
  */
 
-namespace OCA\TermsAndConditions\AppInfo;
+namespace OCA\TermsOfService\AppInfo;
 
 use OC\Files\Filesystem;
 use OC\Files\Storage\Wrapper\Wrapper;
-use OCA\TermsAndConditions\Checker;
-use OCA\TermsAndConditions\CountryDetector;
-use OCA\TermsAndConditions\Db\Mapper\SignatoryMapper;
-use OCA\TermsAndConditions\Db\Mapper\TermsMapper;
-use OCA\TermsAndConditions\Filesystem\StorageWrapper;
+use OCA\TermsOfService\Checker;
+use OCA\TermsOfService\CountryDetector;
+use OCA\TermsOfService\Db\Mapper\SignatoryMapper;
+use OCA\TermsOfService\Db\Mapper\TermsMapper;
+use OCA\TermsOfService\Filesystem\StorageWrapper;
 use OCP\AppFramework\App;
 use OCP\Files\Storage\IStorage;
 use OCP\IRequest;
@@ -52,7 +52,7 @@ class Application extends App {
 								SignatoryMapper $signatoryMapper = null,
 								TermsMapper $termsMapper = null,
 								CountryDetector $countryDetector = null) {
-		$this->appName = 'termsandconditions';
+		$this->appName = 'terms_of_service';
 		$this->request = $request;
 		$this->userSession = $userSession;
 		$this->signatoryMapper = $signatoryMapper;

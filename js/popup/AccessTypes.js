@@ -19,8 +19,8 @@
  */
 
 (function(OCA) {
-	OCA.TermsAndConditions = OCA.TermsAndConditions || {};
-	OCA.TermsAndConditions.AccessTypes = {
+	OCA.TermsOfService = OCA.TermsOfService || {};
+	OCA.TermsOfService.AccessTypes = {
 		LOGIN: 1,
 		PUBLIC_SHARE: 2,
 		INTERNAL_SHARE: 3

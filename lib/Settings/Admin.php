@@ -19,10 +19,10 @@
  *
  */
 
-namespace OCA\TermsAndConditions\Settings;
+namespace OCA\TermsOfService\Settings;
 
-use OCA\TermsAndConditions\Db\Mapper\CountryMapper;
-use OCA\TermsAndConditions\Db\Mapper\LanguageMapper;
+use OCA\TermsOfService\Db\Mapper\CountryMapper;
+use OCA\TermsOfService\Db\Mapper\LanguageMapper;
 use OCP\AppFramework\Http\TemplateResponse;
 use OCP\Settings\ISettings;
 
@@ -43,7 +43,7 @@ class Admin implements ISettings {
 	 */
 	public function getForm(): TemplateResponse {
 		return new TemplateResponse(
-			'termsandconditions',
+			'terms_of_service',
 			'settings',
 			[
 				'countries' => $this->countryMapper->getCountries(),
@@ -57,7 +57,7 @@ class Admin implements ISettings {
 	 * {@inheritdoc}
 	 */
 	public function getSection(): string {
-		return 'termsandconditions';
+		return 'terms_of_service';
 	}
 
 	/**

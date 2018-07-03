@@ -20,7 +20,7 @@
  */
 
 
-namespace OCA\TermsAndConditions\Settings;
+namespace OCA\TermsOfService\Settings;
 
 
 use OCP\IL10N;
@@ -45,7 +45,7 @@ class AdminSection implements IIconSection {
 	 * @returns string
 	 */
 	public function getID(): string {
-		return 'termsandconditions';
+		return 'terms_of_service';
 	}
 
 	/**
@@ -55,7 +55,7 @@ class AdminSection implements IIconSection {
 	 * @return string
 	 */
 	public function getName(): string {
-		return $this->l->t('Terms and conditions');
+		return $this->l->t('Terms of service');
 	}
 
 	/**
@@ -71,6 +71,6 @@ class AdminSection implements IIconSection {
 	 * {@inheritdoc}
 	 */
 	public function getIcon(): string {
-		return $this->url->imagePath('termsandconditions', 'app-dark.svg');
+		return $this->url->imagePath('terms_of_service', 'app-dark.svg');
 	}
 }

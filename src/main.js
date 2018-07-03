@@ -29,6 +29,6 @@ Vue.prototype.OC = OC;
 Vue.prototype.OCA = OCA;
 
 new Vue({
-  el: '#termsandconditions',
+  el: '#terms_of_service',
   render: h => h(App)
 });

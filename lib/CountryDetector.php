@@ -19,11 +19,11 @@
  *
  */
 
-namespace OCA\TermsAndConditions;
+namespace OCA\TermsOfService;
 
 use MaxMind\Db\Reader;
 use MaxMind\Db\Reader\InvalidDatabaseException;
-use OCA\TermsAndConditions\Db\Mapper\CountryMapper;
+use OCA\TermsOfService\Db\Mapper\CountryMapper;
 use OCP\IRequest;
 
 class CountryDetector {
@@ -44,7 +44,7 @@ class CountryDetector {
 	 */
 	public function getCountry(): string {
 		// Check if there is a cookie
-		$countryCookie = $this->request->getCookie('TermsAndConditionsCountryCookie');
+		$countryCookie = $this->request->getCookie('TermsOfServiceCountryCookie');
 		if($this->countryMapper->isValidCountry($countryCookie)) {
 			return $countryCookie;
 		}

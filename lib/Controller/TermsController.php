@@ -19,16 +19,16 @@
  *
  */
 
-namespace OCA\TermsAndConditions\Controller;
+namespace OCA\TermsOfService\Controller;
 
-use OCA\TermsAndConditions\Checker;
-use OCA\TermsAndConditions\CountryDetector;
-use OCA\TermsAndConditions\Db\Entities\Terms;
-use OCA\TermsAndConditions\Db\Mapper\CountryMapper;
-use OCA\TermsAndConditions\Db\Mapper\LanguageMapper;
-use OCA\TermsAndConditions\Db\Mapper\SignatoryMapper;
-use OCA\TermsAndConditions\Db\Mapper\TermsMapper;
-use OCA\TermsAndConditions\Exceptions\TermsNotFoundException;
+use OCA\TermsOfService\Checker;
+use OCA\TermsOfService\CountryDetector;
+use OCA\TermsOfService\Db\Entities\Terms;
+use OCA\TermsOfService\Db\Mapper\CountryMapper;
+use OCA\TermsOfService\Db\Mapper\LanguageMapper;
+use OCA\TermsOfService\Db\Mapper\SignatoryMapper;
+use OCA\TermsOfService\Db\Mapper\TermsMapper;
+use OCA\TermsOfService\Exceptions\TermsNotFoundException;
 use OCP\AppFramework\Controller;
 use OCP\AppFramework\Http;
 use OCP\AppFramework\Http\JSONResponse;

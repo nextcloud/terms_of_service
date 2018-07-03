@@ -18,7 +18,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
  */
-namespace OCA\TermsAndConditions\Migration;
+namespace OCA\TermsOfService\Migration;
 
 use OCP\DB\ISchemaWrapper;
 use OCP\Migration\SimpleMigrationStep;
@@ -37,8 +37,8 @@ class Version1000Date20180503135440 extends SimpleMigrationStep {
 		/** @var ISchemaWrapper $schema */
 		$schema = $schemaClosure();
 
-		if (!$schema->hasTable('termsandconditions_terms')) {
-			$table = $schema->createTable('termsandconditions_terms');
+		if (!$schema->hasTable('termsofservice_terms')) {
+			$table = $schema->createTable('termsofservice_terms');
 			$table->addColumn('id', 'integer', [
 				'autoincrement' => true,
 				'notnull' => true,
@@ -57,8 +57,8 @@ class Version1000Date20180503135440 extends SimpleMigrationStep {
 			$table->setPrimaryKey(['id']);
 		}
 
-		if (!$schema->hasTable('termsandconditions_signatories')) {
-			$table = $schema->createTable('termsandconditions_signatories');
+		if (!$schema->hasTable('termsofservice_signatories')) {
+			$table = $schema->createTable('termsofservice_signatories');
 			$table->addColumn('id', 'integer', [
 				'autoincrement' => true,
 				'notnull' => true,

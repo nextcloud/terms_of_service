@@ -21,15 +21,15 @@
 
 require_once __DIR__ . '/../vendor/autoload.php';
 
-\OCP\Util::addStyle('termsandconditions', 'overlay');
-\OCP\Util::addScript('termsandconditions', 'popup/merged');
+\OCP\Util::addStyle('terms_of_service', 'overlay');
+\OCP\Util::addScript('terms_of_service', 'popup/merged');
 
-$app = new \OCA\TermsAndConditions\AppInfo\Application(
+$app = new \OCA\TermsOfService\AppInfo\Application(
 	\OC::$server->getRequest(),
 	\OC::$server->getUserSession(),
-	\OC::$server->query(\OCA\TermsAndConditions\Db\Mapper\SignatoryMapper::class),
-	\OC::$server->query(\OCA\TermsAndConditions\Db\Mapper\TermsMapper::class),
-	\OC::$server->query(\OCA\TermsAndConditions\CountryDetector::class)
+	\OC::$server->query(\OCA\TermsOfService\Db\Mapper\SignatoryMapper::class),
+	\OC::$server->query(\OCA\TermsOfService\Db\Mapper\TermsMapper::class),
+	\OC::$server->query(\OCA\TermsOfService\CountryDetector::class)
 );
 \OCP\Util::connectHook('OC_Filesystem', 'preSetup', $app, 'addStorageWrapper');
 

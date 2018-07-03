@@ -19,6 +19,6 @@
  *
  */
 
-namespace OCA\TermsAndConditions\Exceptions;
+namespace OCA\TermsOfService\Exceptions;
 
 class TermsNotFoundException extends \Exception {}

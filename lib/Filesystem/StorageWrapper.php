@@ -19,10 +19,10 @@
  *
  */
 
-namespace OCA\TermsAndConditions\Filesystem;
+namespace OCA\TermsOfService\Filesystem;
 
 use OC\Files\Storage\Wrapper\Wrapper;
-use OCA\TermsAndConditions\Checker;
+use OCA\TermsOfService\Checker;
 use OCP\Files\ForbiddenException;
 use OCP\IRequest;
 
@@ -108,6 +108,6 @@ class StorageWrapper extends Wrapper {
 			return $this->storage->fopen($path, $mode);
 		}
 
-		throw new ForbiddenException('Terms of Service not signed!', true);
+		throw new ForbiddenException('Terms of service not signed!', true);
 	}
 }

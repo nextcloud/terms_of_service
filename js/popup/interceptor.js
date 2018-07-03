@@ -19,19 +19,19 @@
  */
 
 (function(OCA) {
-	OCA.TermsAndConditions = OCA.TermsAndConditions || {};
-	OCA.TermsAndConditions.Interceptor = {
+	OCA.TermsOfService = OCA.TermsOfService || {};
+	OCA.TermsOfService.Interceptor = {
 
 		initialize: function() {
-			OCA.TermsAndConditions.Interceptor.checkLogin();
-			OCA.TermsAndConditions.Interceptor.accessSharedStorage();
-			OCA.TermsAndConditions.Interceptor.accessPublicShares();
+			OCA.TermsOfService.Interceptor.checkLogin();
+			OCA.TermsOfService.Interceptor.accessSharedStorage();
+			OCA.TermsOfService.Interceptor.accessPublicShares();
 		},
 
 		checkLogin : function() {
 			if(oc_current_user !== null) {
-				if(!OCA.TermsAndConditions.Popup.serverResponse.signatories.hasSignedLogin) {
-					OCA.TermsAndConditions.Popup.show();
+				if(!OCA.TermsOfService.Popup.serverResponse.signatories.hasSignedLogin) {
+					OCA.TermsOfService.Popup.show();
 				}
 			}
 		},
@@ -41,8 +41,8 @@
 				var data = $(this).data();
 
 				if(data.mounttype === 'shared-root') {
-					if($.inArray(data.id, OCA.TermsAndConditions.Popup.serverResponse.signatories.signedStorages) === -1) {
-						OCA.TermsAndConditions.Popup.show(OCA.TermsAndConditions.AccessTypes.INTERNAL_SHARE, data.id);
+					if($.inArray(data.id, OCA.TermsOfService.Popup.serverResponse.signatories.signedStorages) === -1) {
+						OCA.TermsOfService.Popup.show(OCA.TermsOfService.AccessTypes.INTERNAL_SHARE, data.id);
 						e.preventDefault();
 					}
 				}
@@ -58,8 +58,8 @@
 					return;
 				}
 
-				if(FileList.dirInfo.mountType === 'shared' && $.inArray(FileList.dirInfo.id, OCA.TermsAndConditions.Popup.serverResponse.signatories.signedStorages) === -1) {
-						OCA.TermsAndConditions.Popup.show(OCA.TermsAndConditions.AccessTypes.INTERNAL_SHARE, FileList.dirInfo.id);
+				if(FileList.dirInfo.mountType === 'shared' && $.inArray(FileList.dirInfo.id, OCA.TermsOfService.Popup.serverResponse.signatories.signedStorages) === -1) {
+						OCA.TermsOfService.Popup.show(OCA.TermsOfService.AccessTypes.INTERNAL_SHARE, FileList.dirInfo.id);
 				}
 			}
 
@@ -69,8 +69,8 @@
 		accessPublicShares: function() {
 			var currentToken = $('#sharingToken').val();
 			if(typeof currentToken !== "undefined") {
-				if($.inArray(currentToken, OCA.TermsAndConditions.Popup.serverResponse.signatories.signedPublicLinks) === -1) {
-					OCA.TermsAndConditions.Popup.show(OCA.TermsAndConditions.AccessTypes.PUBLIC_SHARE, currentToken);
+				if($.inArray(currentToken, OCA.TermsOfService.Popup.serverResponse.signatories.signedPublicLinks) === -1) {
+					OCA.TermsOfService.Popup.show(OCA.TermsOfService.AccessTypes.PUBLIC_SHARE, currentToken);
 				}
 			}
 		}

@@ -19,7 +19,7 @@
  *
  */
 
-namespace OCA\TermsAndConditions\Filesystem;
+namespace OCA\TermsOfService\Filesystem;
 
 use OC\Files\Cache\Wrapper\CacheWrapper as Wrapper;
 use OCP\Constants;

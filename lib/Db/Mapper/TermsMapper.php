@@ -19,10 +19,10 @@
  *
  */
 
-namespace OCA\TermsAndConditions\Db\Mapper;
+namespace OCA\TermsOfService\Db\Mapper;
 
-use OCA\TermsAndConditions\Db\Entities\Terms;
-use OCA\TermsAndConditions\Exceptions\TermsNotFoundException;
+use OCA\TermsOfService\Db\Entities\Terms;
+use OCA\TermsOfService\Exceptions\TermsNotFoundException;
 use OCP\AppFramework\Db\QBMapper;
 use OCP\IDBConnection;
 
@@ -30,7 +30,7 @@ use OCP\IDBConnection;
  * @method Terms mapRowToEntity(array $row)
  */
 class TermsMapper extends QBMapper {
-	const TABLENAME = 'termsandconditions_terms';
+	const TABLENAME = 'termsofservice_terms';
 
 	public function __construct(IDBConnection $db) {
 		parent::__construct($db, self::TABLENAME, Terms::class);

@@ -19,8 +19,8 @@
  */
 
 (function(OCA) {
-	OCA.TermsAndConditions = OCA.TermsAndConditions || {};
-	OCA.TermsAndConditions.Popup = {
+	OCA.TermsOfService = OCA.TermsOfService || {};
+	OCA.TermsOfService.Popup = {
 		mappings: [],
 		serverResponse: [],
 		signingType: null,
@@ -28,13 +28,13 @@
 
 		acceptButtonLanguages : {
 			'DE': 'Ich bestätige, dass ich die obigen Allgemeinen Geschäftsbedingungen gelesen habe und akzeptiere.',
-			'DEFAULT':  t('termsandconditions', 'I acknowledge that I have read and agree to the above Terms and Conditions'),
+			'DEFAULT':  t('terms_of_service', 'I acknowledge that I have read and agree to the above terms of service'),
 		},
 
 		OVERLAY_TEMPLATE: '' +
 		'<div id="tos-overlay" class="hidden" style="background-color: white; border-radius: 4px; width: 90%">' +
 		'	<div style="padding: 20px;">' +
-		'		<h3 style="float: left;">' + t('termsandconditions', 'Terms and Conditions') + '</h3>' +
+		'		<h3 style="float: left;">' + t('terms_of_service', 'Terms of service') + '</h3>' +
 		'		<select style="float:right;" id="tos-language-chooser"></select>' +
 		'		<select style="float:right;" id="tos-country-chooser"></select>' +
 		'		<div style="clear: both;"></div>' +
@@ -42,22 +42,22 @@
 		'		<span class="text-content"></span>' +
 		'		<img style="display: block; margin-left: auto; margin-right: auto;" class="float-spinner" alt="" src="' + OC.imagePath('core', 'loading-dark.gif') + '"/>' +
 		'		<div style="clear: both;"></div>' +
-		'		<button id="tos-accept-button" style="width: 100%">' + t('termsandconditions', 'I acknowledge that I have read and agree to the above Terms and Conditions') + '</button>' +
+		'		<button id="tos-accept-button" style="width: 100%">' + t('terms_of_service', 'I acknowledge that I have read and agree to the above terms of service') + '</button>' +
 		'	</div>' +
 		'</div>',
 
 		initialize: function () {
-			$('body').prepend(OCA.TermsAndConditions.Popup.OVERLAY_TEMPLATE);
+			$('body').prepend(OCA.TermsOfService.Popup.OVERLAY_TEMPLATE);
 			$('#tos-country-chooser').on('change', function () {
-				OCA.TermsAndConditions.Popup.selectCountry(this.value);
+				OCA.TermsOfService.Popup.selectCountry(this.value);
 			});
 
 			$('#tos-language-chooser').on('change', function () {
-				OCA.TermsAndConditions.Popup.loadTermsOfServiceText($('#tos-country-chooser').val(), this.value);
+				OCA.TermsOfService.Popup.loadTermsOfServiceText($('#tos-country-chooser').val(), this.value);
 			});
 
 			$('#tos-overlay > div > button').on('click', function() {
-				OCA.TermsAndConditions.Popup.sign();
+				OCA.TermsOfService.Popup.sign();
 			});
 		},
 
@@ -66,7 +66,7 @@
 		 * @param {string} languageCode
 		 */
 		loadTermsOfServiceText: function(countryCode, languageCode) {
-			var selectedTerms = OCA.TermsAndConditions.Popup.mappings[countryCode][languageCode];
+			var selectedTerms = OCA.TermsOfService.Popup.mappings[countryCode][languageCode];
 			$('#tos-overlay > div > span').html(selectedTerms.renderedBody);
 			$('#tos-current-selected-id').val(selectedTerms.id);
 		},
@@ -79,40 +79,40 @@
 			$('#tos-language-chooser').html('');
 
 			// Create the language codes
-			Object.keys(OCA.TermsAndConditions.Popup.mappings[countryCode]).forEach(function(key) {
+			Object.keys(OCA.TermsOfService.Popup.mappings[countryCode]).forEach(function(key) {
 				$('#tos-language-chooser')
 					.append($('<option></option>')
 						.attr('value', key)
-						.text(OCA.TermsAndConditions.Popup.serverResponse.languageCodes[key]));
+						.text(OCA.TermsOfService.Popup.serverResponse.languageCodes[key]));
 			});
 
 			// Select the best matching language
-			var bestLanguage = OCA.TermsAndConditions.Popup.serverResponse.currentSession.languageCode;
+			var bestLanguage = OCA.TermsOfService.Popup.serverResponse.currentSession.languageCode;
 			if($("#tos-language-chooser option[value='"+bestLanguage+"']").length > 0) {
 				$("#tos-language-chooser option[value='"+bestLanguage+"']").attr('selected','selected');
 			}
 
 			if($("#tos-language-chooser").val() === 'de') {
-				$('#tos-accept-button').html(OCA.TermsAndConditions.Popup.acceptButtonLanguages.DE);
+				$('#tos-accept-button').html(OCA.TermsOfService.Popup.acceptButtonLanguages.DE);
 			} else {
-				$('#tos-accept-button').html(OCA.TermsAndConditions.Popup.acceptButtonLanguages.DEFAULT);
+				$('#tos-accept-button').html(OCA.TermsOfService.Popup.acceptButtonLanguages.DEFAULT);
 			}
 			$("#tos-country-chooser option[value='"+countryCode+"']").attr('selected','selected');
 
-			OCA.TermsAndConditions.Popup.loadTermsOfServiceText(countryCode, $("#tos-language-chooser").val());
-			document.cookie = 'TermsAndConditionsCountryCookie='+countryCode+'; path=/';
+			OCA.TermsOfService.Popup.loadTermsOfServiceText(countryCode, $("#tos-language-chooser").val());
+			document.cookie = 'TermsOfServiceCountryCookie='+countryCode+'; path=/';
 		},
 
 		loadTerms: function() {
-			$.get(OC.generateUrl('/apps/termsandconditions/terms')).done(function (response) {
-				OCA.TermsAndConditions.Popup.serverResponse = response;
+			$.get(OC.generateUrl('/apps/terms_of_service/terms')).done(function (response) {
+				OCA.TermsOfService.Popup.serverResponse = response;
 				var hasTerms = false;
 				$.each(response.terms, function(id, terms) {
 					hasTerms = true;
-					if (typeof OCA.TermsAndConditions.Popup.mappings[terms.countryCode] === "undefined") {
-						OCA.TermsAndConditions.Popup.mappings[terms.countryCode] = [];
+					if (typeof OCA.TermsOfService.Popup.mappings[terms.countryCode] === "undefined") {
+						OCA.TermsOfService.Popup.mappings[terms.countryCode] = [];
 					}
-					OCA.TermsAndConditions.Popup.mappings[terms.countryCode][terms.languageCode] = terms;
+					OCA.TermsOfService.Popup.mappings[terms.countryCode][terms.languageCode] = terms;
 				});
 
 				if(hasTerms === false) {
@@ -120,7 +120,7 @@
 				}
 
 				// Create the country divs
-				Object.keys(OCA.TermsAndConditions.Popup.mappings).forEach(function(key) {
+				Object.keys(OCA.TermsOfService.Popup.mappings).forEach(function(key) {
 					$('#tos-country-chooser')
 						.append($('<option></option>')
 							.attr('value', key)
@@ -129,18 +129,18 @@
 
 				// Select the best matching country
 				var defaultCountry = response.currentSession.countryCode;
-				if(typeof OCA.TermsAndConditions.Popup.mappings[defaultCountry] === 'undefined') {
-					if(typeof OCA.TermsAndConditions.Popup.mappings['--'] === 'undefined') {
-						OCA.TermsAndConditions.Popup.selectCountry($('#tos-country-chooser').val());
+				if(typeof OCA.TermsOfService.Popup.mappings[defaultCountry] === 'undefined') {
+					if(typeof OCA.TermsOfService.Popup.mappings['--'] === 'undefined') {
+						OCA.TermsOfService.Popup.selectCountry($('#tos-country-chooser').val());
 					} else {
-						OCA.TermsAndConditions.Popup.selectCountry('--');
+						OCA.TermsOfService.Popup.selectCountry('--');
 					}
 				} else {
-					OCA.TermsAndConditions.Popup.selectCountry(defaultCountry);
+					OCA.TermsOfService.Popup.selectCountry(defaultCountry);
 				}
 				$('#tos-overlay > div > .float-spinner').css('display', 'none');
 
-				var interceptor = OCA.TermsAndConditions.Interceptor;
+				var interceptor = OCA.TermsOfService.Interceptor;
 				interceptor.initialize();
 			});
 		},
@@ -150,15 +150,15 @@
 		 * @param {string} id
 		 */
 		show : function(type, id) {
-			OCA.TermsAndConditions.Popup.signingId = id;
-			OCA.TermsAndConditions.Popup.signingType = type;
+			OCA.TermsOfService.Popup.signingId = id;
+			OCA.TermsOfService.Popup.signingType = type;
 			$('#tos-overlay').popup({autoopen: true, escape: false, blur: false});
 		},
 
 		sign : function() {
-			OCA.TermsAndConditions.Signer.sign(
-				OCA.TermsAndConditions.Popup.signingType,
-				OCA.TermsAndConditions.Popup.signingId
+			OCA.TermsOfService.Signer.sign(
+				OCA.TermsOfService.Popup.signingType,
+				OCA.TermsOfService.Popup.signingId
 			);
 		},
 
@@ -170,7 +170,7 @@
 })(OCA);
 
 $(document).ready(function() {
-	var popup = OCA.TermsAndConditions.Popup;
+	var popup = OCA.TermsOfService.Popup;
 	popup.initialize();
 	popup.loadTerms();
 });

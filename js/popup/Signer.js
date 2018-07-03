@@ -19,18 +19,18 @@
  */
 
 (function(OCA) {
-	OCA.TermsAndConditions = OCA.TermsAndConditions || {};
-	OCA.TermsAndConditions.Signer = {
+	OCA.TermsOfService = OCA.TermsOfService || {};
+	OCA.TermsOfService.Signer = {
 
 		signLogin : function() {
 			$.ajax({
-				url: OC.generateUrl('/apps/termsandconditions/sign/login'),
+				url: OC.generateUrl('/apps/terms_of_service/sign/login'),
 				type: 'POST',
 				data: {
 					termId: $('#tos-current-selected-id').val()
 				},
 				success: function() {
-					OCA.TermsAndConditions.Popup.hide();
+					OCA.TermsOfService.Popup.hide();
 				}
 			});
 		},
@@ -50,14 +50,14 @@
 		 */
 		signInternalShare : function(shareId) {
 			$.ajax({
-				url: OC.generateUrl('/apps/termsandconditions/sign/internalShare'),
+				url: OC.generateUrl('/apps/terms_of_service/sign/internalShare'),
 				type: 'POST',
 				data: {
 					termId: $('#tos-current-selected-id').val(),
 					shareId: shareId,
 				},
 				success: function() {
-					OCA.TermsAndConditions.Popup.hide();
+					OCA.TermsOfService.Popup.hide();
 				}
 			});
 		},
@@ -67,17 +67,17 @@
 		 */
 		signPublicShare : function(publicShareId) {
 			$.ajax({
-				url: OC.generateUrl('/apps/termsandconditions/sign/publicShare'),
+				url: OC.generateUrl('/apps/terms_of_service/sign/publicShare'),
 				type: 'POST',
 				data: {
 					termId: $('#tos-current-selected-id').val(),
 					publicShareId: publicShareId,
 				},
 				success: function() {
-					var cookieName = 'TermsAndConditionsShareIdCookie';
+					var cookieName = 'TermsOfServiceShareIdCookie';
 					var cookieValue = [];
 
-					var existingCookieValue = OCA.TermsAndConditions.Signer.getCookie(cookieName);
+					var existingCookieValue = OCA.TermsOfService.Signer.getCookie(cookieName);
 					if(typeof existingCookieValue === "undefined") {
 						cookieValue = [publicShareId];
 					} else {
@@ -87,7 +87,7 @@
 
 					document.cookie = cookieName+'='+JSON.stringify(cookieValue)+'; path=/';
 
-					OCA.TermsAndConditions.Popup.hide();
+					OCA.TermsOfService.Popup.hide();
 				}
 			});
 		},
@@ -98,14 +98,14 @@
 		 */
 		sign : function(type, id) {
 			switch(type) {
-				case OCA.TermsAndConditions.AccessTypes.Login:
-					OCA.TermsAndConditions.Signer.signLogin();
+				case OCA.TermsOfService.AccessTypes.Login:
+					OCA.TermsOfService.Signer.signLogin();
 					break;
-				case OCA.TermsAndConditions.AccessTypes.PUBLIC_SHARE:
-					OCA.TermsAndConditions.Signer.signPublicShare(id);
+				case OCA.TermsOfService.AccessTypes.PUBLIC_SHARE:
+					OCA.TermsOfService.Signer.signPublicShare(id);
 					break;
-				case OCA.TermsAndConditions.AccessTypes.INTERNAL_SHARE:
-					OCA.TermsAndConditions.Signer.signInternalShare(id);
+				case OCA.TermsOfService.AccessTypes.INTERNAL_SHARE:
+					OCA.TermsOfService.Signer.signInternalShare(id);
 					break;
 				default:
 					break;

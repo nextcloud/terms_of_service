@@ -19,12 +19,12 @@
  *
  */
 
-namespace OCA\TermsAndConditions\Controller;
+namespace OCA\TermsOfService\Controller;
 
-use OCA\TermsAndConditions\Db\Entities\Signatory;
-use OCA\TermsAndConditions\Db\Entities\Terms;
-use OCA\TermsAndConditions\Db\Mapper\SignatoryMapper;
-use OCA\TermsAndConditions\Types\AccessTypes;
+use OCA\TermsOfService\Db\Entities\Signatory;
+use OCA\TermsOfService\Db\Entities\Terms;
+use OCA\TermsOfService\Db\Mapper\SignatoryMapper;
+use OCA\TermsOfService\Types\AccessTypes;
 use OCP\AppFramework\Controller;
 use OCP\AppFramework\Http\JSONResponse;
 use OCP\IRequest;

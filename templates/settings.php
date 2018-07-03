@@ -19,8 +19,8 @@
  *
  */
 
-script('termsandconditions', 'termsandconditions');
-style('termsandconditions', 'admin');
+script('terms_of_service', 'terms_of_service');
+style('terms_of_service', 'admin');
 ?>
 
-<div id="termsandconditions" class="section"></div>
+<div id="terms_of_service" class="section"></div>

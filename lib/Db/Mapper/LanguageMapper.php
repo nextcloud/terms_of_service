@@ -19,7 +19,7 @@
  *
  */
 
-namespace OCA\TermsAndConditions\Db\Mapper;
+namespace OCA\TermsOfService\Db\Mapper;
 
 use OCP\IL10N;
 

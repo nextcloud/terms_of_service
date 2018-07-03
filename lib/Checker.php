@@ -19,11 +19,11 @@
  *
  */
 
-namespace OCA\TermsAndConditions;
+namespace OCA\TermsOfService;
 
-use OCA\TermsAndConditions\Db\Mapper\SignatoryMapper;
-use OCA\TermsAndConditions\Db\Mapper\TermsMapper;
-use OCA\TermsAndConditions\Types\AccessTypes;
+use OCA\TermsOfService\Db\Mapper\SignatoryMapper;
+use OCA\TermsOfService\Db\Mapper\TermsMapper;
+use OCA\TermsOfService\Types\AccessTypes;
 use OCP\IRequest;
 use OCP\IUser;
 use OCP\IUserSession;
@@ -117,7 +117,7 @@ class Checker {
 		$signatories = $this->signatoryMapper->getSignatoriesByRemoteAddress($this->request->getRemoteAddress(), AccessTypes::PUBLIC_SHARE);
 
 		$publicShareIds = [];
-		$cookieValue = $this->request->getCookie('TermsAndConditionsShareIdCookie');
+		$cookieValue = $this->request->getCookie('TermsOfServiceShareIdCookie');
 		if($cookieValue === null) {
 			return [];
 		}
