@@ -45,11 +45,11 @@ class Helper {
 
 		// '', admin, 'files', 'path/to/file.txt'
 		$segment = explode('/', $fullPath, 4);
-		return isset($segment[2]) && in_array($segment[2], [
+		return isset($segment[2]) && \in_array($segment[2], [
 				'files',
 				'thumbnails',
 				'files_versions',
-			]);
+			], true);
 	}
 
 	/**
@@ -69,7 +69,7 @@ class Helper {
 	}
 
 
-	public function isBlockable(string $path,
+	protected function isBlockable(string $path,
 								string $mountPoint): bool {
 		if($this->isCreatingSkeletonFiles()) {
 			return false;
