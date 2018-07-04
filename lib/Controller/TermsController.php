@@ -127,7 +127,7 @@ class TermsController extends Controller {
 			$terms = new Terms();
 		}
 
-		if(!isset($this->countryMapper->getCountries()[$countryCode], $this->languageMapper->getLanguages()[$languageCode])) {
+		if (!$this->countryMapper->isValidCountry($countryCode) || !$this->languageMapper->isValidLanguage($languageCode)) {
 			return new JSONResponse([], Http::STATUS_EXPECTATION_FAILED);
 		}
 
