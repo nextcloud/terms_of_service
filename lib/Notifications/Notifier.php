@@ -58,7 +58,10 @@ class Notifier implements INotifier {
 			throw new \InvalidArgumentException('Wrong app');
 		}
 
-		if ($this->checker->currentUserHasSigned()) {
+		// When we render push notifications, the active user is not the one we are looking for.
+		// Also we don't have any country information, so we just render them and continue.
+		// The user will not see the notification in the end, when it's not necessary.
+		if (!$this->isRenderingPushNotifications() && $this->checker->currentUserHasSigned()) {
 			$this->notificationManager->markProcessed($notification);
 			throw new \InvalidArgumentException('Resolved');
 		}
@@ -72,5 +75,17 @@ class Notifier implements INotifier {
 			->setLink($this->url->getAbsoluteURL(''));
 
 		return $notification;
+	}
+
+	protected function isRenderingPushNotifications(): bool {
+		$exception = new \Exception();
+		$trace = $exception->getTrace();
+		foreach ($trace as $step) {
+			if (isset($step['class']) && $step['class'] === 'OCA\Notifications\Push' &&
+				isset($step['function']) && $step['function'] === 'pushToDevice') {
+				return true;
+			}
+		}
+		return false;
 	}
 }
