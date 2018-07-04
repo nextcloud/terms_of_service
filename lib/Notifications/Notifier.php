@@ -21,8 +21,10 @@
 
 namespace OCA\TermsOfService\Notifications;
 
+use OCA\TermsOfService\Checker;
 use OCP\IURLGenerator;
 use OCP\L10N\IFactory;
+use OCP\Notification\IManager;
 use OCP\Notification\INotification;
 use OCP\Notification\INotifier;
 
@@ -30,13 +32,18 @@ class Notifier implements INotifier {
 
 	/** @var IFactory */
 	protected $l10nFactory;
-
 	/** @var IURLGenerator */
 	protected $url;
+	/** @var IManager */
+	protected $notificationManager;
+	/** @var Checker */
+	protected $checker;
 
-	public function __construct(IFactory $l10nFactory, IURLGenerator $url) {
+	public function __construct(IFactory $l10nFactory, IURLGenerator $url, IManager $notificationManager, Checker $checker) {
 		$this->l10nFactory = $l10nFactory;
 		$this->url = $url;
+		$this->notificationManager = $notificationManager;
+		$this->checker = $checker;
 	}
 
 	/**
@@ -49,6 +56,11 @@ class Notifier implements INotifier {
 	public function prepare(INotification $notification, $languageCode) {
 		if ($notification->getApp() !== 'terms_of_service') {
 			throw new \InvalidArgumentException('Wrong app');
+		}
+
+		if ($this->checker->currentUserHasSigned()) {
+			$this->notificationManager->markProcessed($notification);
+			throw new \InvalidArgumentException('Resolved');
 		}
 
 		$l = $this->l10nFactory->get('terms_of_service', $languageCode);
