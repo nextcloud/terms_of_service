@@ -26,20 +26,31 @@ use OCA\TermsOfService\Db\Mapper\SignatoryMapper;
 use OCP\AppFramework\Controller;
 use OCP\AppFramework\Http\JSONResponse;
 use OCP\IRequest;
+use OCP\IUser;
+use OCP\IUserManager;
+use OCP\Notification\IManager;
 
 class SigningController extends Controller {
 	/** @var string */
 	private $userId;
 	/** @var SignatoryMapper */
 	private $signatoryMapper;
+	/** @var IManager */
+	private $notificationsManager;
+	/** @var IUserManager */
+	private $userManager;
 
 	public function __construct(string $appName,
 								string $UserId,
 								IRequest $request,
-								SignatoryMapper $signatoryMapper) {
+								SignatoryMapper $signatoryMapper,
+								IManager $notificationsManager,
+								IUserManager $userManager) {
 		parent::__construct($appName, $request);
 		$this->userId = $UserId;
 		$this->signatoryMapper = $signatoryMapper;
+		$this->notificationsManager = $notificationsManager;
+		$this->userManager = $userManager;
 	}
 
 	/**
@@ -63,6 +74,23 @@ class SigningController extends Controller {
 	 */
 	public function resetAllSignatories(): JSONResponse {
 		$this->signatoryMapper->deleteAllSignatories();
+
+		$notification = $this->notificationsManager->createNotification();
+		$notification->setApp('terms_of_service')
+			->setSubject('accept_terms')
+			->setObject('terms', '1');
+
+		// Mark all notifications as processed …
+		$this->notificationsManager->markProcessed($notification);
+
+		$notification->setDateTime(new \DateTime());
+
+		// … so we can create new ones for every one, also users which already accepted.
+		$this->userManager->callForSeenUsers(function(IUser $user) use ($notification) {
+			$notification->setUser($user->getUID());
+			$this->notificationsManager->notify($notification);
+		});
+
 		return new JSONResponse();
 	}
 }
