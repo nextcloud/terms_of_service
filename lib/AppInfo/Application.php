@@ -32,7 +32,9 @@ use OCA\TermsOfService\Notifications\Notifier;
 use OCP\AppFramework\App;
 use OCP\Files\Storage\IStorage;
 use OCP\IRequest;
+use OCP\IUser;
 use OCP\IUserSession;
+use Symfony\Component\EventDispatcher\GenericEvent;
 
 class Application extends App {
 	/** @var string */
@@ -90,10 +92,11 @@ class Application extends App {
 	}
 
 	public function register() {
-		$this->registerAdminNotifications();
+		$this->registerNotifier();
+		$this->createNotificationOnFirstLogin();
 	}
 
-	protected function registerAdminNotifications() {
+	protected function registerNotifier() {
 		$this->getContainer()->getServer()->getNotificationManager()->registerNotifier(function() {
 			return $this->getContainer()->query(Notifier::class);
 		}, function() {
@@ -102,6 +105,24 @@ class Application extends App {
 				'id' => 'terms_of_service',
 				'name' => $l->t('Terms of service'),
 			];
+		});
+	}
+
+	protected function createNotificationOnFirstLogin() {
+		$this->getContainer()->getServer()->getEventDispatcher()->addListener(IUser::class . '::firstLogin', function(GenericEvent $event) {
+			$user = $event->getSubject();
+			if (!$user instanceof IUser) {
+				return;
+			}
+
+			$notificationsManager = $this->getContainer()->getServer()->getNotificationManager();
+			$notification = $notificationsManager->createNotification();
+			$notification->setApp('terms_of_service')
+				->setDateTime(new \DateTime())
+				->setSubject('accept_terms')
+				->setObject('terms', '1')
+				->setUser($user->getUID());
+			$notificationsManager->notify($notification);
 		});
 	}
 }
