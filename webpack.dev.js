@@ -9,4 +9,4 @@ module.exports = merge(common, {
     overlay: true
   },
   devtool: '#eval-source-map',
-})
+});

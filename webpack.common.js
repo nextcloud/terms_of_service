@@ -6,7 +6,7 @@ module.exports = {
 	output: {
 		path: path.resolve(__dirname, './js'),
 		publicPath: '/js/',
-		filename: 'termsandconditions.js'
+		filename: 'terms_of_service.js'
 	},
 	module: {
 		rules: [

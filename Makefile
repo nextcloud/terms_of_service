@@ -18,8 +18,8 @@ watch-js:
 	npm run watch
 
 clean:
-	rm -f js/termsandconditions.js
-	rm -f js/termsandconditions.js.map
+	rm -f js/terms_of_service.js
+	rm -f js/terms_of_service.js.map
 
 clean-dev:
 	rm -rf node_modules

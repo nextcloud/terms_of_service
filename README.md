@@ -1,6 +1,6 @@
-# termsandconditions
+# Terms of service
 
-> Requires users to accept the terms and conditions before accessing data.
+> Requires users to accept the terms of service before accessing data.
 
 ## Build Setup
 
