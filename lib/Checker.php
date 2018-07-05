@@ -61,12 +61,8 @@ class Checker {
 		$countryCode = $this->countryDetector->getCountry();
 		$terms = $this->termsMapper->getTermsForCountryCode($countryCode);
 		if (empty($terms)) {
-			// No terms for the country, check for global terms
-			$terms = $countryCode !== '--' ? $this->termsMapper->getTermsForCountryCode('--') : [];
-			if (empty($terms)) {
-				// No terms that would need accepting
-				return true;
-			}
+			// No terms that would need accepting
+			return true;
 		}
 
 		$signatories = $this->signatoryMapper->getSignatoriesByUser($user);

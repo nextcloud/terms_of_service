@@ -13,4 +13,4 @@ yarn-error.log*
 *.sln
 
 # Compiled templates
-/js/terms_of_service.js*
+/js/terms_of_service_*.js*

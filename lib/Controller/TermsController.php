@@ -75,20 +75,12 @@ class TermsController extends Controller {
 	 * @return JSONResponse
 	 */
 	public function index(): JSONResponse {
-		$unsortedTerms = $this->termsMapper->getTerms();
-		$terms = [];
-		foreach($unsortedTerms as $term) {
-			$terms[$term->getId()] = $term;
-		}
+		$currentCountry = $this->countryDetector->getCountry();
+		$countryTerms = $this->termsMapper->getTermsForCountryCode($currentCountry);
 
 		$response = [
-			'terms' => $terms,
-			'countryCodes' => $this->countryMapper->getCountries(),
-			'languageCodes' => $this->languageMapper->getLanguages(),
-			'currentSession' => [
-				'languageCode' => strtolower(substr($this->factory->findLanguage(), 0, 2)),
-				'countryCode' => $this->countryDetector->getCountry(),
-			],
+			'terms' => $countryTerms,
+			'languageCode' => strtolower(substr($this->factory->findLanguage(), 0, 2)),
 			'hasSigned' => $this->checker->currentUserHasSigned(),
 		];
 		return new JSONResponse($response);
