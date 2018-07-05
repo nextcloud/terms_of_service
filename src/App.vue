@@ -41,7 +41,7 @@
 		<button @click="onResetSignatories" :disabled="resetButtonDisabled">{{resetButtonText}}</button>
 
 		<ul id="terms_of_service-countryspecific-list" v-if="hasTerms">
-			<term v-for="(t, key) in terms" v-bind="t" :key="t.id"></term>
+			<term v-for="(term, key) in terms" v-bind="term" :key="term.id"></term>
 		</ul>
 	</div>
 </template>
@@ -132,15 +132,15 @@ export default {
 		this.saveButtonText = t('terms_of_service', 'Loading …');
 		this.resetButtonText = t('terms_of_service', 'Reset all signatories');
 		axios
-			.get(OC.generateUrl('/apps/terms_of_service/terms'), this.tokenHeaders)
+			.get(OC.generateUrl('/apps/terms_of_service/terms/admin'), this.tokenHeaders)
 			.then(response => {
 				this.terms = response.data.terms;
-				this.countries = response.data.countryCodes;
-				this.languages = response.data.languageCodes;
+				this.countries = response.data.countries;
+				this.languages = response.data.languages;
 				Object.keys(this.countries).forEach((countryCode) => {
 					this.countryOptions.push({
 						value: countryCode,
-						label: response.data.countryCodes[countryCode] + ' (' + countryCode + ')'
+						label: this.countries[countryCode] + ' (' + countryCode + ')'
 					});
 				});
 				Object.keys(this.languages).forEach((languageCode) => {

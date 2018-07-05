@@ -45,7 +45,7 @@ class Application extends App {
 
 		Util::connectHook('OC_Filesystem', 'preSetup', $this, 'addStorageWrapper');
 		Util::addStyle('terms_of_service', 'overlay');
-		Util::addScript('terms_of_service', 'popup/merged');
+		Util::addScript('terms_of_service', 'terms_of_service_user');
 	}
 
 	public function addStorageWrapper() {

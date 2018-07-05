@@ -1,6 +1,7 @@
-<?php
-/**
- * @copyright Copyright (c) 2017 Lukas Reschke <lukas@statuscode.ch>
+/*
+ * @copyright Copyright (c) 2018 Joas Schilling <coding@schilljs.com>
+ *
+ * @author Joas Schilling <coding@schilljs.com>
  *
  * @license GNU AGPL version 3 or any later version
  *
@@ -15,12 +16,23 @@
  * GNU Affero General Public License for more details.
  *
  * You should have received a copy of the GNU Affero General Public License
- * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ * along with this program. If not, see <http://www.gnu.org/licenses/>.
  *
  */
 
-script('terms_of_service', 'terms_of_service_admin');
-style('terms_of_service', 'admin');
-?>
+import Vue from 'vue';
+import userapp from './UserApp';
+import VModal from 'vue-js-modal';
 
-<div id="terms_of_service" class="section"></div>
+Vue.use(VModal);
+
+Vue.prototype.t = t;
+Vue.prototype.n = n;
+Vue.prototype.OC = OC;
+Vue.prototype.OCA = OCA;
+
+$('body').prepend($('<div>').attr('id', 'terms_of_service_confirm'));
+new Vue({
+  el: '#terms_of_service_confirm',
+  render: h => h(userapp)
+});

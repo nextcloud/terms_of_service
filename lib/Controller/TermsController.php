@@ -80,8 +80,20 @@ class TermsController extends Controller {
 
 		$response = [
 			'terms' => $countryTerms,
-			'languageCode' => strtolower(substr($this->factory->findLanguage(), 0, 2)),
+			'languages' => $this->languageMapper->getLanguages(),
 			'hasSigned' => $this->checker->currentUserHasSigned(),
+		];
+		return new JSONResponse($response);
+	}
+
+	/**
+	 * @return JSONResponse
+	 */
+	public function getAdminFormData(): JSONResponse {
+		$response = [
+			'terms' => $this->termsMapper->getTerms(),
+			'countries' => $this->countryMapper->getCountries(),
+			'languages' => $this->languageMapper->getLanguages(),
 		];
 		return new JSONResponse($response);
 	}
