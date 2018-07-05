@@ -66,6 +66,16 @@ class SigningController extends Controller {
 		$signatory->setTimestamp(time());
 
 		$this->signatoryMapper->insert($signatory);
+
+		$notification = $this->notificationsManager->createNotification();
+		$notification->setApp('terms_of_service')
+			->setSubject('accept_terms')
+			->setObject('terms', '1')
+			->setUser($this->userId);
+
+		// Mark all notifications as processed …
+		$this->notificationsManager->markProcessed($notification);
+
 		return new JSONResponse();
 	}
 
