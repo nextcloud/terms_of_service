@@ -28,6 +28,12 @@ This product includes GeoLite2 data created by MaxMind, available from [maxmind.
 		<nextcloud min-version="14" max-version="14" />
 	</dependencies>
 
+	<repair-steps>
+		<install>
+			<step>OCA\TermsOfService\Migration\CreateNotifications</step>
+		</install>
+	</repair-steps>
+
 	<settings>
 		<admin>OCA\TermsOfService\Settings\Admin</admin>
 		<admin-section>OCA\TermsOfService\Settings\AdminSection</admin-section>

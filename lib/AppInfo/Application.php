@@ -24,45 +24,32 @@ namespace OCA\TermsOfService\AppInfo;
 use OC\Files\Filesystem;
 use OC\Files\Storage\Wrapper\Wrapper;
 use OCA\TermsOfService\Checker;
-use OCA\TermsOfService\CountryDetector;
-use OCA\TermsOfService\Db\Mapper\SignatoryMapper;
-use OCA\TermsOfService\Db\Mapper\TermsMapper;
 use OCA\TermsOfService\Filesystem\StorageWrapper;
+use OCA\TermsOfService\Notifications\Notifier;
 use OCP\AppFramework\App;
+use OCP\AppFramework\QueryException;
 use OCP\Files\Storage\IStorage;
-use OCP\IRequest;
-use OCP\IUserSession;
+use OCP\IUser;
+use OCP\Util;
+use Symfony\Component\EventDispatcher\GenericEvent;
 
 class Application extends App {
-	/** @var string */
-	private $appName;
-	/** @var IRequest|null */
-	private $request;
-	/** @var IUserSession|null */
-	private $userSession;
-	/** @var SignatoryMapper|null */
-	private $signatoryMapper;
-	/** @var TermsMapper|null */
-	private $termsMapper;
-	/** @var CountryDetector|null */
-	private $countryDetector;
 
-	public function __construct(IRequest $request = null,
-								IUserSession $userSession = null,
-								SignatoryMapper $signatoryMapper = null,
-								TermsMapper $termsMapper = null,
-								CountryDetector $countryDetector = null) {
-		$this->appName = 'terms_of_service';
-		$this->request = $request;
-		$this->userSession = $userSession;
-		$this->signatoryMapper = $signatoryMapper;
-		$this->termsMapper = $termsMapper;
-		$this->countryDetector = $countryDetector;
-		parent::__construct($this->appName);
+	public function __construct() {
+		parent::__construct('terms_of_service');
+	}
+
+	public function register() {
+		$this->registerNotifier();
+		$this->createNotificationOnFirstLogin();
+
+		Util::connectHook('OC_Filesystem', 'preSetup', $this, 'addStorageWrapper');
+		Util::addStyle('terms_of_service', 'overlay');
+		Util::addScript('terms_of_service', 'terms_of_service_user');
 	}
 
 	public function addStorageWrapper() {
-		Filesystem::addStorageWrapper($this->appName, [$this, 'addStorageWrapperCallback'], -10);
+		Filesystem::addStorageWrapper('terms_of_service', [$this, 'addStorageWrapperCallback'], -10);
 	}
 
 	/**
@@ -73,18 +60,47 @@ class Application extends App {
 	 */
 	public function addStorageWrapperCallback(string $mountPoint, IStorage $storage) {
 		if (!\OC::$CLI){
-			return new StorageWrapper([
-				'storage' => $storage,
-				'mountPoint' => $mountPoint,
-				'request' => $this->request,
-				'checker' => new Checker(
-					$this->userSession,
-					$this->signatoryMapper,
-					$this->termsMapper,
-					$this->countryDetector
-				),
-			]);
+			try {
+				return new StorageWrapper([
+					'storage' => $storage,
+					'mountPoint' => $mountPoint,
+					'request' => $this->getContainer()->getServer()->getRequest(),
+					'checker' => $this->getContainer()->query(Checker::class),
+				]);
+			} catch (QueryException $e) {
+				$this->getContainer()->getServer()->getLogger()->logException($e);
+			}
 		}
 		return $storage;
+	}
+
+	protected function registerNotifier() {
+		$this->getContainer()->getServer()->getNotificationManager()->registerNotifier(function() {
+			return $this->getContainer()->query(Notifier::class);
+		}, function() {
+			$l = $this->getContainer()->getServer()->getL10NFactory()->get('terms_of_service');
+			return [
+				'id' => 'terms_of_service',
+				'name' => $l->t('Terms of service'),
+			];
+		});
+	}
+
+	protected function createNotificationOnFirstLogin() {
+		$this->getContainer()->getServer()->getEventDispatcher()->addListener(IUser::class . '::firstLogin', function(GenericEvent $event) {
+			$user = $event->getSubject();
+			if (!$user instanceof IUser) {
+				return;
+			}
+
+			$notificationsManager = $this->getContainer()->getServer()->getNotificationManager();
+			$notification = $notificationsManager->createNotification();
+			$notification->setApp('terms_of_service')
+				->setDateTime(new \DateTime())
+				->setSubject('accept_terms')
+				->setObject('terms', '1')
+				->setUser($user->getUID());
+			$notificationsManager->notify($notification);
+		});
 	}
 }

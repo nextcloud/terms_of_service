@@ -27,6 +27,11 @@ return [
 	],
 	'routes' => [
 		[
+			'name' => 'Terms#getAdminFormData',
+			'url' => '/terms/admin',
+			'verb' => 'GET',
+		],
+		[
 			'name' => 'Signing#signTerms',
 			'url' => '/sign',
 			'verb' => 'POST',

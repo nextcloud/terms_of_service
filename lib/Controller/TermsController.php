@@ -75,21 +75,25 @@ class TermsController extends Controller {
 	 * @return JSONResponse
 	 */
 	public function index(): JSONResponse {
-		$unsortedTerms = $this->termsMapper->getTerms();
-		$terms = [];
-		foreach($unsortedTerms as $term) {
-			$terms[$term->getId()] = $term;
-		}
+		$currentCountry = $this->countryDetector->getCountry();
+		$countryTerms = $this->termsMapper->getTermsForCountryCode($currentCountry);
 
 		$response = [
-			'terms' => $terms,
-			'countryCodes' => $this->countryMapper->getCountries(),
-			'languageCodes' => $this->languageMapper->getLanguages(),
-			'currentSession' => [
-				'languageCode' => strtolower(substr($this->factory->findLanguage(), 0, 2)),
-				'countryCode' => $this->countryDetector->getCountry(),
-			],
+			'terms' => $countryTerms,
+			'languages' => $this->languageMapper->getLanguages(),
 			'hasSigned' => $this->checker->currentUserHasSigned(),
+		];
+		return new JSONResponse($response);
+	}
+
+	/**
+	 * @return JSONResponse
+	 */
+	public function getAdminFormData(): JSONResponse {
+		$response = [
+			'terms' => $this->termsMapper->getTerms(),
+			'countries' => $this->countryMapper->getCountries(),
+			'languages' => $this->languageMapper->getLanguages(),
 		];
 		return new JSONResponse($response);
 	}
@@ -127,7 +131,7 @@ class TermsController extends Controller {
 			$terms = new Terms();
 		}
 
-		if(!isset($this->countryMapper->getCountries()[$countryCode], $this->languageMapper->getLanguages()[$languageCode])) {
+		if (!$this->countryMapper->isValidCountry($countryCode) || !$this->languageMapper->isValidLanguage($languageCode)) {
 			return new JSONResponse([], Http::STATUS_EXPECTATION_FAILED);
 		}
 

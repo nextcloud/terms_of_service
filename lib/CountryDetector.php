@@ -22,7 +22,6 @@
 namespace OCA\TermsOfService;
 
 use MaxMind\Db\Reader;
-use MaxMind\Db\Reader\InvalidDatabaseException;
 use OCA\TermsOfService\Db\Mapper\CountryMapper;
 use OCP\IRequest;
 
@@ -43,17 +42,10 @@ class CountryDetector {
 	 * @return string
 	 */
 	public function getCountry(): string {
-		// Check if there is a cookie
-		$countryCookie = $this->request->getCookie('TermsOfServiceCountryCookie');
-		if($this->countryMapper->isValidCountry($countryCookie)) {
-			return $countryCookie;
-		}
-
-		// Read it from IP address
 		try {
 			$reader = new Reader(__DIR__ . '/../vendor/GeoLite2-Country.mmdb');
 			$record = $reader->get($this->request->getRemoteAddress());
-		} catch (InvalidDatabaseException $e) {
+		} catch (\Exception $e) {
 			return '--';
 		}
 
@@ -61,7 +53,6 @@ class CountryDetector {
 			return $record['country']['iso_code'];
 		}
 
-		// Default to '--' if nothing is found
 		return '--';
 	}
 }
