@@ -1,6 +1,15 @@
 OC.L10N.register(
     "terms_of_service",
     {
+    "Delete" : "Smazat",
+    "Deleting …" : "Mazání…",
+    "Saving …" : "Ukládání…",
+    "Saved!" : "Uloženo!",
+    "Save" : "Uložit",
+    "Resetting …" : "Resetování…",
+    "Reset!" : "Resetovat!",
+    "Loading …" : "Načítání…",
+    "Edit" : "Upravit",
     "Terms of service" : "Podmínky používání služby",
     "Global" : "Globální",
     "Afghanistan" : "Afgánistán",
@@ -147,15 +156,6 @@ OC.L10N.register(
     "Tatar" : "tatarština",
     "Ukrainian" : "ukrajinština",
     "Vietnamese" : "vietnamština",
-    "Chinese" : "čínština",
-    "Saving …" : "Ukládání…",
-    "Saved!" : "Uloženo!",
-    "Save" : "Uložit",
-    "Resetting …" : "Resetování…",
-    "Reset!" : "Resetovat!",
-    "Loading …" : "Načítání…",
-    "Edit" : "Upravit",
-    "Delete" : "Smazat",
-    "Deleting …" : "Mazání…"
+    "Chinese" : "čínština"
 },
 "nplurals=4; plural=(n == 1 && n % 1 == 0) ? 0 : (n >= 2 && n <= 4 && n % 1 == 0) ? 1: (n % 1 != 0 ) ? 2 : 3;");

@@ -1,5 +1,17 @@
 { "translations": {
+    "Delete" : "Excluir",
+    "Deleting …" : "Excluindo...",
+    "Saving …" : "Salvando...",
+    "Saved!" : "Salvo!",
+    "Save" : "Salvar",
+    "Resetting …" : "Redefinindo...",
+    "Reset!" : "Redefinido!",
+    "Reset all signatories" : "Redefinir todos os signatários",
+    "Loading …" : "Carregando...",
+    "Edit" : "Editar",
     "Terms of service" : "Termos de serviço",
+    "For formatting purposes Markdown is supported." : "Para fins de formatação, o Markdown é suportado.",
+    "Existing terms of service" : "Termos de serviço existentes",
     "Global" : "Global",
     "Afghanistan" : "Afeganistão",
     "Aland Islands" : "Ilhas Aland",
@@ -436,18 +448,6 @@
     "Terms of service have been modified!" : "Os termos de serviço foram modificados!",
     "You have to accept the newest version of the terms of service in order to be able to use this service." : "Você tem que aceitar a versão mais recente dos termos de serviço para poder usá-lo.",
     "Requires users to accept the terms of service before accessing data." : "Requer que os usuários aceitem os termos de serviço antes de acessar os dados.",
-    "Requires users to accept the terms of service before accessing data.\nThis product includes GeoLite2 data created by MaxMind, available from [maxmind.com](http://www.maxmind.com)" : "Requer que os usuários aceitem os termos de serviço antes de acessar os dados.\nEste produto inclui dados GeoLite2 criados pela MaxMind, disponíveis em  [maxmind.com](http://www.maxmind.com)",
-    "For formatting purposes Markdown is supported." : "Para fins de formatação, o Markdown é suportado.",
-    "Existing terms of service" : "Termos de serviço existentes",
-    "Saving …" : "Salvando...",
-    "Saved!" : "Salvo!",
-    "Save" : "Salvar",
-    "Resetting …" : "Redefinindo...",
-    "Reset!" : "Redefinido!",
-    "Reset all signatories" : "Redefinir todos os signatários",
-    "Loading …" : "Carregando...",
-    "Edit" : "Editar",
-    "Delete" : "Excluir",
-    "Deleting …" : "Excluindo..."
+    "Requires users to accept the terms of service before accessing data.\nThis product includes GeoLite2 data created by MaxMind, available from [maxmind.com](http://www.maxmind.com)" : "Requer que os usuários aceitem os termos de serviço antes de acessar os dados.\nEste produto inclui dados GeoLite2 criados pela MaxMind, disponíveis em  [maxmind.com](http://www.maxmind.com)"
 },"pluralForm" :"nplurals=2; plural=(n > 1);"
 }

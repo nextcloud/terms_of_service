@@ -1,6 +1,12 @@
 OC.L10N.register(
     "terms_of_service",
     {
+    "Delete" : "Διαγραφή",
+    "Deleting …" : "Διαγράφεται ...",
+    "Saving …" : "Αποθηκεύεται ...",
+    "Saved!" : "Αποθηκεύτηκε!",
+    "Save" : "Αποθήκευση",
+    "Edit" : "Επεξεργασία",
     "Terms of service" : "Όροι χρήσης",
     "Afghanistan" : "Αφγανιστάν",
     "Albania" : "Αλβανία",
@@ -75,6 +81,7 @@ OC.L10N.register(
     "Malawi" : "Μαλάουι",
     "Malaysia" : "Μαλαισία",
     "Maldives" : "Μαλδίβες",
+    "Mali" : "Μάλι",
     "Malta" : "Μάλτα",
     "Martinique" : "Μαρτινίκα",
     "Mauritania" : "Μαυριτανία",
@@ -157,12 +164,6 @@ OC.L10N.register(
     "Korean" : "Κορεάτικα",
     "Kurdish" : "Κουρδικά",
     "Lithuanian" : "Λιθουανικά",
-    "Macedonian" : "Βόρειο Μακεδονικά",
-    "Saving …" : "Αποθηκεύεται ...",
-    "Saved!" : "Αποθηκεύτηκε!",
-    "Save" : "Αποθήκευση",
-    "Edit" : "Επεξεργασία",
-    "Delete" : "Διαγραφή",
-    "Deleting …" : "Διαγράφεται ..."
+    "Macedonian" : "Βόρειο Μακεδονικά"
 },
 "nplurals=2; plural=(n != 1);");

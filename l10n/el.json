@@ -1,4 +1,10 @@
 { "translations": {
+    "Delete" : "Διαγραφή",
+    "Deleting …" : "Διαγράφεται ...",
+    "Saving …" : "Αποθηκεύεται ...",
+    "Saved!" : "Αποθηκεύτηκε!",
+    "Save" : "Αποθήκευση",
+    "Edit" : "Επεξεργασία",
     "Terms of service" : "Όροι χρήσης",
     "Afghanistan" : "Αφγανιστάν",
     "Albania" : "Αλβανία",
@@ -73,6 +79,7 @@
     "Malawi" : "Μαλάουι",
     "Malaysia" : "Μαλαισία",
     "Maldives" : "Μαλδίβες",
+    "Mali" : "Μάλι",
     "Malta" : "Μάλτα",
     "Martinique" : "Μαρτινίκα",
     "Mauritania" : "Μαυριτανία",
@@ -155,12 +162,6 @@
     "Korean" : "Κορεάτικα",
     "Kurdish" : "Κουρδικά",
     "Lithuanian" : "Λιθουανικά",
-    "Macedonian" : "Βόρειο Μακεδονικά",
-    "Saving …" : "Αποθηκεύεται ...",
-    "Saved!" : "Αποθηκεύτηκε!",
-    "Save" : "Αποθήκευση",
-    "Edit" : "Επεξεργασία",
-    "Delete" : "Διαγραφή",
-    "Deleting …" : "Διαγράφεται ..."
+    "Macedonian" : "Βόρειο Μακεδονικά"
 },"pluralForm" :"nplurals=2; plural=(n != 1);"
 }
