@@ -47,6 +47,7 @@ appstore: clean clean-dev npm-init
 	--exclude=run-*lint.sh \
 	--exclude=.scrutinizer.yml \
 	--exclude=.stylelintrc \
+	--exclude=src \
 	--exclude=tests \
 	--exclude=.travis.yml \
 	$(project_dir)/  $(sign_dir)/$(app_name)
