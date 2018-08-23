@@ -25,6 +25,9 @@ This product includes GeoLite2 data created by MaxMind, available from [maxmind.
 	<bugs>https://github.com/nextcloud/terms_of_service/issues</bugs>
 	<repository>https://github.com/nextcloud/terms_of_service.git</repository>
 
+	<screenshot>https://github.com/nextcloud/terms_of_service/raw/master/docs/notification-and-settings.png</screenshot>
+	<screenshot>https://github.com/nextcloud/terms_of_service/raw/master/docs/popup-dialog.png</screenshot>
+
 	<dependencies>
 		<nextcloud min-version="14" max-version="14" />
 	</dependencies>
