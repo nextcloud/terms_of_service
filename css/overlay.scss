@@ -1,5 +1,12 @@
-#terms_of_service_confirm .v--modal-overlay {
-  z-index: 99999;
+#terms_of_service_confirm {
+  .v--modal-overlay {
+    z-index: 99999;
+  }
+
+  .v--modal-overlay .v--modal-box {
+    max-height: 300px;
+    overflow: auto;
+  }
 }
 
 #tos-overlay {
