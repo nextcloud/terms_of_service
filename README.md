@@ -1,5 +1,8 @@
 # Terms of service
 
+
+> ![](https://raw.githubusercontent.com/nextcloud/terms_of_service/master/docs/popup-dialog.png)
+> 
 > Requires users to accept the terms of service before accessing data.
 
 ## Build Setup

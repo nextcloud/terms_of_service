@@ -100,7 +100,7 @@ class TermsMapper extends QBMapper {
 		$entities = [];
 		$result = $query->execute();
 		while ($row = $result->fetch()){
-			$entities[] = $this->mapRowToEntity($row);
+			$entities[(int) $row['id']] = $this->mapRowToEntity($row);
 		}
 		$result->closeCursor();
 

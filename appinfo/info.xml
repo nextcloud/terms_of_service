@@ -10,6 +10,7 @@ This product includes GeoLite2 data created by MaxMind, available from [maxmind.
 	<version>0.2.0</version>
 	<licence>agpl</licence>
 	<author>Lukas Reschke</author>
+	<author>Joas Schilling</author>
 
 	<namespace>TermsOfService</namespace>
 
@@ -23,6 +24,9 @@ This product includes GeoLite2 data created by MaxMind, available from [maxmind.
 	<website>https://github.com/nextcloud/terms_of_service/</website>
 	<bugs>https://github.com/nextcloud/terms_of_service/issues</bugs>
 	<repository>https://github.com/nextcloud/terms_of_service.git</repository>
+
+	<screenshot>https://github.com/nextcloud/terms_of_service/raw/master/docs/notification-and-settings.png</screenshot>
+	<screenshot>https://github.com/nextcloud/terms_of_service/raw/master/docs/popup-dialog.png</screenshot>
 
 	<dependencies>
 		<nextcloud min-version="14" max-version="14" />
