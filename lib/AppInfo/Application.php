@@ -44,8 +44,13 @@ class Application extends App {
 		$this->createNotificationOnFirstLogin();
 
 		Util::connectHook('OC_Filesystem', 'preSetup', $this, 'addStorageWrapper');
-		Util::addStyle('terms_of_service', 'overlay');
-		Util::addScript('terms_of_service', 'terms_of_service_user');
+
+		$request = $this->getContainer()->getServer()->getRequest();
+		if (strpos($request->getPathInfo(), '/login') !== 0
+			&& substr($request->getScriptName(), 0 - \strlen('/index.php')) === '/index.php') {
+			Util::addStyle('terms_of_service', 'overlay');
+			Util::addScript('terms_of_service', 'terms_of_service_user');
+		}
 	}
 
 	public function addStorageWrapper() {
