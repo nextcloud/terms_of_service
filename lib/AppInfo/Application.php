@@ -46,7 +46,7 @@ class Application extends App {
 		Util::connectHook('OC_Filesystem', 'preSetup', $this, 'addStorageWrapper');
 
 		$request = $this->getContainer()->getServer()->getRequest();
-		if (strpos($request->getPathInfo(), '/login') !== 0
+		if (!\OC::$CLI && strpos($request->getPathInfo(), '/login') !== 0
 			&& substr($request->getScriptName(), 0 - \strlen('/index.php')) === '/index.php') {
 			Util::addStyle('terms_of_service', 'overlay');
 			Util::addScript('terms_of_service', 'terms_of_service_user');
