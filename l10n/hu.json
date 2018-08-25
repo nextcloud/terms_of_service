@@ -1,17 +1,5 @@
 { "translations": {
-    "Delete" : "Törlés",
-    "Deleting …" : "Törlés folyamatban ...",
-    "Saving …" : "Mentés foylamatban ...",
-    "Saved!" : "Mentve!",
-    "Save" : "Mentés",
-    "Resetting …" : "Visszaállítás folyamatban ...",
-    "Reset!" : "Visszaállítás!",
-    "Reset all signatories" : "Minden aláírás visszavonása",
-    "Loading …" : "Töltés ...",
-    "Edit" : "Szerkesztés",
     "Terms of service" : "Szolgáltatás feltételei",
-    "For formatting purposes Markdown is supported." : "Formázási célokra a \"Markdown\" támogatott.",
-    "Existing terms of service" : "Jelenlegi felhasználási feltételek",
     "Global" : "Globális",
     "Afghanistan" : "Afganisztán",
     "Aland Islands" : "Aland-szigetek",
@@ -267,6 +255,18 @@
     "Zulu" : "Zului",
     "Terms of service have been modified!" : "A szolgáltatási feltételek módosultak! ",
     "You have to accept the newest version of the terms of service in order to be able to use this service." : "Ahhoz, hogy a szolgáltatást használni tudja, el kell, hogy fogadja a legújabb szolgáltatási feltételeket.",
-    "Requires users to accept the terms of service before accessing data." : "Szükség van arra, hogy a szolgátlatási feltételeket elfogadja, mielőtt az adatokhoz hozzáférhetne."
+    "Requires users to accept the terms of service before accessing data." : "Szükség van arra, hogy a szolgátlatási feltételeket elfogadja, mielőtt az adatokhoz hozzáférhetne.",
+    "For formatting purposes Markdown is supported." : "Formázási célokra a \"Markdown\" támogatott.",
+    "Existing terms of service" : "Jelenlegi felhasználási feltételek",
+    "Saving …" : "Mentés foylamatban ...",
+    "Saved!" : "Mentve!",
+    "Save" : "Mentés",
+    "Resetting …" : "Visszaállítás folyamatban ...",
+    "Reset!" : "Visszaállítás!",
+    "Reset all signatories" : "Minden aláírás visszavonása",
+    "Loading …" : "Töltés ...",
+    "Edit" : "Szerkesztés",
+    "Delete" : "Törlés",
+    "Deleting …" : "Törlés folyamatban ..."
 },"pluralForm" :"nplurals=2; plural=(n != 1);"
 }

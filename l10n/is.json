@@ -1,17 +1,5 @@
 { "translations": {
-    "Delete" : "Eyða",
-    "Deleting …" : "Eyði …",
-    "Saving …" : "Vista …",
-    "Saved!" : "Vistað!",
-    "Save" : "Vista",
-    "Resetting …" : "Endurstilli …",
-    "Reset!" : "Endurstilla!",
-    "Reset all signatories" : "Endurstilla allar undirritanir",
-    "Loading …" : "Hleð inn …",
-    "Edit" : "Breyta",
     "Terms of service" : "Þjónustuskilmálar",
-    "For formatting purposes Markdown is supported." : "Markdown er hægt að nota fyrir snið á texta.",
-    "Existing terms of service" : "Fyrirliggjandi þjónustuskilmálar",
     "Global" : "Almennt",
     "Afghanistan" : "Afganistan",
     "Aland Islands" : "Álandseyjar",
@@ -448,6 +436,18 @@
     "Terms of service have been modified!" : "Þjónustuskilmálum hefur verið breytt!",
     "You have to accept the newest version of the terms of service in order to be able to use this service." : "Þú þarft að samþykkja nýjustu útgáfu þjónustuskilmálanna til að geta notað þessa þjónustu.",
     "Requires users to accept the terms of service before accessing data." : "Krefur notendur um samþykkt á þjónustuskilmálum áður en aðgangur er gefinn að gögnum.",
-    "Requires users to accept the terms of service before accessing data.\nThis product includes GeoLite2 data created by MaxMind, available from [maxmind.com](http://www.maxmind.com)" : "Krefur notendur um samþykkt á þjónustuskilmálum áður en aðgangur er gefinn að gögnum.\nÞessi eiginleiki inniheldur GeoLite2 gögn útbúin af MaxMind, tiltæk frá [maxmind.com](http://www.maxmind.com)"
+    "Requires users to accept the terms of service before accessing data.\nThis product includes GeoLite2 data created by MaxMind, available from [maxmind.com](http://www.maxmind.com)" : "Krefur notendur um samþykkt á þjónustuskilmálum áður en aðgangur er gefinn að gögnum.\nÞessi eiginleiki inniheldur GeoLite2 gögn útbúin af MaxMind, tiltæk frá [maxmind.com](http://www.maxmind.com)",
+    "For formatting purposes Markdown is supported." : "Markdown er hægt að nota fyrir snið á texta.",
+    "Existing terms of service" : "Fyrirliggjandi þjónustuskilmálar",
+    "Saving …" : "Vista …",
+    "Saved!" : "Vistað!",
+    "Save" : "Vista",
+    "Resetting …" : "Endurstilli …",
+    "Reset!" : "Endurstilla!",
+    "Reset all signatories" : "Endurstilla allar undirritanir",
+    "Loading …" : "Hleð inn …",
+    "Edit" : "Breyta",
+    "Delete" : "Eyða",
+    "Deleting …" : "Eyði …"
 },"pluralForm" :"nplurals=2; plural=(n % 10 != 1 || n % 100 == 11);"
 }

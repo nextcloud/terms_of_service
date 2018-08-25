@@ -1,12 +1,6 @@
 OC.L10N.register(
     "terms_of_service",
     {
-    "Delete" : "Usuń",
-    "Deleting …" : "Usuwanie…",
-    "Saved!" : "Zapisano!",
-    "Save" : "Zapisz",
-    "Loading …" : "Wczytywanie…",
-    "Edit" : "Edytuj",
     "Terms of service" : "Warunki usługi",
     "Afghanistan" : "Afganistan",
     "Aland Islands" : "Wyspy Alandzkie",
@@ -154,6 +148,12 @@ OC.L10N.register(
     "Saint Kitts and Nevis" : "Saint Kitts i Nevis",
     "Saint Lucia" : "Saint Lucia",
     "Saint Martin (French part)" : "Saint Martin (część francuska)",
-    "Senegal" : "Senegal"
+    "Senegal" : "Senegal",
+    "Saved!" : "Zapisano!",
+    "Save" : "Zapisz",
+    "Loading …" : "Wczytywanie…",
+    "Edit" : "Edytuj",
+    "Delete" : "Usuń",
+    "Deleting …" : "Usuwanie…"
 },
 "nplurals=4; plural=(n==1 ? 0 : (n%10>=2 && n%10<=4) && (n%100<12 || n%100>14) ? 1 : n!=1 && (n%10>=0 && n%10<=1) || (n%10>=5 && n%10<=9) || (n%100>=12 && n%100<=14) ? 2 : 3);");
