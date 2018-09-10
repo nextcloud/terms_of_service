@@ -11,8 +11,6 @@ package_name=$(app_name)
 cert_dir=$(HOME)/.nextcloud/certificates
 version+=master
 
-all: appstore
-
 release: appstore create-tag
 
 create-tag:
@@ -85,8 +83,10 @@ watch-js:
 	npm run watch
 
 clean:
-	rm -f js/terms_of_service.js
-	rm -f js/terms_of_service.js.map
+	rm -f js/terms_of_service_admin.js
+	rm -f js/terms_of_service_admin.js.map
+	rm -f js/terms_of_service_user.js
+	rm -f js/terms_of_service_user.js.map
 
 clean-dev:
 	rm -rf $(build_dir)
