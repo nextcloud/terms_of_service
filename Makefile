@@ -22,11 +22,14 @@ create-tag:
 appstore: clean clean-dev npm-init
 	mkdir -p $(sign_dir)
 	rsync -a \
+	--exclude=.babelrc \
 	--exclude=bower.json \
 	--exclude=.bowerrc \
 	--exclude=/build \
+	--exclude=composer.json \
 	--exclude=docs \
 	--exclude=.drone.yml \
+	--exclude=.editorconfig \
 	--exclude=.eslintignore \
 	--exclude=.eslintrc.yml \
 	--exclude=.git \
@@ -34,6 +37,7 @@ appstore: clean clean-dev npm-init
 	--exclude=.github \
 	--exclude=.gitignore \
 	--exclude=.jscsrc \
+	--exclude=.jshintrc \
 	--exclude=.jshintignore \
 	--exclude=js/tests \
 	--exclude=karma.conf.js \
@@ -47,9 +51,10 @@ appstore: clean clean-dev npm-init
 	--exclude=run-*lint.sh \
 	--exclude=.scrutinizer.yml \
 	--exclude=.stylelintrc \
-	--exclude=src \
+	--exclude=/src \
 	--exclude=tests \
 	--exclude=.travis.yml \
+	--exclude=webpack.*.js \
 	$(project_dir)/  $(sign_dir)/$(app_name)
 	@if [ -f $(cert_dir)/$(app_name).key ]; then \
 		echo "Signing app files…"; \
