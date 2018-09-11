@@ -1,6 +1,16 @@
 CHANGELOG
 =========
 
+0.5.0 (2018-02-12)
+------------------
+
+* Refer to account IDs using the terminology "account" rather than "user".
+
+0.4.0 (2017-07-10)
+------------------
+
+* PHP 5.4 is now required.
+
 0.3.1 (2016-08-10)
 ------------------
 
