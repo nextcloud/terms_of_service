@@ -120,14 +120,14 @@ PHP_METHOD(MaxMind_Db_Reader, __construct){
     strsize_t name_len;
     zval * _this_zval = NULL;
 
-    if (zend_parse_method_parameters(ZEND_NUM_ARGS() TSRMLS_CC, getThis(), "Os", 
+    if (zend_parse_method_parameters(ZEND_NUM_ARGS() TSRMLS_CC, getThis(), "Os",
             &_this_zval, maxminddb_ce, &db_file, &name_len) == FAILURE) {
         THROW_EXCEPTION("InvalidArgumentException",
                         "The constructor takes exactly one argument.");
         return;
     }
 
-    if (0 != access(db_file, R_OK)) {
+    if (0 != php_check_open_basedir(db_file TSRMLS_CC) || 0 != access(db_file, R_OK)) {
         THROW_EXCEPTION("InvalidArgumentException",
                         "The file \"%s\" does not exist or is not readable.",
                         db_file);
@@ -155,7 +155,7 @@ PHP_METHOD(MaxMind_Db_Reader, get){
     strsize_t name_len;
     zval * _this_zval = NULL;
 
-    if (zend_parse_method_parameters(ZEND_NUM_ARGS() TSRMLS_CC, getThis(), "Os", 
+    if (zend_parse_method_parameters(ZEND_NUM_ARGS() TSRMLS_CC, getThis(), "Os",
             &_this_zval, maxminddb_ce, &ip_address, &name_len) == FAILURE) {
         THROW_EXCEPTION("InvalidArgumentException",
                         "Method takes exactly one argument.");
@@ -284,7 +284,7 @@ PHP_METHOD(MaxMind_Db_Reader, close){
         return;
     }
 
-    maxminddb_obj *mmdb_obj = 
+    maxminddb_obj *mmdb_obj =
 	(maxminddb_obj *)Z_MAXMINDDB_P(getThis());
 
     if (NULL == mmdb_obj->mmdb) {
@@ -535,7 +535,6 @@ PHP_MINIT_FUNCTION(maxminddb){
     INIT_CLASS_ENTRY(ce, PHP_MAXMINDDB_READER_NS, maxminddb_methods);
     maxminddb_ce = zend_register_internal_class(&ce TSRMLS_CC);
     maxminddb_ce->create_object = maxminddb_create_handler;
-    maxminddb_ce->ce_flags |= ZEND_ACC_FINAL;
     memcpy(&maxminddb_obj_handlers,
            zend_get_std_object_handlers(), sizeof(zend_object_handlers));
     maxminddb_obj_handlers.clone_obj = NULL;
