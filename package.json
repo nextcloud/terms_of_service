@@ -1,7 +1,7 @@
 {
 	"name": "terms_of_service",
 	"description": "Requires users to accept the terms of service before accessing data.",
-	"version": "1.0.0",
+	"version": "1.1.0",
 	"author": "Joas Schilling <coding@schilljs.com>",
 	"license": "agpl",
 	"private": true,
@@ -18,12 +18,12 @@
 	},
 	"browserslist": [
 		"last 2 versions",
-		"not ie <= 11"
+		"ie >= 11"
 	],
 	"devDependencies": {
-		"babel-core": "^6.26.3",
+		"@babel/core": "^7.0.0",
+		"@babel/preset-env": "^7.0.0",
 		"babel-loader": "^8.0.2",
-		"babel-preset-env": "^1.7.0",
 		"css-loader": "^1.0.0",
 		"file-loader": "^2.0.0",
 		"vue-loader": "^15.4.1",

@@ -11,7 +11,34 @@ package_name=$(app_name)
 cert_dir=$(HOME)/.nextcloud/certificates
 version+=master
 
-all: appstore
+all: dev-setup build-js-production
+
+dev-setup: clean clean-dev npm-init
+
+npm-init:
+	npm install
+
+npm-update:
+	npm update
+
+build-js:
+	npm run dev
+
+build-js-production:
+	npm run build
+
+watch-js:
+	npm run watch
+
+clean:
+	rm -f js/terms_of_service_admin.js
+	rm -f js/terms_of_service_admin.js.map
+	rm -f js/terms_of_service_user.js
+	rm -f js/terms_of_service_user.js.map
+
+clean-dev:
+	rm -rf $(build_dir)
+	rm -rf node_modules
 
 release: appstore create-tag
 
@@ -69,31 +96,3 @@ appstore: clean clean-dev npm-init
 		echo "Signing package…"; \
 		openssl dgst -sha512 -sign $(cert_dir)/$(app_name).key $(build_dir)/$(app_name)-$(version).tar.gz | openssl base64; \
 	fi
-
-all: dev-setup build-js-production
-
-dev-setup: clean clean-dev npm-init
-
-npm-init:
-	npm install
-
-npm-update:
-	npm update
-
-build-js:
-	npm run dev
-
-build-js-production:
-	npm run build
-
-watch-js:
-	npm run watch
-
-clean:
-	rm -f js/terms_of_service.js
-	rm -f js/terms_of_service.js.map
-
-clean-dev:
-	rm -rf $(build_dir)
-	rm -rf node_modules
-
