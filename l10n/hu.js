@@ -4,7 +4,6 @@ OC.L10N.register(
     "Terms of service" : "Szolgáltatás feltételei",
     "Global" : "Globális",
     "Afghanistan" : "Afganisztán",
-    "Aland Islands" : "Aland-szigetek",
     "Albania" : "Albánia",
     "Algeria" : "Algéria",
     "American Samoa" : "Amerikai Szamoa",
