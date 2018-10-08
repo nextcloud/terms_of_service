@@ -1,0 +1,22 @@
+
+t('terms_of_service', 'Terms of service');
+t('terms_of_service', 'I acknowledge that I have read and agree to the above terms of service');
+t('terms_of_service', 'Terms of service');
+t('terms_of_service', 'Require users to accept the terms of service before accessing the service.');
+t('terms_of_service', 'For formatting purposes Markdown is supported.');
+t('terms_of_service', 'Select a region');
+t('terms_of_service', 'Select a language');
+t('terms_of_service', 'By using this service …');
+t('terms_of_service', 'Existing terms of service');
+t('terms_of_service', 'Saving …');
+t('terms_of_service', 'Saved!');
+t('terms_of_service', 'Save');
+t('terms_of_service', 'Resetting …');
+t('terms_of_service', 'Reset!');
+t('terms_of_service', 'Reset all signatories');
+t('terms_of_service', 'Loading …');
+t('terms_of_service', 'Reset all signatories');
+t('terms_of_service', 'Save');
+t('terms_of_service', 'Edit');
+t('terms_of_service', 'Delete');
+t('terms_of_service', 'Deleting …');
