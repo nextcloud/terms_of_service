@@ -450,6 +450,11 @@ OC.L10N.register(
     "Loading …" : "Carregando...",
     "Edit" : "Editar",
     "Delete" : "Excluir",
-    "Deleting …" : "Excluindo..."
+    "Deleting …" : "Excluindo...",
+    "I acknowledge that I have read and agree to the above terms of service" : "Eu confirmo que li e concordo com os termos de serviço acima",
+    "Require users to accept the terms of service before accessing the service." : "Exigir que os usuários aceitem os termos de serviço antes de acessá-lo.",
+    "Select a region" : "Selecione uma região",
+    "Select a language" : "Selecione um idioma",
+    "By using this service …" : "Ao usar este serviço..."
 },
 "nplurals=2; plural=(n > 1);");
