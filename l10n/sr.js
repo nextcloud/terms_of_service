@@ -450,6 +450,11 @@ OC.L10N.register(
     "Loading …" : "Учитавање…",
     "Edit" : "Измени",
     "Delete" : "Обриши",
-    "Deleting …" : "Брисање…"
+    "Deleting …" : "Брисање…",
+    "I acknowledge that I have read and agree to the above terms of service" : "Изјављујем да сам прочитао и да се слажем са изнад наведеним условима коришћења",
+    "Require users to accept the terms of service before accessing the service." : "Захтевај од корисника да прихвате услове коришћења пре коришћења сервиса.",
+    "Select a region" : "Одаберите регију",
+    "Select a language" : "Одаберите језик",
+    "By using this service …" : "Коришћењем овог сервиса…"
 },
 "nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);");
