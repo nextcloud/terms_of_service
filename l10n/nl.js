@@ -450,6 +450,11 @@ OC.L10N.register(
     "Loading …" : "Laden ...",
     "Edit" : "Bewerken",
     "Delete" : "Verwijderen",
-    "Deleting …" : "Verwijderen ..."
+    "Deleting …" : "Verwijderen ...",
+    "I acknowledge that I have read and agree to the above terms of service" : "Ik bevestig dat ik de bovenstaande gebruiksvoorwaarden heb gelezen en ermee instem",
+    "Require users to accept the terms of service before accessing the service." : "Vereist dat gebruikers de gebruiksvoorwaarden accepteren voordat ze toegang kijgen tot dienst.",
+    "Select a region" : "Selecteer een regie",
+    "Select a language" : "Kies een taal",
+    "By using this service …" : "Door gebruik te maken van deze dienst ..."
 },
 "nplurals=2; plural=(n != 1);");

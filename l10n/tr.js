@@ -450,6 +450,11 @@ OC.L10N.register(
     "Loading …" : "Yükleniyor…",
     "Edit" : "Düzenle",
     "Delete" : "Sil",
-    "Deleting …" : "Siliniyor…"
+    "Deleting …" : "Siliniyor…",
+    "I acknowledge that I have read and agree to the above terms of service" : "Yukarıdaki hizmet koşulları metnini okudum ve anladım",
+    "Require users to accept the terms of service before accessing the service." : "Hizmete erişmeden önce hizmet koşulları metninin kullanıcı tarafından okunup kabul edilmesi gerekir.",
+    "Select a region" : "Bir bölge seçin",
+    "Select a language" : "Bir dil seçin",
+    "By using this service …" : "Bu hizmeti kullanarak…"
 },
 "nplurals=2; plural=(n > 1);");
