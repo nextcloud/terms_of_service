@@ -448,6 +448,11 @@
     "Loading …" : "Cargando...",
     "Edit" : "Editar",
     "Delete" : "Borrar",
-    "Deleting …" : "Borrando..."
+    "Deleting …" : "Borrando...",
+    "I acknowledge that I have read and agree to the above terms of service" : "Confirmo que he leído y estoy de acuerdo con los susodichos términos de servicio ",
+    "Require users to accept the terms of service before accessing the service." : "Requiere a los usuarios que acepten los términos del servicio antes de acceder a los datos.",
+    "Select a region" : "Selecciona una región",
+    "Select a language" : "Selecciona un idioma",
+    "By using this service …" : "Al usar este servicio…"
 },"pluralForm" :"nplurals=2; plural=(n != 1);"
 }
