@@ -438,6 +438,8 @@
     "Edit" : "Upravit",
     "Delete" : "Smazat",
     "Deleting …" : "Mazání…",
+    "I acknowledge that I have read and agree to the above terms of service" : "Potvrzuji, že jsem si přečetl(a) a souhlasím s výše uvedenými všeobecnými podmínkami",
+    "Require users to accept the terms of service before accessing the service." : "Vyžadovat aby uživatelé přijali všeobecné podmínky než budou moci přistupovat ke službě.",
     "Select a region" : "Vybrat oblast",
     "Select a language" : "Vybrat jazyk",
     "By using this service …" : "Použitím této služby…"
