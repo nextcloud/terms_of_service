@@ -450,6 +450,11 @@ OC.L10N.register(
     "Loading …" : "Hleð inn …",
     "Edit" : "Breyta",
     "Delete" : "Eyða",
-    "Deleting …" : "Eyði …"
+    "Deleting …" : "Eyði …",
+    "I acknowledge that I have read and agree to the above terms of service" : "Staðfesti ég að ég hef lesið og samþykki ofangreinda jónustuskilmála",
+    "Require users to accept the terms of service before accessing the service." : "Krefur notendur um samþykkt á þjónustuskilmálum áður en aðgangur er gefinn að þjónustu.",
+    "Select a region" : "Veldu svæði",
+    "Select a language" : "Veldu tungumál",
+    "By using this service …" : "Með því að nota þessa þjónustu …"
 },
 "nplurals=2; plural=(n % 10 != 1 || n % 100 == 11);");
