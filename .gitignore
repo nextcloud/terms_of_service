@@ -17,3 +17,4 @@ translationfiles
 
 # Compiled templates
 /js/terms_of_service_*.js*
+/build
