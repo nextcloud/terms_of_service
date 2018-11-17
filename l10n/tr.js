@@ -439,7 +439,11 @@ OC.L10N.register(
     "You have to accept the newest version of the terms of service in order to be able to use this service." : "Bu hizmeti kullanabilmek için son hizmet koşulları metnini okuyup kabul etmeniz gerekiyor.",
     "Requires users to accept the terms of service before accessing data." : "Verilere erişmeden önce hizmet koşulları metninin kullanıcı tarafından okunup kabul edilmesi gerekir.",
     "Requires users to accept the terms of service before accessing data.\nThis product includes GeoLite2 data created by MaxMind, available from [maxmind.com](http://www.maxmind.com)" : "Verilere erişmeden önce hizmet koşulları metninin kullanıcı tarafından okunup kabul edilmesi gerekir.\nBu uygulamada  [maxmind.com](http://www.maxmind.com) adresinden ulaşılabilecek MaxMind tarafından üretilmiş GeoLite2 verileri bulunur",
+    "Require users to accept the terms of service before accessing the service." : "Hizmete erişmeden önce hizmet koşulları metninin kullanıcı tarafından okunup kabul edilmesi gerekir.",
     "For formatting purposes Markdown is supported." : "Biçimlendirme amacıyla markdown kullanılabilir.",
+    "Select a region" : "Bir bölge seçin",
+    "Select a language" : "Bir dil seçin",
+    "By using this service …" : "Bu hizmeti kullanarak…",
     "Existing terms of service" : "Var olan hizmet koşulları",
     "Saving …" : "Kaydediliyor…",
     "Saved!" : "Kaydedildi!",
@@ -448,13 +452,9 @@ OC.L10N.register(
     "Reset!" : "Sıfırla!",
     "Reset all signatories" : "Tüm kabulleri sıfırla",
     "Loading …" : "Yükleniyor…",
+    "I acknowledge that I have read and agree to the above terms of service" : "Yukarıdaki hizmet koşulları metnini okudum ve anladım",
     "Edit" : "Düzenle",
     "Delete" : "Sil",
-    "Deleting …" : "Siliniyor…",
-    "I acknowledge that I have read and agree to the above terms of service" : "Yukarıdaki hizmet koşulları metnini okudum ve anladım",
-    "Require users to accept the terms of service before accessing the service." : "Hizmete erişmeden önce hizmet koşulları metninin kullanıcı tarafından okunup kabul edilmesi gerekir.",
-    "Select a region" : "Bir bölge seçin",
-    "Select a language" : "Bir dil seçin",
-    "By using this service …" : "Bu hizmeti kullanarak…"
+    "Deleting …" : "Siliniyor…"
 },
 "nplurals=2; plural=(n > 1);");

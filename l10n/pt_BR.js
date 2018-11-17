@@ -439,7 +439,11 @@ OC.L10N.register(
     "You have to accept the newest version of the terms of service in order to be able to use this service." : "Você tem que aceitar a versão mais recente dos termos de serviço para poder usá-lo.",
     "Requires users to accept the terms of service before accessing data." : "Requer que os usuários aceitem os termos de serviço antes de acessar os dados.",
     "Requires users to accept the terms of service before accessing data.\nThis product includes GeoLite2 data created by MaxMind, available from [maxmind.com](http://www.maxmind.com)" : "Requer que os usuários aceitem os termos de serviço antes de acessar os dados.\nEste produto inclui dados GeoLite2 criados pela MaxMind, disponíveis em  [maxmind.com](http://www.maxmind.com)",
+    "Require users to accept the terms of service before accessing the service." : "Exigir que os usuários aceitem os termos de serviço antes de acessá-lo.",
     "For formatting purposes Markdown is supported." : "Para fins de formatação, o Markdown é suportado.",
+    "Select a region" : "Selecione uma região",
+    "Select a language" : "Selecione um idioma",
+    "By using this service …" : "Ao usar este serviço...",
     "Existing terms of service" : "Termos de serviço existentes",
     "Saving …" : "Salvando...",
     "Saved!" : "Salvo!",
@@ -448,13 +452,9 @@ OC.L10N.register(
     "Reset!" : "Redefinido!",
     "Reset all signatories" : "Redefinir todos os signatários",
     "Loading …" : "Carregando...",
+    "I acknowledge that I have read and agree to the above terms of service" : "Eu confirmo que li e concordo com os termos de serviço acima",
     "Edit" : "Editar",
     "Delete" : "Excluir",
-    "Deleting …" : "Excluindo...",
-    "I acknowledge that I have read and agree to the above terms of service" : "Eu confirmo que li e concordo com os termos de serviço acima",
-    "Require users to accept the terms of service before accessing the service." : "Exigir que os usuários aceitem os termos de serviço antes de acessá-lo.",
-    "Select a region" : "Selecione uma região",
-    "Select a language" : "Selecione um idioma",
-    "By using this service …" : "Ao usar este serviço..."
+    "Deleting …" : "Excluindo..."
 },
 "nplurals=2; plural=(n > 1);");

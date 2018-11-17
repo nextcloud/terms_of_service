@@ -439,7 +439,11 @@ OC.L10N.register(
     "You have to accept the newest version of the terms of service in order to be able to use this service." : "Devi accettare l'ultima versione dei termini del servizio per poter utilizzare questo servizio.",
     "Requires users to accept the terms of service before accessing data." : "Richiede che gli utenti accettino i termini del servizio prima di accedere ai dati.",
     "Requires users to accept the terms of service before accessing data.\nThis product includes GeoLite2 data created by MaxMind, available from [maxmind.com](http://www.maxmind.com)" : "Richiede che gli utenti accettino i termini del servizio prima di accedere ai dati.\nQuesto prodotto include i dati di GeoLite2 creato da MaxMind, disponibile presso [maxmind.com](http://www.maxmind.com)",
+    "Require users to accept the terms of service before accessing the service." : "Richiede che gli utenti accettino i termini di servizio prima di accedere.",
     "For formatting purposes Markdown is supported." : "Per scopi di formattazione, Markdown è supportato.",
+    "Select a region" : "Seleziona una regione",
+    "Select a language" : "Seleziona una lingua",
+    "By using this service …" : "Utilizzando questo servizio …",
     "Existing terms of service" : "Termini del servizio esistenti",
     "Saving …" : "Salvataggio in corso…",
     "Saved!" : "Salvato!",
@@ -448,13 +452,9 @@ OC.L10N.register(
     "Reset!" : "Ripristinato!",
     "Reset all signatories" : "Ripristina tutte le firme",
     "Loading …" : "Caricamento in corso…",
+    "I acknowledge that I have read and agree to the above terms of service" : "Confermo che ho letto e accetto i suddetti termini di servizio",
     "Edit" : "Modifica",
     "Delete" : "Elimina",
-    "Deleting …" : "Eliminazione in corso…",
-    "I acknowledge that I have read and agree to the above terms of service" : "Confermo che ho letto e accetto i suddetti termini di servizio",
-    "Require users to accept the terms of service before accessing the service." : "Richiede che gli utenti accettino i termini di servizio prima di accedere.",
-    "Select a region" : "Seleziona una regione",
-    "Select a language" : "Seleziona una lingua",
-    "By using this service …" : "Utilizzando questo servizio …"
+    "Deleting …" : "Eliminazione in corso…"
 },
 "nplurals=2; plural=(n != 1);");

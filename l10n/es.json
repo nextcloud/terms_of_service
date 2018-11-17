@@ -437,7 +437,11 @@
     "You have to accept the newest version of the terms of service in order to be able to use this service." : "Tiene que aceptar la última versión de los términos del servicio para poder usar el servicio.",
     "Requires users to accept the terms of service before accessing data." : "Requiere a los usuarios que acepten los términos del servicio antes de acceder a los datos.",
     "Requires users to accept the terms of service before accessing data.\nThis product includes GeoLite2 data created by MaxMind, available from [maxmind.com](http://www.maxmind.com)" : "Requiere a los usuarios que acepten los términos del servicio antes de acceder a los datos.\nEste producto incluye datos de GeoLite2, creado por MaxMind, disponible desde [maxmind.com](http://www.maxmind.com).",
+    "Require users to accept the terms of service before accessing the service." : "Requiere a los usuarios que acepten los términos del servicio antes de acceder a los datos.",
     "For formatting purposes Markdown is supported." : "Por propósitos de formato, Markdown está soportado.",
+    "Select a region" : "Selecciona una región",
+    "Select a language" : "Selecciona un idioma",
+    "By using this service …" : "Al usar este servicio…",
     "Existing terms of service" : "Términos del servicio actuales",
     "Saving …" : "Guardando ...",
     "Saved!" : "¡Guardado!",
@@ -446,13 +450,9 @@
     "Reset!" : "Reiniciado.",
     "Reset all signatories" : "Reiniciar todos los firmantes",
     "Loading …" : "Cargando...",
+    "I acknowledge that I have read and agree to the above terms of service" : "Confirmo que he leído y estoy de acuerdo con los susodichos términos de servicio ",
     "Edit" : "Editar",
     "Delete" : "Borrar",
-    "Deleting …" : "Borrando...",
-    "I acknowledge that I have read and agree to the above terms of service" : "Confirmo que he leído y estoy de acuerdo con los susodichos términos de servicio ",
-    "Require users to accept the terms of service before accessing the service." : "Requiere a los usuarios que acepten los términos del servicio antes de acceder a los datos.",
-    "Select a region" : "Selecciona una región",
-    "Select a language" : "Selecciona un idioma",
-    "By using this service …" : "Al usar este servicio…"
+    "Deleting …" : "Borrando..."
 },"pluralForm" :"nplurals=2; plural=(n != 1);"
 }
