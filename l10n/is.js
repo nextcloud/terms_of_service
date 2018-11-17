@@ -439,7 +439,11 @@ OC.L10N.register(
     "You have to accept the newest version of the terms of service in order to be able to use this service." : "Þú þarft að samþykkja nýjustu útgáfu þjónustuskilmálanna til að geta notað þessa þjónustu.",
     "Requires users to accept the terms of service before accessing data." : "Krefur notendur um samþykkt á þjónustuskilmálum áður en aðgangur er gefinn að gögnum.",
     "Requires users to accept the terms of service before accessing data.\nThis product includes GeoLite2 data created by MaxMind, available from [maxmind.com](http://www.maxmind.com)" : "Krefur notendur um samþykkt á þjónustuskilmálum áður en aðgangur er gefinn að gögnum.\nÞessi eiginleiki inniheldur GeoLite2 gögn útbúin af MaxMind, tiltæk frá [maxmind.com](http://www.maxmind.com)",
+    "Require users to accept the terms of service before accessing the service." : "Krefur notendur um samþykkt á þjónustuskilmálum áður en aðgangur er gefinn að þjónustu.",
     "For formatting purposes Markdown is supported." : "Markdown er hægt að nota fyrir snið á texta.",
+    "Select a region" : "Veldu svæði",
+    "Select a language" : "Veldu tungumál",
+    "By using this service …" : "Með því að nota þessa þjónustu …",
     "Existing terms of service" : "Fyrirliggjandi þjónustuskilmálar",
     "Saving …" : "Vista …",
     "Saved!" : "Vistað!",
@@ -448,13 +452,9 @@ OC.L10N.register(
     "Reset!" : "Endurstilla!",
     "Reset all signatories" : "Endurstilla allar undirritanir",
     "Loading …" : "Hleð inn …",
+    "I acknowledge that I have read and agree to the above terms of service" : "Staðfesti ég að ég hef lesið og samþykki ofangreinda jónustuskilmála",
     "Edit" : "Breyta",
     "Delete" : "Eyða",
-    "Deleting …" : "Eyði …",
-    "I acknowledge that I have read and agree to the above terms of service" : "Staðfesti ég að ég hef lesið og samþykki ofangreinda jónustuskilmála",
-    "Require users to accept the terms of service before accessing the service." : "Krefur notendur um samþykkt á þjónustuskilmálum áður en aðgangur er gefinn að þjónustu.",
-    "Select a region" : "Veldu svæði",
-    "Select a language" : "Veldu tungumál",
-    "By using this service …" : "Með því að nota þessa þjónustu …"
+    "Deleting …" : "Eyði …"
 },
 "nplurals=2; plural=(n % 10 != 1 || n % 100 == 11);");

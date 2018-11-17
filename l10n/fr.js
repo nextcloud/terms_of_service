@@ -439,7 +439,11 @@ OC.L10N.register(
     "You have to accept the newest version of the terms of service in order to be able to use this service." : "Vous devez accepter la nouvelle version des conditions d'utilisation pour pouvoir utiliser ce service.",
     "Requires users to accept the terms of service before accessing data." : "Les utilisateurs doivent accepter les conditions d'utilisation avant d’accéder aux données.",
     "Requires users to accept the terms of service before accessing data.\nThis product includes GeoLite2 data created by MaxMind, available from [maxmind.com](http://www.maxmind.com)" : "Il est nécessaire que les utilisateurs acceptent les conditions d'utilisations avant d'accéder aux données.\nCe produit inclut les données GeoLite2 créées par MaxMind, disponibles sur[maxmind.com] (http://www.maxmind.com).",
+    "Require users to accept the terms of service before accessing the service." : "Les utilisateurs doivent accepter les conditions d'utilisation avant d’accéder au service.",
     "For formatting purposes Markdown is supported." : "Pour le formatage du texte, le Markdown est supporté.",
+    "Select a region" : "Sélectionner une région",
+    "Select a language" : "Sélectionner une langue",
+    "By using this service …" : "En utilisant ce service …",
     "Existing terms of service" : "Conditions de service existantes",
     "Saving …" : "Enregistrement ...",
     "Saved!" : "Sauvegardé !",
@@ -448,13 +452,9 @@ OC.L10N.register(
     "Reset!" : "Réinitialisé !",
     "Reset all signatories" : "Réinitialiser toutes les signataires",
     "Loading …" : "Chargement …",
+    "I acknowledge that I have read and agree to the above terms of service" : "Je reconnais avoir lu et accepté les conditions d'utilisation ci-dessus",
     "Edit" : "Modifier",
     "Delete" : "Supprimer",
-    "Deleting …" : "Suppression …",
-    "I acknowledge that I have read and agree to the above terms of service" : "Je reconnais avoir lu et accepté les conditions d'utilisation ci-dessus",
-    "Require users to accept the terms of service before accessing the service." : "Les utilisateurs doivent accepter les conditions d'utilisation avant d’accéder au service.",
-    "Select a region" : "Sélectionner une région",
-    "Select a language" : "Sélectionner une langue",
-    "By using this service …" : "En utilisant ce service …"
+    "Deleting …" : "Suppression …"
 },
 "nplurals=2; plural=(n > 1);");

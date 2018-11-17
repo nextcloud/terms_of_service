@@ -428,7 +428,11 @@ OC.L10N.register(
     "You have to accept the newest version of the terms of service in order to be able to use this service." : "Je třeba abyste přijali novější verzi podmínek používání služby abyste ji mohli používat.",
     "Requires users to accept the terms of service before accessing data." : "Vyžaduje aby uživatelé přijali podmínky služby před přístupem k datům.",
     "Requires users to accept the terms of service before accessing data.\nThis product includes GeoLite2 data created by MaxMind, available from [maxmind.com](http://www.maxmind.com)" : "Než budou moci přistupovat k datům, vyžaduje od uživatelů přijmout všeobecné podmínky.\nTento produkt obsahuje GeoLite2 data vytvořená MaxMind, která jsou k dispozici na  [maxmind.com](http://www.maxmind.com)",
+    "Require users to accept the terms of service before accessing the service." : "Vyžadovat aby uživatelé přijali všeobecné podmínky než budou moci přistupovat ke službě.",
     "For formatting purposes Markdown is supported." : "Formátovat lze značkami Markdown.",
+    "Select a region" : "Vybrat oblast",
+    "Select a language" : "Vybrat jazyk",
+    "By using this service …" : "Použitím této služby…",
     "Existing terms of service" : "Existující všeobecné podmínky",
     "Saving …" : "Ukládání…",
     "Saved!" : "Uloženo!",
@@ -437,13 +441,9 @@ OC.L10N.register(
     "Reset!" : "Resetovat!",
     "Reset all signatories" : "Resetovat všechny signatury",
     "Loading …" : "Načítání…",
+    "I acknowledge that I have read and agree to the above terms of service" : "Potvrzuji, že jsem si přečetl(a) a souhlasím s výše uvedenými všeobecnými podmínkami",
     "Edit" : "Upravit",
     "Delete" : "Smazat",
-    "Deleting …" : "Mazání…",
-    "I acknowledge that I have read and agree to the above terms of service" : "Potvrzuji, že jsem si přečetl(a) a souhlasím s výše uvedenými všeobecnými podmínkami",
-    "Require users to accept the terms of service before accessing the service." : "Vyžadovat aby uživatelé přijali všeobecné podmínky než budou moci přistupovat ke službě.",
-    "Select a region" : "Vybrat oblast",
-    "Select a language" : "Vybrat jazyk",
-    "By using this service …" : "Použitím této služby…"
+    "Deleting …" : "Mazání…"
 },
 "nplurals=4; plural=(n == 1 && n % 1 == 0) ? 0 : (n >= 2 && n <= 4 && n % 1 == 0) ? 1: (n % 1 != 0 ) ? 2 : 3;");

@@ -437,7 +437,11 @@
     "You have to accept the newest version of the terms of service in order to be able to use this service." : "Je moet de nieuwste versie van de gebruiksvoorwaarden accepteren om deze dienst te kunnen (blijven) gebruiken.",
     "Requires users to accept the terms of service before accessing data." : "Eist dat gebruikers de gebruiksvoorwaarden accepteren voordat ze toegang kijgen tot gegevens.",
     "Requires users to accept the terms of service before accessing data.\nThis product includes GeoLite2 data created by MaxMind, available from [maxmind.com](http://www.maxmind.com)" : "Eist dat gebruikers de gebruiksvoorwaarden accepteren voordat ze toegang kijgen tot gegevens.\nDit product bevat GeoLite2 gegevens gecreëerd door MaxMind, beschikbaar via [maxmind.com](http://www.maxmind.com)",
+    "Require users to accept the terms of service before accessing the service." : "Vereist dat gebruikers de gebruiksvoorwaarden accepteren voordat ze toegang kijgen tot dienst.",
     "For formatting purposes Markdown is supported." : "Voor opmaakdoeleinden wordt Markdown ondersteund.",
+    "Select a region" : "Selecteer een regie",
+    "Select a language" : "Kies een taal",
+    "By using this service …" : "Door gebruik te maken van deze dienst ...",
     "Existing terms of service" : "Bestaande gebruiksvoorwaarden",
     "Saving …" : "Opslaan ...",
     "Saved!" : "Opgeslagen!",
@@ -446,13 +450,9 @@
     "Reset!" : "Resetten!",
     "Reset all signatories" : "Reset alle onderschrijvingen",
     "Loading …" : "Laden ...",
+    "I acknowledge that I have read and agree to the above terms of service" : "Ik bevestig dat ik de bovenstaande gebruiksvoorwaarden heb gelezen en ermee instem",
     "Edit" : "Bewerken",
     "Delete" : "Verwijderen",
-    "Deleting …" : "Verwijderen ...",
-    "I acknowledge that I have read and agree to the above terms of service" : "Ik bevestig dat ik de bovenstaande gebruiksvoorwaarden heb gelezen en ermee instem",
-    "Require users to accept the terms of service before accessing the service." : "Vereist dat gebruikers de gebruiksvoorwaarden accepteren voordat ze toegang kijgen tot dienst.",
-    "Select a region" : "Selecteer een regie",
-    "Select a language" : "Kies een taal",
-    "By using this service …" : "Door gebruik te maken van deze dienst ..."
+    "Deleting …" : "Verwijderen ..."
 },"pluralForm" :"nplurals=2; plural=(n != 1);"
 }

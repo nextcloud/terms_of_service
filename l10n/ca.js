@@ -439,7 +439,11 @@ OC.L10N.register(
     "You have to accept the newest version of the terms of service in order to be able to use this service." : "Ha d'acceptar la versió més nova de les condicions del servei per poder utilitzar aquest servei.",
     "Requires users to accept the terms of service before accessing data." : "Exigeix que els usuaris acceptin els termes de servei abans d'accedir a les dades.",
     "Requires users to accept the terms of service before accessing data.\nThis product includes GeoLite2 data created by MaxMind, available from [maxmind.com](http://www.maxmind.com)" : "Exigeix que els usuaris acceptin els termes de servei abans d'accedir a les dades.\nAquest producte inclou dades GeoLite2 creades per MaxMind, disponible a [maxmind.com](http://www.maxmind.com)",
+    "Require users to accept the terms of service before accessing the service." : "Demanar als usuaris que acceptin les condicions del servei abans d'accedir al servei.",
     "For formatting purposes Markdown is supported." : "Per a format Markdown està suportat.",
+    "Select a region" : "Seleccionar una regió",
+    "Select a language" : "Seleccionar un idioma",
+    "By using this service …" : "Fent us d’aquest servei …",
     "Existing terms of service" : "Condicions existents d'ús",
     "Saving …" : "Desant …",
     "Saved!" : "Guardat!",
@@ -448,13 +452,9 @@ OC.L10N.register(
     "Reset!" : "Restablert!",
     "Reset all signatories" : "Restablir tots els signants",
     "Loading …" : "Carregant …",
+    "I acknowledge that I have read and agree to the above terms of service" : "Reconec que he llegit i accepto els termes de servei anteriors",
     "Edit" : "Editar",
     "Delete" : "Esborrar",
-    "Deleting …" : "Suprimint …",
-    "I acknowledge that I have read and agree to the above terms of service" : "Reconec que he llegit i accepto els termes de servei anteriors",
-    "Require users to accept the terms of service before accessing the service." : "Demanar als usuaris que acceptin les condicions del servei abans d'accedir al servei.",
-    "Select a region" : "Seleccionar una regió",
-    "Select a language" : "Seleccionar un idioma",
-    "By using this service …" : "Fent us d’aquest servei …"
+    "Deleting …" : "Suprimint …"
 },
 "nplurals=2; plural=(n != 1);");
