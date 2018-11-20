@@ -72,7 +72,7 @@ class Notifier implements INotifier {
 			->setParsedMessage($l->t('You have to accept the newest version of the terms of service in order to be able to use this service.'))
 			->setIcon($this->url->getAbsoluteURL($this->url->imagePath('terms_of_service', 'app-dark.svg')))
 			// We simply link to the base page of Nextcloud for now since that will show the popup.
-			->setLink($this->url->getAbsoluteURL(''));
+			->setLink($this->url->getAbsoluteURL('/'));
 
 		return $notification;
 	}
