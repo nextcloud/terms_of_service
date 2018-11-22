@@ -29,8 +29,8 @@
 		<p class="settings-hint">{{ t('terms_of_service', 'For formatting purposes Markdown is supported.') }}</p>
 
 		<span>
-			<v-select v-model="country" :options="countryOptions" :placeholder="t('terms_of_service', 'Select a region')"></v-select>
-			<v-select v-model="language" :options="languageOptions" :placeholder="t('terms_of_service', 'Select a language')"></v-select>
+			<multiselect v-model="country" :options="countryOptions" :placeholder="t('terms_of_service', 'Select a region')" label="label" track-by="value" />
+			<multiselect v-model="language" :options="languageOptions" :placeholder="t('terms_of_service', 'Select a language')" label="label" track-by="value" />
 		</span>
 
 		<textarea id="terms_of_service-countryspecific-textarea" v-model="body" :placeholder="t('terms_of_service', 'By using this service …')"></textarea>
@@ -49,15 +49,15 @@
 <script>
 import term from './components/term';
 import axios from 'axios';
-import vSelect from 'vue-select';
+import { Multiselect } from 'nextcloud-vue';
 
 export default {
 	name: 'app',
 
 	data () {
 		return {
-			country: null,
-			language: null,
+			country: '',
+			language: '',
 			body: '',
 			countries: {},
 			countryOptions: [],
@@ -116,7 +116,7 @@ export default {
 
 	components: {
 		term,
-		vSelect
+		Multiselect
 	},
 
 	computed: {
