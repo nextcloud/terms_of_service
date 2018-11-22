@@ -134,7 +134,9 @@ export default {
 		axios
 			.get(OC.generateUrl('/apps/terms_of_service/terms/admin'), this.tokenHeaders)
 			.then(response => {
-				this.terms = response.data.terms;
+				if (response.data.terms.length !== 0) {
+					this.terms = response.data.terms;
+				}
 				this.countries = response.data.countries;
 				this.languages = response.data.languages;
 				Object.keys(this.countries).forEach((countryCode) => {
