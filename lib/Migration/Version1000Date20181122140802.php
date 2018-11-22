@@ -21,46 +21,32 @@
 namespace OCA\TermsOfService\Migration;
 
 use OCP\DB\ISchemaWrapper;
+use OCP\DB\QueryBuilder\IQueryBuilder;
+use OCP\IDBConnection;
 use OCP\Migration\SimpleMigrationStep;
 use OCP\Migration\IOutput;
 
-class Version1000Date20180503135440 extends SimpleMigrationStep {
+class Version1000Date20181122140802 extends SimpleMigrationStep {
+
+	/** @var IDBConnection */
+	protected $connection;
+
+	public function __construct(IDBConnection $connection) {
+		$this->connection = $connection;
+	}
 
 	/**
 	 * @param IOutput $output
 	 * @param \Closure $schemaClosure The `\Closure` returns a `ISchemaWrapper`
 	 * @param array $options
 	 * @return null|ISchemaWrapper
-	 * @since 13.0.0
 	 */
 	public function changeSchema(IOutput $output, \Closure $schemaClosure, array $options) {
 		/** @var ISchemaWrapper $schema */
 		$schema = $schemaClosure();
 
-		if (!$schema->hasTable('termsofservice_terms')) {
-			$table = $schema->createTable('termsofservice_terms');
-			$table->addColumn('id', 'integer', [
-				'autoincrement' => true,
-				'notnull' => true,
-			]);
-			$table->addColumn('country_code', 'string', [
-				'notnull' => true,
-				'length' => 2,
-			]);
-			$table->addColumn('language_code', 'string', [
-				'notnull' => true,
-				'length' => 2,
-			]);
-			$table->addColumn('body', 'text', [
-				'notnull' => true,
-			]);
-			$table->setPrimaryKey(['id']);
-		}
-
-		/**
-		 * Replaced by Version1000Date20181122140802
-		if (!$schema->hasTable('termsofservice_signatories')) {
-			$table = $schema->createTable('termsofservice_signatories');
+		if (!$schema->hasTable('termsofservice_sigs')) {
+			$table = $schema->createTable('termsofservice_sigs');
 			$table->addColumn('id', 'integer', [
 				'autoincrement' => true,
 				'notnull' => true,
@@ -76,8 +62,40 @@ class Version1000Date20180503135440 extends SimpleMigrationStep {
 			]);
 			$table->setPrimaryKey(['id']);
 		}
-		 */
+
 		return $schema;
 	}
 
+	/**
+	 * @param IOutput $output
+	 * @param \Closure $schemaClosure The `\Closure` returns a `ISchemaWrapper`
+	 * @param array $options
+	 */
+	public function postSchemaChange(IOutput $output, \Closure $schemaClosure, array $options) {
+		if (!$this->connection->tableExists('termsofservice_signatories')) {
+			return;
+		}
+
+		$insert = $this->connection->getQueryBuilder();
+		$insert->insert('termsofservice_sigs')
+			->values([
+				'terms_id' => $insert->createParameter('terms_id'),
+				'user_id' => $insert->createParameter('user_id'),
+				'timestamp' => $insert->createParameter('timestamp'),
+			]);
+
+		$query = $this->connection->getQueryBuilder();
+		$query->select('*')
+			->from('termsofservice_signatories');
+
+		$result = $query->execute();
+		while ($row = $result->fetch()) {
+			$insert
+				->setParameter('terms_id', (int) $row['terms_id'], IQueryBuilder::PARAM_INT)
+				->setParameter('user_id', $row['user_id'])
+				->setParameter('timestamp', (int) $row['timestamp'], IQueryBuilder::PARAM_INT);
+			$insert->execute();
+		}
+		$result->closeCursor();
+	}
 }
