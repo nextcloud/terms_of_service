@@ -1,21 +1,12 @@
-#terms_of_service,
 #terms_of_service {
   textarea {
     width: 100%;
   }
 
-  input {
-    width: 230px;
-  }
-
   label span {
     display: inline-block;
     min-width: 120px;
-    padding: 8px 0px;
+    padding: 8px 0;
     vertical-align: top;
-  }
-
-  .dropdown.v-select.single {
-    width: 320px;
   }
 }
