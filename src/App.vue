@@ -48,7 +48,7 @@
 
 <script>
 import term from './components/term';
-import axios from 'axios';
+import axios from 'nextcloud-axios';
 import { Multiselect } from 'nextcloud-vue';
 
 export default {
@@ -86,8 +86,7 @@ export default {
 						countryCode: this.country.value,
 						languageCode: this.language.value,
 						body: this.body
-					},
-					this.tokenHeaders)
+					})
 				.then(response => {
 					this.$set(this.terms, response.data.id, response.data);
 
@@ -103,8 +102,8 @@ export default {
 			this.resetButtonText = t('terms_of_service', 'Resetting …');
 
 			axios
-				.delete(OC.generateUrl('/apps/terms_of_service/sign'), this.tokenHeaders)
-				.then(response => {
+				.delete(OC.generateUrl('/apps/terms_of_service/sign'))
+				.then(() => {
 					this.resetButtonText = t('terms_of_service', 'Reset!');
 					setTimeout(() => {
 						this.resetButtonText = t('terms_of_service', 'Reset all signatories');
@@ -122,9 +121,6 @@ export default {
 	computed: {
 		hasTerms () {
 			return Object.keys(this.terms).length > 0;
-		},
-		tokenHeaders () {
-			return { headers: { requesttoken: OC.requestToken } };
 		}
 	},
 
@@ -132,7 +128,7 @@ export default {
 		this.saveButtonText = t('terms_of_service', 'Loading …');
 		this.resetButtonText = t('terms_of_service', 'Reset all signatories');
 		axios
-			.get(OC.generateUrl('/apps/terms_of_service/terms/admin'), this.tokenHeaders)
+			.get(OC.generateUrl('/apps/terms_of_service/terms/admin'))
 			.then(response => {
 				if (response.data.terms.length !== 0) {
 					this.terms = response.data.terms;

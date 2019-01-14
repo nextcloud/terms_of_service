@@ -38,7 +38,7 @@
 </template>
 
 <script>
-	import axios from 'axios';
+	import axios from 'nextcloud-axios';
 
 export default {
 	name: 'userapp',
@@ -58,12 +58,6 @@ export default {
 		this.loadTerms();
 	},
 
-	computed: {
-		tokenHeaders () {
-			return { headers: { requesttoken: OC.requestToken } };
-		}
-	},
-
 	watch: {
 		selectedLanguage: function(newLanguage) {
 			this.selectTerms(newLanguage);
@@ -73,7 +67,7 @@ export default {
 	methods: {
 		loadTerms () {
 			axios
-				.get(OC.generateUrl('/apps/terms_of_service/terms'), this.tokenHeaders)
+				.get(OC.generateUrl('/apps/terms_of_service/terms'))
 				.then(response => {
 					this.hasSigned = response.data.hasSigned;
 					this.terms = response.data.terms;
@@ -113,9 +107,8 @@ export default {
 				OC.generateUrl('/apps/terms_of_service/sign'),
 				{
 					termId: this.termsId
-				},
-				this.tokenHeaders
-			).then(response => {
+				}
+			).then(() => {
 				window.location.reload();
 			});
 		},
