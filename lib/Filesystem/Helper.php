@@ -60,8 +60,9 @@ class Helper {
 		$exception = new \Exception();
 		$trace = $exception->getTrace();
 		foreach ($trace as $step) {
-			if (isset($step['class']) && $step['class'] === 'OC\Core\Controller\LoginController' &&
-				isset($step['function']) && $step['function'] === 'tryLogin') {
+			if (isset($step['class'], $step['function']) &&
+				(($step['class'] === 'OC\Core\Controller\LoginController' && $step['function'] === 'tryLogin')
+				|| ($step['class'] === 'OC_Util' && $step['function'] === 'copySkeleton'))) {
 				return true;
 			}
 		}
