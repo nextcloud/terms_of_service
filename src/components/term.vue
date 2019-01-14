@@ -7,7 +7,7 @@
 </template>
 
 <script>
-	import axios from 'axios';
+	import axios from 'nextcloud-axios';
 
 	export default {
 		name: 'term',
@@ -33,9 +33,6 @@
 			},
 			language () {
 				return this.$parent.languages[this.languageCode];
-			},
-			tokenHeaders () {
-				return { headers: { requesttoken: OC.requestToken } };
 			}
 		},
 
@@ -55,8 +52,8 @@
 				this.deleteButtonDisabled = true;
 				this.deleteButtonText = t('terms_of_service', 'Deleting …');
 				axios
-					.delete(OC.generateUrl('/apps/terms_of_service/terms/' + this.id), this.tokenHeaders)
-					.then(response => {
+					.delete(OC.generateUrl('/apps/terms_of_service/terms/' + this.id))
+					.then(() => {
 						this.$delete(this.$parent.terms, this.id);
 					});
 			}
