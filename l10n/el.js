@@ -172,6 +172,8 @@ OC.L10N.register(
     "Albanian" : "Αλβανικά",
     "Ukrainian" : "Ουκρανικά",
     "Chinese" : "Κινέζικα",
+    "Select a region" : "Επιλογή περιοχής",
+    "Select a language" : "Επιλογή γλώσσας",
     "Saving …" : "Αποθηκεύεται ...",
     "Saved!" : "Αποθηκεύτηκε!",
     "Save" : "Αποθήκευση",
