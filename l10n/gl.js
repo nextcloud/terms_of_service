@@ -450,7 +450,7 @@ OC.L10N.register(
     "Save" : "Gardar",
     "Resetting …" : "Restabelecer",
     "Reset!" : "Restabelecer",
-    "Reset all signatories" : "Restablecer todos os asinantes",
+    "Reset all signatories" : "Restabelecer todos os asinantes",
     "Loading …" : "Cargando…",
     "I acknowledge that I have read and agree to the above terms of service" : "Recoñezo que lin e acepto as condicións do servizo anteriores",
     "Edit" : "Editar",
