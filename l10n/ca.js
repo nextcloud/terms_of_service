@@ -453,7 +453,7 @@ OC.L10N.register(
     "Reset all signatories" : "Restablir tots els signants",
     "Loading …" : "Carregant …",
     "I acknowledge that I have read and agree to the above terms of service" : "Reconec que he llegit i accepto els termes de servei anteriors",
-    "Edit" : "Editar",
+    "Edit" : "Edita",
     "Delete" : "Esborrar",
     "Deleting …" : "Suprimint …"
 },
