@@ -115,7 +115,7 @@ OC.L10N.register(
     "Italy" : "Itàlia",
     "Jamaica" : "Jamaica",
     "Japan" : "Japó",
-    "Jersey" : "Equipació",
+    "Jersey" : "Jersey",
     "Jordan" : "Jordània",
     "Kazakhstan" : "Kazakhstan",
     "Kenya" : "Kenya",
