@@ -32,8 +32,19 @@ module.exports = {
 				options: {
 					name: '[name].[ext]?[hash]'
 				}
+			},
+			{
+				/**
+				 * Fixes lodash registering globally and therefore replacing server's underscore
+				 *
+				 * https://github.com/lodash/lodash/issues/1798#issuecomment-233804586
+				 * https://github.com/webpack/webpack/issues/3017#issuecomment-285954512
+				 */
+				parser: {
+					amd: false
+				}
 			}
-		]
+		],
 	},
 	plugins: [new VueLoaderPlugin()],
 	resolve: {
