@@ -246,7 +246,7 @@ OC.L10N.register(
     "Venezuela (Bolivarian Republic of)" : "Venezuela (república bolivriana de)",
     "Viet Nam" : "Vietnam",
     "Virgin Islands (British)" : "Illas Virxes, Británicas",
-    "Virgin Islands (U.S.)" : "Illas Virxes (U.S.)",
+    "Virgin Islands (U.S.)" : "Illas Virxes (EE.UU.)",
     "Wallis and Futuna" : "Illas Wallis e Futuna",
     "Western Sahara" : "Sáhara Ocidental",
     "Yemen" : "Iemen",

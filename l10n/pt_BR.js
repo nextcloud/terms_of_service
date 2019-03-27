@@ -64,7 +64,7 @@ OC.L10N.register(
     "Cyprus" : "Chipre",
     "Czechia" : "República Checa",
     "Denmark" : "Dinamarca",
-    "Djibouti" : "Djiboti",
+    "Djibouti" : "Djibuti",
     "Dominica" : "Dominica",
     "Dominican Republic" : "República Dominicana",
     "Ecuador" : "Equador",
