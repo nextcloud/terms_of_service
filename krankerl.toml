@@ -39,7 +39,7 @@ exclude = [
 before_cmds = [
  	"make clean",
 	"make clean-dev",
-	"make clean-dev",
 	"make npm-init",
-	"make build-js-production"
+	"make build-js-production",
+	"make create-tag"
 ]
