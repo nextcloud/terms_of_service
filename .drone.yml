@@ -1,40 +1,16 @@
-clone:
-  git:
-    image: plugins/git
-    depth: 1
+kind: pipeline
+name: vuejs
 
-pipeline:
-  signed-off-check:
-    image: nextcloudci/php7.1:php7.1-16
-    environment:
-      - APP_NAME=terms_of_service
-      - CORE_BRANCH=master
-      - DB=sqlite
-    commands:
-      - wget https://raw.githubusercontent.com/nextcloud/travis_ci/master/before_install.sh
-      - bash ./before_install.sh $APP_NAME $CORE_BRANCH $DB
-      - cd ../server
-      - php ./build/signed-off-checker.php
-    secrets: [ github_token ]
-    when:
-      matrix:
-        TESTS: signed-off-check
-  vue-build-check-admin:
+steps:
+  - name: check-vuejs
     image: node
     commands:
-     - ./tests/vue-build.sh ./js/terms_of_service_admin.js
-    when:
-      matrix:
-        TESTS: vue-build-check-admin
-  vue-build-check-user:
-    image: node
-    commands:
-     - ./tests/vue-build.sh ./js/terms_of_service_user.js
-    when:
-      matrix:
-        TESTS: vue-build-check-user
-matrix:
-  include:
-    - TESTS: signed-off-check
-    - TESTS: vue-build-check-admin
-    - TESTS: vue-build-check-user
+      - ./tests/vue-build.sh
+
+trigger:
+  branch:
+    - master
+    - stable*
+  event:
+    - pull_request
+    - push
