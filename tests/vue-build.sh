@@ -1,36 +1,28 @@
 #!/bin/bash
 
-root=$(pwd)
-entryFile=$1
+entryFiles=(
+    "terms_of_service_admin"
+    "terms_of_service_user"
+)
 
-if [ ! -f "$entryFile" ]
-then
-	echo "The build file $entryFile does not exists"
-	exit 2
-else
-	backupFile="$entryFile.orig"
-	path=$(dirname "$entryFile")
+for entryFile in "${entryFiles[@]}"
+do
+    cp "js/$entryFile.js" "js/$entryFile.back"
+done
 
-	# Backup original file
-	echo "Backing up $entryFile to $backupFile"
-	cp $entryFile $backupFile
+# Make the app
+set -e
+make
 
-	# Make the app
-	set -e
-	cd "$path/../"
-	make
+for entryFile in "${entryFiles[@]}"
+do
+    echo "Comparing $entryFile to the original"
+    if ! diff -q "js/$entryFile.js" "js/$entryFile.back" &>/dev/null
+    then
+        echo "$entryFile.js build is NOT up-to-date! Please send the proper production build within the pull request"
+        exit 2
+    fi
+    rm "js/$entryFile.back"
+done
 
-	# Reset
-	cd $root
-
-	# Compare build files
-	echo "Comparing $entryFile to the original"
-	if ! diff -q $entryFile $backupFile &>/dev/null
-	then
-		echo "$entryFile build is NOT up-to-date! Please send the proper production build within the pull request"
-		cat $HOME/.npm/_logs/*.log
-		exit 2
-	else
-		echo "$entryFile build is up-to-date"
-	fi
-fi
+echo "Vue.JS builds are up-to-date"
