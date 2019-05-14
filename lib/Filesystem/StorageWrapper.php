@@ -34,14 +34,11 @@ class StorageWrapper extends Wrapper {
 		parent::__construct($parameters);
 		$this->mountPoint = $parameters['mountPoint'];
 
-		$this->helper = new Helper(
-			$parameters['checker'],
-			\OC::$server->getUserSession()
-		);
+		$this->helper = new Helper($parameters['checker'], $this->mountPoint);
 	}
 
 	public function isCreatable($path) {
-		if(!$this->helper->verifyAccess($path, $this->mountPoint)) {
+		if(!$this->helper->verifyAccess($path)) {
 			return false;
 		}
 
@@ -49,7 +46,7 @@ class StorageWrapper extends Wrapper {
 	}
 
 	public function isUpdatable($path) {
-		if(!$this->helper->verifyAccess($path, $this->mountPoint)) {
+		if(!$this->helper->verifyAccess($path)) {
 			return false;
 		}
 
@@ -57,7 +54,7 @@ class StorageWrapper extends Wrapper {
 	}
 
 	public function isDeletable($path) {
-		if(!$this->helper->verifyAccess($path, $this->mountPoint)) {
+		if(!$this->helper->verifyAccess($path)) {
 			return false;
 		}
 
@@ -65,7 +62,7 @@ class StorageWrapper extends Wrapper {
 	}
 
 	public function isReadable($path) {
-		if(!$this->helper->verifyAccess($path, $this->mountPoint)) {
+		if(!$this->helper->verifyAccess($path)) {
 			return false;
 		}
 
@@ -73,7 +70,7 @@ class StorageWrapper extends Wrapper {
 	}
 
 	public function isSharable($path) {
-		if(!$this->helper->verifyAccess($path, $this->mountPoint)) {
+		if(!$this->helper->verifyAccess($path)) {
 			return false;
 		}
 
@@ -81,10 +78,25 @@ class StorageWrapper extends Wrapper {
 	}
 
 	public function fopen($path, $mode) {
-		if ($this->helper->verifyAccess($path, $this->mountPoint)) {
+		if ($this->helper->verifyAccess($path)) {
 			return $this->storage->fopen($path, $mode);
 		}
 
 		throw new ForbiddenException('Terms of service not signed!', true);
+	}
+
+	/**
+	 * get a cache instance for the storage
+	 *
+	 * @param string $path
+	 * @param \OC\Files\Storage\Storage (optional) the storage to pass to the cache
+	 * @return \OC\Files\Cache\Cache
+	 */
+	public function getCache($path = '', $storage = null) {
+		if (!$storage) {
+			$storage = $this;
+		}
+		$cache = $this->storage->getCache($path, $storage);
+		return new CacheWrapper($cache, $storage, $this->helper);
 	}
 }

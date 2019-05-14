@@ -5,6 +5,7 @@ module.exports = {
 	entry: {
 		admin: path.join(__dirname, 'src', 'admin.js'),
 		user: path.join(__dirname, 'src', 'user.js'),
+		public: path.join(__dirname, 'src', 'public.js'),
 	},
 	output: {
 		path: path.resolve(__dirname, './js'),
