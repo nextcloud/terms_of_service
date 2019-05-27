@@ -21,11 +21,14 @@
 
 namespace OCA\TermsOfService\Controller;
 
+use OCA\TermsOfService\AppInfo\Application;
 use OCA\TermsOfService\Db\Entities\Signatory;
 use OCA\TermsOfService\Db\Mapper\SignatoryMapper;
 use OCP\AppFramework\Controller;
 use OCP\AppFramework\Http\JSONResponse;
+use OCP\IConfig;
 use OCP\IRequest;
+use OCP\ISession;
 use OCP\IUser;
 use OCP\IUserManager;
 use OCP\Notification\IManager;
@@ -39,24 +42,36 @@ class SigningController extends Controller {
 	private $notificationsManager;
 	/** @var IUserManager */
 	private $userManager;
+	/** @var IConfig */
+	private $config;
+	/** @var ISession */
+	private $session;
 
-	public function __construct(string $appName,
-								string $UserId,
-								IRequest $request,
-								SignatoryMapper $signatoryMapper,
-								IManager $notificationsManager,
-								IUserManager $userManager) {
+
+	public function __construct(
+		string $appName,
+		$UserId,
+		IRequest $request,
+		SignatoryMapper $signatoryMapper,
+		IManager $notificationsManager,
+		IUserManager $userManager,
+		IConfig $config,
+		ISession $session
+	) {
 		parent::__construct($appName, $request);
 		$this->userId = $UserId;
 		$this->signatoryMapper = $signatoryMapper;
 		$this->notificationsManager = $notificationsManager;
 		$this->userManager = $userManager;
+		$this->config = $config;
+		$this->session = $session;
 	}
 
 	/**
 	 * @NoAdminRequired
 	 *
 	 * @param int $termId
+	 *
 	 * @return JSONResponse
 	 */
 	public function signTerms(int $termId): JSONResponse {
@@ -79,11 +94,28 @@ class SigningController extends Controller {
 		return new JSONResponse();
 	}
 
+
+	/**
+	 * @PublicPage
+	 *
+	 * @param int $termId
+	 * @UseSession
+	 * @return JSONResponse
+	 */
+	public function signTermsPublic(int $termId): JSONResponse {
+		$uuid = $this->config->getAppValue(Application::APPNAME, 'term_uuid', '');
+		$this->session->set('term_uuid', $uuid);
+
+		return new JSONResponse();
+	}
+
+
 	/**
 	 * @return JSONResponse
 	 */
 	public function resetAllSignatories(): JSONResponse {
 		$this->signatoryMapper->deleteAllSignatories();
+		$this->config->setAppValue(Application::APPNAME, 'term_uuid', uniqid());
 
 		$notification = $this->notificationsManager->createNotification();
 		$notification->setApp('terms_of_service')
