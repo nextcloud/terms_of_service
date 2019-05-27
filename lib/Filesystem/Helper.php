@@ -21,23 +21,25 @@
 
 namespace OCA\TermsOfService\Filesystem;
 
+use OC;
+use OC\Core\Controller\LoginController;
+use OCA\Files_Sharing\Controller\ShareController;
+use OCA\TermsOfService\AppInfo\Application;
 use OCA\TermsOfService\Checker;
-use OCP\IUserSession;
 
 class Helper {
 	/** @var Checker */
 	private $checker;
-	/** @var IUserSession */
-	private $userSession;
+	/** @var string */
+	private $mountPoint;
 
-	public function __construct(Checker $checker,
-								IUserSession $userSession) {
+	public function __construct(Checker $checker, string $mountPoint) {
 		$this->checker = $checker;
-		$this->userSession = $userSession;
+		$this->mountPoint = $mountPoint;
 	}
 
-	protected function isBlockablePath(string $path, string $mountPoint): bool {
-		$fullPath = $mountPoint . $path;
+	protected function isBlockablePath(string $path): bool {
+		$fullPath = $this->mountPoint . $path;
 
 		if (substr_count($fullPath, '/') < 3) {
 			return false;
@@ -61,7 +63,7 @@ class Helper {
 		$trace = $exception->getTrace();
 		foreach ($trace as $step) {
 			if (isset($step['class'], $step['function']) &&
-				(($step['class'] === 'OC\Core\Controller\LoginController' && $step['function'] === 'tryLogin')
+				(($step['class'] === LoginController::class && $step['function'] === 'tryLogin')
 				|| ($step['class'] === 'OC_Util' && $step['function'] === 'copySkeleton'))) {
 				return true;
 			}
@@ -69,18 +71,35 @@ class Helper {
 		return false;
 	}
 
+	/**
+	 * Check if we are in the LoginController and if so, ignore the firewall
+	 * @return bool
+	 */
+	protected function isValidatingShare(): bool {
+		$exception = new \Exception();
+		$trace = $exception->getTrace();
+		foreach ($trace as $step) {
+			if (isset($step['class'], $step['function']) &&
+				$step['class'] === ShareController::class && $step['function'] === 'validateShare') {
+				return true;
+			}
+		}
+		return false;
+	}
 
-	protected function isBlockable(string $path,
-								string $mountPoint): bool {
-		if($this->isCreatingSkeletonFiles()) {
+
+	protected function isBlockable(string $path): bool {
+		if ($this->isCreatingSkeletonFiles() || $this->isValidatingShare()) {
 			return false;
 		}
 
-		return $this->isBlockablePath($path, $mountPoint);
+		return $this->isBlockablePath($path);
 	}
 
-	public function verifyAccess(string $path, string $mountPoint): bool {
-		if (!$this->userSession->isLoggedIn() || !$this->isBlockable($path, $mountPoint)) {
+	public function verifyAccess(string $path): bool {
+		$config = OC::$server->getConfig();
+		if ($config->getAppValue(Application::APPNAME, 'tos_on_public_shares', '0') !== '1'
+			|| !$this->isBlockable($path)) {
 			return true;
 		}
 

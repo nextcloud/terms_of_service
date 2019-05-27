@@ -21,29 +21,45 @@
 
 namespace OCA\TermsOfService;
 
+use OCA\TermsOfService\AppInfo\Application;
 use OCA\TermsOfService\Db\Mapper\SignatoryMapper;
 use OCA\TermsOfService\Db\Mapper\TermsMapper;
-use OCP\IUser;
-use OCP\IUserSession;
+use OCP\IConfig;
+use OCP\ISession;
+use OCP\IUserManager;
 
 class Checker {
-	/** @var IUserSession */
-	private $userSession;
+	/** @var string */
+	private $userId;
+	/** @var IUserManager */
+	private $userManager;
+	/** @var ISession */
+	private $session;
 	/** @var SignatoryMapper */
 	private $signatoryMapper;
 	/** @var TermsMapper */
 	private $termsMapper;
 	/** @var CountryDetector */
 	private $countryDetector;
+	/** @var IConfig */
+	private $config;
 
-	public function __construct(IUserSession $userSession,
-								SignatoryMapper $signatoryMapper,
-								TermsMapper $termsMapper,
-								CountryDetector $countryDetector) {
-		$this->userSession = $userSession;
+	public function __construct(
+		$userId,
+		IUserManager $userManager,
+		ISession $session,
+		SignatoryMapper $signatoryMapper,
+		TermsMapper $termsMapper,
+		CountryDetector $countryDetector,
+		IConfig $config
+	) {
+		$this->userId = $userId;
+		$this->userManager = $userManager;
+		$this->session = $session;
 		$this->signatoryMapper = $signatoryMapper;
 		$this->termsMapper = $termsMapper;
 		$this->countryDetector = $countryDetector;
+		$this->config = $config;
 	}
 
 	/**
@@ -53,10 +69,14 @@ class Checker {
 	 * @return bool
 	 */
 	public function currentUserHasSigned(): bool {
-		$user = $this->userSession->getUser();
-		if(!($user instanceof IUser)) {
-			return false;
+		$uuid = $this->config->getAppValue(Application::APPNAME, 'term_uuid', '');
+		if ($this->userId === null) {
+			return ($this->session->get('term_uuid') === $uuid);
+		} else if ($this->session->get('term_uuid') === $uuid) {
+			return true;
 		}
+
+		$user = $this->userManager->get($this->userId);
 
 		$countryCode = $this->countryDetector->getCountry();
 		$terms = $this->termsMapper->getTermsForCountryCode($countryCode);

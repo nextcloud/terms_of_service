@@ -21,6 +21,7 @@
 
 namespace OCA\TermsOfService\Controller;
 
+use OCA\TermsOfService\AppInfo\Application;
 use OCA\TermsOfService\Checker;
 use OCA\TermsOfService\CountryDetector;
 use OCA\TermsOfService\Db\Entities\Terms;
@@ -32,6 +33,7 @@ use OCA\TermsOfService\Exceptions\TermsNotFoundException;
 use OCP\AppFramework\Controller;
 use OCP\AppFramework\Http;
 use OCP\AppFramework\Http\JSONResponse;
+use OCP\IConfig;
 use OCP\IRequest;
 use OCP\L10N\IFactory;
 
@@ -50,6 +52,8 @@ class TermsController extends Controller {
 	private $countryDetector;
 	/** @var Checker */
 	private $checker;
+	/** @var IConfig */
+	private $config;
 
 	public function __construct(string $appName,
 								IRequest $request,
@@ -59,7 +63,8 @@ class TermsController extends Controller {
 								CountryMapper $countryMapper,
 								LanguageMapper $languageMapper,
 								CountryDetector $countryDetector,
-								Checker $checker) {
+								Checker $checker,
+								IConfig $config) {
 		parent::__construct($appName, $request);
 		$this->factory = $factory;
 		$this->termsMapper = $termsMapper;
@@ -68,6 +73,7 @@ class TermsController extends Controller {
 		$this->languageMapper = $languageMapper;
 		$this->countryDetector = $countryDetector;
 		$this->checker = $checker;
+		$this->config = $config;
 	}
 
 	/**
@@ -77,6 +83,11 @@ class TermsController extends Controller {
 	public function index(): JSONResponse {
 		$currentCountry = $this->countryDetector->getCountry();
 		$countryTerms = $this->termsMapper->getTermsForCountryCode($currentCountry);
+
+		if ($this->config->getAppValue(Application::APPNAME, 'term_uuid', '') === '')
+		{
+			$this->config->getAppValue(Application::APPNAME, 'term_uuid', uniqid());
+		}
 
 		$response = [
 			'terms' => $countryTerms,
