@@ -37,6 +37,11 @@ return [
 			'verb' => 'POST',
 		],
 		[
+			'name' => 'Signing#signTermsPublic',
+			'url' => '/sign_public',
+			'verb' => 'POST',
+		],
+		[
 			'name' => 'Signing#resetAllSignatories',
 			'url' => '/sign',
 			'verb' => 'DELETE',

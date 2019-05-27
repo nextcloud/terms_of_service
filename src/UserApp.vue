@@ -50,7 +50,8 @@ export default {
 			languages: [],
 			selectedLanguage: 0,
 			termsId: 0,
-			termsBody: ''
+			termsBody: '',
+			publicContent: null
 		}
 	},
 
@@ -78,6 +79,12 @@ export default {
 						return;
 					}
 
+					// make it Vue
+					this.publicContent = document.getElementById('files-public-content')
+					if (this.publicContent !== null) {
+						this.publicContent.style.visibility = 'hidden';
+					}
+
 					this.selectTerms(0);
 					if (this.terms.length > 1) {
 						Object.keys(this.terms).forEach((index) => {
@@ -103,8 +110,13 @@ export default {
 			this.hasSigned = true;
 			this.$modal.hide('confirm-terms');
 
+			let url = '/apps/terms_of_service/sign';
+			if (this.$root.source === 'public') {
+				url = '/apps/terms_of_service/sign_public';
+			}
+
 			axios.post(
-				OC.generateUrl('/apps/terms_of_service/sign'),
+				OC.generateUrl(url),
 				{
 					termId: this.termsId
 				}
