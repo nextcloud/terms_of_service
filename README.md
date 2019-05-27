@@ -5,6 +5,15 @@
 > 
 > Requires users to accept the terms of service before accessing data.
 
+## more settings
+
+Some options are not available in the Admin Settings page but can be enable using the **./occ** command.
+
+- _Displaying the ToS popup on public shares (links or mails, with or without password protection):_
+
+>        ./occ config:app:set --value '1' terms_of_service tos_on_public_shares
+
+
 ## Build Setup
 
 ``` bash
