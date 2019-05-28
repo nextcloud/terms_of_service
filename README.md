@@ -7,7 +7,7 @@
 
 ## more settings
 
-Additional settings can be enabled using the **./occ** command:
+Additional functions can be enabled using the **./occ** command:
 
 - _Displaying the ToS popup on public shares (links or emails, with or without password protection):_
 
