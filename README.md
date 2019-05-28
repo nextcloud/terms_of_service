@@ -7,11 +7,13 @@
 
 ## more settings
 
-Some options are not available in the Admin Settings page but can be enable using the **./occ** command.
+Additional settings can be enabled using the **./occ** command:
 
-- _Displaying the ToS popup on public shares (links or mails, with or without password protection):_
+- _Displaying the ToS popup on public shares (links or emails, with or without password protection):_
 
 >        ./occ config:app:set --value '1' terms_of_service tos_on_public_shares
+
+defaults to `0`
 
 
 ## Build Setup
