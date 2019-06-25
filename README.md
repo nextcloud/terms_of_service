@@ -1,6 +1,6 @@
 # 📜 Terms of service
 
-> [](https://raw.githubusercontent.com/nextcloud/terms_of_service/master/docs/popup-dialog.png)
+> ![](https://raw.githubusercontent.com/nextcloud/terms_of_service/master/docs/popup-dialog.png)
 
 Requires users to accept terms of service before accessing data. Text and languages are configurable on the administration panel.
 
