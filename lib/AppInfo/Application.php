@@ -114,22 +114,7 @@ class Application extends App {
 		$this->getContainer()
 			 ->getServer()
 			 ->getNotificationManager()
-			 ->registerNotifier(
-				 function() {
-					 return $this->getContainer()
-								 ->query(Notifier::class);
-				 }, function() {
-				 $l = $this->getContainer()
-						   ->getServer()
-						   ->getL10NFactory()
-						   ->get('terms_of_service');
-
-				 return [
-					 'id'   => 'terms_of_service',
-					 'name' => $l->t('Terms of service'),
-				 ];
-			 }
-			 );
+			 ->registerNotifierService(Notifier::class);
 	}
 
 	protected function createNotificationOnFirstLogin() {
