@@ -1,5 +1,4 @@
 { "translations": {
-    "Terms of service" : "Όροι χρήσης",
     "Afghanistan" : "Αφγανιστάν",
     "Albania" : "Αλβανία",
     "Algeria" : "Αλγερία",
@@ -170,6 +169,7 @@
     "Albanian" : "Αλβανικά",
     "Ukrainian" : "Ουκρανικά",
     "Chinese" : "Κινέζικα",
+    "Terms of service" : "Όροι χρήσης",
     "Select a region" : "Επιλογή περιοχής",
     "Select a language" : "Επιλογή γλώσσας",
     "Saving …" : "Αποθηκεύεται ...",

@@ -1,7 +1,6 @@
 OC.L10N.register(
     "terms_of_service",
     {
-    "Terms of service" : "Όροι χρήσης",
     "Afghanistan" : "Αφγανιστάν",
     "Albania" : "Αλβανία",
     "Algeria" : "Αλγερία",
@@ -172,6 +171,7 @@ OC.L10N.register(
     "Albanian" : "Αλβανικά",
     "Ukrainian" : "Ουκρανικά",
     "Chinese" : "Κινέζικα",
+    "Terms of service" : "Όροι χρήσης",
     "Select a region" : "Επιλογή περιοχής",
     "Select a language" : "Επιλογή γλώσσας",
     "Saving …" : "Αποθηκεύεται ...",

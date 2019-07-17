@@ -1,5 +1,4 @@
 { "translations": {
-    "Terms of service" : "Termat e shërbimit",
     "Global" : "Globale",
     "Afghanistan" : "Afganistani",
     "Åland Islands" : "Ishujt Oland",
@@ -144,6 +143,7 @@
     "Afrikaans" : "Afrikanë",
     "Bulgarian" : "Bullgarë",
     "English" : "Anglisht",
-    "Hungarian" : "Hungareze"
+    "Hungarian" : "Hungareze",
+    "Terms of service" : "Termat e shërbimit"
 },"pluralForm" :"nplurals=2; plural=(n != 1);"
 }

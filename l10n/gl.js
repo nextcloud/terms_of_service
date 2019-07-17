@@ -1,7 +1,6 @@
 OC.L10N.register(
     "terms_of_service",
     {
-    "Terms of service" : "Condicións do servizo",
     "Global" : "Global",
     "Afghanistan" : "Afganistán",
     "Åland Islands" : "Illas de Åland",
@@ -435,6 +434,7 @@ OC.L10N.register(
     "Zhuang; Chuang" : "Zhuang; Chuang",
     "Chinese" : "Chinés",
     "Zulu" : "Zulú",
+    "Terms of service" : "Condicións do servizo",
     "Terms of service have been modified!" : "As condicións do servizo foron modificadas!",
     "You have to accept the newest version of the terms of service in order to be able to use this service." : "Debe aceptar a versión máis recente das condicións do servizo para poder empregar este servizo.",
     "Requires users to accept the terms of service before accessing data." : "Require que os usuarios acepten as condicións do servizo antes de acceder aos datos.",
