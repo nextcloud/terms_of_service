@@ -1,7 +1,6 @@
 OC.L10N.register(
     "terms_of_service",
     {
-    "Terms of service" : "Diensbepalings",
     "Global" : "Globaal",
     "Afghanistan" : "Afghanistan",
     "Åland Islands" : "Ålandeilande",
@@ -264,6 +263,7 @@ OC.L10N.register(
     "Yiddish" : "Jiddisj",
     "Chinese" : "Sjinees",
     "Zulu" : "Zoeloe",
+    "Terms of service" : "Diensbepalings",
     "Select a region" : "Kies ’n streek",
     "Select a language" : "Kies ’n taal",
     "By using this service …" : "Deur hierdie diens te gebruik …",

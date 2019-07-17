@@ -1,7 +1,6 @@
 OC.L10N.register(
     "terms_of_service",
     {
-    "Terms of service" : "Betingelser for tjenesten",
     "Global" : "Global",
     "Afghanistan" : "Afganistan",
     "Åland Islands" : "Åland",
@@ -61,6 +60,7 @@ OC.L10N.register(
     "Bokmål, Norwegian; Norwegian Bokmål" : "Norsk bokmål",
     "Norwegian Nynorsk; Nynorsk, Norwegian" : "Norsk nynorsk",
     "Norwegian" : "Norsk",
+    "Terms of service" : "Betingelser for tjenesten",
     "Terms of service have been modified!" : "Betingelsene for tjenesten er endret!",
     "You have to accept the newest version of the terms of service in order to be able to use this service." : "Du må akseptere nyeste versjon av betingelsene for å kunne bruke tjenesten.",
     "Requires users to accept the terms of service before accessing data." : "Krever at brukere aksepterer betingelsene for tjenesten før de får tilgang til data.",

@@ -1,7 +1,6 @@
 OC.L10N.register(
     "terms_of_service",
     {
-    "Terms of service" : "Þjónustuskilmálar",
     "Global" : "Almennt",
     "Afghanistan" : "Afganistan",
     "Åland Islands" : "Álandseyjar",
@@ -435,6 +434,7 @@ OC.L10N.register(
     "Zhuang; Chuang" : "Zhuang; Chuang",
     "Chinese" : "Kínverska",
     "Zulu" : "Zúlú",
+    "Terms of service" : "Þjónustuskilmálar",
     "Terms of service have been modified!" : "Þjónustuskilmálum hefur verið breytt!",
     "You have to accept the newest version of the terms of service in order to be able to use this service." : "Þú þarft að samþykkja nýjustu útgáfu þjónustuskilmálanna til að geta notað þessa þjónustu.",
     "Requires users to accept the terms of service before accessing data." : "Krefur notendur um samþykkt á þjónustuskilmálum áður en aðgangur er gefinn að gögnum.",
