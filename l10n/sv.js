@@ -1,7 +1,6 @@
 OC.L10N.register(
     "terms_of_service",
     {
-    "Terms of service" : "Användarvilkor",
     "Global" : "Global",
     "Afghanistan" : "Afghanistan",
     "Åland Islands" : "Åland",
@@ -157,6 +156,7 @@ OC.L10N.register(
     "Bosnian" : "Bosnisk",
     "Korean" : "Koreansk",
     "Swedish" : "Svenska",
+    "Terms of service" : "Användarvilkor",
     "Terms of service have been modified!" : "Användarvillkoren har ändrats!",
     "You have to accept the newest version of the terms of service in order to be able to use this service." : "Du måste acceptera den senaste versionen av användarvillkoren för att kunna använda den här tjänsten.",
     "Requires users to accept the terms of service before accessing data." : "Kräver att användare accepterar användarvillkoren innan de får tillgång.",

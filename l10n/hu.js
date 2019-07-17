@@ -1,7 +1,6 @@
 OC.L10N.register(
     "terms_of_service",
     {
-    "Terms of service" : "Szolgáltatás feltételei",
     "Global" : "Globális",
     "Afghanistan" : "Afganisztán",
     "Åland Islands" : "Åland-szigetek",
@@ -396,6 +395,7 @@ OC.L10N.register(
     "Yoruba" : "Yoruba",
     "Chinese" : "Kínai",
     "Zulu" : "Zului",
+    "Terms of service" : "Szolgáltatás feltételei",
     "Terms of service have been modified!" : "A szolgáltatási feltételek módosultak! ",
     "You have to accept the newest version of the terms of service in order to be able to use this service." : "Ahhoz, hogy a szolgáltatást használni tudja, el kell, hogy fogadja a legújabb szolgáltatási feltételeket.",
     "Requires users to accept the terms of service before accessing data." : "Szükség van arra, hogy a szolgátlatási feltételeket elfogadja, mielőtt az adatokhoz hozzáférhetne.",
