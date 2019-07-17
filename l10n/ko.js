@@ -1,7 +1,6 @@
 OC.L10N.register(
     "terms_of_service",
     {
-    "Terms of service" : "이용 약관",
     "Global" : "국제",
     "Afghanistan" : "아프가니스탄",
     "Åland Islands" : "올란드 제도",
@@ -16,6 +15,7 @@ OC.L10N.register(
     "Korea (Democratic People's Republic of)" : "조선민주주의인민공화국(북한)",
     "Korea (Republic of)" : "대한민국(남한)",
     "Korean" : "한국어",
+    "Terms of service" : "이용 약관",
     "Terms of service have been modified!" : "이용 약관이 변경되었습니다!",
     "You have to accept the newest version of the terms of service in order to be able to use this service." : "서비스를 사용하려면 새로 변경된 이용 약관에 동의해야 합니다.",
     "Requires users to accept the terms of service before accessing data." : "사용자가 데이터에 접근하기 전에 이용 약관에 동의해야 하도록 설정합니다.",

@@ -1,7 +1,6 @@
 OC.L10N.register(
     "terms_of_service",
     {
-    "Terms of service" : "服務條款",
     "Global" : "全球",
     "Afghanistan" : "阿富汗",
     "Albania" : "阿爾巴尼亞",
@@ -221,6 +220,7 @@ OC.L10N.register(
     "Timor-Leste" : "東帝汶",
     "Togo" : "多哥",
     "Chinese" : "中文",
+    "Terms of service" : "服務條款",
     "Terms of service have been modified!" : "服務條款已更新!",
     "You have to accept the newest version of the terms of service in order to be able to use this service." : "您必須接受最新版本的服務條款才能夠繼續使用服務。",
     "Requires users to accept the terms of service before accessing data." : "要求用戶在使用服務之前接受服務條款。",
