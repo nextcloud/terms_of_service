@@ -146,7 +146,7 @@ OC.L10N.register(
     "Mauritius" : "Mauritius",
     "Mayotte" : "Mayotte",
     "Mexico" : "Meksika",
-    "Micronesia (Federated States of)" : "Mikronezya Federal Devletleri",
+    "Micronesia (Federated States of)" : "Mikronezya Birleşik Devletleri",
     "Moldova (Republic of)" : "Moldova Cumhuriyeti",
     "Monaco" : "Monako",
     "Mongolia" : "Mongolya",
