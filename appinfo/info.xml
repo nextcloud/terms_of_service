@@ -7,7 +7,7 @@
 	<description><![CDATA[Requires users to accept the terms of service before accessing data.
 This product includes GeoLite2 data created by MaxMind, available from [maxmind.com](http://www.maxmind.com)]]></description>
 
-	<version>1.3.0</version>
+	<version>1.4.0</version>
 	<licence>agpl</licence>
 	<author>Lukas Reschke</author>
 	<author>Joas Schilling</author>
@@ -29,7 +29,7 @@ This product includes GeoLite2 data created by MaxMind, available from [maxmind.
 	<screenshot>https://github.com/nextcloud/terms_of_service/raw/master/docs/popup-dialog.png</screenshot>
 
 	<dependencies>
-		<nextcloud min-version="17" max-version="17" />
+		<nextcloud min-version="18" max-version="18" />
 	</dependencies>
 
 	<repair-steps>
