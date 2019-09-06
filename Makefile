@@ -72,6 +72,7 @@ appstore: clean clean-dev npm-init build-js-production
 	--exclude=.jshintignore \
 	--exclude=.l10nignore \
 	--exclude=js/tests \
+	--exclude=js/**.js.map \
 	--exclude=karma.conf.js \
 	--exclude=l10n/no-php \
 	--exclude=.tx \
