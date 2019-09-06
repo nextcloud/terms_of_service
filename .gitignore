@@ -16,4 +16,5 @@ translationfiles
 *.sln
 
 # Compiled templates
+/build
 /js/terms_of_service_*.js*
