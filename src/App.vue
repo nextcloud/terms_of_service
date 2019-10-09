@@ -1,5 +1,6 @@
 <!--
  - @copyright Copyright (c) 2018 Joas Schilling <coding@schilljs.com>
+ - @copyright Copyright (c) 2019 Gary Kim <gary@garykim.dev>
  -
  - @author Joas Schilling <coding@schilljs.com>
  -
@@ -74,6 +75,7 @@ export default {
 	methods: {
 		onSubmit () {
 			if (!this.country || !this.language || !this.body) {
+				OCP.Toast.error(t('terms_of_service', 'Ensure that all fields are filled'));
 				return;
 			}
 
