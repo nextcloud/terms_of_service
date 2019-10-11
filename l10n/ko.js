@@ -14,6 +14,7 @@ OC.L10N.register(
     "Japan" : "일본",
     "Korea (Democratic People's Republic of)" : "조선민주주의인민공화국(북한)",
     "Korea (Republic of)" : "대한민국(남한)",
+    "Singapore" : "싱가포르",
     "Korean" : "한국어",
     "Terms of service" : "이용 약관",
     "Terms of service have been modified!" : "이용 약관이 변경되었습니다!",
