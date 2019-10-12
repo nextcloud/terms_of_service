@@ -445,6 +445,7 @@ OC.L10N.register(
     "Select a language" : "Wybierz język",
     "By using this service …" : "Korzystając z tej usługi…",
     "Existing terms of service" : "Dotychczasowe warunki usługi",
+    "Ensure that all fields are filled" : "Upewnij się, że wszystkie pola są wypełnione",
     "Saving …" : "Zapisywanie...",
     "Saved!" : "Zapisano!",
     "Save" : "Zapisz",
