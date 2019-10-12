@@ -445,6 +445,7 @@ OC.L10N.register(
     "Select a language" : "Bir dil seçin",
     "By using this service …" : "Bu hizmeti kullanarak…",
     "Existing terms of service" : "Var olan hizmet koşulları",
+    "Ensure that all fields are filled" : "Tüm alanların doldurulduğundan emin olun",
     "Saving …" : "Kaydediliyor…",
     "Saved!" : "Kaydedildi!",
     "Save" : "Kaydet",
