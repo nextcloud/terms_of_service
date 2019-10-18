@@ -445,6 +445,7 @@ OC.L10N.register(
     "Select a language" : "Elekti lingvon",
     "By using this service …" : "Uzante tiun servon...",
     "Existing terms of service" : "Ekzistantaj kondiĉoj de uzado",
+    "Ensure that all fields are filled" : "Certigu, ke ĉiuj kampoj estas plenigitaj",
     "Saving …" : "Konservado...",
     "Saved!" : "Konservita!",
     "Save" : "Konservi",
