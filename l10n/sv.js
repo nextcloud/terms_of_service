@@ -236,7 +236,7 @@ OC.L10N.register(
     "Uganda" : "Uganda",
     "Ukraine" : "Ukraina",
     "United Arab Emirates" : "United Arab Emirates",
-    "United Kingdom of Great Britain and Northern Ireland" : "United Kingdom of Great Britain and Northern Ireland",
+    "United Kingdom of Great Britain and Northern Ireland" : "Förenade konungariket Storbritannien och Nordirland",
     "United States of America" : "United States of America",
     "United States Minor Outlying Islands" : "United States Minor Outlying Islands",
     "Uruguay" : "Uruguay",
