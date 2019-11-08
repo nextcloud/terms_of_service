@@ -168,6 +168,7 @@ OC.L10N.register(
     "Taiwan" : "Tajvan",
     "Tajikistan" : "Tadžikistan",
     "Thailand" : "Tajska",
+    "Togo" : "Togo",
     "Tokelau" : "Tokelau",
     "Tonga" : "Tonga",
     "Trinidad and Tobago" : "Trinidad in Tobago",
