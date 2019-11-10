@@ -48,7 +48,7 @@ OC.L10N.register(
     "Chad" : "Chad",
     "Chile" : "Chile",
     "China" : "China",
-    "Christmas Island" : "Illa Christmas",
+    "Christmas Island" : "Illa Nadal",
     "Cocos (Keeling) Islands" : "Illas Cocos (Keeling)",
     "Colombia" : "Colombia",
     "Comoros" : "Comores",
