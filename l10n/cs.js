@@ -445,6 +445,7 @@ OC.L10N.register(
     "Select a language" : "Vybrat jazyk",
     "By using this service …" : "Použitím této služby…",
     "Existing terms of service" : "Existující všeobecné podmínky",
+    "Ensure that all fields are filled" : "Zajistěte, aby byly všechny kolonky vyplněné",
     "Saving …" : "Ukládání…",
     "Saved!" : "Uloženo!",
     "Save" : "Uložit",
