@@ -252,6 +252,7 @@ OC.L10N.register(
     "Zambia" : "Zambië",
     "Zimbabwe" : "Simbabwe",
     "Afrikaans" : "Afrikaans",
+    "Czech" : "Tsjaggië",
     "Serbian" : "Serwies",
     "Sotho, Southern" : "Suid-Sotho",
     "Sundanese" : "Soedanees",

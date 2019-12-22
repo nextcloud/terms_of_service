@@ -425,6 +425,7 @@
     "Saved!" : "Записано!",
     "Save" : "Запиши",
     "Loading …" : "Зарежда …",
+    "Edit" : "Променяне",
     "Delete" : "Изтрий",
     "Deleting …" : "Изтриване …"
 },"pluralForm" :"nplurals=2; plural=(n != 1);"
