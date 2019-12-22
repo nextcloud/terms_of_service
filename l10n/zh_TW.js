@@ -214,6 +214,7 @@ OC.L10N.register(
     "Sweden" : "瑞典",
     "Switzerland" : "瑞士",
     "Syrian Arab Republic" : "敘利亞",
+    "Taiwan" : "台灣",
     "Tajikistan" : "塔吉克斯坦",
     "Tanzania, United Republic of" : "坦尚尼亞",
     "Thailand" : "泰國",
