@@ -445,6 +445,7 @@ OC.L10N.register(
     "Select a language" : "Odaberite jezik",
     "By using this service …" : "Korištenjem ove usluge...",
     "Existing terms of service" : "Postojeći uvjeti pružanja usluge",
+    "Ensure that all fields are filled" : "Ispunite sva polja",
     "Saving …" : "Spremanje...",
     "Saved!" : "Spremljeno!",
     "Save" : "Spremi",
