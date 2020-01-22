@@ -279,6 +279,7 @@ OC.L10N.register(
     "Macedonian" : "Makedonščina",
     "Malayalam" : "Malajlamščina",
     "Mongolian" : "Mongolščina",
+    "Marathi" : "Marati",
     "Malay" : "Malajščina",
     "Maltese" : "Malteščina",
     "Burmese" : "Burmanščina",
