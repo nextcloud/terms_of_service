@@ -21,5 +21,5 @@
 
 require_once __DIR__ . '/../vendor/autoload.php';
 
-$app = new \OCA\TermsOfService\AppInfo\Application();
+$app = \OC::$server->query(\OCA\TermsOfService\AppInfo\Application::class);
 $app->register();
