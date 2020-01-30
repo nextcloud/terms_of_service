@@ -269,6 +269,7 @@ OC.L10N.register(
     "Japanese" : "Japonščina",
     "Georgian" : "Gruzijščina",
     "Kazakh" : "Kazahstanščina",
+    "Kannada" : "Kanada",
     "Korean" : "Korejščina",
     "Kurdish" : "Kurdščina",
     "Komi" : "Komščina",
