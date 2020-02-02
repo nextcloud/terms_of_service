@@ -92,6 +92,7 @@ OC.L10N.register(
     "Zulu" : "Zulu",
     "Terms of service" : "شرایط و قوانین",
     "Save" : "ذخیره",
+    "Loading …" : "بارگذاری …",
     "Edit" : "ویرایش",
     "Delete" : "حذف"
 },
