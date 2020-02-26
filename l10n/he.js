@@ -189,6 +189,7 @@ OC.L10N.register(
     "Albanian" : "אלבנית",
     "Chinese" : "סינית",
     "Terms of service" : "תנאי שירות",
+    "Saving …" : "מתבצעת שמירה…",
     "Saved!" : "נשמר!",
     "Save" : "שמור",
     "Edit" : "עריכה",
