@@ -72,7 +72,13 @@ class Checker {
 		$uuid = $this->config->getAppValue(Application::APPNAME, 'term_uuid', '');
 		if ($this->userId === null) {
 			return ($this->session->get('term_uuid') === $uuid);
-		} else if ($this->session->get('term_uuid') === $uuid) {
+		}
+
+		if ($this->config->getAppValue(Application::APPNAME, 'tos_for_users', '1') !== '1') {
+			return true;
+		}
+
+		if ($this->session->get('term_uuid') === $uuid) {
 			return true;
 		}
 
