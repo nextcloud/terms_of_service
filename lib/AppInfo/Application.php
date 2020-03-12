@@ -26,10 +26,12 @@ use OC;
 use OC\Files\Filesystem;
 use OC\Files\Storage\Wrapper\Wrapper;
 use OCA\TermsOfService\Checker;
+use OCA\TermsOfService\Db\Mapper\SignatoryMapper;
 use OCA\TermsOfService\Filesystem\StorageWrapper;
 use OCA\TermsOfService\Notifications\Notifier;
 use OCP\AppFramework\App;
 use OCP\AppFramework\QueryException;
+use OCP\EventDispatcher\IEventDispatcher;
 use OCP\Files\Storage\IStorage;
 use OCP\IUser;
 use OCP\Util;
@@ -52,9 +54,20 @@ class Application extends App {
 		Util::connectHook('OC_Filesystem', 'preSetup', $this, 'addStorageWrapper');
 
 		// Only display the app on index.php except for public shares
+		/** @var OC\Server $server */
 		$server = $this->getContainer()
 					   ->getServer();
 		$request = $server->getRequest();
+
+		try {
+			$server->query(IEventDispatcher::class)->addListener(IUser::class . '::postDelete', function (GenericEvent $event) use ($server) {
+				/** @var SignatoryMapper $signatoryMapper */
+				$signatoryMapper = $server->query(SignatoryMapper::class);
+				$signatoryMapper->deleteSignatoriesByUser($event->getSubject());
+			});
+		} catch (QueryException $e) {
+		}
+
 
 		if (!\OC::$CLI) {
 			Util::addStyle('terms_of_service', 'overlay');
