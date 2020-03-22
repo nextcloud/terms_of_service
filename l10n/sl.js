@@ -219,6 +219,7 @@ OC.L10N.register(
     "Tajikistan" : "Tadžikistan",
     "Tanzania, United Republic of" : "Tanzania",
     "Thailand" : "Tajska",
+    "Timor-Leste" : "Timor-Leste",
     "Togo" : "Togo",
     "Tokelau" : "Tokelau",
     "Tonga" : "Tonga",
