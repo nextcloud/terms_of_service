@@ -452,7 +452,7 @@ OC.L10N.register(
     "Resetting …" : "Återställer ...",
     "Reset!" : "Återställt!",
     "Reset all signatories" : "Återställ att undertecknare",
-    "Loading …" : "Laddar ...",
+    "Loading …" : "Läser in ...",
     "I acknowledge that I have read and agree to the above terms of service" : "Jag bekräftar att jag har läst och godkänt ovanstående villkor",
     "Edit" : "Redigera",
     "Delete" : "Radera",
