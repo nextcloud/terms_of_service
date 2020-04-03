@@ -112,6 +112,7 @@ OC.L10N.register(
     "Russian" : "Russisk",
     "Swedish" : "Svensk",
     "Chinese" : "Kinesisk",
+    "Terms of service" : "Servicebetingelser",
     "Select a region" : "Vælg en region",
     "Select a language" : "Vælg et sprog",
     "Saving …" : "Gemmer…",
