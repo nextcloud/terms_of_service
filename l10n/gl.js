@@ -291,7 +291,7 @@ OC.L10N.register(
     "English" : "Inglés",
     "Esperanto" : "Esperanto",
     "Spanish; Castilian" : "Español; Castelán",
-    "Estonian" : "Estonio",
+    "Estonian" : "Estoniano",
     "Basque" : "Éuscaro",
     "Persian" : "Persa",
     "Fulah" : "Fula",
