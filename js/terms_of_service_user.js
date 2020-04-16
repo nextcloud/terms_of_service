@@ -33,5 +33,5 @@ e.exports=function(e){return null!=e&&null!=e.constructor&&"function"==typeof e.
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  *
  */
-o.default.use(c.a),o.default.prototype.t=t,o.default.prototype.n=n,o.default.prototype.OC=OC,o.default.prototype.OCA=OCA,$("body").prepend($("<div>").attr("id","terms_of_service_confirm")),new o.default({el:"#terms_of_service_confirm",render:function(e){return e(a.a)}})}]);
+o.default.use(c.a),o.default.prototype.t=t,o.default.prototype.n=n,o.default.prototype.OC=OC,o.default.prototype.OCA=OCA;var u=document.createElement("div");u.id="terms_of_service_confirm",document.body.prepend(u),new o.default({el:"#terms_of_service_confirm",render:function(e){return e(a.a)}})}]);
 //# sourceMappingURL=terms_of_service_user.js.map
