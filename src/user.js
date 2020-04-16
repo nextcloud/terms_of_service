@@ -31,7 +31,10 @@ Vue.prototype.n = n
 Vue.prototype.OC = OC
 Vue.prototype.OCA = OCA
 
-$('body').prepend($('<div>').attr('id', 'terms_of_service_confirm'))
+const tofc = document.createElement('div')
+tofc.id = 'terms_of_service_confirm'
+document.body.prepend(tofc)
+
 export default new Vue({
 	el: '#terms_of_service_confirm',
 	render: h => h(UserApp),

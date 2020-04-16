@@ -38,7 +38,10 @@ const hasToken = (document.getElementById('sharingToken') !== null)
 const isPasswordProtected = (document.getElementById('password-submit') !== null)
 
 if (hasToken && !isPasswordProtected) {
-	$('body').prepend($('<div>').attr('id', 'terms_of_service_confirm'))
+	const tofc = document.createElement('div')
+	tofc.id = 'terms_of_service_confirm'
+	document.body.prepend(tofc)
+
 	new Vue({
 		el: '#terms_of_service_confirm',
 		data: {
