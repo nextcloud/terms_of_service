@@ -416,7 +416,7 @@ OC.L10N.register(
     "Reset!" : "Visszaállítás!",
     "Reset all signatories" : "Minden aláírás visszavonása",
     "Loading …" : "Töltés ...",
-    "I acknowledge that I have read and agree to the above terms of service" : "Kijelentem, hogy elolvastam és egyet értek a fenti szolgáltatási feltételeket.",
+    "I acknowledge that I have read and agree to the above terms of service" : "Kijelentem, hogy elolvastam és egyet értek a fenti szolgáltatási feltételekkel.",
     "Edit" : "Szerkesztés",
     "Delete" : "Törlés",
     "Deleting …" : "Törlés folyamatban ..."
