@@ -192,6 +192,7 @@ OC.L10N.register(
     "Saving …" : "מתבצעת שמירה…",
     "Saved!" : "נשמר!",
     "Save" : "שמור",
+    "Loading …" : "בטעינה",
     "Edit" : "עריכה",
     "Delete" : "מחיקה"
 },
