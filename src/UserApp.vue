@@ -43,6 +43,7 @@
 
 <script>
 import axios from '@nextcloud/axios'
+import { generateUrl } from '@nextcloud/router'
 
 export default {
 	name: 'UserApp',
@@ -72,7 +73,7 @@ export default {
 	methods: {
 		loadTerms() {
 			axios
-				.get(OC.generateUrl('/apps/terms_of_service/terms'))
+				.get(generateUrl('/apps/terms_of_service/terms'))
 				.then(response => {
 					this.hasSigned = response.data.hasSigned
 					this.terms = response.data.terms
@@ -120,7 +121,7 @@ export default {
 			}
 
 			axios.post(
-				OC.generateUrl(url),
+				generateUrl(url),
 				{
 					termId: this.termsId,
 				}

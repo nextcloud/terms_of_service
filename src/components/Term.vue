@@ -12,6 +12,7 @@
 
 <script>
 import axios from '@nextcloud/axios'
+import { generateUrl } from '@nextcloud/router'
 
 export default {
 	name: 'Term',
@@ -71,7 +72,7 @@ export default {
 			this.deleteButtonDisabled = true
 			this.deleteButtonText = t('terms_of_service', 'Deleting …')
 			axios
-				.delete(OC.generateUrl('/apps/terms_of_service/terms/' + this.id))
+				.delete(generateUrl('/apps/terms_of_service/terms/' + this.id))
 				.then(() => {
 					this.$delete(this.$parent.terms, this.id)
 				})

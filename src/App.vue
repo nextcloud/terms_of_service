@@ -68,7 +68,9 @@
 <script>
 import Term from './components/Term'
 import axios from '@nextcloud/axios'
-import { Multiselect } from '@nextcloud/vue/dist/Components/Multiselect'
+import Multiselect from '@nextcloud/vue/dist/Components/Multiselect'
+import { showError } from '@nextcloud/dialogs'
+import { generateUrl } from '@nextcloud/router'
 
 export default {
 	name: 'App',
@@ -105,7 +107,7 @@ export default {
 		this.saveButtonText = t('terms_of_service', 'Loading …')
 		this.resetButtonText = t('terms_of_service', 'Reset all signatories')
 		axios
-			.get(OC.generateUrl('/apps/terms_of_service/terms/admin'))
+			.get(generateUrl('/apps/terms_of_service/terms/admin'))
 			.then(response => {
 				if (response.data.terms.length !== 0) {
 					this.terms = response.data.terms
@@ -133,7 +135,7 @@ export default {
 	methods: {
 		onSubmit() {
 			if (!this.country || !this.language || !this.body) {
-				OCP.Toast.error(t('terms_of_service', 'Ensure that all fields are filled'))
+				showError(t('terms_of_service', 'Ensure that all fields are filled'))
 				return
 			}
 
@@ -141,7 +143,7 @@ export default {
 			this.saveButtonText = t('terms_of_service', 'Saving …')
 
 			axios
-				.post(OC.generateUrl('/apps/terms_of_service/terms'),
+				.post(generateUrl('/apps/terms_of_service/terms'),
 					{
 						countryCode: this.country.value,
 						languageCode: this.language.value,
@@ -162,7 +164,7 @@ export default {
 			this.resetButtonText = t('terms_of_service', 'Resetting …')
 
 			axios
-				.delete(OC.generateUrl('/apps/terms_of_service/sign'))
+				.delete(generateUrl('/apps/terms_of_service/sign'))
 				.then(() => {
 					this.resetButtonText = t('terms_of_service', 'Reset!')
 					setTimeout(() => {
