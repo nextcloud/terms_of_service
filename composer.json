@@ -2,5 +2,8 @@
     "require": {
         "erusev/parsedown": "^1.6",
         "geoip2/geoip2": "~2.0"
+    },
+    "scripts": {
+        "lint": "find . -name \\*.php -not -path './vendor/*' -exec php -l \"{}\" \\;"
     }
 }
