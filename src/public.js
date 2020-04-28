@@ -42,6 +42,7 @@ if (hasToken && !isPasswordProtected) {
 	tofc.id = 'terms_of_service_confirm'
 	document.body.prepend(tofc)
 
+	// eslint-disable-next-line
 	new Vue({
 		el: '#terms_of_service_confirm',
 		data: {
