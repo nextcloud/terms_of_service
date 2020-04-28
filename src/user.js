@@ -21,7 +21,7 @@
  */
 
 import Vue from 'vue'
-import userapp from './UserApp'
+import UserApp from './UserApp'
 import VModal from 'vue-js-modal'
 
 Vue.use(VModal)
@@ -34,5 +34,5 @@ Vue.prototype.OCA = OCA
 $('body').prepend($('<div>').attr('id', 'terms_of_service_confirm'))
 export default new Vue({
 	el: '#terms_of_service_confirm',
-	render: h => h(userapp),
+	render: h => h(UserApp),
 })

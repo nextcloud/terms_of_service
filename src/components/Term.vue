@@ -16,13 +16,28 @@ import axios from '@nextcloud/axios'
 export default {
 	name: 'Term',
 
-	props: [
-		'id',
-		'countryCode',
-		'languageCode',
-		'body',
-		'renderedBody',
-	],
+	props: {
+		id: {
+			type: Number,
+			required: true,
+		},
+		countryCode: {
+			type: String,
+			required: true,
+		},
+		languageCode: {
+			type: String,
+			required: true,
+		},
+		body: {
+			type: String,
+			required: true,
+		},
+		renderedBody: {
+			type: String,
+			required: true,
+		},
+	},
 
 	data() {
 		return {

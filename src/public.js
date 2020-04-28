@@ -24,7 +24,7 @@
  */
 
 import Vue from 'vue'
-import userapp from './UserApp'
+import UserApp from './UserApp'
 import VModal from 'vue-js-modal'
 
 Vue.use(VModal)
@@ -44,6 +44,6 @@ if (hasToken && !isPasswordProtected) {
 		data: {
 			source: 'public',
 		},
-		render: h => h(userapp),
+		render: h => h(UserApp),
 	})
 }

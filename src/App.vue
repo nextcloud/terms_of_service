@@ -60,21 +60,21 @@
 		</button>
 
 		<ul v-if="hasTerms" id="terms_of_service-countryspecific-list">
-			<term v-for="(term, key) in terms" :key="term.id" v-bind="term" />
+			<Term v-for="term in terms" :key="term.id" v-bind="term" />
 		</ul>
 	</div>
 </template>
 
 <script>
-import term from './components/term'
+import Term from './components/Term'
 import axios from '@nextcloud/axios'
-import { Multiselect } from '@nextcloud/vue'
+import { Multiselect } from '@nextcloud/vue/dist/Components/Multiselect'
 
 export default {
 	name: 'App',
 
 	components: {
-		term,
+		Term,
 		Multiselect,
 	},
 

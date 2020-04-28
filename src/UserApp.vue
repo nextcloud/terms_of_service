@@ -26,7 +26,7 @@
 			<div id="tos-overlay">
 				<h3>{{ t('terms_of_service', 'Terms of service') }}</h3>
 				<select v-if="terms.length > 1" v-model="selectedLanguage">
-					<option v-for="(language, index) in languages" :value="index">
+					<option v-for="(language, index) in languages" :key="index" :value="index">
 						{{ language }}
 					</option>
 				</select>
@@ -45,7 +45,7 @@
 import axios from '@nextcloud/axios'
 
 export default {
-	name: 'Userapp',
+	name: 'UserApp',
 
 	data() {
 		return {
