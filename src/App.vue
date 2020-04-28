@@ -25,37 +25,60 @@
 	<div id="terms_of_service" class="section">
 		<h2>{{ t('terms_of_service', 'Terms of service') }}</h2>
 
-		<p class="settings-hint">{{ t('terms_of_service', 'Require users to accept the terms of service before accessing the service.') }}</p>
+		<p class="settings-hint">
+			{{ t('terms_of_service', 'Require users to accept the terms of service before accessing the service.') }}
+		</p>
 
-		<p class="settings-hint">{{ t('terms_of_service', 'For formatting purposes Markdown is supported.') }}</p>
+		<p class="settings-hint">
+			{{ t('terms_of_service', 'For formatting purposes Markdown is supported.') }}
+		</p>
 
 		<span>
-			<multiselect v-model="country" :options="countryOptions" :placeholder="t('terms_of_service', 'Select a region')" label="label" track-by="value" />
-			<multiselect v-model="language" :options="languageOptions" :placeholder="t('terms_of_service', 'Select a language')" label="label" track-by="value" />
+			<Multiselect v-model="country"
+				:options="countryOptions"
+				:placeholder="t('terms_of_service', 'Select a region')"
+				label="label"
+				track-by="value" />
+			<Multiselect v-model="language"
+				:options="languageOptions"
+				:placeholder="t('terms_of_service', 'Select a language')"
+				label="label"
+				track-by="value" />
 		</span>
 
-		<textarea id="terms_of_service-countryspecific-textarea" v-model="body" :placeholder="t('terms_of_service', 'By using this service …')"></textarea>
-		<button @click="onSubmit" :disabled="saveButtonDisabled">{{saveButtonText}}</button>
+		<textarea id="terms_of_service-countryspecific-textarea" v-model="body" :placeholder="t('terms_of_service', 'By using this service …')" />
+		<button :disabled="saveButtonDisabled" @click="onSubmit">
+			{{ saveButtonText }}
+		</button>
 
-		<h3 v-if="hasTerms">{{ t('terms_of_service', 'Existing terms of service') }}</h3>
+		<h3 v-if="hasTerms">
+			{{ t('terms_of_service', 'Existing terms of service') }}
+		</h3>
 
-		<button @click="onResetSignatories" :disabled="resetButtonDisabled">{{resetButtonText}}</button>
+		<button :disabled="resetButtonDisabled" @click="onResetSignatories">
+			{{ resetButtonText }}
+		</button>
 
-		<ul id="terms_of_service-countryspecific-list" v-if="hasTerms">
-			<term v-for="(term, key) in terms" v-bind="term" :key="term.id"></term>
+		<ul v-if="hasTerms" id="terms_of_service-countryspecific-list">
+			<term v-for="(term, key) in terms" :key="term.id" v-bind="term" />
 		</ul>
 	</div>
 </template>
 
 <script>
-import term from './components/term';
-import axios from 'nextcloud-axios';
-import { Multiselect } from 'nextcloud-vue';
+import term from './components/term'
+import axios from '@nextcloud/axios'
+import { Multiselect } from '@nextcloud/vue'
 
 export default {
-	name: 'app',
+	name: 'App',
 
-	data () {
+	components: {
+		term,
+		Multiselect,
+	},
+
+	data() {
 		return {
 			country: '',
 			language: '',
@@ -68,91 +91,86 @@ export default {
 			saveButtonText: '',
 			saveButtonDisabled: true,
 			resetButtonText: '',
-			resetButtonDisabled: false
+			resetButtonDisabled: false,
 		}
 	},
 
+	computed: {
+		hasTerms() {
+			return Object.keys(this.terms).length > 0
+		},
+	},
+
+	mounted() {
+		this.saveButtonText = t('terms_of_service', 'Loading …')
+		this.resetButtonText = t('terms_of_service', 'Reset all signatories')
+		axios
+			.get(OC.generateUrl('/apps/terms_of_service/terms/admin'))
+			.then(response => {
+				if (response.data.terms.length !== 0) {
+					this.terms = response.data.terms
+				}
+				this.countries = response.data.countries
+				this.languages = response.data.languages
+				Object.keys(this.countries).forEach((countryCode) => {
+					this.countryOptions.push({
+						value: countryCode,
+						label: this.countries[countryCode] + ' (' + countryCode + ')',
+					})
+				})
+				Object.keys(this.languages).forEach((languageCode) => {
+					this.languageOptions.push({
+						value: languageCode,
+						label: this.languages[languageCode] + ' (' + languageCode + ')',
+					})
+				})
+
+				this.saveButtonText = t('terms_of_service', 'Save')
+				this.saveButtonDisabled = false
+			})
+	},
+
 	methods: {
-		onSubmit () {
+		onSubmit() {
 			if (!this.country || !this.language || !this.body) {
-				OCP.Toast.error(t('terms_of_service', 'Ensure that all fields are filled'));
-				return;
+				OCP.Toast.error(t('terms_of_service', 'Ensure that all fields are filled'))
+				return
 			}
 
-			this.saveButtonDisabled = true;
-			this.saveButtonText = t('terms_of_service', 'Saving …');
+			this.saveButtonDisabled = true
+			this.saveButtonText = t('terms_of_service', 'Saving …')
 
 			axios
 				.post(OC.generateUrl('/apps/terms_of_service/terms'),
 					{
 						countryCode: this.country.value,
 						languageCode: this.language.value,
-						body: this.body
+						body: this.body,
 					})
 				.then(response => {
-					this.$set(this.terms, response.data.id, response.data);
+					this.$set(this.terms, response.data.id, response.data)
 
-					this.saveButtonText = t('terms_of_service', 'Saved!');
+					this.saveButtonText = t('terms_of_service', 'Saved!')
 					setTimeout(() => {
-						this.saveButtonText = t('terms_of_service', 'Save');
-						this.saveButtonDisabled = false;
-					}, 2000);
-				});
+						this.saveButtonText = t('terms_of_service', 'Save')
+						this.saveButtonDisabled = false
+					}, 2000)
+				})
 		},
-		onResetSignatories () {
-			this.resetButtonDisabled = true;
-			this.resetButtonText = t('terms_of_service', 'Resetting …');
+		onResetSignatories() {
+			this.resetButtonDisabled = true
+			this.resetButtonText = t('terms_of_service', 'Resetting …')
 
 			axios
 				.delete(OC.generateUrl('/apps/terms_of_service/sign'))
 				.then(() => {
-					this.resetButtonText = t('terms_of_service', 'Reset!');
+					this.resetButtonText = t('terms_of_service', 'Reset!')
 					setTimeout(() => {
-						this.resetButtonText = t('terms_of_service', 'Reset all signatories');
-						this.resetButtonDisabled = false;
-					}, 2000);
-				});
-		}
+						this.resetButtonText = t('terms_of_service', 'Reset all signatories')
+						this.resetButtonDisabled = false
+					}, 2000)
+				})
+		},
 	},
-
-	components: {
-		term,
-		Multiselect
-	},
-
-	computed: {
-		hasTerms () {
-			return Object.keys(this.terms).length > 0;
-		}
-	},
-
-	mounted () {
-		this.saveButtonText = t('terms_of_service', 'Loading …');
-		this.resetButtonText = t('terms_of_service', 'Reset all signatories');
-		axios
-			.get(OC.generateUrl('/apps/terms_of_service/terms/admin'))
-			.then(response => {
-				if (response.data.terms.length !== 0) {
-					this.terms = response.data.terms;
-				}
-				this.countries = response.data.countries;
-				this.languages = response.data.languages;
-				Object.keys(this.countries).forEach((countryCode) => {
-					this.countryOptions.push({
-						value: countryCode,
-						label: this.countries[countryCode] + ' (' + countryCode + ')'
-					});
-				});
-				Object.keys(this.languages).forEach((languageCode) => {
-					this.languageOptions.push({
-						value: languageCode,
-						label: this.languages[languageCode] + ' (' + languageCode + ')'
-					});
-				});
-
-				this.saveButtonText = t('terms_of_service', 'Save');
-				this.saveButtonDisabled = false;
-			});
-	}
 }
 </script>
