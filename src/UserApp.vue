@@ -22,28 +22,33 @@
 
 <template>
 	<div id="terms_of_service_confirm">
-		<modal name="confirm-terms" @before-close="beforeClose" :adaptive="true">
+		<modal name="confirm-terms" :adaptive="true" @before-close="beforeClose">
 			<div id="tos-overlay">
 				<h3>{{ t('terms_of_service', 'Terms of service') }}</h3>
 				<select v-if="terms.length > 1" v-model="selectedLanguage">
-					<option v-for="(language, index) in languages" :value="index">{{language}}</option>
+					<option v-for="(language, index) in languages" :key="index" :value="index">
+						{{ language }}
+					</option>
 				</select>
 				<div class="clear-both" />
 
-				<div class="text-content" v-html="termsBody"></div>
-				<button class="primary" @click="acceptTerms">{{ t('terms_of_service', 'I acknowledge that I have read and agree to the above terms of service') }}</button>
+				<div class="text-content" v-html="termsBody" />
+				<button class="primary" @click="acceptTerms">
+					{{ t('terms_of_service', 'I acknowledge that I have read and agree to the above terms of service') }}
+				</button>
 			</div>
 		</modal>
 	</div>
 </template>
 
 <script>
-	import axios from 'nextcloud-axios';
+import axios from '@nextcloud/axios'
+import { generateUrl } from '@nextcloud/router'
 
 export default {
-	name: 'userapp',
+	name: 'UserApp',
 
-	data () {
+	data() {
 		return {
 			hasSigned: false,
 			terms: {},
@@ -51,85 +56,85 @@ export default {
 			selectedLanguage: 0,
 			termsId: 0,
 			termsBody: '',
-			publicContent: null
+			publicContent: null,
 		}
-	},
-
-	mounted () {
-		this.loadTerms();
 	},
 
 	watch: {
 		selectedLanguage: function(newLanguage) {
-			this.selectTerms(newLanguage);
-		}
+			this.selectTerms(newLanguage)
+		},
+	},
+
+	mounted() {
+		this.loadTerms()
 	},
 
 	methods: {
-		loadTerms () {
+		loadTerms() {
 			axios
-				.get(OC.generateUrl('/apps/terms_of_service/terms'))
+				.get(generateUrl('/apps/terms_of_service/terms'))
 				.then(response => {
-					this.hasSigned = response.data.hasSigned;
-					this.terms = response.data.terms;
+					this.hasSigned = response.data.hasSigned
+					this.terms = response.data.terms
 
-					const language = OC.getLanguage().split('-')[0];
+					const language = OC.getLanguage().split('-')[0]
 
 					if (!this.terms.length || this.hasSigned) {
-						return;
+						return
 					}
 
 					// make it Vue
 					this.publicContent = document.getElementById('files-public-content')
 					if (this.publicContent !== null) {
-						this.publicContent.style.visibility = 'hidden';
+						this.publicContent.style.visibility = 'hidden'
 					}
 
-					this.selectTerms(0);
+					this.selectTerms(0)
 					if (this.terms.length > 1) {
 						Object.keys(this.terms).forEach((index) => {
 							if (language === this.terms[index].languageCode) {
-								this.selectedLanguage = index;
+								this.selectedLanguage = index
 							}
 
-							this.languages.push(response.data.languages[this.terms[index].languageCode]);
-						});
+							this.languages.push(response.data.languages[this.terms[index].languageCode])
+						})
 					}
 
-					this.showTerms();
-				});
+					this.showTerms()
+				})
 		},
-		selectTerms (index) {
-			this.termsBody = this.terms[index].renderedBody;
-			this.termsId = this.terms[index].id;
+		selectTerms(index) {
+			this.termsBody = this.terms[index].renderedBody
+			this.termsId = this.terms[index].id
 		},
-		showTerms () {
-			this.$modal.show('confirm-terms');
+		showTerms() {
+			this.$modal.show('confirm-terms')
 		},
-		acceptTerms () {
-			this.hasSigned = true;
-			this.$modal.hide('confirm-terms');
+		acceptTerms() {
+			this.hasSigned = true
+			this.$modal.hide('confirm-terms')
 
-			let url = '/apps/terms_of_service/sign';
+			let url = '/apps/terms_of_service/sign'
 			if (this.$root.source === 'public') {
-				url = '/apps/terms_of_service/sign_public';
+				url = '/apps/terms_of_service/sign_public'
 			}
 
 			axios.post(
-				OC.generateUrl(url),
+				generateUrl(url),
 				{
-					termId: this.termsId
+					termId: this.termsId,
 				}
 			).then(() => {
-				window.location.reload();
-			});
+				window.location.reload()
+			})
 		},
-		beforeClose (event) {
+		beforeClose(event) {
 			if (!this.hasSigned) {
-				event.stop();
+				event.stop()
 			}
-		}
-	}
+		},
+	},
 }
 </script>
 

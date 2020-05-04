@@ -20,19 +20,22 @@
  *
  */
 
-import Vue from 'vue';
-import userapp from './UserApp';
-import VModal from 'vue-js-modal';
+import Vue from 'vue'
+import UserApp from './UserApp'
+import VModal from 'vue-js-modal'
 
-Vue.use(VModal);
+Vue.use(VModal)
 
-Vue.prototype.t = t;
-Vue.prototype.n = n;
-Vue.prototype.OC = OC;
-Vue.prototype.OCA = OCA;
+Vue.prototype.t = t
+Vue.prototype.n = n
+Vue.prototype.OC = OC
+Vue.prototype.OCA = OCA
 
-$('body').prepend($('<div>').attr('id', 'terms_of_service_confirm'));
-new Vue({
-  el: '#terms_of_service_confirm',
-  render: h => h(userapp)
-});
+const tofc = document.createElement('div')
+tofc.id = 'terms_of_service_confirm'
+document.body.prepend(tofc)
+
+export default new Vue({
+	el: '#terms_of_service_confirm',
+	render: h => h(UserApp),
+})

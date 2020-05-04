@@ -20,15 +20,15 @@
  *
  */
 
-import Vue from 'vue';
-import App from './App';
+import Vue from 'vue'
+import App from './App'
 
-Vue.prototype.t = t;
-Vue.prototype.n = n;
-Vue.prototype.OC = OC;
-Vue.prototype.OCA = OCA;
+Vue.prototype.t = t
+Vue.prototype.n = n
+Vue.prototype.OC = OC
+Vue.prototype.OCA = OCA
 
-new Vue({
-  el: '#terms_of_service',
-  render: h => h(App)
-});
+export default new Vue({
+	el: '#terms_of_service',
+	render: h => h(App),
+})

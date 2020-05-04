@@ -23,29 +23,31 @@
  *
  */
 
-import Vue from 'vue';
-import userapp from './UserApp';
-import VModal from 'vue-js-modal';
+import Vue from 'vue'
+import UserApp from './UserApp'
+import VModal from 'vue-js-modal'
 
-Vue.use(VModal);
+Vue.use(VModal)
 
-Vue.prototype.t = t;
-Vue.prototype.n = n;
-Vue.prototype.OC = OC;
-Vue.prototype.OCA = OCA;
+Vue.prototype.t = t
+Vue.prototype.n = n
+Vue.prototype.OC = OC
+Vue.prototype.OCA = OCA
 
-
-const hasToken = (document.getElementById('sharingToken') !== null);
-const isPasswordProtected = (document.getElementById('password-submit') !== null);
+const hasToken = (document.getElementById('sharingToken') !== null)
+const isPasswordProtected = (document.getElementById('password-submit') !== null)
 
 if (hasToken && !isPasswordProtected) {
-	$('body').prepend($('<div>').attr('id', 'terms_of_service_confirm'));
+	const tofc = document.createElement('div')
+	tofc.id = 'terms_of_service_confirm'
+	document.body.prepend(tofc)
+
+	// eslint-disable-next-line
 	new Vue({
 		el: '#terms_of_service_confirm',
 		data: {
-			source: 'public'
+			source: 'public',
 		},
-		render: h => h(userapp)
-	});
+		render: h => h(UserApp),
+	})
 }
-
