@@ -423,10 +423,10 @@ OC.L10N.register(
     "Select a region" : "Изберете регион",
     "Select a language" : "Изберете език",
     "By using this service …" : "Ползвайки тази услуга …",
+    "Loading …" : "Зарежда …",
+    "Save" : "Запиши",
     "Saving …" : "Записване …",
     "Saved!" : "Записано!",
-    "Save" : "Запиши",
-    "Loading …" : "Зарежда …",
     "Edit" : "Променяне",
     "Delete" : "Изтрий",
     "Deleting …" : "Изтриване …"
