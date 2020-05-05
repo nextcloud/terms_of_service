@@ -147,8 +147,8 @@ OC.L10N.register(
     "English" : "Anglisht",
     "Hungarian" : "Hungareze",
     "Terms of service" : "Termat e shërbimit",
-    "Saved!" : "I/E ruajtur!",
     "Save" : "Ruaj",
+    "Saved!" : "I/E ruajtur!",
     "Edit" : "Përpuno",
     "Delete" : "Delete"
 },
