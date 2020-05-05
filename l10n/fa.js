@@ -242,9 +242,9 @@ OC.L10N.register(
     "Chinese" : "چینی",
     "Zulu" : "Zulu",
     "Terms of service" : "شرایط و قوانین",
-    "Saved!" : "ذخیره!",
-    "Save" : "ذخیره",
     "Loading …" : "بارگذاری …",
+    "Save" : "ذخیره",
+    "Saved!" : "ذخیره!",
     "Edit" : "ویرایش",
     "Delete" : "حذف"
 },

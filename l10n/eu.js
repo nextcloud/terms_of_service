@@ -377,10 +377,10 @@ OC.L10N.register(
     "Zulu" : "Zuluera",
     "Terms of service" : "Erabilera baldintzak",
     "Select a region" : "Hautatu eskualde bat",
+    "Loading …" : "Kargatzen …",
+    "Save" : "Gorde",
     "Saving …" : "Gordetzen …",
     "Saved!" : "Gordeta",
-    "Save" : "Gorde",
-    "Loading …" : "Kargatzen …",
     "Edit" : "Editatu",
     "Delete" : "Ezabatu",
     "Deleting …" : "Ezabatzen …"
