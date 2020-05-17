@@ -99,7 +99,7 @@ OC.L10N.register(
     "Guyana" : "Guiana",
     "Haiti" : "Haití",
     "Heard Island and McDonald Islands" : "Illa Heard e Illas McDonald",
-    "Holy See" : "Cidade do Vaticano",
+    "Holy See" : "Santa Sé",
     "Honduras" : "Honduras",
     "Hong Kong" : "Hong Kong",
     "Hungary" : "Hungría",
