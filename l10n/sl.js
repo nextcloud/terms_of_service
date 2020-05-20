@@ -34,6 +34,7 @@ OC.L10N.register(
     "Botswana" : "Botsvana",
     "Bouvet Island" : "Otok Bouvet",
     "Brazil" : "Brazilija",
+    "Brunei Darussalam" : "Brunej Darussalam",
     "Bulgaria" : "Bolgarija",
     "Burkina Faso" : "Burkina Faso",
     "Burundi" : "Burundi",
