@@ -231,7 +231,7 @@ OC.L10N.register(
     "Tunisia" : "Tunisia",
     "Turkey" : "Turquia",
     "Turkmenistan" : "Turquemenistán",
-    "Turks and Caicos Islands" : "Illas Turks e Caicos",
+    "Turks and Caicos Islands" : "Illas Turcas e Caicos",
     "Tuvalu" : "Tuvalu",
     "Uganda" : "Uganda",
     "Ukraine" : "Ucraína",
