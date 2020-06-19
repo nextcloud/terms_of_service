@@ -448,6 +448,7 @@ OC.L10N.register(
     "Loading …" : "Se încarcă…",
     "Reset all signatories" : "Resetează toate semnăturile",
     "Save" : "Salvează",
+    "Ensure that all fields are filled" : "Asigurați-vă că toate câmpurile sunt completate",
     "Saving …" : "Se salvează",
     "Saved!" : "Salvat!",
     "Resetting …" : "Resetez ...",
