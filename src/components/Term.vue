@@ -57,7 +57,7 @@ export default {
 	},
 
 	methods: {
-		onEdit: function() {
+		onEdit() {
 			this.$parent.country = {
 				value: this.countryCode,
 				label: this.$parent.countries[this.countryCode] + ' (' + this.countryCode + ')',
@@ -68,7 +68,7 @@ export default {
 			}
 			this.$parent.body = this.body
 		},
-		onDelete: function() {
+		onDelete() {
 			this.deleteButtonDisabled = true
 			this.deleteButtonText = t('terms_of_service', 'Deleting …')
 			axios
