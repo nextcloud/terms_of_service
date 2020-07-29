@@ -124,7 +124,7 @@ OC.L10N.register(
     "Yoruba" : "Yoroubeg",
     "Chinese" : "Sinaeg",
     "Zulu" : "Zouloueg",
-    "Save" : "Entilañ",
+    "Save" : "Enrollañ",
     "Saving …" : "Orc'h enrolliñ",
     "Saved!" : "Enrollet !",
     "Edit" : "Cheñch",
