@@ -33,7 +33,7 @@ Vue.prototype.OCA = OCA
 
 const tofc = document.createElement('div')
 tofc.id = 'terms_of_service_confirm'
-document.body.prepend(tofc)
+document.body.insertAdjacentElement('afterbegin', tofc)
 
 export default new Vue({
 	el: '#terms_of_service_confirm',
