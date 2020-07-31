@@ -61,7 +61,7 @@ export default {
 	},
 
 	watch: {
-		selectedLanguage: function(newLanguage) {
+		selectedLanguage(newLanguage) {
 			this.selectTerms(newLanguage)
 		},
 	},
