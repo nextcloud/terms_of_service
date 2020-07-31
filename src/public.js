@@ -40,7 +40,7 @@ const isPasswordProtected = (document.getElementById('password-submit') !== null
 if (hasToken && !isPasswordProtected) {
 	const tofc = document.createElement('div')
 	tofc.id = 'terms_of_service_confirm'
-	document.body.prepend(tofc)
+	document.body.insertAdjacentElement('afterbegin', tofc)
 
 	// eslint-disable-next-line
 	new Vue({
