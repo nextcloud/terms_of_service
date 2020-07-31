@@ -361,6 +361,7 @@ OC.L10N.register(
     "Sanskrit" : "Szanszkrit",
     "Sardinian" : "Szardenia",
     "Sindhi" : "Szindhi",
+    "Northern Sami" : "Északi számi",
     "Sango" : "Sango",
     "Slovak" : "Szlovák",
     "Slovenian" : "Szlovén",
