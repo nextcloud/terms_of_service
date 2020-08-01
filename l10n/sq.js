@@ -1,6 +1,8 @@
 OC.L10N.register(
     "terms_of_service",
     {
+    "delete" : "fshi",
+    "Terms of service" : "Termat e shërbimit",
     "Global" : "Globale",
     "Afghanistan" : "Afganistani",
     "Åland Islands" : "Ishujt Oland",
@@ -146,7 +148,6 @@ OC.L10N.register(
     "Bulgarian" : "Bullgarë",
     "English" : "Anglisht",
     "Hungarian" : "Hungareze",
-    "Terms of service" : "Termat e shërbimit",
     "Save" : "Ruaj",
     "Saved!" : "I/E ruajtur!",
     "Edit" : "Përpuno",

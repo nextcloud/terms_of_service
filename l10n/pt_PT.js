@@ -1,6 +1,7 @@
 OC.L10N.register(
     "terms_of_service",
     {
+    "delete" : "eliminar",
     "Global" : "Global",
     "Afghanistan" : "Afeganistão",
     "Algeria" : "Algéria",
