@@ -1,6 +1,8 @@
 OC.L10N.register(
     "terms_of_service",
     {
+    "Terms of service" : "Kondiĉoj de uzado",
+    "I acknowledge that I have read and agree to the above terms of service" : "Mi konfirmas, ke mi legis kaj akceptis la suprajn kondiĉojn de uzado",
     "Global" : "Monda",
     "Afghanistan" : "Afganujo",
     "Åland Islands" : "Alando",
@@ -434,7 +436,6 @@ OC.L10N.register(
     "Zhuang; Chuang" : "Ĝuanga",
     "Chinese" : "Ĉina",
     "Zulu" : "Zulua",
-    "Terms of service" : "Kondiĉoj de uzado",
     "Terms of service have been modified!" : "Kondiĉoj de uzado ŝanĝiĝis!",
     "You have to accept the newest version of the terms of service in order to be able to use this service." : "Vi devas akcepti la novan version de la kondiĉoj de uzado de la servo por povi uzi tiun servon.",
     "Requires users to accept the terms of service before accessing data." : "Uzantoj devas akcepti la kondiĉojn de uzado, antaŭ ol aliri la datumojn.",
@@ -453,7 +454,6 @@ OC.L10N.register(
     "Saved!" : "Konservita!",
     "Resetting …" : "Restarigado...",
     "Reset!" : "Restarigita!",
-    "I acknowledge that I have read and agree to the above terms of service" : "Mi konfirmas, ke mi legis kaj akceptis la suprajn kondiĉojn de uzado",
     "Edit" : "Modifi",
     "Delete" : "Forigi",
     "Deleting …" : "Forigado..."

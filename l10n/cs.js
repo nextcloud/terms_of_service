@@ -1,6 +1,8 @@
 OC.L10N.register(
     "terms_of_service",
     {
+    "Terms of service" : "Všeobecné podmínky",
+    "I acknowledge that I have read and agree to the above terms of service" : "Potvrzuji, že jsem si přečetl(a) a souhlasím s výše uvedenými všeobecnými podmínkami",
     "Global" : "Globální",
     "Afghanistan" : "Afgánistán",
     "Åland Islands" : "Alandy",
@@ -434,7 +436,6 @@ OC.L10N.register(
     "Zhuang; Chuang" : "čuangština",
     "Chinese" : "čínština",
     "Zulu" : "zuluština",
-    "Terms of service" : "Všeobecné podmínky",
     "Terms of service have been modified!" : "Došlo ke změně ve všeobecných podmínkách",
     "You have to accept the newest version of the terms of service in order to be able to use this service." : "Abyste mohli tuto službu používat je třeba, abyste odsouhlasili novější verzi všeobecných podmínek.",
     "Requires users to accept the terms of service before accessing data." : "Než budou uživatelé moci přistupovat k datům, vyžaduje od nich odsouhlasení všeobecných podmínek.",
@@ -453,7 +454,6 @@ OC.L10N.register(
     "Saved!" : "Uloženo!",
     "Resetting …" : "Resetování…",
     "Reset!" : "Resetovat!",
-    "I acknowledge that I have read and agree to the above terms of service" : "Potvrzuji, že jsem si přečetl(a) a souhlasím s výše uvedenými všeobecnými podmínkami",
     "Edit" : "Upravit",
     "Delete" : "Smazat",
     "Deleting …" : "Mazání…"
