@@ -1,6 +1,10 @@
 OC.L10N.register(
     "terms_of_service",
     {
+    "_" : "_",
+    "delete" : "slett",
+    "Terms of service" : "Betingelser for tjenesten",
+    "I acknowledge that I have read and agree to the above terms of service" : "Jeg bekrefter at jeg har lest og er enig i betingelsene for tjenesten",
     "Global" : "Global",
     "Afghanistan" : "Afganistan",
     "Åland Islands" : "Åland",
@@ -67,7 +71,6 @@ OC.L10N.register(
     "Norwegian Nynorsk; Nynorsk, Norwegian" : "Norsk nynorsk",
     "Norwegian" : "Norsk",
     "Albanian" : "Albansk",
-    "Terms of service" : "Betingelser for tjenesten",
     "Terms of service have been modified!" : "Betingelsene for tjenesten er endret!",
     "You have to accept the newest version of the terms of service in order to be able to use this service." : "Du må akseptere nyeste versjon av betingelsene for å kunne bruke tjenesten.",
     "Requires users to accept the terms of service before accessing data." : "Krever at brukere aksepterer betingelsene for tjenesten før de får tilgang til data.",
@@ -85,7 +88,6 @@ OC.L10N.register(
     "Saved!" : "Lagret!",
     "Resetting …" : "Tilbakestiller...",
     "Reset!" : "Tilbakestilt!",
-    "I acknowledge that I have read and agree to the above terms of service" : "Jeg bekrefter at jeg har lest og er enig i betingelsene for tjenesten",
     "Edit" : "Editer",
     "Delete" : "Slett",
     "Deleting …" : "Sletter..."

@@ -1,6 +1,10 @@
 OC.L10N.register(
     "terms_of_service",
     {
+    "_" : "_",
+    "delete" : "suprimeix",
+    "Terms of service" : "Condicions del servei",
+    "I acknowledge that I have read and agree to the above terms of service" : "Reconec que he llegit i accepto aquests termes de servei",
     "Global" : "Global",
     "Afghanistan" : "Afganistan",
     "Åland Islands" : "Illes Åland",
@@ -434,7 +438,6 @@ OC.L10N.register(
     "Zhuang; Chuang" : "Zhuang; Chuang",
     "Chinese" : "Xinès",
     "Zulu" : "Zulu",
-    "Terms of service" : "Condicions del servei",
     "Terms of service have been modified!" : "Les condicions del servei s'han modificat!",
     "You have to accept the newest version of the terms of service in order to be able to use this service." : "Heu d'acceptar la versió més nova de les condicions del servei per poder utilitzar aquest servei.",
     "Requires users to accept the terms of service before accessing data." : "Exigeix que els usuaris acceptin els termes de servei abans d'accedir a les dades.",
@@ -453,7 +456,6 @@ OC.L10N.register(
     "Saved!" : "Desat!",
     "Resetting …" : "S'està reinicialitzant …",
     "Reset!" : "Restablert!",
-    "I acknowledge that I have read and agree to the above terms of service" : "Reconec que he llegit i accepto aquests termes de servei",
     "Edit" : "Edita",
     "Delete" : "Suprimeix",
     "Deleting …" : "S'està suprimint …"

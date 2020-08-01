@@ -1,4 +1,5 @@
 { "translations": {
+    "Terms of service" : "شروط الخدمة",
     "Global" : "عالمي",
     "Afghanistan" : "أفغانستان",
     "Åland Islands" : "جزر آلاند",
@@ -129,7 +130,6 @@
     "Russian" : "الروسية",
     "Chinese" : "الصينية",
     "Zulu" : "الزولو",
-    "Terms of service" : "شروط الخدمة",
     "Select a region" : "اختر منطقة",
     "Select a language" : "اختر لغة",
     "Save" : "حفظ",

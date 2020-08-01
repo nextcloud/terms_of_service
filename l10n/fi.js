@@ -1,6 +1,8 @@
 OC.L10N.register(
     "terms_of_service",
     {
+    "Terms of service" : "Käyttöehdot",
+    "I acknowledge that I have read and agree to the above terms of service" : "Vahvistan lukeneeni ja hyväksyväni yllä olevat käyttöehdot",
     "Global" : "Julkinen",
     "Austria" : "Itävalta",
     "Belgium" : "Belgia",
@@ -47,7 +49,6 @@ OC.L10N.register(
     "Tunisia" : "Tunisia",
     "Turkey" : "Turkki",
     "Ukraine" : "Ukraina",
-    "Terms of service" : "Käyttöehdot",
     "Terms of service have been modified!" : "Käyttöehtoja on muutettu!",
     "You have to accept the newest version of the terms of service in order to be able to use this service." : "Sinun tulee hyväksyä palvelun uusimmat käyttöehdot voidaksesi käyttää tätä palvelua.",
     "Requires users to accept the terms of service before accessing data." : "Vaadi käyttäjiä hyväksymään käyttöehdot, ennen kuin tietojen käyttäminen on mahdollista.",
@@ -62,7 +63,6 @@ OC.L10N.register(
     "Ensure that all fields are filled" : "Varmista että kaikki kentät on täytetty",
     "Saving …" : "Tallennetaan…",
     "Saved!" : "Tallennettu!",
-    "I acknowledge that I have read and agree to the above terms of service" : "Vahvistan lukeneeni ja hyväksyväni yllä olevat käyttöehdot",
     "Edit" : "Muokkaa",
     "Delete" : "Poista",
     "Deleting …" : "Poistetaan…"
