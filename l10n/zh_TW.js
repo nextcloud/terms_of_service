@@ -1,6 +1,7 @@
 OC.L10N.register(
     "terms_of_service",
     {
+    "delete" : "刪除",
     "Terms of service" : "服務條款",
     "Global" : "全球",
     "Afghanistan" : "阿富汗",

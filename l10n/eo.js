@@ -1,6 +1,9 @@
 OC.L10N.register(
     "terms_of_service",
     {
+    "_" : "_",
+    "delete" : "forigi",
+    "has" : "havas",
     "Terms of service" : "Kondiĉoj de uzado",
     "I acknowledge that I have read and agree to the above terms of service" : "Mi konfirmas, ke mi legis kaj akceptis la suprajn kondiĉojn de uzado",
     "Global" : "Monda",

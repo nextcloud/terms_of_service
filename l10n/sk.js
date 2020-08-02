@@ -1,6 +1,8 @@
 OC.L10N.register(
     "terms_of_service",
     {
+    "_" : "_",
+    "delete" : "vymazať",
     "Terms of service" : "Podmienky používania služby",
     "I acknowledge that I have read and agree to the above terms of service" : "Beriem na vedomie, že som si prečítal a súhlasím s vyššie uvedenými zmluvnými podmienkami",
     "Global" : "Globálne",
