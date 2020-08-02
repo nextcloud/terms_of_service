@@ -1,6 +1,8 @@
 OC.L10N.register(
     "terms_of_service",
     {
+    "_" : "_",
+    "delete" : "삭제",
     "Terms of service" : "이용 약관",
     "I acknowledge that I have read and agree to the above terms of service" : "이용 약관을 읽었으며 이에 동의합니다",
     "Global" : "국제",

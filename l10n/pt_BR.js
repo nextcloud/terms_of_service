@@ -1,6 +1,12 @@
 OC.L10N.register(
     "terms_of_service",
     {
+    "_" : "_",
+    "delete" : "excluir",
+    "has" : "tem",
+    "get" : "obter",
+    "_min-width_::_min-height_" : ["min-width","min-height"],
+    "_dialog_::_auto_" : ["diálogo","automático"],
     "Terms of service" : "Termos de serviço",
     "I acknowledge that I have read and agree to the above terms of service" : "Eu confirmo que li e concordo com os termos de serviço acima",
     "Global" : "Global",

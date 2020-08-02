@@ -1,6 +1,8 @@
 OC.L10N.register(
     "terms_of_service",
     {
+    "_" : "_",
+    "delete" : "Slet",
     "Terms of service" : "Servicebetingelser",
     "Global" : "Global",
     "Afghanistan" : "Afghanistan",

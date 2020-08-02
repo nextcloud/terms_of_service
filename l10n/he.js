@@ -1,6 +1,8 @@
 OC.L10N.register(
     "terms_of_service",
     {
+    "_" : "_",
+    "delete" : "מחיקה",
     "Terms of service" : "תנאי שירות",
     "Global" : "גלובלי",
     "Afghanistan" : "אפגניסטן",
