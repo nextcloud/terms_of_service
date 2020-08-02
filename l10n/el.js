@@ -1,6 +1,8 @@
 OC.L10N.register(
     "terms_of_service",
     {
+    "_" : "_",
+    "delete" : "διαγραφή",
     "Terms of service" : "Όροι χρήσης",
     "I acknowledge that I have read and agree to the above terms of service" : "Επιβεβαιώνω ότι έχω διαβάσει και συμφωνώ με τους παραπάνω όρους χρήσης υπηρεσίας",
     "Global" : "Καθολικό",

@@ -1,6 +1,8 @@
 OC.L10N.register(
     "terms_of_service",
     {
+    "_" : "_",
+    "delete" : "poista",
     "Terms of service" : "Käyttöehdot",
     "I acknowledge that I have read and agree to the above terms of service" : "Vahvistan lukeneeni ja hyväksyväni yllä olevat käyttöehdot",
     "Global" : "Julkinen",

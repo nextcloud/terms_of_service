@@ -1,6 +1,8 @@
 OC.L10N.register(
     "terms_of_service",
     {
+    "_" : "_",
+    "delete" : "ištrinti",
     "Terms of service" : "Naudojimosi sąlygos",
     "Global" : "Visuotinis",
     "Afghanistan" : "Afganistanas",

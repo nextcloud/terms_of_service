@@ -1,6 +1,8 @@
 OC.L10N.register(
     "terms_of_service",
     {
+    "_" : "_",
+    "delete" : "sil",
     "Terms of service" : "Hizmet koşulları",
     "I acknowledge that I have read and agree to the above terms of service" : "Yukarıdaki hizmet koşulları metnini okudum ve anladım",
     "Global" : "Küresel",

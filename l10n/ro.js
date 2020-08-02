@@ -1,6 +1,7 @@
 OC.L10N.register(
     "terms_of_service",
     {
+    "delete" : "ștergere",
     "Terms of service" : "Termenii serviciului",
     "I acknowledge that I have read and agree to the above terms of service" : "Am luat la cunoștință faptul că am citit și sunt de accord cu termenii serviciului de mai sus",
     "Global" : "Global",
