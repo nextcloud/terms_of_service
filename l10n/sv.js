@@ -1,6 +1,9 @@
 OC.L10N.register(
     "terms_of_service",
     {
+    "_" : "_",
+    "delete" : "radera",
+    "has" : "har",
     "Terms of service" : "Användarvilkor",
     "I acknowledge that I have read and agree to the above terms of service" : "Jag bekräftar att jag har läst och godkänt ovanstående villkor",
     "Global" : "Global",

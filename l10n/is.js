@@ -1,6 +1,8 @@
 OC.L10N.register(
     "terms_of_service",
     {
+    "_" : "_",
+    "delete" : "eytt",
     "Terms of service" : "Þjónustuskilmálar",
     "I acknowledge that I have read and agree to the above terms of service" : "Staðfesti ég að ég hef lesið og samþykki ofangreinda jónustuskilmála",
     "Global" : "Almennt",

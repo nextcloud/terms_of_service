@@ -1,6 +1,8 @@
 OC.L10N.register(
     "terms_of_service",
     {
+    "_" : "_",
+    "delete" : "ezabatu",
     "Terms of service" : "Erabilera baldintzak",
     "Global" : "Globala",
     "Afghanistan" : "Afganistan",

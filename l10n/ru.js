@@ -1,6 +1,8 @@
 OC.L10N.register(
     "terms_of_service",
     {
+    "_" : "_",
+    "delete" : "удалить",
     "Terms of service" : "Условия использования",
     "I acknowledge that I have read and agree to the above terms of service" : "Я подтверждаю, что я прочитал и принял приведённые выше правила использования",
     "Global" : "Общие",

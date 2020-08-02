@@ -1,6 +1,7 @@
 OC.L10N.register(
     "terms_of_service",
     {
+    "delete" : "skrap",
     "Terms of service" : "Diensbepalings",
     "I acknowledge that I have read and agree to the above terms of service" : "Ek erken dat die die bostaande diensvoorwaardes gelees het en dit verstaan",
     "Global" : "Globaal",
