@@ -1,14 +1,6 @@
 OC.L10N.register(
     "terms_of_service",
     {
-    "_" : "_",
-    "delete" : "vymazať",
-    "has" : "má",
-    "get" : "získať",
-    "_min-width_::_min-height_" : ["minimálna výška","minimálne výšky","minimálne výšky","minimálnych výšok"],
-    "_dialog_::_auto_" : ["auto","auto","auto","auto"],
-    "Terms of service" : "Podmienky používania služby",
-    "I acknowledge that I have read and agree to the above terms of service" : "Beriem na vedomie, že som si prečítal a súhlasím s vyššie uvedenými zmluvnými podmienkami",
     "Global" : "Globálne",
     "Afghanistan" : "Afganistan",
     "Åland Islands" : "Alandy",
@@ -442,6 +434,7 @@ OC.L10N.register(
     "Zhuang; Chuang" : "čuangčina",
     "Chinese" : "Chinese",
     "Zulu" : "zulu",
+    "Terms of service" : "Podmienky používania služby",
     "Terms of service have been modified!" : "Podmienky používania služby boli zmenené",
     "You have to accept the newest version of the terms of service in order to be able to use this service." : "Ak chcete používať túto službu, musíte prijať najnovšiu verziu zmluvných podmienok.",
     "Requires users to accept the terms of service before accessing data." : "Vyžaduje od používateľov, aby pred prístupom k údajom prijali zmluvné podmienky.",
@@ -460,8 +453,15 @@ OC.L10N.register(
     "Saved!" : "Uložené!",
     "Resetting …" : "Obnovuje sa...",
     "Reset!" : "Resetovať",
+    "I acknowledge that I have read and agree to the above terms of service" : "Beriem na vedomie, že som si prečítal a súhlasím s vyššie uvedenými zmluvnými podmienkami",
     "Edit" : "Upraviť",
     "Delete" : "Zmazať",
-    "Deleting …" : "Odstraňuje sa..."
+    "Deleting …" : "Odstraňuje sa...",
+    "_" : "_",
+    "delete" : "vymazať",
+    "has" : "má",
+    "get" : "získať",
+    "_min-width_::_min-height_" : ["minimálna výška","minimálne výšky","minimálne výšky","minimálnych výšok"],
+    "_dialog_::_auto_" : ["auto","auto","auto","auto"]
 },
 "nplurals=4; plural=(n % 1 == 0 && n == 1 ? 0 : n % 1 == 0 && n >= 2 && n <= 4 ? 1 : n % 1 != 0 ? 2: 3);");

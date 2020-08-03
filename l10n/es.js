@@ -1,11 +1,6 @@
 OC.L10N.register(
     "terms_of_service",
     {
-    "_" : "_",
-    "delete" : "eliminar",
-    "has" : "tenía",
-    "Terms of service" : "Términos del servicio",
-    "I acknowledge that I have read and agree to the above terms of service" : "Confirmo que he leído y estoy de acuerdo con los susodichos términos de servicio ",
     "Global" : "Global",
     "Afghanistan" : "Afganistán",
     "Åland Islands" : "Islas Åland",
@@ -439,6 +434,7 @@ OC.L10N.register(
     "Zhuang; Chuang" : "zhuang; chuang",
     "Chinese" : "chino",
     "Zulu" : "zulú",
+    "Terms of service" : "Términos del servicio",
     "Terms of service have been modified!" : "¡Se han modificado los términos del servicio!",
     "You have to accept the newest version of the terms of service in order to be able to use this service." : "Tiene que aceptar la última versión de los términos del servicio para poder usar el servicio.",
     "Requires users to accept the terms of service before accessing data." : "Requiere a los usuarios que acepten los términos del servicio antes de acceder a los datos.",
@@ -457,8 +453,12 @@ OC.L10N.register(
     "Saved!" : "¡Guardado!",
     "Resetting …" : "Reiniciando…",
     "Reset!" : "Reiniciado.",
+    "I acknowledge that I have read and agree to the above terms of service" : "Confirmo que he leído y estoy de acuerdo con los susodichos términos de servicio ",
     "Edit" : "Editar",
     "Delete" : "Borrar",
-    "Deleting …" : "Borrando..."
+    "Deleting …" : "Borrando...",
+    "_" : "_",
+    "delete" : "eliminar",
+    "has" : "tenía"
 },
 "nplurals=2; plural=(n != 1);");

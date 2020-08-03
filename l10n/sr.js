@@ -1,10 +1,6 @@
 OC.L10N.register(
     "terms_of_service",
     {
-    "_" : "_",
-    "delete" : "обриши",
-    "Terms of service" : "Услови коришћења",
-    "I acknowledge that I have read and agree to the above terms of service" : "Изјављујем да сам прочитао и да се слажем са изнад наведеним условима коришћења",
     "Global" : "Цео свет",
     "Afghanistan" : "Афганистан",
     "Åland Islands" : "Оландска острва",
@@ -438,6 +434,7 @@ OC.L10N.register(
     "Zhuang; Chuang" : "Џуанг",
     "Chinese" : "Кинески",
     "Zulu" : "Зулу",
+    "Terms of service" : "Услови коришћења",
     "Terms of service have been modified!" : "Услови коришћења су се изменили!",
     "You have to accept the newest version of the terms of service in order to be able to use this service." : "Морате да прихватите најновију верзију услова коришћења овог сервиса да бисте могли да наставите да га користите.",
     "Requires users to accept the terms of service before accessing data." : "Захтева од корисника да прихвати услове коришћења пре приступања подацима.",
@@ -456,8 +453,11 @@ OC.L10N.register(
     "Saved!" : "Сачувано!",
     "Resetting …" : "Ресетовање…",
     "Reset!" : "Ресетовано!",
+    "I acknowledge that I have read and agree to the above terms of service" : "Изјављујем да сам прочитао и да се слажем са изнад наведеним условима коришћења",
     "Edit" : "Измени",
     "Delete" : "Обриши",
-    "Deleting …" : "Брисање…"
+    "Deleting …" : "Брисање…",
+    "_" : "_",
+    "delete" : "обриши"
 },
 "nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);");

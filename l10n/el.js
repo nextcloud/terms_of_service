@@ -1,10 +1,6 @@
 OC.L10N.register(
     "terms_of_service",
     {
-    "_" : "_",
-    "delete" : "διαγραφή",
-    "Terms of service" : "Όροι χρήσης",
-    "I acknowledge that I have read and agree to the above terms of service" : "Επιβεβαιώνω ότι έχω διαβάσει και συμφωνώ με τους παραπάνω όρους χρήσης υπηρεσίας",
     "Global" : "Καθολικό",
     "Afghanistan" : "Αφγανιστάν",
     "Åland Islands" : "Åland Islands",
@@ -438,6 +434,7 @@ OC.L10N.register(
     "Zhuang; Chuang" : "Zhuang; Chuang",
     "Chinese" : "Κινέζικα",
     "Zulu" : "Zulu",
+    "Terms of service" : "Όροι χρήσης",
     "Terms of service have been modified!" : "Οι όροι χρήσης έχουν τροποποιηθεί!",
     "You have to accept the newest version of the terms of service in order to be able to use this service." : "Πρέπει να αποδεχθείτε την νεότερη έκδοση των όρων χρήσης για την χρήση της υπηρεσίας.",
     "Requires users to accept the terms of service before accessing data." : "Απαιτείται από τους χρήστες να αποδεχθούν τους όρους χρήσης πρίν την πρόσβαση στα δεδομένα.",
@@ -456,8 +453,11 @@ OC.L10N.register(
     "Saved!" : "Αποθηκεύτηκε!",
     "Resetting …" : "Επαναφορά ...",
     "Reset!" : "Επαναφορά!",
+    "I acknowledge that I have read and agree to the above terms of service" : "Επιβεβαιώνω ότι έχω διαβάσει και συμφωνώ με τους παραπάνω όρους χρήσης υπηρεσίας",
     "Edit" : "Επεξεργασία",
     "Delete" : "Διαγραφή",
-    "Deleting …" : "Διαγράφεται ..."
+    "Deleting …" : "Διαγράφεται ...",
+    "_" : "_",
+    "delete" : "διαγραφή"
 },
 "nplurals=2; plural=(n != 1);");

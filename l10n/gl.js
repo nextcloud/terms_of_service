@@ -1,14 +1,6 @@
 OC.L10N.register(
     "terms_of_service",
     {
-    "_" : "_",
-    "delete" : "eliminar",
-    "has" : "ten",
-    "get" : "obter",
-    "_min-width_::_min-height_" : ["largo-minimo","alto-minimo"],
-    "_dialog_::_auto_" : ["dialogo","auto"],
-    "Terms of service" : "Condicións do servizo",
-    "I acknowledge that I have read and agree to the above terms of service" : "Recoñezo que lin e acepto as condicións do servizo anteriores",
     "Global" : "Global",
     "Afghanistan" : "Afganistán",
     "Åland Islands" : "Illas de Åland",
@@ -442,6 +434,7 @@ OC.L10N.register(
     "Zhuang; Chuang" : "Zhuang; Chuang",
     "Chinese" : "Chinés",
     "Zulu" : "Zulú",
+    "Terms of service" : "Condicións do servizo",
     "Terms of service have been modified!" : "As condicións do servizo foron modificadas!",
     "You have to accept the newest version of the terms of service in order to be able to use this service." : "Debe aceptar a versión máis recente das condicións do servizo para poder empregar este servizo.",
     "Requires users to accept the terms of service before accessing data." : "Require que os usuarios acepten as condicións do servizo antes de acceder aos datos.",
@@ -460,8 +453,15 @@ OC.L10N.register(
     "Saved!" : "Gardado!",
     "Resetting …" : "Restabelecer",
     "Reset!" : "Restabelecer",
+    "I acknowledge that I have read and agree to the above terms of service" : "Recoñezo que lin e acepto as condicións do servizo anteriores",
     "Edit" : "Editar",
     "Delete" : "Eliminar",
-    "Deleting …" : "Eliminando…"
+    "Deleting …" : "Eliminando…",
+    "_" : "_",
+    "delete" : "eliminar",
+    "has" : "ten",
+    "get" : "obter",
+    "_min-width_::_min-height_" : ["largo-minimo","alto-minimo"],
+    "_dialog_::_auto_" : ["dialogo","auto"]
 },
 "nplurals=2; plural=(n != 1);");

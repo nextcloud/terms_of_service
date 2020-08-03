@@ -1,8 +1,6 @@
 OC.L10N.register(
     "terms_of_service",
     {
-    "delete" : "حذف",
-    "Terms of service" : "شرایط و قوانین",
     "Global" : "عمومی",
     "Afghanistan" : "افغانستان",
     "Albania" : "آلبانی",
@@ -243,10 +241,12 @@ OC.L10N.register(
     "Yoruba" : "Yoruba",
     "Chinese" : "چینی",
     "Zulu" : "Zulu",
+    "Terms of service" : "شرایط و قوانین",
     "Loading …" : "بارگذاری …",
     "Save" : "ذخیره",
     "Saved!" : "ذخیره!",
     "Edit" : "ویرایش",
-    "Delete" : "حذف"
+    "Delete" : "حذف",
+    "delete" : "حذف"
 },
 "nplurals=2; plural=(n > 1);");
