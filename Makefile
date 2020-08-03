@@ -53,41 +53,34 @@ create-tag:
 appstore: clean clean-dev npm-init build-js-production
 	mkdir -p $(sign_dir)
 	rsync -a \
-	--exclude=.babelrc \
-	--exclude=bower.json \
-	--exclude=.bowerrc \
+	--exclude=/.github \
+	--exclude=/.tx \
 	--exclude=/build \
+	--exclude=/src \
+	--exclude=/tests \
+	--exclude=babel.config.js \
+	--exclude=.babelrc \
 	--exclude=composer.json \
 	--exclude=docs \
 	--exclude=.drone.yml \
-	--exclude=.editorconfig \
-	--exclude=.eslintignore \
-	--exclude=.eslintrc.yml \
+	--exclude=.eslintrc.js \
 	--exclude=.git \
 	--exclude=.gitattributes \
-	--exclude=.github \
 	--exclude=.gitignore \
-	--exclude=.jscsrc \
 	--exclude=.jshintrc \
-	--exclude=.jshintignore \
 	--exclude=.l10nignore \
 	--exclude=js/tests \
 	--exclude=js/**.js.map \
-	--exclude=karma.conf.js \
 	--exclude=l10n/no-php \
-	--exclude=.tx \
 	--exclude=Makefile \
+	--exclude=krankerl.toml \
 	--exclude=node_modules \
 	--exclude=package.json \
 	--exclude=phpunit*xml \
 	--exclude=README.md \
-	--exclude=run-*lint.sh \
-	--exclude=.scrutinizer.yml \
-	--exclude=.stylelintrc \
-	--exclude=/src \
-	--exclude=tests \
+	--exclude=stylelint.config.js \
 	--exclude=.travis.yml \
-	--exclude=webpack.*.js \
+	--exclude=webpack.js \
 	$(project_dir)/  $(sign_dir)/$(app_name)
 	@if [ -f $(cert_dir)/$(app_name).key ]; then \
 		echo "Signing app files…"; \
