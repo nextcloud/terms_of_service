@@ -278,7 +278,6 @@ OC.L10N.register(
     "I acknowledge that I have read and agree to the above terms of service" : "Ek erken dat die die bostaande diensvoorwaardes gelees het en dit verstaan",
     "Edit" : "Wysig",
     "Delete" : "Skrap",
-    "Deleting …" : "Word geskrap …",
-    "delete" : "skrap"
+    "Deleting …" : "Word geskrap …"
 },
 "nplurals=2; plural=(n != 1);");

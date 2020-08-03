@@ -456,12 +456,6 @@ OC.L10N.register(
     "I acknowledge that I have read and agree to the above terms of service" : "Beriem na vedomie, že som si prečítal a súhlasím s vyššie uvedenými zmluvnými podmienkami",
     "Edit" : "Upraviť",
     "Delete" : "Zmazať",
-    "Deleting …" : "Odstraňuje sa...",
-    "_" : "_",
-    "delete" : "vymazať",
-    "has" : "má",
-    "get" : "získať",
-    "_min-width_::_min-height_" : ["minimálna výška","minimálne výšky","minimálne výšky","minimálnych výšok"],
-    "_dialog_::_auto_" : ["auto","auto","auto","auto"]
+    "Deleting …" : "Odstraňuje sa..."
 },
 "nplurals=4; plural=(n % 1 == 0 && n == 1 ? 0 : n % 1 == 0 && n >= 2 && n <= 4 ? 1 : n % 1 != 0 ? 2: 3);");

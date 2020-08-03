@@ -244,7 +244,6 @@
     "Save" : "ذخیره",
     "Saved!" : "ذخیره!",
     "Edit" : "ویرایش",
-    "Delete" : "حذف",
-    "delete" : "حذف"
+    "Delete" : "حذف"
 },"pluralForm" :"nplurals=2; plural=(n > 1);"
 }

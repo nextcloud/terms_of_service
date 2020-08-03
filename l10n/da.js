@@ -123,8 +123,6 @@ OC.L10N.register(
     "Reset!" : "Nulstillet!",
     "Edit" : "Rediger",
     "Delete" : "Slet",
-    "Deleting …" : "Sletter…",
-    "_" : "_",
-    "delete" : "Slet"
+    "Deleting …" : "Sletter…"
 },
 "nplurals=2; plural=(n != 1);");

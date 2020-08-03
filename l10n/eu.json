@@ -418,8 +418,6 @@
     "Reset!" : "Berezarri!",
     "Edit" : "Editatu",
     "Delete" : "Ezabatu",
-    "Deleting …" : "Ezabatzen …",
-    "_" : "_",
-    "delete" : "ezabatu"
+    "Deleting …" : "Ezabatzen …"
 },"pluralForm" :"nplurals=2; plural=(n != 1);"
 }

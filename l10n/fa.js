@@ -246,7 +246,6 @@ OC.L10N.register(
     "Save" : "ذخیره",
     "Saved!" : "ذخیره!",
     "Edit" : "ویرایش",
-    "Delete" : "حذف",
-    "delete" : "حذف"
+    "Delete" : "حذف"
 },
 "nplurals=2; plural=(n > 1);");

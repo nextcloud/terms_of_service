@@ -456,8 +456,6 @@ OC.L10N.register(
     "I acknowledge that I have read and agree to the above terms of service" : "Επιβεβαιώνω ότι έχω διαβάσει και συμφωνώ με τους παραπάνω όρους χρήσης υπηρεσίας",
     "Edit" : "Επεξεργασία",
     "Delete" : "Διαγραφή",
-    "Deleting …" : "Διαγράφεται ...",
-    "_" : "_",
-    "delete" : "διαγραφή"
+    "Deleting …" : "Διαγράφεται ..."
 },
 "nplurals=2; plural=(n != 1);");

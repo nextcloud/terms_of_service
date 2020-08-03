@@ -42,8 +42,6 @@
     "I acknowledge that I have read and agree to the above terms of service" : "이용 약관을 읽었으며 이에 동의합니다",
     "Edit" : "편집",
     "Delete" : "삭제",
-    "Deleting …" : "삭제 중 …",
-    "_" : "_",
-    "delete" : "삭제"
+    "Deleting …" : "삭제 중 …"
 },"pluralForm" :"nplurals=1; plural=0;"
 }

@@ -37,7 +37,6 @@ OC.L10N.register(
     "Save" : "Guardar",
     "Saved!" : "Gravado!",
     "Edit" : "Editar",
-    "Delete" : "Apagar",
-    "delete" : "eliminar"
+    "Delete" : "Apagar"
 },
 "nplurals=2; plural=(n != 1);");

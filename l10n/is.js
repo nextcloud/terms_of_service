@@ -456,8 +456,6 @@ OC.L10N.register(
     "I acknowledge that I have read and agree to the above terms of service" : "Staðfesti ég að ég hef lesið og samþykki ofangreinda jónustuskilmála",
     "Edit" : "Breyta",
     "Delete" : "Eyða",
-    "Deleting …" : "Eyði …",
-    "_" : "_",
-    "delete" : "eytt"
+    "Deleting …" : "Eyði …"
 },
 "nplurals=2; plural=(n % 10 != 1 || n % 100 == 11);");
