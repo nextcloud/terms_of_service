@@ -1,9 +1,6 @@
 OC.L10N.register(
     "terms_of_service",
     {
-    "_" : "_",
-    "delete" : "изтриване",
-    "Terms of service" : "Условия за ползване",
     "Global" : "Глобални",
     "Afghanistan" : "Афганистан",
     "Åland Islands" : "Оландски острови",
@@ -417,6 +414,7 @@ OC.L10N.register(
     "Yoruba" : "йоруба",
     "Chinese" : "китайски",
     "Zulu" : "зулуски",
+    "Terms of service" : "Условия за ползване",
     "Terms of service have been modified!" : "Условията за ползване са били променени!",
     "You have to accept the newest version of the terms of service in order to be able to use this service." : "Трябва да приемете най-новата версия на условията за ползване за да използвате тази услуга.",
     "Requires users to accept the terms of service before accessing data." : "Изисква се потребителите да приемат условията за ползване преди да достъпват данни.",
@@ -431,6 +429,8 @@ OC.L10N.register(
     "Saved!" : "Записано!",
     "Edit" : "Променяне",
     "Delete" : "Изтрий",
-    "Deleting …" : "Изтриване …"
+    "Deleting …" : "Изтриване …",
+    "_" : "_",
+    "delete" : "изтриване"
 },
 "nplurals=2; plural=(n != 1);");

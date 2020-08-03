@@ -1,9 +1,6 @@
 OC.L10N.register(
     "terms_of_service",
     {
-    "_" : "_",
-    "delete" : "ištrinti",
-    "Terms of service" : "Naudojimosi sąlygos",
     "Global" : "Visuotinis",
     "Afghanistan" : "Afganistanas",
     "Albania" : "Albanija",
@@ -285,6 +282,7 @@ OC.L10N.register(
     "Yoruba" : "Jorubų",
     "Chinese" : "Kinų",
     "Zulu" : "Zulų",
+    "Terms of service" : "Naudojimosi sąlygos",
     "Loading …" : "Įkeliama …",
     "Save" : "Įrašyti",
     "Saving …" : "Įrašoma …",
@@ -293,6 +291,8 @@ OC.L10N.register(
     "Reset!" : "Atstatyta!",
     "Edit" : "Taisyti",
     "Delete" : "Ištrinti",
-    "Deleting …" : "Ištrinama …"
+    "Deleting …" : "Ištrinama …",
+    "_" : "_",
+    "delete" : "ištrinti"
 },
 "nplurals=4; plural=(n % 10 == 1 && (n % 100 > 19 || n % 100 < 11) ? 0 : (n % 10 >= 2 && n % 10 <=9) && (n % 100 > 19 || n % 100 < 11) ? 1 : n % 1 != 0 ? 2: 3);");

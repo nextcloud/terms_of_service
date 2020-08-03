@@ -1,9 +1,6 @@
 OC.L10N.register(
     "terms_of_service",
     {
-    "_" : "_",
-    "delete" : "حذف",
-    "Terms of service" : "شروط الخدمة",
     "Global" : "عالمي",
     "Afghanistan" : "أفغانستان",
     "Åland Islands" : "جزر آلاند",
@@ -134,10 +131,13 @@ OC.L10N.register(
     "Russian" : "الروسية",
     "Chinese" : "الصينية",
     "Zulu" : "الزولو",
+    "Terms of service" : "شروط الخدمة",
     "Select a region" : "اختر منطقة",
     "Select a language" : "اختر لغة",
     "Save" : "حفظ",
     "Edit" : "تعديل",
-    "Delete" : "حذف "
+    "Delete" : "حذف ",
+    "_" : "_",
+    "delete" : "حذف"
 },
 "nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;");
