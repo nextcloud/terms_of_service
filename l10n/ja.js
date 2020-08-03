@@ -456,8 +456,6 @@ OC.L10N.register(
     "I acknowledge that I have read and agree to the above terms of service" : "上記のサービス利用規約を読み、同意したことを認めます",
     "Edit" : "編集",
     "Delete" : "削除",
-    "Deleting …" : "削除しています",
-    "_" : "_",
-    "delete" : "削除"
+    "Deleting …" : "削除しています"
 },
 "nplurals=1; plural=0;");

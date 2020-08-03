@@ -456,8 +456,6 @@ OC.L10N.register(
     "I acknowledge that I have read and agree to the above terms of service" : "Potvrđujem da sam pročitao i prihvaćam navedene uvjete pružanja usluge",
     "Edit" : "Uredi",
     "Delete" : "Izbriši",
-    "Deleting …" : "Brisanje...",
-    "_" : "_",
-    "delete" : "izbriši"
+    "Deleting …" : "Brisanje..."
 },
 "nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;");

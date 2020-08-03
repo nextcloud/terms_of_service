@@ -237,7 +237,6 @@ OC.L10N.register(
     "Reset!" : "重設完成",
     "Edit" : "修改",
     "Delete" : "刪除",
-    "Deleting …" : "刪除中 ...",
-    "delete" : "刪除"
+    "Deleting …" : "刪除中 ..."
 },
 "nplurals=1; plural=0;");

@@ -456,8 +456,6 @@ OC.L10N.register(
     "I acknowledge that I have read and agree to the above terms of service" : "Yukarıdaki hizmet koşulları metnini okudum ve anladım",
     "Edit" : "Düzenle",
     "Delete" : "Sil",
-    "Deleting …" : "Siliniyor …",
-    "_" : "_",
-    "delete" : "sil"
+    "Deleting …" : "Siliniyor …"
 },
 "nplurals=2; plural=(n > 1);");
