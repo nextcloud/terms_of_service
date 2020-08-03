@@ -1,5 +1,4 @@
 { "translations": {
-    "delete" : "eliminar",
     "Global" : "Global",
     "Afghanistan" : "Afeganistão",
     "Algeria" : "Algéria",
@@ -36,6 +35,7 @@
     "Save" : "Guardar",
     "Saved!" : "Gravado!",
     "Edit" : "Editar",
-    "Delete" : "Apagar"
+    "Delete" : "Apagar",
+    "delete" : "eliminar"
 },"pluralForm" :"nplurals=2; plural=(n != 1);"
 }

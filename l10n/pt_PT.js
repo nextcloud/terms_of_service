@@ -1,7 +1,6 @@
 OC.L10N.register(
     "terms_of_service",
     {
-    "delete" : "eliminar",
     "Global" : "Global",
     "Afghanistan" : "Afeganistão",
     "Algeria" : "Algéria",
@@ -38,6 +37,7 @@ OC.L10N.register(
     "Save" : "Guardar",
     "Saved!" : "Gravado!",
     "Edit" : "Editar",
-    "Delete" : "Apagar"
+    "Delete" : "Apagar",
+    "delete" : "eliminar"
 },
 "nplurals=2; plural=(n != 1);");

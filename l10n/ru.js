@@ -1,10 +1,6 @@
 OC.L10N.register(
     "terms_of_service",
     {
-    "_" : "_",
-    "delete" : "удалить",
-    "Terms of service" : "Условия использования",
-    "I acknowledge that I have read and agree to the above terms of service" : "Я подтверждаю, что я прочитал и принял приведённые выше правила использования",
     "Global" : "Общие",
     "Afghanistan" : "Афганистан",
     "Åland Islands" : "Аландские острова",
@@ -438,6 +434,7 @@ OC.L10N.register(
     "Zhuang; Chuang" : "Чжуанский",
     "Chinese" : "Китайский",
     "Zulu" : "Зулусский",
+    "Terms of service" : "Условия использования",
     "Terms of service have been modified!" : "Изменены условия использования",
     "You have to accept the newest version of the terms of service in order to be able to use this service." : "Чтобы продолжить пользоваться сервисом необходимо принять новые условия использования.",
     "Requires users to accept the terms of service before accessing data." : "Требуется, чтобы пользователи приняли условия предоставления услуг перед доступом к данным.",
@@ -456,8 +453,11 @@ OC.L10N.register(
     "Saved!" : "Сохранено",
     "Resetting …" : "Сброс…",
     "Reset!" : "Сбросить",
+    "I acknowledge that I have read and agree to the above terms of service" : "Я подтверждаю, что я прочитал и принял приведённые выше правила использования",
     "Edit" : "Редактировать",
     "Delete" : "Удалить",
-    "Deleting …" : "Удаление…"
+    "Deleting …" : "Удаление…",
+    "_" : "_",
+    "delete" : "удалить"
 },
 "nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n%100>=11 && n%100<=14)? 2 : 3);");
