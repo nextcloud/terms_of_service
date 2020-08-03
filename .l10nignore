@@ -1,4 +1,7 @@
 # compiled vue templates
 js/terms_of_service_admin.js
+js/terms_of_service_admin.js.map
 js/terms_of_service_public.js
+js/terms_of_service_public.js.map
 js/terms_of_service_user.js
+js/terms_of_service_user.js.map
