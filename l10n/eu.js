@@ -420,8 +420,6 @@ OC.L10N.register(
     "Reset!" : "Berezarri!",
     "Edit" : "Editatu",
     "Delete" : "Ezabatu",
-    "Deleting …" : "Ezabatzen …",
-    "_" : "_",
-    "delete" : "ezabatu"
+    "Deleting …" : "Ezabatzen …"
 },
 "nplurals=2; plural=(n != 1);");

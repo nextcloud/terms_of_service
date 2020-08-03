@@ -429,8 +429,6 @@ OC.L10N.register(
     "Saved!" : "Записано!",
     "Edit" : "Променяне",
     "Delete" : "Изтрий",
-    "Deleting …" : "Изтриване …",
-    "_" : "_",
-    "delete" : "изтриване"
+    "Deleting …" : "Изтриване …"
 },
 "nplurals=2; plural=(n != 1);");

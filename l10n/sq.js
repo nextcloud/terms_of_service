@@ -150,7 +150,6 @@ OC.L10N.register(
     "Save" : "Ruaj",
     "Saved!" : "I/E ruajtur!",
     "Edit" : "Përpuno",
-    "Delete" : "Delete",
-    "delete" : "fshi"
+    "Delete" : "Delete"
 },
 "nplurals=2; plural=(n != 1);");

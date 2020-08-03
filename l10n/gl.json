@@ -454,12 +454,6 @@
     "I acknowledge that I have read and agree to the above terms of service" : "Recoñezo que lin e acepto as condicións do servizo anteriores",
     "Edit" : "Editar",
     "Delete" : "Eliminar",
-    "Deleting …" : "Eliminando…",
-    "_" : "_",
-    "delete" : "eliminar",
-    "has" : "ten",
-    "get" : "obter",
-    "_min-width_::_min-height_" : ["largo-minimo","alto-minimo"],
-    "_dialog_::_auto_" : ["dialogo","auto"]
+    "Deleting …" : "Eliminando…"
 },"pluralForm" :"nplurals=2; plural=(n != 1);"
 }

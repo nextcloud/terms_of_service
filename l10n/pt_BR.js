@@ -456,12 +456,6 @@ OC.L10N.register(
     "I acknowledge that I have read and agree to the above terms of service" : "Eu confirmo que li e concordo com os termos de serviço acima",
     "Edit" : "Editar",
     "Delete" : "Excluir",
-    "Deleting …" : "Excluindo...",
-    "_" : "_",
-    "delete" : "excluir",
-    "has" : "tem",
-    "get" : "obter",
-    "_min-width_::_min-height_" : ["min-width","min-height"],
-    "_dialog_::_auto_" : ["diálogo","automático"]
+    "Deleting …" : "Excluindo..."
 },
 "nplurals=2; plural=(n > 1);");
