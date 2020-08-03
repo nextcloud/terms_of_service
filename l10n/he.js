@@ -1,9 +1,6 @@
 OC.L10N.register(
     "terms_of_service",
     {
-    "_" : "_",
-    "delete" : "מחיקה",
-    "Terms of service" : "תנאי שירות",
     "Global" : "גלובלי",
     "Afghanistan" : "אפגניסטן",
     "Åland Islands" : "איי אולנד",
@@ -341,6 +338,7 @@ OC.L10N.register(
     "Yoruba" : "יורובה",
     "Chinese" : "סינית",
     "Zulu" : "זולו",
+    "Terms of service" : "תנאי שירות",
     "Terms of service have been modified!" : "תנאי השירות נערכו!",
     "You have to accept the newest version of the terms of service in order to be able to use this service." : "עליך לקבל את הגרסה העדכנית ביותר של תנאי השירות כדי שיתאפשר לך להשתמש בשירות הזה.",
     "Requires users to accept the terms of service before accessing data." : "דורש מהמשתמשים לאשר את תנאי השימוש בטרם גישה לנתונים.",
@@ -360,6 +358,8 @@ OC.L10N.register(
     "Reset!" : "איפוס!",
     "Edit" : "עריכה",
     "Delete" : "מחיקה",
-    "Deleting …" : "מתבצעת מחיקה…"
+    "Deleting …" : "מתבצעת מחיקה…",
+    "_" : "_",
+    "delete" : "מחיקה"
 },
 "nplurals=4; plural=(n == 1 && n % 1 == 0) ? 0 : (n == 2 && n % 1 == 0) ? 1: (n % 10 == 0 && n % 1 == 0 && n > 10) ? 2 : 3;");

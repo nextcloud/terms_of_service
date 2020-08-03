@@ -1,6 +1,4 @@
 { "translations": {
-    "delete" : "fshi",
-    "Terms of service" : "Termat e shërbimit",
     "Global" : "Globale",
     "Afghanistan" : "Afganistani",
     "Åland Islands" : "Ishujt Oland",
@@ -146,9 +144,11 @@
     "Bulgarian" : "Bullgarë",
     "English" : "Anglisht",
     "Hungarian" : "Hungareze",
+    "Terms of service" : "Termat e shërbimit",
     "Save" : "Ruaj",
     "Saved!" : "I/E ruajtur!",
     "Edit" : "Përpuno",
-    "Delete" : "Delete"
+    "Delete" : "Delete",
+    "delete" : "fshi"
 },"pluralForm" :"nplurals=2; plural=(n != 1);"
 }

@@ -1,10 +1,6 @@
 OC.L10N.register(
     "terms_of_service",
     {
-    "_" : "_",
-    "delete" : "sil",
-    "Terms of service" : "Hizmet koşulları",
-    "I acknowledge that I have read and agree to the above terms of service" : "Yukarıdaki hizmet koşulları metnini okudum ve anladım",
     "Global" : "Küresel",
     "Afghanistan" : "Afganistan",
     "Åland Islands" : "Åland Adaları",
@@ -438,6 +434,7 @@ OC.L10N.register(
     "Zhuang; Chuang" : "Zhuangca",
     "Chinese" : "Çince",
     "Zulu" : "Zuluca",
+    "Terms of service" : "Hizmet koşulları",
     "Terms of service have been modified!" : "Hizmet koşulları değiştirildi!",
     "You have to accept the newest version of the terms of service in order to be able to use this service." : "Bu hizmeti kullanabilmek için son hizmet koşulları metnini okuyup kabul etmeniz gerekiyor.",
     "Requires users to accept the terms of service before accessing data." : "Verilere erişmeden önce hizmet koşulları metninin kullanıcı tarafından okunup kabul edilmesi gerekir.",
@@ -456,8 +453,11 @@ OC.L10N.register(
     "Saved!" : "Kaydedildi!",
     "Resetting …" : "Sıfırlanıyor …",
     "Reset!" : "Sıfırla!",
+    "I acknowledge that I have read and agree to the above terms of service" : "Yukarıdaki hizmet koşulları metnini okudum ve anladım",
     "Edit" : "Düzenle",
     "Delete" : "Sil",
-    "Deleting …" : "Siliniyor …"
+    "Deleting …" : "Siliniyor …",
+    "_" : "_",
+    "delete" : "sil"
 },
 "nplurals=2; plural=(n > 1);");

@@ -1,9 +1,6 @@
 OC.L10N.register(
     "terms_of_service",
     {
-    "delete" : "töröl",
-    "Terms of service" : "Szolgáltatás feltételei",
-    "I acknowledge that I have read and agree to the above terms of service" : "Kijelentem, hogy elolvastam és egyet értek a fenti szolgáltatási feltételekkel.",
     "Global" : "Globális",
     "Afghanistan" : "Afganisztán",
     "Åland Islands" : "Åland-szigetek",
@@ -402,6 +399,7 @@ OC.L10N.register(
     "Yoruba" : "Yoruba",
     "Chinese" : "Kínai",
     "Zulu" : "Zului",
+    "Terms of service" : "Szolgáltatás feltételei",
     "Terms of service have been modified!" : "A szolgáltatási feltételek módosultak! ",
     "You have to accept the newest version of the terms of service in order to be able to use this service." : "Ahhoz, hogy a szolgáltatást használni tudja, el kell, hogy fogadja a legújabb szolgáltatási feltételeket.",
     "Requires users to accept the terms of service before accessing data." : "Szükség van arra, hogy a szolgátlatási feltételeket elfogadja, mielőtt az adatokhoz hozzáférhetne.",
@@ -419,8 +417,10 @@ OC.L10N.register(
     "Saved!" : "Mentve!",
     "Resetting …" : "Visszaállítás folyamatban ...",
     "Reset!" : "Visszaállítás!",
+    "I acknowledge that I have read and agree to the above terms of service" : "Kijelentem, hogy elolvastam és egyet értek a fenti szolgáltatási feltételekkel.",
     "Edit" : "Szerkesztés",
     "Delete" : "Törlés",
-    "Deleting …" : "Törlés folyamatban ..."
+    "Deleting …" : "Törlés folyamatban ...",
+    "delete" : "töröl"
 },
 "nplurals=2; plural=(n != 1);");

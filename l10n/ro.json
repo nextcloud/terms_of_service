@@ -1,7 +1,4 @@
 { "translations": {
-    "delete" : "ștergere",
-    "Terms of service" : "Termenii serviciului",
-    "I acknowledge that I have read and agree to the above terms of service" : "Am luat la cunoștință faptul că am citit și sunt de accord cu termenii serviciului de mai sus",
     "Global" : "Global",
     "Afghanistan" : "Afghanistan",
     "Åland Islands" : "Åland Islands",
@@ -435,6 +432,7 @@
     "Zhuang; Chuang" : "Zhuang; Chuang",
     "Chinese" : "Chinese",
     "Zulu" : "Zulu",
+    "Terms of service" : "Termenii serviciului",
     "Terms of service have been modified!" : "Termenii serviciului au fost modificați!",
     "You have to accept the newest version of the terms of service in order to be able to use this service." : "Trebuie să accepți noii termeni de serviciu pentru a putea folosi serviciul.",
     "Requires users to accept the terms of service before accessing data." : "Este necesar ca utilizatorii să accepte termenii servicului ca să poată accesa datele.",
@@ -453,8 +451,10 @@
     "Saved!" : "Salvat!",
     "Resetting …" : "Resetez ...",
     "Reset!" : "Resetat!",
+    "I acknowledge that I have read and agree to the above terms of service" : "Am luat la cunoștință faptul că am citit și sunt de accord cu termenii serviciului de mai sus",
     "Edit" : "Editează",
     "Delete" : "Șterge",
-    "Deleting …" : "Se șterge ..."
+    "Deleting …" : "Se șterge ...",
+    "delete" : "ștergere"
 },"pluralForm" :"nplurals=3; plural=(n==1?0:(((n%100>19)||((n%100==0)&&(n!=0)))?2:1));"
 }
