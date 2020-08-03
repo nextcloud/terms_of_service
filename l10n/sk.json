@@ -1,6 +1,10 @@
 { "translations": {
     "_" : "_",
     "delete" : "vymazať",
+    "has" : "má",
+    "get" : "získať",
+    "_min-width_::_min-height_" : ["minimálna výška","minimálne výšky","minimálne výšky","minimálnych výšok"],
+    "_dialog_::_auto_" : ["auto","auto","auto","auto"],
     "Terms of service" : "Podmienky používania služby",
     "I acknowledge that I have read and agree to the above terms of service" : "Beriem na vedomie, že som si prečítal a súhlasím s vyššie uvedenými zmluvnými podmienkami",
     "Global" : "Globálne",
