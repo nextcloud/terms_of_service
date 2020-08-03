@@ -65,8 +65,6 @@ OC.L10N.register(
     "I acknowledge that I have read and agree to the above terms of service" : "Vahvistan lukeneeni ja hyväksyväni yllä olevat käyttöehdot",
     "Edit" : "Muokkaa",
     "Delete" : "Poista",
-    "Deleting …" : "Poistetaan…",
-    "_" : "_",
-    "delete" : "poista"
+    "Deleting …" : "Poistetaan…"
 },
 "nplurals=2; plural=(n != 1);");

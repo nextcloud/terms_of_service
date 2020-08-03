@@ -35,7 +35,6 @@
     "Save" : "Guardar",
     "Saved!" : "Gravado!",
     "Edit" : "Editar",
-    "Delete" : "Apagar",
-    "delete" : "eliminar"
+    "Delete" : "Apagar"
 },"pluralForm" :"nplurals=2; plural=(n != 1);"
 }
