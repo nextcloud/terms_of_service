@@ -322,6 +322,7 @@ OC.L10N.register(
     "Yoruba" : "Yoroubeg",
     "Chinese" : "Sinaeg",
     "Zulu" : "Zouloueg",
+    "Loading …" : "O Kargañ ...",
     "Save" : "Enrollañ",
     "Saving …" : "Orc'h enrolliñ",
     "Saved!" : "Enrollet !",
