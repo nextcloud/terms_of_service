@@ -283,6 +283,8 @@ OC.L10N.register(
     "Chinese" : "Kinų",
     "Zulu" : "Zulų",
     "Terms of service" : "Naudojimosi sąlygos",
+    "Select a region" : "Pasirinkti regioną",
+    "Select a language" : "Pasirinkti kalbą",
     "Loading …" : "Įkeliama …",
     "Save" : "Įrašyti",
     "Saving …" : "Įrašoma …",
