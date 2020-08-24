@@ -61,7 +61,7 @@ OC.L10N.register(
     "Cuba" : "Kuba",
     "Curaçao" : "Curaçao",
     "Cyprus" : "Kypr",
-    "Czechia" : "Česká Republika",
+    "Czechia" : "Česko",
     "Denmark" : "Dánsko",
     "Djibouti" : "Džibutsko",
     "Dominica" : "Dominika",
