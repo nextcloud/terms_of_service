@@ -71,6 +71,7 @@ import axios from '@nextcloud/axios'
 import Multiselect from '@nextcloud/vue/dist/Components/Multiselect'
 import { showError } from '@nextcloud/dialogs'
 import { generateUrl } from '@nextcloud/router'
+import '@nextcloud/dialogs/styles/toast.scss'
 
 export default {
 	name: 'App',
