@@ -46,13 +46,13 @@ class CountryDetector {
 			$reader = new Reader(__DIR__ . '/../vendor/GeoLite2-Country.mmdb');
 			$record = $reader->get($this->request->getRemoteAddress());
 		} catch (\Exception $e) {
-			return '--';
+			return CountryMapper::GLOBAL;
 		}
 
-		if($this->countryMapper->isValidCountry($record['country']['iso_code'])) {
+		if ($this->countryMapper->isValidCountry($record['country']['iso_code'])) {
 			return $record['country']['iso_code'];
 		}
 
-		return '--';
+		return CountryMapper::GLOBAL;
 	}
 }
