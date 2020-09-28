@@ -1,7 +1,7 @@
 OC.L10N.register(
     "terms_of_service",
     {
-    "Global" : "Julkinen",
+    "Global" : "Globaali",
     "Austria" : "Itävalta",
     "Belgium" : "Belgia",
     "Brazil" : "Brasilia",
