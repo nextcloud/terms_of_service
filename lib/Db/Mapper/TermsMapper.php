@@ -55,8 +55,8 @@ class TermsMapper extends QBMapper {
 		}
 		$result->closeCursor();
 
-		if (empty($entities) && $countryCode !== '--') {
-			return $this->getTermsForCountryCode('--');
+		if (empty($entities) && $countryCode !== CountryMapper::GLOBAL) {
+			return $this->getTermsForCountryCode(CountryMapper::GLOBAL);
 		}
 
 		return $entities;

@@ -46,13 +46,18 @@ class CountryDetector {
 			$reader = new Reader(__DIR__ . '/../vendor/GeoLite2-Country.mmdb');
 			$record = $reader->get($this->request->getRemoteAddress());
 		} catch (\Exception $e) {
-			return '--';
+			return CountryMapper::GLOBAL;
 		}
 
-		if($this->countryMapper->isValidCountry($record['country']['iso_code'])) {
+		if ($record === null) {
+			// No match found, e.g. for local address like 127.0.0.1
+			return CountryMapper::GLOBAL;
+		}
+
+		if ($this->countryMapper->isValidCountry($record['country']['iso_code'])) {
 			return $record['country']['iso_code'];
 		}
 
-		return '--';
+		return CountryMapper::GLOBAL;
 	}
 }

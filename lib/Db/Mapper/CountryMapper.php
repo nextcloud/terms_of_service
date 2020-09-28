@@ -24,6 +24,9 @@ namespace OCA\TermsOfService\Db\Mapper;
 use OCP\IL10N;
 
 class CountryMapper {
+
+	public const GLOBAL = '--';
+
 	/** @var IL10N */
 	private $l;
 
@@ -48,7 +51,7 @@ class CountryMapper {
 	 */
 	public function getCountries(): array {
 		$countries = [
-			'--' => $this->l->t('Global'),
+			self::GLOBAL => $this->l->t('Global'),
 			'AF' => $this->l->t('Afghanistan'),
 			'AX' => $this->l->t('Åland Islands'),
 			'AL' => $this->l->t('Albania'),
