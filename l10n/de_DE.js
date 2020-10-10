@@ -22,7 +22,7 @@ OC.L10N.register(
     "Bahrain" : "Bahrain",
     "Bangladesh" : "Bangladesch",
     "Barbados" : "Barbados",
-    "Belarus" : "Weißrussland",
+    "Belarus" : "Belarus",
     "Belgium" : "Belgien",
     "Belize" : "Belize",
     "Benin" : "Benin",
