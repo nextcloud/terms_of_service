@@ -397,6 +397,7 @@ OC.L10N.register(
     "Somali" : "Somalščina",
     "Albanian" : "Albanščina",
     "Serbian" : "Srbščina",
+    "Swati" : "Svati",
     "Sotho, Southern" : "Južni sotho",
     "Sundanese" : "Sundščina",
     "Swedish" : "Švedščina",
