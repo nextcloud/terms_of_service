@@ -128,7 +128,7 @@ OC.L10N.register(
     "Lebanon" : "Libanon",
     "Lesotho" : "Lesotho",
     "Liberia" : "Liberia",
-    "Libya" : "Lybien",
+    "Libya" : "Libyen",
     "Liechtenstein" : "Liechtenstein",
     "Lithuania" : "Litauen",
     "Luxembourg" : "Luxemburg",
