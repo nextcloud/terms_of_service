@@ -264,7 +264,7 @@ OC.L10N.register(
     "Aymara" : "Aymara",
     "Azerbaijani" : "Aserbaidschanisch",
     "Bashkir" : "Bashkir",
-    "Belarusian" : "belarusisch",
+    "Belarusian" : "belarussisch",
     "Bulgarian" : "Bulgarisch",
     "Bihari languages" : "Biharische Sprachen",
     "Bislama" : "Bislama",
