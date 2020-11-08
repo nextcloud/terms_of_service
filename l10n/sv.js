@@ -455,7 +455,7 @@ OC.L10N.register(
     "Reset!" : "Återställt!",
     "I acknowledge that I have read and agree to the above terms of service" : "Jag bekräftar att jag har läst och godkänt ovanstående villkor",
     "Edit" : "Redigera",
-    "Delete" : "Radera",
+    "Delete" : "Ta bort",
     "Deleting …" : "Raderar ..."
 },
 "nplurals=2; plural=(n != 1);");
