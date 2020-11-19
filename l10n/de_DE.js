@@ -451,11 +451,11 @@ OC.L10N.register(
     "Ensure that all fields are filled" : "Stellen Sie sicher, dass alle Felder ausgefüllt sind",
     "Saving …" : "Speichere…",
     "Saved!" : "Gespeichert!",
-    "Resetting …" : "Zurücksetzen …",
+    "Resetting …" : "Setze zurück…",
     "Reset!" : "Zurücksetzen!",
     "I acknowledge that I have read and agree to the above terms of service" : "Ich bestätige, dass ich die oben genannten Nutzungsbedingungen gelesen und akzeptiert habe",
     "Edit" : "Bearbeiten",
     "Delete" : "Löschen",
-    "Deleting …" : "Löschen…"
+    "Deleting …" : "Lösche…"
 },
 "nplurals=2; plural=(n != 1);");
