@@ -376,6 +376,7 @@ OC.L10N.register(
     "Uzbek" : "Uzbek",
     "Vietnamese" : "Виетнамски",
     "Walloon" : "Валонија",
+    "Wolof" : "Волофски",
     "Yoruba" : "Yoruba",
     "Chinese" : "Кинески",
     "Zulu" : "Zulu",
