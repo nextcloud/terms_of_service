@@ -196,7 +196,7 @@ OC.L10N.register(
     "Samoa" : "Samoa",
     "San Marino" : "San Marino",
     "Sao Tome and Principe" : "São Tomé und Príncipe",
-    "Saudi Arabia" : "Saudiarabien",
+    "Saudi Arabia" : "Saudi-Arabien",
     "Senegal" : "Senegal",
     "Serbia" : "Serbien",
     "Seychelles" : "Seychellen",
