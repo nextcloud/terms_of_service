@@ -400,6 +400,7 @@ OC.L10N.register(
     "Venda" : "Venda",
     "Vietnamese" : "Vietnamera",
     "Volapük" : "Volapük",
+    "Walloon" : "Valoniera",
     "Wolof" : "Wolof",
     "Xhosa" : "Xhosa",
     "Yoruba" : "Jorubera",
