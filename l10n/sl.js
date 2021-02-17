@@ -372,6 +372,7 @@ OC.L10N.register(
     "Navajo; Navaho" : "Navajščina",
     "Chichewa; Chewa; Nyanja" : "Njanjščina",
     "Occitan (post 1500)" : "Okcitanščina (po 1500)",
+    "Ojibwa" : "Odžibva",
     "Oromo" : "Oromo",
     "Oriya" : "Orijščina",
     "Ossetian; Ossetic" : "Osetinščina",
