@@ -28,16 +28,19 @@ use OCA\TermsOfService\Checker;
 use OCA\TermsOfService\Filesystem\StorageWrapper;
 use OCA\TermsOfService\Listener\UserDeletedListener;
 use OCA\TermsOfService\Notifications\Notifier;
+use OCA\TermsOfService\Dav\CheckPlugin;
 use OCP\AppFramework\App;
 use OCP\AppFramework\Bootstrap\IBootContext;
 use OCP\AppFramework\Bootstrap\IBootstrap;
 use OCP\AppFramework\Bootstrap\IRegistrationContext;
+use OCP\EventDispatcher\IEventDispatcher;
 use OCP\Files\Storage\IStorage;
 use OCP\IConfig;
 use OCP\IRequest;
 use OCP\IUser;
 use OCP\IUserSession;
 use OCP\Notification\IManager;
+use OCP\SabrePluginEvent;
 use OCP\User\Events\UserDeletedEvent;
 use OCP\Util;
 use Psr\Log\LoggerInterface;
@@ -50,7 +53,7 @@ include_once __DIR__ . '/../../vendor/autoload.php';
 class Application extends App implements IBootstrap {
 
 
-	const APPNAME = 'terms_of_service';
+	public const APPNAME = 'terms_of_service';
 
 
 	public function __construct() {
@@ -63,6 +66,19 @@ class Application extends App implements IBootstrap {
 
 	public function boot(IBootContext $context): void {
 		Util::connectHook('OC_Filesystem', 'preSetup', $this, 'addStorageWrapper');
+
+		$eventDispatcher = $context->getServerContainer()->get(IEventDispatcher::class);
+		$eventDispatcher->addListener('OCA\DAV\Connector\Sabre::addPlugin', function (SabrePluginEvent $event) use ($context) {
+			$eventServer = $event->getServer();
+
+			if ($eventServer !== null) {
+				// We have to register the CheckPlugin here and not info.xml,
+				// because info.xml plugins are loaded, after the
+				// beforeMethod:* hook has already been emitted.
+				$plugin = $context->getAppContainer()->get(CheckPlugin::class);
+				$eventServer->addPlugin($plugin);
+			}
+		});
 
 		$context->injectFn([$this, 'registerNotifier']);
 		$context->injectFn([$this, 'createNotificationOnFirstLogin']);
