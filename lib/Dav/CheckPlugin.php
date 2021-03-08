@@ -48,10 +48,15 @@ class CheckPlugin extends ServerPlugin {
 	public function initialize(Server $server) {
 		$this->server = $server;
 		$server->on('method:PROPFIND', [$this, 'checkToS']);
+		$server->on('method:PROPPATCH', [$this, 'checkToS']);
 		$server->on('method:GET', [$this, 'checkToS']);
 		$server->on('method:POST', [$this, 'checkToS']);
 		$server->on('method:PUT', [$this, 'checkToS']);
 		$server->on('method:DELETE', [$this, 'checkToS']);
+		$server->on('method:MKCOL', [$this, 'checkToS']);
+		$server->on('method:MOVE', [$this, 'checkToS']);
+		$server->on('method:COPY', [$this, 'checkToS']);
+		$server->on('method:REPORT', [$this, 'checkToS']);
 	}
 
 	/**
