@@ -71,6 +71,10 @@ class Checker {
 	public function currentUserHasSigned(): bool {
 		$uuid = $this->config->getAppValue(Application::APPNAME, 'term_uuid', '');
 		if ($this->userId === null) {
+			if ($this->config->getAppValue(Application::APPNAME, 'tos_on_public_shares', '0') === '0') {
+				return true;
+			}
+
 			return ($this->session->get('term_uuid') === $uuid);
 		}
 
