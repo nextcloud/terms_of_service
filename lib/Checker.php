@@ -21,6 +21,7 @@
 
 namespace OCA\TermsOfService;
 
+use OC;
 use OCA\TermsOfService\AppInfo\Application;
 use OCA\TermsOfService\Db\Mapper\SignatoryMapper;
 use OCA\TermsOfService\Db\Mapper\TermsMapper;
@@ -71,6 +72,11 @@ class Checker {
 	public function currentUserHasSigned(): bool {
 		$uuid = $this->config->getAppValue(Application::APPNAME, 'term_uuid', '');
 		if ($this->userId === null) {
+			$config = OC::$server->getConfig();
+			if ($config->getAppValue(Application::APPNAME, 'tos_on_public_shares', '0') === '0') {
+				return true;
+			}
+
 			return ($this->session->get('term_uuid') === $uuid);
 		}
 
