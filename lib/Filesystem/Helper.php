@@ -110,9 +110,7 @@ class Helper {
 	}
 
 	public function verifyAccess(string $path): bool {
-		$config = OC::$server->getConfig();
-		if ($config->getAppValue(Application::APPNAME, 'tos_on_public_shares', '0') !== '1'
-			|| !$this->isBlockable($path)) {
+		if (!$this->isBlockable($path)) {
 			return true;
 		}
 
