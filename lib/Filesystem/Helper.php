@@ -22,8 +22,11 @@
 namespace OCA\TermsOfService\Filesystem;
 
 use OC;
+use OC\Core\Controller\ClientFlowLoginController;
+use OC\Core\Controller\ClientFlowLoginV2Controller;
 use OC\Core\Controller\LoginController;
 use OCA\Files_Sharing\Controller\ShareController;
+use OCA\Registration\Controller\RegisterController;
 use OCA\TermsOfService\AppInfo\Application;
 use OCA\TermsOfService\Checker;
 
@@ -62,9 +65,19 @@ class Helper {
 		$exception = new \Exception();
 		$trace = $exception->getTrace();
 		foreach ($trace as $step) {
-			if (isset($step['class'], $step['function']) &&
-				(($step['class'] === LoginController::class && $step['function'] === 'tryLogin')
-				|| ($step['class'] === 'OC_Util' && $step['function'] === 'copySkeleton'))) {
+			if (isset($step['class'], $step['function'])
+				&& $step['class'] === 'OC_Util'
+				&& $step['function'] === 'copySkeleton') {
+				return true;
+			}
+
+			if (isset($step['class'])
+				&& (
+					$step['class'] === LoginController::class
+					|| $step['class'] === ClientFlowLoginController::class
+					|| $step['class'] === ClientFlowLoginV2Controller::class
+					|| $step['class'] === RegisterController::class
+				)) {
 				return true;
 			}
 		}
