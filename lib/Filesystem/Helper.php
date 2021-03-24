@@ -21,13 +21,11 @@
 
 namespace OCA\TermsOfService\Filesystem;
 
-use OC;
 use OC\Core\Controller\ClientFlowLoginController;
 use OC\Core\Controller\ClientFlowLoginV2Controller;
 use OC\Core\Controller\LoginController;
 use OCA\Files_Sharing\Controller\ShareController;
 use OCA\Registration\Controller\RegisterController;
-use OCA\TermsOfService\AppInfo\Application;
 use OCA\TermsOfService\Checker;
 
 class Helper {
@@ -110,9 +108,7 @@ class Helper {
 	}
 
 	public function verifyAccess(string $path): bool {
-		$config = OC::$server->getConfig();
-		if ($config->getAppValue(Application::APPNAME, 'tos_on_public_shares', '0') !== '1'
-			|| !$this->isBlockable($path)) {
+		if (!$this->isBlockable($path)) {
 			return true;
 		}
 
