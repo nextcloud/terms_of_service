@@ -21,13 +21,11 @@
 
 namespace OCA\TermsOfService\Filesystem;
 
-use OC;
 use OC\Core\Controller\ClientFlowLoginController;
 use OC\Core\Controller\ClientFlowLoginV2Controller;
 use OC\Core\Controller\LoginController;
 use OCA\Files_Sharing\Controller\ShareController;
 use OCA\Registration\Controller\RegisterController;
-use OCA\TermsOfService\AppInfo\Application;
 use OCA\TermsOfService\Checker;
 
 class Helper {
