@@ -322,7 +322,7 @@ OC.L10N.register(
     "Sichuan Yi; Nuosu" : "Sichuan Yi; Nuosu",
     "Inupiaq" : "Inupiaq",
     "Ido" : "Ido",
-    "Icelandic" : "Islandisch",
+    "Icelandic" : "Isländisch",
     "Italian" : "Italienisch",
     "Inuktitut" : "Inuktitut",
     "Japanese" : "Japanisch",
