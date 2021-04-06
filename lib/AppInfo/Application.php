@@ -22,22 +22,32 @@
 namespace OCA\TermsOfService\AppInfo;
 
 use Exception;
-use OC;
 use OC\Files\Filesystem;
 use OC\Files\Storage\Wrapper\Wrapper;
 use OCA\TermsOfService\Checker;
-use OCA\TermsOfService\Db\Mapper\SignatoryMapper;
 use OCA\TermsOfService\Filesystem\StorageWrapper;
+use OCA\TermsOfService\Listener\UserDeletedListener;
 use OCA\TermsOfService\Notifications\Notifier;
 use OCP\AppFramework\App;
-use OCP\AppFramework\QueryException;
-use OCP\EventDispatcher\IEventDispatcher;
+use OCP\AppFramework\Bootstrap\IBootContext;
+use OCP\AppFramework\Bootstrap\IBootstrap;
+use OCP\AppFramework\Bootstrap\IRegistrationContext;
 use OCP\Files\Storage\IStorage;
+use OCP\IConfig;
+use OCP\IRequest;
 use OCP\IUser;
+use OCP\IUserSession;
+use OCP\Notification\IManager;
+use OCP\User\Events\UserDeletedEvent;
 use OCP\Util;
+use Psr\Log\LoggerInterface;
+use Psr\Container\ContainerExceptionInterface;
+use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 use Symfony\Component\EventDispatcher\GenericEvent;
 
-class Application extends App {
+include_once __DIR__ . '/../../vendor/autoload.php';
+
+class Application extends App implements IBootstrap {
 
 
 	const APPNAME = 'terms_of_service';
@@ -47,45 +57,35 @@ class Application extends App {
 		parent::__construct('terms_of_service');
 	}
 
-	public function register() {
-		$this->registerNotifier();
-		$this->createNotificationOnFirstLogin();
+	public function register(IRegistrationContext $context): void {
+		$context->registerEventListener(UserDeletedEvent::class, UserDeletedListener::class);
+	}
 
+	public function boot(IBootContext $context): void {
 		Util::connectHook('OC_Filesystem', 'preSetup', $this, 'addStorageWrapper');
 
-		// Only display the app on index.php except for public shares
-		/** @var OC\Server $server */
-		$server = $this->getContainer()
-					   ->getServer();
-		$request = $server->getRequest();
+		$context->injectFn([$this, 'registerNotifier']);
+		$context->injectFn([$this, 'createNotificationOnFirstLogin']);
+		$context->injectFn([$this, 'registerFrontend']);
+	}
 
-		try {
-			$server->query(IEventDispatcher::class)->addListener(IUser::class . '::postDelete', function (GenericEvent $event) use ($server) {
-				/** @var SignatoryMapper $signatoryMapper */
-				$signatoryMapper = $server->query(SignatoryMapper::class);
-				$signatoryMapper->deleteSignatoriesByUser($event->getSubject());
-			});
-		} catch (QueryException $e) {
-		}
-
-
+	public function registerFrontend(IRequest $request, IConfig $config, IUserSession $userSession): void {
 		if (!\OC::$CLI) {
+			// Only display the app on index.php except for public shares
 			Util::addStyle('terms_of_service', 'overlay');
 
-			if ($server->getUserSession()
-					   ->getUser() !== null
+			if ($userSession->getUser() instanceof IUser
 				&& strpos($request->getPathInfo(), '/s/') !== 0
 				&& strpos($request->getPathInfo(), '/login/') !== 0
 				&& substr($request->getScriptName(), 0 - strlen('/index.php')) === '/index.php') {
 				Util::addScript('terms_of_service', 'terms_of_service_user');
-			} else if ($server->getConfig()
-							  ->getAppValue(self::APPNAME, 'tos_on_public_shares', '0') === '1') {
+			} else if ($config->getAppValue(self::APPNAME, 'tos_on_public_shares', '0') === '1') {
 				Util::addScript('terms_of_service', 'terms_of_service_public');
 			}
 		}
 	}
 
-	public function addStorageWrapper() {
+	public function addStorageWrapper(): void {
 		Filesystem::addStorageWrapper(
 			'terms_of_service', [$this, 'addStorageWrapperCallback'], -10
 		);
@@ -98,60 +98,46 @@ class Application extends App {
 	 * @return StorageWrapper|IStorage
 	 * @throws Exception
 	 */
-	public function addStorageWrapperCallback(string $mountPoint, IStorage $storage) {
+	public function addStorageWrapperCallback(string $mountPoint, IStorage $storage): IStorage {
 		if (!\OC::$CLI) {
 			try {
 				return new StorageWrapper(
 					[
-						'storage'    => $storage,
+						'storage' => $storage,
 						'mountPoint' => $mountPoint,
-						'request'    => $this->getContainer()
-											 ->getServer()
-											 ->getRequest(),
-						'checker'    => $this->getContainer()
-											 ->query(Checker::class),
+						'request' => \OC::$server->get(IRequest::class),
+						'checker' => \OC::$server->get(Checker::class),
 					]
 				);
-			} catch (QueryException $e) {
-				$this->getContainer()
-					 ->getServer()
-					 ->getLogger()
-					 ->logException($e);
+			} catch (ContainerExceptionInterface $e) {
+				\OC::$server->get(LoggerInterface::class)->error(
+					$e->getMessage(),
+					['exception' => $e]
+				);
 			}
 		}
 
 		return $storage;
 	}
 
-	protected function registerNotifier() {
-		$this->getContainer()
-			 ->getServer()
-			 ->getNotificationManager()
-			 ->registerNotifierService(Notifier::class);
+	public function registerNotifier(IManager $notificationManager): void {
+		$notificationManager->registerNotifierService(Notifier::class);
 	}
 
-	protected function createNotificationOnFirstLogin() {
-		$this->getContainer()
-			 ->getServer()
-			 ->getEventDispatcher()
-			 ->addListener(
-				 IUser::class . '::firstLogin', function(GenericEvent $event) {
-				 $user = $event->getSubject();
-				 if (!$user instanceof IUser) {
-					 return;
-				 }
+	public function createNotificationOnFirstLogin(IManager $notificationManager, EventDispatcherInterface $dispatcher): void {
+		$dispatcher->addListener(IUser::class . '::firstLogin', function(GenericEvent $event) use ($notificationManager) {
+			$user = $event->getSubject();
+			if (!$user instanceof IUser) {
+				return;
+			}
 
-				 $notificationsManager = $this->getContainer()
-											  ->getServer()
-											  ->getNotificationManager();
-				 $notification = $notificationsManager->createNotification();
-				 $notification->setApp('terms_of_service')
-							  ->setDateTime(new \DateTime())
-							  ->setSubject('accept_terms')
-							  ->setObject('terms', '1')
-							  ->setUser($user->getUID());
-				 $notificationsManager->notify($notification);
-			 }
-			 );
+			$notification = $notificationManager->createNotification();
+			$notification->setApp('terms_of_service')
+				->setDateTime(new \DateTime())
+				->setSubject('accept_terms')
+				->setObject('terms', '1')
+				->setUser($user->getUID());
+			$notificationManager->notify($notification);
+		});
 	}
 }
