@@ -1,6 +1,8 @@
 <?php
+
+declare(strict_types=1);
 /**
- * @copyright Copyright (c) 2017 Lukas Reschke <lukas@statuscode.ch>
+ * @copyright Copyright (c) 2020 Joas Schilling <coding@schilljs.com>
  *
  * @license GNU AGPL version 3 or any later version
  *
@@ -19,7 +21,28 @@
  *
  */
 
-require_once __DIR__ . '/../vendor/autoload.php';
+namespace OCA\TermsOfService\Listener;
 
-$app = \OC::$server->query(\OCA\TermsOfService\AppInfo\Application::class);
-$app->register();
+use OCA\TermsOfService\Db\Mapper\SignatoryMapper;
+use OCP\EventDispatcher\Event;
+use OCP\EventDispatcher\IEventListener;
+use OCP\User\Events\UserDeletedEvent;
+
+class UserDeletedListener implements IEventListener {
+
+	/** @var SignatoryMapper */
+	private $signatoryMapper;
+
+	public function __construct(SignatoryMapper $signatoryMapper) {
+		$this->signatoryMapper = $signatoryMapper;
+	}
+
+	public function handle(Event $event): void {
+		if (!($event instanceof UserDeletedEvent)) {
+			// Unrelated
+			return;
+		}
+
+		$this->signatoryMapper->deleteSignatoriesByUser($event->getUser());
+	}
+}
