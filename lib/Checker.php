@@ -27,6 +27,7 @@ use OCA\TermsOfService\Db\Mapper\TermsMapper;
 use OCP\IConfig;
 use OCP\ISession;
 use OCP\IUserManager;
+use OCP\IL10N;
 
 class Checker {
 	/** @var string */
@@ -51,7 +52,8 @@ class Checker {
 		SignatoryMapper $signatoryMapper,
 		TermsMapper $termsMapper,
 		CountryDetector $countryDetector,
-		IConfig $config
+		IConfig $config,
+		IL10N $l10n
 	) {
 		$this->userId = $userId;
 		$this->userManager = $userManager;
@@ -60,6 +62,11 @@ class Checker {
 		$this->termsMapper = $termsMapper;
 		$this->countryDetector = $countryDetector;
 		$this->config = $config;
+		$this->l10n = $l10n;
+	}
+
+	public function getForbiddenMessage(): string {
+		return $this->l10n->t('Terms of service are not signed');
 	}
 
 	/**

@@ -70,7 +70,7 @@ class CheckPlugin extends ServerPlugin {
 		// we instantiate the checker here to make sure sabre auth backend was triggered
 		$checker = \OC::$server->get(Checker::class);
 		if (!$checker->currentUserHasSigned()) {
-			throw new Forbidden('Terms of service are not signed');
+			throw new Forbidden($checker->getForbiddenMessage());
 		}
 		return true;
 	}
