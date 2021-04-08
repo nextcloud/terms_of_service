@@ -16,6 +16,7 @@ This product includes GeoLite2 data created by MaxMind, available from [maxmind.
 
 	<types>
 		<filesystem/>
+		<dav/>
 	</types>
 
 	<category>files</category>
