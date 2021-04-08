@@ -67,18 +67,19 @@ class Application extends App implements IBootstrap {
 	public function boot(IBootContext $context): void {
 		Util::connectHook('OC_Filesystem', 'preSetup', $this, 'addStorageWrapper');
 
-		$eventDispatcher = $context->getServerContainer()->get(IEventDispatcher::class);
-		$eventDispatcher->addListener('OCA\DAV\Connector\Sabre::addPlugin', function (SabrePluginEvent $event) use ($context) {
-			$eventServer = $event->getServer();
-
-			if ($eventServer !== null) {
-				// We have to register the CheckPlugin here and not info.xml,
-				// because info.xml plugins are loaded, after the
-				// beforeMethod:* hook has already been emitted.
-				$plugin = $context->getAppContainer()->get(CheckPlugin::class);
-				$eventServer->addPlugin($plugin);
-			}
-		});
+		// FIXME currently disabled until we made sure all clients (Talk and files on Android and iOS, as well as desktop) handle this gracefully
+//		$eventDispatcher = $context->getServerContainer()->get(IEventDispatcher::class);
+//		$eventDispatcher->addListener('OCA\DAV\Connector\Sabre::addPlugin', function (SabrePluginEvent $event) use ($context) {
+//			$eventServer = $event->getServer();
+//
+//			if ($eventServer !== null) {
+//				// We have to register the CheckPlugin here and not info.xml,
+//				// because info.xml plugins are loaded, after the
+//				// beforeMethod:* hook has already been emitted.
+//				$plugin = $context->getAppContainer()->get(CheckPlugin::class);
+//				$eventServer->addPlugin($plugin);
+//			}
+//		});
 
 		$context->injectFn([$this, 'registerNotifier']);
 		$context->injectFn([$this, 'createNotificationOnFirstLogin']);
