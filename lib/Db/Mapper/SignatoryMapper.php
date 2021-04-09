@@ -80,6 +80,23 @@ class SignatoryMapper extends QBMapper {
 	}
 
 	/**
+	 * Update the signer of an entry
+	 *
+	 * Used e.g. by the registration app integration when updating from registration id to the real user id
+	 *
+	 * @param string $oldId
+	 * @param string $newId
+	 */
+	public function updateUserId(string $oldId, string $newId): void {
+		$query = $this->db->getQueryBuilder();
+		$query->update(self::TABLENAME)
+			->set('user_id', $query->createNamedParameter($newId))
+			->where($query->expr()->eq('user_id', $query->createNamedParameter($oldId)));
+
+		$query->execute();
+	}
+
+	/**
 	 * Delete all signatories for a given Terms
 	 * @param Terms $terms
 	 */
