@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 /**
- * @copyright Copyright (c) 2020 Joas Schilling <coding@schilljs.com>
+ * @copyright Copyright (c) 2021 Joas Schilling <coding@schilljs.com>
  *
  * @license GNU AGPL version 3 or any later version
  *
@@ -82,14 +82,15 @@ class RegistrationIntegration implements IEventListener {
 	}
 
 	public function showEmailForm(ShowFormEvent $event): void {
+		if (!$this->needsToAcceptTerms()) {
+			return;
+		}
+
 		Util::addScript('terms_of_service', 'terms_of_service_registration');
 	}
 
 	public function validateEmailForm(ValidateFormEvent $event): void {
-		$countryCode = $this->countryDetector->getCountry();
-		$terms = $this->termsMapper->getTermsForCountryCode($countryCode);
-		if (empty($terms)) {
-			// No terms that would need accepting
+		if (!$this->needsToAcceptTerms()) {
 			return;
 		}
 
@@ -99,6 +100,10 @@ class RegistrationIntegration implements IEventListener {
 	}
 
 	public function passedEmailForm(PassedFormEvent $event): void {
+		if (!$this->needsToAcceptTerms()) {
+			return;
+		}
+
 		$signatory = new Signatory();
 		$signatory->setUserId('reg/' . $event->getRegistrationIdentifier());
 		$signatory->setTermsId((int) $this->request->getParam('terms_of_service_accepted'));
@@ -108,10 +113,22 @@ class RegistrationIntegration implements IEventListener {
 	}
 
 	public function passedUserForm(PassedFormEvent $event): void {
+		if (!$this->needsToAcceptTerms()) {
+			return;
+		}
+
 		if (!$event->getUser() instanceof IUser) {
 			return;
 		}
 
 		$this->signatoryMapper->updateUserId('reg/' . $event->getRegistrationIdentifier(), $event->getUser()->getUID());
+	}
+
+	protected function needsToAcceptTerms(): bool {
+		$countryCode = $this->countryDetector->getCountry();
+		$terms = $this->termsMapper->getTermsForCountryCode($countryCode);
+
+		// No terms that would need accepting
+		return !empty($terms);
 	}
 }
