@@ -390,6 +390,7 @@ OC.L10N.register(
     "Turkmen" : "Turkmenera",
     "Tagalog" : "Tagalog",
     "Tswana" : "Tswana",
+    "Tonga (Tonga Islands)" : "Tonga (Tonga Uharteak)",
     "Turkish" : "Turkiera",
     "Tsonga" : "Tsonga",
     "Twi" : "Twi",
