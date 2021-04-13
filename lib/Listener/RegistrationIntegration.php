@@ -27,8 +27,10 @@ use OCA\Registration\Events\BeforeTemplateRenderedEvent;
 use OCA\Registration\Events\PassedFormEvent;
 use OCA\Registration\Events\ShowFormEvent;
 use OCA\Registration\Events\ValidateFormEvent;
+use OCA\TermsOfService\CountryDetector;
 use OCA\TermsOfService\Db\Entities\Signatory;
 use OCA\TermsOfService\Db\Mapper\SignatoryMapper;
+use OCA\TermsOfService\Db\Mapper\TermsMapper;
 use OCP\EventDispatcher\Event;
 use OCP\EventDispatcher\IEventListener;
 use OCP\IRequest;
@@ -39,12 +41,20 @@ class RegistrationIntegration implements IEventListener {
 
 	/** @var SignatoryMapper */
 	private $signatoryMapper;
+	/** @var TermsMapper */
+	private $termsMapper;
+	/** @var CountryDetector */
+	private $countryDetector;
 	/** @var IRequest */
 	private $request;
 
 	public function __construct(SignatoryMapper $signatoryMapper,
+								TermsMapper $termsMapper,
+								CountryDetector $countryDetector,
 								IRequest $request) {
 		$this->signatoryMapper = $signatoryMapper;
+		$this->termsMapper = $termsMapper;
+		$this->countryDetector = $countryDetector;
 		$this->request = $request;
 	}
 
@@ -76,6 +86,13 @@ class RegistrationIntegration implements IEventListener {
 	}
 
 	public function validateEmailForm(ValidateFormEvent $event): void {
+		$countryCode = $this->countryDetector->getCountry();
+		$terms = $this->termsMapper->getTermsForCountryCode($countryCode);
+		if (empty($terms)) {
+			// No terms that would need accepting
+			return;
+		}
+
 		if (!$this->request->getParam('terms_of_service_accepted')) {
 			$event->addError('You need to accept the Terms of service.');
 		}

@@ -23,7 +23,7 @@
 
 <template>
 	<div id="terms_of_service">
-		<p>
+		<p v-if="terms.length">
 			<input id="terms_of_service_accepted"
 				v-model="hasSigned"
 				:value="termsId"
