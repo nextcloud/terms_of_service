@@ -33,7 +33,7 @@
 			<label
 				for="terms_of_service_accepted"
 				@click.prevent.stop="showTerms">
-				{{ t('registration', 'I acknowledge that I have read and agree to the above terms of service') }}
+				{{ t('terms_of_service', 'I acknowledge that I have read and agree to the above terms of service') }} ↗
 			</label>
 		</p>
 
@@ -93,44 +93,50 @@ export default {
 	},
 
 	methods: {
-		loadTerms() {
-			axios
-				.get(generateUrl('/apps/terms_of_service/terms'))
-				.then(response => {
-					// this.hasSigned = response.data.hasSigned
-					this.terms = response.data.terms
+		async loadTerms() {
+			try {
+				const response = await axios.get(generateUrl('/apps/terms_of_service/terms'))
 
-					const language = OC.getLanguage().split('-')[0]
+				// this.hasSigned = response.data.hasSigned
+				this.terms = response.data.terms
 
-					if (!this.terms.length || this.hasSigned) {
-						return
-					}
+				const language = OC.getLanguage().split('-')[0]
 
-					// make it Vue
-					this.publicContent = document.getElementById('files-public-content')
-					if (this.publicContent !== null) {
-						this.publicContent.style.visibility = 'hidden'
-					}
+				if (!this.terms.length || this.hasSigned) {
+					return
+				}
 
-					this.selectTerms(0)
-					if (this.terms.length > 1) {
-						Object.keys(this.terms).forEach((index) => {
-							if (language === this.terms[index].languageCode) {
-								this.selectedLanguage = index
-							}
+				// make it Vue
+				this.publicContent = document.getElementById('files-public-content')
+				if (this.publicContent !== null) {
+					this.publicContent.style.visibility = 'hidden'
+				}
 
-							this.languages.push(response.data.languages[this.terms[index].languageCode])
-						})
-					}
+				this.selectTerms(0)
+				if (this.terms.length > 1) {
+					Object.keys(this.terms).forEach((index) => {
+						if (language === this.terms[index].languageCode) {
+							this.selectedLanguage = index
+						}
 
-					this.showTerms()
-				})
+						this.languages.push(response.data.languages[this.terms[index].languageCode])
+					})
+				}
+
+				// this.showTerms()
+			} catch (e) {
+				console.error(e)
+			}
 		},
 		selectTerms(index) {
 			this.termsBody = this.terms[index].renderedBody
 			this.termsId = this.terms[index].id
 		},
 		showTerms() {
+			if (this.hasSigned) {
+				this.hasSigned = false
+				return
+			}
 			this.$modal.show('confirm-terms')
 		},
 		acceptTerms() {
@@ -145,3 +151,12 @@ export default {
 	},
 }
 </script>
+
+<style scoped lang="scss">
+::v-deep .v--modal {
+	color: var(--color-main-text);
+	background-color: var(--color-main-background);
+	border-radius: var(--border-radius-large);
+	box-shadow: 0 20px 60px -2px var(--color-box-shadow);
+}
+</style>

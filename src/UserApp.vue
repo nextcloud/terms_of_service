@@ -140,7 +140,8 @@ export default {
 
 <style type="text/scss" scoped>
 ::v-deep .v--modal {
-	background-color: var(--color-background-dark);
+	color: var(--color-main-text);
+	background-color: var(--color-main-background);
 	border-radius: var(--border-radius-large);
 	box-shadow: 0 20px 60px -2px var(--color-box-shadow);
 }
