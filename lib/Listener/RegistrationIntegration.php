@@ -62,6 +62,9 @@ class RegistrationIntegration implements IEventListener {
 		}
 
 		if ($event instanceof PassedFormEvent) {
+			if ($event->getStep() === $event::STEP_EMAIL) {
+				$this->passedEmailForm($event);
+			}
 			if ($event->getStep() === $event::STEP_USER) {
 				$this->passedUserForm($event);
 			}
@@ -73,14 +76,15 @@ class RegistrationIntegration implements IEventListener {
 	}
 
 	public function validateEmailForm(ValidateFormEvent $event): void {
-		if (!$this->request->getParam('tos_accepted')) {
+		if (!$this->request->getParam('terms_of_service_accepted')) {
 			$event->addError('You need to accept the Terms of service.');
-			return;
 		}
+	}
 
+	public function passedEmailForm(PassedFormEvent $event): void {
 		$signatory = new Signatory();
 		$signatory->setUserId('reg/' . $event->getRegistrationIdentifier());
-		$signatory->setTermsId($this->request->getParam('tos_accepted'));
+		$signatory->setTermsId((int) $this->request->getParam('terms_of_service_accepted'));
 		$signatory->setTimestamp(time());
 
 		$this->signatoryMapper->insert($signatory);
