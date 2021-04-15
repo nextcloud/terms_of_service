@@ -1,7 +1,6 @@
 OC.L10N.register(
     "terms_of_service",
     {
-    "Terms of service" : "شروط الخدمة",
     "Global" : "عالمي",
     "Afghanistan" : "أفغانستان",
     "Åland Islands" : "جزر آلاند",
@@ -132,6 +131,7 @@ OC.L10N.register(
     "Russian" : "الروسية",
     "Chinese" : "الصينية",
     "Zulu" : "الزولو",
+    "Terms of service" : "شروط الخدمة",
     "Select a region" : "اختر منطقة",
     "Select a language" : "اختر لغة",
     "Save" : "حفظ",
