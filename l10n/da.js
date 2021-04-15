@@ -1,6 +1,7 @@
 OC.L10N.register(
     "terms_of_service",
     {
+    "Terms of service" : "Servicebetingelser",
     "Global" : "Global",
     "Afghanistan" : "Afghanistan",
     "Albania" : "Albanien",
@@ -112,7 +113,6 @@ OC.L10N.register(
     "Russian" : "Russisk",
     "Swedish" : "Svensk",
     "Chinese" : "Kinesisk",
-    "Terms of service" : "Servicebetingelser",
     "Select a region" : "Vælg en region",
     "Select a language" : "Vælg et sprog",
     "Loading …" : "Indlæser…",

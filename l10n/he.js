@@ -1,6 +1,7 @@
 OC.L10N.register(
     "terms_of_service",
     {
+    "Terms of service" : "תנאי שירות",
     "Global" : "גלובלי",
     "Afghanistan" : "אפגניסטן",
     "Åland Islands" : "איי אולנד",
@@ -346,7 +347,6 @@ OC.L10N.register(
     "Yoruba" : "יורובה",
     "Chinese" : "סינית",
     "Zulu" : "זולו",
-    "Terms of service" : "תנאי שירות",
     "Terms of service have been modified!" : "תנאי השירות נערכו!",
     "You have to accept the newest version of the terms of service in order to be able to use this service." : "עליך לקבל את הגרסה העדכנית ביותר של תנאי השירות כדי שיתאפשר לך להשתמש בשירות הזה.",
     "Requires users to accept the terms of service before accessing data." : "דורש מהמשתמשים לאשר את תנאי השימוש בטרם גישה לנתונים.",

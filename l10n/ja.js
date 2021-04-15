@@ -1,6 +1,8 @@
 OC.L10N.register(
     "terms_of_service",
     {
+    "I acknowledge that I have read and agree to the above terms of service" : "上記のサービス利用規約を読み、同意したことを認めます",
+    "Terms of service" : "サービス利用規約",
     "Global" : "グローバル",
     "Afghanistan" : "アフガニスタン",
     "Åland Islands" : "オーランド諸島",
@@ -434,7 +436,6 @@ OC.L10N.register(
     "Zhuang; Chuang" : "チワン語",
     "Chinese" : "中国語",
     "Zulu" : "ズールー語",
-    "Terms of service" : "サービス利用規約",
     "Terms of service have been modified!" : "サービス利用規約が変更されました！",
     "You have to accept the newest version of the terms of service in order to be able to use this service." : "このサービスを利用できるようにするには、最新のバージョンのサービス利用規約に同意する必要があります。",
     "Requires users to accept the terms of service before accessing data." : "ユーザーがデータにアクセスする前にサービス利用規約に同意する必要があります。",
@@ -453,7 +454,6 @@ OC.L10N.register(
     "Saved!" : "保存しました！",
     "Resetting …" : "リセットしています",
     "Reset!" : "リセット！",
-    "I acknowledge that I have read and agree to the above terms of service" : "上記のサービス利用規約を読み、同意したことを認めます",
     "Edit" : "編集",
     "Delete" : "削除",
     "Deleting …" : "削除しています"
