@@ -1,6 +1,7 @@
 OC.L10N.register(
     "terms_of_service",
     {
+    "Terms of service" : "සේවා කොන්දේසි",
     "Afrikaans" : "අප්‍රිකානු",
     "Arabic" : "අරාබි",
     "German" : "ජර්මානු",
@@ -24,7 +25,6 @@ OC.L10N.register(
     "Ukrainian" : "යුක්රේන",
     "Vietnamese" : "වියට්නාම",
     "Chinese" : "චීන",
-    "Terms of service" : "සේවා කොන්දේසි",
     "Loading …" : "පූරණය වෙමින් …",
     "Save" : "සුරකින්න",
     "Edit" : "සංස්කරණය"
