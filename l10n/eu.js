@@ -1,6 +1,7 @@
 OC.L10N.register(
     "terms_of_service",
     {
+    "Terms of service" : "Erabilera baldintzak",
     "Global" : "Globala",
     "Afghanistan" : "Afganistan",
     "Åland Islands" : "Aland Uharteak",
@@ -408,7 +409,6 @@ OC.L10N.register(
     "Zhuang; Chuang" : "Zhuang; Chuang",
     "Chinese" : "Txinera",
     "Zulu" : "Zuluera",
-    "Terms of service" : "Erabilera baldintzak",
     "Terms of service have been modified!" : "Erabilera baldintzak aldatu egin dira!",
     "Select a region" : "Hautatu eskualde bat",
     "Select a language" : "Hautatu hizkuntza bat",

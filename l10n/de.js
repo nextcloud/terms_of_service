@@ -1,6 +1,8 @@
 OC.L10N.register(
     "terms_of_service",
     {
+    "I acknowledge that I have read and agree to the above terms of service" : "Ich bestätige, dass ich die oben genannten Nutzungsbedingungen gelesen und akzeptiert habe",
+    "Terms of service" : "Nutzungsbedingungen",
     "Global" : "Global",
     "Afghanistan" : "Afghanistan",
     "Åland Islands" : "Åland Inseln",
@@ -434,7 +436,6 @@ OC.L10N.register(
     "Zhuang; Chuang" : "Zhuang; Chuang",
     "Chinese" : "Chinesisch",
     "Zulu" : "Zulu",
-    "Terms of service" : "Nutzungsbedingungen",
     "Terms of service have been modified!" : "Nutzungsbedingungen wurden geändert!",
     "You have to accept the newest version of the terms of service in order to be able to use this service." : "Du hast die neuesten Nutzungsbedingungen zur Nutzung dieses Dienstes akzeptiert.",
     "Requires users to accept the terms of service before accessing data." : "Vor dem Zugriff auf Daten müssen die Benutzer die Nutzungsbedingungen akzeptieren.",
@@ -453,7 +454,6 @@ OC.L10N.register(
     "Saved!" : "Gespeichert!",
     "Resetting …" : "Setze zurück…",
     "Reset!" : "Zurücksetzen!",
-    "I acknowledge that I have read and agree to the above terms of service" : "Ich bestätige, dass ich die oben genannten Nutzungsbedingungen gelesen und akzeptiert habe",
     "Edit" : "Bearbeiten",
     "Delete" : " Löschen",
     "Deleting …" : "Lösche…"

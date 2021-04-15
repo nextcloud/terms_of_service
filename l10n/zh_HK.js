@@ -1,6 +1,8 @@
 OC.L10N.register(
     "terms_of_service",
     {
+    "I acknowledge that I have read and agree to the above terms of service" : "我承認我已閱讀並同意上述服務條款",
+    "Terms of service" : "服務條款",
     "Terms of service are not signed" : "服務條款未簽名",
     "Global" : "全球",
     "Afghanistan" : "阿富汗",
@@ -435,7 +437,6 @@ OC.L10N.register(
     "Zhuang; Chuang" : "壯語",
     "Chinese" : "漢語",
     "Zulu" : "祖魯語",
-    "Terms of service" : "服務條款",
     "Terms of service have been modified!" : "服務條款已更新!",
     "You have to accept the newest version of the terms of service in order to be able to use this service." : "您必須接受最新版本的服務條款才能夠繼續使用服務。",
     "Requires users to accept the terms of service before accessing data." : "要求用戶在使用服務之前接受服務條款。",
@@ -454,7 +455,6 @@ OC.L10N.register(
     "Saved!" : "已儲存!",
     "Resetting …" : "重設中 ...",
     "Reset!" : "重設完成",
-    "I acknowledge that I have read and agree to the above terms of service" : "我承認我已閱讀並同意上述服務條款",
     "Edit" : "修改",
     "Delete" : "刪除",
     "Deleting …" : "刪除中 ..."

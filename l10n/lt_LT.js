@@ -1,6 +1,7 @@
 OC.L10N.register(
     "terms_of_service",
     {
+    "Terms of service" : "Naudojimosi sąlygos",
     "Global" : "Visuotinis",
     "Afghanistan" : "Afganistanas",
     "Albania" : "Albanija",
@@ -282,7 +283,6 @@ OC.L10N.register(
     "Yoruba" : "Jorubų",
     "Chinese" : "Kinų",
     "Zulu" : "Zulų",
-    "Terms of service" : "Naudojimosi sąlygos",
     "Select a region" : "Pasirinkti regioną",
     "Select a language" : "Pasirinkti kalbą",
     "Loading …" : "Įkeliama …",
