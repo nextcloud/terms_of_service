@@ -1,8 +1,6 @@
 OC.L10N.register(
     "terms_of_service",
     {
-    "I acknowledge that I have read and agree to the above terms of service" : "Ek erken dat die die bostaande diensvoorwaardes gelees het en dit verstaan",
-    "Terms of service" : "Diensbepalings",
     "Global" : "Globaal",
     "Afghanistan" : "Afghanistan",
     "Åland Islands" : "Ålandeilande",
@@ -266,6 +264,7 @@ OC.L10N.register(
     "Yiddish" : "Jiddisj",
     "Chinese" : "Sjinees",
     "Zulu" : "Zoeloe",
+    "Terms of service" : "Diensbepalings",
     "Select a region" : "Kies ’n streek",
     "Select a language" : "Kies ’n taal",
     "By using this service …" : "Deur hierdie diens te gebruik …",
@@ -276,6 +275,7 @@ OC.L10N.register(
     "Saved!" : "Gestoor!",
     "Resetting …" : "Word herstel …",
     "Reset!" : "Herstel!",
+    "I acknowledge that I have read and agree to the above terms of service" : "Ek erken dat die die bostaande diensvoorwaardes gelees het en dit verstaan",
     "Edit" : "Wysig",
     "Delete" : "Skrap",
     "Deleting …" : "Word geskrap …"
