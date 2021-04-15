@@ -24,8 +24,12 @@ namespace OCA\TermsOfService\AppInfo;
 use Exception;
 use OC\Files\Filesystem;
 use OC\Files\Storage\Wrapper\Wrapper;
+use OCA\Registration\Events\PassedFormEvent;
+use OCA\Registration\Events\ShowFormEvent;
+use OCA\Registration\Events\ValidateFormEvent;
 use OCA\TermsOfService\Checker;
 use OCA\TermsOfService\Filesystem\StorageWrapper;
+use OCA\TermsOfService\Listener\RegistrationIntegration;
 use OCA\TermsOfService\Listener\UserDeletedListener;
 use OCA\TermsOfService\Notifications\Notifier;
 use OCP\AppFramework\App;
@@ -59,6 +63,9 @@ class Application extends App implements IBootstrap {
 
 	public function register(IRegistrationContext $context): void {
 		$context->registerEventListener(UserDeletedEvent::class, UserDeletedListener::class);
+		$context->registerEventListener(ShowFormEvent::class, RegistrationIntegration::class);
+		$context->registerEventListener(ValidateFormEvent::class, RegistrationIntegration::class);
+		$context->registerEventListener(PassedFormEvent::class, RegistrationIntegration::class);
 	}
 
 	public function boot(IBootContext $context): void {

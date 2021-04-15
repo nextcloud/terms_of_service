@@ -33,12 +33,7 @@ watch-js:
 	npm run watch
 
 clean:
-	rm -f js/terms_of_service_admin.js
-	rm -f js/terms_of_service_admin.js.map
-	rm -f js/terms_of_service_user.js
-	rm -f js/terms_of_service_user.js.map
-	rm -f js/terms_of_service_public.js
-	rm -f js/terms_of_service_public.js.map
+	rm -rf js
 
 clean-dev:
 	rm -rf $(build_dir)
