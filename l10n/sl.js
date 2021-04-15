@@ -1,6 +1,8 @@
 OC.L10N.register(
     "terms_of_service",
     {
+    "I acknowledge that I have read and agree to the above terms of service" : "Potrjujem, da se strinjam z zgornjimi pogoji storitve",
+    "Terms of service" : "Pogoji uporabe storitve",
     "Global" : "Splošno",
     "Afghanistan" : "Afganistan",
     "Åland Islands" : "Otočje Åland",
@@ -434,7 +436,6 @@ OC.L10N.register(
     "Zhuang; Chuang" : "Čuang",
     "Chinese" : "Kitajščina",
     "Zulu" : "Zulu",
-    "Terms of service" : "Pogoji uporabe storitve",
     "Terms of service have been modified!" : "Pogoji uporabe storitev so bili spremenjeni!",
     "You have to accept the newest version of the terms of service in order to be able to use this service." : "Za nadaljevanje uporabe te storitve je treba sprejeti pogoje najnovejše različice določil uporabe.",
     "Requires users to accept the terms of service before accessing data." : "Pred dostopom do podatkov morajo uporabniki sprejeti pogoje uporabe storitev.",
@@ -453,7 +454,6 @@ OC.L10N.register(
     "Saved!" : "Shranjeno",
     "Resetting …" : "Poteka ponastavljanje ...",
     "Reset!" : "Ponastavi!",
-    "I acknowledge that I have read and agree to the above terms of service" : "Potrjujem, da se strinjam z zgornjimi pogoji storitve",
     "Edit" : "Uredi",
     "Delete" : "Izbriši",
     "Deleting …" : "Poteka brisanje ..."
