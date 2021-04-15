@@ -1,5 +1,4 @@
 { "translations": {
-    "Terms of service" : "Servicebetingelser",
     "Global" : "Global",
     "Afghanistan" : "Afghanistan",
     "Albania" : "Albanien",
@@ -111,6 +110,7 @@
     "Russian" : "Russisk",
     "Swedish" : "Svensk",
     "Chinese" : "Kinesisk",
+    "Terms of service" : "Servicebetingelser",
     "Select a region" : "Vælg en region",
     "Select a language" : "Vælg et sprog",
     "Loading …" : "Indlæser…",

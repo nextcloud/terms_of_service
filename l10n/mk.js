@@ -1,8 +1,6 @@
 OC.L10N.register(
     "terms_of_service",
     {
-    "I acknowledge that I have read and agree to the above terms of service" : "Признавам дека ги прочитав и се согласувам со горенаведените услови за користење",
-    "Terms of service" : "Услови за користење",
     "Terms of service are not signed" : "Условите за користење не сé потпишани",
     "Global" : "Глобално",
     "Afghanistan" : "Афганистан",
@@ -437,6 +435,7 @@ OC.L10N.register(
     "Zhuang; Chuang" : "Џуаншки",
     "Chinese" : "Кинески",
     "Zulu" : "Zulu",
+    "Terms of service" : "Услови за користење",
     "Terms of service have been modified!" : "Условите за користење се изменети!",
     "You have to accept the newest version of the terms of service in order to be able to use this service." : "Мора да ја прифатите најновата верзија на условите за користење за да можете да ја користите оваа услуга.",
     "Requires users to accept the terms of service before accessing data." : "Потребно е корисниците да ги прифатат условите за користење пред да пристапат до податоците.",
@@ -455,6 +454,7 @@ OC.L10N.register(
     "Saved!" : "Зачувано!",
     "Resetting …" : "Ресетирање ...",
     "Reset!" : "Ресетирано!",
+    "I acknowledge that I have read and agree to the above terms of service" : "Признавам дека ги прочитав и се согласувам со горенаведените услови за користење",
     "Edit" : "Уреди",
     "Delete" : "Избриши",
     "Deleting …" : "Бришење ..."
