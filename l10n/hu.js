@@ -1,8 +1,6 @@
 OC.L10N.register(
     "terms_of_service",
     {
-    "I acknowledge that I have read and agree to the above terms of service" : "Kijelentem, hogy elolvastam és egyet értek a fenti szolgáltatási feltételekkel.",
-    "Terms of service" : "Szolgáltatás feltételei",
     "Terms of service are not signed" : "A szolgáltatási feltételek nincsenek aláírva",
     "Global" : "Globális",
     "Afghanistan" : "Afganisztán",
@@ -437,6 +435,7 @@ OC.L10N.register(
     "Zhuang; Chuang" : "Zhuang; Chuang",
     "Chinese" : "Kínai",
     "Zulu" : "Zului",
+    "Terms of service" : "Szolgáltatás feltételei",
     "Terms of service have been modified!" : "A szolgáltatási feltételek módosultak! ",
     "You have to accept the newest version of the terms of service in order to be able to use this service." : "Ahhoz, hogy a szolgáltatást használni tudja, el kell, hogy fogadja a legújabb szolgáltatási feltételeket.",
     "Requires users to accept the terms of service before accessing data." : "Szükség van arra, hogy a szolgátlatási feltételeket elfogadja, mielőtt az adatokhoz hozzáférhetne.",
@@ -455,6 +454,7 @@ OC.L10N.register(
     "Saved!" : "Mentve!",
     "Resetting …" : "Visszaállítás folyamatban ...",
     "Reset!" : "Visszaállítás!",
+    "I acknowledge that I have read and agree to the above terms of service" : "Kijelentem, hogy elolvastam és egyet értek a fenti szolgáltatási feltételekkel.",
     "Edit" : "Szerkesztés",
     "Delete" : "Törlés",
     "Deleting …" : "Törlés folyamatban ..."
