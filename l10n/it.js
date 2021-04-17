@@ -457,6 +457,11 @@ OC.L10N.register(
     "I acknowledge that I have read and agree to the above terms of service" : "Confermo che ho letto e accetto i suddetti termini di servizio",
     "Edit" : "Modifica",
     "Delete" : "Elimina",
-    "Deleting …" : "Eliminazione in corso…"
+    "Deleting …" : "Eliminazione in corso…",
+    "_" : "_",
+    "values" : "valori",
+    "keys" : "chiavi",
+    "entries" : "voci",
+    ">=0.0.0" : ">=0.0.0"
 },
 "nplurals=2; plural=(n != 1);");
