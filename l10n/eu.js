@@ -422,6 +422,13 @@ OC.L10N.register(
     "Reset!" : "Berezarri!",
     "Edit" : "Editatu",
     "Delete" : "Ezabatu",
-    "Deleting …" : "Ezabatzen …"
+    "Deleting …" : "Ezabatzen …",
+    "_" : "_",
+    "values" : "balioak",
+    "keys" : "gakoak",
+    "entries" : "sarrerak",
+    "_min-width_::_min-height_" : ["zabalera-min","altuera-min"],
+    "_dialog_::_auto_" : ["elkarrizketa","auto"],
+    ">=0.0.0" : ">=0.0.0"
 },
 "nplurals=2; plural=(n != 1);");
