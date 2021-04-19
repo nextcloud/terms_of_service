@@ -462,6 +462,8 @@ OC.L10N.register(
     "values" : "valori",
     "keys" : "chiavi",
     "entries" : "voci",
+    "_min-width_::_min-height_" : ["min-width","min-height"],
+    "_dialog_::_auto_" : ["dialog","auto"],
     ">=0.0.0" : ">=0.0.0"
 },
 "nplurals=2; plural=(n != 1);");
