@@ -1,6 +1,7 @@
 OC.L10N.register(
     "terms_of_service",
     {
+    "Terms of service are not signed" : "Erabilera baldintzak ez daude sinaturik",
     "Global" : "Globala",
     "Afghanistan" : "Afganistan",
     "Åland Islands" : "Aland Uharteak",
@@ -422,13 +423,6 @@ OC.L10N.register(
     "Reset!" : "Berezarri!",
     "Edit" : "Editatu",
     "Delete" : "Ezabatu",
-    "Deleting …" : "Ezabatzen …",
-    "_" : "_",
-    "values" : "balioak",
-    "keys" : "gakoak",
-    "entries" : "sarrerak",
-    "_min-width_::_min-height_" : ["zabalera-min","altuera-min"],
-    "_dialog_::_auto_" : ["elkarrizketa","auto"],
-    ">=0.0.0" : ">=0.0.0"
+    "Deleting …" : "Ezabatzen …"
 },
 "nplurals=2; plural=(n != 1);");

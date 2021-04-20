@@ -457,13 +457,6 @@ OC.L10N.register(
     "I acknowledge that I have read and agree to the above terms of service" : "我确认我已阅读并同意上述服务条款",
     "Edit" : "编辑",
     "Delete" : "删除",
-    "Deleting …" : "正在删除...",
-    "_" : "_ ",
-    "values" : "值 ",
-    "keys" : "键",
-    "entries" : "条目 ",
-    "_min-width_::_min-height_" : ["最小高度 "],
-    "_dialog_::_auto_" : ["自动 "],
-    ">=0.0.0" : ">=0.0.0 "
+    "Deleting …" : "正在删除..."
 },
 "nplurals=1; plural=0;");
