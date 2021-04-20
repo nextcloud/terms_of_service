@@ -286,7 +286,7 @@
     "Divehi; Dhivehi; Maldivian" : "Divehi; Dhivehi",
     "Dzongkha" : "Dzongkha",
     "Ewe" : "Ewe",
-    "Greek, Modern (1453-)" : "Grieschich; Modern (1453-)",
+    "Greek, Modern (1453-)" : "Griechisch; Modern (1453-)",
     "English" : "Englisch",
     "Esperanto" : "Esperanto",
     "Spanish; Castilian" : "Spanisch; Katalanisch",
@@ -300,7 +300,7 @@
     "French" : "Französisch",
     "Western Frisian" : "Westfriesisch",
     "Irish" : "Irisch",
-    "Gaelic; Scottish Gaelic" : "Gälisch; Schottisch-gälisch",
+    "Gaelic; Scottish Gaelic" : "Gälisch; Schottisch-Gälisch",
     "Galician" : "Galicisch",
     "Guarani" : "Guarani",
     "Gujarati" : "Gujarati",
@@ -310,7 +310,7 @@
     "Hindi" : "Hindi",
     "Hiri Motu" : "Hiri Motu",
     "Croatian" : "Kroatisch",
-    "Haitian; Haitian Creole" : "Haitianisch; Haitianische Kreol",
+    "Haitian; Haitian Creole" : "Haitianisch; Haitianisches Kreol",
     "Hungarian" : "Ungarisch",
     "Armenian" : "Armenisch",
     "Herero" : "Herero",
@@ -455,13 +455,6 @@
     "I acknowledge that I have read and agree to the above terms of service" : "Ich bestätige, dass ich die oben genannten Nutzungsbedingungen gelesen und akzeptiert habe",
     "Edit" : "Bearbeiten",
     "Delete" : "Löschen",
-    "Deleting …" : "Lösche…",
-    "_" : "_",
-    "values" : "Werte",
-    "keys" : "Schlüssel",
-    "entries" : "Einträge",
-    "_min-width_::_min-height_" : ["Mindestbreite","Mindesthöhe"],
-    "_dialog_::_auto_" : ["Dialog","auto"],
-    ">=0.0.0" : ">=0.0.0"
+    "Deleting …" : "Lösche…"
 },"pluralForm" :"nplurals=2; plural=(n != 1);"
 }
