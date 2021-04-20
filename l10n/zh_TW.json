@@ -455,13 +455,6 @@
     "I acknowledge that I have read and agree to the above terms of service" : "我確定我已經閱讀並同意以上的服務條款",
     "Edit" : "修改",
     "Delete" : "刪除",
-    "Deleting …" : "刪除中 ...",
-    "_" : "_",
-    "values" : "值",
-    "keys" : "鍵",
-    "entries" : "項目",
-    "_min-width_::_min-height_" : ["最小高度"],
-    "_dialog_::_auto_" : ["自動"],
-    ">=0.0.0" : ">=0.0.0"
+    "Deleting …" : "刪除中 ..."
 },"pluralForm" :"nplurals=1; plural=0;"
 }
