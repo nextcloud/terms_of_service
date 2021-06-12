@@ -28,7 +28,7 @@
 	"devDependencies": {
 		"@babel/core": "^7.14.3",
 		"@babel/eslint-parser": "^7.14.4",
-		"@babel/plugin-proposal-class-properties": "^7.13.0",
+		"@babel/plugin-proposal-class-properties": "^7.14.5",
 		"@babel/plugin-transform-modules-commonjs": "^7.14.0",
 		"@babel/plugin-transform-shorthand-properties": "^7.14.5",
 		"@babel/preset-env": "^7.14.4",
@@ -64,7 +64,7 @@
 		"vue-loader": "^15.9.7",
 		"vue-template-compiler": "^2.6.13",
 		"webpack": "^5.38.1",
-		"webpack-cli": "^4.7.0",
+		"webpack-cli": "^4.7.2",
 		"webpack-merge": "^5.7.3",
 		"webpack-node-externals": "^3.0.0"
 	}
