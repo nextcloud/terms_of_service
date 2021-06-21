@@ -20,12 +20,6 @@
  *
  */
 
-/*
-object-assign
-(c) Sindre Sorhus
-@license MIT
-*/
-
 /*!
  * Determine if an object is a Buffer
  *

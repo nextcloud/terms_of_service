@@ -19,7 +19,7 @@
  *
  */
 
-script('terms_of_service', 'terms_of_service_admin');
+script('terms_of_service', 'terms_of_service-admin');
 style('terms_of_service', 'admin');
 ?>
 
