@@ -102,9 +102,9 @@ class Application extends App implements IBootstrap {
 				&& strpos($request->getPathInfo(), '/s/') !== 0
 				&& strpos($request->getPathInfo(), '/login/') !== 0
 				&& substr($request->getScriptName(), 0 - strlen('/index.php')) === '/index.php') {
-				Util::addScript('terms_of_service', 'terms_of_service_user');
+				Util::addScript('terms_of_service', 'terms_of_service-user');
 			} else if ($config->getAppValue(self::APPNAME, 'tos_on_public_shares', '0') === '1') {
-				Util::addScript('terms_of_service', 'terms_of_service_public');
+				Util::addScript('terms_of_service', 'terms_of_service-public');
 			}
 		}
 	}
