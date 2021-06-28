@@ -439,7 +439,7 @@ OC.L10N.register(
     "Terms of service have been modified!" : "服務條款已更新!",
     "You have to accept the newest version of the terms of service in order to be able to use this service." : "您必須接受最新版本的服務條款才能夠繼續使用服務。",
     "Requires users to accept the terms of service before accessing data." : "要求用戶在使用服務之前接受服務條款。",
-    "Requires users to accept the terms of service before accessing data.\nThis product includes GeoLite2 data created by MaxMind, available from [maxmind.com](http://www.maxmind.com)" : "要求用戶在使用服務之前接受服務條款。\n此產品包含由MaxMind創建的GeoLite2數據，可從[maxmind。com](http：//www。maxmind。com)獲得。",
+    "Requires users to accept the terms of service before accessing data.\nThis product includes GeoLite2 data created by MaxMind, available from [maxmind.com](http://www.maxmind.com)" : "要求用戶在使用服務之前接受服務條款。\n此產品包含由 MaxMind 創建的 GeoLite2 數據，可從［maxmind.com］（http://www.maxmind.com）獲得。",
     "Require users to accept the terms of service before accessing the service." : "要求用戶在使用服務之前接受服務條款。",
     "For formatting purposes Markdown is supported." : "出於格式化目的，支持Markdown。",
     "Select a region" : "選擇地區",
