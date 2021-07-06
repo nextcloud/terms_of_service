@@ -1,6 +1,11 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## 1.7.1 – 2021-07-06
+### Fixed
+- Fix link color in terms of registration integration
+  [#602](https://github.com/nextcloud/registration/pull/602)
+
 ## 1.7.0 – 2021-04-15
 ### Added
 - Integration into the Registration app
