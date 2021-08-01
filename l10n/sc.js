@@ -259,7 +259,7 @@ OC.L10N.register(
     "Akan" : "Akan",
     "Amharic" : "Amàricu",
     "Aragonese" : "Aragonesu",
-    "Arabic" : "rabu",
+    "Arabic" : "Àrabu",
     "Assamese" : "Assamesu",
     "Avaric" : "Avaru",
     "Aymara" : "Aymara",
