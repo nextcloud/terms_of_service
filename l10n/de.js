@@ -288,7 +288,7 @@ OC.L10N.register(
     "Divehi; Dhivehi; Maldivian" : "Divehi; Dhivehi",
     "Dzongkha" : "Dzongkha",
     "Ewe" : "Ewe",
-    "Greek, Modern (1453-)" : "Griechisch",
+    "Greek, Modern (1453-)" : "Griechisch, Modern (1453-)",
     "English" : "Englisch",
     "Esperanto" : "Esperanto",
     "Spanish; Castilian" : "Spanisch; Katalanisch",
