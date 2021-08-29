@@ -135,7 +135,7 @@ class LanguageMapper {
 			'kw' => $this->l->t('Cornish'),
 			'ky' => $this->l->t('Kirghiz; Kyrgyz'),
 			'la' => $this->l->t('Latin'),
-			'lb' => $this->l->t('Luxembourgish; Letzeburgesch'),
+			'lb' => $this->l->t('Luxembourgish; Lëtzeburgesch'),
 			'lg' => $this->l->t('Ganda'),
 			'li' => $this->l->t('Limburgan; Limburger; Limburgish'),
 			'ln' => $this->l->t('Lingala'),
