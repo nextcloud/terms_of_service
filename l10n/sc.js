@@ -344,7 +344,6 @@ OC.L10N.register(
     "Cornish" : "Còrnicu",
     "Kirghiz; Kyrgyz" : "Kirghizu; Kyrgyz",
     "Latin" : "Latinu",
-    "Luxembourgish; Letzeburgesch" : "Lussemburghesu; Letzeburgesch",
     "Ganda" : "Ganda",
     "Limburgan; Limburger; Limburgish" : "Limburgan; Limburger; Limburghesu",
     "Lingala" : "Lingala",
@@ -457,6 +456,7 @@ OC.L10N.register(
     "I acknowledge that I have read and agree to the above terms of service" : "Cunfirmu ca apo lèghidu e so de acòrdiu cun is cunditziones de servìtziu",
     "Edit" : "Modìfica ",
     "Delete" : "Cantzella",
-    "Deleting …" : "Cantzellende ... "
+    "Deleting …" : "Cantzellende ... ",
+    "Luxembourgish; Letzeburgesch" : "Lussemburghesu; Letzeburgesch"
 },
 "nplurals=2; plural=(n != 1);");

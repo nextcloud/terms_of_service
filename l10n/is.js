@@ -343,7 +343,6 @@ OC.L10N.register(
     "Cornish" : "Cornish",
     "Kirghiz; Kyrgyz" : "Kirgisíska; Kyrgyz",
     "Latin" : "Latína",
-    "Luxembourgish; Letzeburgesch" : "Lúxemborgíska",
     "Ganda" : "Ganda",
     "Limburgan; Limburger; Limburgish" : "Limburgan; Limburger; Limburgish",
     "Lingala" : "Lingala",
@@ -456,6 +455,7 @@ OC.L10N.register(
     "I acknowledge that I have read and agree to the above terms of service" : "Staðfesti ég að ég hef lesið og samþykki ofangreinda jónustuskilmála",
     "Edit" : "Breyta",
     "Delete" : "Eyða",
-    "Deleting …" : "Eyði …"
+    "Deleting …" : "Eyði …",
+    "Luxembourgish; Letzeburgesch" : "Lúxemborgíska"
 },
 "nplurals=2; plural=(n % 10 != 1 || n % 100 == 11);");

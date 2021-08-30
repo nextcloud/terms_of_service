@@ -344,7 +344,6 @@ OC.L10N.register(
     "Cornish" : "康瓦爾語",
     "Kirghiz; Kyrgyz" : "吉爾吉斯語",
     "Latin" : "拉丁語",
-    "Luxembourgish; Letzeburgesch" : "盧森堡語",
     "Ganda" : "盧干達語",
     "Limburgan; Limburger; Limburgish" : "林堡語",
     "Lingala" : "林格拉語",
@@ -457,6 +456,7 @@ OC.L10N.register(
     "I acknowledge that I have read and agree to the above terms of service" : "我確定我已經閱讀並同意以上的服務條款",
     "Edit" : "修改",
     "Delete" : "刪除",
-    "Deleting …" : "刪除中 ..."
+    "Deleting …" : "刪除中 ...",
+    "Luxembourgish; Letzeburgesch" : "盧森堡語"
 },
 "nplurals=1; plural=0;");
