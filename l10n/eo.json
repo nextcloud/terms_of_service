@@ -341,7 +341,6 @@
     "Cornish" : "Kornvala",
     "Kirghiz; Kyrgyz" : "Kirgiza",
     "Latin" : "Latino",
-    "Luxembourgish; Letzeburgesch" : "Luksemburga",
     "Ganda" : "Ganda",
     "Limburgan; Limburger; Limburgish" : "Limburga",
     "Lingala" : "Lingala",
@@ -454,6 +453,7 @@
     "I acknowledge that I have read and agree to the above terms of service" : "Mi konfirmas, ke mi legis kaj akceptis la suprajn kondiĉojn de uzado",
     "Edit" : "Modifi",
     "Delete" : "Forigi",
-    "Deleting …" : "Forigado..."
+    "Deleting …" : "Forigado...",
+    "Luxembourgish; Letzeburgesch" : "Luksemburga"
 },"pluralForm" :"nplurals=2; plural=(n != 1);"
 }

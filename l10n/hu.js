@@ -344,7 +344,6 @@ OC.L10N.register(
     "Cornish" : "Korni",
     "Kirghiz; Kyrgyz" : "Kirgiz; Kirgiz",
     "Latin" : "Latin",
-    "Luxembourgish; Letzeburgesch" : "Luxemburgi",
     "Ganda" : "Ganda",
     "Limburgan; Limburger; Limburgish" : "Limburgan; Limburger; Limburgish",
     "Lingala" : "Lingala",
@@ -457,6 +456,7 @@ OC.L10N.register(
     "I acknowledge that I have read and agree to the above terms of service" : "Kijelentem, hogy elolvastam és egyet értek a fenti szolgáltatási feltételekkel.",
     "Edit" : "Szerkesztés",
     "Delete" : "Törlés",
-    "Deleting …" : "Törlés folyamatban ..."
+    "Deleting …" : "Törlés folyamatban ...",
+    "Luxembourgish; Letzeburgesch" : "Luxemburgi"
 },
 "nplurals=2; plural=(n != 1);");
