@@ -330,7 +330,6 @@ OC.L10N.register(
     "Cornish" : "корнуолски",
     "Kirghiz; Kyrgyz" : "киргизки",
     "Latin" : "латински",
-    "Luxembourgish; Letzeburgesch" : "люксембургски",
     "Limburgan; Limburger; Limburgish" : "лимбургски",
     "Lingala" : "лингала",
     "Lao" : "лаоски",
@@ -429,6 +428,7 @@ OC.L10N.register(
     "Saved!" : "Записано!",
     "Edit" : "Променяне",
     "Delete" : "Изтрий",
-    "Deleting …" : "Изтриване …"
+    "Deleting …" : "Изтриване …",
+    "Luxembourgish; Letzeburgesch" : "люксембургски"
 },
 "nplurals=2; plural=(n != 1);");

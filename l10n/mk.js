@@ -344,7 +344,6 @@ OC.L10N.register(
     "Cornish" : "Cornish",
     "Kirghiz; Kyrgyz" : "Киргистан; Киргиски",
     "Latin" : "Латински",
-    "Luxembourgish; Letzeburgesch" : "Луксембуршки",
     "Ganda" : "Ganda",
     "Limburgan; Limburger; Limburgish" : "Лумбергски",
     "Lingala" : "Лингала",
@@ -457,6 +456,7 @@ OC.L10N.register(
     "I acknowledge that I have read and agree to the above terms of service" : "Признавам дека ги прочитав и се согласувам со горенаведените услови за користење",
     "Edit" : "Уреди",
     "Delete" : "Избриши",
-    "Deleting …" : "Бришење ..."
+    "Deleting …" : "Бришење ...",
+    "Luxembourgish; Letzeburgesch" : "Луксембуршки"
 },
 "nplurals=2; plural=(n % 10 == 1 && n % 100 != 11) ? 0 : 1;");

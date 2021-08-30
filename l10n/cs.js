@@ -344,7 +344,6 @@ OC.L10N.register(
     "Cornish" : "kornština",
     "Kirghiz; Kyrgyz" : "kyrgyzština",
     "Latin" : "latina",
-    "Luxembourgish; Letzeburgesch" : "Lucemburština",
     "Ganda" : "gandština",
     "Limburgan; Limburger; Limburgish" : "limburština",
     "Lingala" : "ngalština",
@@ -457,6 +456,7 @@ OC.L10N.register(
     "I acknowledge that I have read and agree to the above terms of service" : "Potvrzuji, že jsem si přečetl(a) a souhlasím s výše uvedenými všeobecnými podmínkami",
     "Edit" : "Upravit",
     "Delete" : "Smazat",
-    "Deleting …" : "Mazání…"
+    "Deleting …" : "Mazání…",
+    "Luxembourgish; Letzeburgesch" : "Lucemburština"
 },
 "nplurals=4; plural=(n == 1 && n % 1 == 0) ? 0 : (n >= 2 && n <= 4 && n % 1 == 0) ? 1: (n % 1 != 0 ) ? 2 : 3;");
