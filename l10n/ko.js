@@ -344,7 +344,6 @@ OC.L10N.register(
     "Cornish" : "콘월어",
     "Kirghiz; Kyrgyz" : "키르기어",
     "Latin" : "라틴어",
-    "Luxembourgish; Letzeburgesch" : "룩셈부르크어",
     "Ganda" : "루간다어",
     "Limburgan; Limburger; Limburgish" : "림뷔르흐어",
     "Lingala" : "링갈라어",
@@ -457,6 +456,7 @@ OC.L10N.register(
     "I acknowledge that I have read and agree to the above terms of service" : "이용 약관을 읽었으며 이에 동의합니다",
     "Edit" : "편집",
     "Delete" : "삭제",
-    "Deleting …" : "삭제 중 …"
+    "Deleting …" : "삭제 중 …",
+    "Luxembourgish; Letzeburgesch" : "룩셈부르크어"
 },
 "nplurals=1; plural=0;");

@@ -342,7 +342,6 @@
     "Cornish" : "康瓦爾語",
     "Kirghiz; Kyrgyz" : "吉爾吉斯語",
     "Latin" : "拉丁語",
-    "Luxembourgish; Letzeburgesch" : "盧森堡語",
     "Ganda" : "盧干達語",
     "Limburgan; Limburger; Limburgish" : "林堡語",
     "Lingala" : "林格拉語",
@@ -455,6 +454,7 @@
     "I acknowledge that I have read and agree to the above terms of service" : "我承認我已閱讀並同意上述服務條款",
     "Edit" : "修改",
     "Delete" : "刪除",
-    "Deleting …" : "刪除中 ..."
+    "Deleting …" : "刪除中 ...",
+    "Luxembourgish; Letzeburgesch" : "盧森堡語"
 },"pluralForm" :"nplurals=1; plural=0;"
 }

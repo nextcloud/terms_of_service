@@ -341,7 +341,6 @@
     "Cornish" : "Cornish",
     "Kirghiz; Kyrgyz" : "Kirghiz; Kyrgyz",
     "Latin" : "Latin",
-    "Luxembourgish; Letzeburgesch" : "Luxembourgish; Letzeburgesch",
     "Ganda" : "Ganda",
     "Limburgan; Limburger; Limburgish" : "Limburgan; Limburger; Limburgish",
     "Lingala" : "Lingala",
@@ -454,6 +453,7 @@
     "I acknowledge that I have read and agree to the above terms of service" : "Επιβεβαιώνω ότι έχω διαβάσει και συμφωνώ με τους παραπάνω όρους χρήσης υπηρεσίας",
     "Edit" : "Επεξεργασία",
     "Delete" : "Διαγραφή",
-    "Deleting …" : "Διαγράφεται ..."
+    "Deleting …" : "Διαγράφεται ...",
+    "Luxembourgish; Letzeburgesch" : "Luxembourgish; Letzeburgesch"
 },"pluralForm" :"nplurals=2; plural=(n != 1);"
 }
