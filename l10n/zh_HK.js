@@ -344,6 +344,7 @@ OC.L10N.register(
     "Cornish" : "康瓦爾語",
     "Kirghiz; Kyrgyz" : "吉爾吉斯語",
     "Latin" : "拉丁語",
+    "Luxembourgish; Lëtzeburgesch" : "盧森堡語",
     "Ganda" : "盧干達語",
     "Limburgan; Limburger; Limburgish" : "林堡語",
     "Lingala" : "林格拉語",
