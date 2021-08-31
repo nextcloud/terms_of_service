@@ -344,6 +344,7 @@ OC.L10N.register(
     "Cornish" : "Kernevekçe",
     "Kirghiz; Kyrgyz" : "Kırgızca",
     "Latin" : "Latince",
+    "Luxembourgish; Lëtzeburgesch" : "Lüksemburgça; Lëtzeburgesch",
     "Ganda" : "Ugandaca; Ganda; Luganda",
     "Limburgan; Limburger; Limburgish" : "Limburgca",
     "Lingala" : "Lingala; Kongoca",
