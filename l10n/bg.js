@@ -428,7 +428,6 @@ OC.L10N.register(
     "Saved!" : "Записано!",
     "Edit" : "Променяне",
     "Delete" : "Изтрий",
-    "Deleting …" : "Изтриване …",
-    "Luxembourgish; Letzeburgesch" : "люксембургски"
+    "Deleting …" : "Изтриване …"
 },
 "nplurals=2; plural=(n != 1);");

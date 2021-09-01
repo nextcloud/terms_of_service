@@ -456,7 +456,6 @@ OC.L10N.register(
     "I acknowledge that I have read and agree to the above terms of service" : "Aitortzen dut goiko zerbitzu baldintzak irakurri eta onartzen ditudala",
     "Edit" : "Editatu",
     "Delete" : "Ezabatu",
-    "Deleting …" : "Ezabatzen …",
-    "Luxembourgish; Letzeburgesch" : "Luxenburgera"
+    "Deleting …" : "Ezabatzen …"
 },
 "nplurals=2; plural=(n != 1);");
