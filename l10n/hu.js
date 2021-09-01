@@ -456,7 +456,6 @@ OC.L10N.register(
     "I acknowledge that I have read and agree to the above terms of service" : "Kijelentem, hogy elolvastam és egyet értek a fenti szolgáltatási feltételekkel.",
     "Edit" : "Szerkesztés",
     "Delete" : "Törlés",
-    "Deleting …" : "Törlés folyamatban ...",
-    "Luxembourgish; Letzeburgesch" : "Luxemburgi"
+    "Deleting …" : "Törlés folyamatban ..."
 },
 "nplurals=2; plural=(n != 1);");
