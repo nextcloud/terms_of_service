@@ -456,7 +456,6 @@ OC.L10N.register(
     "I acknowledge that I have read and agree to the above terms of service" : "Beriem na vedomie, že som si prečítal a súhlasím s vyššie uvedenými zmluvnými podmienkami",
     "Edit" : "Upraviť",
     "Delete" : "Zmazať",
-    "Deleting …" : "Odstraňuje sa...",
-    "Luxembourgish; Letzeburgesch" : "luxemburčina"
+    "Deleting …" : "Odstraňuje sa..."
 },
 "nplurals=4; plural=(n % 1 == 0 && n == 1 ? 0 : n % 1 == 0 && n >= 2 && n <= 4 ? 1 : n % 1 != 0 ? 2: 3);");

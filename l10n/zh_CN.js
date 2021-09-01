@@ -457,7 +457,6 @@ OC.L10N.register(
     "I acknowledge that I have read and agree to the above terms of service" : "我确认我已阅读并同意上述服务条款",
     "Edit" : "编辑",
     "Delete" : "删除",
-    "Deleting …" : "正在删除...",
-    "Luxembourgish; Letzeburgesch" : "卢森堡语"
+    "Deleting …" : "正在删除..."
 },
 "nplurals=1; plural=0;");

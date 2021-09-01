@@ -456,7 +456,6 @@ OC.L10N.register(
     "I acknowledge that I have read and agree to the above terms of service" : "Ich bestätige, dass ich die oben genannten Nutzungsbedingungen gelesen und akzeptiert habe",
     "Edit" : "Bearbeiten",
     "Delete" : " Löschen",
-    "Deleting …" : "Lösche…",
-    "Luxembourgish; Letzeburgesch" : "Luxemburgisch; Letzebuergesch"
+    "Deleting …" : "Lösche…"
 },
 "nplurals=2; plural=(n != 1);");
