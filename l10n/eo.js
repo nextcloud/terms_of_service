@@ -455,7 +455,6 @@ OC.L10N.register(
     "I acknowledge that I have read and agree to the above terms of service" : "Mi konfirmas, ke mi legis kaj akceptis la suprajn kondiĉojn de uzado",
     "Edit" : "Modifi",
     "Delete" : "Forigi",
-    "Deleting …" : "Forigado...",
-    "Luxembourgish; Letzeburgesch" : "Luksemburga"
+    "Deleting …" : "Forigado..."
 },
 "nplurals=2; plural=(n != 1);");

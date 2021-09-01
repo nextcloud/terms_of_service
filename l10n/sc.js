@@ -456,7 +456,6 @@ OC.L10N.register(
     "I acknowledge that I have read and agree to the above terms of service" : "Cunfirmu ca apo lèghidu e so de acòrdiu cun is cunditziones de servìtziu",
     "Edit" : "Modìfica ",
     "Delete" : "Cantzella",
-    "Deleting …" : "Cantzellende ... ",
-    "Luxembourgish; Letzeburgesch" : "Lussemburghesu; Letzeburgesch"
+    "Deleting …" : "Cantzellende ... "
 },
 "nplurals=2; plural=(n != 1);");
