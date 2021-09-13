@@ -153,7 +153,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
-::v-deep .v--modal {
+::v-deep .vm--modal {
 	color: var(--color-main-text);
 	background-color: var(--color-main-background);
 	border-radius: var(--border-radius-large);
