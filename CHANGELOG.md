@@ -1,6 +1,11 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## 1.8.1 – 2021-09-21
+### Fixed
+- Fix text color in terms of registration integration after dependency update
+  [#622](https://github.com/nextcloud/registration/pull/622)
+
 ## 1.8.0 – 2021-07-06
 ### Changed
 - Compatibility with Nextcloud 22
