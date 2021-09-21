@@ -21,8 +21,6 @@ npm-init:
 npm-update:
 	npm update
 
-dependabot: dev-setup npm-update build-js-production
-
 build-js:
 	npm run dev
 
@@ -45,7 +43,7 @@ create-tag:
 	git tag -a v$(version) -m "Tagging the $(version) release."
 	git push origin v$(version)
 
-appstore: clean clean-dev npm-init build-js-production
+appstore:
 	mkdir -p $(sign_dir)
 	rsync -a \
 	--exclude=/.github \
