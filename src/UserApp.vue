@@ -32,6 +32,7 @@
 				</select>
 				<div class="clear-both" />
 
+				<!-- eslint-disable-next-line vue/no-v-html -->
 				<div class="text-content" v-html="termsBody" />
 				<button class="primary" @click="acceptTerms">
 					{{ t('terms_of_service', 'I acknowledge that I have read and agree to the above terms of service') }}
