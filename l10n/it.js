@@ -344,6 +344,7 @@ OC.L10N.register(
     "Cornish" : "Cornico",
     "Kirghiz; Kyrgyz" : "Chirghiso",
     "Latin" : "Latino",
+    "Luxembourgish; Lëtzeburgesch" : "Lussemburghese; Letzeburgesch",
     "Ganda" : "Ganda",
     "Limburgan; Limburger; Limburgish" : "Limburgan; Limburger; Limburghese",
     "Lingala" : "Lingala",
