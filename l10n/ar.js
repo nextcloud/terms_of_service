@@ -135,6 +135,7 @@ OC.L10N.register(
     "Select a region" : "اختر منطقة",
     "Select a language" : "اختر لغة",
     "Save" : "حفظ",
+    "I acknowledge that I have read and agree to the above terms of service" : "أقر بأنني قد قرأت ووافقت على شروط الخدمة المذكورة أعلاه",
     "Edit" : "تعديل",
     "Delete" : "حذف "
 },
