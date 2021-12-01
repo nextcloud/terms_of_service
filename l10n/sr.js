@@ -343,7 +343,6 @@ OC.L10N.register(
     "Cornish" : "Корнишки",
     "Kirghiz; Kyrgyz" : "Киргиски",
     "Latin" : "Латински",
-    "Luxembourgish; Letzeburgesch" : "Луксембуршки",
     "Ganda" : "Луганда",
     "Limburgan; Limburger; Limburgish" : "Лимбуршки",
     "Lingala" : "Лингала",

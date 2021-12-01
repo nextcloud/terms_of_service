@@ -1,6 +1,7 @@
 OC.L10N.register(
     "terms_of_service",
     {
+    "Terms of service are not signed" : "Nisu potpisani uvjeti pružanja usluge",
     "Global" : "Globalno",
     "Afghanistan" : "Afganistan",
     "Åland Islands" : "Ålandski otoci",
@@ -343,7 +344,6 @@ OC.L10N.register(
     "Cornish" : "Kornijski",
     "Kirghiz; Kyrgyz" : "Kirgiski",
     "Latin" : "Latinski",
-    "Luxembourgish; Letzeburgesch" : "Luksemburški; letzeburgesch",
     "Ganda" : "Ganda",
     "Limburgan; Limburger; Limburgish" : "Limburgan; limburgera; limburški",
     "Lingala" : "Lingala",
