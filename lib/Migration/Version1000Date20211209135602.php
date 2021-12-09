@@ -41,15 +41,19 @@ class Version1000Date20211209135602 extends SimpleMigrationStep {
 		/** @var ISchemaWrapper $schema */
 		$schema = $schemaClosure();
 
-		if ($schema->hasTable('termsofservice_sigs')) {
-			$table = $schema->getTable('termsofservice_sigs');
+		$table = $schema->getTable('termsofservice_sigs');
+		if (!$table->hasIndex('tos_sigs_terms_id')) {
 			$table->addIndex(['terms_id'], 'tos_sigs_terms_id');
+		}
+		if (!$table->hasIndex('tos_sigs_user_id')) {
 			$table->addIndex(['user_id'], 'tos_sigs_user_id');
 		}
 
-		if ($schema->hasTable('termsofservice_terms')) {
-			$table = $schema->getTable('termsofservice_terms');
+		$table = $schema->getTable('termsofservice_terms');
+		if (!$table->hasIndex('tos_terms_country_code')) {
 			$table->addIndex(['country_code'], 'tos_terms_country_code');
+		}
+		if (!$table->hasIndex('tos_terms_language_code')) {
 			$table->addIndex(['language_code'], 'tos_terms_language_code');
 		}
 
