@@ -43,6 +43,7 @@ class Version1000Date20211209135602 extends SimpleMigrationStep {
 
 		if ($schema->hasTable('termsofservice_sigs')) {
 			$table = $schema->getTable('termsofservice_sigs');
+			$table->addIndex(['terms_id'], 'tos_sigs_terms_id');
 			$table->addIndex(['user_id'], 'tos_sigs_user_id');
 		}
 
