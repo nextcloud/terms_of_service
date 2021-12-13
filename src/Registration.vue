@@ -41,23 +41,19 @@
 			<Modal v-if="showModal"
 				:can-close="hasSigned"
 				@close="handleCloseModal">
-				<div id="tos-overlay">
-					<h3>{{ t('terms_of_service', 'Terms of service') }}</h3>
-					<select v-if="terms.length > 1" v-model="selectedLanguage">
-						<option v-for="(language, index) in languages" :key="index" :value="index">
-							{{ language }}
-						</option>
-					</select>
-					<div class="clear-both" />
+				<ModalContent @click="acceptTerms">
+					<template #header>
+						<h3>{{ t('terms_of_service', 'Terms of service') }}</h3>
+						<select v-if="terms.length > 1" v-model="selectedLanguage">
+							<option v-for="(language, index) in languages" :key="index" :value="index">
+								{{ language }}
+							</option>
+						</select>
+					</template>
 
 					<!-- eslint-disable-next-line vue/no-v-html -->
 					<div class="text-content" v-html="termsBody" />
-
-					<button class="primary"
-						@click.prevent.stop="acceptTerms">
-						{{ t('terms_of_service', 'I acknowledge that I have read and agree to the above terms of service') }}
-					</button>
-				</div>
+				</ModalContent>
 			</Modal>
 		</div>
 	</div>
@@ -68,12 +64,14 @@ import axios from '@nextcloud/axios'
 import { generateUrl } from '@nextcloud/router'
 import '@nextcloud/dialogs/styles/toast.scss'
 import Modal from '@nextcloud/vue/dist/Components/Modal'
+import ModalContent from './components/ModalContent.vue'
 
 export default {
 	name: 'Registration',
 
 	components: {
 		Modal,
+		ModalContent,
 	},
 
 	data() {
@@ -159,12 +157,10 @@ export default {
 	},
 }
 </script>
-
 <style scoped lang="scss">
-::v-deep .vm--modal {
-	color: var(--color-main-text);
-	background-color: var(--color-main-background);
-	border-radius: var(--border-radius-large);
-	box-shadow: 0 20px 60px -2px var(--color-box-shadow);
+
+::v-deep .modal-container {
+	display: flex;
+	height: 100%;
 }
 </style>
