@@ -79,6 +79,17 @@ export default {
 	select {
 		float: right;
 		padding: 0 12px;
+
+		/**
+		 * Need to overwrite the rules of guest.css
+		 */
+		color: var(--color-main-text);
+		background: var(--icon-triangle-s-000) no-repeat right 4px center;
+		border: 1px solid var(--color-border-dark);
+		border-radius: var(--border-radius);
+		&:hover {
+			border-color: var(--color-primary-element);
+		}
 	}
 
 	/**
