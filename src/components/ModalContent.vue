@@ -61,6 +61,7 @@ export default {
 	height: 100%;
 	display: flex;
 	flex-direction: column;
+	color: var(--color-main-text);
 
 	&__header {
 		padding-top: 12px;
