@@ -65,11 +65,6 @@ export default {
 		padding-top: 12px;
 	}
 
-	.text-content {
-		height: 100%;
-		overflow: auto;
-	}
-
 	h3 {
 		float: left;
 		font-weight: 800;
@@ -87,7 +82,10 @@ export default {
 	/**
 	 * Basic Markdown support
 	 */
-	div.text-content {
+	::v-deep div.text-content {
+		height: 100%;
+		overflow: auto;
+
 		h3 {
 			font-weight: 800;
 		}
