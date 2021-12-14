@@ -24,7 +24,7 @@
  -->
 
 <template>
-	<div class="modal-content">
+	<div id="terms_of_service_content" class="modal-content">
 		<!-- Sticky Header -->
 		<div class="modal-content__header">
 			<slot name="header" />
@@ -54,7 +54,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
+/* Little hack to strengthen the css selector so links with dark mode on the registration page are readable */
+#terms_of_service_content.modal-content,
 .modal-content {
 	padding: 0 12px;
 	height: 100%;

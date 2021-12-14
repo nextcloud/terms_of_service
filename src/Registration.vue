@@ -158,7 +158,6 @@ export default {
 }
 </script>
 <style scoped lang="scss">
-
 ::v-deep .modal-container {
 	display: flex;
 	height: 100%;
