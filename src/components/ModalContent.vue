@@ -87,6 +87,7 @@ export default {
 	::v-deep div.text-content {
 		height: 100%;
 		overflow: auto;
+		text-align: left;
 
 		h3 {
 			font-weight: 800;
