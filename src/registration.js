@@ -21,10 +21,7 @@
  */
 
 import Vue from 'vue'
-import App from './Registration'
-import VModal from 'vue-js-modal'
-
-Vue.use(VModal)
+import App from './Registration.vue'
 
 Vue.prototype.t = t
 Vue.prototype.n = n

@@ -25,9 +25,6 @@
 
 import Vue from 'vue'
 import UserApp from './UserApp'
-import VModal from 'vue-js-modal'
-
-Vue.use(VModal)
 
 Vue.prototype.t = t
 Vue.prototype.n = n
