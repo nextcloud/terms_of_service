@@ -1,10 +1,11 @@
 <?php
+
 declare(strict_types=1);
 
 /**
- * @copyright Copyright (c) 2021 John Molakvoæ <skjnldsv@protonmail.com>
+ * @copyright Copyright (c) 2021 Joas Schilling <coding@schilljs.com>
  *
- * @author John Molakvoæ <skjnldsv@protonmail.com>
+ * @author Joas Schilling <coding@schilljs.com>
  *
  * @license GNU AGPL version 3 or any later version
  *
@@ -29,7 +30,7 @@ use OCP\DB\ISchemaWrapper;
 use OCP\Migration\IOutput;
 use OCP\Migration\SimpleMigrationStep;
 
-class Version1000Date20211209135602 extends SimpleMigrationStep {
+class Version1000Date20220111180247 extends SimpleMigrationStep {
 
 	/**
 	 * @param IOutput $output
@@ -38,27 +39,16 @@ class Version1000Date20211209135602 extends SimpleMigrationStep {
 	 * @return null|ISchemaWrapper
 	 */
 	public function changeSchema(IOutput $output, Closure $schemaClosure, array $options): ?ISchemaWrapper {
-		// Replaced by Version1000Date20220111180248 as the user id had a too long length for default index size
-//		/** @var ISchemaWrapper $schema */
-//		$schema = $schemaClosure();
-//
-//		$table = $schema->getTable('termsofservice_sigs');
-//		if (!$table->hasIndex('tos_sigs_terms_id')) {
-//			$table->addIndex(['terms_id'], 'tos_sigs_terms_id');
-//		}
-//		if (!$table->hasIndex('tos_sigs_user_id')) {
-//			$table->addIndex(['user_id'], 'tos_sigs_user_id');
-//		}
-//
-//		$table = $schema->getTable('termsofservice_terms');
-//		if (!$table->hasIndex('tos_terms_country_code')) {
-//			$table->addIndex(['country_code'], 'tos_terms_country_code');
-//		}
-//		if (!$table->hasIndex('tos_terms_language_code')) {
-//			$table->addIndex(['language_code'], 'tos_terms_language_code');
-//		}
-//
-//		return $schema;
+		/** @var ISchemaWrapper $schema */
+		$schema = $schemaClosure();
+
+		$table = $schema->getTable('termsofservice_sigs');
+		$column = $table->getColumn('user_id');
+		if (!$column->getLength() !== 64) {
+			$column->setLength(64);
+			return $schema;
+		}
+
 		return null;
 	}
 }
