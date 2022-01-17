@@ -1,6 +1,13 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## 1.8.4 – 2022-01-17
+### Fixed
+- Fix user_id column length 
+  [#667](https://github.com/nextcloud/terms_of_service/pull/667)
+- Add index for performance
+  [#652](https://github.com/nextcloud/terms_of_service/pull/652)
+
 ## 1.8.1 – 2021-09-21
 ### Fixed
 - Fix text color in terms of registration integration after dependency update
