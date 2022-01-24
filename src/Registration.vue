@@ -30,8 +30,7 @@
 				type="checkbox"
 				name="terms_of_service_accepted"
 				class="checkbox">
-			<label
-				for="terms_of_service_accepted"
+			<label for="terms_of_service_accepted"
 				@click.prevent.stop="showTerms">
 				{{ t('terms_of_service', 'I acknowledge that I have read and agree to the above terms of service') }} ↗
 			</label>
