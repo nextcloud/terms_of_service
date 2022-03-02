@@ -49,7 +49,7 @@ class CountryDetector {
 			return CountryMapper::GLOBAL;
 		}
 
-		if ($record === null) {
+		if ($record === null || !isset($record['country']['iso_code'])) {
 			// No match found, e.g. for local address like 127.0.0.1
 			return CountryMapper::GLOBAL;
 		}
