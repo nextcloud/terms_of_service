@@ -1,6 +1,11 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## 1.9.3 – 2022-03-03
+### Fixed
+- Fix an issue with IPs which only return a continent not a country
+  [#692](https://github.com/nextcloud/terms_of_service/pull/692)
+
 ## 1.9.2 – 2022-01-17
 ### Fixed
 - Fix user_id column length 
