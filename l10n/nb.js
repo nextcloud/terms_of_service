@@ -280,6 +280,7 @@ OC.L10N.register(
     "Corsican" : "Korsikansk",
     "Cree" : "Cree",
     "Czech" : "Tsjekkisk",
+    "Church Slavic; Old Slavonic; Church Slavonic; Old Bulgarian; Old Church Slavonic" : "Kirke-slavisk; Gammel-slavonsk; Kirke-slavonsk;Gammel-bulgarsk; Gammel kirke-slavonsk",
     "Chuvash" : "Tsjuvasjisk",
     "Welsh" : "Walisisk",
     "Danish" : "Dans",

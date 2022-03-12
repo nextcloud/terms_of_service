@@ -274,7 +274,7 @@ OC.L10N.register(
     "Tibetan" : "tibetčina",
     "Breton" : "bretónčina",
     "Bosnian" : "bosniančina",
-    "Catalan; Valencian" : "katalánčina",
+    "Catalan; Valencian" : "Katalánčina; Valónčina",
     "Chechen" : "čečenčina",
     "Chamorro" : "čamorčina",
     "Corsican" : "korzický jazyk",
