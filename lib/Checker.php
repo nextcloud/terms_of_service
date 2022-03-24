@@ -81,19 +81,15 @@ class Checker {
 			if ($this->config->getAppValue(Application::APPNAME, 'tos_on_public_shares', '0') === '0') {
 				return true;
 			}
-
-			return ($this->session->get('term_uuid') === $uuid);
-		}
-
-		if ($this->config->getAppValue(Application::APPNAME, 'tos_for_users', '1') !== '1') {
-			return true;
+		} else {
+			if ($this->config->getAppValue(Application::APPNAME, 'tos_for_users', '1') !== '1') {
+				return true;
+			}
 		}
 
 		if ($this->session->get('term_uuid') === $uuid) {
 			return true;
 		}
-
-		$user = $this->userManager->get($this->userId);
 
 		$countryCode = $this->countryDetector->getCountry();
 		$terms = $this->termsMapper->getTermsForCountryCode($countryCode);
@@ -101,6 +97,12 @@ class Checker {
 			// No terms that would need accepting
 			return true;
 		}
+
+		if ($this->userId === null) {
+			return false;
+		}
+
+		$user = $this->userManager->get($this->userId);
 
 		$signatories = $this->signatoryMapper->getSignatoriesByUser($user);
 		if (!empty($signatories)) {
