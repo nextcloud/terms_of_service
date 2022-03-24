@@ -24,6 +24,7 @@ namespace OCA\TermsOfService\Db\Mapper;
 use OCA\TermsOfService\Db\Entities\Terms;
 use OCA\TermsOfService\Exceptions\TermsNotFoundException;
 use OCP\AppFramework\Db\QBMapper;
+use OCP\DB\QueryBuilder\IQueryBuilder;
 use OCP\IDBConnection;
 
 /**
@@ -46,20 +47,24 @@ class TermsMapper extends QBMapper {
 		$query = $this->db->getQueryBuilder();
 		$query->select('*')
 			->from(self::TABLENAME)
-			->where($query->expr()->eq('country_code', $query->createNamedParameter($countryCode)));
+			->where($query->expr()->in('country_code', $query->createNamedParameter([CountryMapper::GLOBAL, $countryCode], IQueryBuilder::PARAM_STR_ARRAY)));
 
-		$entities = [];
+		$entities = [
+			CountryMapper::GLOBAL => [],
+			$countryCode => [],
+		];
+
 		$result = $query->execute();
 		while ($row = $result->fetch()){
-			$entities[] = $this->mapRowToEntity($row);
+			$entities[$row['country_code']][] = $this->mapRowToEntity($row);
 		}
 		$result->closeCursor();
 
-		if (empty($entities) && $countryCode !== CountryMapper::GLOBAL) {
-			return $this->getTermsForCountryCode(CountryMapper::GLOBAL);
+		if (empty($entities[$countryCode])) {
+			return $entities[CountryMapper::GLOBAL];
 		}
 
-		return $entities;
+		return $entities[$countryCode];
 	}
 
 	/**
