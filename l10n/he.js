@@ -325,6 +325,7 @@ OC.L10N.register(
     "Maltese" : "מלטית",
     "Burmese" : "בורמזית",
     "Nepali" : "נפאלית",
+    "Norwegian" : "נורבגית",
     "Occitan (post 1500)" : "אוקסיטנית (אחרי 1500)",
     "Ojibwa" : "אוג׳יבווה",
     "Oromo" : "אורומו",
