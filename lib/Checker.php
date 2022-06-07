@@ -44,6 +44,8 @@ class Checker {
 	private $countryDetector;
 	/** @var IConfig */
 	private $config;
+	/** @var array */
+	private $termsCache = [];
 
 	public function __construct(
 		$userId,
@@ -92,8 +94,10 @@ class Checker {
 		}
 
 		$countryCode = $this->countryDetector->getCountry();
-		$terms = $this->termsMapper->getTermsForCountryCode($countryCode);
-		if (empty($terms)) {
+		if (!array_key_exists($countryCode, $this->termsCache)) {
+			$this->termsCache[$countryCode] = $this->termsMapper->getTermsForCountryCode($countryCode);
+		}
+		if (empty($this->termsCache[$countryCode])) {
 			// No terms that would need accepting
 			return true;
 		}
