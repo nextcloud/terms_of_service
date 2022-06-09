@@ -26,6 +26,7 @@ use OCA\TermsOfService\Db\Mapper\SignatoryMapper;
 use OCA\TermsOfService\Db\Mapper\TermsMapper;
 use OCP\IConfig;
 use OCP\ISession;
+use OCP\IUser;
 use OCP\IUserManager;
 use OCP\IL10N;
 
@@ -107,12 +108,15 @@ class Checker {
 		}
 
 		$user = $this->userManager->get($this->userId);
+		if (!$user instanceof IUser) {
+			return false;
+		}
 
 		$signatories = $this->signatoryMapper->getSignatoriesByUser($user);
 		if (!empty($signatories)) {
-			foreach($signatories as $signatory) {
-				foreach($terms as $term) {
-					if((int)$term->getId() === (int)$signatory->getTermsId()) {
+			foreach ($signatories as $signatory) {
+				foreach ($this->termsCache[$countryCode] as $term) {
+					if ((int)$term->getId() === (int)$signatory->getTermsId()) {
 						return true;
 					}
 				}
