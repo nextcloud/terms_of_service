@@ -245,6 +245,7 @@ OC.L10N.register(
     "Yemen" : "Yemen",
     "Zambia" : "Zambia",
     "Zimbabwe" : "Zimbabwe",
+    "Loading …" : "Loading …",
     "Save" : "Save",
     "Saved!" : "Saved!",
     "Edit" : "Edit",
