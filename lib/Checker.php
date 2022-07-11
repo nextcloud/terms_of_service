@@ -26,6 +26,7 @@ use OCA\TermsOfService\Db\Mapper\SignatoryMapper;
 use OCA\TermsOfService\Db\Mapper\TermsMapper;
 use OCP\IConfig;
 use OCP\ISession;
+use OCP\IUser;
 use OCP\IUserManager;
 use OCP\IL10N;
 
@@ -44,6 +45,8 @@ class Checker {
 	private $countryDetector;
 	/** @var IConfig */
 	private $config;
+	/** @var array */
+	private $termsCache = [];
 
 	public function __construct(
 		$userId,
@@ -92,8 +95,10 @@ class Checker {
 		}
 
 		$countryCode = $this->countryDetector->getCountry();
-		$terms = $this->termsMapper->getTermsForCountryCode($countryCode);
-		if (empty($terms)) {
+		if (!array_key_exists($countryCode, $this->termsCache)) {
+			$this->termsCache[$countryCode] = $this->termsMapper->getTermsForCountryCode($countryCode);
+		}
+		if (empty($this->termsCache[$countryCode])) {
 			// No terms that would need accepting
 			return true;
 		}
@@ -103,12 +108,15 @@ class Checker {
 		}
 
 		$user = $this->userManager->get($this->userId);
+		if (!$user instanceof IUser) {
+			return false;
+		}
 
 		$signatories = $this->signatoryMapper->getSignatoriesByUser($user);
 		if (!empty($signatories)) {
-			foreach($signatories as $signatory) {
-				foreach($terms as $term) {
-					if((int)$term->getId() === (int)$signatory->getTermsId()) {
+			foreach ($signatories as $signatory) {
+				foreach ($this->termsCache[$countryCode] as $term) {
+					if ((int)$term->getId() === (int)$signatory->getTermsId()) {
 						return true;
 					}
 				}
