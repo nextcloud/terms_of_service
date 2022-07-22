@@ -66,10 +66,10 @@
 </template>
 
 <script>
-import Term from './components/Term'
+import Term from './components/Term.vue'
 import axios from '@nextcloud/axios'
 import Multiselect from '@nextcloud/vue/dist/Components/Multiselect'
-import { showError } from '@nextcloud/dialogs'
+import { showError, showSuccess } from '@nextcloud/dialogs'
 import { generateUrl } from '@nextcloud/router'
 import '@nextcloud/dialogs/styles/toast.scss'
 
@@ -141,7 +141,6 @@ export default {
 			}
 
 			this.saveButtonDisabled = true
-			this.saveButtonText = t('terms_of_service', 'Saving …')
 
 			axios
 				.post(generateUrl('/apps/terms_of_service/terms'),
@@ -153,27 +152,36 @@ export default {
 				.then(response => {
 					this.$set(this.terms, response.data.id, response.data)
 
-					this.saveButtonText = t('terms_of_service', 'Saved!')
-					setTimeout(() => {
-						this.saveButtonText = t('terms_of_service', 'Save')
-						this.saveButtonDisabled = false
-					}, 2000)
+					showSuccess(t('terms_of_service', 'Terms saved successfully!'))
+					this.saveButtonDisabled = false
 				})
 		},
 		onResetSignatories() {
 			this.resetButtonDisabled = true
-			this.resetButtonText = t('terms_of_service', 'Resetting …')
 
 			axios
 				.delete(generateUrl('/apps/terms_of_service/sign'))
 				.then(() => {
-					this.resetButtonText = t('terms_of_service', 'Reset!')
-					setTimeout(() => {
-						this.resetButtonText = t('terms_of_service', 'Reset all signatories')
-						this.resetButtonDisabled = false
-					}, 2000)
+					showSuccess(t('terms_of_service', 'All signatories reset!'))
+					this.resetButtonDisabled = false
 				})
 		},
 	},
 }
 </script>
+
+<style lang="scss" scoped>
+#terms_of_service {
+	textarea {
+		width: 100%;
+	}
+
+	label span {
+		display: inline-block;
+		min-width: 120px;
+		padding: 8px 0;
+		vertical-align: top;
+	}
+}
+
+</style>
