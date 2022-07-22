@@ -29,9 +29,11 @@
 				:value="termsId"
 				type="checkbox"
 				name="terms_of_service_accepted"
-				class="checkbox">
+				class="checkbox"
+				@keydown.enter.prevent.stop="showTerms">
 			<label for="terms_of_service_accepted"
-				@click.prevent.stop="showTerms">
+				@click.prevent.stop="showTerms"
+				@keydown.enter.prevent.stop="showTerms">
 				{{ t('terms_of_service', 'I acknowledge that I have read and agree to the above terms of service') }} ↗
 			</label>
 		</p>

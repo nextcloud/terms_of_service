@@ -24,7 +24,9 @@
  -->
 
 <template>
-	<div id="terms_of_service_content" class="modal-content">
+	<div id="terms_of_service_content"
+		class="modal-content"
+		aria-live="polite">
 		<!-- Sticky Header -->
 		<div class="modal-content__header">
 			<slot name="header" />
@@ -34,16 +36,33 @@
 		<slot />
 
 		<!-- Sticky button -->
-		<button class="primary modal-content__button"
-			@click.prevent.stop="handleClick">
+		<Button ref="acceptButton"
+			class="modal-content__button"
+			type="primary"
+			:wide="true"
+			autofocus
+			@click.prevent.stop="handleClick"
+			@keydown.enter="handleClick">
 			{{ t('terms_of_service', 'I acknowledge that I have read and agree to the above terms of service') }}
-		</button>
+		</Button>
 	</div>
 </template>
 
 <script>
+import Button from '@nextcloud/vue/dist/Components/Button'
+
 export default {
 	name: 'ModalContent',
+
+	components: {
+		Button,
+	},
+
+	mounted() {
+		this.$nextTick(() => {
+			this.$refs.acceptButton.$el.focus()
+		})
+	},
 
 	methods: {
 		handleClick() {
@@ -84,7 +103,6 @@ export default {
 		 * Need to overwrite the rules of guest.css
 		 */
 		color: var(--color-main-text);
-		background: var(--icon-triangle-s-000) no-repeat right 4px center;
 		border: 1px solid var(--color-border-dark);
 		border-radius: var(--border-radius);
 		&:hover {
