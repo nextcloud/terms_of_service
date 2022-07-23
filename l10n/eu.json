@@ -448,13 +448,13 @@
     "Reset all signatories" : "Berrezarri sinatzaile guztiak",
     "Save" : "Gorde",
     "Ensure that all fields are filled" : "Ziurtatu eremu guztiak beteta daudela",
-    "Saving …" : "Gordetzen …",
-    "Saved!" : "Gordeta",
-    "Resetting …" : "Berrezartzen ...",
-    "Reset!" : "Berezarri!",
     "I acknowledge that I have read and agree to the above terms of service" : "Aitortzen dut goiko zerbitzu baldintzak irakurri eta onartzen ditudala",
     "Edit" : "Editatu",
     "Delete" : "Ezabatu",
-    "Deleting …" : "Ezabatzen …"
+    "Deleting …" : "Ezabatzen …",
+    "Saving …" : "Gordetzen …",
+    "Saved!" : "Gordeta",
+    "Resetting …" : "Berrezartzen ...",
+    "Reset!" : "Berezarri!"
 },"pluralForm" :"nplurals=2; plural=(n != 1);"
 }

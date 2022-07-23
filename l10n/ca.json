@@ -448,13 +448,13 @@
     "Reset all signatories" : "Restableix tots els signants",
     "Save" : "Desa",
     "Ensure that all fields are filled" : "Assegureu-vos que tots els camps estiguin emplenats.",
-    "Saving …" : "S'està desant …",
-    "Saved!" : "Desat!",
-    "Resetting …" : "S'està reinicialitzant …",
-    "Reset!" : "Restablert!",
     "I acknowledge that I have read and agree to the above terms of service" : "Reconec que he llegit i accepto aquests termes de servei",
     "Edit" : "Edita",
     "Delete" : "Suprimeix",
-    "Deleting …" : "S'està suprimint …"
+    "Deleting …" : "S'està suprimint …",
+    "Saving …" : "S'està desant …",
+    "Saved!" : "Desat!",
+    "Resetting …" : "S'està reinicialitzant …",
+    "Reset!" : "Restablert!"
 },"pluralForm" :"nplurals=2; plural=(n != 1);"
 }

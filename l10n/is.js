@@ -448,13 +448,13 @@ OC.L10N.register(
     "Reset all signatories" : "Endurstilla allar undirritanir",
     "Save" : "Vista",
     "Ensure that all fields are filled" : "Vertu viss um að fylla út í alla reitina",
-    "Saving …" : "Vista …",
-    "Saved!" : "Vistað!",
-    "Resetting …" : "Endurstilli …",
-    "Reset!" : "Endurstilla!",
     "I acknowledge that I have read and agree to the above terms of service" : "Staðfesti ég að ég hef lesið og samþykki ofangreinda jónustuskilmála",
     "Edit" : "Breyta",
     "Delete" : "Eyða",
-    "Deleting …" : "Eyði …"
+    "Deleting …" : "Eyði …",
+    "Saving …" : "Vista …",
+    "Saved!" : "Vistað!",
+    "Resetting …" : "Endurstilli …",
+    "Reset!" : "Endurstilla!"
 },
 "nplurals=2; plural=(n % 10 != 1 || n % 100 == 11);");

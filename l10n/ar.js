@@ -262,10 +262,10 @@ OC.L10N.register(
     "Select a language" : "اختر لغة",
     "Loading …" : "جاري التحميل …",
     "Save" : "حفظ",
-    "Saving …" : "جاري الحفظ…",
-    "Saved!" : "تم الحفظ!",
     "I acknowledge that I have read and agree to the above terms of service" : "أقر بأنني قد قرأت ووافقت على شروط الخدمة المذكورة أعلاه",
     "Edit" : "تعديل",
-    "Delete" : "حذف "
+    "Delete" : "حذف ",
+    "Saving …" : "جاري الحفظ…",
+    "Saved!" : "تم الحفظ!"
 },
 "nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;");

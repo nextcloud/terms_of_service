@@ -448,13 +448,13 @@
     "Reset all signatories" : "Възстановяване на всички подписали",
     "Save" : "Запиши",
     "Ensure that all fields are filled" : "Уверете се, че всички полета са попълнени",
-    "Saving …" : "Записване …",
-    "Saved!" : "Записано!",
-    "Resetting …" : "Възстановяване ...",
-    "Reset!" : "Възстановено!",
     "I acknowledge that I have read and agree to the above terms of service" : "Потвърждавам, че прочетох и съм съгласен с горните условия за ползване",
     "Edit" : "Променяне",
     "Delete" : "Изтрий",
-    "Deleting …" : "Изтриване …"
+    "Deleting …" : "Изтриване …",
+    "Saving …" : "Записване …",
+    "Saved!" : "Записано!",
+    "Resetting …" : "Възстановяване ...",
+    "Reset!" : "Възстановено!"
 },"pluralForm" :"nplurals=2; plural=(n != 1);"
 }

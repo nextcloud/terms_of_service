@@ -450,13 +450,13 @@ OC.L10N.register(
     "Reset all signatories" : "Redefinir todos os signatários",
     "Save" : "Salvar",
     "Ensure that all fields are filled" : "Certifique-se que todos os campos estejam preenchidos",
-    "Saving …" : "Salvando...",
-    "Saved!" : "Salvo!",
-    "Resetting …" : "Redefinindo...",
-    "Reset!" : "Redefinido!",
     "I acknowledge that I have read and agree to the above terms of service" : "Eu confirmo que li e concordo com os termos de serviço acima",
     "Edit" : "Editar",
     "Delete" : "Excluir",
-    "Deleting …" : "Excluindo..."
+    "Deleting …" : "Excluindo...",
+    "Saving …" : "Salvando...",
+    "Saved!" : "Salvo!",
+    "Resetting …" : "Redefinindo...",
+    "Reset!" : "Redefinido!"
 },
 "nplurals=3; plural=(n == 0 || n == 1) ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;");

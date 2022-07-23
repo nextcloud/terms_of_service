@@ -450,13 +450,13 @@ OC.L10N.register(
     "Reset all signatories" : "すべての署名者をリセットする",
     "Save" : "保存",
     "Ensure that all fields are filled" : "すべてのフィールドが入力されていることを確認してください",
-    "Saving …" : "保存しています",
-    "Saved!" : "保存しました！",
-    "Resetting …" : "リセットしています",
-    "Reset!" : "リセット！",
     "I acknowledge that I have read and agree to the above terms of service" : "上記のサービス利用規約を読み、同意したことを認めます",
     "Edit" : "編集",
     "Delete" : "削除",
-    "Deleting …" : "削除しています"
+    "Deleting …" : "削除しています",
+    "Saving …" : "保存しています",
+    "Saved!" : "保存しました！",
+    "Resetting …" : "リセットしています",
+    "Reset!" : "リセット！"
 },
 "nplurals=1; plural=0;");
