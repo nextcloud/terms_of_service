@@ -247,8 +247,8 @@ OC.L10N.register(
     "Zimbabwe" : "Zimbabwe",
     "Loading …" : "Loading …",
     "Save" : "Save",
-    "Saved!" : "Saved!",
     "Edit" : "Edit",
-    "Delete" : "Delete"
+    "Delete" : "Delete",
+    "Saved!" : "Saved!"
 },
 "nplurals=2; plural=(n != 1);");

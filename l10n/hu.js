@@ -450,13 +450,13 @@ OC.L10N.register(
     "Reset all signatories" : "Az összes aláírás visszavonása",
     "Save" : "Mentés",
     "Ensure that all fields are filled" : "Győződjön meg arról, hogy minden mezőt kitöltött",
-    "Saving …" : "Mentés…",
-    "Saved!" : "Mentve!",
-    "Resetting …" : "Visszaállítás…",
-    "Reset!" : "Visszaállítva!",
     "I acknowledge that I have read and agree to the above terms of service" : "Kijelentem, hogy elolvastam és egyetértek a fenti szolgáltatási feltételekkel.",
     "Edit" : "Szerkesztés",
     "Delete" : "Törlés",
-    "Deleting …" : "Törlés…"
+    "Deleting …" : "Törlés…",
+    "Saving …" : "Mentés…",
+    "Saved!" : "Mentve!",
+    "Resetting …" : "Visszaállítás…",
+    "Reset!" : "Visszaállítva!"
 },
 "nplurals=2; plural=(n != 1);");

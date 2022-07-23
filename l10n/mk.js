@@ -450,13 +450,13 @@ OC.L10N.register(
     "Reset all signatories" : "Ресетирај ги сите потписници",
     "Save" : "Зачувај",
     "Ensure that all fields are filled" : "Осигурете се дека сите полиња се пополнети",
-    "Saving …" : "Зачувува ...",
-    "Saved!" : "Зачувано!",
-    "Resetting …" : "Ресетирање ...",
-    "Reset!" : "Ресетирано!",
     "I acknowledge that I have read and agree to the above terms of service" : "Признавам дека ги прочитав и се согласувам со горенаведените услови за користење",
     "Edit" : "Уреди",
     "Delete" : "Избриши",
-    "Deleting …" : "Бришење ..."
+    "Deleting …" : "Бришење ...",
+    "Saving …" : "Зачувува ...",
+    "Saved!" : "Зачувано!",
+    "Resetting …" : "Ресетирање ...",
+    "Reset!" : "Ресетирано!"
 },
 "nplurals=2; plural=(n % 10 == 1 && n % 100 != 11) ? 0 : 1;");

@@ -265,12 +265,12 @@
     "Reset all signatories" : "Tyhjennä kaikki allekirjoittajat",
     "Save" : "Tallenna",
     "Ensure that all fields are filled" : "Varmista että kaikki kentät on täytetty",
-    "Saving …" : "Tallennetaan…",
-    "Saved!" : "Tallennettu!",
-    "Resetting …" : "Tyhjennetään …",
     "I acknowledge that I have read and agree to the above terms of service" : "Vahvistan lukeneeni ja hyväksyväni yllä olevat käyttöehdot",
     "Edit" : "Muokkaa",
     "Delete" : "Poista",
-    "Deleting …" : "Poistetaan…"
+    "Deleting …" : "Poistetaan…",
+    "Saving …" : "Tallennetaan…",
+    "Saved!" : "Tallennettu!",
+    "Resetting …" : "Tyhjennetään …"
 },"pluralForm" :"nplurals=2; plural=(n != 1);"
 }

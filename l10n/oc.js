@@ -289,9 +289,9 @@ OC.L10N.register(
     "Select a language" : "Causir una lenga",
     "Loading …" : "Cargament…",
     "Save" : "Salvar",
-    "Saving …" : "Enregistrament...",
-    "Saved!" : "Enregistrat !",
     "Edit" : "Modificar",
-    "Delete" : "Suprimir"
+    "Delete" : "Suprimir",
+    "Saving …" : "Enregistrament...",
+    "Saved!" : "Enregistrat !"
 },
 "nplurals=2; plural=(n > 1);");

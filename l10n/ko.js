@@ -449,13 +449,13 @@ OC.L10N.register(
     "Reset all signatories" : "모든 동의 초기화",
     "Save" : "저장",
     "Ensure that all fields are filled" : "모든 칸을 채웠는지 확인하십시오",
-    "Saving …" : "저장 중 …",
-    "Saved!" : "저장했습니다!",
-    "Resetting …" : "초기화 중 …",
-    "Reset!" : "초기화되었습니다!",
     "I acknowledge that I have read and agree to the above terms of service" : "이용 약관을 읽었으며 이에 동의합니다",
     "Edit" : "편집",
     "Delete" : "삭제",
-    "Deleting …" : "삭제 중 …"
+    "Deleting …" : "삭제 중 …",
+    "Saving …" : "저장 중 …",
+    "Saved!" : "저장했습니다!",
+    "Resetting …" : "초기화 중 …",
+    "Reset!" : "초기화되었습니다!"
 },
 "nplurals=1; plural=0;");

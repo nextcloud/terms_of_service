@@ -242,8 +242,8 @@
     "Terms of service" : "شرایط و قوانین",
     "Loading …" : "بارگذاری …",
     "Save" : "ذخیره",
-    "Saved!" : "ذخیره!",
     "Edit" : "ویرایش",
-    "Delete" : "حذف"
+    "Delete" : "حذف",
+    "Saved!" : "ذخیره!"
 },"pluralForm" :"nplurals=2; plural=(n > 1);"
 }

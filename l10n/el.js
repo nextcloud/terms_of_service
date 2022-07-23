@@ -450,13 +450,13 @@ OC.L10N.register(
     "Reset all signatories" : "Επαναφορά όλων των υπογραφών",
     "Save" : "Αποθήκευση",
     "Ensure that all fields are filled" : "Βεβαιωθείτε ότι έχουν συμπληρωθεί όλα τα πεδία",
-    "Saving …" : "Γίνεται αποθήκευση…",
-    "Saved!" : "Αποθηκεύτηκε!",
-    "Resetting …" : "Γίνεται επαναφορά …",
-    "Reset!" : "Επαναφορά!",
     "I acknowledge that I have read and agree to the above terms of service" : "Επιβεβαιώνω ότι έχω διαβάσει και συμφωνώ με τους παραπάνω όρους χρήσης υπηρεσίας",
     "Edit" : "Επεξεργασία",
     "Delete" : "Διαγραφή",
-    "Deleting …" : "Γίνεται διαγραφή…"
+    "Deleting …" : "Γίνεται διαγραφή…",
+    "Saving …" : "Γίνεται αποθήκευση…",
+    "Saved!" : "Αποθηκεύτηκε!",
+    "Resetting …" : "Γίνεται επαναφορά …",
+    "Reset!" : "Επαναφορά!"
 },
 "nplurals=2; plural=(n != 1);");

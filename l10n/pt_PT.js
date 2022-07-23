@@ -186,9 +186,9 @@ OC.L10N.register(
     "Zimbabwe" : "Zimbábue ",
     "Loading …" : "A carregar...",
     "Save" : "Guardar",
-    "Saving …" : "A guardar...",
-    "Saved!" : "Gravado!",
     "Edit" : "Editar",
-    "Delete" : "Apagar"
+    "Delete" : "Apagar",
+    "Saving …" : "A guardar...",
+    "Saved!" : "Gravado!"
 },
 "nplurals=3; plural=(n == 0 || n == 1) ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;");
