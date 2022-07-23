@@ -450,13 +450,13 @@ OC.L10N.register(
     "Reset all signatories" : "Réinitialiser toutes les signataires",
     "Save" : "Enregistrer",
     "Ensure that all fields are filled" : "Assurez-vous que tous les champs soient complétés",
-    "Saving …" : "Enregistrement ...",
-    "Saved!" : "Enregistré !",
-    "Resetting …" : "Réinitialisation …",
-    "Reset!" : "Réinitialisé !",
     "I acknowledge that I have read and agree to the above terms of service" : "Je reconnais avoir lu et accepté les conditions d'utilisation ci-dessus",
     "Edit" : "Modifier",
     "Delete" : "Supprimer",
-    "Deleting …" : "Suppression …"
+    "Deleting …" : "Suppression …",
+    "Saving …" : "Enregistrement ...",
+    "Saved!" : "Enregistré !",
+    "Resetting …" : "Réinitialisation …",
+    "Reset!" : "Réinitialisé !"
 },
 "nplurals=3; plural=(n == 0 || n == 1) ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;");
