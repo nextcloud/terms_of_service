@@ -449,13 +449,13 @@ OC.L10N.register(
     "Reset all signatories" : "Resetiraj sve potpisnike",
     "Save" : "Spremi",
     "Ensure that all fields are filled" : "Ispunite sva polja",
-    "Saving …" : "Spremanje...",
-    "Saved!" : "Spremljeno!",
-    "Resetting …" : "Resetiranje...",
-    "Reset!" : "Resetiraj!",
     "I acknowledge that I have read and agree to the above terms of service" : "Potvrđujem da sam pročitao i prihvaćam navedene uvjete pružanja usluge",
     "Edit" : "Uredi",
     "Delete" : "Izbriši",
-    "Deleting …" : "Brisanje..."
+    "Deleting …" : "Brisanje...",
+    "Saving …" : "Spremanje...",
+    "Saved!" : "Spremljeno!",
+    "Resetting …" : "Resetiranje...",
+    "Reset!" : "Resetiraj!"
 },
 "nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;");

@@ -450,13 +450,13 @@ OC.L10N.register(
     "Reset all signatories" : "重置所有签约",
     "Save" : "保存",
     "Ensure that all fields are filled" : "确保所有字段已填写",
-    "Saving …" : "正在保存…",
-    "Saved!" : "已保存！",
-    "Resetting …" : "正在重置...",
-    "Reset!" : "重置！",
     "I acknowledge that I have read and agree to the above terms of service" : "我确认我已阅读并同意上述服务条款",
     "Edit" : "编辑",
     "Delete" : "删除",
-    "Deleting …" : "正在删除..."
+    "Deleting …" : "正在删除...",
+    "Saving …" : "正在保存…",
+    "Saved!" : "已保存！",
+    "Resetting …" : "正在重置...",
+    "Reset!" : "重置！"
 },
 "nplurals=1; plural=0;");

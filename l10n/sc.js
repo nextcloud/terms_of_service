@@ -449,13 +449,13 @@ OC.L10N.register(
     "Reset all signatories" : "Torra a impostare totu is chi firmant",
     "Save" : "Sarva",
     "Ensure that all fields are filled" : "Controlla chi totu is campos siant cumpilados",
-    "Saving …" : "Sarvende …",
-    "Saved!" : "Sarvadu!",
-    "Resetting …" : "Torrende a impostare ...",
-    "Reset!" : "Torra a impostare!",
     "I acknowledge that I have read and agree to the above terms of service" : "Cunfirmu ca apo lèghidu e so de acòrdiu cun is cunditziones de servìtziu",
     "Edit" : "Modìfica ",
     "Delete" : "Cantzella",
-    "Deleting …" : "Cantzellende ... "
+    "Deleting …" : "Cantzellende ... ",
+    "Saving …" : "Sarvende …",
+    "Saved!" : "Sarvadu!",
+    "Resetting …" : "Torrende a impostare ...",
+    "Reset!" : "Torra a impostare!"
 },
 "nplurals=2; plural=(n != 1);");

@@ -450,13 +450,13 @@ OC.L10N.register(
     "Reset all signatories" : "Resetovat všechny signatury",
     "Save" : "Uložit",
     "Ensure that all fields are filled" : "Zajistěte, aby byly všechny kolonky vyplněné",
-    "Saving …" : "Ukládání…",
-    "Saved!" : "Uloženo!",
-    "Resetting …" : "Resetování…",
-    "Reset!" : "Resetovat!",
     "I acknowledge that I have read and agree to the above terms of service" : "Potvrzuji, že jsem si přečetl(a) a souhlasím s výše uvedenými všeobecnými podmínkami",
     "Edit" : "Upravit",
     "Delete" : "Smazat",
-    "Deleting …" : "Mazání…"
+    "Deleting …" : "Mazání…",
+    "Saving …" : "Ukládání…",
+    "Saved!" : "Uloženo!",
+    "Resetting …" : "Resetování…",
+    "Reset!" : "Resetovat!"
 },
 "nplurals=4; plural=(n == 1 && n % 1 == 0) ? 0 : (n >= 2 && n <= 4 && n % 1 == 0) ? 1: (n % 1 != 0 ) ? 2 : 3;");
