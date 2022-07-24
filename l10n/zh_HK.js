@@ -450,6 +450,8 @@ OC.L10N.register(
     "Reset all signatories" : "重設所有已同意人",
     "Save" : "儲存",
     "Ensure that all fields are filled" : "確保所有字段都已填寫",
+    "Terms saved successfully!" : "條款保存成功！",
+    "All signatories reset!" : "所有簽署人重置！",
     "I acknowledge that I have read and agree to the above terms of service" : "我承認我已閱讀並同意上述服務條款",
     "Edit" : "修改",
     "Delete" : "刪除",
