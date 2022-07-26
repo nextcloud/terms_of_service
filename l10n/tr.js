@@ -450,6 +450,8 @@ OC.L10N.register(
     "Reset all signatories" : "Tüm kabulleri sıfırla",
     "Save" : "Kaydet",
     "Ensure that all fields are filled" : "Tüm alanların doldurulduğundan emin olun",
+    "Terms saved successfully!" : "Hükümler kaydedildi!",
+    "All signatories reset!" : "Tüm imzalayanlar sıfırlandı!",
     "I acknowledge that I have read and agree to the above terms of service" : "Yukarıdaki hizmet koşulları metnini okudum ve anladım",
     "Edit" : "Düzenle",
     "Delete" : "Sil",
