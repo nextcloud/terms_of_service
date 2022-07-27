@@ -450,6 +450,8 @@ OC.L10N.register(
     "Reset all signatories" : "Redefinir todos os signatários",
     "Save" : "Salvar",
     "Ensure that all fields are filled" : "Certifique-se que todos os campos estejam preenchidos",
+    "Terms saved successfully!" : "Termos salvos com sucesso!",
+    "All signatories reset!" : "Todos os signatários reconfigurados",
     "I acknowledge that I have read and agree to the above terms of service" : "Eu confirmo que li e concordo com os termos de serviço acima",
     "Edit" : "Editar",
     "Delete" : "Excluir",
