@@ -450,6 +450,8 @@ OC.L10N.register(
     "Reset all signatories" : "Berrezarri sinatzaile guztiak",
     "Save" : "Gorde",
     "Ensure that all fields are filled" : "Ziurtatu eremu guztiak beteta daudela",
+    "Terms saved successfully!" : "Zerbitzu baldintzak ondo jaso dira!",
+    "All signatories reset!" : "Sinatzaile guztiak berrezarrita!",
     "I acknowledge that I have read and agree to the above terms of service" : "Aitortzen dut goiko zerbitzu baldintzak irakurri eta onartzen ditudala",
     "Edit" : "Editatu",
     "Delete" : "Ezabatu",

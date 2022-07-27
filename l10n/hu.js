@@ -450,6 +450,8 @@ OC.L10N.register(
     "Reset all signatories" : "Az összes aláírás visszavonása",
     "Save" : "Mentés",
     "Ensure that all fields are filled" : "Győződjön meg arról, hogy minden mezőt kitöltött",
+    "Terms saved successfully!" : "A feltételek sikeresen mentve.",
+    "All signatories reset!" : "Az összes aláírás visszavonva.",
     "I acknowledge that I have read and agree to the above terms of service" : "Kijelentem, hogy elolvastam és egyetértek a fenti szolgáltatási feltételekkel.",
     "Edit" : "Szerkesztés",
     "Delete" : "Törlés",
