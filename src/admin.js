@@ -21,7 +21,7 @@
  */
 
 import Vue from 'vue'
-import App from './App'
+import App from './App.vue'
 
 Vue.prototype.t = t
 Vue.prototype.n = n

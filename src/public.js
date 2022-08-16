@@ -24,7 +24,7 @@
  */
 
 import Vue from 'vue'
-import UserApp from './UserApp'
+import UserApp from './UserApp.vue'
 
 Vue.prototype.t = t
 Vue.prototype.n = n
