@@ -45,7 +45,7 @@
 <script>
 import axios from '@nextcloud/axios'
 import { generateUrl } from '@nextcloud/router'
-import Modal from '@nextcloud/vue/dist/Components/Modal'
+import Modal from '@nextcloud/vue/dist/Components/Modal.js'
 import ModalContent from './components/ModalContent.vue'
 
 export default {
