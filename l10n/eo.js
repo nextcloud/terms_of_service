@@ -1,6 +1,7 @@
 OC.L10N.register(
     "terms_of_service",
     {
+    "Terms of service are not signed" : "Kondiĉoj de uzado ne estas subskribitaj",
     "Global" : "Monda",
     "Afghanistan" : "Afganujo",
     "Åland Islands" : "Alando",
@@ -343,6 +344,7 @@ OC.L10N.register(
     "Cornish" : "Kornvala",
     "Kirghiz; Kyrgyz" : "Kirgiza",
     "Latin" : "Latino",
+    "Luxembourgish; Lëtzeburgesch" : "Luksemburga; Lëtzeburgesch",
     "Ganda" : "Ganda",
     "Limburgan; Limburger; Limburgish" : "Limburga",
     "Lingala" : "Lingala",
@@ -448,6 +450,8 @@ OC.L10N.register(
     "Reset all signatories" : "Restarigi ĉiujn subskribintojn",
     "Save" : "Konservi",
     "Ensure that all fields are filled" : "Certigu, ke ĉiuj kampoj estas plenigitaj",
+    "Terms saved successfully!" : "Kondiĉoj konservitaj sukcese!",
+    "All signatories reset!" : "Restarigo de ĉiuj subskribintoj!",
     "I acknowledge that I have read and agree to the above terms of service" : "Mi konfirmas, ke mi legis kaj akceptis la suprajn kondiĉojn de uzado",
     "Edit" : "Modifi",
     "Delete" : "Forigi",
