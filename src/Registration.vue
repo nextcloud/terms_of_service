@@ -39,7 +39,7 @@
 		</p>
 
 		<div id="terms_of_service_confirm">
-			<Modal v-if="showModal"
+			<NcModal v-if="showModal"
 				:can-close="hasSigned"
 				@close="handleCloseModal">
 				<ModalContent @click="acceptTerms">
@@ -55,7 +55,7 @@
 					<!-- eslint-disable-next-line vue/no-v-html -->
 					<div class="text-content" v-html="termsBody" />
 				</ModalContent>
-			</Modal>
+			</NcModal>
 		</div>
 	</div>
 </template>
@@ -64,14 +64,14 @@
 import axios from '@nextcloud/axios'
 import { generateUrl } from '@nextcloud/router'
 import '@nextcloud/dialogs/styles/toast.scss'
-import Modal from '@nextcloud/vue/dist/Components/Modal.js'
+import NcModal from '@nextcloud/vue/dist/Components/NcModal.js'
 import ModalContent from './components/ModalContent.vue'
 
 export default {
 	name: 'Registration',
 
 	components: {
-		Modal,
+		NcModal,
 		ModalContent,
 	},
 
