@@ -20,7 +20,6 @@
  */
 
 script('terms_of_service', 'terms_of_service-admin');
-style('terms_of_service', 'admin');
 ?>
 
 <div id="terms_of_service" class="section"></div>

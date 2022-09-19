@@ -86,7 +86,6 @@ class RegistrationIntegration implements IEventListener {
 			return;
 		}
 
-		Util::addStyle('terms_of_service', 'overlay');
 		Util::addScript('terms_of_service', 'terms_of_service-registration', 'registration');
 	}
 

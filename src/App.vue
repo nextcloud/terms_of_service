@@ -22,53 +22,60 @@
  -->
 
 <template>
-	<div id="terms_of_service" class="section">
-		<h2>{{ t('terms_of_service', 'Terms of service') }}</h2>
-
-		<p class="settings-hint">
-			{{ t('terms_of_service', 'Require users to accept the terms of service before accessing the service.') }}
-		</p>
-
+	<NcSettingsSection :title="t('terms_of_service', 'Terms of service')"
+		:description="t('terms_of_service', 'Require users to accept the terms of service before accessing the service.')">
 		<p class="settings-hint">
 			{{ t('terms_of_service', 'For formatting purposes Markdown is supported.') }}
 		</p>
 
 		<span>
-			<Multiselect v-model="country"
+			<NcMultiselect v-model="country"
 				:options="countryOptions"
 				:placeholder="t('terms_of_service', 'Select a region')"
 				label="label"
 				track-by="value" />
-			<Multiselect v-model="language"
+			<NcMultiselect v-model="language"
 				:options="languageOptions"
 				:placeholder="t('terms_of_service', 'Select a language')"
 				label="label"
 				track-by="value" />
 		</span>
 
-		<textarea id="terms_of_service-countryspecific-textarea" v-model="body" :placeholder="t('terms_of_service', 'By using this service …')" />
-		<button :disabled="saveButtonDisabled" @click="onSubmit">
+		<textarea v-model="body"
+			:placeholder="t('terms_of_service', 'By using this service …')"
+			class="terms__textarea" />
+
+		<NcButton :disabled="saveButtonDisabled"
+			@click="onSubmit">
 			{{ saveButtonText }}
-		</button>
+		</NcButton>
 
-		<h3 v-if="hasTerms">
-			{{ t('terms_of_service', 'Existing terms of service') }}
-		</h3>
+		<template v-if="hasTerms">
+			<h2>
+				{{ t('terms_of_service', 'Existing terms of service') }}
+			</h2>
 
-		<button :disabled="resetButtonDisabled" @click="onResetSignatories">
-			{{ resetButtonText }}
-		</button>
+			<NcButton :disabled="resetButtonDisabled"
+				type="error"
+				@click="onResetSignatories">
+				{{ resetButtonText }}
+			</NcButton>
 
-		<ul v-if="hasTerms" id="terms_of_service-countryspecific-list">
-			<Term v-for="term in terms" :key="term.id" v-bind="term" />
-		</ul>
-	</div>
+			<ul v-if="hasTerms" id="terms_of_service-countryspecific-list">
+				<Term v-for="term in terms"
+					:key="term.id"
+					v-bind="term" />
+			</ul>
+		</template>
+	</NcSettingsSection>
 </template>
 
 <script>
 import Term from './components/Term.vue'
 import axios from '@nextcloud/axios'
-import Multiselect from '@nextcloud/vue/dist/Components/Multiselect.js'
+import NcButton from '@nextcloud/vue/dist/Components/NcButton.js'
+import NcMultiselect from '@nextcloud/vue/dist/Components/NcMultiselect.js'
+import NcSettingsSection from '@nextcloud/vue/dist/Components/NcSettingsSection.js'
 import { showError, showSuccess } from '@nextcloud/dialogs'
 import { generateUrl } from '@nextcloud/router'
 import '@nextcloud/dialogs/styles/toast.scss'
@@ -78,7 +85,9 @@ export default {
 
 	components: {
 		Term,
-		Multiselect,
+		NcButton,
+		NcMultiselect,
+		NcSettingsSection,
 	},
 
 	data() {
@@ -171,17 +180,16 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-#terms_of_service {
-	textarea {
-		width: 100%;
-	}
+.terms__textarea {
+	width: 100%;
+	display: block;
+}
 
-	label span {
-		display: inline-block;
-		min-width: 120px;
-		padding: 8px 0;
-		vertical-align: top;
-	}
+label span {
+	display: inline-block;
+	min-width: 120px;
+	padding: 8px 0;
+	vertical-align: top;
 }
 
 </style>

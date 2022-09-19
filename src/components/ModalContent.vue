@@ -36,7 +36,7 @@
 		<slot />
 
 		<!-- Sticky button -->
-		<ButtonVue ref="acceptButton"
+		<NcButton ref="acceptButton"
 			class="modal-content__button"
 			type="primary"
 			:wide="true"
@@ -44,18 +44,18 @@
 			@click.prevent.stop="handleClick"
 			@keydown.enter="handleClick">
 			{{ t('terms_of_service', 'I acknowledge that I have read and agree to the above terms of service') }}
-		</ButtonVue>
+		</NcButton>
 	</div>
 </template>
 
 <script>
-import ButtonVue from '@nextcloud/vue/dist/Components/Button.js'
+import NcButton from '@nextcloud/vue/dist/Components/NcButton.js'
 
 export default {
 	name: 'ModalContent',
 
 	components: {
-		ButtonVue,
+		NcButton,
 	},
 
 	mounted() {

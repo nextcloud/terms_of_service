@@ -95,9 +95,6 @@ class Application extends App implements IBootstrap {
 
 	public function registerFrontend(IRequest $request, IConfig $config, IUserSession $userSession): void {
 		if (!\OC::$CLI) {
-			// Only display the app on index.php except for public shares
-			Util::addStyle('terms_of_service', 'overlay');
-
 			if ($userSession->getUser() instanceof IUser
 				&& strpos($request->getPathInfo(), '/s/') !== 0
 				&& strpos($request->getPathInfo(), '/login/') !== 0
