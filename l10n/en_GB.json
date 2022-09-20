@@ -245,8 +245,8 @@
     "Zimbabwe" : "Zimbabwe",
     "Loading …" : "Loading …",
     "Save" : "Save",
+    "Saved!" : "Saved!",
     "Edit" : "Edit",
-    "Delete" : "Delete",
-    "Saved!" : "Saved!"
+    "Delete" : "Delete"
 },"pluralForm" :"nplurals=2; plural=(n != 1);"
 }

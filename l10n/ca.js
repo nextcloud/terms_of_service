@@ -451,12 +451,12 @@ OC.L10N.register(
     "Save" : "Desa",
     "Ensure that all fields are filled" : "Assegureu-vos que tots els camps estiguin emplenats.",
     "I acknowledge that I have read and agree to the above terms of service" : "Reconec que he llegit i accepto aquests termes de servei",
-    "Edit" : "Edita",
-    "Delete" : "Suprimeix",
     "Deleting …" : "S'està suprimint …",
     "Saving …" : "S'està desant …",
     "Saved!" : "Desat!",
     "Resetting …" : "S'està reinicialitzant …",
-    "Reset!" : "Restablert!"
+    "Reset!" : "Restablert!",
+    "Edit" : "Edita",
+    "Delete" : "Suprimeix"
 },
 "nplurals=2; plural=(n != 1);");

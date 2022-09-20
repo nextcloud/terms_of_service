@@ -117,12 +117,12 @@ OC.L10N.register(
     "Select a language" : "Vælg et sprog",
     "Loading …" : "Indlæser…",
     "Save" : "Gem",
-    "Edit" : "Rediger",
-    "Delete" : "Slet",
     "Deleting …" : "Sletter…",
     "Saving …" : "Gemmer…",
     "Saved!" : "Gemt!",
     "Resetting …" : "Nulstiller…",
-    "Reset!" : "Nulstillet!"
+    "Reset!" : "Nulstillet!",
+    "Edit" : "Rediger",
+    "Delete" : "Slet"
 },
 "nplurals=2; plural=(n != 1);");

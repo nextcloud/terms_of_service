@@ -451,12 +451,12 @@ OC.L10N.register(
     "Save" : "Зачувај",
     "Ensure that all fields are filled" : "Осигурете се дека сите полиња се пополнети",
     "I acknowledge that I have read and agree to the above terms of service" : "Признавам дека ги прочитав и се согласувам со горенаведените услови за користење",
-    "Edit" : "Уреди",
-    "Delete" : "Избриши",
     "Deleting …" : "Бришење ...",
     "Saving …" : "Зачувува ...",
     "Saved!" : "Зачувано!",
     "Resetting …" : "Ресетирање ...",
-    "Reset!" : "Ресетирано!"
+    "Reset!" : "Ресетирано!",
+    "Edit" : "Уреди",
+    "Delete" : "Избриши"
 },
 "nplurals=2; plural=(n % 10 == 1 && n % 100 != 11) ? 0 : 1;");

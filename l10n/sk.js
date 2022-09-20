@@ -451,12 +451,12 @@ OC.L10N.register(
     "Save" : "Uložiť",
     "Ensure that all fields are filled" : "Uistite sa, že sú vyplnené všetky polia",
     "I acknowledge that I have read and agree to the above terms of service" : "Beriem na vedomie, že som si prečítal a súhlasím s vyššie uvedenými zmluvnými podmienkami",
-    "Edit" : "Upraviť",
-    "Delete" : "Zmazať",
     "Deleting …" : "Odstraňuje sa...",
     "Saving …" : "Ukladá sa...",
     "Saved!" : "Uložené!",
     "Resetting …" : "Obnovuje sa...",
-    "Reset!" : "Resetovať"
+    "Reset!" : "Resetovať",
+    "Edit" : "Upraviť",
+    "Delete" : "Zmazať"
 },
 "nplurals=4; plural=(n % 1 == 0 && n == 1 ? 0 : n % 1 == 0 && n >= 2 && n <= 4 ? 1 : n % 1 != 0 ? 2: 3);");
