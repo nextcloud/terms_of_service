@@ -453,12 +453,12 @@ OC.L10N.register(
     "Terms saved successfully!" : "A feltételek sikeresen mentve.",
     "All signatories reset!" : "Az összes aláírás visszavonva.",
     "I acknowledge that I have read and agree to the above terms of service" : "Kijelentem, hogy elolvastam és egyetértek a fenti szolgáltatási feltételekkel.",
-    "Edit" : "Szerkesztés",
-    "Delete" : "Törlés",
     "Deleting …" : "Törlés…",
     "Saving …" : "Mentés…",
     "Saved!" : "Mentve!",
     "Resetting …" : "Visszaállítás…",
-    "Reset!" : "Visszaállítva!"
+    "Reset!" : "Visszaállítva!",
+    "Edit" : "Szerkesztés",
+    "Delete" : "Törlés"
 },
 "nplurals=2; plural=(n != 1);");

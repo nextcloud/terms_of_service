@@ -453,12 +453,12 @@ OC.L10N.register(
     "Terms saved successfully!" : "Kondiĉoj konservitaj sukcese!",
     "All signatories reset!" : "Restarigo de ĉiuj subskribintoj!",
     "I acknowledge that I have read and agree to the above terms of service" : "Mi konfirmas, ke mi legis kaj akceptis la suprajn kondiĉojn de uzado",
-    "Edit" : "Modifi",
-    "Delete" : "Forigi",
     "Deleting …" : "Forigado...",
     "Saving …" : "Konservado...",
     "Saved!" : "Konservita!",
     "Resetting …" : "Restarigado...",
-    "Reset!" : "Restarigita!"
+    "Reset!" : "Restarigita!",
+    "Edit" : "Modifi",
+    "Delete" : "Forigi"
 },
 "nplurals=2; plural=(n != 1);");

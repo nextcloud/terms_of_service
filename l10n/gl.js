@@ -450,12 +450,12 @@ OC.L10N.register(
     "Save" : "Gardar",
     "Ensure that all fields are filled" : "Asegúrese de que se cubren todos os campos",
     "I acknowledge that I have read and agree to the above terms of service" : "Recoñezo que lin e acepto as condicións do servizo anteriores",
-    "Edit" : "Editar",
-    "Delete" : "Eliminar",
     "Deleting …" : "Eliminando…",
     "Saving …" : "Gardando…",
     "Saved!" : "Gardado!",
     "Resetting …" : "Restabelecer",
-    "Reset!" : "Restabelecer"
+    "Reset!" : "Restabelecer",
+    "Edit" : "Editar",
+    "Delete" : "Eliminar"
 },
 "nplurals=2; plural=(n != 1);");
