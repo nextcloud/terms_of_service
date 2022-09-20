@@ -453,12 +453,12 @@ OC.L10N.register(
     "Terms saved successfully!" : "Условията са запазени успешно!",
     "All signatories reset!" : "Възстановяване/нулиране/ на всички подписали!",
     "I acknowledge that I have read and agree to the above terms of service" : "Потвърждавам, че прочетох и съм съгласен с горните условия за ползване",
-    "Edit" : "Променяне",
-    "Delete" : "Изтрий",
     "Deleting …" : "Изтриване …",
     "Saving …" : "Записване …",
     "Saved!" : "Записано!",
     "Resetting …" : "Възстановяване ...",
-    "Reset!" : "Възстановено!"
+    "Reset!" : "Възстановено!",
+    "Edit" : "Променяне",
+    "Delete" : "Изтрий"
 },
 "nplurals=2; plural=(n != 1);");

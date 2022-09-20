@@ -453,12 +453,12 @@ OC.L10N.register(
     "Terms saved successfully!" : "Warunki zostały pomyślnie zapisane!",
     "All signatories reset!" : "Reset wszystkich sygnatariuszy!",
     "I acknowledge that I have read and agree to the above terms of service" : "Potwierdzam, że przeczytałem i akceptuję powyższe warunki usługi",
-    "Edit" : "Edytuj",
-    "Delete" : "Usuń",
     "Deleting …" : "Usuwanie…",
     "Saving …" : "Zapisywanie…",
     "Saved!" : "Zapisano!",
     "Resetting …" : "Resetowanie…",
-    "Reset!" : "Zresetowano!"
+    "Reset!" : "Zresetowano!",
+    "Edit" : "Edytuj",
+    "Delete" : "Usuń"
 },
 "nplurals=4; plural=(n==1 ? 0 : (n%10>=2 && n%10<=4) && (n%100<12 || n%100>14) ? 1 : n!=1 && (n%10>=0 && n%10<=1) || (n%10>=5 && n%10<=9) || (n%100>=12 && n%100<=14) ? 2 : 3);");

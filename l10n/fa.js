@@ -244,8 +244,8 @@ OC.L10N.register(
     "Terms of service" : "شرایط و قوانین",
     "Loading …" : "بارگذاری …",
     "Save" : "ذخیره",
+    "Saved!" : "ذخیره!",
     "Edit" : "ویرایش",
-    "Delete" : "حذف",
-    "Saved!" : "ذخیره!"
+    "Delete" : "حذف"
 },
 "nplurals=2; plural=(n > 1);");

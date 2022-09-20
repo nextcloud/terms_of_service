@@ -451,12 +451,12 @@ OC.L10N.register(
     "Save" : "Αποθήκευση",
     "Ensure that all fields are filled" : "Βεβαιωθείτε ότι έχουν συμπληρωθεί όλα τα πεδία",
     "I acknowledge that I have read and agree to the above terms of service" : "Επιβεβαιώνω ότι έχω διαβάσει και συμφωνώ με τους παραπάνω όρους χρήσης υπηρεσίας",
-    "Edit" : "Επεξεργασία",
-    "Delete" : "Διαγραφή",
     "Deleting …" : "Γίνεται διαγραφή…",
     "Saving …" : "Γίνεται αποθήκευση…",
     "Saved!" : "Αποθηκεύτηκε!",
     "Resetting …" : "Γίνεται επαναφορά …",
-    "Reset!" : "Επαναφορά!"
+    "Reset!" : "Επαναφορά!",
+    "Edit" : "Επεξεργασία",
+    "Delete" : "Διαγραφή"
 },
 "nplurals=2; plural=(n != 1);");

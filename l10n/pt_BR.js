@@ -453,12 +453,12 @@ OC.L10N.register(
     "Terms saved successfully!" : "Termos salvos com sucesso!",
     "All signatories reset!" : "Todos os signatários reconfigurados",
     "I acknowledge that I have read and agree to the above terms of service" : "Eu confirmo que li e concordo com os termos de serviço acima",
-    "Edit" : "Editar",
-    "Delete" : "Excluir",
     "Deleting …" : "Excluindo...",
     "Saving …" : "Salvando...",
     "Saved!" : "Salvo!",
     "Resetting …" : "Redefinindo...",
-    "Reset!" : "Redefinido!"
+    "Reset!" : "Redefinido!",
+    "Edit" : "Editar",
+    "Delete" : "Excluir"
 },
 "nplurals=3; plural=(n == 0 || n == 1) ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;");
