@@ -453,12 +453,12 @@ OC.L10N.register(
     "Terms saved successfully!" : "條款儲存成功！",
     "All signatories reset!" : "所有簽署人重設！",
     "I acknowledge that I have read and agree to the above terms of service" : "我確定我已經閱讀並同意以上的服務條款",
-    "Edit" : "修改",
-    "Delete" : "刪除",
     "Deleting …" : "刪除中 ...",
     "Saving …" : "儲存中 ...",
     "Saved!" : "已儲存!",
     "Resetting …" : "重設中 ...",
-    "Reset!" : "重設完成"
+    "Reset!" : "重設完成",
+    "Edit" : "修改",
+    "Delete" : "刪除"
 },
 "nplurals=1; plural=0;");

@@ -450,12 +450,12 @@ OC.L10N.register(
     "Save" : "Spremi",
     "Ensure that all fields are filled" : "Ispunite sva polja",
     "I acknowledge that I have read and agree to the above terms of service" : "Potvrđujem da sam pročitao i prihvaćam navedene uvjete pružanja usluge",
-    "Edit" : "Uredi",
-    "Delete" : "Izbriši",
     "Deleting …" : "Brisanje...",
     "Saving …" : "Spremanje...",
     "Saved!" : "Spremljeno!",
     "Resetting …" : "Resetiranje...",
-    "Reset!" : "Resetiraj!"
+    "Reset!" : "Resetiraj!",
+    "Edit" : "Uredi",
+    "Delete" : "Izbriši"
 },
 "nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;");

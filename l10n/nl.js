@@ -451,12 +451,12 @@ OC.L10N.register(
     "Save" : "Opslaan",
     "Ensure that all fields are filled" : "Zorg ervoor dat alle velden zijn ingevuld",
     "I acknowledge that I have read and agree to the above terms of service" : "Ik bevestig dat ik de bovenstaande gebruiksvoorwaarden heb gelezen en ermee instem",
-    "Edit" : "Bewerken",
-    "Delete" : "Verwijderen",
     "Deleting …" : "Verwijderen ...",
     "Saving …" : "Opslaan ...",
     "Saved!" : "Opgeslagen!",
     "Resetting …" : "Resetten …",
-    "Reset!" : "Resetten!"
+    "Reset!" : "Resetten!",
+    "Edit" : "Bewerken",
+    "Delete" : "Verwijderen"
 },
 "nplurals=2; plural=(n != 1);");

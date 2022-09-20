@@ -451,12 +451,12 @@
     "Terms saved successfully!" : "利用規約は正常に保存されました！",
     "All signatories reset!" : "全ての署名がリセットされました！",
     "I acknowledge that I have read and agree to the above terms of service" : "上記のサービス利用規約を読み、同意したことを認めます",
-    "Edit" : "編集",
-    "Delete" : "削除",
     "Deleting …" : "削除しています",
     "Saving …" : "保存しています",
     "Saved!" : "保存しました！",
     "Resetting …" : "リセットしています",
-    "Reset!" : "リセット！"
+    "Reset!" : "リセット！",
+    "Edit" : "編集",
+    "Delete" : "削除"
 },"pluralForm" :"nplurals=1; plural=0;"
 }

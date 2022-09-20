@@ -449,12 +449,12 @@ OC.L10N.register(
     "Save" : "Vista",
     "Ensure that all fields are filled" : "Vertu viss um að fylla út í alla reitina",
     "I acknowledge that I have read and agree to the above terms of service" : "Staðfesti ég að ég hef lesið og samþykki ofangreinda jónustuskilmála",
-    "Edit" : "Breyta",
-    "Delete" : "Eyða",
     "Deleting …" : "Eyði …",
     "Saving …" : "Vista …",
     "Saved!" : "Vistað!",
     "Resetting …" : "Endurstilli …",
-    "Reset!" : "Endurstilla!"
+    "Reset!" : "Endurstilla!",
+    "Edit" : "Breyta",
+    "Delete" : "Eyða"
 },
 "nplurals=2; plural=(n % 10 != 1 || n % 100 == 11);");

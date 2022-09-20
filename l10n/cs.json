@@ -451,12 +451,12 @@
     "Terms saved successfully!" : "Podmínky úspěšně uloženy!",
     "All signatories reset!" : "Všechna přijetí vrácena do výchozího stavu!",
     "I acknowledge that I have read and agree to the above terms of service" : "Potvrzuji, že jsem si přečetl(a) a souhlasím s výše uvedenými všeobecnými podmínkami",
-    "Edit" : "Upravit",
-    "Delete" : "Smazat",
     "Deleting …" : "Mazání…",
     "Saving …" : "Ukládání…",
     "Saved!" : "Uloženo!",
     "Resetting …" : "Resetování…",
-    "Reset!" : "Resetovat!"
+    "Reset!" : "Resetovat!",
+    "Edit" : "Upravit",
+    "Delete" : "Smazat"
 },"pluralForm" :"nplurals=4; plural=(n == 1 && n % 1 == 0) ? 0 : (n >= 2 && n <= 4 && n % 1 == 0) ? 1: (n % 1 != 0 ) ? 2 : 3;"
 }

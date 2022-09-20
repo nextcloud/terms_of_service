@@ -453,12 +453,12 @@ OC.L10N.register(
     "Terms saved successfully!" : "Zerbitzu baldintzak ondo jaso dira!",
     "All signatories reset!" : "Sinatzaile guztiak berrezarrita!",
     "I acknowledge that I have read and agree to the above terms of service" : "Aitortzen dut goiko zerbitzu baldintzak irakurri eta onartzen ditudala",
-    "Edit" : "Editatu",
-    "Delete" : "Ezabatu",
     "Deleting …" : "Ezabatzen …",
     "Saving …" : "Gordetzen …",
     "Saved!" : "Gordeta",
     "Resetting …" : "Berrezartzen ...",
-    "Reset!" : "Berezarri!"
+    "Reset!" : "Berezarri!",
+    "Edit" : "Editatu",
+    "Delete" : "Ezabatu"
 },
 "nplurals=2; plural=(n != 1);");

@@ -384,12 +384,12 @@ OC.L10N.register(
     "Reset all signatories" : "איפוס כל החתומים",
     "Save" : "שמור",
     "Ensure that all fields are filled" : "נא לוודא שכל השדות מולאו",
-    "Edit" : "עריכה",
-    "Delete" : "מחיקה",
     "Deleting …" : "מתבצעת מחיקה…",
     "Saving …" : "מתבצעת שמירה…",
     "Saved!" : "נשמר!",
     "Resetting …" : "מתבצע איפוס…",
-    "Reset!" : "איפוס!"
+    "Reset!" : "איפוס!",
+    "Edit" : "עריכה",
+    "Delete" : "מחיקה"
 },
 "nplurals=4; plural=(n == 1 && n % 1 == 0) ? 0 : (n == 2 && n % 1 == 0) ? 1: (n % 10 == 0 && n % 1 == 0 && n > 10) ? 2 : 3;");

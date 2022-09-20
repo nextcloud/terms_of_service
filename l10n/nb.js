@@ -451,12 +451,12 @@ OC.L10N.register(
     "Save" : "Lagre",
     "Ensure that all fields are filled" : "Sørg for at alle feltene er fylt ut",
     "I acknowledge that I have read and agree to the above terms of service" : "Jeg bekrefter at jeg har lest og er enig i betingelsene for tjenesten",
-    "Edit" : "Editer",
-    "Delete" : "Slett",
     "Deleting …" : "Sletter...",
     "Saving …" : "Lagrer...",
     "Saved!" : "Lagret!",
     "Resetting …" : "Tilbakestiller...",
-    "Reset!" : "Tilbakestilt!"
+    "Reset!" : "Tilbakestilt!",
+    "Edit" : "Editer",
+    "Delete" : "Slett"
 },
 "nplurals=2; plural=(n != 1);");
