@@ -65,6 +65,8 @@
 * @license MIT, https://github.com/focus-trap/tabbable/blob/master/LICENSE
 */
 
+/*! For license information please see NcCheckboxRadioSwitch.js.LICENSE.txt */
+
 /*! For license information please see NcMultiselect.js.LICENSE.txt */
 
 /*! ieee754. BSD-3-Clause License. Feross Aboukhadijeh <https://feross.org/opensource> */

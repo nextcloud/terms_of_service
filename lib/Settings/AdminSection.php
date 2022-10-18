@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 /**
  * @copyright Copyright (c) 2016 Bjoern Schiessle <bjoern@schiessle.org>
  *
@@ -19,20 +22,15 @@
  *
  */
 
-
 namespace OCA\TermsOfService\Settings;
-
 
 use OCP\IL10N;
 use OCP\IURLGenerator;
 use OCP\Settings\IIconSection;
 
 class AdminSection implements IIconSection {
-
-	/** @var IL10N */
-	private $l;
-	/** @var IURLGenerator */
-	private $url;
+	private IL10N $l;
+	private IURLGenerator $url;
 
 	public function __construct(IL10N $l, IURLGenerator $url) {
 		$this->l = $l;

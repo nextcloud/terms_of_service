@@ -70,11 +70,11 @@ export default {
 
 	computed: {
 		country() {
-			return this.$parent.$parent.countries[this.countryCode]
+			return this.$parent.$parent.$parent.countries[this.countryCode]
 		},
 
 		language() {
-			return this.$parent.$parent.languages[this.languageCode]
+			return this.$parent.$parent.$parent.languages[this.languageCode]
 		},
 
 		editButtonLabel() {
@@ -92,15 +92,15 @@ export default {
 
 	methods: {
 		onEdit() {
-			this.$parent.$parent.country = {
+			this.$parent.$parent.$parent.country = {
 				value: this.countryCode,
-				label: this.$parent.$parent.countries[this.countryCode] + ' (' + this.countryCode + ')',
+				label: this.$parent.$parent.$parent.countries[this.countryCode] + ' (' + this.countryCode + ')',
 			}
-			this.$parent.$parent.language = {
+			this.$parent.$parent.$parent.language = {
 				value: this.languageCode,
-				label: this.$parent.$parent.languages[this.languageCode] + ' (' + this.languageCode + ')',
+				label: this.$parent.$parent.$parent.languages[this.languageCode] + ' (' + this.languageCode + ')',
 			}
-			this.$parent.$parent.body = this.body
+			this.$parent.$parent.$parent.body = this.body
 		},
 
 		onDelete() {
@@ -108,7 +108,7 @@ export default {
 			axios
 				.delete(generateUrl('/apps/terms_of_service/terms/' + this.id))
 				.then(() => {
-					this.$delete(this.$parent.$parent.terms, this.id)
+					this.$delete(this.$parent.$parent.$parent.terms, this.id)
 				})
 		},
 	},
