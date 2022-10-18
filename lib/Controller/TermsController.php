@@ -105,6 +105,8 @@ class TermsController extends Controller {
 			'terms' => $this->termsMapper->getTerms(),
 			'countries' => $this->countryMapper->getCountries(),
 			'languages' => $this->languageMapper->getLanguages(),
+			'tos_on_public_shares' => $this->config->getAppValue(Application::APPNAME, 'tos_on_public_shares', '0'),
+			'tos_for_users' => $this->config->getAppValue(Application::APPNAME, 'tos_for_users', '1'),
 		];
 		return new JSONResponse($response);
 	}
