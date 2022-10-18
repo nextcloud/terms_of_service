@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 /**
  * @copyright Copyright (c) 2017 Lukas Reschke <lukas@statuscode.ch>
  *
@@ -21,35 +24,15 @@
 
 namespace OCA\TermsOfService\Settings;
 
-use OCA\TermsOfService\Db\Mapper\CountryMapper;
-use OCA\TermsOfService\Db\Mapper\LanguageMapper;
 use OCP\AppFramework\Http\TemplateResponse;
 use OCP\Settings\ISettings;
 
 class Admin implements ISettings {
-	/** @var CountryMapper */
-	private $countryMapper;
-	/** @var LanguageMapper */
-	private $languageMapper;
-
-	public function __construct(CountryMapper $countryMapper,
-								LanguageMapper $languageMapper) {
-		$this->countryMapper = $countryMapper;
-		$this->languageMapper = $languageMapper;
-	}
-
 	/**
 	 * {@inheritdoc}
 	 */
 	public function getForm(): TemplateResponse {
-		return new TemplateResponse(
-			'terms_of_service',
-			'settings',
-			[
-				'countries' => $this->countryMapper->getCountries(),
-				'languages' => $this->languageMapper->getLanguages(),
-			],
-			''
+		return new TemplateResponse('terms_of_service', 'settings', [], TemplateResponse::RENDER_AS_BLANK
 		);
 	}
 
