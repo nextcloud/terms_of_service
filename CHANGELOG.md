@@ -1,6 +1,15 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## 2.0.0 – 2022-04-12
+### Added
+- Option to change the configuration settings in the administration interface
+- Migrated the UI to Vue
+- Added compatibility with Nextcloud 25
+
+### Removed
+- Removed compatibility with Nextcloud 24
+
 ## 1.10.2 – 2022-04-12
 ### Changed
 - Compatibility with Nextcloud 24
