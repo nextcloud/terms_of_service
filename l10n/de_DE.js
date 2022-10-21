@@ -441,6 +441,8 @@ OC.L10N.register(
     "Requires users to accept the terms of service before accessing data." : "Vor dem Zugriff auf Daten müssen die Benutzer die Nutzungsbedingungen akzeptieren.",
     "Requires users to accept the terms of service before accessing data.\nThis product includes GeoLite2 data created by MaxMind, available from [maxmind.com](http://www.maxmind.com)" : "Vor dem Zugriff auf Daten müssen die Benutzer die Nutzungsbedingungen akzeptieren.\nDieses Produkt beinhaltet Daten von GeoLite2 erstellt von MaxMind, verfügbar unter [maxmind.com](http://www.maxmind.com) ",
     "Require users to accept the terms of service before accessing the service." : "Benutzer müssen die Nutzungsbedingungen akzeptieren, bevor sie auf den Dienst zugreifen.",
+    "Show for logged-in users" : "Für eingeloggte Benutzer anzeigen",
+    "Show on public shares" : "Auf öffentlichen Freigaben anzeigen",
     "Select a region" : "Eine Region auswählen",
     "Select a language" : "Eine Sprache auswählen",
     "By using this service …" : "Durch die Nutzung dieses Dienstes …",
