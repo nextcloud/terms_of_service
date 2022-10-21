@@ -25,6 +25,7 @@ use OCA\TermsOfService\AppInfo\Application;
 use OCA\TermsOfService\Db\Mapper\SignatoryMapper;
 use OCA\TermsOfService\Db\Mapper\TermsMapper;
 use OCP\IConfig;
+use OCP\IRequest;
 use OCP\ISession;
 use OCP\IUserManager;
 use OCP\IL10N;
@@ -32,6 +33,8 @@ use OCP\IL10N;
 class Checker {
 	/** @var string */
 	private $userId;
+	/** @var IRequest */
+	private $request;
 	/** @var IUserManager */
 	private $userManager;
 	/** @var ISession */
@@ -46,7 +49,8 @@ class Checker {
 	private $config;
 
 	public function __construct(
-		$userId,
+		?string $userId,
+		IRequest $request,
 		IUserManager $userManager,
 		ISession $session,
 		SignatoryMapper $signatoryMapper,
@@ -56,6 +60,7 @@ class Checker {
 		IL10N $l10n
 	) {
 		$this->userId = $userId;
+		$this->request = $request;
 		$this->userManager = $userManager;
 		$this->session = $session;
 		$this->signatoryMapper = $signatoryMapper;
@@ -87,6 +92,11 @@ class Checker {
 			}
 		}
 
+		if ($this->isValidWOPIRequest()) {
+			// Richdocuments and Collabora doing WOPI requests for the user
+			return true;
+		}
+
 		if ($this->session->get('term_uuid') === $uuid) {
 			return true;
 		}
@@ -116,5 +126,89 @@ class Checker {
 		}
 
 		return false;
+	}
+
+	protected function isValidWOPIRequest(): bool {
+		if (!$this->isWOPIRemoteAddress()) {
+			return false;
+		}
+
+		return strpos($this->request->getPathInfo(), '/apps/richdocuments/wopi/') === 0
+			&& substr($this->request->getScriptName(), 0 - strlen('/index.php')) === '/index.php';
+	}
+
+	protected function isWOPIRemoteAddress(): bool {
+		$allowedRanges = $this->config->getAppValue('richdocuments', 'wopi_allowlist');
+		if ($allowedRanges === '') {
+			return true;
+		}
+		$allowedRanges = explode(',', $allowedRanges);
+
+		$userIp = $this->request->getRemoteAddress();
+		foreach ($allowedRanges as $range) {
+			if ($this->matchCidr($userIp, $range)) {
+				return true;
+			}
+		}
+
+		return false;
+	}
+
+	/**
+	 * @copyright https://stackoverflow.com/questions/594112/matching-an-ip-to-a-cidr-mask-in-php-5/594134#594134
+	 * @copyright (IPv4) https://stackoverflow.com/questions/594112/matching-an-ip-to-a-cidr-mask-in-php-5/594134#594134
+	 * @copyright (IPv6) MW. https://stackoverflow.com/questions/7951061/matching-ipv6-address-to-a-cidr-subnet via
+	 */
+	private function matchCidr(string $ip, string $range): bool {
+		list($subnet, $bits) = array_pad(explode('/', $range), 2, null);
+		if ($bits === null) {
+			$bits = 32;
+		}
+		$bits = (int)$bits;
+
+		if ($this->isIpv4($ip) && $this->isIpv4($subnet)) {
+			$mask = -1 << (32 - $bits);
+
+			$ip = ip2long($ip);
+			$subnet = ip2long($subnet);
+			$subnet &= $mask;
+			return ($ip & $mask) === $subnet;
+		}
+
+		if ($this->isIpv6($ip) && $this->isIPv6($subnet)) {
+			$subnet = inet_pton($subnet);
+			$ip = inet_pton($ip);
+
+			$binMask = str_repeat("f", $bits / 4);
+			switch ($bits % 4) {
+				case 0:
+					break;
+				case 1:
+					$binMask .= "8";
+					break;
+				case 2:
+					$binMask .= "c";
+					break;
+				case 3:
+					$binMask .= "e";
+					break;
+			}
+
+			$binMask = str_pad($binMask, 32, '0');
+			$binMask = pack("H*", $binMask);
+
+			if (($ip & $binMask) === $subnet) {
+				return true;
+			}
+		}
+		return false;
+	}
+
+	private function isIpv4($ip) {
+		return filter_var($ip, FILTER_VALIDATE_IP, FILTER_FLAG_IPV4);
+	}
+
+	private function isIpv6($ip) {
+		return filter_var($ip, FILTER_VALIDATE_IP, FILTER_FLAG_IPV6);
 	}
 }
