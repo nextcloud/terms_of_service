@@ -1,4 +1,12 @@
 {
+    "config": {
+        "classmap-authoritative": true,
+        "optimize-autoloader": true,
+        "platform": {
+            "php": "8.0"
+        },
+        "sort-packages": true
+    },
     "require": {
         "erusev/parsedown": "^1.6",
         "geoip2/geoip2": "~2.0"
