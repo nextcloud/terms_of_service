@@ -30,6 +30,9 @@ use OCA\TermsOfService\Db\Mapper\CountryMapper;
 use OCP\IRequest;
 use PHPUnit\Framework\MockObject\MockObject;
 
+/**
+ * @group DB
+ */
 class CountryDetectorTest extends \Test\TestCase {
 	/** @var IRequest|MockObject */
 	protected $request;
