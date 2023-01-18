@@ -21,4 +21,5 @@
 
 namespace OCA\TermsOfService\Exceptions;
 
-class TermsNotFoundException extends \Exception {}
+class TermsNotFoundException extends \Exception {
+}

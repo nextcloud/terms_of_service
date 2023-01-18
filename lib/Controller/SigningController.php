@@ -128,7 +128,7 @@ class SigningController extends Controller {
 		$notification->setDateTime(new \DateTime());
 
 		// … so we can create new ones for every one, also users which already accepted.
-		$this->userManager->callForSeenUsers(function(IUser $user) use ($notification) {
+		$this->userManager->callForSeenUsers(function (IUser $user) use ($notification) {
 			$notification->setUser($user->getUID());
 			$this->notificationsManager->notify($notification);
 		});

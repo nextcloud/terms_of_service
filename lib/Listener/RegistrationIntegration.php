@@ -23,7 +23,6 @@ declare(strict_types=1);
 
 namespace OCA\TermsOfService\Listener;
 
-use OCA\Registration\Events\BeforeTemplateRenderedEvent;
 use OCA\Registration\Events\PassedFormEvent;
 use OCA\Registration\Events\ShowFormEvent;
 use OCA\Registration\Events\ValidateFormEvent;
@@ -38,7 +37,6 @@ use OCP\IUser;
 use OCP\Util;
 
 class RegistrationIntegration implements IEventListener {
-
 	/** @var SignatoryMapper */
 	private $signatoryMapper;
 	/** @var TermsMapper */

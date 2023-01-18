@@ -24,7 +24,6 @@ namespace OCA\TermsOfService\Db\Mapper;
 use OCP\IL10N;
 
 class CountryMapper {
-
 	public const GLOBAL = '--';
 
 	/** @var IL10N */
