@@ -20,4 +20,7 @@ translationfiles
 /js/terms_of_service_*.js*
 
 # Testing
+/vendor
+/vendor-bin/*/vendor
 /tests/.phpunit.result.cache
+/.php-cs-fixer.cache

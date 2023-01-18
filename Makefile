@@ -53,6 +53,7 @@ appstore:
 	--exclude=/node_modules \
 	--exclude=/src \
 	--exclude=/tests \
+	--exclude=/vendor-bin \
 	--exclude=babel.config.js \
 	--exclude=composer.json \
 	--exclude=.drone.yml \

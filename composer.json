@@ -1,5 +1,20 @@
 {
+	"autoload": {
+		"psr-4": {
+			"OCA\\TermsOfService\\\\": "lib/"
+		}
+	},
+	"autoload-dev": {
+		"psr-4": {
+			"OCP\\": "vendor/nextcloud/ocp/OCP"
+		}
+	},
 	"config": {
+		"allow-plugins": {
+			"bamarni/composer-bin-plugin": true,
+			"composer/package-versions-deprecated": true
+		},
+		"autoloader-suffix": "TermsOfService",
 		"classmap-authoritative": true,
 		"optimize-autoloader": true,
 		"platform": {
@@ -7,16 +22,42 @@
 		},
 		"sort-packages": true
 	},
+	"extra": {
+		"mozart": {
+			"dep_namespace": "OCA\\TermsOfService\\Vendor\\",
+			"dep_directory": "/lib/Vendor/",
+			"classmap_directory": "/lib/autoload/",
+			"classmap_prefix": "NEXTCLOUDTERMSOFSERVICE_",
+			"packages": [
+				"geoip2/geoip2"
+			]
+		}
+	},
 	"require": {
-		"erusev/parsedown": "^1.6",
+		"bamarni/composer-bin-plugin": "^1.8",
 		"geoip2/geoip2": "~2.0"
 	},
 	"require-dev": {
-		"phpunit/phpunit": "^9.5",
 		"roave/security-advisories": "dev-latest"
 	},
 	"scripts": {
 		"lint": "find . -name \\*.php -not -path './vendor/*' -print0 | xargs -0 -n1 php -l",
-		"test:unit": "vendor/bin/phpunit --color -c tests/phpunit.xml"
+		"cs:check": "php-cs-fixer fix --dry-run --diff",
+		"cs:fix": "php-cs-fixer fix",
+		"psalm": "psalm --threads=1",
+		"psalm:update-baseline": "psalm --threads=1 --update-baseline",
+		"psalm:clear": "psalm --clear-cache && psalm --clear-global-cache",
+		"psalm:fix": "psalm --alter --issues=InvalidReturnType,InvalidNullableReturnType,MissingParamType,InvalidFalsableReturnType",
+		"test:unit": "vendor/bin/phpunit --color -c tests/phpunit.xml",
+		"post-install-cmd": [
+			"@composer bin all install --ansi",
+			"\"vendor/bin/mozart\" compose",
+			"composer dump-autoload"
+		],
+		"post-update-cmd": [
+			"@composer bin all update --ansi",
+			"\"vendor/bin/mozart\" compose",
+			"composer dump-autoload"
+		]
 	}
 }
