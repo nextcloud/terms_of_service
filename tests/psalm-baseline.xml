@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<files psalm-version="5.4.0@62db5d4f6a7ae0a20f7cc5a4952d730272fc0863">
+  <file src="lib/AppInfo/Application.php">
+    <DeprecatedMethod occurrences="2">
+      <code>Util::connectHook('OC_Filesystem', 'preSetup', $this, 'addStorageWrapper')</code>
+      <code>registerNotifierService</code>
+    </DeprecatedMethod>
+    <MismatchingDocblockParamType occurrences="1">
+      <code>IStorage|Wrapper</code>
+    </MismatchingDocblockParamType>
+    <MissingDependency occurrences="1">
+      <code>StorageWrapper|IStorage</code>
+    </MissingDependency>
+    <UndefinedClass occurrences="1">
+      <code>GenericEvent</code>
+    </UndefinedClass>
+    <UndefinedDocblockClass occurrences="1">
+      <code>IStorage|Wrapper</code>
+    </UndefinedDocblockClass>
+  </file>
+  <file src="lib/Checker.php">
+    <InvalidScalarArgument occurrences="1">
+      <code>$bits / 4</code>
+    </InvalidScalarArgument>
+    <MissingParamType occurrences="2">
+      <code>$ip</code>
+      <code>$ip</code>
+    </MissingParamType>
+    <MissingReturnType occurrences="2">
+      <code>isIpv4</code>
+      <code>isIpv6</code>
+    </MissingReturnType>
+    <PossiblyFalseArgument occurrences="1">
+      <code>$this-&gt;request-&gt;getPathInfo()</code>
+    </PossiblyFalseArgument>
+    <PossiblyNullArgument occurrences="2">
+      <code>$subnet</code>
+      <code>$subnet</code>
+    </PossiblyNullArgument>
+    <RedundantCastGivenDocblockType occurrences="1">
+      <code>(int)$signatory-&gt;getTermsId()</code>
+    </RedundantCastGivenDocblockType>
+    <UndefinedThisPropertyAssignment occurrences="1">
+      <code>$this-&gt;l10n</code>
+    </UndefinedThisPropertyAssignment>
+    <UndefinedThisPropertyFetch occurrences="1">
+      <code>$this-&gt;l10n</code>
+    </UndefinedThisPropertyFetch>
+  </file>
+  <file src="lib/Db/Entities/Terms.php">
+    <UndefinedClass occurrences="1">
+      <code>\Parsedown</code>
+    </UndefinedClass>
+  </file>
+  <file src="lib/Listener/RegistrationIntegration.php">
+    <DocblockTypeContradiction occurrences="3">
+      <code>$event instanceof PassedFormEvent</code>
+      <code>$event instanceof ShowFormEvent</code>
+      <code>$event instanceof ValidateFormEvent</code>
+    </DocblockTypeContradiction>
+    <MissingTemplateParam occurrences="1">
+      <code>IEventListener</code>
+    </MissingTemplateParam>
+  </file>
+  <file src="lib/Listener/UserDeletedListener.php">
+    <MissingTemplateParam occurrences="1">
+      <code>IEventListener</code>
+    </MissingTemplateParam>
+  </file>
+  <file src="lib/Migration/CreateNotifications.php">
+    <MissingReturnType occurrences="1">
+      <code>run</code>
+    </MissingReturnType>
+  </file>
+</files>

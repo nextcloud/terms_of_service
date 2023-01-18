@@ -29,15 +29,18 @@
 			"classmap_directory": "/lib/autoload/",
 			"classmap_prefix": "NEXTCLOUDTERMSOFSERVICE_",
 			"packages": [
-				"geoip2/geoip2"
+				"geoip2/geoip2",
+				"erusev/parsedown"
 			]
 		}
 	},
 	"require": {
 		"bamarni/composer-bin-plugin": "^1.8",
+		"erusev/parsedown": "^1.6",
 		"geoip2/geoip2": "~2.0"
 	},
 	"require-dev": {
+		"nextcloud/ocp": "dev-master",
 		"roave/security-advisories": "dev-latest"
 	},
 	"scripts": {
@@ -45,7 +48,7 @@
 		"cs:check": "php-cs-fixer fix --dry-run --diff",
 		"cs:fix": "php-cs-fixer fix",
 		"psalm": "psalm --threads=1",
-		"psalm:update-baseline": "psalm --threads=1 --update-baseline",
+		"psalm:update-baseline": "psalm --threads=1 --update-baseline --set-baseline=tests/psalm-baseline.xml",
 		"psalm:clear": "psalm --clear-cache && psalm --clear-global-cache",
 		"psalm:fix": "psalm --alter --issues=InvalidReturnType,InvalidNullableReturnType,MissingParamType,InvalidFalsableReturnType",
 		"test:unit": "vendor/bin/phpunit --color -c tests/phpunit.xml",
