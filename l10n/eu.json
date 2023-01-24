@@ -439,6 +439,8 @@
     "Requires users to accept the terms of service before accessing data." : "Erabiltzaileei zerbitzu-baldintzak onartzeko eskatzen die datuetara sartu aurretik.",
     "Requires users to accept the terms of service before accessing data.\nThis product includes GeoLite2 data created by MaxMind, available from [maxmind.com](http://www.maxmind.com)" : "Erabiltzaileei zerbitzu-baldintzak onartzeko eskatzen die datuetara sartu aurretik.\nProduktu honek MaxMind-ek sortutako GeoLite2 datuak biltzen ditu, [maxmind.com] helbidean eskuragarri (http://www.maxmind.com)",
     "Require users to accept the terms of service before accessing the service." : "Eskatu erabiltzaileei zerbitzuaren baldintzak onar ditzaten zerbitzura sartu aurretik.",
+    "Show for logged-in users" : "Erakutsi saioa hasi duten erabiltzaileei",
+    "Show on public shares" : "Erakutsi partekatze publikoetan",
     "Select a region" : "Hautatu eskualde bat",
     "Select a language" : "Hautatu hizkuntza bat",
     "By using this service …" : "Zerbitzu hau erabiliz ...",
