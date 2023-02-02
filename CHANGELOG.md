@@ -1,6 +1,11 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## 1.9.4 – 2023-02-02
+### Fixed
+- Compatibility with Richdocuments app
+  [#768](https://github.com/nextcloud/terms_of_service/pull/768)
+
 ## 1.9.3 – 2022-03-03
 ### Fixed
 - Fix an issue with IPs which only return a continent not a country
