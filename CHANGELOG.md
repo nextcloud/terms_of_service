@@ -1,7 +1,22 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
-## 2.0.0 – 2022-04-12
+## 2.0.1 – 2023-02-02
+### Fixed
+- Compatibility with Richdocuments app
+  [#767](https://github.com/nextcloud/terms_of_service/pull/767)
+
+## 1.10.3 – 2023-02-02
+### Fixed
+- Compatibility with Richdocuments app
+  [#769](https://github.com/nextcloud/terms_of_service/pull/769)
+
+## 1.9.4 – 2023-02-02
+### Fixed
+- Compatibility with Richdocuments app
+  [#768](https://github.com/nextcloud/terms_of_service/pull/768)
+
+## 2.0.0 – 2022-10-18
 ### Added
 - Option to change the configuration settings in the administration interface
 - Migrated the UI to Vue
