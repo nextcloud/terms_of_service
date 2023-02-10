@@ -32,7 +32,7 @@ OC.L10N.register(
     "Bonaire, Sint Eustatius and Saba" : "Бонайре, Сінт-Естатіус і Саба",
     "Bosnia and Herzegovina" : "Боснія і Герцеговина",
     "Botswana" : "Ботсвана ",
-    "Bouvet Island" : "Буве",
+    "Bouvet Island" : "Острів Буве",
     "Brazil" : "Бразилія ",
     "British Indian Ocean Territory" : "Британська територія в Індійському океані ",
     "Brunei Darussalam" : "Бруней",
