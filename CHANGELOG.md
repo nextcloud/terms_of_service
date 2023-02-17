@@ -1,6 +1,14 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## 2.1.0 – 2023-02-17
+### Changed
+- Added Nextcloud 26 compatibility
+
+### Fixed
+- Fixed an error when Richdocuments has an invalid allow list configured
+  [#797](https://github.com/nextcloud/terms_of_service/pull/797)
+
 ## 2.0.1 – 2023-02-02
 ### Fixed
 - Compatibility with Richdocuments app
