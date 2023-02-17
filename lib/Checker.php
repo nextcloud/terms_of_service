@@ -30,6 +30,7 @@ use OCP\ISession;
 use OCP\IUser;
 use OCP\IUserManager;
 use OCP\IL10N;
+use Psr\Log\LoggerInterface;
 
 class Checker {
 	/** @var string */
@@ -48,6 +49,10 @@ class Checker {
 	private $countryDetector;
 	/** @var IConfig */
 	private $config;
+	/** @var IL10N */
+	private $l10n;
+	/** @var LoggerInterface */
+	private $logger;
 	/** @var array */
 	private $termsCache = [];
 
@@ -60,7 +65,8 @@ class Checker {
 		TermsMapper $termsMapper,
 		CountryDetector $countryDetector,
 		IConfig $config,
-		IL10N $l10n
+		IL10N $l10n,
+		LoggerInterface $logger
 	) {
 		$this->userId = $userId;
 		$this->request = $request;
@@ -71,6 +77,7 @@ class Checker {
 		$this->countryDetector = $countryDetector;
 		$this->config = $config;
 		$this->l10n = $l10n;
+		$this->logger = $logger;
 	}
 
 	public function getForbiddenMessage(): string {
@@ -154,7 +161,14 @@ class Checker {
 
 		$userIp = $this->request->getRemoteAddress();
 		foreach ($allowedRanges as $range) {
-			if ($this->matchCidr($userIp, $range)) {
+			try {
+				$match = $this->matchCidr($userIp, $range);
+			} catch (\Error $e) {
+				$this->logger->error('An error occurred while trying to validate a request against the WOPI allow list', ['exception' => $e]);
+				continue;
+			}
+
+			if ($match) {
 				return true;
 			}
 		}
