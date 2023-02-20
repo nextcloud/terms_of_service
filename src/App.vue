@@ -89,7 +89,9 @@ import NcMultiselect from '@nextcloud/vue/dist/Components/NcMultiselect.js'
 import NcSettingsSection from '@nextcloud/vue/dist/Components/NcSettingsSection.js'
 import { showError, showSuccess } from '@nextcloud/dialogs'
 import { generateUrl } from '@nextcloud/router'
-import '@nextcloud/dialogs/styles/toast.scss'
+
+// Styles
+import '@nextcloud/dialogs/dist/index.css'
 
 export default {
 	name: 'App',
