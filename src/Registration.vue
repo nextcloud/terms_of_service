@@ -63,10 +63,11 @@
 <script>
 import axios from '@nextcloud/axios'
 import { generateUrl } from '@nextcloud/router'
-import '@nextcloud/dialogs/styles/toast.scss'
 import NcModal from '@nextcloud/vue/dist/Components/NcModal.js'
 import ModalContent from './components/ModalContent.vue'
 
+// Styles
+import '@nextcloud/dialogs/dist/index.css'
 export default {
 	name: 'Registration',
 
