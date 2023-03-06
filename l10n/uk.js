@@ -53,6 +53,7 @@ OC.L10N.register(
     "Colombia" : "Колумбія ",
     "Comoros" : "Коморські острови",
     "Congo" : "Конго ",
+    "Congo (Democratic Republic of the)" : "Конго (Демократична Республіка Конго)",
     "Cook Islands" : "Острови Кука",
     "Costa Rica" : "Коста-Ріка ",
     "Côte d'Ivoire" : "Кот-д'Івуар ",
