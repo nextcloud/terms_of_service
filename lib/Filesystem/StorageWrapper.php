@@ -38,7 +38,7 @@ class StorageWrapper extends Wrapper {
 	}
 
 	public function isCreatable($path) {
-		if(!$this->helper->verifyAccess($path)) {
+		if (!$this->helper->verifyAccess($path)) {
 			return false;
 		}
 
@@ -46,7 +46,7 @@ class StorageWrapper extends Wrapper {
 	}
 
 	public function isUpdatable($path) {
-		if(!$this->helper->verifyAccess($path)) {
+		if (!$this->helper->verifyAccess($path)) {
 			return false;
 		}
 
@@ -54,7 +54,7 @@ class StorageWrapper extends Wrapper {
 	}
 
 	public function isDeletable($path) {
-		if(!$this->helper->verifyAccess($path)) {
+		if (!$this->helper->verifyAccess($path)) {
 			return false;
 		}
 
@@ -62,7 +62,7 @@ class StorageWrapper extends Wrapper {
 	}
 
 	public function isReadable($path) {
-		if(!$this->helper->verifyAccess($path)) {
+		if (!$this->helper->verifyAccess($path)) {
 			return false;
 		}
 
@@ -70,7 +70,7 @@ class StorageWrapper extends Wrapper {
 	}
 
 	public function isSharable($path) {
-		if(!$this->helper->verifyAccess($path)) {
+		if (!$this->helper->verifyAccess($path)) {
 			return false;
 		}
 

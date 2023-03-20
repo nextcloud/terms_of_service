@@ -25,7 +25,6 @@ use OCP\Migration\SimpleMigrationStep;
 use OCP\Migration\IOutput;
 
 class Version1000Date20181122141014 extends SimpleMigrationStep {
-
 	/**
 	 * @param IOutput $output
 	 * @param \Closure $schemaClosure The `\Closure` returns a `ISchemaWrapper`
@@ -42,5 +41,4 @@ class Version1000Date20181122141014 extends SimpleMigrationStep {
 
 		return $schema;
 	}
-
 }

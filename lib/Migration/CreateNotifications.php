@@ -30,7 +30,6 @@ use OCP\Migration\IRepairStep;
 use OCP\Notification\IManager;
 
 class CreateNotifications implements IRepairStep {
-
 	/** @var IUserManager */
 	protected $userManager;
 	/** @var IManager */
@@ -65,7 +64,7 @@ class CreateNotifications implements IRepairStep {
 			->setObject('terms', '1');
 
 		$output->startProgress();
-		$this->userManager->callForSeenUsers(function(IUser $user) use ($notification, $output) {
+		$this->userManager->callForSeenUsers(function (IUser $user) use ($notification, $output) {
 			$notification->setUser($user->getUID());
 			$this->notificationsManager->notify($notification);
 			$output->advance();

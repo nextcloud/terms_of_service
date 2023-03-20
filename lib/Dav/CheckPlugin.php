@@ -100,7 +100,7 @@ class CheckPlugin extends ServerPlugin {
 	 */
 	public function getPluginInfo() {
 		return [
-			'name'        => $this->getPluginName(),
+			'name' => $this->getPluginName(),
 			'description' => 'Check if terms of service have been signed before accepting a Dav request.',
 		];
 	}

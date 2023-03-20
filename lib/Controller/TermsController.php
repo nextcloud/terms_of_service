@@ -84,8 +84,7 @@ class TermsController extends Controller {
 		$currentCountry = $this->countryDetector->getCountry();
 		$countryTerms = $this->termsMapper->getTermsForCountryCode($currentCountry);
 
-		if ($this->config->getAppValue(Application::APPNAME, 'term_uuid', '') === '')
-		{
+		if ($this->config->getAppValue(Application::APPNAME, 'term_uuid', '') === '') {
 			$this->config->getAppValue(Application::APPNAME, 'term_uuid', uniqid());
 		}
 
@@ -152,7 +151,7 @@ class TermsController extends Controller {
 		$terms->setLanguageCode($languageCode);
 		$terms->setBody($body);
 
-		if($update === true) {
+		if ($update === true) {
 			$this->termsMapper->update($terms);
 		} else {
 			$this->termsMapper->insert($terms);

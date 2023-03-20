@@ -31,7 +31,7 @@ use OCP\IUser;
  * @method Signatory mapRowToEntity(array $row)
  */
 class SignatoryMapper extends QBMapper {
-	const TABLENAME = 'termsofservice_sigs';
+	public const TABLENAME = 'termsofservice_sigs';
 
 	public function __construct(IDBConnection $db) {
 		parent::__construct($db, self::TABLENAME, Signatory::class);
@@ -49,7 +49,7 @@ class SignatoryMapper extends QBMapper {
 
 		$entities = [];
 		$result = $query->execute();
-		while ($row = $result->fetch()){
+		while ($row = $result->fetch()) {
 			$entities[] = $this->mapRowToEntity($row);
 		}
 		$result->closeCursor();
@@ -71,7 +71,7 @@ class SignatoryMapper extends QBMapper {
 
 		$entities = [];
 		$result = $query->execute();
-		while ($row = $result->fetch()){
+		while ($row = $result->fetch()) {
 			$entities[] = $this->mapRowToEntity($row);
 		}
 		$result->closeCursor();

@@ -21,9 +21,9 @@
 
 return [
 	'resources' => [
-			'terms' => [
-				'url' => '/terms'
-			],
+		'terms' => [
+			'url' => '/terms'
+		],
 	],
 	'routes' => [
 		[

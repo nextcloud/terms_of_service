@@ -22,4 +22,6 @@ translationfiles
 # Testing
 /tests/.phpunit.result.cache
 
-vendor
+vendor/
+.php-cs-fixer.cache
+composer.phar

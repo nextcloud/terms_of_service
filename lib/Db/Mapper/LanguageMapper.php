@@ -231,5 +231,4 @@ class LanguageMapper {
 
 		return $mappedLanguages;
 	}
-
 }
