@@ -21,3 +21,5 @@ translationfiles
 
 # Testing
 /tests/.phpunit.result.cache
+
+vendor
