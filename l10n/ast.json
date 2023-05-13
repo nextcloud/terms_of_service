@@ -36,10 +36,13 @@
     "Costa Rica" : "Costa Rica",
     "Cuba" : "Cuba",
     "Cyprus" : "Xipre",
+    "Denmark" : "Dinamarca",
     "El Salvador" : "El Salvador",
     "Eritrea" : "Eritrea",
     "Estonia" : "Estonia",
+    "France" : "Francia",
     "Gambia" : "Gambia",
+    "Germany" : "Alemaña",
     "Guyana" : "Guyana",
     "India" : "India",
     "Ireland" : "Irlanda",
@@ -47,6 +50,7 @@
     "Italy" : "Italia",
     "Malta" : "Malta",
     "Mauritania" : "Mauritania",
+    "Mexico" : "Méxicu",
     "Monaco" : "Mónacu",
     "Mongolia" : "Mongolia",
     "Morocco" : "Marruecos",
@@ -64,11 +68,14 @@
     "Serbia" : "Serbia",
     "Seychelles" : "Seixeles",
     "Somalia" : "Somalia",
+    "Thailand" : "Tailandia",
     "Turks and Caicos Islands" : "Islles Turques y Caicos",
     "Tuvalu" : "Tuvalu",
     "Uganda" : "Uganda",
+    "Ukraine" : "Ucraína",
     "United Arab Emirates" : "Emiratos Árabes Xuníos",
     "Aragonese" : "Aragonés",
-    "Assamese" : "Asamés"
+    "Assamese" : "Asamés",
+    "Saving …" : "Guardando…"
 },"pluralForm" :"nplurals=2; plural=(n != 1);"
 }
