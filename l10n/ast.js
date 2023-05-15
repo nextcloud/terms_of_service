@@ -78,6 +78,7 @@ OC.L10N.register(
     "United Arab Emirates" : "Emiratos Árabes Xuníos",
     "Aragonese" : "Aragonés",
     "Assamese" : "Asamés",
+    "Loading …" : "Cargando…",
     "Saving …" : "Guardando…"
 },
 "nplurals=2; plural=(n != 1);");
