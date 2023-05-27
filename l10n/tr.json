@@ -455,12 +455,6 @@
     "I acknowledge that I have read and agree to the above terms of service" : "Yukarıdaki hizmet koşulları metnini okudum ve anladım",
     "Edit language {language} for region {country}" : "{country} bölgesi için {language} dilini düzenle",
     "Deleting …" : "Siliniyor …",
-    "Delete language {language} for region {country}" : "{country} bölgesi için {language} dilini sil",
-    "Saving …" : "Kaydediliyor …",
-    "Saved!" : "Kaydedildi!",
-    "Resetting …" : "Sıfırlanıyor …",
-    "Reset!" : "Sıfırla!",
-    "Edit" : "Düzenle",
-    "Delete" : "Sil"
+    "Delete language {language} for region {country}" : "{country} bölgesi için {language} dilini sil"
 },"pluralForm" :"nplurals=2; plural=(n > 1);"
 }

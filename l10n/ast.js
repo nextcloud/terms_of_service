@@ -216,8 +216,6 @@ OC.L10N.register(
     "Aragonese" : "Aragonés",
     "Assamese" : "Asamés",
     "Czech" : "Chequia",
-    "Loading …" : "Cargando…",
-    "Saving …" : "Guardando…",
-    "Delete" : "Desaniciar"
+    "Loading …" : "Cargando…"
 },
 "nplurals=2; plural=(n != 1);");

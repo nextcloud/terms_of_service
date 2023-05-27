@@ -147,9 +147,6 @@ OC.L10N.register(
     "English" : "Anglisht",
     "Hungarian" : "Hungareze",
     "Terms of service" : "Termat e shërbimit",
-    "Save" : "Ruaj",
-    "Saved!" : "I/E ruajtur!",
-    "Edit" : "Përpuno",
-    "Delete" : "Delete"
+    "Save" : "Ruaj"
 },
 "nplurals=2; plural=(n != 1);");

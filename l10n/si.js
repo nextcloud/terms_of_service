@@ -26,7 +26,6 @@ OC.L10N.register(
     "Chinese" : "චීන",
     "Terms of service" : "සේවා කොන්දේසි",
     "Loading …" : "පූරණය වෙමින් …",
-    "Save" : "සුරකින්න",
-    "Edit" : "සංස්කරණය"
+    "Save" : "සුරකින්න"
 },
 "nplurals=2; plural=(n != 1);");

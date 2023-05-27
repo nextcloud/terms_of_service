@@ -457,12 +457,6 @@ OC.L10N.register(
     "I acknowledge that I have read and agree to the above terms of service" : "上記のサービス利用規約を読み、同意したことを認めます",
     "Edit language {language} for region {country}" : "地域「{country}」向けの「{language}」を編集",
     "Deleting …" : "削除しています",
-    "Delete language {language} for region {country}" : "地域「{country}」向けの「{language}」を削除",
-    "Saving …" : "保存しています",
-    "Saved!" : "保存しました！",
-    "Resetting …" : "リセットしています",
-    "Reset!" : "リセット！",
-    "Edit" : "編集",
-    "Delete" : "削除"
+    "Delete language {language} for region {country}" : "地域「{country}」向けの「{language}」を削除"
 },
 "nplurals=1; plural=0;");

@@ -288,10 +288,6 @@ OC.L10N.register(
     "Chinese" : "Chinés",
     "Select a language" : "Causir una lenga",
     "Loading …" : "Cargament…",
-    "Save" : "Salvar",
-    "Saving …" : "Enregistrament...",
-    "Saved!" : "Enregistrat !",
-    "Edit" : "Modificar",
-    "Delete" : "Suprimir"
+    "Save" : "Salvar"
 },
 "nplurals=2; plural=(n > 1);");

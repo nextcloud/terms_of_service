@@ -268,11 +268,6 @@ OC.L10N.register(
     "Save" : "Tallenna",
     "Ensure that all fields are filled" : "Varmista että kaikki kentät on täytetty",
     "I acknowledge that I have read and agree to the above terms of service" : "Vahvistan lukeneeni ja hyväksyväni yllä olevat käyttöehdot",
-    "Deleting …" : "Poistetaan…",
-    "Saving …" : "Tallennetaan…",
-    "Saved!" : "Tallennettu!",
-    "Resetting …" : "Tyhjennetään …",
-    "Edit" : "Muokkaa",
-    "Delete" : "Poista"
+    "Deleting …" : "Poistetaan…"
 },
 "nplurals=2; plural=(n != 1);");

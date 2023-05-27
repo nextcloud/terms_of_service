@@ -455,12 +455,6 @@
     "I acknowledge that I have read and agree to the above terms of service" : "Recoñezo que lin e acepto as condicións do servizo anteriores",
     "Edit language {language} for region {country}" : "Editar idioma {language} para a rexión {country}",
     "Deleting …" : "Eliminando…",
-    "Delete language {language} for region {country}" : "Eliminar o idioma {idioma} para a rexión {country}",
-    "Saving …" : "Gardando…",
-    "Saved!" : "Gardado!",
-    "Resetting …" : "Restabelecer",
-    "Reset!" : "Restabelecer",
-    "Edit" : "Editar",
-    "Delete" : "Eliminar"
+    "Delete language {language} for region {country}" : "Eliminar o idioma {idioma} para a rexión {country}"
 },"pluralForm" :"nplurals=2; plural=(n != 1);"
 }

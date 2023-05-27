@@ -457,12 +457,6 @@ OC.L10N.register(
     "I acknowledge that I have read and agree to the above terms of service" : "Jeg bekrefter at jeg har lest og er enig i betingelsene for tjenesten",
     "Edit language {language} for region {country}" : "Rediger språket {language} for regionen {country}",
     "Deleting …" : "Sletter...",
-    "Delete language {language} for region {country}" : "Slett språket {language} for regionen {country}",
-    "Saving …" : "Lagrer...",
-    "Saved!" : "Lagret!",
-    "Resetting …" : "Tilbakestiller...",
-    "Reset!" : "Tilbakestilt!",
-    "Edit" : "Editer",
-    "Delete" : "Slett"
+    "Delete language {language} for region {country}" : "Slett språket {language} for regionen {country}"
 },
 "nplurals=2; plural=(n != 1);");

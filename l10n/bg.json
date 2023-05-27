@@ -455,12 +455,6 @@
     "I acknowledge that I have read and agree to the above terms of service" : "Потвърждавам, че прочетох и съм съгласен с горните условия за ползване",
     "Edit language {language} for region {country}" : "Редактиране на езика {language} за регион {country}",
     "Deleting …" : "Изтриване …",
-    "Delete language {language} for region {country}" : "Изтриване на езика {language} за регион {country}",
-    "Saving …" : "Записване …",
-    "Saved!" : "Записано!",
-    "Resetting …" : "Възстановяване ...",
-    "Reset!" : "Възстановено!",
-    "Edit" : "Променяне",
-    "Delete" : "Изтрий"
+    "Delete language {language} for region {country}" : "Изтриване на езика {language} за регион {country}"
 },"pluralForm" :"nplurals=2; plural=(n != 1);"
 }

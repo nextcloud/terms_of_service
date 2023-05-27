@@ -455,12 +455,6 @@
     "I acknowledge that I have read and agree to the above terms of service" : "Confirmo que he leído y estoy de acuerdo con los susodichos términos de servicio ",
     "Edit language {language} for region {country}" : "Editar lenguaje {language} para la región {country}",
     "Deleting …" : "Borrando...",
-    "Delete language {language} for region {country}" : "Borrar {language} para la región {country}",
-    "Saving …" : "Guardando ...",
-    "Saved!" : "¡Guardado!",
-    "Resetting …" : "Reiniciando…",
-    "Reset!" : "Reiniciado.",
-    "Edit" : "Editar",
-    "Delete" : "Borrar"
+    "Delete language {language} for region {country}" : "Borrar {language} para la región {country}"
 },"pluralForm" :"nplurals=3; plural=n == 1 ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;"
 }

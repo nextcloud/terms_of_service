@@ -457,12 +457,6 @@ OC.L10N.register(
     "I acknowledge that I have read and agree to the above terms of service" : "Kijelentem, hogy elolvastam és egyetértek a fenti szolgáltatási feltételekkel.",
     "Edit language {language} for region {country}" : "A(z) {language} ({country}) nyelv szerkesztése",
     "Deleting …" : "Törlés…",
-    "Delete language {language} for region {country}" : "A(z) {language} ({country}) nyelv törlése",
-    "Saving …" : "Mentés…",
-    "Saved!" : "Mentve!",
-    "Resetting …" : "Visszaállítás…",
-    "Reset!" : "Visszaállítva!",
-    "Edit" : "Szerkesztés",
-    "Delete" : "Törlés"
+    "Delete language {language} for region {country}" : "A(z) {language} ({country}) nyelv törlése"
 },
 "nplurals=2; plural=(n != 1);");

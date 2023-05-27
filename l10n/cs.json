@@ -455,12 +455,6 @@
     "I acknowledge that I have read and agree to the above terms of service" : "Potvrzuji, že jsem si přečetl(a) a souhlasím s výše uvedenými všeobecnými podmínkami",
     "Edit language {language} for region {country}" : "Upravit jazyk {language} pro oblast {country}",
     "Deleting …" : "Mazání…",
-    "Delete language {language} for region {country}" : "Smazat jazyk {language} pro oblast {country}",
-    "Saving …" : "Ukládání…",
-    "Saved!" : "Uloženo!",
-    "Resetting …" : "Resetování…",
-    "Reset!" : "Resetovat!",
-    "Edit" : "Upravit",
-    "Delete" : "Smazat"
+    "Delete language {language} for region {country}" : "Smazat jazyk {language} pro oblast {country}"
 },"pluralForm" :"nplurals=4; plural=(n == 1 && n % 1 == 0) ? 0 : (n >= 2 && n <= 4 && n % 1 == 0) ? 1: (n % 1 != 0 ) ? 2 : 3;"
 }

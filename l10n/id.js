@@ -234,9 +234,6 @@ OC.L10N.register(
     "Turkish" : "Turki",
     "Ukrainian" : "Ukraina",
     "Terms of service" : "Ketentuan layanan",
-    "Save" : "Simpan",
-    "Saving …" : "Menyimpan ...",
-    "Edit" : "Sunting",
-    "Delete" : "Hapus"
+    "Save" : "Simpan"
 },
 "nplurals=1; plural=0;");

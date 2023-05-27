@@ -457,12 +457,6 @@ OC.L10N.register(
     "I acknowledge that I have read and agree to the above terms of service" : "Eu confirmo que li e concordo com os termos de serviço acima",
     "Edit language {language} for region {country}" : "Editar idioma {language} para região {country}",
     "Deleting …" : "Excluindo...",
-    "Delete language {language} for region {country}" : "Excluir idioma {language} da região {country}",
-    "Saving …" : "Salvando...",
-    "Saved!" : "Salvo!",
-    "Resetting …" : "Redefinindo...",
-    "Reset!" : "Redefinido!",
-    "Edit" : "Editar",
-    "Delete" : "Excluir"
+    "Delete language {language} for region {country}" : "Excluir idioma {language} da região {country}"
 },
 "nplurals=3; plural=(n == 0 || n == 1) ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;");

@@ -450,12 +450,6 @@ OC.L10N.register(
     "Save" : "Sarva",
     "Ensure that all fields are filled" : "Controlla chi totu is campos siant cumpilados",
     "I acknowledge that I have read and agree to the above terms of service" : "Cunfirmu ca apo lèghidu e so de acòrdiu cun is cunditziones de servìtziu",
-    "Deleting …" : "Cantzellende ... ",
-    "Saving …" : "Sarvende …",
-    "Saved!" : "Sarvadu!",
-    "Resetting …" : "Torrende a impostare ...",
-    "Reset!" : "Torra a impostare!",
-    "Edit" : "Modìfica ",
-    "Delete" : "Cantzella"
+    "Deleting …" : "Cantzellende ... "
 },
 "nplurals=2; plural=(n != 1);");

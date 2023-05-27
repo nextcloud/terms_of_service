@@ -243,9 +243,6 @@ OC.L10N.register(
     "Zulu" : "Zulu",
     "Terms of service" : "شرایط و قوانین",
     "Loading …" : "بارگذاری …",
-    "Save" : "ذخیره",
-    "Saved!" : "ذخیره!",
-    "Edit" : "ویرایش",
-    "Delete" : "حذف"
+    "Save" : "ذخیره"
 },
 "nplurals=2; plural=(n > 1);");

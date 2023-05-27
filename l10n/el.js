@@ -457,12 +457,6 @@ OC.L10N.register(
     "I acknowledge that I have read and agree to the above terms of service" : "Επιβεβαιώνω ότι έχω διαβάσει και συμφωνώ με τους παραπάνω όρους χρήσης υπηρεσίας",
     "Edit language {language} for region {country}" : "Επεξεργασία γλώσσας {language} για την περιοχή {country}",
     "Deleting …" : "Γίνεται διαγραφή…",
-    "Delete language {language} for region {country}" : "Διαγραφή γλώσσας {language} για την περιοχή {country}",
-    "Saving …" : "Γίνεται αποθήκευση…",
-    "Saved!" : "Αποθηκεύτηκε!",
-    "Resetting …" : "Γίνεται επαναφορά …",
-    "Reset!" : "Επαναφορά!",
-    "Edit" : "Επεξεργασία",
-    "Delete" : "Διαγραφή"
+    "Delete language {language} for region {country}" : "Διαγραφή γλώσσας {language} για την περιοχή {country}"
 },
 "nplurals=2; plural=(n != 1);");

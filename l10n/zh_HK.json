@@ -455,12 +455,6 @@
     "I acknowledge that I have read and agree to the above terms of service" : "我承認我已閱讀並同意上述服務條款",
     "Edit language {language} for region {country}" : "編輯區域 {country} 的語言 {language}",
     "Deleting …" : "刪除中 ...",
-    "Delete language {language} for region {country}" : "刪除區域 {country} 的語言 {language}",
-    "Saving …" : "儲存中 ...",
-    "Saved!" : "已儲存!",
-    "Resetting …" : "重設中 ...",
-    "Reset!" : "重設完成",
-    "Edit" : "修改",
-    "Delete" : "刪除"
+    "Delete language {language} for region {country}" : "刪除區域 {country} 的語言 {language}"
 },"pluralForm" :"nplurals=1; plural=0;"
 }
