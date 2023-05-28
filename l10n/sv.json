@@ -439,6 +439,8 @@
     "Requires users to accept the terms of service before accessing data." : "Kräver att användarna accepterar användarvillkoren innan de får åtkomst till data.",
     "Requires users to accept the terms of service before accessing data.\nThis product includes GeoLite2 data created by MaxMind, available from [maxmind.com](http://www.maxmind.com)" : "Kräver att användarna accepterar användarvillkoren innan de får åtkomst till data.\nDenna produkt innehåller GeoLite2-data skapad av MaxMind, tillgänglig från [maxmind.com] (http://www.maxmind.com)",
     "Require users to accept the terms of service before accessing the service." : "Kräv att användare accepterar användarvillkoren innan de får åtkomst till tjänsten.",
+    "Show for logged-in users" : "Visa för inloggade användare",
+    "Show on public shares" : "Visa på offentliga delningar",
     "Select a region" : "Välj en region",
     "Select a language" : "Välj ett språk",
     "By using this service …" : "Genom att använda den här tjänsten...",
@@ -448,7 +450,11 @@
     "Reset all signatories" : "Återställ att undertecknare",
     "Save" : "Spara",
     "Ensure that all fields are filled" : "Se till att alla fält är ifyllda",
+    "Terms saved successfully!" : "Villkor har sparats!",
+    "All signatories reset!" : "Alla undertecknare återställs!",
     "I acknowledge that I have read and agree to the above terms of service" : "Jag bekräftar att jag har läst och godkänt ovanstående villkor",
-    "Deleting …" : "Raderar ..."
+    "Edit language {language} for region {country}" : "Redigera språk {language} för region {country}",
+    "Deleting …" : "Raderar ...",
+    "Delete language {language} for region {country}" : "Ta bort språk {language} för region {country}"
 },"pluralForm" :"nplurals=2; plural=(n != 1);"
 }
