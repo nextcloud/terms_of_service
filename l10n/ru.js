@@ -441,6 +441,8 @@ OC.L10N.register(
     "Requires users to accept the terms of service before accessing data." : "Требуется, чтобы пользователи приняли условия предоставления услуг перед доступом к данным.",
     "Requires users to accept the terms of service before accessing data.\nThis product includes GeoLite2 data created by MaxMind, available from [maxmind.com](http://www.maxmind.com)" : "Требуется, чтобы пользователи приняли условия предоставления услуг перед доступом к данным.\nЭтот продукт включает данные GeoLite2, созданные MaxMind, доступные с [maxmind.com] (http://www.maxmind.com)",
     "Require users to accept the terms of service before accessing the service." : "Требовать от пользователей принятия условий предоставления услуг перед доступом к данным.",
+    "Show for logged-in users" : "Показывать для вошедших в систему пользователей",
+    "Show on public shares" : "Показывать в общих ресурсах",
     "Select a region" : "Выберите регион",
     "Select a language" : "Выберите язык",
     "By using this service …" : "Использованием этого ресурса…",
@@ -450,7 +452,11 @@ OC.L10N.register(
     "Reset all signatories" : "Сбросить все согласия",
     "Save" : "Сохранить",
     "Ensure that all fields are filled" : "Убедитесь, что все поля заполнены",
+    "Terms saved successfully!" : "Текст условий использования успешно сохранен!",
+    "All signatories reset!" : "Все согласия сброшены!",
     "I acknowledge that I have read and agree to the above terms of service" : "Я подтверждаю, что я прочитал и принял приведённые выше правила использования",
-    "Deleting …" : "Удаление…"
+    "Edit language {language} for region {country}" : "Редактировать язык {language} для региона {country}",
+    "Deleting …" : "Удаление…",
+    "Delete language {language} for region {country}" : "Удалить язык {language} для региона {country}"
 },
 "nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n%100>=11 && n%100<=14)? 2 : 3);");
