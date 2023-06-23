@@ -208,6 +208,7 @@ OC.L10N.register(
     "Sudan" : "السودان",
     "Suriname" : "سورينام",
     "Svalbard and Jan Mayen" : "سفالبارد وجان ماين",
+    "Swaziland" : "Swaziland",
     "Sweden" : "السويد",
     "Switzerland" : "سويسرا",
     "Syrian Arab Republic" : "سوريا",
