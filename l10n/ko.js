@@ -1,7 +1,7 @@
 OC.L10N.register(
     "terms_of_service",
     {
-    "Terms of service are not signed" : "이용약관에 동의하지 않았습니다",
+    "Terms of service are not signed" : "이용약관에 동의하지 않았습니다.",
     "Global" : "국제",
     "Afghanistan" : "아프가니스탄",
     "Åland Islands" : "올란드 제도",
@@ -448,8 +448,8 @@ OC.L10N.register(
     "Loading …" : "불러오는 중 …",
     "Reset all signatories" : "모든 동의 초기화",
     "Save" : "저장",
-    "Ensure that all fields are filled" : "모든 칸을 채웠는지 확인하십시오",
-    "I acknowledge that I have read and agree to the above terms of service" : "이용 약관을 읽었으며 이에 동의합니다",
+    "Ensure that all fields are filled" : "모든 칸을 채웠는지 확인하세요.",
+    "I acknowledge that I have read and agree to the above terms of service" : "이용 약관을 읽었으며 이에 동의합니다.",
     "Deleting …" : "삭제 중 …"
 },
 "nplurals=1; plural=0;");
