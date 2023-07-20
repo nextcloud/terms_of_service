@@ -440,7 +440,7 @@ OC.L10N.register(
     "You have to accept the newest version of the terms of service in order to be able to use this service." : "Debe aceptar a versión máis recente das condicións do servizo para poder empregar este servizo.",
     "Requires users to accept the terms of service before accessing data." : "É preciso que os usuarios acepten as condicións do servizo antes de acceder aos datos.",
     "Requires users to accept the terms of service before accessing data.\nThis product includes GeoLite2 data created by MaxMind, available from [maxmind.com](http://www.maxmind.com)" : "É preciso que os usuarios acepten as condicións do servizo antes de acceder aos datos.\nEste produto inclúe datos de GeoLite2 creados por MaxMind, dispoñíbeis en maxmind.com](http://www.maxmind.com)",
-    "Require users to accept the terms of service before accessing the service." : "É necesario que os usuarios acepten as condicións do servizo antes de acceder ao servizo.",
+    "Require users to accept the terms of service before accessing the service." : "É preciso que os usuarios acepten as condicións do servizo antes de acceder ao servizo.",
     "Show for logged-in users" : "Amosar para os usuarios que accederon",
     "Show on public shares" : "Amosar cando se comparta de forma pública",
     "Select a region" : "Seleccione unha rexión",
