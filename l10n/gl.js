@@ -335,7 +335,7 @@ OC.L10N.register(
     "Kazakh" : "Cazaxo",
     "Kalaallisut; Greenlandic" : "Kalaallisut; Greenlandés",
     "Central Khmer" : "Khemer central",
-    "Kannada" : "Canarés",
+    "Kannada" : "Kanarés",
     "Korean" : "Coreano",
     "Kanuri" : "Kanuri",
     "Kashmiri" : "Caxemir",
