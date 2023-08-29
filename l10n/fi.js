@@ -258,6 +258,8 @@ OC.L10N.register(
     "You have to accept the newest version of the terms of service in order to be able to use this service." : "Sinun tulee hyväksyä palvelun uusimmat käyttöehdot voidaksesi käyttää tätä palvelua.",
     "Requires users to accept the terms of service before accessing data." : "Vaadi käyttäjiä hyväksymään käyttöehdot, ennen kuin tietojen käyttäminen on mahdollista.",
     "Require users to accept the terms of service before accessing the service." : "Vaadi käyttäjiä hyväksymään käyttöehdot, ennen kuin palvelun käyttäminen on mahdollista.",
+    "Show for logged-in users" : "Näytä sisäänkirjautuneille käyttäjille",
+    "Show on public shares" : "Näytä julkisissa jaoissa",
     "Select a region" : "Valitse alue",
     "Select a language" : "Valitse kieli",
     "By using this service …" : "Tätä palvelua käyttämällä…",
@@ -267,6 +269,7 @@ OC.L10N.register(
     "Reset all signatories" : "Tyhjennä kaikki allekirjoittajat",
     "Save" : "Tallenna",
     "Ensure that all fields are filled" : "Varmista että kaikki kentät on täytetty",
+    "Terms saved successfully!" : "Ehdot tallennettu!",
     "I acknowledge that I have read and agree to the above terms of service" : "Vahvistan lukeneeni ja hyväksyväni yllä olevat käyttöehdot",
     "Deleting …" : "Poistetaan…"
 },
