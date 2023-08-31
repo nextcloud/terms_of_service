@@ -41,6 +41,7 @@
 			type="primary"
 			:wide="true"
 			autofocus
+			:title="t('terms_of_service', 'I acknowledge that I have read and agree to the above terms of service')"
 			@click.prevent.stop="handleClick"
 			@keydown.enter="handleClick">
 			{{ t('terms_of_service', 'I acknowledge that I have read and agree to the above terms of service') }}
