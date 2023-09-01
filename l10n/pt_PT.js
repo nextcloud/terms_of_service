@@ -1,6 +1,7 @@
 OC.L10N.register(
     "terms_of_service",
     {
+    "Terms of service are not signed" : "Os termos de serviço não foram assinados",
     "Global" : "Global",
     "Afghanistan" : "Afeganistão",
     "Albania" : "Albânia",
@@ -185,6 +186,7 @@ OC.L10N.register(
     "Zambia" : "Zâmbia",
     "Zimbabwe" : "Zimbábue ",
     "Loading …" : "A carregar...",
-    "Save" : "Guardar"
+    "Save" : "Guardar",
+    "I acknowledge that I have read and agree to the above terms of service" : "Eu confirmo que li e concordo com os termos de serviço acima"
 },
 "nplurals=3; plural=(n == 0 || n == 1) ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;");
