@@ -1,6 +1,11 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+
+## 2.3.0 – 2023-09-01
+### Fixed
+- Add title attr to main button
+
 ## 2.2.0 – 2023-05-15
 ### Changed
 - Added Nextcloud 27 compatibility
