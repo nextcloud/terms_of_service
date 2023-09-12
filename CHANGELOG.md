@@ -2,6 +2,10 @@
 All notable changes to this project will be documented in this file.
 
 
+## 2.3.1 – 2023-09-12
+### Fixed
+- Allow office online wopi requests
+
 ## 2.3.0 – 2023-09-01
 ### Fixed
 - Add title attr to main button
