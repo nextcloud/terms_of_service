@@ -29,7 +29,6 @@ use OCP\EventDispatcher\IEventListener;
 use OCP\User\Events\UserDeletedEvent;
 
 class UserDeletedListener implements IEventListener {
-
 	/** @var SignatoryMapper */
 	private $signatoryMapper;
 

@@ -25,7 +25,6 @@ use OCP\Migration\SimpleMigrationStep;
 use OCP\Migration\IOutput;
 
 class Version1000Date20180503135440 extends SimpleMigrationStep {
-
 	/**
 	 * @param IOutput $output
 	 * @param \Closure $schemaClosure The `\Closure` returns a `ISchemaWrapper`
@@ -59,25 +58,24 @@ class Version1000Date20180503135440 extends SimpleMigrationStep {
 
 		/**
 		 * Replaced by Version1000Date20181122140802
-		if (!$schema->hasTable('termsofservice_signatories')) {
-			$table = $schema->createTable('termsofservice_signatories');
-			$table->addColumn('id', 'integer', [
-				'autoincrement' => true,
-				'notnull' => true,
-			]);
-			$table->addColumn('terms_id', 'integer', [
-				'notnull' => true,
-			]);
-			$table->addColumn('user_id', 'string', [
-				'notnull' => true,
-			]);
-			$table->addColumn('timestamp', 'integer', [
-				'notnull' => true,
-			]);
-			$table->setPrimaryKey(['id']);
-		}
+		 * if (!$schema->hasTable('termsofservice_signatories')) {
+		 * $table = $schema->createTable('termsofservice_signatories');
+		 * $table->addColumn('id', 'integer', [
+		 * 'autoincrement' => true,
+		 * 'notnull' => true,
+		 * ]);
+		 * $table->addColumn('terms_id', 'integer', [
+		 * 'notnull' => true,
+		 * ]);
+		 * $table->addColumn('user_id', 'string', [
+		 * 'notnull' => true,
+		 * ]);
+		 * $table->addColumn('timestamp', 'integer', [
+		 * 'notnull' => true,
+		 * ]);
+		 * $table->setPrimaryKey(['id']);
+		 * }
 		 */
 		return $schema;
 	}
-
 }

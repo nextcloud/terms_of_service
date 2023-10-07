@@ -12,10 +12,13 @@
 		"geoip2/geoip2": "~2.0"
 	},
 	"require-dev": {
+		"nextcloud/coding-standard": "^1.0",
 		"phpunit/phpunit": "^9.5",
 		"roave/security-advisories": "dev-latest"
 	},
 	"scripts": {
+		"cs:fix": "php-cs-fixer fix",
+		"cs:check": "php-cs-fixer fix --dry-run --diff",
 		"lint": "find . -name \\*.php -not -path './vendor/*' -print0 | xargs -0 -n1 php -l",
 		"test:unit": "vendor/bin/phpunit --color -c tests/phpunit.xml"
 	}

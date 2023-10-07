@@ -31,7 +31,7 @@ use OCP\IDBConnection;
  * @method Terms mapRowToEntity(array $row)
  */
 class TermsMapper extends QBMapper {
-	const TABLENAME = 'termsofservice_terms';
+	public const TABLENAME = 'termsofservice_terms';
 
 	public function __construct(IDBConnection $db) {
 		parent::__construct($db, self::TABLENAME, Terms::class);
@@ -55,7 +55,7 @@ class TermsMapper extends QBMapper {
 		];
 
 		$result = $query->execute();
-		while ($row = $result->fetch()){
+		while ($row = $result->fetch()) {
 			$entities[$row['country_code']][] = $this->mapRowToEntity($row);
 		}
 		$result->closeCursor();
@@ -104,7 +104,7 @@ class TermsMapper extends QBMapper {
 
 		$entities = [];
 		$result = $query->execute();
-		while ($row = $result->fetch()){
+		while ($row = $result->fetch()) {
 			$entities[(int) $row['id']] = $this->mapRowToEntity($row);
 		}
 		$result->closeCursor();

@@ -5,10 +5,9 @@ namespace OCA\TermsOfService\Filesystem;
 use OC\Files\Cache\Wrapper\CacheWrapper as Wrapper;
 use OCP\Constants;
 use OCP\Files\Cache\ICache;
-use OCP\Files\ForbiddenException;
 use OCP\Files\Storage\IStorage;
 
-class CacheWrapper extends Wrapper  {
+class CacheWrapper extends Wrapper {
 	/** @var Helper */
 	private $helper;
 	/** @var StorageWrapper*/
@@ -33,10 +32,10 @@ class CacheWrapper extends Wrapper  {
 		$this->mask &= ~Constants::PERMISSION_DELETE;
 	}
 
-	const PERMISSION_CREATE = 4;
-	const PERMISSION_READ = 1;
-	const PERMISSION_UPDATE = 2;
-	const PERMISSION_DELETE = 8;
+	public const PERMISSION_CREATE = 4;
+	public const PERMISSION_READ = 1;
+	public const PERMISSION_UPDATE = 2;
+	public const PERMISSION_DELETE = 8;
 
 	protected function formatCacheEntry($entry) {
 		if (isset($entry['path'], $entry['permissions']) &&

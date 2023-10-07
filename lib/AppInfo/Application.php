@@ -55,8 +55,6 @@ use Symfony\Component\EventDispatcher\GenericEvent;
 include_once __DIR__ . '/../../vendor/autoload.php';
 
 class Application extends App implements IBootstrap {
-
-
 	public const APPNAME = 'terms_of_service';
 
 
@@ -100,7 +98,7 @@ class Application extends App implements IBootstrap {
 				&& strpos($request->getPathInfo(), '/login/') !== 0
 				&& substr($request->getScriptName(), 0 - strlen('/index.php')) === '/index.php') {
 				Util::addScript('terms_of_service', 'terms_of_service-user');
-			} else if ($config->getAppValue(self::APPNAME, 'tos_on_public_shares', '0') === '1') {
+			} elseif ($config->getAppValue(self::APPNAME, 'tos_on_public_shares', '0') === '1') {
 				Util::addScript('terms_of_service', 'terms_of_service-public');
 			}
 		}
@@ -146,7 +144,7 @@ class Application extends App implements IBootstrap {
 	}
 
 	public function createNotificationOnFirstLogin(IManager $notificationManager, EventDispatcherInterface $dispatcher): void {
-		$dispatcher->addListener(IUser::class . '::firstLogin', function(GenericEvent $event) use ($notificationManager) {
+		$dispatcher->addListener(IUser::class . '::firstLogin', function (GenericEvent $event) use ($notificationManager) {
 			$user = $event->getSubject();
 			if (!$user instanceof IUser) {
 				return;

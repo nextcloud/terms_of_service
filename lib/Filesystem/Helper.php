@@ -49,10 +49,10 @@ class Helper {
 		// '', admin, 'files', 'path/to/file.txt'
 		$segment = explode('/', $fullPath, 4);
 		return isset($segment[2]) && \in_array($segment[2], [
-				'files',
-				'thumbnails',
-				'files_versions',
-			], true);
+			'files',
+			'thumbnails',
+			'files_versions',
+		], true);
 	}
 
 	/**

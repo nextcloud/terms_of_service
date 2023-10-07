@@ -13,7 +13,10 @@ version+=master
 
 all: dev-setup build-js-production
 
-dev-setup: clean clean-dev npm-init
+dev-setup: clean clean-dev composer-init npm-init
+
+composer-init:
+	composer install
 
 npm-init:
 	npm ci
