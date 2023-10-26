@@ -32,7 +32,6 @@ use OCA\TermsOfService\Filesystem\StorageWrapper;
 use OCA\TermsOfService\Listener\RegistrationIntegration;
 use OCA\TermsOfService\Listener\UserDeletedListener;
 use OCA\TermsOfService\Notifications\Notifier;
-use OCA\TermsOfService\Dav\CheckPlugin;
 use OCP\AppFramework\App;
 use OCP\AppFramework\Bootstrap\IBootContext;
 use OCP\AppFramework\Bootstrap\IBootstrap;
@@ -44,13 +43,11 @@ use OCP\IRequest;
 use OCP\IUser;
 use OCP\IUserSession;
 use OCP\Notification\IManager;
-use OCP\SabrePluginEvent;
 use OCP\User\Events\UserDeletedEvent;
+use OCP\User\Events\UserFirstTimeLoggedInEvent;
 use OCP\Util;
 use Psr\Log\LoggerInterface;
 use Psr\Container\ContainerExceptionInterface;
-use Symfony\Component\EventDispatcher\EventDispatcherInterface;
-use Symfony\Component\EventDispatcher\GenericEvent;
 
 include_once __DIR__ . '/../../vendor/autoload.php';
 
@@ -145,13 +142,9 @@ class Application extends App implements IBootstrap {
 		$notificationManager->registerNotifierService(Notifier::class);
 	}
 
-	public function createNotificationOnFirstLogin(IManager $notificationManager, EventDispatcherInterface $dispatcher): void {
-		$dispatcher->addListener(IUser::class . '::firstLogin', function(GenericEvent $event) use ($notificationManager) {
-			$user = $event->getSubject();
-			if (!$user instanceof IUser) {
-				return;
-			}
-
+	public function createNotificationOnFirstLogin(IManager $notificationManager, IEventDispatcher $dispatcher): void {
+		$dispatcher->addListener(UserFirstTimeLoggedInEvent::class, function(UserFirstTimeLoggedInEvent $event) use ($notificationManager) {
+			$user = $event->getUser();
 			$notification = $notificationManager->createNotification();
 			$notification->setApp('terms_of_service')
 				->setDateTime(new \DateTime())
