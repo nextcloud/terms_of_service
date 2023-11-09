@@ -21,7 +21,6 @@
 
 namespace OCA\TermsOfService\Command;
 
-use OCA\Passwords\Exception\Command\NonInteractiveShellException;
 use OCA\TermsOfService\Db\Entities\Terms;
 use OCA\TermsOfService\Db\Mapper\CountryMapper;
 use OCA\TermsOfService\Db\Mapper\LanguageMapper;
