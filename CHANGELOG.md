@@ -1,6 +1,9 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## [Unreleased]
+### Added
+- OCC commands to change or delete TOS
 
 ## 2.3.1 – 2023-09-12
 ### Fixed
