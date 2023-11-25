@@ -1,4 +1,5 @@
 { "translations": {
+    "Terms of service are not signed" : "Þjónustuskilmálar hafa ekki verið undirritaðir",
     "Global" : "Almennt",
     "Afghanistan" : "Afganistan",
     "Åland Islands" : "Álandseyjar",
@@ -341,6 +342,7 @@
     "Cornish" : "Cornish",
     "Kirghiz; Kyrgyz" : "Kirgisíska; Kyrgyz",
     "Latin" : "Latína",
+    "Luxembourgish; Lëtzeburgesch" : "Lúxemborgíska; Lëtzeburgesch",
     "Ganda" : "Ganda",
     "Limburgan; Limburger; Limburgish" : "Limburgan; Limburger; Limburgish",
     "Lingala" : "Lingala",
@@ -437,6 +439,8 @@
     "Requires users to accept the terms of service before accessing data." : "Krefur notendur um samþykkt á þjónustuskilmálum áður en aðgangur er gefinn að gögnum.",
     "Requires users to accept the terms of service before accessing data.\nThis product includes GeoLite2 data created by MaxMind, available from [maxmind.com](http://www.maxmind.com)" : "Krefur notendur um samþykkt á þjónustuskilmálum áður en aðgangur er gefinn að gögnum.\nÞessi eiginleiki inniheldur GeoLite2 gögn útbúin af MaxMind, tiltæk frá [maxmind.com](http://www.maxmind.com)",
     "Require users to accept the terms of service before accessing the service." : "Krefur notendur um samþykkt á þjónustuskilmálum áður en aðgangur er gefinn að þjónustu.",
+    "Show for logged-in users" : "Birta fyrir innskráða notendur",
+    "Show on public shares" : "Birta á opinberum sameignum",
     "Select a region" : "Veldu svæði",
     "Select a language" : "Veldu tungumál",
     "By using this service …" : "Með því að nota þessa þjónustu …",
@@ -446,7 +450,11 @@
     "Reset all signatories" : "Endurstilla allar undirritanir",
     "Save" : "Vista",
     "Ensure that all fields are filled" : "Vertu viss um að fylla út í alla reitina",
+    "Terms saved successfully!" : "Tókst að vista skilmála!",
+    "All signatories reset!" : "Allir undirritarar endurstilltir!",
     "I acknowledge that I have read and agree to the above terms of service" : "Staðfesti ég að ég hef lesið og samþykki ofangreinda jónustuskilmála",
-    "Deleting …" : "Eyði …"
+    "Edit language {language} for region {country}" : "Breyta tungumálinu {language} fyrir svæðið {country}",
+    "Deleting …" : "Eyði …",
+    "Delete language {language} for region {country}" : "Eyða tungumálinu {language} fyrir svæðið {country}"
 },"pluralForm" :"nplurals=2; plural=(n % 10 != 1 || n % 100 == 11);"
 }
