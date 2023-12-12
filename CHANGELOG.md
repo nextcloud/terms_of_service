@@ -1,9 +1,12 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
-## 2.3.2-beta.4
+## 2.3.2
 ### Added
 - OCC commands to change or delete TOS
+### Changed
+- Added Nextcloud 28 compatibility
+- Updated dependencies
 
 ## 2.3.1 – 2023-09-12
 ### Fixed
