@@ -36,12 +36,12 @@
 			</NcCheckboxRadioSwitch>
 
 			<span class="form">
-				<NcMultiselect v-model="country"
+				<NcSelect v-model="country"
 					:options="countryOptions"
 					:placeholder="t('terms_of_service', 'Select a region')"
 					label="label"
 					track-by="value" />
-				<NcMultiselect v-model="language"
+				<NcSelect v-model="language"
 					:options="languageOptions"
 					:placeholder="t('terms_of_service', 'Select a language')"
 					label="label"
@@ -85,7 +85,7 @@ import Term from './components/Term.vue'
 import axios from '@nextcloud/axios'
 import NcButton from '@nextcloud/vue/dist/Components/NcButton.js'
 import NcCheckboxRadioSwitch from '@nextcloud/vue/dist/Components/NcCheckboxRadioSwitch.js'
-import NcMultiselect from '@nextcloud/vue/dist/Components/NcMultiselect.js'
+import NcSelect from '@nextcloud/vue/dist/Components/NcSelect.js'
 import NcSettingsSection from '@nextcloud/vue/dist/Components/NcSettingsSection.js'
 import { showError, showSuccess } from '@nextcloud/dialogs'
 import { generateUrl } from '@nextcloud/router'
@@ -101,7 +101,7 @@ export default {
 		Fragment,
 		NcButton,
 		NcCheckboxRadioSwitch,
-		NcMultiselect,
+		NcSelect,
 		NcSettingsSection,
 	},
 
@@ -136,7 +136,7 @@ export default {
 				OCP.AppConfig.setValue(
 					'terms_of_service',
 					'tos_on_public_shares',
-					value ? '1' : '0'
+					value ? '1' : '0',
 				)
 			}
 		},
@@ -145,7 +145,7 @@ export default {
 				OCP.AppConfig.setValue(
 					'terms_of_service',
 					'tos_for_users',
-					value ? '1' : '0'
+					value ? '1' : '0',
 				)
 			}
 		},
