@@ -114,7 +114,7 @@ export default {
 	/**
 	 * Basic Markdown support
 	 */
-	::v-deep div.text-content {
+	:deep div.text-content {
 		height: 100%;
 		overflow: auto;
 		text-align: left;
