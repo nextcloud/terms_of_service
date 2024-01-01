@@ -134,9 +134,7 @@ export default {
 
 			axios.post(
 				generateUrl(url),
-				{
-					termId: this.termsId,
-				}
+				{ termId: this.termsId },
 			).then(() => {
 				window.location.reload()
 			})
