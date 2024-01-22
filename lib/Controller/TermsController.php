@@ -36,6 +36,8 @@ use OCP\AppFramework\Http\JSONResponse;
 use OCP\IConfig;
 use OCP\IRequest;
 use OCP\L10N\IFactory;
+use OCA\TermsOfService\Events\NewTOSCreatedEvent;
+use OCP\EventDispatcher\IEventDispatcher;
 
 class TermsController extends Controller {
 	/** @var IFactory */
@@ -55,6 +57,9 @@ class TermsController extends Controller {
 	/** @var IConfig */
 	private $config;
 
+	/** @var IEventDispatcher */
+	private $eventDispatcher;
+
 	public function __construct(string $appName,
 								IRequest $request,
 								IFactory $factory,
@@ -64,7 +69,9 @@ class TermsController extends Controller {
 								LanguageMapper $languageMapper,
 								CountryDetector $countryDetector,
 								Checker $checker,
-								IConfig $config) {
+								IConfig $config,
+								IEventDispatcher $eventDispatcher
+	) {
 		parent::__construct($appName, $request);
 		$this->factory = $factory;
 		$this->termsMapper = $termsMapper;
@@ -74,6 +81,7 @@ class TermsController extends Controller {
 		$this->countryDetector = $countryDetector;
 		$this->checker = $checker;
 		$this->config = $config;
+		$this->eventDispatcher = $eventDispatcher;
 	}
 
 	/**
@@ -124,6 +132,9 @@ class TermsController extends Controller {
 
 		return new JSONResponse();
 	}
+	protected function createNewTOSCreatedEvent(): NewTOSCreatedEvent {
+		return new NewTOSCreatedEvent();
+	}
 
 	/**
 	 * @param string $countryCode
@@ -157,6 +168,9 @@ class TermsController extends Controller {
 		} else {
 			$this->termsMapper->insert($terms);
 		}
+
+		$event = $this->createNewTOSCreatedEvent();
+		$this->eventDispatcher->dispatchTyped($event);
 
 		return new JSONResponse($terms);
 	}
