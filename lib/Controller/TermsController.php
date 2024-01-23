@@ -36,7 +36,7 @@ use OCP\AppFramework\Http\JSONResponse;
 use OCP\IConfig;
 use OCP\IRequest;
 use OCP\L10N\IFactory;
-use OCA\TermsOfService\Events\NewTOSCreatedEvent;
+use OCA\TermsOfService\Events\TermsCreatedEvent;
 use OCP\EventDispatcher\IEventDispatcher;
 
 class TermsController extends Controller {
@@ -132,8 +132,8 @@ class TermsController extends Controller {
 
 		return new JSONResponse();
 	}
-	protected function createNewTOSCreatedEvent(): NewTOSCreatedEvent {
-		return new NewTOSCreatedEvent();
+	protected function createTermsCreatedEvent(): TermsCreatedEvent {
+		return new TermsCreatedEvent();
 	}
 
 	/**
@@ -169,7 +169,7 @@ class TermsController extends Controller {
 			$this->termsMapper->insert($terms);
 		}
 
-		$event = $this->createNewTOSCreatedEvent();
+		$event = $this->createTermsCreatedEvent();
 		$this->eventDispatcher->dispatchTyped($event);
 
 		return new JSONResponse($terms);
