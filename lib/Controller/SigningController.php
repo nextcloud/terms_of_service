@@ -32,6 +32,8 @@ use OCP\ISession;
 use OCP\IUser;
 use OCP\IUserManager;
 use OCP\Notification\IManager;
+use OCA\TermsOfService\Events\ResetSignaturesEvent;
+use OCP\EventDispatcher\IEventDispatcher;
 
 class SigningController extends Controller {
 	/** @var string */
@@ -47,6 +49,9 @@ class SigningController extends Controller {
 	/** @var ISession */
 	private $session;
 
+	/** @var IEventDispatcher */
+	private $eventDispatcher;
+
 
 	public function __construct(
 		string $appName,
@@ -56,7 +61,8 @@ class SigningController extends Controller {
 		IManager $notificationsManager,
 		IUserManager $userManager,
 		IConfig $config,
-		ISession $session
+		ISession $session,
+		IEventDispatcher $eventDispatcher
 	) {
 		parent::__construct($appName, $request);
 		$this->userId = $UserId;
@@ -65,6 +71,11 @@ class SigningController extends Controller {
 		$this->userManager = $userManager;
 		$this->config = $config;
 		$this->session = $session;
+		$this->eventDispatcher = $eventDispatcher;
+	}
+
+	protected function resetAllSignaturesEvent(): ResetSignaturesEvent {
+		return new ResetSignaturesEvent();
 	}
 
 	/**
@@ -132,6 +143,9 @@ class SigningController extends Controller {
 			$notification->setUser($user->getUID());
 			$this->notificationsManager->notify($notification);
 		});
+
+		$event = $this->resetAllSignaturesEvent();
+		$this->eventDispatcher->dispatchTyped($event);
 
 		return new JSONResponse();
 	}
