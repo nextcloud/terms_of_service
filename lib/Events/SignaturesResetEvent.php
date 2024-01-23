@@ -1,10 +1,8 @@
 <?php
 /**
- * @copyright Copyright (c) 2017 Bjoern Schiessle <bjoern@schiessle.org>
+ * @copyright Copyright (c) 2024 Sagar Gurung  <sagargurung1001@gmail.com>
  *
- * @author Arthur Schiwon <blizzz@arthur-schiwon.de>
- * @author Bjoern Schiessle <bjoern@schiessle.org>
- * @author Roeland Jago Douma <roeland@famdouma.nl>
+ * @author Sagar Gurung  <sagargurung1001@gmail.com>
  *
  * @license GNU AGPL version 3 or any later version
  *
@@ -27,13 +25,11 @@ namespace OCA\TermsOfService\Events;
 use OCP\EventDispatcher\Event;
 
 /**
- * Class MoveToTrashEvent
- *
- * Event to allow other apps to disable the trash bin for specific files
+ * Class SignaturesResetEvent
  *
  * @package OCA\Terms_Of_Service\Events
  */
-class ResetSignaturesEvent extends Event {
+class SignaturesResetEvent extends Event {
 	public function __construct() {
 	}
 }

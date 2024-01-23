@@ -32,7 +32,7 @@ use OCP\ISession;
 use OCP\IUser;
 use OCP\IUserManager;
 use OCP\Notification\IManager;
-use OCA\TermsOfService\Events\ResetSignaturesEvent;
+use OCA\TermsOfService\Events\SignaturesResetEvent;
 use OCP\EventDispatcher\IEventDispatcher;
 
 class SigningController extends Controller {
@@ -74,8 +74,8 @@ class SigningController extends Controller {
 		$this->eventDispatcher = $eventDispatcher;
 	}
 
-	protected function resetAllSignaturesEvent(): ResetSignaturesEvent {
-		return new ResetSignaturesEvent();
+	protected function resetAllSignaturesEvent(): SignaturesResetEvent {
+		return new SignaturesResetEvent();
 	}
 
 	/**
