@@ -1,6 +1,12 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## 2.4.0
+### Added
+- Add a listerner when new terms of service is created
+### Changed
+- Updated dependencies
+
 ## 2.3.2
 ### Added
 - OCC commands to change or delete TOS
