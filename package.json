@@ -16,7 +16,7 @@
 	},
 	"dependencies": {
 		"@nextcloud/axios": "^2.3.0",
-		"@nextcloud/dialogs": "^5.1.1",
+		"@nextcloud/dialogs": "^5.1.2",
 		"@nextcloud/router": "^3.0.0",
 		"@nextcloud/vue": "^8.7.1",
 		"vue": "^2.7.16",
