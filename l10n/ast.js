@@ -216,6 +216,7 @@ OC.L10N.register(
     "Aragonese" : "Aragonés",
     "Assamese" : "Asamés",
     "Czech" : "Chequia",
+    "Terms of service" : "Términos del serviciu",
     "Loading …" : "Cargando…",
     "Save" : "Guardar"
 },
