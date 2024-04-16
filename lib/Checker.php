@@ -134,6 +134,7 @@ class Checker {
 			foreach ($signatories as $signatory) {
 				foreach ($this->termsCache[$countryCode] as $term) {
 					if ((int)$term->getId() === (int)$signatory->getTermsId()) {
+						$this->session->set('term_uuid', $uuid);
 						return true;
 					}
 				}
