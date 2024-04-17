@@ -34,6 +34,7 @@ OC.L10N.register(
     "Botswana" : "Botsuana",
     "Bouvet Island" : "Islla Bouvet",
     "Brazil" : "Brasil",
+    "British Indian Ocean Territory" : "Territoriu Británicu del Océanu de Índicu",
     "Bulgaria" : "Bulgaria",
     "Burkina Faso" : "Burkina Fasu",
     "Burundi" : "Burundi",
