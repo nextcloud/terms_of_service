@@ -224,6 +224,7 @@ OC.L10N.register(
     "Zimbabwe" : "Zimbabue",
     "Czech" : "República Checa",
     "Terms of service" : "Términos del servicio",
+    "Loading …" : "Cargando …",
     "Save" : "Guardar"
 },
 "nplurals=3; plural=n == 1 ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;");
