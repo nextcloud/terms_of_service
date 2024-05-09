@@ -1,3 +1,7 @@
+<!--
+ - SPDX-FileCopyrightText: 2018 Nextcloud GmbH and Nextcloud contributors
+ - SPDX-License-Identifier: AGPL-3.0-or-later
+-->
 # 📜 Terms of service
 
 > ![](https://raw.githubusercontent.com/nextcloud/terms_of_service/master/docs/popup-dialog.png)
