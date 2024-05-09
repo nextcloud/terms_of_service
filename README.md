@@ -4,6 +4,8 @@
 -->
 # 📜 Terms of service
 
+[![REUSE status](https://api.reuse.software/badge/github.com/nextcloud/terms_of_service)](https://api.reuse.software/info/github.com/nextcloud/terms_of_service)
+
 > ![](https://raw.githubusercontent.com/nextcloud/terms_of_service/master/docs/popup-dialog.png)
 
 Requires users to accept terms of service before accessing data. Text and languages are configurable on the administration panel.
