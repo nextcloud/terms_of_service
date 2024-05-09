@@ -15,8 +15,8 @@ Files: js/*.js.map js/*.js js/*.mjs js/*.mjs.map js/templates/*.handlebars empty
 Copyright: 2017 Nextcloud GmbH and Nextcloud contributors
 License: AGPL-3.0-or-later
 
-Files: screenshots/Nextcloud-presentation.png screenshots/Nextcloud-spreadsheet.png screenshots/Nextcloud-writer.png
-Copyright: Nextcloud GmbH and Nextcloud contributors
+Files: docs/notification-and-settings.png docs/popup-dialog.png
+Copyright: 2017 Nextcloud GmbH and Nextcloud contributors
 License: CC0-1.0
 
 Files: img/app-dark.svg img/app.png img/app.svg img/launch.svg img/x-office-document.svg img/x-office-drawing.svg img/x-office-presentation.svg img/x-office-spreadsheet.svg
