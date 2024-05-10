@@ -1,4 +1,10 @@
+<!--
+ - SPDX-FileCopyrightText: 2018 Nextcloud GmbH and Nextcloud contributors
+ - SPDX-License-Identifier: AGPL-3.0-or-later
+-->
 # 📜 Terms of service
+
+[![REUSE status](https://api.reuse.software/badge/github.com/nextcloud/terms_of_service)](https://api.reuse.software/info/github.com/nextcloud/terms_of_service)
 
 > ![](https://raw.githubusercontent.com/nextcloud/terms_of_service/master/docs/popup-dialog.png)
 
