@@ -1,6 +1,7 @@
 OC.L10N.register(
     "terms_of_service",
     {
+    "Global" : "Domhanda",
     "Afghanistan" : "Afganastáin",
     "Åland Islands" : "Oileáin Åland",
     "Albania" : "an Albáin",
