@@ -2,7 +2,6 @@
   - SPDX-FileCopyrightText: 2021 Nextcloud GmbH and Nextcloud contributors
   - SPDX-License-Identifier: AGPL-3.0-or-later
 -->
-
 <template>
 	<div id="terms_of_service_content"
 		class="modal-content"
@@ -13,7 +12,9 @@
 		</div>
 
 		<!-- Scrollable terms of service -->
-		<slot />
+		<div ref="termsContent" class="terms-content">
+			<slot />
+		</div>
 
 		<!-- Sticky button -->
 		<NcButton ref="acceptButton"
@@ -22,6 +23,7 @@
 			:wide="true"
 			autofocus
 			:title="t('terms_of_service', 'I acknowledge that I have read and agree to the above terms of service')"
+			:disabled="!isScrollComplete"
 			@click.prevent.stop="handleClick"
 			@keydown.enter="handleClick">
 			{{ t('terms_of_service', 'I acknowledge that I have read and agree to the above terms of service') }}
@@ -39,6 +41,13 @@ export default {
 		NcButton,
 	},
 
+	props: {
+		isScrollComplete: {
+			type: Boolean,
+			default: false,
+		},
+	},
+
 	mounted() {
 		this.$nextTick(() => {
 			this.$refs.acceptButton.$el.focus()
@@ -47,12 +56,13 @@ export default {
 
 	methods: {
 		handleClick() {
-			this.$emit('click')
+			if (this.isScrollComplete) {
+				this.$emit('click')
+			}
 		},
 	},
 }
 </script>
-
 <style lang="scss" scoped>
 /* Little hack to strengthen the css selector so links with dark mode on the registration page are readable */
 #terms_of_service_content.modal-content,
@@ -76,10 +86,15 @@ export default {
 		margin: 8px 0 12px 0;
 	}
 
+	.terms-content {
+		height: 100%;
+		overflow-y: auto;
+		flex: 1;
+	}
+
 	select {
 		float: right;
 		padding: 0 12px;
-
 		/**
 		 * Need to overwrite the rules of guest.css
 		 */
@@ -90,7 +105,6 @@ export default {
 			border-color: var(--color-primary-element);
 		}
 	}
-
 	/**
 	 * Basic Markdown support
 	 */
@@ -123,5 +137,11 @@ export default {
 		}
 	}
 }
+</style>
 
+<style lang="scss" scoped>
+:deep .modal-container {
+	display: flex;
+	height: 100%;
+}
 </style>

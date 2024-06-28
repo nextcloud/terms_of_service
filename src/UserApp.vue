@@ -8,7 +8,7 @@
 		<NcModal v-if="showModal"
 			:can-close="hasSigned"
 			@close="handleCloseModal">
-			<ModalContent @click="acceptTerms">
+			<ModalContent :is-scroll-complete="hasScrolledToBottom" @click="acceptTerms">
 				<template #header>
 					<h3>{{ t('terms_of_service', 'Terms of service') }}</h3>
 					<select v-if="terms.length > 1" v-model="selectedLanguage">
@@ -19,7 +19,10 @@
 				</template>
 
 				<!-- eslint-disable-next-line vue/no-v-html -->
-				<div class="text-content" v-html="termsBody" />
+				<div ref="termsContent"
+					class="text-content"
+					@scroll="checkScroll"
+					v-html="termsBody" />
 			</ModalContent>
 		</NcModal>
 	</div>
@@ -49,6 +52,7 @@ export default {
 			termsId: 0,
 			termsBody: '',
 			publicContent: null,
+			hasScrolledToBottom: false,
 		}
 	},
 
@@ -63,38 +67,38 @@ export default {
 	},
 
 	methods: {
-		loadTerms() {
-			axios
-				.get(generateUrl('/apps/terms_of_service/terms'))
-				.then(response => {
-					this.hasSigned = response.data.hasSigned
-					this.terms = response.data.terms
+		async loadTerms() {
+			try {
+				const response = await axios.get(generateUrl('/apps/terms_of_service/terms'))
+				this.hasSigned = response.data.hasSigned
+				this.terms = response.data.terms
 
-					const language = OC.getLanguage().split('-')[0]
+				const language = OC.getLanguage().split('-')[0]
 
-					if (!this.terms.length || this.hasSigned) {
-						return
-					}
+				if (!this.terms.length || this.hasSigned) {
+					return
+				}
 
-					// make it Vue
-					this.publicContent = document.getElementById('files-public-content')
-					if (this.publicContent !== null) {
-						this.publicContent.style.visibility = 'hidden'
-					}
+				this.publicContent = document.getElementById('files-public-content')
+				if (this.publicContent !== null) {
+					this.publicContent.style.visibility = 'hidden'
+				}
 
-					this.selectTerms(0)
-					if (this.terms.length > 1) {
-						Object.keys(this.terms).forEach((index) => {
-							if (language === this.terms[index].languageCode) {
-								this.selectedLanguage = index
-							}
+				this.selectTerms(0)
+				if (this.terms.length > 1) {
+					Object.keys(this.terms).forEach((index) => {
+						if (language === this.terms[index].languageCode) {
+							this.selectedLanguage = index
+						}
 
-							this.languages.push(response.data.languages[this.terms[index].languageCode])
-						})
-					}
+						this.languages.push(response.data.languages[this.terms[index].languageCode])
+					})
+				}
 
-					this.showTerms()
-				})
+				this.showTerms()
+			} catch (error) {
+				console.error('Error loading terms:', error)
+			}
 		},
 
 		selectTerms(index) {
@@ -104,6 +108,9 @@ export default {
 
 		showTerms() {
 			this.showModal = true
+			this.$nextTick(() => {
+				this.checkScroll()
+			})
 		},
 
 		acceptTerms() {
@@ -126,12 +133,18 @@ export default {
 		handleCloseModal() {
 			this.showModal = false
 		},
+
+		checkScroll() {
+			const termsContent = this.$refs.termsContent
+			const isScrollable = termsContent.scrollHeight > termsContent.clientHeight
+
+			this.hasScrolledToBottom = !isScrollable || (termsContent.scrollHeight - termsContent.scrollTop <= termsContent.clientHeight + 1)
+		},
 	},
 }
 </script>
 
 <style lang="scss" scoped>
-
 :deep .modal-container {
 	display: flex;
 	height: 100%;

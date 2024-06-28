@@ -5,7 +5,7 @@
 
 <template>
 	<Fragment>
-		<NcSettingsSection :title="t('terms_of_service', 'Terms of service')"
+		<NcSettingsSection :name="t('terms_of_service', 'Terms of service')"
 			:description="t('terms_of_service', 'Require users to accept the terms of service before accessing the service.')">
 			<NcCheckboxRadioSwitch type="switch"
 				:checked.sync="showForLoggedInUser">
@@ -21,11 +21,13 @@
 				<NcSelect v-model="country"
 					:options="countryOptions"
 					:placeholder="t('terms_of_service', 'Select a region')"
+					:aria-label-combobox="t('terms_of_service', 'Select a region')"
 					label="label"
 					track-by="value" />
 				<NcSelect v-model="language"
 					:options="languageOptions"
 					:placeholder="t('terms_of_service', 'Select a language')"
+					:aria-label-combobox="t('terms_of_service', 'Select a language')"
 					label="label"
 					track-by="value" />
 			</span>
@@ -45,7 +47,7 @@
 		</NcSettingsSection>
 
 		<NcSettingsSection v-if="hasTerms"
-			:title="t('terms_of_service', 'Existing terms of service')">
+			:name="t('terms_of_service', 'Existing terms of service')">
 			<NcButton :disabled="resetButtonDisabled"
 				type="error"
 				@click="onResetSignatories">
