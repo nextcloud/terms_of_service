@@ -4,24 +4,25 @@
 -->
 
 <template>
-	<div id="terms_of_service_content"
-		class="modal-content"
-		aria-live="polite">
+	<div id="terms_of_service_content" class="modal-content" aria-live="polite">
 		<!-- Sticky Header -->
 		<div class="modal-content__header">
 			<slot name="header" />
 		</div>
 
 		<!-- Scrollable terms of service -->
-		<slot />
+		<div class="terms-content" @scroll="handleScroll">
+			<slot />
+		</div>
 
 		<!-- Sticky button -->
 		<NcButton ref="acceptButton"
 			class="modal-content__button"
 			type="primary"
 			:wide="true"
+			:disabled="!scrolledToBottom"
 			autofocus
-			:title="t('terms_of_service', 'I acknowledge that I have read and agree to the above terms of service')"
+			:name="t('terms_of_service', 'I acknowledge that I have read and agree to the above terms of service')"
 			@click.prevent.stop="handleClick"
 			@keydown.enter="handleClick">
 			{{ t('terms_of_service', 'I acknowledge that I have read and agree to the above terms of service') }}
@@ -39,6 +40,12 @@ export default {
 		NcButton,
 	},
 
+	data() {
+		return {
+			scrolledToBottom: false,
+		}
+	},
+
 	mounted() {
 		this.$nextTick(() => {
 			this.$refs.acceptButton.$el.focus()
@@ -46,8 +53,14 @@ export default {
 	},
 
 	methods: {
+		handleScroll(event) {
+			const element = event.target
+			this.scrolledToBottom = element.scrollHeight - element.scrollTop === element.clientHeight
+		},
 		handleClick() {
-			this.$emit('click')
+			if (this.scrolledToBottom) {
+				this.$emit('click')
+			}
 		},
 	},
 }
@@ -122,6 +135,11 @@ export default {
 			color: var(--color-main-text) !important;
 		}
 	}
-}
 
+	.terms-content {
+		flex-grow: 1;
+		overflow-y: auto;
+		margin-bottom: 1em;
+	}
+}
 </style>
