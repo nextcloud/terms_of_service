@@ -1,6 +1,7 @@
 OC.L10N.register(
     "terms_of_service",
     {
+    "Terms of service are not signed" : "Умови користування не прийнято",
     "Global" : "Загальний",
     "Afghanistan" : "Афганістан",
     "Åland Islands" : "Аландські острови ",
@@ -297,7 +298,27 @@ OC.L10N.register(
     "Vietnamese" : "В'єтнамська",
     "Chinese" : "Китайська",
     "Terms of service" : "Умови використання",
+    "Terms of service have been modified!" : "Умови користування оновлено!",
+    "You have to accept the newest version of the terms of service in order to be able to use this service." : "Вам потрібно прийняти оновлену версії умови користування послугами, щоби ви могли подалі користуватися цим сервісом.",
+    "Requires users to accept the terms of service before accessing data." : "Вимагає, щоби користувачі прийняли умови користування перед тим, як отримати доступ до даних.",
+    "Requires users to accept the terms of service before accessing data.\nThis product includes GeoLite2 data created by MaxMind, available from [maxmind.com](http://www.maxmind.com)" : "Вимагає, щоби користувачі прийняли умови користування перед тим, як отримати доступ до даних.\nЦей продукт використовує дані GeoLite2, які було створено MaxMind, доступні на [maxmind.com] (http://www.maxmind.com)",
+    "Require users to accept the terms of service before accessing the service." : "Вимагає, щоби користувачі прийняли умови користування послугами перед отриманням доступу до цього сервісу.",
+    "Show for logged-in users" : "Показувати для авторизованих користувачів",
+    "Show on public shares" : "Показувати для публічних ресурсів",
+    "Select a region" : "Виберіть регіон",
+    "Select a language" : "Виберіть мову",
+    "By using this service …" : "Використання цього сервісу ...",
+    "For formatting purposes Markdown is supported." : "Текстове форматування підтримується",
+    "Existing terms of service" : "Умови користування послугами",
     "Loading …" : "Завантаження...",
-    "Save" : "Зберегти"
+    "Reset all signatories" : "Скинути всіх підписантів",
+    "Save" : "Зберегти",
+    "Ensure that all fields are filled" : "Переконайтеся, що всі поля заповнено",
+    "Terms saved successfully!" : "Умови успішно збережено!",
+    "All signatories reset!" : "Всіх підписантів скинуто!",
+    "I acknowledge that I have read and agree to the above terms of service" : "Я визнаю, що я прочитав та приймаю вище зазначені умови користування послугами",
+    "Edit language {language} for region {country}" : "Редагувати мову {language} для регіону {country}",
+    "Deleting …" : "Вилучення ...",
+    "Delete language {language} for region {country}" : "Вилучити мову {language} для регіону {country}"
 },
 "nplurals=4; plural=(n % 1 == 0 && n % 10 == 1 && n % 100 != 11 ? 0 : n % 1 == 0 && n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 12 || n % 100 > 14) ? 1 : n % 1 == 0 && (n % 10 ==0 || (n % 10 >=5 && n % 10 <=9) || (n % 100 >=11 && n % 100 <=14 )) ? 2: 3);");
