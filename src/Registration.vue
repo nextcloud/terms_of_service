@@ -24,7 +24,7 @@
 			<NcModal v-if="showModal"
 				:can-close="hasSigned"
 				@close="handleCloseModal">
-				<ModalContent @click="acceptTerms">
+				<ModalContent :is-scroll-complete="hasScrolledToBottom" @click="acceptTerms">
 					<template #header>
 						<h3>{{ t('terms_of_service', 'Terms of service') }}</h3>
 						<select v-if="terms.length > 1" v-model="selectedLanguage">
@@ -35,7 +35,10 @@
 					</template>
 
 					<!-- eslint-disable-next-line vue/no-v-html -->
-					<div class="text-content" v-html="termsBody" />
+					<div ref="termsContent"
+						class="text-content"
+						@scroll="checkScroll"
+						v-html="termsBody" />
 				</ModalContent>
 			</NcModal>
 		</div>
@@ -68,6 +71,7 @@ export default {
 			termsId: 0,
 			termsBody: '',
 			publicContent: null,
+			hasScrolledToBottom: false,
 		}
 	},
 
@@ -128,6 +132,14 @@ export default {
 				return
 			}
 			this.showModal = true
+			this.$nextTick(() => {
+				this.checkScroll()
+			})
+		},
+		checkScroll() {
+			const termsContent = this.$refs.termsContent
+			const isScrollable = termsContent.scrollHeight > termsContent.clientHeight
+			this.hasScrolledToBottom = !isScrollable || (termsContent.scrollHeight - termsContent.scrollTop <= termsContent.clientHeight + 1)
 		},
 
 		acceptTerms() {
