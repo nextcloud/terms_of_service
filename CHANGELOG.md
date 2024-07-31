@@ -5,6 +5,15 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## 2.5.0
+### Added
+- Force the user to scroll text to accept the TOS
+### Fixed
+- Cache the uuid if the tos is signed by the user
+### Changed
+- Updated translations
+- Updated dependencies
+
 ## 2.4.0
 ### Added
 - Add a listerner when new terms of service is created
