@@ -1,0 +1,60 @@
+# SPDX-FileCopyrightText: 2024 Nextcloud GmbH and Nextcloud contributors
+# SPDX-License-Identifier: AGPL-3.0-or-later
+version = 1
+SPDX-PackageName = "terms_of_service"
+SPDX-PackageSupplier = "Nextcloud <info@nextcloud.com>"
+SPDX-PackageDownloadLocation = "https://github.com/nextcloud/terms_of_service"
+
+[[annotations]]
+path = [".gitattributes", ".github/issue_template.md", ".github/CODEOWNERS", ".editorconfig", "package-lock.json", "package.json", "composer.json", "composer.lock", "**/composer.json", "**/composer.lock", ".l10nignore", "cypress/tsconfig.json", "vendor-bin/**/composer.json", "vendor-bin/**/composer.lock", ".tx/config", "tsconfig.json", "js/vendor.LICENSE.txt", "krankerl.toml", ".npmignore", ".nextcloudignore", ".eslintrc.json", ".tx/backport"]
+precedence = "aggregate"
+SPDX-FileCopyrightText = "none"
+SPDX-License-Identifier = "CC0-1.0"
+
+[[annotations]]
+path = ["l10n/**.js", "l10n/**.json"]
+precedence = "aggregate"
+SPDX-FileCopyrightText = "2017 Nextcloud contributors"
+SPDX-License-Identifier = "AGPL-3.0-or-later"
+
+[[annotations]]
+path = ["js/**.js.map", "js/**.js", "js/**.mjs", "js/**.mjs.map", "js/templates/**.handlebars", "emptyTemplates/**", "vendor/autoload.php"]
+precedence = "aggregate"
+SPDX-FileCopyrightText = "2017 Nextcloud GmbH and Nextcloud contributors"
+SPDX-License-Identifier = "AGPL-3.0-or-later"
+
+[[annotations]]
+path = ["docs/notification-and-settings.png", "docs/popup-dialog.png"]
+precedence = "aggregate"
+SPDX-FileCopyrightText = "2017 Nextcloud GmbH and Nextcloud contributors"
+SPDX-License-Identifier = "CC0-1.0"
+
+[[annotations]]
+path = ["img/app-dark.svg", "img/app.png", "img/app.svg", "img/launch.svg", "img/x-office-document.svg", "img/x-office-drawing.svg", "img/x-office-presentation.svg", "img/x-office-spreadsheet.svg"]
+precedence = "aggregate"
+SPDX-FileCopyrightText = "2018-2024 Google LLC"
+SPDX-License-Identifier = "Apache-2.0"
+
+[[annotations]]
+path = "vendor/composer/**"
+precedence = "aggregate"
+SPDX-FileCopyrightText = "Nils Adermann, Jordi Boggiano"
+SPDX-License-Identifier = "MIT"
+
+[[annotations]]
+path = "vendor/erusev/parsedown/**"
+precedence = "aggregate"
+SPDX-FileCopyrightText = "2013-2018 Emanuil Rusev, erusev.com"
+SPDX-License-Identifier = "MIT"
+
+[[annotations]]
+path = "vendor/maxmind**/**"
+precedence = "aggregate"
+SPDX-FileCopyrightText = "maxmind contributors"
+SPDX-License-Identifier = "Apache-2.0"
+
+[[annotations]]
+path = ["vendor/geoip2/**", "vendor/GeoLite2-Country.mmdb"]
+precedence = "aggregate"
+SPDX-FileCopyrightText = "geoip2 contributors"
+SPDX-License-Identifier = "Apache-2.0"
