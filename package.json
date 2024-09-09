@@ -3,7 +3,7 @@
 	"description": "Requires users to accept the terms of service before accessing data.",
 	"version": "3.0.0-dev.0",
 	"author": "Joas Schilling <coding@schilljs.com>",
-	"license": "agpl",
+	"license": "AGPL-3.0-or-later",
 	"private": true,
 	"scripts": {
 		"build": "NODE_ENV=production webpack --progress --config webpack.js",
