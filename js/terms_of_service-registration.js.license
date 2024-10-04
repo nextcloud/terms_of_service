@@ -43,7 +43,7 @@ This file is generated from multiple sources. Included packages:
 	- version: 6.0.3
 	- license: MIT
 - css-loader
-	- version: 6.8.1
+	- version: 7.1.2
 	- license: MIT
 - dompurify
 	- version: 3.1.6
@@ -64,7 +64,7 @@ This file is generated from multiple sources. Included packages:
 	- version: 0.11.10
 	- license: MIT
 - style-loader
-	- version: 3.3.3
+	- version: 4.0.0
 	- license: MIT
 - webpack
 	- version: 5.94.0
