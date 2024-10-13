@@ -455,7 +455,7 @@ OC.L10N.register(
     "Terms saved successfully!" : "تمّ حفظ الشروط بنجاح!",
     "All signatories reset!" : "تمّت إعادة تعيين جميع الموقعين!",
     "I acknowledge that I have read and agree to the above terms of service" : "أقر بأنني قد قرأت ووافقت على شروط الخدمة المذكورة أعلاه",
-    "Edit language {language} for region {country}" : "عدّل اللغة {language} للإقليم {country}",
+    "Edit language {language} for region {country}" : "تعديل اللغة {language} للإقليم {country}",
     "Deleting …" : "حذف ...",
     "Delete language {language} for region {country}" : "حذف اللغة {language} من الإقليم {country}"
 },
