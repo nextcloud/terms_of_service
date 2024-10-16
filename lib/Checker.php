@@ -13,17 +13,15 @@ use OCP\IConfig;
 use OCP\IRequest;
 use OCP\ISession;
 use OCP\IUser;
-use OCP\IUserManager;
+use OCP\IUserSession;
 use OCP\IL10N;
 use Psr\Log\LoggerInterface;
 
 class Checker {
-	/** @var string */
-	private $userId;
 	/** @var IRequest */
 	private $request;
-	/** @var IUserManager */
-	private $userManager;
+	/** @var IUserSession */
+	private $userSession;
 	/** @var ISession */
 	private $session;
 	/** @var SignatoryMapper */
@@ -42,9 +40,8 @@ class Checker {
 	private $termsCache = [];
 
 	public function __construct(
-		?string $userId,
 		IRequest $request,
-		IUserManager $userManager,
+		IUserSession $userSession,
 		ISession $session,
 		SignatoryMapper $signatoryMapper,
 		TermsMapper $termsMapper,
@@ -53,9 +50,8 @@ class Checker {
 		IL10N $l10n,
 		LoggerInterface $logger
 	) {
-		$this->userId = $userId;
 		$this->request = $request;
-		$this->userManager = $userManager;
+		$this->userSession = $userSession;
 		$this->session = $session;
 		$this->signatoryMapper = $signatoryMapper;
 		$this->termsMapper = $termsMapper;
@@ -77,7 +73,7 @@ class Checker {
 	 */
 	public function currentUserHasSigned(): bool {
 		$uuid = $this->config->getAppValue(Application::APPNAME, 'term_uuid', '');
-		if ($this->userId === null) {
+		if ($this->userSession->getUser() === null) {
 			if ($this->config->getAppValue(Application::APPNAME, 'tos_on_public_shares', '0') === '0') {
 				return true;
 			}
@@ -105,11 +101,7 @@ class Checker {
 			return true;
 		}
 
-		if ($this->userId === null) {
-			return false;
-		}
-
-		$user = $this->userManager->get($this->userId);
+		$user = $this->userSession->getUser();
 		if (!$user instanceof IUser) {
 			return false;
 		}
