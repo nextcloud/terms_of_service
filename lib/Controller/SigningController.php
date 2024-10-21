@@ -24,8 +24,8 @@ namespace OCA\TermsOfService\Controller;
 use OCA\TermsOfService\AppInfo\Application;
 use OCA\TermsOfService\Db\Entities\Signatory;
 use OCA\TermsOfService\Db\Mapper\SignatoryMapper;
-use OCP\AppFramework\Controller;
-use OCP\AppFramework\Http\JSONResponse;
+use OCP\AppFramework\Http\DataResponse;
+use OCP\AppFramework\OCSController;
 use OCP\IConfig;
 use OCP\IRequest;
 use OCP\ISession;
@@ -35,7 +35,7 @@ use OCP\Notification\IManager;
 use OCA\TermsOfService\Events\SignaturesResetEvent;
 use OCP\EventDispatcher\IEventDispatcher;
 
-class SigningController extends Controller {
+class SigningController extends OCSController {
 	/** @var string */
 	private $userId;
 	/** @var SignatoryMapper */
@@ -83,9 +83,9 @@ class SigningController extends Controller {
 	 *
 	 * @param int $termId
 	 *
-	 * @return JSONResponse
+	 * @return DataResponse
 	 */
-	public function signTerms(int $termId): JSONResponse {
+	public function signTerms(int $termId): DataResponse {
 		$signatory = new Signatory();
 		$signatory->setUserId($this->userId);
 		$signatory->setTermsId($termId);
@@ -102,7 +102,7 @@ class SigningController extends Controller {
 		// Mark all notifications as processed …
 		$this->notificationsManager->markProcessed($notification);
 
-		return new JSONResponse();
+		return new DataResponse();
 	}
 
 
@@ -111,20 +111,20 @@ class SigningController extends Controller {
 	 *
 	 * @param int $termId
 	 * @UseSession
-	 * @return JSONResponse
+	 * @return DataResponse
 	 */
-	public function signTermsPublic(int $termId): JSONResponse {
+	public function signTermsPublic(int $termId): DataResponse {
 		$uuid = $this->config->getAppValue(Application::APPNAME, 'term_uuid', '');
 		$this->session->set('term_uuid', $uuid);
 
-		return new JSONResponse();
+		return new DataResponse();
 	}
 
 
 	/**
-	 * @return JSONResponse
+	 * @return DataResponse
 	 */
-	public function resetAllSignatories(): JSONResponse {
+	public function resetAllSignatories(): DataResponse {
 		$this->signatoryMapper->deleteAllSignatories();
 		$this->config->setAppValue(Application::APPNAME, 'term_uuid', uniqid());
 
@@ -147,6 +147,6 @@ class SigningController extends Controller {
 		$event = $this->resetAllSignaturesEvent();
 		$this->eventDispatcher->dispatchTyped($event);
 
-		return new JSONResponse();
+		return new DataResponse();
 	}
 }
