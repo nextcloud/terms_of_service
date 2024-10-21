@@ -30,7 +30,7 @@
 
 <script>
 import axios from '@nextcloud/axios'
-import { generateUrl } from '@nextcloud/router'
+import { generateOcsUrl } from '@nextcloud/router'
 import NcModal from '@nextcloud/vue/dist/Components/NcModal.js'
 import ModalContent from './components/ModalContent.vue'
 
@@ -69,9 +69,9 @@ export default {
 	methods: {
 		async loadTerms() {
 			try {
-				const response = await axios.get(generateUrl('/apps/terms_of_service/terms'))
-				this.hasSigned = response.data.hasSigned
-				this.terms = response.data.terms
+				const response = await axios.get(generateOcsUrl('/apps/terms_of_service/terms'))
+				this.hasSigned = response.data.ocs.data.hasSigned
+				this.terms = response.data.ocs.data.terms
 
 				const language = OC.getLanguage().split('-')[0]
 
@@ -91,7 +91,7 @@ export default {
 							this.selectedLanguage = index
 						}
 
-						this.languages.push(response.data.languages[this.terms[index].languageCode])
+						this.languages.push(response.data.ocs.data.languages[this.terms[index].languageCode])
 					})
 				}
 
@@ -123,7 +123,7 @@ export default {
 			}
 
 			axios.post(
-				generateUrl(url),
+				generateOcsUrl(url),
 				{ termId: this.termsId },
 			).then(() => {
 				window.location.reload()

@@ -15,16 +15,16 @@ use OCA\TermsOfService\Db\Mapper\LanguageMapper;
 use OCA\TermsOfService\Db\Mapper\SignatoryMapper;
 use OCA\TermsOfService\Db\Mapper\TermsMapper;
 use OCA\TermsOfService\Exceptions\TermsNotFoundException;
-use OCP\AppFramework\Controller;
+use OCP\AppFramework\OCSController;
 use OCP\AppFramework\Http;
-use OCP\AppFramework\Http\JSONResponse;
+use OCP\AppFramework\Http\DataResponse;
 use OCP\IConfig;
 use OCP\IRequest;
 use OCP\L10N\IFactory;
 use OCA\TermsOfService\Events\TermsCreatedEvent;
 use OCP\EventDispatcher\IEventDispatcher;
 
-class TermsController extends Controller {
+class TermsController extends OCSController {
 	/** @var IFactory */
 	private $factory;
 	/** @var TermsMapper */
@@ -71,9 +71,9 @@ class TermsController extends Controller {
 
 	/**
 	 * @PublicPage
-	 * @return JSONResponse
+	 * @return DataResponse
 	 */
-	public function index(): JSONResponse {
+	public function index(): DataResponse {
 		$currentCountry = $this->countryDetector->getCountry();
 		$countryTerms = $this->termsMapper->getTermsForCountryCode($currentCountry);
 
@@ -87,13 +87,13 @@ class TermsController extends Controller {
 			'languages' => $this->languageMapper->getLanguages(),
 			'hasSigned' => $this->checker->currentUserHasSigned(),
 		];
-		return new JSONResponse($response);
+		return new DataResponse($response);
 	}
 
 	/**
-	 * @return JSONResponse
+	 * @return DataResponse
 	 */
-	public function getAdminFormData(): JSONResponse {
+	public function getAdminFormData(): DataResponse {
 		$response = [
 			'terms' => $this->termsMapper->getTerms(),
 			'countries' => $this->countryMapper->getCountries(),
@@ -101,21 +101,21 @@ class TermsController extends Controller {
 			'tos_on_public_shares' => $this->config->getAppValue(Application::APPNAME, 'tos_on_public_shares', '0'),
 			'tos_for_users' => $this->config->getAppValue(Application::APPNAME, 'tos_for_users', '1'),
 		];
-		return new JSONResponse($response);
+		return new DataResponse($response);
 	}
 
 	/**
 	 * @param int $id
-	 * @return JSONResponse
+	 * @return DataResponse
 	 */
-	public function destroy(int $id): JSONResponse {
+	public function destroy(int $id): DataResponse {
 		$terms = new Terms();
 		$terms->setId($id);
 
 		$this->termsMapper->delete($terms);
 		$this->signatoryMapper->deleteTerm($terms);
 
-		return new JSONResponse();
+		return new DataResponse();
 	}
 	protected function createTermsCreatedEvent(): TermsCreatedEvent {
 		return new TermsCreatedEvent();
@@ -125,11 +125,11 @@ class TermsController extends Controller {
 	 * @param string $countryCode
 	 * @param string $languageCode
 	 * @param string $body
-	 * @return JSONResponse
+	 * @return DataResponse
 	 */
 	public function create(string $countryCode,
 						   string $languageCode,
-						   string $body): JSONResponse {
+						   string $body): DataResponse {
 		$update = false;
 		try {
 			// Update terms
@@ -141,7 +141,7 @@ class TermsController extends Controller {
 		}
 
 		if (!$this->countryMapper->isValidCountry($countryCode) || !$this->languageMapper->isValidLanguage($languageCode)) {
-			return new JSONResponse([], Http::STATUS_EXPECTATION_FAILED);
+			return new DataResponse([], Http::STATUS_EXPECTATION_FAILED);
 		}
 
 		$terms->setCountryCode($countryCode);
@@ -157,6 +157,6 @@ class TermsController extends Controller {
 		$event = $this->createTermsCreatedEvent();
 		$this->eventDispatcher->dispatchTyped($event);
 
-		return new JSONResponse($terms);
+		return new DataResponse($terms);
 	}
 }

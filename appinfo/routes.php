@@ -5,12 +5,12 @@
  */
 
 return [
-	'resources' => [
+	'ocs-resources' => [
 			'terms' => [
 				'url' => '/terms'
 			],
 	],
-	'routes' => [
+	'ocs' => [
 		[
 			'name' => 'Terms#getAdminFormData',
 			'url' => '/terms/admin',
