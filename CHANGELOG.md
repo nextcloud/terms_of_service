@@ -5,6 +5,12 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## 3.0.0
+### Added
+- Move from index.php to ocs API
+### Fixed
+- Strong types to storage wrapper
+
 ## 2.5.0
 ### Added
 - Force the user to scroll text to accept the TOS
