@@ -7,7 +7,9 @@
 namespace OCA\TermsOfService\Filesystem;
 
 use OC\Files\Storage\Wrapper\Wrapper;
+use OCP\Files\Cache\ICache;
 use OCP\Files\ForbiddenException;
+use OCP\Files\Storage\IStorage;
 
 class StorageWrapper extends Wrapper {
 	/** @var string */
@@ -22,7 +24,7 @@ class StorageWrapper extends Wrapper {
 		$this->helper = new Helper($parameters['checker'], $this->mountPoint);
 	}
 
-	public function isCreatable($path) {
+	public function isCreatable(string $path): bool {
 		if(!$this->helper->verifyAccess($path)) {
 			return false;
 		}
@@ -30,7 +32,7 @@ class StorageWrapper extends Wrapper {
 		return $this->storage->isCreatable($path);
 	}
 
-	public function isUpdatable($path) {
+	public function isUpdatable(string $path): bool {
 		if(!$this->helper->verifyAccess($path)) {
 			return false;
 		}
@@ -38,7 +40,7 @@ class StorageWrapper extends Wrapper {
 		return $this->storage->isUpdatable($path);
 	}
 
-	public function isDeletable($path) {
+	public function isDeletable(string $path): bool {
 		if(!$this->helper->verifyAccess($path)) {
 			return false;
 		}
@@ -46,7 +48,7 @@ class StorageWrapper extends Wrapper {
 		return $this->storage->isDeletable($path);
 	}
 
-	public function isReadable($path) {
+	public function isReadable(string $path): bool {
 		if(!$this->helper->verifyAccess($path)) {
 			return false;
 		}
@@ -54,7 +56,7 @@ class StorageWrapper extends Wrapper {
 		return $this->storage->isReadable($path);
 	}
 
-	public function isSharable($path) {
+	public function isSharable(string $path): bool {
 		if(!$this->helper->verifyAccess($path)) {
 			return false;
 		}
@@ -62,7 +64,7 @@ class StorageWrapper extends Wrapper {
 		return $this->storage->isReadable($path);
 	}
 
-	public function fopen($path, $mode) {
+	public function fopen(string $path, string $mode) {
 		if ($this->helper->verifyAccess($path)) {
 			return $this->storage->fopen($path, $mode);
 		}
@@ -77,7 +79,7 @@ class StorageWrapper extends Wrapper {
 	 * @param \OC\Files\Storage\Storage (optional) the storage to pass to the cache
 	 * @return \OC\Files\Cache\Cache
 	 */
-	public function getCache($path = '', $storage = null) {
+	public function getCache(string $path = '', ?IStorage $storage = null): ICache {
 		if (!$storage) {
 			$storage = $this;
 		}
