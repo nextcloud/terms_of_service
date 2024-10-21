@@ -72,7 +72,7 @@ import NcCheckboxRadioSwitch from '@nextcloud/vue/dist/Components/NcCheckboxRadi
 import NcSelect from '@nextcloud/vue/dist/Components/NcSelect.js'
 import NcSettingsSection from '@nextcloud/vue/dist/Components/NcSettingsSection.js'
 import { showError, showSuccess } from '@nextcloud/dialogs'
-import { generateUrl } from '@nextcloud/router'
+import { generateOcsUrl } from '@nextcloud/router'
 
 // Styles
 import '@nextcloud/dialogs/style.css'
@@ -139,15 +139,16 @@ export default {
 		this.saveButtonText = t('terms_of_service', 'Loading …')
 		this.resetButtonText = t('terms_of_service', 'Reset all signatories')
 		axios
-			.get(generateUrl('/apps/terms_of_service/terms/admin'))
+			.get(generateOcsUrl('/apps/terms_of_service/terms/admin'))
 			.then(response => {
-				if (response.data.terms.length !== 0) {
-					this.terms = response.data.terms
+				const data = response.data.ocs.data
+				if (data.terms.length !== 0) {
+					this.terms = data.terms
 				}
-				this.countries = response.data.countries
-				this.languages = response.data.languages
-				this.showOnPublicShares = response.data.tos_on_public_shares === '1'
-				this.showForLoggedInUser = response.data.tos_for_users === '1'
+				this.countries = data.countries
+				this.languages = data.languages
+				this.showOnPublicShares = data.tos_on_public_shares === '1'
+				this.showForLoggedInUser = data.tos_for_users === '1'
 				Object.keys(this.countries).forEach((countryCode) => {
 					this.countryOptions.push({
 						value: countryCode,
@@ -178,14 +179,15 @@ export default {
 			this.saveButtonDisabled = true
 
 			axios
-				.post(generateUrl('/apps/terms_of_service/terms'),
+				.post(generateOcsUrl('/apps/terms_of_service/terms'),
 					{
 						countryCode: this.country.value,
 						languageCode: this.language.value,
 						body: this.body,
 					})
 				.then(response => {
-					this.$set(this.terms, response.data.id, response.data)
+					const data = response.data.ocs.data
+					this.$set(this.terms, data.id, data)
 
 					showSuccess(t('terms_of_service', 'Terms saved successfully!'))
 					this.saveButtonDisabled = false
@@ -195,7 +197,7 @@ export default {
 			this.resetButtonDisabled = true
 
 			axios
-				.delete(generateUrl('/apps/terms_of_service/sign'))
+				.delete(generateOcsUrl('/apps/terms_of_service/sign'))
 				.then(() => {
 					showSuccess(t('terms_of_service', 'All signatories reset!'))
 					this.resetButtonDisabled = false

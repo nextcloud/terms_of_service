@@ -32,7 +32,7 @@ import axios from '@nextcloud/axios'
 import IconDelete from 'vue-material-design-icons/Delete.vue'
 import IconPencil from 'vue-material-design-icons/Pencil.vue'
 import NcButton from '@nextcloud/vue/dist/Components/NcButton.js'
-import { generateUrl } from '@nextcloud/router'
+import { generateOcsUrl } from '@nextcloud/router'
 
 export default {
 	name: 'Term',
@@ -110,7 +110,7 @@ export default {
 		onDelete() {
 			this.deleteButtonDisabled = true
 			axios
-				.delete(generateUrl('/apps/terms_of_service/terms/' + this.id))
+				.delete(generateOcsUrl('/apps/terms_of_service/terms/' + this.id))
 				.then(() => {
 					this.$delete(this.$parent.$parent.$parent.terms, this.id)
 				})
