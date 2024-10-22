@@ -5,7 +5,7 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
-## 3.0.0
+## 3.1.0
 ### Changed
 - Support 27 again
 
