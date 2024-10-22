@@ -24,7 +24,7 @@ class StorageWrapper extends Wrapper {
 		$this->helper = new Helper($parameters['checker'], $this->mountPoint);
 	}
 
-	public function isCreatable(string $path): bool {
+	public function isCreatable($path): bool {
 		if(!$this->helper->verifyAccess($path)) {
 			return false;
 		}
@@ -32,7 +32,7 @@ class StorageWrapper extends Wrapper {
 		return $this->storage->isCreatable($path);
 	}
 
-	public function isUpdatable(string $path): bool {
+	public function isUpdatable($path): bool {
 		if(!$this->helper->verifyAccess($path)) {
 			return false;
 		}
@@ -40,7 +40,7 @@ class StorageWrapper extends Wrapper {
 		return $this->storage->isUpdatable($path);
 	}
 
-	public function isDeletable(string $path): bool {
+	public function isDeletable($path): bool {
 		if(!$this->helper->verifyAccess($path)) {
 			return false;
 		}
@@ -48,7 +48,7 @@ class StorageWrapper extends Wrapper {
 		return $this->storage->isDeletable($path);
 	}
 
-	public function isReadable(string $path): bool {
+	public function isReadable($path): bool {
 		if(!$this->helper->verifyAccess($path)) {
 			return false;
 		}
@@ -56,7 +56,7 @@ class StorageWrapper extends Wrapper {
 		return $this->storage->isReadable($path);
 	}
 
-	public function isSharable(string $path): bool {
+	public function isSharable($path): bool {
 		if(!$this->helper->verifyAccess($path)) {
 			return false;
 		}
@@ -64,7 +64,7 @@ class StorageWrapper extends Wrapper {
 		return $this->storage->isReadable($path);
 	}
 
-	public function fopen(string $path, string $mode) {
+	public function fopen($path, $mode) {
 		if ($this->helper->verifyAccess($path)) {
 			return $this->storage->fopen($path, $mode);
 		}
@@ -79,7 +79,7 @@ class StorageWrapper extends Wrapper {
 	 * @param \OC\Files\Storage\Storage (optional) the storage to pass to the cache
 	 * @return \OC\Files\Cache\Cache
 	 */
-	public function getCache(string $path = '', ?IStorage $storage = null): ICache {
+	public function getCache($path = '', $storage = null): ICache {
 		if (!$storage) {
 			$storage = $this;
 		}
