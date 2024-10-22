@@ -22,6 +22,9 @@ use OCP\IRequest;
 use OCP\IUser;
 use OCP\Util;
 
+/**
+ * @template-implements IEventListener<ShowFormEvent|ValidateFormEvent|PassedFormEvent>
+ */
 class RegistrationIntegration implements IEventListener {
 
 	/** @var SignatoryMapper */
