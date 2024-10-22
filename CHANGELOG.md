@@ -6,6 +6,10 @@
 All notable changes to this project will be documented in this file.
 
 ## 3.0.0
+### Changed
+- Support 27 again
+
+## 3.0.0
 ### Added
 - Move from index.php to ocs API
 ### Fixed
