@@ -23,3 +23,6 @@ translationfiles
 
 # Testing
 /tests/.phpunit.result.cache
+
+# Development
+/vendor-bin/*/vendor
