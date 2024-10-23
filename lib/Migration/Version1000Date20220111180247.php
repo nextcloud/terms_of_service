@@ -27,7 +27,7 @@ class Version1000Date20220111180247 extends SimpleMigrationStep {
 
 		$table = $schema->getTable('termsofservice_sigs');
 		$column = $table->getColumn('user_id');
-		if (!$column->getLength() !== 64) {
+		if ($column->getLength() !== 64) {
 			$column->setLength(64);
 			return $schema;
 		}

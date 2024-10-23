@@ -192,7 +192,7 @@ class Checker {
 			$subnet = inet_pton($subnet);
 			$ip = inet_pton($ip);
 
-			$binMask = str_repeat("f", $bits / 4);
+			$binMask = str_repeat("f", (int)($bits / 4));
 			switch ($bits % 4) {
 				case 0:
 					break;

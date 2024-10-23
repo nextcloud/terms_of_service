@@ -14,6 +14,7 @@ use OCP\IUser;
 
 /**
  * @method Signatory mapRowToEntity(array $row)
+ * @template-extends QBMapper<Signatory>
  */
 class SignatoryMapper extends QBMapper {
 	const TABLENAME = 'termsofservice_sigs';

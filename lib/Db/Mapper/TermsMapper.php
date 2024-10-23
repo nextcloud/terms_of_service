@@ -14,6 +14,7 @@ use OCP\IDBConnection;
 
 /**
  * @method Terms mapRowToEntity(array $row)
+ * @template-extends QBMapper<Terms>
  */
 class TermsMapper extends QBMapper {
 	const TABLENAME = 'termsofservice_terms';

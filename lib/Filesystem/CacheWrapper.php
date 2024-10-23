@@ -8,13 +8,12 @@ namespace OCA\TermsOfService\Filesystem;
 use OC\Files\Cache\Wrapper\CacheWrapper as Wrapper;
 use OCP\Constants;
 use OCP\Files\Cache\ICache;
-use OCP\Files\ForbiddenException;
 use OCP\Files\Storage\IStorage;
 
-class CacheWrapper extends Wrapper  {
+class CacheWrapper extends Wrapper {
 	/** @var Helper */
 	private $helper;
-	/** @var StorageWrapper*/
+	/** @var StorageWrapper */
 	protected $storage;
 	/** @var int */
 	protected $mask;

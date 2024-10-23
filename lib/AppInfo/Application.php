@@ -76,6 +76,7 @@ class Application extends App implements IBootstrap {
 	}
 
 	public function registerFrontend(IRequest $request, IConfig $config, IUserSession $userSession): void {
+		/** @psalm-suppress UndefinedClass */
 		if (!\OC::$CLI) {
 			if ($userSession->getUser() instanceof IUser
 				&& strpos($request->getPathInfo(), '/s/') !== 0
@@ -96,12 +97,13 @@ class Application extends App implements IBootstrap {
 
 	/**
 	 * @param string $mountPoint
-	 * @param IStorage|Wrapper $storage
+	 * @param IStorage $storage
 	 *
 	 * @return StorageWrapper|IStorage
 	 * @throws Exception
 	 */
 	public function addStorageWrapperCallback(string $mountPoint, IStorage $storage): IStorage {
+		/** @psalm-suppress UndefinedClass */
 		if (!\OC::$CLI) {
 			try {
 				return new StorageWrapper(
