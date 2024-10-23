@@ -1,6 +1,10 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## 3.1.1 – 2023-10-23
+### Fixed
+- Migrate to OSC API
+- Bump version 27
 
 ## 2.3.1 – 2023-09-12
 ### Fixed
