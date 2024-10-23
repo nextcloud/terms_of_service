@@ -5,6 +5,11 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+
+## 4.0.0
+### Changed
+- Drop support for version 27
+
 ## 3.1.0
 ### Changed
 - Support 27 again
