@@ -441,6 +441,8 @@ OC.L10N.register(
     "Requires users to accept the terms of service before accessing data." : "Richiede che gli utenti accettino i termini del servizio prima di accedere ai dati.",
     "Requires users to accept the terms of service before accessing data.\nThis product includes GeoLite2 data created by MaxMind, available from [maxmind.com](http://www.maxmind.com)" : "Richiede che gli utenti accettino i termini del servizio prima di accedere ai dati.\nQuesto prodotto include i dati di GeoLite2 creato da MaxMind, disponibile presso [maxmind.com](http://www.maxmind.com)",
     "Require users to accept the terms of service before accessing the service." : "Richiede che gli utenti accettino i termini di servizio prima di accedere.",
+    "Show for logged-in users" : "Mostra per gli utenti registrati",
+    "Show on public shares" : "Mostra su condivisioni pubbliche",
     "Select a region" : "Seleziona una regione",
     "Select a language" : "Seleziona una lingua",
     "By using this service …" : "Utilizzando questo servizio…",
@@ -450,7 +452,11 @@ OC.L10N.register(
     "Reset all signatories" : "Ripristina tutte le firme",
     "Save" : "Salva",
     "Ensure that all fields are filled" : "Assicurati che tutti i campi siano compilati",
+    "Terms saved successfully!" : "Termini salvati con successo!",
+    "All signatories reset!" : "Tutti i firmatari vengono resettati!",
     "I acknowledge that I have read and agree to the above terms of service" : "Confermo che ho letto e accetto i suddetti termini di servizio",
-    "Deleting …" : "Eliminazione in corso…"
+    "Edit language {language} for region {country}" : "Modifica lingua{language} per regione {country}",
+    "Deleting …" : "Eliminazione in corso…",
+    "Delete language {language} for region {country}" : "Elimina lingua {language} per regione {country}"
 },
 "nplurals=3; plural=n == 1 ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;");
