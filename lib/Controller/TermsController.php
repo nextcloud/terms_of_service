@@ -7,6 +7,7 @@
 namespace OCA\TermsOfService\Controller;
 
 use OCA\TermsOfService\AppInfo\Application;
+use OCA\TermsOfService\BackgroundJobs\CreateNotifications;
 use OCA\TermsOfService\Checker;
 use OCA\TermsOfService\CountryDetector;
 use OCA\TermsOfService\Db\Entities\Terms;
@@ -18,6 +19,7 @@ use OCA\TermsOfService\Exceptions\TermsNotFoundException;
 use OCP\AppFramework\OCSController;
 use OCP\AppFramework\Http;
 use OCP\AppFramework\Http\DataResponse;
+use OCP\BackgroundJob\IJobList;
 use OCP\IConfig;
 use OCP\IRequest;
 use OCP\L10N\IFactory;
@@ -55,7 +57,8 @@ class TermsController extends OCSController {
 								CountryDetector $countryDetector,
 								Checker $checker,
 								IConfig $config,
-								IEventDispatcher $eventDispatcher
+								IEventDispatcher $eventDispatcher,
+								protected IJobList $jobList,
 	) {
 		parent::__construct($appName, $request);
 		$this->factory = $factory;
@@ -152,6 +155,7 @@ class TermsController extends OCSController {
 			$this->termsMapper->update($terms);
 		} else {
 			$this->termsMapper->insert($terms);
+			$this->jobList->add(CreateNotifications::class);
 		}
 
 		$event = $this->createTermsCreatedEvent();
