@@ -27,7 +27,7 @@ class TermsMapper extends QBMapper {
 	 * Returns all terms and conditions for the country code
 	 *
 	 * @param string $countryCode
-	 * @return Terms[]
+	 * @return list<Terms>
 	 */
 	public function getTermsForCountryCode(string $countryCode): array {
 		$query = $this->db->getQueryBuilder();
@@ -81,7 +81,7 @@ class TermsMapper extends QBMapper {
 	/**
 	 * Returns all terms and conditions
 	 *
-	 * @return Terms[]
+	 * @return array<string, Terms>
 	 */
 	public function getTerms(): array {
 		$query = $this->db->getQueryBuilder();
@@ -91,7 +91,7 @@ class TermsMapper extends QBMapper {
 		$entities = [];
 		$result = $query->execute();
 		while ($row = $result->fetch()){
-			$entities[(int) $row['id']] = $this->mapRowToEntity($row);
+			$entities[$row['id']] = $this->mapRowToEntity($row);
 		}
 		$result->closeCursor();
 

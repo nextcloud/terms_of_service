@@ -6,6 +6,7 @@
 
 namespace OCA\TermsOfService\Db\Entities;
 
+use OCA\TermsOfService\ResponseDefinitions;
 use OCP\AppFramework\Db\Entity;
 
 /**
@@ -15,6 +16,8 @@ use OCP\AppFramework\Db\Entity;
  * @method void setLanguageCode(string $languageCode)
  * @method string getBody()
  * @method void setBody(string $body)
+ *
+ * @psalm-import-type TermsOfServiceTerms from ResponseDefinitions
  */
 class Terms extends Entity implements \JsonSerializable {
 	/** @var string */

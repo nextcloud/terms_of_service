@@ -5,12 +5,22 @@
  */
 
 return [
-	'ocs-resources' => [
-			'terms' => [
-				'url' => '/terms'
-			],
-	],
 	'ocs' => [
+		[
+			'name' => 'Terms#index',
+			'url' => '/terms',
+			'verb' => 'GET',
+		],
+		[
+			'name' => 'Terms#create',
+			'url' => '/terms',
+			'verb' => 'POST',
+		],
+		[
+			'name' => 'Terms#destroy',
+			'url' => '/terms/{id}',
+			'verb' => 'DELETE',
+		],
 		[
 			'name' => 'Terms#getAdminFormData',
 			'url' => '/terms/admin',

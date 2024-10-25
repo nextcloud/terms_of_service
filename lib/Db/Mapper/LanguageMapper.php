@@ -26,6 +26,9 @@ class LanguageMapper {
 		return isset($this->getLanguages()[$languageCode]);
 	}
 
+	/**
+	 * @return array<string, string>
+	 */
 	public function getLanguages(): array {
 		$mappedLanguages = [
 			'aa' => $this->l->t('Afar'),
