@@ -7,10 +7,12 @@
 namespace OCA\TermsOfService\Controller;
 
 use OCA\TermsOfService\AppInfo\Application;
+use OCA\TermsOfService\BackgroundJobs\CreateNotifications;
 use OCA\TermsOfService\Db\Entities\Signatory;
 use OCA\TermsOfService\Db\Mapper\SignatoryMapper;
 use OCP\AppFramework\Http\DataResponse;
 use OCP\AppFramework\OCSController;
+use OCP\BackgroundJob\IJobList;
 use OCP\IConfig;
 use OCP\IRequest;
 use OCP\ISession;
@@ -47,7 +49,8 @@ class SigningController extends OCSController {
 		IUserManager $userManager,
 		IConfig $config,
 		ISession $session,
-		IEventDispatcher $eventDispatcher
+		IEventDispatcher $eventDispatcher,
+		protected IJobList $jobList,
 	) {
 		parent::__construct($appName, $request);
 		$this->userId = $UserId;
@@ -113,21 +116,9 @@ class SigningController extends OCSController {
 		$this->signatoryMapper->deleteAllSignatories();
 		$this->config->setAppValue(Application::APPNAME, 'term_uuid', uniqid());
 
-		$notification = $this->notificationsManager->createNotification();
-		$notification->setApp('terms_of_service')
-			->setSubject('accept_terms')
-			->setObject('terms', '1');
-
-		// Mark all notifications as processed …
-		$this->notificationsManager->markProcessed($notification);
-
-		$notification->setDateTime(new \DateTime());
-
-		// … so we can create new ones for every one, also users which already accepted.
-		$this->userManager->callForSeenUsers(function(IUser $user) use ($notification) {
-			$notification->setUser($user->getUID());
-			$this->notificationsManager->notify($notification);
-		});
+		// Schedule a job to generate notifications
+		$this->config->deleteAppValue(Application::APPNAME, 'sent_notifications');
+		$this->jobList->add(CreateNotifications::class);
 
 		$event = $this->resetAllSignaturesEvent();
 		$this->eventDispatcher->dispatchTyped($event);

@@ -66,6 +66,24 @@ class SignatoryMapper extends QBMapper {
 	}
 
 	/**
+	 * Check if a user has signed the terms
+	 */
+	public function hasSignedByUser(IUser $user): bool {
+		$query = $this->db->getQueryBuilder();
+		$query->select($query->expr()->literal(1))
+			->from(self::TABLENAME)
+			->where($query->expr()->eq('user_id', $query->createNamedParameter($user->getUID())))
+			->setMaxResults(1);
+
+		$entities = [];
+		$result = $query->executeQuery();
+		$hasSigned = (bool)$result->fetchOne();
+		$result->closeCursor();
+
+		return $hasSigned;
+	}
+
+	/**
 	 * Update the signer of an entry
 	 *
 	 * Used e.g. by the registration app integration when updating from registration id to the real user id
