@@ -16,6 +16,8 @@ use OCA\TermsOfService\Db\Mapper\LanguageMapper;
 use OCA\TermsOfService\Db\Mapper\SignatoryMapper;
 use OCA\TermsOfService\Db\Mapper\TermsMapper;
 use OCA\TermsOfService\Exceptions\TermsNotFoundException;
+use OCA\TermsOfService\ResponseDefinitions;
+use OCP\AppFramework\Http\Attribute\PublicPage;
 use OCP\AppFramework\OCSController;
 use OCP\AppFramework\Http;
 use OCP\AppFramework\Http\DataResponse;
@@ -26,6 +28,10 @@ use OCP\L10N\IFactory;
 use OCA\TermsOfService\Events\TermsCreatedEvent;
 use OCP\EventDispatcher\IEventDispatcher;
 
+/**
+ * @psalm-import-type TermsOfServiceAdminFormData from ResponseDefinitions
+ * @psalm-import-type TermsOfServiceTerms from ResponseDefinitions
+ */
 class TermsController extends OCSController {
 	/** @var IFactory */
 	private $factory;
@@ -73,9 +79,13 @@ class TermsController extends OCSController {
 	}
 
 	/**
-	 * @PublicPage
-	 * @return DataResponse
+	 * Get all available terms for the current country
+	 *
+	 * @return DataResponse<Http::STATUS_OK, array{terms: list<TermsOfServiceTerms>, languages: array<string, string>, hasSigned: bool}, array{}>
+	 *
+	 * 200: Get list successfully
 	 */
+	#[PublicPage]
 	public function index(): DataResponse {
 		$currentCountry = $this->countryDetector->getCountry();
 		$countryTerms = $this->termsMapper->getTermsForCountryCode($currentCountry);
@@ -86,7 +96,7 @@ class TermsController extends OCSController {
 		}
 
 		$response = [
-			'terms' => $countryTerms,
+			'terms' => array_map(static fn(Terms $terms): array => $terms->jsonSerialize(), $countryTerms),
 			'languages' => $this->languageMapper->getLanguages(),
 			'hasSigned' => $this->checker->currentUserHasSigned(),
 		];
@@ -94,22 +104,38 @@ class TermsController extends OCSController {
 	}
 
 	/**
-	 * @return DataResponse
+	 * Get the form data for the admin interface
+	 *
+	 * @return DataResponse<Http::STATUS_OK, TermsOfServiceAdminFormData, array{}>
+	 *
+	 * 200: Get form data successfully
 	 */
 	public function getAdminFormData(): DataResponse {
+		$forPublicShares = $this->config->getAppValue(Application::APPNAME, 'tos_on_public_shares', '0');
+		if ($forPublicShares !== '0') {
+			$forPublicShares = '1';
+		}
+		$forUsers = $this->config->getAppValue(Application::APPNAME, 'tos_for_users', '1');
+		if ($forUsers !== '1') {
+			$forUsers = '0';
+		}
 		$response = [
-			'terms' => $this->termsMapper->getTerms(),
+			'terms' => array_map(static fn(Terms $terms): array => $terms->jsonSerialize(), $this->termsMapper->getTerms()),
 			'countries' => $this->countryMapper->getCountries(),
 			'languages' => $this->languageMapper->getLanguages(),
-			'tos_on_public_shares' => $this->config->getAppValue(Application::APPNAME, 'tos_on_public_shares', '0'),
-			'tos_for_users' => $this->config->getAppValue(Application::APPNAME, 'tos_for_users', '1'),
+			'tos_on_public_shares' => $forPublicShares,
+			'tos_for_users' => $forUsers,
 		];
 		return new DataResponse($response);
 	}
 
 	/**
-	 * @param int $id
-	 * @return DataResponse
+	 * Delete a given Term by id
+	 *
+	 * @param positive-int $id The terms which should be deleted
+	 * @return DataResponse<Http::STATUS_OK, array<empty>, array{}>
+	 *
+	 * 200: Deleted successfully
 	 */
 	public function destroy(int $id): DataResponse {
 		$terms = new Terms();
@@ -120,15 +146,21 @@ class TermsController extends OCSController {
 
 		return new DataResponse();
 	}
+
 	protected function createTermsCreatedEvent(): TermsCreatedEvent {
 		return new TermsCreatedEvent();
 	}
 
 	/**
-	 * @param string $countryCode
-	 * @param string $languageCode
-	 * @param string $body
-	 * @return DataResponse
+	 * Create new terms
+	 *
+	 * @param string $countryCode One of the 2-letter region codes or `--` for "global"
+	 * @param string $languageCode One of the 2-letter language codes
+	 * @param string $body The actual terms and conditions text (can be markdown, using headers, basic text formating, lists and links)
+	 * @return DataResponse<Http::STATUS_OK, TermsOfServiceTerms, array{}>|DataResponse<Http::STATUS_EXPECTATION_FAILED, array<empty>, array{}>
+	 *
+	 * 200: Created successfully
+	 * 417: Country or language code was not a valid option
 	 */
 	public function create(string $countryCode,
 						   string $languageCode,
@@ -161,6 +193,6 @@ class TermsController extends OCSController {
 		$event = $this->createTermsCreatedEvent();
 		$this->eventDispatcher->dispatchTyped($event);
 
-		return new DataResponse($terms);
+		return new DataResponse($terms->jsonSerialize());
 	}
 }

@@ -58,3 +58,9 @@ path = ["vendor/geoip2/**", "vendor/GeoLite2-Country.mmdb"]
 precedence = "aggregate"
 SPDX-FileCopyrightText = "geoip2 contributors"
 SPDX-License-Identifier = "Apache-2.0"
+
+[[annotations]]
+path = ["openapi.json", "openapi-**.json"]
+precedence = "aggregate"
+SPDX-FileCopyrightText = "2024 Nextcloud GmbH and Nextcloud contributors"
+SPDX-License-Identifier = "AGPL-3.0-or-later"

@@ -10,6 +10,10 @@ use OCA\TermsOfService\AppInfo\Application;
 use OCA\TermsOfService\BackgroundJobs\CreateNotifications;
 use OCA\TermsOfService\Db\Entities\Signatory;
 use OCA\TermsOfService\Db\Mapper\SignatoryMapper;
+use OCP\AppFramework\Http;
+use OCP\AppFramework\Http\Attribute\NoAdminRequired;
+use OCP\AppFramework\Http\Attribute\PublicPage;
+use OCP\AppFramework\Http\Attribute\UseSession;
 use OCP\AppFramework\Http\DataResponse;
 use OCP\AppFramework\OCSController;
 use OCP\BackgroundJob\IJobList;
@@ -67,12 +71,14 @@ class SigningController extends OCSController {
 	}
 
 	/**
-	 * @NoAdminRequired
+	 * As a logged in user sign the terms
 	 *
-	 * @param int $termId
+	 * @param int $termId The terms the user signed
+	 * @return DataResponse<Http::STATUS_OK, array<empty>, array{}>
 	 *
-	 * @return DataResponse
+	 * 200: Signed successfully
 	 */
+	#[NoAdminRequired]
 	public function signTerms(int $termId): DataResponse {
 		$signatory = new Signatory();
 		$signatory->setUserId($this->userId);
@@ -95,12 +101,15 @@ class SigningController extends OCSController {
 
 
 	/**
-	 * @PublicPage
+	 * As a guest sign the terms
 	 *
-	 * @param int $termId
-	 * @UseSession
-	 * @return DataResponse
+	 * @param int $termId The terms the user signed
+	 * @return DataResponse<Http::STATUS_OK, array<empty>, array{}>
+	 *
+	 * 200: Signed successfully
 	 */
+	#[PublicPage]
+	#[UseSession]
 	public function signTermsPublic(int $termId): DataResponse {
 		$uuid = $this->config->getAppValue(Application::APPNAME, 'term_uuid', '');
 		$this->session->set('term_uuid', $uuid);
@@ -110,7 +119,11 @@ class SigningController extends OCSController {
 
 
 	/**
-	 * @return DataResponse
+	 * Reset the signatories of all accounts
+	 *
+	 * @return DataResponse<Http::STATUS_OK, array<empty>, array{}>
+	 *
+	 * 200: Reset successfully
 	 */
 	public function resetAllSignatories(): DataResponse {
 		$this->signatoryMapper->deleteAllSignatories();

@@ -32,7 +32,7 @@ class CountryMapper {
 	/**
 	 * Gets the countries as well as the two-letter code
 	 *
-	 * @return array
+	 * @return array<string, string>
 	 */
 	public function getCountries(): array {
 		$countries = [
