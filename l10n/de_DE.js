@@ -437,7 +437,7 @@ OC.L10N.register(
     "Zulu" : "Zulu",
     "Terms of service" : "Nutzungsbedingungen",
     "Terms of service have been modified!" : "Nutzungsbedingungen wurden geändert!",
-    "You have to accept the newest version of the terms of service in order to be able to use this service." : "Sie haben die aktuellsten Nutzungsbedingungen zur Nutzung dieses Dienstes akzeptiert.",
+    "You have to accept the newest version of the terms of service in order to be able to use this service." : "Sie müssen die aktuellsten Nutzungsbedingungen akzeptieren, bevor Sie diesen Dienst nutzen können.",
     "Requires users to accept the terms of service before accessing data." : "Vor dem Zugriff auf Daten müssen die Benutzer die Nutzungsbedingungen akzeptieren.",
     "Requires users to accept the terms of service before accessing data.\nThis product includes GeoLite2 data created by MaxMind, available from [maxmind.com](http://www.maxmind.com)" : "Vor dem Zugriff auf Daten müssen die Benutzer die Nutzungsbedingungen akzeptieren.\nDieses Produkt beinhaltet Daten von GeoLite2 erstellt von MaxMind, verfügbar unter [maxmind.com](http://www.maxmind.com) ",
     "Require users to accept the terms of service before accessing the service." : "Benutzer müssen die Nutzungsbedingungen akzeptieren, bevor sie auf den Dienst zugreifen.",
