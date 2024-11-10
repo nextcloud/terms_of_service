@@ -122,7 +122,7 @@ OC.L10N.register(
     "Kiribati" : "Kiribatí",
     "Korea (Democratic People's Republic of)" : "Corea (República democrática popular de)",
     "Korea (Republic of)" : "Corea (República de)",
-    "Kuwait" : "Kuvait",
+    "Kuwait" : "Kuwait",
     "Kyrgyzstan" : "Quirguistán",
     "Lao People's Democratic Republic" : "República Popular Democrática de Laos",
     "Latvia" : "Letonia",
