@@ -449,8 +449,6 @@ OC.L10N.register(
     "For formatting purposes Markdown is supported." : "Formátovať je možné pomocou Markdown.",
     "Existing terms of service" : "Existujúce zmluvné podmienky služby",
     "Loading …" : "Načítava sa...",
-    "Reset all signatories" : "Resetovať všetky signatúry",
-    "Save" : "Uložiť",
     "Ensure that all fields are filled" : "Uistite sa, že sú vyplnené všetky polia",
     "Terms saved successfully!" : "Podmienky boli úspešne uložené!",
     "All signatories reset!" : "Všetci signatári sú resetovaní!",

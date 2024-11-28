@@ -449,8 +449,6 @@ OC.L10N.register(
     "For formatting purposes Markdown is supported." : "За форматирање је подржана Markdown синтакса.",
     "Existing terms of service" : "Постојећу услови коришћења",
     "Loading …" : "Учитавање…",
-    "Reset all signatories" : "Ресетуј све потписе",
-    "Save" : "Сними",
     "Ensure that all fields are filled" : "Уверите се да су сва поља попуњена",
     "Terms saved successfully!" : "Услови су успешно сачувани!",
     "All signatories reset!" : "Сви потписници су уклоњени!",

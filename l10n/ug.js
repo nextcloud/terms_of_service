@@ -449,8 +449,6 @@ OC.L10N.register(
     "For formatting purposes Markdown is supported." : "فورماتلاش مەقسىتىدە Markdown نى قوللايدۇ.",
     "Existing terms of service" : "ھازىر بار بولغان مۇلازىمەت شەرتلىرى",
     "Loading …" : "Loading…",
-    "Reset all signatories" : "بارلىق ئىمزا قويغۇچىلارنى ئەسلىگە كەلتۈرۈڭ",
-    "Save" : "ساقلا",
     "Ensure that all fields are filled" : "ھەممە ساھەنىڭ تولدۇرۇلۇشىغا كاپالەتلىك قىلىڭ",
     "Terms saved successfully!" : "شەرتلەر مۇۋەپپەقىيەتلىك ساقلاندى!",
     "All signatories reset!" : "بارلىق ئىمزا قويغۇچىلار ئەسلىگە كەلدى!",

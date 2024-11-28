@@ -168,7 +168,6 @@ OC.L10N.register(
     "Select a region" : "Vælg en region",
     "Select a language" : "Vælg et sprog",
     "Loading …" : "Indlæser…",
-    "Save" : "Gem",
     "Deleting …" : "Sletter…"
 },
 "nplurals=2; plural=(n != 1);");

@@ -25,7 +25,6 @@ OC.L10N.register(
     "Vietnamese" : "වියට්නාම",
     "Chinese" : "චීන",
     "Terms of service" : "සේවා කොන්දේසි",
-    "Loading …" : "පූරණය වෙමින් …",
-    "Save" : "සුරකින්න"
+    "Loading …" : "පූරණය වෙමින් …"
 },
 "nplurals=2; plural=(n != 1);");

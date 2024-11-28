@@ -449,8 +449,6 @@ OC.L10N.register(
     "For formatting purposes Markdown is supported." : "Per scopi di formattazione, Markdown è supportato.",
     "Existing terms of service" : "Termini del servizio esistenti",
     "Loading …" : "Caricamento in corso…",
-    "Reset all signatories" : "Ripristina tutte le firme",
-    "Save" : "Salva",
     "Ensure that all fields are filled" : "Assicurati che tutti i campi siano compilati",
     "Terms saved successfully!" : "Termini salvati con successo!",
     "All signatories reset!" : "Tutti i firmatari vengono resettati!",

@@ -449,8 +449,6 @@ OC.L10N.register(
     "For formatting purposes Markdown is supported." : "تنسيق ماركداون Markdown مدعوم.",
     "Existing terms of service" : "شروط الخدمة الحالية",
     "Loading …" : "التحميل جارٍ …",
-    "Reset all signatories" : "إعادة تعيين جميع الموقّعين",
-    "Save" : "حفظ",
     "Ensure that all fields are filled" : "تأكد أن كل الحقول تم ملؤها",
     "Terms saved successfully!" : "تمّ حفظ الشروط بنجاح!",
     "All signatories reset!" : "تمّت إعادة تعيين جميع الموقعين!",

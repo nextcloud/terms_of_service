@@ -288,7 +288,6 @@ OC.L10N.register(
     "Chinese" : "Chinés",
     "Select a region" : "Seleccionar una region",
     "Select a language" : "Causir una lenga",
-    "Loading …" : "Cargament…",
-    "Save" : "Salvar"
+    "Loading …" : "Cargament…"
 },
 "nplurals=2; plural=(n > 1);");

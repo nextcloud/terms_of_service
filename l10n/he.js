@@ -381,8 +381,6 @@ OC.L10N.register(
     "For formatting purposes Markdown is supported." : "למטרות עיצוב קיימת תמיכה ב־Markdown.",
     "Existing terms of service" : "תנאי שירות קיימים",
     "Loading …" : "בטעינה",
-    "Reset all signatories" : "איפוס כל החתומים",
-    "Save" : "שמור",
     "Ensure that all fields are filled" : "נא לוודא שכל השדות מולאו",
     "Deleting …" : "מתבצעת מחיקה…"
 },

@@ -146,7 +146,6 @@ OC.L10N.register(
     "Bulgarian" : "Bullgarë",
     "English" : "Anglisht",
     "Hungarian" : "Hungareze",
-    "Terms of service" : "Termat e shërbimit",
-    "Save" : "Ruaj"
+    "Terms of service" : "Termat e shërbimit"
 },
 "nplurals=2; plural=(n != 1);");

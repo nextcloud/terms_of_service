@@ -265,7 +265,6 @@ OC.L10N.register(
     "By using this service …" : "Izmantojot šo pakalpojumu ...",
     "Existing terms of service" : "Pastāvošie lietošanas noteikumi",
     "Loading …" : "Ielādē…",
-    "Save" : "Saglabāt",
     "Terms saved successfully!" : "Noteikumi veiksmīgi saglabāti!",
     "I acknowledge that I have read and agree to the above terms of service" : "Es atzīstu, ka es esmu izlasījis un piekrītu augstāk rakstītajiem Lietošanas noteikumiem.",
     "Edit language {language} for region {country}" : "Labot valodu {language} reģionam {country}",

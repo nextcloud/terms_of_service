@@ -446,8 +446,6 @@ OC.L10N.register(
     "For formatting purposes Markdown is supported." : "Markdown je podržan u svrhu formatiranja.",
     "Existing terms of service" : "Postojeći uvjeti pružanja usluge",
     "Loading …" : "Učitavanje…",
-    "Reset all signatories" : "Resetiraj sve potpisnike",
-    "Save" : "Spremi",
     "Ensure that all fields are filled" : "Ispunite sva polja",
     "I acknowledge that I have read and agree to the above terms of service" : "Potvrđujem da sam pročitao i prihvaćam navedene uvjete pružanja usluge",
     "Deleting …" : "Brisanje..."

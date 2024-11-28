@@ -288,7 +288,6 @@ OC.L10N.register(
     "Chinese" : "Chinese",
     "Terms of service" : "Terms of service",
     "Select a region" : "Select a region",
-    "Loading …" : "Loading …",
-    "Save" : "Save"
+    "Loading …" : "Loading …"
 },
 "nplurals=2; plural=(n!=1);");

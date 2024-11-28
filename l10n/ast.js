@@ -287,7 +287,6 @@ OC.L10N.register(
     "Vietnamese" : "Vietnamita",
     "Chinese" : "Chinu",
     "Terms of service" : "Términos del serviciu",
-    "Loading …" : "Cargando…",
-    "Save" : "Guardar"
+    "Loading …" : "Cargando…"
 },
 "nplurals=2; plural=(n != 1);");

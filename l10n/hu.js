@@ -449,8 +449,6 @@ OC.L10N.register(
     "For formatting purposes Markdown is supported." : "Formázási célokhoz a Markdown támogatott.",
     "Existing terms of service" : "Jelenlegi felhasználási feltételek",
     "Loading …" : "Betöltés…",
-    "Reset all signatories" : "Az összes aláírás visszavonása",
-    "Save" : "Mentés",
     "Ensure that all fields are filled" : "Győződjön meg arról, hogy minden mezőt kitöltött",
     "Terms saved successfully!" : "A feltételek sikeresen mentve.",
     "All signatories reset!" : "Az összes aláírás visszavonva.",

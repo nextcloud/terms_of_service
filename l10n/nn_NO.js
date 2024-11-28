@@ -36,7 +36,6 @@ OC.L10N.register(
     "Mexico" : "Mexico",
     "Netherlands" : "Nederland",
     "Nigeria" : "Nigeria",
-    "Norway" : "Noreg",
-    "Save" : "Lagre"
+    "Norway" : "Noreg"
 },
 "nplurals=2; plural=(n != 1);");

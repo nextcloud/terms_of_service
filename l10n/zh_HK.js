@@ -449,8 +449,6 @@ OC.L10N.register(
     "For formatting purposes Markdown is supported." : "出於格式化目的，支持Markdown。",
     "Existing terms of service" : "目前的服務條款",
     "Loading …" : "載入中 ...",
-    "Reset all signatories" : "重設所有已同意人",
-    "Save" : "儲存",
     "Ensure that all fields are filled" : "確保所有字段都已填寫",
     "Terms saved successfully!" : "條款保存成功！",
     "All signatories reset!" : "所有簽署人重置！",

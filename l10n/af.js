@@ -349,7 +349,6 @@ OC.L10N.register(
     "By using this service …" : "Deur hierdie diens te gebruik …",
     "Existing terms of service" : "Bestaande diensbepalings",
     "Loading …" : "Laai …",
-    "Save" : "Stoor",
     "I acknowledge that I have read and agree to the above terms of service" : "Ek erken dat die die bostaande diensvoorwaardes gelees het en dit verstaan",
     "Deleting …" : "Word geskrap …"
 },
