@@ -68,7 +68,7 @@ class CheckPlugin extends ServerPlugin {
 	 */
 	public function checkToS(RequestInterface $request, ResponseInterface $response) {
 		// we instantiate the checker here to make sure sabre auth backend was triggered
-		$checker = \OC::$server->get(Checker::class);
+		$checker = \OCP\Server::get(Checker::class);
 		if (!$checker->currentUserHasSigned()) {
 			throw new Forbidden($checker->getForbiddenMessage());
 		}
