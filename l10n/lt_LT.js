@@ -291,9 +291,10 @@ OC.L10N.register(
     "Chinese" : "Kinų",
     "Zulu" : "Zulų",
     "Terms of service" : "Naudojimosi sąlygos",
+    "Terms of service have been modified!" : "Naudojimosi sąlygos modifikuotos!",
     "Select a region" : "Pasirinkti regioną",
     "Select a language" : "Pasirinkti kalbą",
     "Loading …" : "Įkeliama …",
-    "Deleting …" : "Ištrinama …"
+    "Deleting …" : "Ištrinama…"
 },
 "nplurals=4; plural=(n % 10 == 1 && (n % 100 > 19 || n % 100 < 11) ? 0 : (n % 10 >= 2 && n % 10 <=9) && (n % 100 > 19 || n % 100 < 11) ? 1 : n % 1 != 0 ? 2: 3);");
