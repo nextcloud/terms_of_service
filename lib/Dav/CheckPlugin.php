@@ -28,12 +28,13 @@ namespace OCA\TermsOfService\Dav;
 
 use Sabre\DAV\Server;
 use Sabre\DAV\ServerPlugin;
-use Sabre\DAV\Exception\Forbidden;
 use Sabre\HTTP\RequestInterface;
 use Sabre\HTTP\ResponseInterface;
 
 use OCA\TermsOfService\AppInfo\Application;
 use OCA\TermsOfService\Checker;
+use OCA\TermsOfService\TermsNotSignedException;
+
 
 class CheckPlugin extends ServerPlugin {
 	/** @var Server */
@@ -70,7 +71,7 @@ class CheckPlugin extends ServerPlugin {
 		// we instantiate the checker here to make sure sabre auth backend was triggered
 		$checker = \OCP\Server::get(Checker::class);
 		if (!$checker->currentUserHasSigned()) {
-			throw new Forbidden($checker->getForbiddenMessage());
+			throw new TermsNotSignedException($checker->getForbiddenMessage());
 		}
 		return true;
 	}
