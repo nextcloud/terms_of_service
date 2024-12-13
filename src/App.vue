@@ -34,7 +34,9 @@
 				:checked.sync="showOnPublicShares">
 				{{ t('terms_of_service', 'Show on public shares') }}
 			</NcCheckboxRadioSwitch>
-
+			<p class="edit-form">
+				{{ t('terms_of_service', 'Enter or update terms of service below.. ') }}
+			</p>
 			<span class="form">
 				<NcMultiselect v-model="country"
 					:options="countryOptions"
@@ -55,7 +57,9 @@
 			<p class="settings-hint">
 				{{ t('terms_of_service', 'For formatting purposes Markdown is supported.') }}
 			</p>
-
+			<p class="terms-descr">
+				{{ t('terms_of_service', 'Saving the terms will update the text but will not send a notification to users. Notifications are only sent if you reset the signatories.') }}
+			</p>
 			<NcButton :disabled="saveButtonDisabled"
 				@click="onSubmit">
 				{{ saveButtonText }}
@@ -64,6 +68,9 @@
 
 		<NcSettingsSection v-if="hasTerms"
 			:title="t('terms_of_service', 'Existing terms of service')">
+			<p class="terms-descr">
+				{{ t('terms_of_service', 'We recommend to reset signatures if legal changes were applied. For minor changes like fixing typos or correcting links, it could be left out, as it would otherwise require all users to accept the Terms of Service again.') }}
+			</p>
 			<NcButton :disabled="resetButtonDisabled"
 				type="error"
 				@click="onResetSignatories">
@@ -153,7 +160,7 @@ export default {
 
 	mounted() {
 		this.saveButtonText = t('terms_of_service', 'Loading …')
-		this.resetButtonText = t('terms_of_service', 'Reset all signatories')
+		this.resetButtonText = t('terms_of_service', 'Reset signatories & notify users')
 		axios
 			.get(generateOcsUrl('/apps/terms_of_service/terms/admin'))
 			.then(response => {
@@ -178,7 +185,7 @@ export default {
 					})
 				})
 
-				this.saveButtonText = t('terms_of_service', 'Save')
+				this.saveButtonText = t('terms_of_service', 'Save terms')
 				this.$nextTick(() => {
 					this.saveButtonDisabled = false
 				})
@@ -229,8 +236,13 @@ export default {
 	display: block;
 }
 
-.form {
+.edit-form {
 	margin-top: 30px;
+	opacity: .7;
+}
+
+.form {
+	margin-top: 10px;
 	display: block;
 }
 
@@ -243,6 +255,11 @@ label span {
 	min-width: 120px;
 	padding: 8px 0;
 	vertical-align: top;
+}
+
+.terms-descr {
+	opacity: .7;
+	margin-bottom: 10px;
 }
 
 </style>
