@@ -5,6 +5,9 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## 4.1.0
+### Added
+- Improve save terms and reset signatures actions
 
 ## 4.0.0
 ### Changed
