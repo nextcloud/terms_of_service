@@ -450,7 +450,6 @@ OC.L10N.register(
     "For formatting purposes Markdown is supported." : "Formátovat lze značkami Markdown.",
     "Saving the terms will update the text but will not send a notification to users. Notifications are only sent if you reset the signatories." : "Uložení všeobecných podmínek zaktualizuje text, ale nepošle upozornění uživatelům. Notifikace jsou zaslány pouze v případě, že resetujete stav přijmutí.",
     "Existing terms of service" : "Existující všeobecné podmínky",
-    "We recommend to reset signatures if legal changes were applied. For minor changes like fixing typos or correcting links, it could be left out, as it would otherwise require all users to accept the Terms of Service again." : "V případě, že byly provedeny jakékoli právní změny, doporučujeme resetovat stav přijmutí. V případě drobných změn, jako např. opravy překlepů nebo opravy odkazů, je možné toto vynechat, protože jinak by to znamenalo, že všichni uživatelé by museli všeobecné podmínky znovu odsouhlasit.",
     "Loading …" : "Načítání…",
     "Reset signatories & notify users" : "Resetovat stavy přijmutí a upozornit uživatele",
     "Save terms" : "Uložit podmínky",

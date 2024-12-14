@@ -450,7 +450,6 @@ OC.L10N.register(
     "For formatting purposes Markdown is supported." : "Chun críocha formáidithe tacaítear le Markdown.",
     "Saving the terms will update the text but will not send a notification to users. Notifications are only sent if you reset the signatories." : "Má shábhálann tú na téarmaí, déanfar an téacs a nuashonrú ach ní sheolfar fógra chuig úsáideoirí. Ní sheoltar fógraí ach amháin má athshocraíonn tú na sínitheoirí.",
     "Existing terms of service" : "Téarmaí seirbhíse atá ann cheana",
-    "We recommend to reset signatures if legal changes were applied. For minor changes like fixing typos or correcting links, it could be left out, as it would otherwise require all users to accept the Terms of Service again." : "Molaimid sínithe a athshocrú dá gcuirfí athruithe dlíthiúla i bhfeidhm. I gcás mionathruithe ar nós typos a shocrú nó naisc a cheartú, d’fhéadfaí é a fhágáil amach, mar go n-éileodh sé ar gach úsáideoir glacadh leis na Téarmaí Seirbhíse arís.",
     "Loading …" : "Á lódáil…",
     "Reset signatories & notify users" : "Athshocraigh sínitheoirí & cuir úsáideoirí ar an eolas",
     "Save terms" : "Sábháil téarmaí",

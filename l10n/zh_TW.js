@@ -450,7 +450,6 @@ OC.L10N.register(
     "For formatting purposes Markdown is supported." : "出於格式化目的，支持Markdown。",
     "Saving the terms will update the text but will not send a notification to users. Notifications are only sent if you reset the signatories." : "儲存條款會更新文字，但不會傳送通知給使用者。僅當您重設簽署者時才會傳送通知。",
     "Existing terms of service" : "目前的服務條款",
-    "We recommend to reset signatures if legal changes were applied. For minor changes like fixing typos or correcting links, it could be left out, as it would otherwise require all users to accept the Terms of Service again." : "若套用了法律變更，我們建議重設簽署者。對於修正錯字或更正連結等小變更，可以不做，否則會要求所有使用者重新接受服務條款。",
     "Loading …" : "載入中 ...",
     "Reset signatories & notify users" : "重設簽署者並通知使用者",
     "Save terms" : "儲存條款",

@@ -448,7 +448,6 @@
     "For formatting purposes Markdown is supported." : "Zur Formatierung kann Markdown verwendet werden.",
     "Saving the terms will update the text but will not send a notification to users. Notifications are only sent if you reset the signatories." : "Durch das Speichern der Bedingungen wird der Text aktualisiert, es wird jedoch keine Benachrichtigung an die Benutzer gesendet. Benachrichtigungen werden nur gesendet, wenn Sie die Unterzeichner zurücksetzen.",
     "Existing terms of service" : "Bestehende Nutzungsbedingungen",
-    "We recommend to reset signatures if legal changes were applied. For minor changes like fixing typos or correcting links, it could be left out, as it would otherwise require all users to accept the Terms of Service again." : "Wir empfehlen, Signaturen zurückzusetzen, wenn rechtliche Änderungen vorgenommen wurden. Bei kleineren Änderungen wie der Korrektur von Tippfehlern oder Links kann dies weggelassen werden, da sonst alle Benutzer die Nutzungsbedingungen erneut akzeptieren müssen.",
     "Loading …" : "Lade…",
     "Reset signatories & notify users" : "Unterzeichner zurücksetzen & Benutzer benachrichtigen",
     "Save terms" : "Bedingungen speichern",
