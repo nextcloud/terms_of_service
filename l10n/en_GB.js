@@ -450,6 +450,7 @@ OC.L10N.register(
     "For formatting purposes Markdown is supported." : "For formatting purposes Markdown is supported.",
     "Saving the terms will update the text but will not send a notification to users. Notifications are only sent if you reset the signatories." : "Saving the terms will update the text but will not send a notification to users. Notifications are only sent if you reset the signatories.",
     "Existing terms of service" : "Existing terms of service",
+    "We recommend to reset signatories if legal changes were applied. For minor changes like fixing typos or correcting links, it could be left out, as it would otherwise require all users to accept the Terms of Service again." : "We recommend resetting signatories if legal changes were applied. For minor changes like fixing typos or correcting links, it could be left out, as it would otherwise require all users to accept the Terms of Service again.",
     "Loading …" : "Loading …",
     "Reset signatories & notify users" : "Reset signatories & notify users",
     "Save terms" : "Save terms",
