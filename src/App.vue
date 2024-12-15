@@ -53,7 +53,7 @@
 		<NcSettingsSection v-if="hasTerms"
 			:name="t('terms_of_service', 'Existing terms of service')">
 			<p class="terms-descr">
-				{{ t('terms_of_service', 'We recommend to reset signatories if legal changes were applied. For minor changes like fixing typos or correcting links, it could be left out, as it would otherwise require all users to accept the Terms of Service again.') }}
+				{{ t('terms_of_service', 'We recommend resetting the signatories if legal changes were applied. For minor changes like fixing typos or correcting links, it could be left out, as it would otherwise require all users to accept the Terms of Service again.') }}
 			</p>
 			<NcButton :disabled="resetButtonDisabled"
 				type="error"
