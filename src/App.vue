@@ -17,7 +17,7 @@
 				{{ t('terms_of_service', 'Show on public shares') }}
 			</NcCheckboxRadioSwitch>
 			<p class="edit-form">
-				{{ t('terms_of_service', 'Enter or update terms of service below.. ') }}
+				{{ t('terms_of_service', 'Enter or update terms of service below.') }}
 			</p>
 			<span class="form">
 				<NcSelect v-model="country"
