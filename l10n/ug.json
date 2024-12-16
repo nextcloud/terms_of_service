@@ -451,8 +451,8 @@
     "Terms saved successfully!" : "شەرتلەر مۇۋەپپەقىيەتلىك ساقلاندى!",
     "All signatories reset!" : "بارلىق ئىمزا قويغۇچىلار ئەسلىگە كەلدى!",
     "I acknowledge that I have read and agree to the above terms of service" : "مەن يۇقىرىدىكى مۇلازىمەت شەرتلىرىنى ئوقۇغانلىقىم ۋە ئۇنىڭغا قوشۇلغانلىقىمنى ئېتىراپ قىلىمەن",
-    "Edit language {language} for region {country}" : "رايون {دۆلەت ئۈچۈن تىل {تىل} تەھرىرلەش",
+    "Edit language {language} for region {country}" : "رايون {language} ئۈچۈن تىل {country} تەھرىرلەش",
     "Deleting …" : "ئۆچۈرۈش…",
-    "Delete language {language} for region {country}" : "رايون {دۆلەت for ئۈچۈن تىل {تىل ئۆچۈرۈڭ"
+    "Delete language {language} for region {country}" : "رايون {language} for ئۈچۈن تىل {country} ئۆچۈرۈڭ"
 },"pluralForm" :"nplurals=2; plural=(n != 1);"
 }
