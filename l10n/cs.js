@@ -443,7 +443,6 @@ OC.L10N.register(
     "Require users to accept the terms of service before accessing the service." : "Vyžadovat aby uživatelé odsouhlasili všeobecné podmínky než budou moci přistupovat ke službě.",
     "Show for logged-in users" : "Zobrazit přihlášeným uživatelům",
     "Show on public shares" : "Zobrazovat u veřejných sdílení",
-    "Enter or update terms of service below.. " : "Níže zadejte nebo zaktualizujte všeobecné podmínky.",
     "Select a region" : "Vyberte oblast",
     "Select a language" : "Vyberte jazyk",
     "By using this service …" : "Použitím této služby…",

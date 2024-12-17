@@ -443,7 +443,6 @@ OC.L10N.register(
     "Require users to accept the terms of service before accessing the service." : "要求使用者在使用服務之前接受服務條款。",
     "Show for logged-in users" : "為已登入的使用者顯示",
     "Show on public shares" : "公開分享顯示",
-    "Enter or update terms of service below.. " : "在下方輸入或更新服務條款……",
     "Select a region" : "選取區域",
     "Select a language" : "選取語言",
     "By using this service …" : "使用此服務……",

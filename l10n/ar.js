@@ -443,7 +443,6 @@ OC.L10N.register(
     "Require users to accept the terms of service before accessing the service." : "يتوجب على المستخدمين قبول شروط الخدمة قبل الوصول إلى الخدمة.",
     "Show for logged-in users" : "للعرض على المستخدمين الداخلين",
     "Show on public shares" : "للعرض على المشاركات العمومية",
-    "Enter or update terms of service below.. " : "أدخِل أو حدِّث شروط الخدمة أدناه...",
     "Select a region" : "اختر منطقة",
     "Select a language" : "اختر لغة",
     "By using this service …" : "باستخدامك لهذه الخدمة ...",
