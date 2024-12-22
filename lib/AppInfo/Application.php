@@ -12,6 +12,7 @@ use OC\Files\Storage\Wrapper\Wrapper;
 use OCA\Registration\Events\PassedFormEvent;
 use OCA\Registration\Events\ShowFormEvent;
 use OCA\Registration\Events\ValidateFormEvent;
+use OCA\TermsOfService\PublicCapabilities;
 use OCA\TermsOfService\Checker;
 use OCA\TermsOfService\Filesystem\StorageWrapper;
 use OCA\TermsOfService\Listener\RegistrationIntegration;
@@ -51,6 +52,7 @@ class Application extends App implements IBootstrap {
 		$context->registerEventListener(ShowFormEvent::class, RegistrationIntegration::class);
 		$context->registerEventListener(ValidateFormEvent::class, RegistrationIntegration::class);
 		$context->registerEventListener(PassedFormEvent::class, RegistrationIntegration::class);
+		$context->registerCapability(PublicCapabilities::class);
 	}
 
 	public function boot(IBootContext $context): void {
