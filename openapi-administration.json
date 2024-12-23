@@ -88,6 +88,32 @@
                     }
                 }
             },
+            "PublicCapabilities": {
+                "type": "object",
+                "required": [
+                    "terms_of_service"
+                ],
+                "properties": {
+                    "terms_of_service": {
+                        "type": "object",
+                        "required": [
+                            "enabled",
+                            "term_uuid"
+                        ],
+                        "properties": {
+                            "enabled": {
+                                "type": "boolean",
+                                "enum": [
+                                    true
+                                ]
+                            },
+                            "term_uuid": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                }
+            },
             "Terms": {
                 "type": "object",
                 "required": [
