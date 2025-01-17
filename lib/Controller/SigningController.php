@@ -99,23 +99,22 @@ class SigningController extends OCSController {
 		return new DataResponse();
 	}
 
-
 	/**
 	 * As a guest sign the terms
 	 *
-	 * @param int $termId The terms the user signed
 	 * @return DataResponse<Http::STATUS_OK, array<empty>, array{}>
 	 *
 	 * 200: Signed successfully
 	 */
 	#[PublicPage]
 	#[UseSession]
-	public function signTermsPublic(int $termId): DataResponse {
+	public function signTermsPublic(): DataResponse {
 		$uuid = $this->config->getAppValue(Application::APPNAME, 'term_uuid', '');
 		$this->session->set('term_uuid', $uuid);
 
 		return new DataResponse();
 	}
+
 
 
 	/**

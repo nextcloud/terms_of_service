@@ -283,26 +283,6 @@
                         "basic_auth": []
                     }
                 ],
-                "requestBody": {
-                    "required": true,
-                    "content": {
-                        "application/json": {
-                            "schema": {
-                                "type": "object",
-                                "required": [
-                                    "termId"
-                                ],
-                                "properties": {
-                                    "termId": {
-                                        "type": "integer",
-                                        "format": "int64",
-                                        "description": "The terms the user signed"
-                                    }
-                                }
-                            }
-                        }
-                    }
-                },
                 "parameters": [
                     {
                         "name": "OCS-APIRequest",
