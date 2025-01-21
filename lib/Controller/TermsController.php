@@ -92,7 +92,7 @@ class TermsController extends OCSController {
 
 		if ($this->config->getAppValue(Application::APPNAME, 'term_uuid', '') === '')
 		{
-			$this->config->getAppValue(Application::APPNAME, 'term_uuid', uniqid());
+			$this->config->setAppValue(Application::APPNAME, 'term_uuid', uniqid());
 		}
 
 		$response = [
