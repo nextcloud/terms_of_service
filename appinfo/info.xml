@@ -11,7 +11,7 @@
 	<description><![CDATA[Requires users to accept the terms of service before accessing data.
 This product includes GeoLite2 data created by MaxMind, available from [maxmind.com](http://www.maxmind.com)]]></description>
 
-	<version>4.1.0</version>
+	<version>4.2.0-dev.0</version>
 	<licence>agpl</licence>
 	<author>Joas Schilling</author>
 
