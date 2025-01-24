@@ -33,7 +33,7 @@ This product includes GeoLite2 data created by MaxMind, available from [maxmind.
 	<screenshot>https://github.com/nextcloud/terms_of_service/raw/master/docs/notification-and-settings.png</screenshot>
 
 	<dependencies>
-		<nextcloud min-version="28" max-version="30" />
+		<nextcloud min-version="28" max-version="32" />
 	</dependencies>
 
 	<commands>
