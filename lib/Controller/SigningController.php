@@ -74,7 +74,7 @@ class SigningController extends OCSController {
 	 * As a logged in user sign the terms
 	 *
 	 * @param int $termId The terms the user signed
-	 * @return DataResponse<Http::STATUS_OK, array<empty>, array{}>
+	 * @return DataResponse<Http::STATUS_OK, list<empty>, array{}>
 	 *
 	 * 200: Signed successfully
 	 */
@@ -102,7 +102,7 @@ class SigningController extends OCSController {
 	/**
 	 * As a guest sign the terms
 	 *
-	 * @return DataResponse<Http::STATUS_OK, array<empty>, array{}>
+	 * @return DataResponse<Http::STATUS_OK, list<empty>, array{}>
 	 *
 	 * 200: Signed successfully
 	 */
@@ -120,7 +120,7 @@ class SigningController extends OCSController {
 	/**
 	 * Reset the signatories of all accounts
 	 *
-	 * @return DataResponse<Http::STATUS_OK, array<empty>, array{}>
+	 * @return DataResponse<Http::STATUS_OK, list<empty>, array{}>
 	 *
 	 * 200: Reset successfully
 	 */

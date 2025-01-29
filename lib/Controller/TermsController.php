@@ -133,7 +133,7 @@ class TermsController extends OCSController {
 	 * Delete a given Term by id
 	 *
 	 * @param positive-int $id The terms which should be deleted
-	 * @return DataResponse<Http::STATUS_OK, array<empty>, array{}>
+	 * @return DataResponse<Http::STATUS_OK, list<empty>, array{}>
 	 *
 	 * 200: Deleted successfully
 	 */
@@ -157,7 +157,7 @@ class TermsController extends OCSController {
 	 * @param string $countryCode One of the 2-letter region codes or `--` for "global"
 	 * @param string $languageCode One of the 2-letter language codes
 	 * @param string $body The actual terms and conditions text (can be markdown, using headers, basic text formating, lists and links)
-	 * @return DataResponse<Http::STATUS_OK, TermsOfServiceTerms, array{}>|DataResponse<Http::STATUS_EXPECTATION_FAILED, array<empty>, array{}>
+	 * @return DataResponse<Http::STATUS_OK, TermsOfServiceTerms, array{}>|DataResponse<Http::STATUS_EXPECTATION_FAILED, list<empty>, array{}>
 	 *
 	 * 200: Created successfully
 	 * 417: Country or language code was not a valid option
