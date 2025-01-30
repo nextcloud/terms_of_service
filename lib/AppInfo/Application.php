@@ -28,7 +28,6 @@ use OCA\Registration\Events\PassedFormEvent;
 use OCA\Registration\Events\ShowFormEvent;
 use OCA\Registration\Events\ValidateFormEvent;
 use OCA\TermsOfService\Checker;
-use OCA\TermsOfService\Dav\CheckPlugin;
 use OCA\TermsOfService\Filesystem\StorageWrapper;
 use OCA\TermsOfService\Listener\RegistrationIntegration;
 use OCA\TermsOfService\Listener\UserDeletedListener;
