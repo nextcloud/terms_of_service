@@ -5,6 +5,13 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## 4.2.0
+### Added
+- Return 403 TermsNotSignedException on propfinds
+
+### Fixed
+- Fix typo in translation
+
 ## 4.1.0
 ### Added
 - Improve save terms and reset signatures actions
