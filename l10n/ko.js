@@ -1,7 +1,6 @@
 OC.L10N.register(
     "terms_of_service",
     {
-    "Terms of service are not signed" : "이용약관에 동의하지 않았습니다.",
     "Global" : "국제",
     "Afghanistan" : "아프가니스탄",
     "Åland Islands" : "올란드 제도",

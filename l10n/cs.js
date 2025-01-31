@@ -1,7 +1,6 @@
 OC.L10N.register(
     "terms_of_service",
     {
-    "Terms of service are not signed" : "Nejsou odsouhlaseny všeobecné podmínky",
     "Global" : "Globální",
     "Afghanistan" : "Afgánistán",
     "Åland Islands" : "Alandy",

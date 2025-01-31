@@ -1,7 +1,6 @@
 OC.L10N.register(
     "terms_of_service",
     {
-    "Terms of service are not signed" : "Οι όροι χρήσης δεν είναι υπογεγραμμένοι",
     "Global" : "Καθολικό",
     "Afghanistan" : "Αφγανιστάν",
     "Åland Islands" : "Åland Islands",

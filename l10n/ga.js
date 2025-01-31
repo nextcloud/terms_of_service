@@ -1,7 +1,6 @@
 OC.L10N.register(
     "terms_of_service",
     {
-    "Terms of service are not signed" : "Níl na téarmaí seirbhíse sínithe",
     "Global" : "Domhanda",
     "Afghanistan" : "Afganastáin",
     "Åland Islands" : "Oileáin Åland",

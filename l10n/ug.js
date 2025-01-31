@@ -1,7 +1,6 @@
 OC.L10N.register(
     "terms_of_service",
     {
-    "Terms of service are not signed" : "مۇلازىمەت شەرتنامىسى ئىمزالانمىدى",
     "Global" : "Global",
     "Afghanistan" : "ئافغانىستان",
     "Åland Islands" : "Åland Islands",
