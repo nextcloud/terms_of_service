@@ -24,6 +24,7 @@
  */
 
 import Vue from 'vue'
+import { getCurrentUser } from '@nextcloud/auth'
 import UserApp from './UserApp.vue'
 
 Vue.prototype.t = t
@@ -31,10 +32,10 @@ Vue.prototype.n = n
 Vue.prototype.OC = OC
 Vue.prototype.OCA = OCA
 
-const hasToken = (document.getElementById('sharingToken') !== null)
+const isNotLoggedIn = getCurrentUser() === null
 const isPasswordProtected = (document.getElementById('password-submit') !== null)
 
-if (hasToken && !isPasswordProtected) {
+if (isNotLoggedIn && !isPasswordProtected) {
 	const tofc = document.createElement('div')
 	tofc.id = 'terms_of_service_confirm'
 	document.body.insertAdjacentElement('afterbegin', tofc)
