@@ -79,17 +79,44 @@ class Application extends App implements IBootstrap {
 	}
 
 	public function registerFrontend(IRequest $request, IConfig $config, IUserSession $userSession): void {
+		// Ignore CLI
 		/** @psalm-suppress UndefinedClass */
-		if (!\OC::$CLI) {
-			if ($userSession->getUser() instanceof IUser
-				&& strpos($request->getPathInfo(), '/s/') !== 0
-				&& strpos($request->getPathInfo(), '/login/') !== 0
-				&& substr($request->getScriptName(), 0 - strlen('/index.php')) === '/index.php') {
-				Util::addScript('terms_of_service', 'terms_of_service-user');
-			} else if ($config->getAppValue(self::APPNAME, 'tos_on_public_shares', '0') === '1') {
-				Util::addScript('terms_of_service', 'terms_of_service-public');
-			}
+		if (\OC::$CLI) {
+			return;
 		}
+
+		// Skip login-related pages
+		// TODO: Add a universal way to specify skipped pages instead of hardcoding
+		$skipPatterns = [
+			// Login
+			'#^/login$#',
+			// Login Flow Grant must have the terms of service
+			// so that the user can accept them before using the app
+			// TODO: add a checkbox on the login instead, like on the Registration app
+			'#^/login/(?!flow/grant|v2/grant)#',
+			// SAML
+			'#^/apps/user_saml/saml$#',
+			'#^/apps/user_saml/saml/#',
+			// user_oidc
+			'#^/apps/user_oidc/code$#',
+			'#^/apps/user_oidc/sls$#',
+			'#^/apps/user_oidc/id4me$#',
+			'#^/apps/user_oidc/id4me/code$#',
+			// registration
+			'#^/apps/registration(?:$|/)#',
+		];
+		if (array_filter($skipPatterns, fn($pattern) => preg_match($pattern, $request->getPathInfo()))) {
+			return;
+		}
+
+		if ($userSession->getUser() instanceof IUser) {
+			// Logged-in user
+			Util::addScript('terms_of_service', 'terms_of_service-user');
+		} else if ($config->getAppValue(self::APPNAME, 'tos_on_public_shares', '0') === '1') {
+			// Guests on public pages
+			Util::addScript('terms_of_service', 'terms_of_service-public');
+		}
+
 	}
 
 	public function addStorageWrapper(): void {
