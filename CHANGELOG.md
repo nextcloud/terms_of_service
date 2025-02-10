@@ -1,6 +1,11 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## 3.4.0
+### Fixed
+- Show ToS on non-files public pages (calendar/collectives/talk)
+- Accept ToS during login flow
+
 ## 3.3.0
 ### Added
 - Return 403 TermsNotSignedException on propfinds
