@@ -5,6 +5,12 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## 4.3.0
+### Fixed
+- Show ToS on non-files public pages (calendar/collectives/talk)
+- Fix Nextcloud 31 public shares support
+- Accept ToS during login flow
+
 ## 4.2.0
 ### Added
 - Return 403 TermsNotSignedException on propfinds
