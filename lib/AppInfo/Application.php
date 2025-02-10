@@ -93,15 +93,9 @@ class Application extends App implements IBootstrap {
 	}
 
 	public function registerFrontend(IRequest $request, IConfig $config, IUserSession $userSession): void {
-		if (!\OC::$CLI) {
-			if ($userSession->getUser() instanceof IUser
-				&& strpos($request->getPathInfo(), '/s/') !== 0
-				&& strpos($request->getPathInfo(), '/login/') !== 0
-				&& substr($request->getScriptName(), 0 - strlen('/index.php')) === '/index.php') {
-				Util::addScript('terms_of_service', 'terms_of_service-user');
-			} else if ($config->getAppValue(self::APPNAME, 'tos_on_public_shares', '0') === '1') {
-				Util::addScript('terms_of_service', 'terms_of_service-public');
-			}
+		// Ignore CLI
+		if (\OC::$CLI) {
+			return;
 		}
 
 		// Skip login-related pages
