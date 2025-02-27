@@ -286,8 +286,8 @@ OC.L10N.register(
     "Ukrainian" : "Urcraïnian",
     "Vietnamese" : "Vietnamian",
     "Chinese" : "Chinés",
+    "Loading …" : "Cargament…",
     "Select a region" : "Seleccionar una region",
-    "Select a language" : "Causir una lenga",
-    "Loading …" : "Cargament…"
+    "Select a language" : "Causir una lenga"
 },
 "nplurals=2; plural=(n > 1);");

@@ -287,7 +287,7 @@ OC.L10N.register(
     "Vietnamese" : "Vietnamese",
     "Chinese" : "Chinese",
     "Terms of service" : "Terms of service",
-    "Select a region" : "Select a region",
-    "Loading …" : "Loading …"
+    "Loading …" : "Loading …",
+    "Select a region" : "Select a region"
 },
 "nplurals=2; plural=(n!=1);");
