@@ -438,14 +438,25 @@
     "Requires users to accept the terms of service before accessing data." : "在访问数据之前，要求用户接受服务条例。",
     "Requires users to accept the terms of service before accessing data.\nThis product includes GeoLite2 data created by MaxMind, available from [maxmind.com](http://www.maxmind.com)" : "要求用户在访问数据前同意服务条款。\n此产品包含由MaxMind生成的GeoLite2数据，请访问[maxmind.com](http://www.maxmind.com)",
     "Loading …" : "正在加载...",
+    "Reset signatories & notify users" : "重置签名者并通知用户",
+    "Save terms" : "保存条款",
     "Ensure that all fields are filled" : "确保所有字段已填写",
+    "Terms saved successfully!" : "条款保存成功！",
+    "All signatories reset!" : "所有签名者已重置！",
     "Require users to accept the terms of service before accessing the service." : "要求用户在访问服务之前接受本服务条款。",
+    "Show for logged-in users" : "为登录用户显示",
+    "Show on public shares" : "公开分享显示",
+    "Enter or update terms of service below." : "在下方输入或更新服务条款。",
     "Select a region" : "选择国家/地区",
     "Select a language" : "选择语言",
     "By using this service …" : "通过使用此服务",
     "For formatting purposes Markdown is supported." : "支持使用 Markdown 格式化文本。",
+    "Saving the terms will update the text but will not send a notification to users. Notifications are only sent if you reset the signatories." : "保存条款将更新文本，但不会向用户发送通知。只有当您重置签名者时，才会发送通知。",
     "Existing terms of service" : "现有服务条款",
+    "We recommend resetting the signatories if legal changes were applied. For minor changes like fixing typos or correcting links, it could be left out, as it would otherwise require all users to accept the Terms of Service again." : "如果应用了法律变更，我们建议重置签名者。对于修复拼写错误或更正链接等细微更改，可以省略，否则将要求所有用户再次接受服务条款。",
     "I acknowledge that I have read and agree to the above terms of service" : "我确认我已阅读并同意上述服务条款",
-    "Deleting …" : "正在删除..."
+    "Edit language {language} for region {country}" : "编辑区域 {country} 的语言 {language}",
+    "Deleting …" : "正在删除...",
+    "Delete language {language} for region {country}" : "删除区域 {country} 的语言 {language}"
 },"pluralForm" :"nplurals=1; plural=0;"
 }
