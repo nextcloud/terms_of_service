@@ -88,8 +88,8 @@ class Checker {
 			}
 		}
 
-		if ($this->isValidWOPIRequest()) {
-			// Richdocuments and Collabora doing WOPI requests for the user
+		if ($this->isAllowedRequest()) {
+			// Services such as Collabora doing requests for the user
 			return true;
 		}
 
@@ -126,27 +126,41 @@ class Checker {
 		return false;
 	}
 
-	protected function isValidWOPIRequest(): bool {
-		return $this->isWOPIRemoteAddress()
-			&& $this->isAllowedAppPath()
+	protected function isAllowedRequest(): bool {
+		return $this->isRequestAllowedInConfig()
+			|| $this->isValidWOPIRequest('richdocuments')
+			|| $this->isValidWOPIRequest('officeonline');
+	}
+
+	protected function isRequestAllowedInConfig(): bool {
+		$allowedPath = $this->config->getAppValue(Application::APPNAME, 'allow_path_prefix');
+		$allowedRanges = $this->allowedRangeForApp(Application::APPNAME, 'allow_ip_ranges');
+		return $this->isRemoteAddressInRanges($allowedRanges)
+			&& $this->isPathInfoStartingWith($allowedPath)
 			&& $this->isAllowedScriptName();
 	}
 
-	protected function isAllowedAppPath(): bool {
-		return strpos($this->request->getPathInfo(), '/apps/richdocuments/wopi/') === 0
-			|| strpos($this->request->getPathInfo(), '/apps/officeonline/wopi/') === 0;
+	protected function isValidWOPIRequest(string $app): bool {
+		$allowedPath = '/apps/' . $app . '/wopi/';
+		$allowedRanges = $this->allowedRangeForApp($app, 'wopi_allowlist');
+		return $this->isRemoteAddressInRanges($allowedRanges)
+			&& $this->isPathInfoStartingWith($allowedPath)
+			&& $this->isAllowedScriptName();
+	}
+
+	protected function isPathInfoStartingWith(string $allowedPath): bool {
+		// no path allowed
+		if ($allowedPath === '') {
+			return false;
+		}
+		return strpos($this->request->getPathInfo(), $allowedPath) === 0;
 	}
 
 	protected function isAllowedScriptName(): bool {
 		return substr($this->request->getScriptName(), 0 - strlen('/index.php')) === '/index.php';
 	}
 
-	protected function isWOPIRemoteAddress(): bool {
-		$allowedRanges = array_merge(
-			$this->allowedRangeForApp('richdocuments'),
-			$this->allowedRangeForApp('officeonline')
-		);
-
+	protected function isRemoteAddressInRanges(array $allowedRanges): bool {
 		$userIp = $this->request->getRemoteAddress();
 		foreach ($allowedRanges as $range) {
 			try {
@@ -164,8 +178,8 @@ class Checker {
 		return false;
 	}
 
-	private function allowedRangeForApp(string $appId): array {
-		$allowedRangesString = $this->config->getAppValue($appId, 'wopi_allowlist');
+	private function allowedRangeForApp(string $appId, string $configKey): array {
+		$allowedRangesString = $this->config->getAppValue($appId, $configKey);
 		if ($allowedRangesString === '') {
 			return [];
 		}
