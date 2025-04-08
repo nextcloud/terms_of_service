@@ -28,6 +28,23 @@ Default is enabled: `1`
 ./occ config:app:set terms_of_service tos_for_users --value '0'
 ```
 
+## 🔌 Allow access from other services
+
+Some other services such as office suites communicate directly with the Nextcloud server.
+For Nextcloud Office and Officeonline the `wopi_allowlist` settings of the respective apps are taken into account.
+
+To allow other services to bypass the terms of service check:
+* Set `allow_ip_ranges` to match the ip addresses of the servers in question.
+* Set `allow_path_prefix` to the paths that access should be granted to.
+
+Default for `allow_ip_ranges` is none: ``
+Default for `allow_path_prefix` is none: ``
+
+```
+./occ config:app:set terms_of_service allow_ip_range --value '10.0.0.5,10.0.0.6'
+./occ config:app:set terms_of_service allow_path_prefix --value '/apps/onlyoffice/download'
+```
+
 ## 🏗️ Development setup
 
 1. Clone the repository
