@@ -275,7 +275,7 @@ OC.L10N.register(
     "Hindi" : "Hindeg",
     "Croatian" : "Kroateg",
     "Hungarian" : "Hungarian ",
-    "Armenian" : "Armenianeg",
+    "Armenian" : "Armenieg",
     "Indonesian" : "Indonezeg",
     "Igbo" : "Igboeg",
     "Icelandic" : "Islandeg",
