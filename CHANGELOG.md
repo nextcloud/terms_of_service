@@ -5,6 +5,12 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## 4.4.0
+### Added
+- Configuration settings to bypass checks for services:
+  * `allow_ip_ranges`
+  * `allow_path_prefix`
+
 ## 4.3.0
 ### Fixed
 - Show ToS on non-files public pages (calendar/collectives/talk)
