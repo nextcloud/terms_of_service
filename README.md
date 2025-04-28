@@ -34,15 +34,17 @@ Some other services such as office suites communicate directly with the Nextclou
 For Nextcloud Office and Officeonline the `wopi_allowlist` settings of the respective apps are taken into account.
 
 To allow other services to bypass the terms of service check:
-* Set `allow_ip_ranges` to match the ip addresses of the servers in question.
 * Set `allow_path_prefix` to the paths that access should be granted to.
+* Set `allow_ip_ranges` to match the ip addresses of the servers in question.
+  If you are using a reverse proxy, use the ip address of the application server.
+  Access is allowed based on the x-forwarded-for header and not the source ip.
 
-Default for `allow_ip_ranges` is none: ``
 Default for `allow_path_prefix` is none: ``
+Default for `allow_ip_ranges` is none: ``
 
 ```
-./occ config:app:set terms_of_service allow_ip_range --value '10.0.0.5,10.0.0.6'
 ./occ config:app:set terms_of_service allow_path_prefix --value '/apps/onlyoffice/download'
+./occ config:app:set terms_of_service allow_ip_ranges --value '10.0.0.5,10.0.0.6'
 ```
 
 ## 🏗️ Development setup
