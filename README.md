@@ -41,7 +41,7 @@ Default for `allow_ip_ranges` is none: ``
 Default for `allow_path_prefix` is none: ``
 
 ```
-./occ config:app:set terms_of_service allow_ip_range --value '10.0.0.5,10.0.0.6'
+./occ config:app:set terms_of_service allow_ip_ranges --value '10.0.0.5,10.0.0.6'
 ./occ config:app:set terms_of_service allow_path_prefix --value '/apps/onlyoffice/download'
 ```
 
