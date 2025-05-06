@@ -15,14 +15,13 @@ SPDX-FileCopyrightText: Roeland Jago Douma
 SPDX-FileCopyrightText: Rob Cresswell <robcresswell@pm.me>
 SPDX-FileCopyrightText: Paul Vorbach <paul@vorba.ch> (http://paul.vorba.ch)
 SPDX-FileCopyrightText: Paul Vorbach <paul@vorb.de> (http://vorb.de)
+SPDX-FileCopyrightText: Nextcloud GmbH and Nextcloud contributors
 SPDX-FileCopyrightText: Matt Zabriskie
-SPDX-FileCopyrightText: John-David Dalton <john.david.dalton@gmail.com> (http://allyoucanleet.com/)
 SPDX-FileCopyrightText: John Molakvoæ (skjnldsv) <skjnldsv@protonmail.com>
 SPDX-FileCopyrightText: Joas Schilling <coding@schilljs.com>
 SPDX-FileCopyrightText: Jeff Sagal <sagalbot@gmail.com>
 SPDX-FileCopyrightText: James Halliday
 SPDX-FileCopyrightText: Jacob Clevenger<https://github.com/wheatjs>
-SPDX-FileCopyrightText: Hypercontext
 SPDX-FileCopyrightText: Hiroki Osame
 SPDX-FileCopyrightText: Guillaume Chau <guillaume.b.chau@gmail.com>
 SPDX-FileCopyrightText: GitHub Inc.
@@ -35,7 +34,6 @@ SPDX-FileCopyrightText: David Clark
 SPDX-FileCopyrightText: Christoph Wurst
 SPDX-FileCopyrightText: Anthony Fu <https://github.com/antfu>
 SPDX-FileCopyrightText: Anthony Fu <anthonyfu117@hotmail.com>
-SPDX-FileCopyrightText: Andris Reinman
 SPDX-FileCopyrightText: @nextcloud/dialogs developers
 
 
@@ -65,13 +63,13 @@ This file is generated from multiple sources. Included packages:
 	- version: 7.6.3
 	- license: ISC
 - @nextcloud/event-bus
-	- version: 3.3.1
+	- version: 3.3.2
 	- license: GPL-3.0-or-later
 - @nextcloud/initial-state
 	- version: 2.2.0
 	- license: GPL-3.0-or-later
 - @nextcloud/l10n
-	- version: 3.1.0
+	- version: 3.2.0
 	- license: GPL-3.0-or-later
 - @nextcloud/logger
 	- version: 3.0.2
@@ -83,7 +81,7 @@ This file is generated from multiple sources. Included packages:
 	- version: 3.25.1
 	- license: MIT
 - @nextcloud/vue
-	- version: 8.22.0
+	- version: 8.26.0
 	- license: AGPL-3.0-or-later
 - @vueuse/components
 	- version: 11.0.3
@@ -119,7 +117,7 @@ This file is generated from multiple sources. Included packages:
 	- version: 7.1.2
 	- license: MIT
 - dompurify
-	- version: 3.1.6
+	- version: 3.2.5
 	- license: (MPL-2.0 OR Apache-2.0)
 - escape-html
 	- version: 1.0.3
@@ -136,18 +134,9 @@ This file is generated from multiple sources. Included packages:
 - is-buffer
 	- version: 1.1.6
 	- license: MIT
-- linkify-string
-	- version: 4.0.0
-	- license: MIT
-- lodash.get
-	- version: 4.4.2
-	- license: MIT
 - md5
 	- version: 2.3.0
 	- license: BSD-3-Clause
-- node-gettext
-	- version: 3.0.0
-	- license: MIT
 - path-browserify
 	- version: 1.0.1
 	- license: MIT
