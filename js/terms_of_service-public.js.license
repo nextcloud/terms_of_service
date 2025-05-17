@@ -7,9 +7,9 @@ SPDX-FileCopyrightText: escape-html developers
 SPDX-FileCopyrightText: Tobias Koppers @sokra
 SPDX-FileCopyrightText: T. Jameson Little <t.jameson.little@gmail.com>
 SPDX-FileCopyrightText: Roman Shtylman <shtylman@gmail.com>
+SPDX-FileCopyrightText: Nextcloud GmbH and Nextcloud contributors
 SPDX-FileCopyrightText: Matt Zabriskie
 SPDX-FileCopyrightText: John Molakvoæ (skjnldsv) <skjnldsv@protonmail.com>
-SPDX-FileCopyrightText: Joas Schilling <coding@schilljs.com>
 SPDX-FileCopyrightText: GitHub Inc.
 SPDX-FileCopyrightText: Feross Aboukhadijeh
 SPDX-FileCopyrightText: Christoph Wurst
@@ -52,6 +52,6 @@ This file is generated from multiple sources. Included packages:
 - webpack
 	- version: 5.94.0
 	- license: MIT
-- terms_of_service
-	- version: 4.7.0-rc.1
+- nextcloud
+	- version: 1.0.0
 	- license: AGPL-3.0-or-later
