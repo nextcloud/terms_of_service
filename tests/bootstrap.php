@@ -18,5 +18,3 @@ require_once __DIR__ . '/../../../lib/base.php';
 require_once __DIR__ . '/../../../tests/autoload.php';
 
 Server::get(IAppManager::class)->loadApp('terms_of_service');
-
-OC_Hook::clear();
