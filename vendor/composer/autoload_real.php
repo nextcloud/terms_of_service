@@ -33,25 +33,6 @@ class ComposerAutoloaderInitTermsOfService
 
         $loader->register(true);
 
-        $includeFiles = \Composer\Autoload\ComposerStaticInitTermsOfService::$files;
-        foreach ($includeFiles as $fileIdentifier => $file) {
-            composerRequireTermsOfService($fileIdentifier, $file);
-        }
-
         return $loader;
-    }
-}
-
-/**
- * @param string $fileIdentifier
- * @param string $file
- * @return void
- */
-function composerRequireTermsOfService($fileIdentifier, $file)
-{
-    if (empty($GLOBALS['__composer_autoload_files'][$fileIdentifier])) {
-        $GLOBALS['__composer_autoload_files'][$fileIdentifier] = true;
-
-        require $file;
     }
 }
