@@ -133,7 +133,6 @@ OC.L10N.register(
     "Lithuania" : "an Liotuáin",
     "Luxembourg" : "Lucsamburg",
     "Macao" : "Macao",
-    "Macedonia (the former Yugoslav Republic of)" : "An Mhacadóin (Iar-Phoblacht Iúgslavach na)",
     "Madagascar" : "Madagascar",
     "Malawi" : "an Mhaláiv",
     "Malaysia" : "Mhalaeisia",

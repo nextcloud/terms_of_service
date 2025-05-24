@@ -133,7 +133,6 @@ OC.L10N.register(
     "Lithuania" : "Λιθουανία",
     "Luxembourg" : "Λουξεμβούργο",
     "Macao" : "Μακάο",
-    "Macedonia (the former Yugoslav Republic of)" : "Μακεδονία (πρώην Γιουγκοσλαβική Δημοκρατία)",
     "Madagascar" : "Μαδαγασκάρη",
     "Malawi" : "Μαλάουι",
     "Malaysia" : "Μαλαισία",

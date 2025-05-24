@@ -107,7 +107,6 @@ OC.L10N.register(
     "Liechtenstein" : "Lichtenšteinas",
     "Lithuania" : "Lietuva",
     "Luxembourg" : "Liuksemburgas",
-    "Macedonia (the former Yugoslav Republic of)" : "Makedonija (Buvusioji Jugoslavijos Respublika)",
     "Madagascar" : "Madagaskaras",
     "Malawi" : "Malavis",
     "Malaysia" : "Malaizija",
