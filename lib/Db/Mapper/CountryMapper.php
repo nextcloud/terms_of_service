@@ -200,7 +200,7 @@ class CountryMapper {
 			'NG' => $this->l->t('Nigeria'),
 			'NU' => $this->l->t('Niue'),
 			'NF' => $this->l->t('Norfolk Island'),
-			'MK' => $this->l->t('North Macedonia)'),
+			'MK' => $this->l->t('North Macedonia'),
 			'MP' => $this->l->t('Northern Mariana Islands'),
 			'NO' => $this->l->t('Norway'),
 			'OM' => $this->l->t('Oman'),
