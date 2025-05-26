@@ -165,6 +165,7 @@ OC.L10N.register(
     "Nigeria" : "Nigèria",
     "Niue" : "Niue",
     "Norfolk Island" : "Ìsula Norfolk",
+    "North Macedonia" : "Macedònia de su Nord",
     "Northern Mariana Islands" : "Ìsulas Mariannas Setentrionales",
     "Norway" : "Norvègia",
     "Oman" : "Oman",
