@@ -23,7 +23,7 @@ This file is generated from multiple sources. Included packages:
 	- version: 7.6.3
 	- license: ISC
 - @nextcloud/vue
-	- version: 8.26.0
+	- version: 8.26.1
 	- license: AGPL-3.0-or-later
 - axios
 	- version: 1.9.0
