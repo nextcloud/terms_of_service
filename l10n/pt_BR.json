@@ -453,10 +453,10 @@
     "For formatting purposes Markdown is supported." : "Para fins de formatação, o Markdown é suportado.",
     "Saving the terms will update the text but will not send a notification to users. Notifications are only sent if you reset the signatories." : "Salvar os termos atualizará o texto, mas não enviará uma notificação aos usuários. As notificações só serão enviadas se você redefinir os signatários.",
     "Existing terms of service" : "Termos de serviço existentes",
-    "We recommend resetting the signatories if legal changes were applied. For minor changes like fixing typos or correcting links, it could be left out, as it would otherwise require all users to accept the Terms of Service again." : "Recomendamos redefinir os signatários se forem aplicadas alterações legais. Para alterações menores, como correção de erros de digitação ou correção de links, isso pode ser deixado de fora, pois exigiria que todos os usuários aceitassem os Termos de Serviço novamente.",
+    "We recommend resetting the signatories if legal changes were applied. For minor changes like fixing typos or correcting links, it could be left out, as it would otherwise require all users to accept the Terms of Service again." : "Recomendamos redefinir os signatários se forem aplicadas alterações legais. Para alterações menores, como correção de erros de digitação ou correção de links, isso pode ser ignorado, pois exigiria que todos os usuários aceitassem os Termos de Serviço novamente.",
     "I acknowledge that I have read and agree to the above terms of service" : "Eu confirmo que li e concordo com os termos de serviço acima",
     "Edit language {language} for region {country}" : "Editar idioma {language} para região {country}",
     "Deleting …" : "Excluindo...",
-    "Delete language {language} for region {country}" : "Excluir idioma {language} da região {country}"
+    "Delete language {language} for region {country}" : "Excluir idioma {language} para região {country}"
 },"pluralForm" :"nplurals=3; plural=(n == 0 || n == 1) ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;"
 }
