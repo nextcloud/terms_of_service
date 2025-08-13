@@ -1,7 +1,7 @@
 {
 	"name": "terms_of_service",
 	"description": "Requires users to accept the terms of service before accessing data.",
-	"version": "4.4.0",
+	"version": "4.5.0",
 	"author": "Joas Schilling <coding@schilljs.com>",
 	"license": "AGPL-3.0-or-later",
 	"private": true,

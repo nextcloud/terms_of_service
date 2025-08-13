@@ -5,6 +5,12 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## 4.5.0
+### Fixed
+- Update openapi-extractor to v1.5.3
+- Cleanup bootstrap.php to be forward-compatible
+- Bump webpack-dev-server from 5.1.0 to 5.2.2
+
 ## 4.4.0
 ### Added
 - Configuration settings to bypass checks for services:
