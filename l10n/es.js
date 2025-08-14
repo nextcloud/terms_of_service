@@ -451,7 +451,7 @@ OC.L10N.register(
     "By using this service …" : "Al usar este servicio…",
     "For formatting purposes Markdown is supported." : "Por propósitos de formato, Markdown está soportado.",
     "Existing terms of service" : "Términos del servicio actuales",
-    "I acknowledge that I have read and agree to the above terms of service" : "Confirmo que he leído y estoy de acuerdo con los susodichos términos de servicio ",
+    "I acknowledge that I have read and agree to the above terms of service" : "Confirmo que he leído y estoy de acuerdo con los términos de servicio descritos anteriormente",
     "Edit language {language} for region {country}" : "Editar lenguaje {language} para la región {country}",
     "Deleting …" : "Borrando...",
     "Delete language {language} for region {country}" : "Borrar {language} para la región {country}"
