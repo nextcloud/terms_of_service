@@ -245,6 +245,7 @@ OC.L10N.register(
     "Zimbabwe" : "Zimbabwe",
     "Czech" : "Czech",
     "Terms of service" : "Terms of service",
-    "Loading …" : "Inapakia"
+    "Loading …" : "Inapakia",
+    "Select a region" : "Select a region"
 },
 "nplurals=2; plural=(n != 1);");
