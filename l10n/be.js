@@ -33,6 +33,7 @@ OC.L10N.register(
     "Bouvet Island" : "Востраў Бувэ",
     "Brazil" : "Бразілія",
     "British Indian Ocean Territory" : "Брытанская тэрыторыя ў Індыйскім акіяне",
+    "Brunei Darussalam" : "Бруней-Дарусалам",
     "Bulgaria" : "Балгарыя",
     "Burkina Faso" : "Буркіна-Фасо",
     "Burundi" : "Бурундзі",
