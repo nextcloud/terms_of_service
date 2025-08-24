@@ -257,7 +257,7 @@ OC.L10N.register(
     "You have to accept the newest version of the terms of service in order to be able to use this service." : "Jums ir jāapstiprina jaunākā lietošanas noteikumu versija, lai izmantot šo pakalpojumu.",
     "Requires users to accept the terms of service before accessing data." : "Pieprasa lietotājiem apstiprināt lietošanas noteikumus pirms datu piekļūšanas.",
     "Loading …" : "Ielādē…",
-    "Terms saved successfully!" : "Noteikumi veiksmīgi saglabāti!",
+    "Terms saved successfully!" : "Noteikumi saglabāti sekmīgi",
     "Require users to accept the terms of service before accessing the service." : "Pieprasa lietotājiem apstiprināt lietošanas noteikumus pirms pakalpojuma piekļūšanas.",
     "Show for logged-in users" : "Rādīt pierakstītiem lietotājiem",
     "Select a region" : "Izvēlieties reģionu",
