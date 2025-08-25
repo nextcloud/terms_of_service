@@ -1,42 +1,42 @@
 {
-	"name": "terms_of_service",
-	"description": "Requires users to accept the terms of service before accessing data.",
-	"version": "4.5.0",
-	"author": "Joas Schilling <coding@schilljs.com>",
-	"license": "AGPL-3.0-or-later",
-	"private": true,
-	"scripts": {
-		"build": "NODE_ENV=production webpack --progress --config webpack.js",
-		"dev": "NODE_ENV=development webpack --config webpack.js",
-		"watch": "NODE_ENV=development webpack --progress --watch --config webpack.js",
-		"lint": "eslint --ext .js,.vue src",
-		"lint:fix": "eslint --ext .js,.vue src --fix",
-		"stylelint": "stylelint **/*.css **/*.scss **/*.vue",
-		"stylelint:fix": "stylelint **/*.css **/*.scss **/*.vue --fix"
-	},
-	"dependencies": {
-		"@nextcloud/auth": "^2.4.0",
-		"@nextcloud/axios": "^2.5.1",
-		"@nextcloud/dialogs": "^5.3.7",
-		"@nextcloud/router": "^3.0.1",
-		"@nextcloud/vue": "^8.27.0",
-		"vue": "^2.7.16",
-		"vue-frag": "^1.4.3",
-		"vue-material-design-icons": "^5.3.1"
-	},
-	"browserslist": [
-		"extends @nextcloud/browserslist-config"
-	],
-	"engines": {
-		"node": "^20.0.0",
-		"npm": "^10.0.0"
-	},
-	"devDependencies": {
-		"@nextcloud/babel-config": "^1.2.0",
-		"@nextcloud/browserslist-config": "^3.0.1",
-		"@nextcloud/eslint-config": "^8.4.2",
-		"@nextcloud/stylelint-config": "^3.1.0",
-		"@nextcloud/webpack-vue-config": "^6.3.0",
-		"vue-template-compiler": "^2.7.16"
-	}
+  "name": "terms_of_service",
+  "description": "Requires users to accept the terms of service before accessing data.",
+  "version": "4.5.0",
+  "author": "Joas Schilling <coding@schilljs.com>",
+  "license": "AGPL-3.0-or-later",
+  "private": true,
+  "scripts": {
+    "build": "NODE_ENV=production webpack --progress --config webpack.js",
+    "dev": "NODE_ENV=development webpack --config webpack.js",
+    "watch": "NODE_ENV=development webpack --progress --watch --config webpack.js",
+    "lint": "eslint --ext .js,.vue src",
+    "lint:fix": "eslint --ext .js,.vue src --fix",
+    "stylelint": "stylelint **/*.css **/*.scss **/*.vue",
+    "stylelint:fix": "stylelint **/*.css **/*.scss **/*.vue --fix"
+  },
+  "dependencies": {
+    "@nextcloud/auth": "^2.4.0",
+    "@nextcloud/axios": "^2.5.1",
+    "@nextcloud/dialogs": "^5.3.7",
+    "@nextcloud/router": "^3.0.1",
+    "@nextcloud/vue": "^8.27.0",
+    "vue": "^2.7.16",
+    "vue-frag": "^1.4.3",
+    "vue-material-design-icons": "^5.3.1"
+  },
+  "browserslist": [
+    "extends @nextcloud/browserslist-config"
+  ],
+  "engines": {
+    "node": "^22.0.0",
+    "npm": "^10.5.0"
+  },
+  "devDependencies": {
+    "@nextcloud/babel-config": "^1.2.0",
+    "@nextcloud/browserslist-config": "^3.0.1",
+    "@nextcloud/eslint-config": "^8.4.2",
+    "@nextcloud/stylelint-config": "^3.1.0",
+    "@nextcloud/webpack-vue-config": "^6.3.0",
+    "vue-template-compiler": "^2.7.16"
+  }
 }
