@@ -5,6 +5,10 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## 4.6.0
+### Changed
+- Updated dependencies
+
 ## 4.5.0
 ### Fixed
 - Update openapi-extractor to v1.5.3
