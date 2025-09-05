@@ -5,6 +5,10 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## 4.7.0
+### Changed
+- Migrate to outline icons
+
 ## 4.6.0
 ### Changed
 - Updated dependencies
