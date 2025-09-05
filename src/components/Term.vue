@@ -29,8 +29,8 @@
 
 <script>
 import axios from '@nextcloud/axios'
-import IconDelete from 'vue-material-design-icons/Delete.vue'
-import IconPencil from 'vue-material-design-icons/Pencil.vue'
+import IconDelete from 'vue-material-design-icons/TrashCanOutline.vue'
+import IconPencil from 'vue-material-design-icons/PencilOutline.vue'
 import NcButton from '@nextcloud/vue/dist/Components/NcButton.js'
 import { generateOcsUrl } from '@nextcloud/router'
 
