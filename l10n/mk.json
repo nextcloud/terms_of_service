@@ -438,6 +438,7 @@
     "Requires users to accept the terms of service before accessing data." : "Потребно е корисниците да ги прифатат условите за користење пред да пристапат до податоците.",
     "Requires users to accept the terms of service before accessing data.\nThis product includes GeoLite2 data created by MaxMind, available from [maxmind.com](http://www.maxmind.com)" : "Потребно е корисниците да ги прифатат условите пред да пристапат до податоците.\nОвој производ вклучува GeoLite2 податоци создадени од MaxMind, достапни од [maxmind.com](http://www.maxmind.com)",
     "Loading …" : "Се вчитува…",
+    "Save terms" : "Зачувај услови",
     "Ensure that all fields are filled" : "Осигурете се дека сите полиња се пополнети",
     "Terms saved successfully!" : "Условите се зачувани!",
     "All signatories reset!" : "Сите потписници се ресетираат!",
