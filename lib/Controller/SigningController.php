@@ -109,6 +109,10 @@ class SigningController extends OCSController {
 	#[PublicPage]
 	#[UseSession]
 	public function signTermsPublic(): DataResponse {
+		if ($this->userId !== null) {
+			return new DataResponse([], Http::STATUS_NOT_ACCEPTABLE);
+		}
+
 		$uuid = $this->config->getAppValue(Application::APPNAME, 'term_uuid', '');
 		$this->session->set('term_uuid', $uuid);
 
