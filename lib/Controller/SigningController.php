@@ -102,13 +102,18 @@ class SigningController extends OCSController {
 	/**
 	 * As a guest sign the terms
 	 *
-	 * @return DataResponse<Http::STATUS_OK, list<empty>, array{}>
+	 * @return DataResponse<Http::STATUS_OK|Http::STATUS_NOT_ACCEPTABLE, list<empty>, array{}>
 	 *
 	 * 200: Signed successfully
+	 * 406: The user is already authenticated and therefore not allowed to sign the terms through this endpoint
 	 */
 	#[PublicPage]
 	#[UseSession]
 	public function signTermsPublic(): DataResponse {
+		if ($this->userId !== null) {
+			return new DataResponse([], Http::STATUS_NOT_ACCEPTABLE);
+		}
+
 		$uuid = $this->config->getAppValue(Application::APPNAME, 'term_uuid', '');
 		$this->session->set('term_uuid', $uuid);
 
