@@ -388,7 +388,7 @@ OC.L10N.register(
     "Russian" : "Russisch",
     "Kinyarwanda" : "Kinyarwanda",
     "Sanskrit" : "Sanskrit",
-    "Sardinian" : "Sardinisch",
+    "Sardinian" : "Sardisch",
     "Sindhi" : "Sindhi",
     "Northern Sami" : "Nordsamisch",
     "Sango" : "Sango",
