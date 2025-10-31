@@ -206,11 +206,11 @@ class Checker {
 		return false;
 	}
 
-	private function isIpv4($ip): mixed {
-		return filter_var($ip, FILTER_VALIDATE_IP, FILTER_FLAG_IPV4);
+	private function isIpv4(string $ip): bool {
+		return filter_var($ip, FILTER_VALIDATE_IP, FILTER_FLAG_IPV4) !== false;
 	}
 
-	private function isIpv6($ip): mixed {
-		return filter_var($ip, FILTER_VALIDATE_IP, FILTER_FLAG_IPV6);
+	private function isIpv6(string $ip): bool {
+		return filter_var($ip, FILTER_VALIDATE_IP, FILTER_FLAG_IPV6) !== false;
 	}
 }
