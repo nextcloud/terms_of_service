@@ -9,13 +9,12 @@ declare(strict_types=1);
 
 namespace OCA\TermsOfService;
 
-use OCA\TermsOfService\AppInfo\Application;
+use OCP\AppFramework\Services\IAppConfig;
 use OCP\Capabilities\IPublicCapability;
-use OCP\IConfig;
 
 class PublicCapabilities implements IPublicCapability {
 	public function __construct(
-		private IConfig $config,
+		private IAppConfig $config,
 	) {
 	}
 
@@ -28,7 +27,7 @@ class PublicCapabilities implements IPublicCapability {
 	 * }
 	 */
 	public function getCapabilities(): array {
-		$termId = $this->config->getAppValue(Application::APPNAME, 'term_uuid');
+		$termId = $this->config->getAppValueString('term_uuid');
 
 		return [
 			'terms_of_service' => [

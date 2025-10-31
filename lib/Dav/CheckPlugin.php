@@ -9,15 +9,14 @@ declare(strict_types=1);
 
 namespace OCA\TermsOfService\Dav;
 
-use Sabre\DAV\Server;
-use Sabre\DAV\ServerPlugin;
-use Sabre\HTTP\RequestInterface;
-use Sabre\HTTP\ResponseInterface;
-
 use OCA\TermsOfService\AppInfo\Application;
 use OCA\TermsOfService\Checker;
 use OCA\TermsOfService\TermsNotSignedException;
+use Sabre\DAV\Server;
 
+use Sabre\DAV\ServerPlugin;
+use Sabre\HTTP\RequestInterface;
+use Sabre\HTTP\ResponseInterface;
 
 class CheckPlugin extends ServerPlugin {
 	/** @var Server */
@@ -25,11 +24,8 @@ class CheckPlugin extends ServerPlugin {
 
 	/**
 	 * Initializes the plugin and registers event handlers
-	 *
-	 * @param Server $server
-	 * @return void
 	 */
-	public function initialize(Server $server) {
+	public function initialize(Server $server): void {
 		$this->server = $server;
 		$server->on('method:PROPFIND', [$this, 'checkToS']);
 		$server->on('method:PROPPATCH', [$this, 'checkToS']);
@@ -46,8 +42,6 @@ class CheckPlugin extends ServerPlugin {
 	/**
 	 * Ask the checker if ToS have been signed
 	 *
-	 * @param RequestInterface $request
-	 * @param ResponseInterface $response
 	 * @return bool
 	 */
 	public function checkToS(RequestInterface $request, ResponseInterface $response) {
@@ -84,7 +78,7 @@ class CheckPlugin extends ServerPlugin {
 	 */
 	public function getPluginInfo() {
 		return [
-			'name'        => $this->getPluginName(),
+			'name' => $this->getPluginName(),
 			'description' => 'Check if terms of service have been signed before accepting a Dav request.',
 		];
 	}

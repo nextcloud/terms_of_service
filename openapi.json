@@ -191,7 +191,7 @@
         "/ocs/v2.php/apps/terms_of_service/sign": {
             "post": {
                 "operationId": "signing-sign-terms",
-                "summary": "As a logged in user sign the terms",
+                "summary": "As a logged-in user sign the terms",
                 "tags": [
                     "signing"
                 ],

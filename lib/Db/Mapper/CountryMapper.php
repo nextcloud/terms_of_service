@@ -1,4 +1,5 @@
 <?php
+
 /**
  * SPDX-FileCopyrightText: 2017 Nextcloud GmbH and Nextcloud contributors
  * SPDX-License-Identifier: AGPL-3.0-or-later
@@ -23,7 +24,6 @@ class CountryMapper {
 	 * Whether the specified country code exists
 	 *
 	 * @param string|null $countryCode
-	 * @return bool
 	 */
 	public function isValidCountry($countryCode): bool {
 		return isset($this->getCountries()[$countryCode]);
@@ -35,7 +35,7 @@ class CountryMapper {
 	 * @return array<string, string>
 	 */
 	public function getCountries(): array {
-		$countries = [
+		return [
 			self::GLOBAL => $this->l->t('Global'),
 			'AF' => $this->l->t('Afghanistan'),
 			'AX' => $this->l->t('Åland Islands'),
@@ -287,7 +287,5 @@ class CountryMapper {
 			'ZM' => $this->l->t('Zambia'),
 			'ZW' => $this->l->t('Zimbabwe'),
 		];
-
-		return $countries;
 	}
 }

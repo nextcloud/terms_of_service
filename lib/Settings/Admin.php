@@ -11,26 +11,21 @@ namespace OCA\TermsOfService\Settings;
 
 use OCP\AppFramework\Http\TemplateResponse;
 use OCP\Settings\ISettings;
+use Override;
 
 class Admin implements ISettings {
-	/**
-	 * {@inheritdoc}
-	 */
+	#[Override]
 	public function getForm(): TemplateResponse {
 		return new TemplateResponse('terms_of_service', 'settings', [], TemplateResponse::RENDER_AS_BLANK
 		);
 	}
 
-	/**
-	 * {@inheritdoc}
-	 */
+	#[Override]
 	public function getSection(): string {
 		return 'terms_of_service';
 	}
 
-	/**
-	 * {@inheritdoc}
-	 */
+	#[Override]
 	public function getPriority(): int {
 		return 100;
 	}

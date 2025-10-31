@@ -18,11 +18,9 @@ use OCP\User\Events\UserDeletedEvent;
  */
 class UserDeletedListener implements IEventListener {
 
-	/** @var SignatoryMapper */
-	private $signatoryMapper;
-
-	public function __construct(SignatoryMapper $signatoryMapper) {
-		$this->signatoryMapper = $signatoryMapper;
+	public function __construct(
+		private SignatoryMapper $signatoryMapper,
+	) {
 	}
 
 	public function handle(Event $event): void {

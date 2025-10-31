@@ -1,4 +1,5 @@
 <?php
+
 /**
  * SPDX-FileCopyrightText: 2017 Nextcloud GmbH and Nextcloud contributors
  * SPDX-License-Identifier: AGPL-3.0-or-later
@@ -11,26 +12,20 @@ use OCA\TermsOfService\Db\Mapper\CountryMapper;
 use OCP\IRequest;
 
 class CountryDetector {
-	/** @var IRequest */
-	private $request;
-	/** @var CountryMapper */
-	private $countryMapper;
-
-	public function __construct(IRequest $request,
-								CountryMapper $countryMapper) {
-		$this->request = $request;
-		$this->countryMapper = $countryMapper;
+	public function __construct(
+		private IRequest $request,
+		private CountryMapper $countryMapper,
+	) {
 	}
 
 	/**
 	 * Get the country for the current user
-	 * @return string
 	 */
 	public function getCountry(): string {
 		try {
 			$reader = new Reader(__DIR__ . '/../vendor/GeoLite2-Country.mmdb');
 			$record = $reader->get($this->request->getRemoteAddress());
-		} catch (\Exception $e) {
+		} catch (\Exception) {
 			return CountryMapper::GLOBAL;
 		}
 

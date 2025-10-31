@@ -1,4 +1,5 @@
 <?php
+
 /**
  * SPDX-FileCopyrightText: 2023 Nextcloud GmbH and Nextcloud contributors
  * SPDX-License-Identifier: AGPL-3.0-or-later
@@ -24,211 +25,198 @@ use Symfony\Component\Console\Output\ConsoleOutput;
  */
 class DeleteTermsCommandTest extends TestCase {
 
-    /** @var CountryMapper|MockObject */
-    protected $countryMapper;
+	protected CountryMapper&MockObject $countryMapper;
+	protected TermsMapper&MockObject $termsMapper;
+	protected LanguageMapper&MockObject $languageMapper;
+	protected SignatoryMapper&MockObject $signatoryMapper;
+	protected Input&MockObject $inputInterface;
+	protected ConsoleOutput&MockObject $outputInterface;
+	protected DeleteTermsCommand $command;
 
-    /** @var TermsMapper|MockObject */
-    protected $termsMapper;
+	protected function setUp(): void {
+		$this->countryMapper = $this->createMock(CountryMapper::class);
+		$this->termsMapper = $this->createMock(TermsMapper::class);
+		$this->languageMapper = $this->createMock(LanguageMapper::class);
+		$this->signatoryMapper = $this->createMock(SignatoryMapper::class);
+		$this->inputInterface = $this->createMock(Input::class);
+		$this->outputInterface = $this->createMock(ConsoleOutput::class);
 
-    /** @var LanguageMapper|MockObject */
-    protected $languageMapper;
+		$this->command = new DeleteTermsCommand(
+			$this->termsMapper,
+			$this->countryMapper,
+			$this->languageMapper,
+			$this->signatoryMapper,
+		);
+	}
 
-    /** @var SignatoryMapper|MockObject */
-    protected $signatoryMapper;
+	public function testDeletesExistingTerms(): void {
+		$this->inputInterface->method('getOption')->willReturnMap(
+			[
+				['country', 'us'],
+				['language', 'en'],
+			]
+		);
 
-    /** @var Input|MockObject */
-    protected $inputInterface;
+		$this->countryMapper->expects($this->once())
+			->method('isValidCountry')
+			->with('us')
+			->willReturn(true);
 
-    /** @var ConsoleOutput|MockObject */
-    protected $outputInterface;
+		$this->languageMapper->expects($this->once())
+			->method('isValidLanguage')
+			->with('en')
+			->willReturn(true);
 
-    /** @var DeleteTermsCommand */
-    protected $command;
+		$terms = new Terms();
 
-    protected function setUp(): void {
-        $this->countryMapper = $this->createMock(CountryMapper::class);
-        $this->termsMapper = $this->createMock(TermsMapper::class);
-        $this->languageMapper = $this->createMock(LanguageMapper::class);
-        $this->signatoryMapper = $this->createMock(SignatoryMapper::class);
-        $this->inputInterface = $this->createMock(Input::class);
-        $this->outputInterface = $this->createMock(ConsoleOutput::class);
+		$this->termsMapper->expects($this->once())
+			->method('getTermsForCountryCodeAndLanguageCode')
+			->with('us', 'en')
+			->willReturn($terms);
 
-        $this->command = new DeleteTermsCommand(
-            $this->termsMapper,
-            $this->countryMapper,
-            $this->languageMapper,
-            $this->signatoryMapper,
-        );
-    }
+		$this->termsMapper->expects($this->once())
+			->method('delete')
+			->with($terms);
 
-    public function testDeletesExistingTerms() {
-        $this->inputInterface->method('getOption')->willReturnMap(
-            [
-                ['country', 'us'],
-                ['language', 'en'],
-            ]
-        );
+		$this->signatoryMapper->expects($this->once())
+			->method('deleteTerm')
+			->with($terms);
 
-        $this->countryMapper->expects($this->once())
-                            ->method('isValidCountry')
-                            ->with('us')
-                            ->willReturn(true);
+		$result = $this->command->run($this->inputInterface, $this->outputInterface);
+		$this->assertSame($result, Command::SUCCESS);
+	}
 
-        $this->languageMapper->expects($this->once())
-                             ->method('isValidLanguage')
-                             ->with('en')
-                             ->willReturn(true);
+	public function testFallsBackToGlobalCountry(): void {
+		$this->inputInterface->method('getOption')->willReturnMap(
+			[
+				['country', null],
+				['language', 'en'],
+			]
+		);
 
-        $terms = new Terms();
+		$this->countryMapper->expects($this->once())
+			->method('isValidCountry')
+			->with(CountryMapper::GLOBAL)
+			->willReturn(true);
 
-        $this->termsMapper->expects($this->once())
-                          ->method('getTermsForCountryCodeAndLanguageCode')
-                          ->with('us', 'en')
-                          ->willReturn($terms);
+		$this->languageMapper->expects($this->once())
+			->method('isValidLanguage')
+			->with('en')
+			->willReturn(true);
 
-        $this->termsMapper->expects($this->once())
-                          ->method('delete')
-                          ->with($terms);
+		$terms = new Terms();
 
-        $this->signatoryMapper->expects($this->once())
-                              ->method('deleteTerm')
-                              ->with($terms);
+		$this->termsMapper->expects($this->once())
+			->method('getTermsForCountryCodeAndLanguageCode')
+			->with(CountryMapper::GLOBAL, 'en')
+			->willReturn($terms);
 
-        $result = $this->command->run($this->inputInterface, $this->outputInterface);
-        $this->assertSame($result, Command::SUCCESS);
-    }
+		$this->termsMapper->expects($this->once())
+			->method('delete')
+			->with($terms);
 
-    public function testFallsBackToGlobalCountry() {
-        $this->inputInterface->method('getOption')->willReturnMap(
-            [
-                ['country', Null],
-                ['language', 'en'],
-            ]
-        );
+		$this->signatoryMapper->expects($this->once())
+			->method('deleteTerm')
+			->with($terms);
 
-        $this->countryMapper->expects($this->once())
-                            ->method('isValidCountry')
-                            ->with(CountryMapper::GLOBAL)
-                            ->willReturn(true);
+		$result = $this->command->run($this->inputInterface, $this->outputInterface);
+		$this->assertSame($result, Command::SUCCESS);
+	}
 
-        $this->languageMapper->expects($this->once())
-                             ->method('isValidLanguage')
-                             ->with('en')
-                             ->willReturn(true);
+	public function testRejectsInvalidCountry(): void {
+		$this->inputInterface->method('getOption')->willReturnMap(
+			[
+				['country', 'invalid'],
+				['language', 'en'],
+			]
+		);
 
-        $terms = new Terms();
+		$this->countryMapper->expects($this->once())
+			->method('isValidCountry')
+			->with('invalid')
+			->willReturn(false);
 
-        $this->termsMapper->expects($this->once())
-                          ->method('getTermsForCountryCodeAndLanguageCode')
-                          ->with(CountryMapper::GLOBAL, 'en')
-                          ->willReturn($terms);
+		$this->languageMapper->expects($this->never())
+			->method('isValidLanguage')
+			->with('en')
+			->willReturn(true);
 
-        $this->termsMapper->expects($this->once())
-                          ->method('delete')
-                          ->with($terms);
+		$this->termsMapper->expects($this->never())
+			->method('getTermsForCountryCodeAndLanguageCode')
+			->with('invalid', 'en');
 
-        $this->signatoryMapper->expects($this->once())
-                              ->method('deleteTerm')
-                              ->with($terms);
+		$this->termsMapper->expects($this->never())
+			->method('delete');
 
-        $result = $this->command->run($this->inputInterface, $this->outputInterface);
-        $this->assertSame($result, Command::SUCCESS);
-    }
+		$this->signatoryMapper->expects($this->never())
+			->method('deleteTerm');
 
-    public function testRejectsInvalidCountry() {
-        $this->inputInterface->method('getOption')->willReturnMap(
-            [
-                ['country', 'invalid'],
-                ['language', 'en'],
-            ]
-        );
+		$result = $this->command->run($this->inputInterface, $this->outputInterface);
+		$this->assertSame($result, Command::FAILURE);
+	}
 
-        $this->countryMapper->expects($this->once())
-                            ->method('isValidCountry')
-                            ->with('invalid')
-                            ->willReturn(false);
+	public function testRejectsInvalidLanguage(): void {
+		$this->inputInterface->method('getOption')->willReturnMap(
+			[
+				['country', 'us'],
+				['language', 'invalid'],
+			]
+		);
 
-        $this->languageMapper->expects($this->never())
-                             ->method('isValidLanguage')
-                             ->with('en')
-                             ->willReturn(true);
+		$this->countryMapper->expects($this->once())
+			->method('isValidCountry')
+			->with('us')
+			->willReturn(true);
 
-        $this->termsMapper->expects($this->never())
-                          ->method('getTermsForCountryCodeAndLanguageCode')
-                          ->with('invalid', 'en');
+		$this->languageMapper->expects($this->once())
+			->method('isValidLanguage')
+			->with('invalid')
+			->willReturn(false);
 
-        $this->termsMapper->expects($this->never())
-                          ->method('delete');
+		$this->termsMapper->expects($this->never())
+			->method('getTermsForCountryCodeAndLanguageCode')
+			->with('us', 'invalid');
 
-        $this->signatoryMapper->expects($this->never())
-                              ->method('deleteTerm');
+		$this->termsMapper->expects($this->never())
+			->method('delete');
 
-        $result = $this->command->run($this->inputInterface, $this->outputInterface);
-        $this->assertSame($result, Command::FAILURE);
-    }
+		$this->signatoryMapper->expects($this->never())
+			->method('deleteTerm');
 
-    public function testRejectsInvalidLanguage() {
-        $this->inputInterface->method('getOption')->willReturnMap(
-            [
-                ['country', 'us'],
-                ['language', 'invalid'],
-            ]
-        );
+		$result = $this->command->run($this->inputInterface, $this->outputInterface);
+		$this->assertSame($result, Command::FAILURE);
+	}
 
-        $this->countryMapper->expects($this->once())
-                            ->method('isValidCountry')
-                            ->with('us')
-                            ->willReturn(true);
+	public function testFailsForNonExistingTerms(): void {
+		$this->inputInterface->method('getOption')->willReturnMap(
+			[
+				['country', 'us'],
+				['language', 'en'],
+			]
+		);
 
-        $this->languageMapper->expects($this->once())
-                             ->method('isValidLanguage')
-                             ->with('invalid')
-                             ->willReturn(false);
+		$this->countryMapper->expects($this->once())
+			->method('isValidCountry')
+			->with('us')
+			->willReturn(true);
 
-        $this->termsMapper->expects($this->never())
-                          ->method('getTermsForCountryCodeAndLanguageCode')
-                          ->with('us', 'invalid');
+		$this->languageMapper->expects($this->once())
+			->method('isValidLanguage')
+			->with('en')
+			->willReturn(true);
 
-        $this->termsMapper->expects($this->never())
-                          ->method('delete');
+		$this->termsMapper->expects($this->once())
+			->method('getTermsForCountryCodeAndLanguageCode')
+			->with('us', 'en')
+			->willThrowException(new TermsNotFoundException);
 
-        $this->signatoryMapper->expects($this->never())
-                              ->method('deleteTerm');
+		$this->termsMapper->expects($this->never())
+			->method('delete');
 
-        $result = $this->command->run($this->inputInterface, $this->outputInterface);
-        $this->assertSame($result, Command::FAILURE);
-    }
+		$this->signatoryMapper->expects($this->never())
+			->method('deleteTerm');
 
-    public function testFailsForNonExistingTerms() {
-        $this->inputInterface->method('getOption')->willReturnMap(
-            [
-                ['country', 'us'],
-                ['language', 'en'],
-            ]
-        );
-
-        $this->countryMapper->expects($this->once())
-                            ->method('isValidCountry')
-                            ->with('us')
-                            ->willReturn(true);
-
-        $this->languageMapper->expects($this->once())
-                             ->method('isValidLanguage')
-                             ->with('en')
-                             ->willReturn(true);
-
-        $this->termsMapper->expects($this->once())
-                          ->method('getTermsForCountryCodeAndLanguageCode')
-                          ->with('us', 'en')
-                          ->willThrowException(new TermsNotFoundException);
-
-        $this->termsMapper->expects($this->never())
-                          ->method('delete');
-
-        $this->signatoryMapper->expects($this->never())
-                              ->method('deleteTerm');
-
-        $result = $this->command->run($this->inputInterface, $this->outputInterface);
-        $this->assertSame($result, Command::FAILURE);
-    }
+		$result = $this->command->run($this->inputInterface, $this->outputInterface);
+		$this->assertSame($result, Command::FAILURE);
+	}
 }

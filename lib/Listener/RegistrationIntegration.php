@@ -8,7 +8,6 @@ declare(strict_types=1);
 
 namespace OCA\TermsOfService\Listener;
 
-use OCA\Registration\Events\BeforeTemplateRenderedEvent;
 use OCA\Registration\Events\PassedFormEvent;
 use OCA\Registration\Events\ShowFormEvent;
 use OCA\Registration\Events\ValidateFormEvent;
@@ -27,23 +26,12 @@ use OCP\Util;
  */
 class RegistrationIntegration implements IEventListener {
 
-	/** @var SignatoryMapper */
-	private $signatoryMapper;
-	/** @var TermsMapper */
-	private $termsMapper;
-	/** @var CountryDetector */
-	private $countryDetector;
-	/** @var IRequest */
-	private $request;
-
-	public function __construct(SignatoryMapper $signatoryMapper,
-								TermsMapper $termsMapper,
-								CountryDetector $countryDetector,
-								IRequest $request) {
-		$this->signatoryMapper = $signatoryMapper;
-		$this->termsMapper = $termsMapper;
-		$this->countryDetector = $countryDetector;
-		$this->request = $request;
+	public function __construct(
+		private SignatoryMapper $signatoryMapper,
+		private TermsMapper $termsMapper,
+		private CountryDetector $countryDetector,
+		private IRequest $request,
+	) {
 	}
 
 	public function handle(Event $event): void {
@@ -94,7 +82,7 @@ class RegistrationIntegration implements IEventListener {
 
 		$signatory = new Signatory();
 		$signatory->setUserId('reg/' . $event->getRegistrationIdentifier());
-		$signatory->setTermsId((int) $this->request->getParam('terms_of_service_accepted'));
+		$signatory->setTermsId((int)$this->request->getParam('terms_of_service_accepted'));
 		$signatory->setTimestamp(time());
 
 		$this->signatoryMapper->insert($signatory);
@@ -105,11 +93,12 @@ class RegistrationIntegration implements IEventListener {
 			return;
 		}
 
-		if (!$event->getUser() instanceof IUser) {
+		$user = $event->getUser();
+		if (!$user instanceof IUser) {
 			return;
 		}
 
-		$this->signatoryMapper->updateUserId('reg/' . $event->getRegistrationIdentifier(), $event->getUser()->getUID());
+		$this->signatoryMapper->updateUserId('reg/' . $event->getRegistrationIdentifier(), $user->getUID());
 	}
 
 	protected function needsToAcceptTerms(): bool {

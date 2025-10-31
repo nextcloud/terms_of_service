@@ -1,4 +1,5 @@
 <?php
+
 /**
  * SPDX-FileCopyrightText: 2017 Nextcloud GmbH and Nextcloud contributors
  * SPDX-License-Identifier: AGPL-3.0-or-later
@@ -11,22 +12,14 @@ use OCP\Files\Cache\ICache;
 use OCP\Files\Storage\IStorage;
 
 class CacheWrapper extends Wrapper {
-	/** @var Helper */
-	private $helper;
-	/** @var StorageWrapper */
-	protected $storage;
-	/** @var int */
-	protected $mask;
+	protected int $mask;
 
-	/**
-	 * @param ICache $cache
-	 * @param IStorage $storage
-	 * @param Helper $helper
-	 */
-	public function __construct(ICache $cache, IStorage $storage, Helper $helper) {
+	public function __construct(
+		ICache $cache,
+		protected IStorage $storage,
+		private Helper $helper,
+	) {
 		parent::__construct($cache);
-		$this->storage = $storage;
-		$this->helper = $helper;
 
 		$this->mask = Constants::PERMISSION_ALL;
 		$this->mask &= ~Constants::PERMISSION_READ;
@@ -35,14 +28,14 @@ class CacheWrapper extends Wrapper {
 		$this->mask &= ~Constants::PERMISSION_DELETE;
 	}
 
-	const PERMISSION_CREATE = 4;
-	const PERMISSION_READ = 1;
-	const PERMISSION_UPDATE = 2;
-	const PERMISSION_DELETE = 8;
+	public const PERMISSION_CREATE = 4;
+	public const PERMISSION_READ = 1;
+	public const PERMISSION_UPDATE = 2;
+	public const PERMISSION_DELETE = 8;
 
 	protected function formatCacheEntry($entry) {
-		if (isset($entry['path'], $entry['permissions']) &&
-			!$this->helper->verifyAccess($entry['path'])) {
+		if (isset($entry['path'], $entry['permissions'])
+			&& !$this->helper->verifyAccess($entry['path'])) {
 			$entry['permissions'] &= $this->mask;
 		}
 		return $entry;
