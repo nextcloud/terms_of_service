@@ -93,11 +93,12 @@ class RegistrationIntegration implements IEventListener {
 			return;
 		}
 
-		if (!$event->getUser() instanceof IUser) {
+		$user = $event->getUser();
+		if (!$user instanceof IUser) {
 			return;
 		}
 
-		$this->signatoryMapper->updateUserId('reg/' . $event->getRegistrationIdentifier(), $event->getUser()->getUID());
+		$this->signatoryMapper->updateUserId('reg/' . $event->getRegistrationIdentifier(), $user->getUID());
 	}
 
 	protected function needsToAcceptTerms(): bool {

@@ -81,14 +81,9 @@ class TermsController extends OCSController {
 	 * 200: Get form data successfully
 	 */
 	public function getAdminFormData(): DataResponse {
-		$forPublicShares = $this->appConfig->getAppValueBool('tos_on_public_shares');
-		if ($forPublicShares !== '0') {
-			$forPublicShares = '1';
-		}
-		$forUsers = $this->appConfig->getAppValueBool('tos_for_users', true);
-		if ($forUsers !== '1') {
-			$forUsers = '0';
-		}
+		$forPublicShares = $this->appConfig->getAppValueBool('tos_on_public_shares') ? '1' : '0';
+		$forUsers = $this->appConfig->getAppValueBool('tos_for_users', true) ? '1' : '0';
+
 		$response = [
 			'terms' => array_map(static fn (Terms $terms): array => $terms->jsonSerialize(), $this->termsMapper->getTerms()),
 			'countries' => $this->countryMapper->getCountries(),

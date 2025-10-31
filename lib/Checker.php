@@ -118,7 +118,11 @@ class Checker {
 		if ($allowedPath === '') {
 			return false;
 		}
-		return str_starts_with($this->request->getPathInfo(), $allowedPath);
+		$pathInfo = $this->request->getPathInfo();
+		if ($pathInfo === false) {
+			return false;
+		}
+		return str_starts_with($pathInfo, $allowedPath);
 	}
 
 	protected function isAllowedScriptName(): bool {
@@ -157,6 +161,7 @@ class Checker {
 	 * @copyright (IPv6) MW. https://stackoverflow.com/questions/7951061/matching-ipv6-address-to-a-cidr-subnet via
 	 */
 	private function matchCidr(string $ip, string $range): bool {
+		/** @var string $subnet */
 		[$subnet, $bits] = array_pad(explode('/', $range), 2, null);
 		if ($bits === null) {
 			$bits = 32;

@@ -56,6 +56,8 @@ class SigningController extends OCSController {
 	 */
 	#[NoAdminRequired]
 	public function signTerms(int $termId): DataResponse {
+		assert($this->userId !== null);
+
 		$signatory = new Signatory();
 		$signatory->setUserId($this->userId);
 		$signatory->setTermsId($termId);

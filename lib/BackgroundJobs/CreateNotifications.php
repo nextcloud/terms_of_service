@@ -73,6 +73,7 @@ class CreateNotifications extends QueuedJob {
 			$this->logger->debug('User ' . $user->getUID() . ' already signed ToS');
 			return;
 		}
+		assert($this->notification !== null);
 
 		$this->notification->setUser($user->getUID());
 		$this->notificationsManager->notify($this->notification);
