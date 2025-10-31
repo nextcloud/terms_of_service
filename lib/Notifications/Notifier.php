@@ -1,4 +1,5 @@
 <?php
+
 /**
  * SPDX-FileCopyrightText: 2018 Nextcloud GmbH and Nextcloud contributors
  * SPDX-License-Identifier: AGPL-3.0-or-later
@@ -6,58 +7,34 @@
 
 namespace OCA\TermsOfService\Notifications;
 
-use OCA\TermsOfService\Checker;
 use OCP\IURLGenerator;
 use OCP\L10N\IFactory;
 use OCP\Notification\IManager;
 use OCP\Notification\INotification;
 use OCP\Notification\INotifier;
+use Override;
 
 class Notifier implements INotifier {
 
-	/** @var IFactory */
-	protected $l10nFactory;
-	/** @var IURLGenerator */
-	protected $url;
-	/** @var IManager */
-	protected $notificationManager;
-	/** @var Checker */
-	protected $checker;
-
-	public function __construct(IFactory $l10nFactory, IURLGenerator $url, IManager $notificationManager, Checker $checker) {
-		$this->l10nFactory = $l10nFactory;
-		$this->url = $url;
-		$this->notificationManager = $notificationManager;
-		$this->checker = $checker;
+	public function __construct(
+		private IFactory $l10nFactory,
+		private IURLGenerator $url,
+		private IManager $notificationManager,
+		private \OCA\TermsOfService\Checker $checker,
+	) {
 	}
 
-	/**
-	 * Identifier of the notifier, only use [a-z0-9_]
-	 *
-	 * @return string
-	 * @since 17.0.0
-	 */
+	#[Override]
 	public function getID(): string {
 		return 'terms_of_service';
 	}
 
-	/**
-	 * Human readable name describing the notifier
-	 *
-	 * @return string
-	 * @since 17.0.0
-	 */
+	#[Override]
 	public function getName(): string {
 		return $this->l10nFactory->get('terms_of_service')->t('Terms of service');
 	}
 
-	/**
-	 * @param INotification $notification
-	 * @param string $languageCode The code of the language that should be used to prepare the notification
-	 * @return INotification
-	 * @throws \InvalidArgumentException When the notification was not prepared by a notifier
-	 * @since 9.0.0
-	 */
+	#[Override]
 	public function prepare(INotification $notification, string $languageCode): INotification {
 		if ($notification->getApp() !== 'terms_of_service') {
 			throw new \InvalidArgumentException('Wrong app');
@@ -86,8 +63,8 @@ class Notifier implements INotifier {
 		$exception = new \Exception();
 		$trace = $exception->getTrace();
 		foreach ($trace as $step) {
-			if (isset($step['class']) && $step['class'] === 'OCA\Notifications\Push' &&
-				isset($step['function']) && $step['function'] === 'pushToDevice') {
+			if (isset($step['class']) && $step['class'] === 'OCA\Notifications\Push'
+				&& isset($step['function']) && $step['function'] === 'pushToDevice') {
 				return true;
 			}
 		}

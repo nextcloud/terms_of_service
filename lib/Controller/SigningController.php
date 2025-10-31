@@ -1,4 +1,5 @@
 <?php
+
 /**
  * SPDX-FileCopyrightText: 2017 Nextcloud GmbH and Nextcloud contributors
  * SPDX-License-Identifier: AGPL-3.0-or-later
@@ -10,6 +11,7 @@ use OCA\TermsOfService\AppInfo\Application;
 use OCA\TermsOfService\BackgroundJobs\CreateNotifications;
 use OCA\TermsOfService\Db\Entities\Signatory;
 use OCA\TermsOfService\Db\Mapper\SignatoryMapper;
+use OCA\TermsOfService\Events\SignaturesResetEvent;
 use OCP\AppFramework\Http;
 use OCP\AppFramework\Http\Attribute\NoAdminRequired;
 use OCP\AppFramework\Http\Attribute\PublicPage;
@@ -17,53 +19,28 @@ use OCP\AppFramework\Http\Attribute\UseSession;
 use OCP\AppFramework\Http\DataResponse;
 use OCP\AppFramework\OCSController;
 use OCP\BackgroundJob\IJobList;
+use OCP\EventDispatcher\IEventDispatcher;
 use OCP\IConfig;
 use OCP\IRequest;
 use OCP\ISession;
-use OCP\IUser;
-use OCP\IUserManager;
 use OCP\Notification\IManager;
-use OCA\TermsOfService\Events\SignaturesResetEvent;
-use OCP\EventDispatcher\IEventDispatcher;
 
+/**
+ * @psalm-api
+ */
 class SigningController extends OCSController {
-	/** @var string */
-	private $userId;
-	/** @var SignatoryMapper */
-	private $signatoryMapper;
-	/** @var IManager */
-	private $notificationsManager;
-	/** @var IUserManager */
-	private $userManager;
-	/** @var IConfig */
-	private $config;
-	/** @var ISession */
-	private $session;
-
-	/** @var IEventDispatcher */
-	private $eventDispatcher;
-
-
 	public function __construct(
 		string $appName,
-		$UserId,
+		private ?string $userId,
 		IRequest $request,
-		SignatoryMapper $signatoryMapper,
-		IManager $notificationsManager,
-		IUserManager $userManager,
-		IConfig $config,
-		ISession $session,
-		IEventDispatcher $eventDispatcher,
+		private SignatoryMapper $signatoryMapper,
+		private IManager $notificationsManager,
+		private IConfig $config,
+		private ISession $session,
+		private IEventDispatcher $eventDispatcher,
 		protected IJobList $jobList,
 	) {
 		parent::__construct($appName, $request);
-		$this->userId = $UserId;
-		$this->signatoryMapper = $signatoryMapper;
-		$this->notificationsManager = $notificationsManager;
-		$this->userManager = $userManager;
-		$this->config = $config;
-		$this->session = $session;
-		$this->eventDispatcher = $eventDispatcher;
 	}
 
 	protected function resetAllSignaturesEvent(): SignaturesResetEvent {
@@ -71,7 +48,7 @@ class SigningController extends OCSController {
 	}
 
 	/**
-	 * As a logged in user sign the terms
+	 * As a logged-in user sign the terms
 	 *
 	 * @param int $termId The terms the user signed
 	 * @return DataResponse<Http::STATUS_OK, list<empty>, array{}>

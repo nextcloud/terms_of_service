@@ -17,12 +17,9 @@ use PHPUnit\Framework\MockObject\MockObject;
  * @group DB
  */
 class CountryDetectorTest extends \Test\TestCase {
-	/** @var IRequest|MockObject */
-	protected $request;
-	/** @var CountryMapper|MockObject */
-	protected $countryMapper;
-	/** @var CountryDetector */
-	protected $detector;
+	protected IRequest&MockObject $request;
+	protected CountryMapper&MockObject $countryMapper;
+	protected CountryDetector $detector;
 
 	protected function setUp(): void {
 		$this->request = $this->createMock(IRequest::class);
@@ -36,26 +33,23 @@ class CountryDetectorTest extends \Test\TestCase {
 
 	public function dataGetCountry(): array {
 		return [
-			'Local' =>
-				['127.0.0.1', null, null, '--'],
-			'No country only continent' =>
-				['138.199.26.4', null, null, '--'],
-			'India' =>
-				['103.232.172.42', 'IN', true, 'IN'],
-			'Germany' =>
-				['109.250.68.153', 'DE', true, 'DE'],
-			'France' =>
-				['88.187.212.139', 'FR', true, 'FR'],
+			'Local'
+				=> ['127.0.0.1', null, null, '--'],
+			'No country only continent'
+				=> ['138.199.26.4', null, null, '--'],
+			'India'
+				=> ['103.232.172.42', 'IN', true, 'IN'],
+			'Germany'
+				=> ['109.250.68.153', 'DE', true, 'DE'],
+			'France'
+				=> ['88.187.212.139', 'FR', true, 'FR'],
 		];
 	}
 
 	/**
 	 * @dataProvider dataGetCountry
-	 * @param string $ip
 	 * @param string $iso
 	 * @param bool $valid
-	 * @param string $expected
-	 * @return void
 	 */
 	public function testGetCountry(string $ip, ?string $iso, ?bool $valid, string $expected): void {
 		$this->request->method('getRemoteAddress')

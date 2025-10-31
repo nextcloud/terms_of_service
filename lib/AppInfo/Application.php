@@ -1,4 +1,5 @@
 <?php
+
 /**
  * SPDX-FileCopyrightText: 2017 Nextcloud GmbH and Nextcloud contributors
  * SPDX-License-Identifier: AGPL-3.0-or-later
@@ -8,17 +9,16 @@ namespace OCA\TermsOfService\AppInfo;
 
 use Exception;
 use OC\Files\Filesystem;
-use OC\Files\Storage\Wrapper\Wrapper;
 use OCA\Registration\Events\PassedFormEvent;
 use OCA\Registration\Events\ShowFormEvent;
 use OCA\Registration\Events\ValidateFormEvent;
-use OCA\TermsOfService\PublicCapabilities;
 use OCA\TermsOfService\Checker;
 use OCA\TermsOfService\Dav\CheckPlugin;
 use OCA\TermsOfService\Filesystem\StorageWrapper;
 use OCA\TermsOfService\Listener\RegistrationIntegration;
 use OCA\TermsOfService\Listener\UserDeletedListener;
 use OCA\TermsOfService\Notifications\Notifier;
+use OCA\TermsOfService\PublicCapabilities;
 use OCP\AppFramework\App;
 use OCP\AppFramework\Bootstrap\IBootContext;
 use OCP\AppFramework\Bootstrap\IBootstrap;
@@ -34,8 +34,8 @@ use OCP\SabrePluginEvent;
 use OCP\User\Events\UserDeletedEvent;
 use OCP\User\Events\UserFirstTimeLoggedInEvent;
 use OCP\Util;
-use Psr\Log\LoggerInterface;
 use Psr\Container\ContainerExceptionInterface;
+use Psr\Log\LoggerInterface;
 
 include_once __DIR__ . '/../../vendor/autoload.php';
 
@@ -46,7 +46,7 @@ class Application extends App implements IBootstrap {
 
 
 	public function __construct() {
-		parent::__construct('terms_of_service');
+		parent::__construct(self::APPNAME);
 	}
 
 	public function register(IRegistrationContext $context): void {
@@ -61,7 +61,7 @@ class Application extends App implements IBootstrap {
 		Util::connectHook('OC_Filesystem', 'preSetup', $this, 'addStorageWrapper');
 
 		$eventDispatcher = $context->getServerContainer()->get(IEventDispatcher::class);
-		$eventDispatcher->addListener('OCA\DAV\Connector\Sabre::addPlugin', function (SabrePluginEvent $event) use ($context) {
+		$eventDispatcher->addListener('OCA\DAV\Connector\Sabre::addPlugin', function (SabrePluginEvent $event) use ($context): void {
 			$eventServer = $event->getServer();
 
 			if ($eventServer !== null) {
@@ -105,14 +105,14 @@ class Application extends App implements IBootstrap {
 			// registration
 			'#^/apps/registration(?:$|/)#',
 		];
-		if (array_filter($skipPatterns, fn($pattern) => preg_match($pattern, $request->getPathInfo()))) {
+		if (array_filter($skipPatterns, fn (string $pattern): int|false => preg_match($pattern, $request->getPathInfo()))) {
 			return;
 		}
 
 		if ($userSession->getUser() instanceof IUser) {
 			// Logged-in user
 			Util::addScript('terms_of_service', 'terms_of_service-user');
-		} else if ($config->getAppValue(self::APPNAME, 'tos_on_public_shares', '0') === '1') {
+		} elseif ($config->getAppValue(self::APPNAME, 'tos_on_public_shares', '0') === '1') {
 			// Guests on public pages
 			Util::addScript('terms_of_service', 'terms_of_service-public');
 		}
@@ -126,9 +126,6 @@ class Application extends App implements IBootstrap {
 	}
 
 	/**
-	 * @param string $mountPoint
-	 * @param IStorage $storage
-	 *
 	 * @return StorageWrapper|IStorage
 	 * @throws Exception
 	 */
@@ -160,7 +157,7 @@ class Application extends App implements IBootstrap {
 	}
 
 	public function createNotificationOnFirstLogin(IManager $notificationManager, IEventDispatcher $dispatcher): void {
-		$dispatcher->addListener(UserFirstTimeLoggedInEvent::class, function(UserFirstTimeLoggedInEvent $event) use ($notificationManager) {
+		$dispatcher->addListener(UserFirstTimeLoggedInEvent::class, function (UserFirstTimeLoggedInEvent $event) use ($notificationManager): void {
 			$user = $event->getUser();
 			$notification = $notificationManager->createNotification();
 			$notification->setApp('terms_of_service')
