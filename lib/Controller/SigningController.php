@@ -7,7 +7,6 @@
 
 namespace OCA\TermsOfService\Controller;
 
-use OCA\TermsOfService\AppInfo\Application;
 use OCA\TermsOfService\BackgroundJobs\CreateNotifications;
 use OCA\TermsOfService\Db\Entities\Signatory;
 use OCA\TermsOfService\Db\Mapper\SignatoryMapper;
@@ -18,9 +17,9 @@ use OCP\AppFramework\Http\Attribute\PublicPage;
 use OCP\AppFramework\Http\Attribute\UseSession;
 use OCP\AppFramework\Http\DataResponse;
 use OCP\AppFramework\OCSController;
+use OCP\AppFramework\Services\IAppConfig;
 use OCP\BackgroundJob\IJobList;
 use OCP\EventDispatcher\IEventDispatcher;
-use OCP\IConfig;
 use OCP\IRequest;
 use OCP\ISession;
 use OCP\Notification\IManager;
@@ -35,7 +34,7 @@ class SigningController extends OCSController {
 		IRequest $request,
 		private SignatoryMapper $signatoryMapper,
 		private IManager $notificationsManager,
-		private IConfig $config,
+		private IAppConfig $appConfig,
 		private ISession $session,
 		private IEventDispatcher $eventDispatcher,
 		protected IJobList $jobList,
@@ -91,7 +90,7 @@ class SigningController extends OCSController {
 			return new DataResponse([], Http::STATUS_NOT_ACCEPTABLE);
 		}
 
-		$uuid = $this->config->getAppValue(Application::APPNAME, 'term_uuid', '');
+		$uuid = $this->appConfig->getAppValueString('term_uuid');
 		$this->session->set('term_uuid', $uuid);
 
 		return new DataResponse();
@@ -108,10 +107,10 @@ class SigningController extends OCSController {
 	 */
 	public function resetAllSignatories(): DataResponse {
 		$this->signatoryMapper->deleteAllSignatories();
-		$this->config->setAppValue(Application::APPNAME, 'term_uuid', uniqid());
+		$this->appConfig->setAppValueString('term_uuid', uniqid());
 
 		// Schedule a job to generate notifications
-		$this->config->deleteAppValue(Application::APPNAME, 'sent_notifications');
+		$this->appConfig->deleteAppValue('sent_notifications');
 		$this->jobList->add(CreateNotifications::class);
 
 		$event = $this->resetAllSignaturesEvent();

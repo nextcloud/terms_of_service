@@ -23,9 +23,9 @@ use OCP\AppFramework\App;
 use OCP\AppFramework\Bootstrap\IBootContext;
 use OCP\AppFramework\Bootstrap\IBootstrap;
 use OCP\AppFramework\Bootstrap\IRegistrationContext;
+use OCP\AppFramework\Services\IAppConfig;
 use OCP\EventDispatcher\IEventDispatcher;
 use OCP\Files\Storage\IStorage;
-use OCP\IConfig;
 use OCP\IRequest;
 use OCP\IUser;
 use OCP\IUserSession;
@@ -78,7 +78,7 @@ class Application extends App implements IBootstrap {
 		$context->injectFn([$this, 'registerFrontend']);
 	}
 
-	public function registerFrontend(IRequest $request, IConfig $config, IUserSession $userSession): void {
+	public function registerFrontend(IRequest $request, IAppConfig $appConfig, IUserSession $userSession): void {
 		// Ignore CLI
 		/** @psalm-suppress UndefinedClass */
 		if (\OC::$CLI) {
@@ -112,7 +112,7 @@ class Application extends App implements IBootstrap {
 		if ($userSession->getUser() instanceof IUser) {
 			// Logged-in user
 			Util::addScript('terms_of_service', 'terms_of_service-user');
-		} elseif ($config->getAppValue(self::APPNAME, 'tos_on_public_shares', '0') === '1') {
+		} elseif ($appConfig->getAppValueBool('tos_on_public_shares') === true) {
 			// Guests on public pages
 			Util::addScript('terms_of_service', 'terms_of_service-public');
 		}

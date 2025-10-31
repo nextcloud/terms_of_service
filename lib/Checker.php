@@ -10,7 +10,7 @@ namespace OCA\TermsOfService;
 use OCA\TermsOfService\AppInfo\Application;
 use OCA\TermsOfService\Db\Mapper\SignatoryMapper;
 use OCA\TermsOfService\Db\Mapper\TermsMapper;
-use OCP\IConfig;
+use OCP\AppFramework\Services\IAppConfig;
 use OCP\IRequest;
 use OCP\ISession;
 use OCP\IURLGenerator;
@@ -28,7 +28,8 @@ class Checker {
 		private SignatoryMapper $signatoryMapper,
 		private TermsMapper $termsMapper,
 		private CountryDetector $countryDetector,
-		private IConfig $config,
+		private IAppConfig $appConfig,
+		private \OCP\IAppConfig $globalAppConfig,
 		private LoggerInterface $logger,
 		private IURLGenerator $url,
 	) {
@@ -43,13 +44,13 @@ class Checker {
 	 * for the login action
 	 */
 	public function currentUserHasSigned(): bool {
-		$uuid = $this->config->getAppValue(Application::APPNAME, 'term_uuid', '');
+		$uuid = $this->appConfig->getAppValueString('term_uuid');
 		if ($this->userSession->getUser() === null) {
-			if ($this->config->getAppValue(Application::APPNAME, 'tos_on_public_shares', '0') === '0') {
+			if (!$this->appConfig->getAppValueBool('tos_on_public_shares')) {
 				return true;
 			}
 		} else {
-			if ($this->config->getAppValue(Application::APPNAME, 'tos_for_users', '1') !== '1') {
+			if (!$this->appConfig->getAppValueBool('tos_for_users', true)) {
 				return true;
 			}
 		}
@@ -80,7 +81,7 @@ class Checker {
 		$signatories = $this->signatoryMapper->getSignatoriesByUser($user);
 		foreach ($signatories as $signatory) {
 			foreach ($this->termsCache[$countryCode] as $term) {
-				if ((int)$term->getId() === (int)$signatory->getTermsId()) {
+				if ($term->getId() === $signatory->getTermsId()) {
 					$this->session->set('term_uuid', $uuid);
 					return true;
 				}
@@ -97,7 +98,7 @@ class Checker {
 	}
 
 	protected function isRequestAllowedInConfig(): bool {
-		$allowedPath = $this->config->getAppValue(Application::APPNAME, 'allow_path_prefix');
+		$allowedPath = $this->appConfig->getAppValueString('allow_path_prefix');
 		$allowedRanges = $this->allowedRangeForApp(Application::APPNAME, 'allow_ip_ranges');
 		return $this->isRemoteAddressInRanges($allowedRanges)
 			&& $this->isPathInfoStartingWith($allowedPath)
@@ -143,7 +144,7 @@ class Checker {
 	}
 
 	private function allowedRangeForApp(string $appId, string $configKey): array {
-		$allowedRangesString = $this->config->getAppValue($appId, $configKey);
+		$allowedRangesString = $this->globalAppConfig->getValueString($appId, $configKey);
 		if ($allowedRangesString === '') {
 			return [];
 		}

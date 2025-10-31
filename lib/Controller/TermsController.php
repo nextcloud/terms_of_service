@@ -7,7 +7,6 @@
 
 namespace OCA\TermsOfService\Controller;
 
-use OCA\TermsOfService\AppInfo\Application;
 use OCA\TermsOfService\BackgroundJobs\CreateNotifications;
 use OCA\TermsOfService\Checker;
 use OCA\TermsOfService\CountryDetector;
@@ -23,9 +22,9 @@ use OCP\AppFramework\Http;
 use OCP\AppFramework\Http\Attribute\PublicPage;
 use OCP\AppFramework\Http\DataResponse;
 use OCP\AppFramework\OCSController;
+use OCP\AppFramework\Services\IAppConfig;
 use OCP\BackgroundJob\IJobList;
 use OCP\EventDispatcher\IEventDispatcher;
-use OCP\IConfig;
 use OCP\IRequest;
 
 /**
@@ -43,7 +42,7 @@ class TermsController extends OCSController {
 		private LanguageMapper $languageMapper,
 		private CountryDetector $countryDetector,
 		private Checker $checker,
-		private IConfig $config,
+		private IAppConfig $appConfig,
 		private IEventDispatcher $eventDispatcher,
 		protected IJobList $jobList,
 	) {
@@ -62,8 +61,8 @@ class TermsController extends OCSController {
 		$currentCountry = $this->countryDetector->getCountry();
 		$countryTerms = $this->termsMapper->getTermsForCountryCode($currentCountry);
 
-		if ($this->config->getAppValue(Application::APPNAME, 'term_uuid', '') === '') {
-			$this->config->setAppValue(Application::APPNAME, 'term_uuid', uniqid());
+		if ($this->appConfig->getAppValueString('term_uuid') === '') {
+			$this->appConfig->setAppValueString('term_uuid', uniqid());
 		}
 
 		$response = [
@@ -82,11 +81,11 @@ class TermsController extends OCSController {
 	 * 200: Get form data successfully
 	 */
 	public function getAdminFormData(): DataResponse {
-		$forPublicShares = $this->config->getAppValue(Application::APPNAME, 'tos_on_public_shares', '0');
+		$forPublicShares = $this->appConfig->getAppValueBool('tos_on_public_shares');
 		if ($forPublicShares !== '0') {
 			$forPublicShares = '1';
 		}
-		$forUsers = $this->config->getAppValue(Application::APPNAME, 'tos_for_users', '1');
+		$forUsers = $this->appConfig->getAppValueBool('tos_for_users', true);
 		if ($forUsers !== '1') {
 			$forUsers = '0';
 		}

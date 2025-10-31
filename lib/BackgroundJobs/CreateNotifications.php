@@ -8,12 +8,11 @@ declare(strict_types=1);
 
 namespace OCA\TermsOfService\BackgroundJobs;
 
-use OCA\TermsOfService\AppInfo\Application;
 use OCA\TermsOfService\Db\Mapper\SignatoryMapper;
 use OCA\TermsOfService\Db\Mapper\TermsMapper;
+use OCP\AppFramework\Services\IAppConfig;
 use OCP\AppFramework\Utility\ITimeFactory;
 use OCP\BackgroundJob\QueuedJob;
-use OCP\IConfig;
 use OCP\IUser;
 use OCP\IUserManager;
 use OCP\Notification\IManager;
@@ -30,7 +29,7 @@ class CreateNotifications extends QueuedJob {
 		protected IManager $notificationsManager,
 		protected TermsMapper $termsMapper,
 		protected SignatoryMapper $signatoryMapper,
-		protected IConfig $config,
+		protected IAppConfig $appConfig,
 		protected LoggerInterface $logger,
 		ITimeFactory $time,
 	) {
@@ -38,7 +37,7 @@ class CreateNotifications extends QueuedJob {
 	}
 
 	protected function run($argument): void {
-		if ($this->config->getAppValue(Application::APPNAME, 'sent_notifications', 'no') === 'yes') {
+		if ($this->appConfig->getAppValueBool('sent_notifications')) {
 			$this->logger->debug('ToS Notifications have already been sent');
 			return;
 		}
@@ -49,7 +48,7 @@ class CreateNotifications extends QueuedJob {
 			return;
 		}
 
-		$this->config->setAppValue(Application::APPNAME, 'sent_notifications', 'yes');
+		$this->appConfig->setAppValueBool('sent_notifications', true);
 
 		$this->notification = $this->notificationsManager->createNotification();
 		$this->notification->setApp('terms_of_service')
