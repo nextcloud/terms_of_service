@@ -34,7 +34,7 @@ class SignatoryMapper extends QBMapper {
 			->from(self::TABLENAME);
 
 		$entities = [];
-		$result = $query->execute();
+		$result = $query->executeQuery();
 		while ($row = $result->fetch()){
 			$entities[] = $this->mapRowToEntity($row);
 		}
@@ -56,7 +56,7 @@ class SignatoryMapper extends QBMapper {
 			->where($query->expr()->eq('user_id', $query->createNamedParameter($user->getUID())));
 
 		$entities = [];
-		$result = $query->execute();
+		$result = $query->executeQuery();
 		while ($row = $result->fetch()){
 			$entities[] = $this->mapRowToEntity($row);
 		}
@@ -97,7 +97,7 @@ class SignatoryMapper extends QBMapper {
 			->set('user_id', $query->createNamedParameter($newId))
 			->where($query->expr()->eq('user_id', $query->createNamedParameter($oldId)));
 
-		$query->execute();
+		$query->executeStatement();
 	}
 
 	/**
@@ -108,7 +108,7 @@ class SignatoryMapper extends QBMapper {
 		$query = $this->db->getQueryBuilder();
 		$query->delete(self::TABLENAME)
 			->where($query->expr()->eq('terms_id', $query->createNamedParameter($terms->getId())));
-		$query->execute();
+		$query->executeStatement();
 	}
 
 	/**
@@ -117,7 +117,7 @@ class SignatoryMapper extends QBMapper {
 	public function deleteAllSignatories() {
 		$query = $this->db->getQueryBuilder();
 		$query->delete(self::TABLENAME);
-		$query->execute();
+		$query->executeStatement();
 	}
 
 	/**
@@ -128,6 +128,6 @@ class SignatoryMapper extends QBMapper {
 		$query = $this->db->getQueryBuilder();
 		$query->delete(self::TABLENAME)
 			->where($query->expr()->eq('user_id', $query->createNamedParameter($user->getUID())));
-		$query->execute();
+		$query->executeStatement();
 	}
 }
