@@ -40,7 +40,7 @@ class TermsMapper extends QBMapper {
 			$countryCode => [],
 		];
 
-		$result = $query->execute();
+		$result = $query->executeQuery();
 		while ($row = $result->fetch()){
 			$entities[$row['country_code']][] = $this->mapRowToEntity($row);
 		}
@@ -68,7 +68,7 @@ class TermsMapper extends QBMapper {
 			->from(self::TABLENAME)
 			->where($query->expr()->eq('country_code', $query->createNamedParameter($countryCode)))
 			->andWhere($query->expr()->eq('language_code', $query->createNamedParameter($languageCode)));
-		$result = $query->execute();
+		$result = $query->executeQuery();
 		$row = $result->fetch();
 		$result->closeCursor();
 
@@ -89,7 +89,7 @@ class TermsMapper extends QBMapper {
 			->from(self::TABLENAME);
 
 		$entities = [];
-		$result = $query->execute();
+		$result = $query->executeQuery();
 		while ($row = $result->fetch()){
 			$entities[$row['id']] = $this->mapRowToEntity($row);
 		}
