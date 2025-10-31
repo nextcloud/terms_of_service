@@ -73,13 +73,13 @@ class Version1000Date20181122140802 extends SimpleMigrationStep {
 		$query->select('*')
 			->from('termsofservice_signatories');
 
-		$result = $query->execute();
+		$result = $query->executeQuery();
 		while ($row = $result->fetch()) {
 			$insert
 				->setParameter('terms_id', (int) $row['terms_id'], IQueryBuilder::PARAM_INT)
 				->setParameter('user_id', $row['user_id'])
 				->setParameter('timestamp', (int) $row['timestamp'], IQueryBuilder::PARAM_INT);
-			$insert->execute();
+			$insert->executeStatement();
 		}
 		$result->closeCursor();
 	}
