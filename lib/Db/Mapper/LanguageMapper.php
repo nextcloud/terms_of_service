@@ -1,4 +1,5 @@
 <?php
+
 /**
  * SPDX-FileCopyrightText: 2017 Nextcloud GmbH and Nextcloud contributors
  * SPDX-License-Identifier: AGPL-3.0-or-later
@@ -20,7 +21,6 @@ class LanguageMapper {
 	 * Whether the specified language code exists
 	 *
 	 * @param string|null $languageCode
-	 * @return bool
 	 */
 	public function isValidLanguage($languageCode): bool {
 		return isset($this->getLanguages()[$languageCode]);
@@ -30,7 +30,7 @@ class LanguageMapper {
 	 * @return array<string, string>
 	 */
 	public function getLanguages(): array {
-		$mappedLanguages = [
+		return [
 			'aa' => $this->l->t('Afar'),
 			'ab' => $this->l->t('Abkhazian'),
 			'ae' => $this->l->t('Avestan'),
@@ -216,8 +216,6 @@ class LanguageMapper {
 			'zh' => $this->l->t('Chinese'),
 			'zu' => $this->l->t('Zulu'),
 		];
-
-		return $mappedLanguages;
 	}
 
 }

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * SPDX-FileCopyrightText: 2017 Nextcloud GmbH and Nextcloud contributors
  * SPDX-License-Identifier: AGPL-3.0-or-later
@@ -9,61 +10,29 @@ namespace OCA\TermsOfService;
 use OCA\TermsOfService\AppInfo\Application;
 use OCA\TermsOfService\Db\Mapper\SignatoryMapper;
 use OCA\TermsOfService\Db\Mapper\TermsMapper;
-use OCP\IConfig;
+use OCP\AppFramework\Services\IAppConfig;
 use OCP\IRequest;
 use OCP\ISession;
 use OCP\IURLGenerator;
 use OCP\IUser;
 use OCP\IUserSession;
-use OCP\IL10N;
 use Psr\Log\LoggerInterface;
 
 class Checker {
-	/** @var IRequest */
-	private $request;
-	/** @var IUserSession */
-	private $userSession;
-	/** @var ISession */
-	private $session;
-	/** @var SignatoryMapper */
-	private $signatoryMapper;
-	/** @var TermsMapper */
-	private $termsMapper;
-	/** @var CountryDetector */
-	private $countryDetector;
-	/** @var IConfig */
-	private $config;
-	/** @var IL10N */
-	private $l10n;
-	/** @var LoggerInterface */
-	private $logger;
-	/** @var array */
-	private $termsCache = [];
-	/** @var IURLGenerator */
-	private $url;
+	private array $termsCache = [];
 
 	public function __construct(
-		IRequest $request,
-		IUserSession $userSession,
-		ISession $session,
-		SignatoryMapper $signatoryMapper,
-		TermsMapper $termsMapper,
-		CountryDetector $countryDetector,
-		IConfig $config,
-		IL10N $l10n,
-		LoggerInterface $logger,
-		IURLGenerator $url
+		private IRequest $request,
+		private IUserSession $userSession,
+		private ISession $session,
+		private SignatoryMapper $signatoryMapper,
+		private TermsMapper $termsMapper,
+		private CountryDetector $countryDetector,
+		private IAppConfig $appConfig,
+		private \OCP\IAppConfig $globalAppConfig,
+		private LoggerInterface $logger,
+		private IURLGenerator $url,
 	) {
-		$this->request = $request;
-		$this->userSession = $userSession;
-		$this->session = $session;
-		$this->signatoryMapper = $signatoryMapper;
-		$this->termsMapper = $termsMapper;
-		$this->countryDetector = $countryDetector;
-		$this->config = $config;
-		$this->l10n = $l10n;
-		$this->logger = $logger;
-		$this->url = $url;
 	}
 
 	public function getForbiddenMessage(): string {
@@ -73,17 +42,15 @@ class Checker {
 	/**
 	 * Whether the currently logged-in user has signed the terms and conditions
 	 * for the login action
-	 *
-	 * @return bool
 	 */
 	public function currentUserHasSigned(): bool {
-		$uuid = $this->config->getAppValue(Application::APPNAME, 'term_uuid', '');
+		$uuid = $this->appConfig->getAppValueString('term_uuid');
 		if ($this->userSession->getUser() === null) {
-			if ($this->config->getAppValue(Application::APPNAME, 'tos_on_public_shares', '0') === '0') {
+			if (!$this->appConfig->getAppValueBool('tos_on_public_shares')) {
 				return true;
 			}
 		} else {
-			if ($this->config->getAppValue(Application::APPNAME, 'tos_for_users', '1') !== '1') {
+			if (!$this->appConfig->getAppValueBool('tos_for_users', true)) {
 				return true;
 			}
 		}
@@ -112,13 +79,11 @@ class Checker {
 		}
 
 		$signatories = $this->signatoryMapper->getSignatoriesByUser($user);
-		if (!empty($signatories)) {
-			foreach ($signatories as $signatory) {
-				foreach ($this->termsCache[$countryCode] as $term) {
-					if ((int)$term->getId() === (int)$signatory->getTermsId()) {
-						$this->session->set('term_uuid', $uuid);
-						return true;
-					}
+		foreach ($signatories as $signatory) {
+			foreach ($this->termsCache[$countryCode] as $term) {
+				if ($term->getId() === $signatory->getTermsId()) {
+					$this->session->set('term_uuid', $uuid);
+					return true;
 				}
 			}
 		}
@@ -133,7 +98,7 @@ class Checker {
 	}
 
 	protected function isRequestAllowedInConfig(): bool {
-		$allowedPath = $this->config->getAppValue(Application::APPNAME, 'allow_path_prefix');
+		$allowedPath = $this->appConfig->getAppValueString('allow_path_prefix');
 		$allowedRanges = $this->allowedRangeForApp(Application::APPNAME, 'allow_ip_ranges');
 		return $this->isRemoteAddressInRanges($allowedRanges)
 			&& $this->isPathInfoStartingWith($allowedPath)
@@ -153,11 +118,15 @@ class Checker {
 		if ($allowedPath === '') {
 			return false;
 		}
-		return strpos($this->request->getPathInfo(), $allowedPath) === 0;
+		$pathInfo = $this->request->getPathInfo();
+		if ($pathInfo === false) {
+			return false;
+		}
+		return str_starts_with($pathInfo, $allowedPath);
 	}
 
 	protected function isAllowedScriptName(): bool {
-		return substr($this->request->getScriptName(), 0 - strlen('/index.php')) === '/index.php';
+		return str_ends_with($this->request->getScriptName(), '/index.php');
 	}
 
 	protected function isRemoteAddressInRanges(array $allowedRanges): bool {
@@ -179,7 +148,7 @@ class Checker {
 	}
 
 	private function allowedRangeForApp(string $appId, string $configKey): array {
-		$allowedRangesString = $this->config->getAppValue($appId, $configKey);
+		$allowedRangesString = $this->globalAppConfig->getValueString($appId, $configKey);
 		if ($allowedRangesString === '') {
 			return [];
 		}
@@ -192,7 +161,8 @@ class Checker {
 	 * @copyright (IPv6) MW. https://stackoverflow.com/questions/7951061/matching-ipv6-address-to-a-cidr-subnet via
 	 */
 	private function matchCidr(string $ip, string $range): bool {
-		list($subnet, $bits) = array_pad(explode('/', $range), 2, null);
+		/** @var string $subnet */
+		[$subnet, $bits] = array_pad(explode('/', $range), 2, null);
 		if ($bits === null) {
 			$bits = 32;
 		}
@@ -211,23 +181,23 @@ class Checker {
 			$subnet = inet_pton($subnet);
 			$ip = inet_pton($ip);
 
-			$binMask = str_repeat("f", (int)($bits / 4));
+			$binMask = str_repeat('f', (int)($bits / 4));
 			switch ($bits % 4) {
 				case 0:
 					break;
 				case 1:
-					$binMask .= "8";
+					$binMask .= '8';
 					break;
 				case 2:
-					$binMask .= "c";
+					$binMask .= 'c';
 					break;
 				case 3:
-					$binMask .= "e";
+					$binMask .= 'e';
 					break;
 			}
 
 			$binMask = str_pad($binMask, 32, '0');
-			$binMask = pack("H*", $binMask);
+			$binMask = pack('H*', $binMask);
 
 			if (($ip & $binMask) === $subnet) {
 				return true;
@@ -236,11 +206,11 @@ class Checker {
 		return false;
 	}
 
-	private function isIpv4($ip) {
-		return filter_var($ip, FILTER_VALIDATE_IP, FILTER_FLAG_IPV4);
+	private function isIpv4(string $ip): bool {
+		return filter_var($ip, FILTER_VALIDATE_IP, FILTER_FLAG_IPV4) !== false;
 	}
 
-	private function isIpv6($ip) {
-		return filter_var($ip, FILTER_VALIDATE_IP, FILTER_FLAG_IPV6);
+	private function isIpv6(string $ip): bool {
+		return filter_var($ip, FILTER_VALIDATE_IP, FILTER_FLAG_IPV6) !== false;
 	}
 }

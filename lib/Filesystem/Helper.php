@@ -1,4 +1,5 @@
 <?php
+
 /**
  * SPDX-FileCopyrightText: 2017 Nextcloud GmbH and Nextcloud contributors
  * SPDX-License-Identifier: AGPL-3.0-or-later
@@ -14,14 +15,10 @@ use OCA\Registration\Controller\RegisterController;
 use OCA\TermsOfService\Checker;
 
 class Helper {
-	/** @var Checker */
-	private $checker;
-	/** @var string */
-	private $mountPoint;
-
-	public function __construct(Checker $checker, string $mountPoint) {
-		$this->checker = $checker;
-		$this->mountPoint = $mountPoint;
+	public function __construct(
+		private Checker $checker,
+		private string $mountPoint,
+	) {
 	}
 
 	protected function isBlockablePath(string $path): bool {
@@ -34,15 +31,14 @@ class Helper {
 		// '', admin, 'files', 'path/to/file.txt'
 		$segment = explode('/', $fullPath, 4);
 		return isset($segment[2]) && \in_array($segment[2], [
-				'files',
-				'thumbnails',
-				'files_versions',
-			], true);
+			'files',
+			'thumbnails',
+			'files_versions',
+		], true);
 	}
 
 	/**
 	 * Check if we are in the LoginController and if so, ignore the firewall
-	 * @return bool
 	 */
 	protected function isCreatingSkeletonFiles(): bool {
 		$exception = new \Exception();
@@ -69,14 +65,13 @@ class Helper {
 
 	/**
 	 * Check if we are in the LoginController and if so, ignore the firewall
-	 * @return bool
 	 */
 	protected function isValidatingShare(): bool {
 		$exception = new \Exception();
 		$trace = $exception->getTrace();
 		foreach ($trace as $step) {
-			if (isset($step['class'], $step['function']) &&
-				$step['class'] === ShareController::class && $step['function'] === 'validateShare') {
+			if (isset($step['class'], $step['function'])
+				&& $step['class'] === ShareController::class && $step['function'] === 'validateShare') {
 				return true;
 			}
 		}
