@@ -1,4 +1,5 @@
 <?php
+
 /**
  * SPDX-FileCopyrightText: 2017 Nextcloud GmbH and Nextcloud contributors
  * SPDX-License-Identifier: AGPL-3.0-or-later
@@ -9,13 +10,10 @@ namespace OCA\TermsOfService\Filesystem;
 use OC\Files\Storage\Wrapper\Wrapper;
 use OCP\Files\Cache\ICache;
 use OCP\Files\ForbiddenException;
-use OCP\Files\Storage\IStorage;
 
 class StorageWrapper extends Wrapper {
-	/** @var string */
-	public $mountPoint;
-	/** @var Helper */
-	private $helper;
+	public string $mountPoint;
+	private Helper $helper;
 
 	public function __construct($parameters) {
 		parent::__construct($parameters);
@@ -25,7 +23,7 @@ class StorageWrapper extends Wrapper {
 	}
 
 	public function isCreatable($path): bool {
-		if(!$this->helper->verifyAccess($path)) {
+		if (!$this->helper->verifyAccess($path)) {
 			return false;
 		}
 
@@ -33,7 +31,7 @@ class StorageWrapper extends Wrapper {
 	}
 
 	public function isUpdatable($path): bool {
-		if(!$this->helper->verifyAccess($path)) {
+		if (!$this->helper->verifyAccess($path)) {
 			return false;
 		}
 
@@ -41,7 +39,7 @@ class StorageWrapper extends Wrapper {
 	}
 
 	public function isDeletable($path): bool {
-		if(!$this->helper->verifyAccess($path)) {
+		if (!$this->helper->verifyAccess($path)) {
 			return false;
 		}
 
@@ -49,7 +47,7 @@ class StorageWrapper extends Wrapper {
 	}
 
 	public function isReadable($path): bool {
-		if(!$this->helper->verifyAccess($path)) {
+		if (!$this->helper->verifyAccess($path)) {
 			return false;
 		}
 
@@ -57,7 +55,7 @@ class StorageWrapper extends Wrapper {
 	}
 
 	public function isSharable($path): bool {
-		if(!$this->helper->verifyAccess($path)) {
+		if (!$this->helper->verifyAccess($path)) {
 			return false;
 		}
 

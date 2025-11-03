@@ -11,7 +11,7 @@
 		"autoloader-suffix": "TermsOfService",
 		"optimize-autoloader": true,
 		"platform": {
-			"php": "8.0.2"
+			"php": "8.1"
 		},
 		"sort-packages": true
 	},
@@ -27,7 +27,10 @@
 	"scripts": {
 		"bin": "echo 'bin not installed'",
 		"lint": "find . -name \\*.php -not -path './vendor/*' -print0 | xargs -0 -n1 php -l",
+		"cs:check": "php-cs-fixer fix --dry-run --diff",
+		"cs:fix": "php-cs-fixer fix",
 		"openapi": "generate-spec --verbose",
+		"rector": "rector && composer cs:fix",
 		"post-install-cmd": [
 			"@composer bin all install --ansi",
 			"composer dump-autoload"

@@ -441,7 +441,7 @@ OC.L10N.register(
     "Requires users to accept the terms of service before accessing data.\nThis product includes GeoLite2 data created by MaxMind, available from [maxmind.com](http://www.maxmind.com)" : "Exige que les utilisateurs acceptent les conditions d'utilisation avant d'accéder aux données.\nCe produit inclut les données GeoLite2 créées par MaxMind, disponibles sur[maxmind.com] (http://www.maxmind.com).",
     "Loading …" : "Chargement …",
     "Reset signatories & notify users" : "Réinitialiser les signataires & notifier les utilisateurs",
-    "Save terms" : "Sauvegarder les conditions",
+    "Save terms" : "Enregistrer les conditions",
     "Ensure that all fields are filled" : "Assurez-vous que tous les champs soient complétés",
     "Terms saved successfully!" : "Conditions d'utilisation enregistrées avec succès !",
     "All signatories reset!" : "Tous les signataires sont réinitialisés !",

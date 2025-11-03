@@ -352,7 +352,7 @@
         "/ocs/v2.php/apps/terms_of_service/sign": {
             "post": {
                 "operationId": "signing-sign-terms",
-                "summary": "As a logged in user sign the terms",
+                "summary": "As a logged-in user sign the terms",
                 "tags": [
                     "signing"
                 ],
@@ -517,6 +517,34 @@
                 "responses": {
                     "200": {
                         "description": "Signed successfully",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "required": [
+                                        "ocs"
+                                    ],
+                                    "properties": {
+                                        "ocs": {
+                                            "type": "object",
+                                            "required": [
+                                                "meta",
+                                                "data"
+                                            ],
+                                            "properties": {
+                                                "meta": {
+                                                    "$ref": "#/components/schemas/OCSMeta"
+                                                },
+                                                "data": {}
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "406": {
+                        "description": "The user is already authenticated and therefore not allowed to sign the terms through this endpoint",
                         "content": {
                             "application/json": {
                                 "schema": {

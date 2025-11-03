@@ -1,4 +1,5 @@
 <?php
+
 /**
  * SPDX-FileCopyrightText: 2018 Nextcloud GmbH and Nextcloud contributors
  * SPDX-License-Identifier: AGPL-3.0-or-later
@@ -8,8 +9,8 @@ namespace OCA\TermsOfService\Migration;
 use OCP\DB\ISchemaWrapper;
 use OCP\DB\QueryBuilder\IQueryBuilder;
 use OCP\IDBConnection;
-use OCP\Migration\SimpleMigrationStep;
 use OCP\Migration\IOutput;
+use OCP\Migration\SimpleMigrationStep;
 
 class Version1000Date20181122140802 extends SimpleMigrationStep {
 
@@ -21,9 +22,7 @@ class Version1000Date20181122140802 extends SimpleMigrationStep {
 	}
 
 	/**
-	 * @param IOutput $output
 	 * @param \Closure $schemaClosure The `\Closure` returns a `ISchemaWrapper`
-	 * @param array $options
 	 * @return null|ISchemaWrapper
 	 */
 	public function changeSchema(IOutput $output, \Closure $schemaClosure, array $options) {
@@ -52,11 +51,9 @@ class Version1000Date20181122140802 extends SimpleMigrationStep {
 	}
 
 	/**
-	 * @param IOutput $output
 	 * @param \Closure $schemaClosure The `\Closure` returns a `ISchemaWrapper`
-	 * @param array $options
 	 */
-	public function postSchemaChange(IOutput $output, \Closure $schemaClosure, array $options) {
+	public function postSchemaChange(IOutput $output, \Closure $schemaClosure, array $options): void {
 		if (!$this->connection->tableExists('termsofservice_signatories')) {
 			return;
 		}
@@ -73,13 +70,13 @@ class Version1000Date20181122140802 extends SimpleMigrationStep {
 		$query->select('*')
 			->from('termsofservice_signatories');
 
-		$result = $query->execute();
+		$result = $query->executeQuery();
 		while ($row = $result->fetch()) {
 			$insert
-				->setParameter('terms_id', (int) $row['terms_id'], IQueryBuilder::PARAM_INT)
+				->setParameter('terms_id', (int)$row['terms_id'], IQueryBuilder::PARAM_INT)
 				->setParameter('user_id', $row['user_id'])
-				->setParameter('timestamp', (int) $row['timestamp'], IQueryBuilder::PARAM_INT);
-			$insert->execute();
+				->setParameter('timestamp', (int)$row['timestamp'], IQueryBuilder::PARAM_INT);
+			$insert->executeStatement();
 		}
 		$result->closeCursor();
 	}
