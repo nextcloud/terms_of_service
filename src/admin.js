@@ -3,15 +3,9 @@
  * SPDX-License-Identifier: AGPL-3.0-or-later
  */
 
-import Vue from 'vue'
+import { createApp } from 'vue'
 import App from './App.vue'
 
-Vue.prototype.t = t
-Vue.prototype.n = n
-Vue.prototype.OC = OC
-Vue.prototype.OCA = OCA
+const app = createApp(App)
 
-export default new Vue({
-	el: '#terms_of_service',
-	render: h => h(App),
-})
+app.mount('#terms_of_service')

@@ -112,9 +112,11 @@ class Application extends App implements IBootstrap {
 		if ($userSession->getUser() instanceof IUser) {
 			// Logged-in user
 			Util::addScript('terms_of_service', 'terms_of_service-user');
+			Util::addStyle('terms_of_service', 'terms_of_service-user');
 		} elseif ($appConfig->getAppValueBool('tos_on_public_shares') === true) {
 			// Guests on public pages
 			Util::addScript('terms_of_service', 'terms_of_service-public');
+			Util::addStyle('terms_of_service', 'terms_of_service-public');
 		}
 
 	}

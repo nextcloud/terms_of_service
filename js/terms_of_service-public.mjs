@@ -1,0 +1,2 @@
+import{bc as t,bb as o}from"./_plugin-vue_export-helper-BemuwRpB.chunk.mjs";import{U as r}from"./UserApp-vLzITm54.chunk.mjs";import"./logger-Dn3kbj54.chunk.mjs";const m=t()===null,c=document.getElementById("password-submit")!==null;if(m&&!c){const e=document.createElement("div");e.id="terms_of_service_confirm",document.body.insertAdjacentElement("afterbegin",e),o(r,{source:"public"}).mount("#terms_of_service_confirm")}
+//# sourceMappingURL=terms_of_service-public.mjs.map
