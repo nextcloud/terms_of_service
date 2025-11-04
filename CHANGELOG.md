@@ -5,9 +5,19 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## 4.8.0
+### Changed
+- Migrate to outline icons
+- Add support for Nextcloud 33
+- Replace execute with executeStatement and executeQuery
+
+### Fix
+- Signing in as an authenticated user through the endpoint for unauthenticated users is no longer possible
+
 ## 4.7.0
 ### Changed
 - Migrate to outline icons
+- Add support for Nextcloud 33
 
 ## 4.6.0
 ### Changed
