@@ -5,6 +5,10 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## 4.6.1
+### Fixed
+- Signing in as an authenticated user through the endpoint for unauthenticated users is no longer possible
+
 ## 4.6.0
 ### Changed
 - Updated dependencies
