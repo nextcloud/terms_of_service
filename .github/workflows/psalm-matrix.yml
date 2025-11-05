@@ -50,10 +50,10 @@ jobs:
         with:
           persist-credentials: false
 
-      - name: Set up php${{ matrix.php-min }}
+      - name: Set up php8.3
         uses: shivammathur/setup-php@bf6b4fbd49ca58e4608c9c89fba0b8d90bd2a39f # v2.35.5
         with:
-          php-version: ${{ matrix.php-min }}
+          php-version: 8.3
           extensions: bz2, ctype, curl, dom, fileinfo, gd, iconv, intl, json, libxml, mbstring, openssl, pcntl, posix, session, simplexml, xmlreader, xmlwriter, zip, zlib, sqlite, pdo_sqlite
           coverage: none
           ini-file: development
@@ -64,14 +64,14 @@ jobs:
 
       - name: Install dependencies
         run: |
-          composer remove nextcloud/ocp --dev --no-scripts
+          composer bin psalm remove nextcloud/ocp --dev --no-scripts
           composer i
 
       - name: Check for vulnerable PHP dependencies
         run: composer require --dev roave/security-advisories:dev-latest
 
       - name: Install dependencies # zizmor: ignore[template-injection]
-        run: composer require --dev 'nextcloud/ocp:${{ matrix.ocp-version }}' --ignore-platform-reqs --with-dependencies
+        run: composer bin psalm require --dev 'nextcloud/ocp:${{ matrix.ocp-version }}' --ignore-platform-reqs --with-dependencies
 
       - name: Run coding standards check
         run: composer run psalm -- --threads=1 --monochrome --no-progress --output-format=github
