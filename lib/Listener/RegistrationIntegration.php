@@ -63,6 +63,7 @@ class RegistrationIntegration implements IEventListener {
 		}
 
 		Util::addScript('terms_of_service', 'terms_of_service-registration', 'registration');
+		Util::addStyle('terms_of_service', 'terms_of_service-registration');
 	}
 
 	public function validateEmailForm(ValidateFormEvent $event): void {

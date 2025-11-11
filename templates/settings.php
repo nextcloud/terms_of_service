@@ -4,7 +4,10 @@
  * SPDX-License-Identifier: AGPL-3.0-or-later
  */
 
-script('terms_of_service', 'terms_of_service-admin');
+use OCP\Util;
+
+Util::addScript('terms_of_service', 'terms_of_service-admin');
+Util::addStyle('terms_of_service', 'terms_of_service-admin');
 ?>
 
 <div id="terms_of_service" class="section"></div>

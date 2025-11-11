@@ -1,0 +1,7 @@
+SPDX-License-Identifier: AGPL-3.0-or-later
+SPDX-FileCopyrightText: Joas Schilling <coding@schilljs.com>
+
+This file is generated from multiple sources. Included packages:
+- terms_of_service
+	- version: 4.7.0-rc.1
+	- license: AGPL-3.0-or-later
