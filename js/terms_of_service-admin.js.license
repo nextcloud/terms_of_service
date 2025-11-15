@@ -4,6 +4,7 @@ SPDX-License-Identifier: GPL-3.0-or-later
 SPDX-License-Identifier: BSD-3-Clause
 SPDX-License-Identifier: AGPL-3.0-or-later
 SPDX-License-Identifier: (MPL-2.0 OR Apache-2.0)
+SPDX-FileCopyrightText: inherits developers
 SPDX-FileCopyrightText: escape-html developers
 SPDX-FileCopyrightText: atomiks
 SPDX-FileCopyrightText: Varun A P
@@ -17,10 +18,9 @@ SPDX-FileCopyrightText: Paul Vorbach <paul@vorba.ch> (http://paul.vorba.ch)
 SPDX-FileCopyrightText: Paul Vorbach <paul@vorb.de> (http://vorb.de)
 SPDX-FileCopyrightText: Nextcloud GmbH and Nextcloud contributors
 SPDX-FileCopyrightText: Matt Zabriskie
+SPDX-FileCopyrightText: Joyent
 SPDX-FileCopyrightText: John Molakvoæ (skjnldsv) <skjnldsv@protonmail.com>
-SPDX-FileCopyrightText: Joas Schilling <coding@schilljs.com>
 SPDX-FileCopyrightText: Jeff Sagal <sagalbot@gmail.com>
-SPDX-FileCopyrightText: James Halliday
 SPDX-FileCopyrightText: Jacob Clevenger<https://github.com/wheatjs>
 SPDX-FileCopyrightText: Hiroki Osame
 SPDX-FileCopyrightText: Guillaume Chau <guillaume.b.chau@gmail.com>
@@ -45,7 +45,7 @@ This file is generated from multiple sources. Included packages:
 	- version: 0.1.10
 	- license: MIT
 - @nextcloud/auth
-	- version: 2.4.0
+	- version: 2.5.1
 	- license: GPL-3.0-or-later
 - @nextcloud/axios
 	- version: 2.5.1
@@ -137,9 +137,6 @@ This file is generated from multiple sources. Included packages:
 - md5
 	- version: 2.3.0
 	- license: BSD-3-Clause
-- path-browserify
-	- version: 1.0.1
-	- license: MIT
 - process
 	- version: 0.11.10
 	- license: MIT
@@ -179,6 +176,15 @@ This file is generated from multiple sources. Included packages:
 - webpack
 	- version: 5.94.0
 	- license: MIT
-- terms_of_service
-	- version: 4.7.0-rc.1
+- inherits
+	- version: 2.0.3
+	- license: ISC
+- util
+	- version: 0.10.4
+	- license: MIT
+- path
+	- version: 0.12.7
+	- license: MIT
+- nextcloud
+	- version: 1.0.0
 	- license: AGPL-3.0-or-later
