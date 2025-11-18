@@ -3,14 +3,9 @@
  * SPDX-License-Identifier: AGPL-3.0-or-later
  */
 
-import Vue from 'vue'
 import { getCurrentUser } from '@nextcloud/auth'
+import { createApp } from 'vue'
 import UserApp from './UserApp.vue'
-
-Vue.prototype.t = t
-Vue.prototype.n = n
-Vue.prototype.OC = OC
-Vue.prototype.OCA = OCA
 
 const isNotLoggedIn = getCurrentUser() === null
 const isPasswordProtected = (document.getElementById('password-submit') !== null)
@@ -20,12 +15,7 @@ if (isNotLoggedIn && !isPasswordProtected) {
 	tofc.id = 'terms_of_service_confirm'
 	document.body.insertAdjacentElement('afterbegin', tofc)
 
-	// eslint-disable-next-line
-	new Vue({
-		el: '#terms_of_service_confirm',
-		data: {
-			source: 'public',
-		},
-		render: h => h(UserApp),
-	})
+	createApp(UserApp, {
+		source: 'public',
+	}).mount('#terms_of_service_confirm')
 }

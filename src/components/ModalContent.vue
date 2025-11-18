@@ -3,7 +3,8 @@
   - SPDX-License-Identifier: AGPL-3.0-or-later
 -->
 <template>
-	<div id="terms_of_service_content"
+	<div
+		id="terms_of_service_content"
 		class="modal-content"
 		aria-live="polite">
 		<!-- Sticky Header -->
@@ -17,9 +18,10 @@
 		</div>
 
 		<!-- Sticky button -->
-		<NcButton ref="acceptButton"
+		<NcButton
+			ref="acceptButton"
 			class="modal-content__button"
-			type="primary"
+			variant="primary"
 			:wide="true"
 			autofocus
 			:title="t('terms_of_service', 'I acknowledge that I have read and agree to the above terms of service')"
@@ -32,7 +34,8 @@
 </template>
 
 <script>
-import NcButton from '@nextcloud/vue/dist/Components/NcButton.js'
+import { t } from '@nextcloud/l10n'
+import NcButton from '@nextcloud/vue/components/NcButton'
 
 export default {
 	name: 'ModalContent',
@@ -40,6 +43,8 @@ export default {
 	components: {
 		NcButton,
 	},
+
+	emits: ['click'],
 
 	props: {
 		isScrollComplete: {
@@ -60,9 +65,12 @@ export default {
 				this.$emit('click')
 			}
 		},
+
+		t,
 	},
 }
 </script>
+
 <style lang="scss" scoped>
 /* Little hack to strengthen the css selector so links with dark mode on the registration page are readable */
 #terms_of_service_content.modal-content,
@@ -78,7 +86,7 @@ export default {
 	}
 
 	h3 {
-		float: left;
+		float: inline-start;
 		font-weight: 800;
 	}
 
@@ -93,7 +101,7 @@ export default {
 	}
 
 	select {
-		float: right;
+		float: inline-end;
 		padding: 0 12px;
 		/**
 		 * Need to overwrite the rules of guest.css
@@ -108,10 +116,10 @@ export default {
 	/**
 	 * Basic Markdown support
 	 */
-	:deep div.text-content {
+	:deep(div.text-content) {
 		height: 100%;
 		overflow: auto;
-		text-align: left;
+		text-align: start;
 
 		h3 {
 			font-weight: 800;
@@ -123,12 +131,12 @@ export default {
 		}
 
 		ol {
-			padding-left: 12px;
+			padding-inline-start: 12px;
 		}
 
 		ul {
 			list-style-type: disc;
-			padding-left: 25px;
+			padding-inline-start: 25px;
 		}
 
 		a {
@@ -140,7 +148,7 @@ export default {
 </style>
 
 <style lang="scss" scoped>
-:deep .modal-container {
+:deep(.modal-container) {
 	display: flex;
 	height: 100%;
 }
