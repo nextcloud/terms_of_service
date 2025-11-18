@@ -229,7 +229,7 @@ OC.L10N.register(
     "Tonga" : "Tonga",
     "Trinidad and Tobago" : "Trinidade e Tobago",
     "Tunisia" : "Tunisia",
-    "Turkey" : "Turquia",
+    "Turkey" : "Turquía",
     "Turkmenistan" : "Turquemenistán",
     "Turks and Caicos Islands" : "Illas Turcas e Caicos",
     "Tuvalu" : "Tuvalu",
