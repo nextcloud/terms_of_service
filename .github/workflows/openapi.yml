@@ -26,14 +26,16 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4.1.7
+        uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
+        with:
+          persist-credentials: false
 
       - name: Get php version
         id: php_versions
         uses: icewind1991/nextcloud-version-matrix@58becf3b4bb6dc6cef677b15e2fd8e7d48c0908f # v1.3.1
 
       - name: Set up php
-        uses: shivammathur/setup-php@c541c155eee45413f5b09a52248675b1a2575231 # v2.31.1
+        uses: shivammathur/setup-php@bf6b4fbd49ca58e4608c9c89fba0b8d90bd2a39f # v2.35.5
         with:
           php-version: ${{ steps.php_versions.outputs.php-available }}
           extensions: xml
@@ -60,7 +62,7 @@ jobs:
 
       - name: Set up node ${{ steps.node_versions.outputs.nodeVersion }}
         if: ${{ steps.node_versions.outputs.nodeVersion }}
-        uses: actions/setup-node@1e60f620b9541d16bece96c5465dc8ee9832be0b # v4.0.3
+        uses: actions/setup-node@2028fbc5c25fe9cf00d9f06a71cc4710d4507903 # v6.0.0
         with:
           node-version: ${{ steps.node_versions.outputs.nodeVersion }}
 
@@ -68,7 +70,7 @@ jobs:
         if: ${{ steps.node_versions.outputs.nodeVersion }}
         run: npm i -g 'npm@${{ steps.node_versions.outputs.npmVersion }}'
 
-      - name: Install dependencies & build
+      - name: Install dependencies
         if: ${{ steps.node_versions.outputs.nodeVersion }}
         env:
           CYPRESS_INSTALL_BINARY: 0
