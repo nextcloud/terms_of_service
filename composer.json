@@ -1,5 +1,8 @@
 {
 	"autoload": {
+		"exclude-from-classmap": [
+			"**/bamarni/composer-bin-plugin/**"
+		],
 		"psr-4": {
 			"OCA\\TermsOfService\\": "lib/"
 		}
