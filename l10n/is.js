@@ -439,7 +439,6 @@ OC.L10N.register(
     "You have to accept the newest version of the terms of service in order to be able to use this service." : "Þú þarft að samþykkja nýjustu útgáfu þjónustuskilmálanna til að geta notað þessa þjónustu.",
     "Requires users to accept the terms of service before accessing data." : "Krefur notendur um samþykkt á þjónustuskilmálum áður en aðgangur er gefinn að gögnum.",
     "Requires users to accept the terms of service before accessing data.\nThis product includes GeoLite2 data created by MaxMind, available from [maxmind.com](http://www.maxmind.com)" : "Krefur notendur um samþykkt á þjónustuskilmálum áður en aðgangur er gefinn að gögnum.\nÞessi eiginleiki inniheldur GeoLite2 gögn útbúin af MaxMind, tiltæk frá [maxmind.com](http://www.maxmind.com)",
-    "Loading …" : "Hleð inn …",
     "Reset signatories & notify users" : "Endurstilla undirritanir og láta notendur vita",
     "Save terms" : "Vista skilmála",
     "Ensure that all fields are filled" : "Vertu viss um að fylla út í alla reitina",
@@ -451,14 +450,12 @@ OC.L10N.register(
     "Enter or update terms of service below." : "Settu inn eigin skilmála eða aðlagaðu þjónustuskilmálana hér að neðan.",
     "Select a region" : "Veldu svæði",
     "Select a language" : "Veldu tungumál",
-    "By using this service …" : "Með því að nota þessa þjónustu …",
     "For formatting purposes Markdown is supported." : "Markdown er hægt að nota fyrir snið á texta.",
     "Saving the terms will update the text but will not send a notification to users. Notifications are only sent if you reset the signatories." : "Vistun skilmálanna mun uppfæra textann en ekki senda tilkynningu til notendanna. Tilkynningar eru aðeins sendar ef þú endurstillir undirritunina.",
     "Existing terms of service" : "Fyrirliggjandi þjónustuskilmálar",
     "We recommend resetting the signatories if legal changes were applied. For minor changes like fixing typos or correcting links, it could be left out, as it would otherwise require all users to accept the Terms of Service again." : "Við mælum með því að endurstilla undirritanir ef um lagalegar breytingar er að ræða. Minni háttar breytingar á borð við lagfæringar á stafsetningu eða tenglum ættu ekki að krefjast slíks, þar sem þá yrðu allir notendurnir að samþykkja aftur þjónustuskilmálana.",
     "I acknowledge that I have read and agree to the above terms of service" : "Staðfesti ég að ég hef lesið og samþykki ofangreinda jónustuskilmála",
     "Edit language {language} for region {country}" : "Breyta tungumálinu {language} fyrir svæðið {country}",
-    "Deleting …" : "Eyði …",
     "Delete language {language} for region {country}" : "Eyða tungumálinu {language} fyrir svæðið {country}"
 },
 "nplurals=2; plural=(n % 10 != 1 || n % 100 == 11);");

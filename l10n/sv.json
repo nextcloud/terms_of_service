@@ -437,7 +437,7 @@
     "You have to accept the newest version of the terms of service in order to be able to use this service." : "Du måste acceptera den senaste versionen av användarvillkoren för att kunna använda den här tjänsten.",
     "Requires users to accept the terms of service before accessing data." : "Kräver att användarna accepterar användarvillkoren innan de får åtkomst till data.",
     "Requires users to accept the terms of service before accessing data.\nThis product includes GeoLite2 data created by MaxMind, available from [maxmind.com](http://www.maxmind.com)" : "Kräver att användarna accepterar användarvillkoren innan de får åtkomst till data.\nDenna produkt innehåller GeoLite2-data skapad av MaxMind, tillgänglig från [maxmind.com] (http://www.maxmind.com)",
-    "Loading …" : "Läser in ...",
+    "Loading …" : "Laddar …",
     "Reset signatories & notify users" : "Återställ undertecknare och meddela användare",
     "Save terms" : "Spara villkor",
     "Ensure that all fields are filled" : "Se till att alla fält är ifyllda",
@@ -449,14 +449,12 @@
     "Enter or update terms of service below." : "Ange eller uppdatera användarvillkoren nedan.",
     "Select a region" : "Välj en region",
     "Select a language" : "Välj ett språk",
-    "By using this service …" : "Genom att använda den här tjänsten...",
     "For formatting purposes Markdown is supported." : "För formatering stöds Markdown.",
     "Saving the terms will update the text but will not send a notification to users. Notifications are only sent if you reset the signatories." : "Om du sparar villkoren uppdateras texten men kommer inte att skicka ett meddelande till användarna. Aviseringar skickas endast om du återställer undertecknarna.",
     "Existing terms of service" : "Existerande användarvillkor",
     "We recommend resetting the signatories if legal changes were applied. For minor changes like fixing typos or correcting links, it could be left out, as it would otherwise require all users to accept the Terms of Service again." : "Vi rekommenderar att du återställer signaturer om lagändringar har tillämpats. För mindre ändringar som att åtgärda stavfel eller korrigera länkar kan det utelämnas, eftersom det annars skulle kräva att alla användare accepterar användarvillkoren igen.",
     "I acknowledge that I have read and agree to the above terms of service" : "Jag bekräftar att jag har läst och godkänt ovanstående villkor",
     "Edit language {language} for region {country}" : "Redigera språk {language} för region {country}",
-    "Deleting …" : "Raderar ...",
     "Delete language {language} for region {country}" : "Ta bort språk {language} för region {country}"
 },"pluralForm" :"nplurals=2; plural=(n != 1);"
 }

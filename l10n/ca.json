@@ -437,7 +437,6 @@
     "You have to accept the newest version of the terms of service in order to be able to use this service." : "Heu d'acceptar la versió més nova de les condicions del servei per poder utilitzar aquest servei.",
     "Requires users to accept the terms of service before accessing data." : "Exigeix que els usuaris acceptin els termes de servei abans d'accedir a les dades.",
     "Requires users to accept the terms of service before accessing data.\nThis product includes GeoLite2 data created by MaxMind, available from [maxmind.com](http://www.maxmind.com)" : "Exigeix que els usuaris acceptin els termes de servei abans d'accedir a les dades.\nAquest producte inclou dades GeoLite2 creades per MaxMind, disponible a [maxmind.com](http://www.maxmind.com)",
-    "Loading …" : "Carregant …",
     "Ensure that all fields are filled" : "Assegureu-vos que tots els camps estiguin emplenats",
     "Terms saved successfully!" : "Termes desats correctament!",
     "All signatories reset!" : "Tots els signants es reinicien!",
@@ -446,12 +445,10 @@
     "Show on public shares" : "Mostra en comparticions públiques",
     "Select a region" : "Selecciona una regió",
     "Select a language" : "Selecciona un idioma",
-    "By using this service …" : "Fent-ne ús d’aquest servei …",
     "For formatting purposes Markdown is supported." : "Per finalitats de formatació, Markdown està suportat.",
     "Existing terms of service" : "Condicions de servei existents",
     "I acknowledge that I have read and agree to the above terms of service" : "Reconec que he llegit i accepto aquests termes de servei",
     "Edit language {language} for region {country}" : "Edita la llengua {language} per a la regió {country}",
-    "Deleting …" : "S'està suprimint …",
     "Delete language {language} for region {country}" : "Suprimeix la llengua {language} per a la regió {country}"
 },"pluralForm" :"nplurals=2; plural=(n != 1);"
 }

@@ -437,7 +437,6 @@
     "You have to accept the newest version of the terms of service in order to be able to use this service." : "Debes aceptar la versión más reciente de los términos del servicio para poder usar este servicio.",
     "Requires users to accept the terms of service before accessing data." : "Requiere que los usuarios acepten los términos del servicio antes de acceder a los datos.",
     "Requires users to accept the terms of service before accessing data.\nThis product includes GeoLite2 data created by MaxMind, available from [maxmind.com](http://www.maxmind.com)" : "Requiere que los usuarios acepten los términos del servicio antes de acceder a los datos.\n      Este producto incluye datos GeoLite2 creados por MaxMind, disponibles en [maxmind.com](http://www.maxmind.com)",
-    "Loading …" : "Cargando...",
     "Ensure that all fields are filled" : "Asegúrate de que todos los campos estén completos",
     "Terms saved successfully!" : "¡Términos guardados con éxito!",
     "All signatories reset!" : "¡Todas las firmas restablecidas!",
@@ -446,12 +445,10 @@
     "Show on public shares" : "Mostrar en enlaces públicos",
     "Select a region" : "Selecciona una región",
     "Select a language" : "Selecciona un idioma",
-    "By using this service …" : "Al usar este servicio...",
     "For formatting purposes Markdown is supported." : "Con fines de formato, se admite Markdown.",
     "Existing terms of service" : "Términos de servicio existentes",
     "I acknowledge that I have read and agree to the above terms of service" : "Acepto que he leído y acepto los términos de servicio anteriores",
     "Edit language {language} for region {country}" : "Editar idioma {language} para la región {country}",
-    "Deleting …" : "Eliminando...",
     "Delete language {language} for region {country}" : "Eliminar idioma {language} para la región {country}"
 },"pluralForm" :"nplurals=3; plural=n == 1 ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;"
 }

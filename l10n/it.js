@@ -439,7 +439,7 @@ OC.L10N.register(
     "You have to accept the newest version of the terms of service in order to be able to use this service." : "Devi accettare l'ultima versione dei termini del servizio per poter utilizzare questo servizio.",
     "Requires users to accept the terms of service before accessing data." : "Richiede che gli utenti accettino i termini del servizio prima di accedere ai dati.",
     "Requires users to accept the terms of service before accessing data.\nThis product includes GeoLite2 data created by MaxMind, available from [maxmind.com](http://www.maxmind.com)" : "Richiede che gli utenti accettino i termini del servizio prima di accedere ai dati.\nQuesto prodotto include i dati di GeoLite2 creato da MaxMind, disponibile presso [maxmind.com](http://www.maxmind.com)",
-    "Loading …" : "Caricamento in corso…",
+    "Loading …" : "Caricamento in corso...",
     "Reset signatories & notify users" : "Reimposta i firmatari & avvisa gli utenti",
     "Save terms" : "Salva termini",
     "Ensure that all fields are filled" : "Assicurati che tutti i campi siano compilati",
@@ -451,14 +451,12 @@ OC.L10N.register(
     "Enter or update terms of service below." : "Inserisci o aggiorna i termini di servizio qui sotto.",
     "Select a region" : "Seleziona una regione",
     "Select a language" : "Seleziona una lingua",
-    "By using this service …" : "Utilizzando questo servizio…",
     "For formatting purposes Markdown is supported." : "Per scopi di formattazione, Markdown è supportato.",
     "Saving the terms will update the text but will not send a notification to users. Notifications are only sent if you reset the signatories." : "Salvando i termini verrà aggiornato il testo ma non verrà inviata una notifica agli utenti. Le notifiche vengono inviate solo se reimposti i firmatari.",
     "Existing terms of service" : "Termini del servizio esistenti",
     "We recommend resetting the signatories if legal changes were applied. For minor changes like fixing typos or correcting links, it could be left out, as it would otherwise require all users to accept the Terms of Service again." : "Consigliamo di reimpostare i firmatari se sono state applicate modifiche legali. Per modifiche minori come la correzione di errori di battitura o la correzione di link, potrebbe essere omesso, poiché altrimenti richiederebbe a tutti gli utenti di accettare nuovamente i Termini di servizio.",
     "I acknowledge that I have read and agree to the above terms of service" : "Confermo che ho letto e accetto i suddetti termini di servizio",
     "Edit language {language} for region {country}" : "Modifica lingua{language} per regione {country}",
-    "Deleting …" : "Eliminazione in corso…",
     "Delete language {language} for region {country}" : "Elimina lingua {language} per regione {country}"
 },
 "nplurals=3; plural=n == 1 ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;");

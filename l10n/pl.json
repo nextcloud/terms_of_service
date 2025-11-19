@@ -437,7 +437,7 @@
     "You have to accept the newest version of the terms of service in order to be able to use this service." : "Aby móc korzystać z tej usługi, musisz zaakceptować najnowszą wersję warunków usługi.",
     "Requires users to accept the terms of service before accessing data." : "Wymaga od użytkowników zaakceptowania warunków usługi przed uzyskaniem dostępu do danych.",
     "Requires users to accept the terms of service before accessing data.\nThis product includes GeoLite2 data created by MaxMind, available from [maxmind.com](http://www.maxmind.com)" : "Wymaga od użytkowników zaakceptowania warunków usługi przed uzyskaniem dostępu do danych.\nTen produkt zawiera dane GeoLite2 utworzone przez MaxMind, dostępne na [maxmind.com](http://www.maxmind.com)",
-    "Loading …" : "Wczytywanie…",
+    "Loading …" : "Ładowanie ...",
     "Reset signatories & notify users" : "Zresetuj sygnatariuszy i powiadom użytkowników",
     "Save terms" : "Zapisz warunki",
     "Ensure that all fields are filled" : "Upewnij się, że wszystkie pola są wypełnione",
@@ -449,14 +449,12 @@
     "Enter or update terms of service below." : "Wpisz lub zaktualizuj warunki korzystania z usługi poniżej.",
     "Select a region" : "Wybierz region",
     "Select a language" : "Wybierz język",
-    "By using this service …" : "Korzystając z tej usługi…",
     "For formatting purposes Markdown is supported." : "Do celów formatowania obsługiwany jest Markdown.",
     "Saving the terms will update the text but will not send a notification to users. Notifications are only sent if you reset the signatories." : "Zapisanie warunków zaktualizuje tekst, ale nie wyśle powiadomienia do użytkowników. Powiadomienia są wysyłane tylko wtedy, gdy zresetujesz sygnatariuszy.",
     "Existing terms of service" : "Dotychczasowe warunki usługi",
     "We recommend resetting the signatories if legal changes were applied. For minor changes like fixing typos or correcting links, it could be left out, as it would otherwise require all users to accept the Terms of Service again." : "Zalecamy resetowanie sygnatariuszy, jeśli wprowadzono zmiany prawne. W przypadku drobnych zmian, takich jak poprawki literówek czy linków, można to pominąć, ponieważ w przeciwnym razie wszyscy użytkownicy musieliby ponownie zaakceptować warunki korzystania z usługi.",
     "I acknowledge that I have read and agree to the above terms of service" : "Potwierdzam, że przeczytałem i akceptuję powyższe warunki usługi",
     "Edit language {language} for region {country}" : "Edytuj język {language} dla regionu {country}",
-    "Deleting …" : "Usuwanie…",
     "Delete language {language} for region {country}" : "Usuń język {language} dla regionu {country}"
 },"pluralForm" :"nplurals=4; plural=(n==1 ? 0 : (n%10>=2 && n%10<=4) && (n%100<12 || n%100>14) ? 1 : n!=1 && (n%10>=0 && n%10<=1) || (n%10>=5 && n%10<=9) || (n%100>=12 && n%100<=14) ? 2 : 3);"
 }

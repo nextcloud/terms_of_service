@@ -439,7 +439,6 @@ OC.L10N.register(
     "You have to accept the newest version of the terms of service in order to be able to use this service." : "Каб карыстацца гэтым сервісам, вам трэба прыняць найноўшую версію ўмоў абслугоўвання.",
     "Requires users to accept the terms of service before accessing data." : "Патрабуе ад карыстальнікаў прыняцця ўмоў абслугоўвання перад доступам да даных.",
     "Requires users to accept the terms of service before accessing data.\nThis product includes GeoLite2 data created by MaxMind, available from [maxmind.com](http://www.maxmind.com)" : "Патрабуе ад карыстальнікаў прыняцця ўмоў абслугоўвання перад доступам да даных. Гэты прадукт утрымлівае даныя GeoLite2, створаныя MaxMind, даступныя на [maxmind.com](http://www.maxmind.com)",
-    "Loading …" : "Загрузка …",
     "Reset signatories & notify users" : "Скінуць падпісантаў і апавясціць карыстальнікаў",
     "Save terms" : "Захаваць умовы",
     "Ensure that all fields are filled" : "Пераканайцеся, што ўсе палі запоўненыя",
@@ -451,14 +450,12 @@ OC.L10N.register(
     "Enter or update terms of service below." : "Увядзіце або абнавіце ўмовы абслугоўвання ніжэй.",
     "Select a region" : "Выберыце рэгіён",
     "Select a language" : "Выберыце мову",
-    "By using this service …" : "Выкарыстоўваючы гэты сервіс, …",
     "For formatting purposes Markdown is supported." : "Для фарматавання падтрымліваецца Markdown.",
     "Saving the terms will update the text but will not send a notification to users. Notifications are only sent if you reset the signatories." : "Захаванне ўмоў абновіць тэкст, але не адправіць карыстальнікам апавяшчэнне. Апавяшчэнні адпраўляюцца толькі ў тым выпадку, калі вы скінеце спіс падпісантаў.",
     "Existing terms of service" : "Дзеючыя ўмовы абслугоўвання",
     "We recommend resetting the signatories if legal changes were applied. For minor changes like fixing typos or correcting links, it could be left out, as it would otherwise require all users to accept the Terms of Service again." : "Мы рэкамендуем скінуць спіс падпісантаў, калі былі ўнесены юрыдычныя змены. Для нязначных змяненняў, такіх як выпраўленне памылак друку або спасылак, гэты пункт можна не ўключаць, бо ў адваротным выпадку ўсім карыстальнікам прыйдзецца паўторна прыняць Умовы абслугоўвання.",
     "I acknowledge that I have read and agree to the above terms of service" : "Я пацвярджаю, што прачытаў(-ла) і згодзен(-на) з вышэйзгаданымі ўмовамі абслугоўвання",
     "Edit language {language} for region {country}" : "Рэдагаваць мову {language} для рэгіёна {country}",
-    "Deleting …" : "Выдаленне …",
     "Delete language {language} for region {country}" : "Выдаліць мову {language} для рэгіёна {country}"
 },
 "nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n%100>=11 && n%100<=14)? 2 : 3);");

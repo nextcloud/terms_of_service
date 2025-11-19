@@ -189,7 +189,6 @@ OC.L10N.register(
     "You have to accept the newest version of the terms of service in order to be able to use this service." : "Tem de aceitar a versão mais recente dos termos de serviço para poder utilizar este serviço.",
     "Requires users to accept the terms of service before accessing data." : "Exige que os utilizadores aceitem os termos de serviço antes de acederem aos dados.",
     "Requires users to accept the terms of service before accessing data.\nThis product includes GeoLite2 data created by MaxMind, available from [maxmind.com](http://www.maxmind.com)" : "Exige que os utilizadores aceitem os termos de serviço antes de acederem aos dados.\nEste produto inclui dados GeoLite2 criados pela MaxMind, disponíveis em  [maxmind.com](http://www.maxmind.com)",
-    "Loading …" : "A carregar...",
     "Ensure that all fields are filled" : "Certifique-se que todos os campos estejam preenchidos",
     "Terms saved successfully!" : "Termos guardados com sucesso!",
     "All signatories reset!" : "Todos os signatários reconfigurados",
@@ -198,12 +197,10 @@ OC.L10N.register(
     "Show on public shares" : "Mostrar nas partilhas públicas",
     "Select a region" : "Selecione uma região",
     "Select a language" : "Selecione um idioma",
-    "By using this service …" : "Ao usar este serviço...",
     "For formatting purposes Markdown is supported." : "Para fins de formatação, o Markdown é suportado.",
     "Existing terms of service" : "Termos de serviço existentes",
     "I acknowledge that I have read and agree to the above terms of service" : "Eu confirmo que li e concordo com os termos de serviço acima",
     "Edit language {language} for region {country}" : "Editar idioma {language} para a região {country}",
-    "Deleting …" : "A eliminar...",
     "Delete language {language} for region {country}" : "Eliminar idioma {language} da região {country}"
 },
 "nplurals=3; plural=(n == 0 || n == 1) ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;");

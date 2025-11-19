@@ -245,7 +245,6 @@ OC.L10N.register(
     "Yemen" : "ເຢເມນ",
     "Zambia" : "ແຊມເບຍ",
     "Zimbabwe" : "ຊິມບັບເວ",
-    "Terms of service" : "ເງື່ອນໄຂການໃຫ້ບໍລິການ",
-    "Loading …" : "ກຳລັງໂຫຼດ"
+    "Terms of service" : "ເງື່ອນໄຂການໃຫ້ບໍລິການ"
 },
 "nplurals=1; plural=0;");

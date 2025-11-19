@@ -439,7 +439,7 @@ OC.L10N.register(
     "You have to accept the newest version of the terms of service in order to be able to use this service." : "Морате да прихватите најновију верзију услова коришћења овог сервиса да бисте могли да наставите да га користите.",
     "Requires users to accept the terms of service before accessing data." : "Захтева од корисника да прихвати услове коришћења пре приступања подацима.",
     "Requires users to accept the terms of service before accessing data.\nThis product includes GeoLite2 data created by MaxMind, available from [maxmind.com](http://www.maxmind.com)" : "Захтева од корисника да прихвати услове коришћења пре приступања подацима.\nОвај производ укључује GeoLite2 податке које је направио MaxMind, доступних са сајта [maxmind.com](http://www.maxmind.com)",
-    "Loading …" : "Учитавање…",
+    "Loading …" : "Учитава се…",
     "Reset signatories & notify users" : "Ресетуј потписнике и обавести кориснике",
     "Save terms" : "Сачувај услове",
     "Ensure that all fields are filled" : "Уверите се да су сва поља попуњена",
@@ -451,14 +451,12 @@ OC.L10N.register(
     "Enter or update terms of service below." : "Унесите или ажурирајте услове коришћења ниже.",
     "Select a region" : "Одаберите регију",
     "Select a language" : "Одаберите језик",
-    "By using this service …" : "Коришћењем овог сервиса…",
     "For formatting purposes Markdown is supported." : "За форматирање је подржана Markdown синтакса.",
     "Saving the terms will update the text but will not send a notification to users. Notifications are only sent if you reset the signatories." : "Чување услова ће да ажурира текст, али корисницима неће да пошаље обавештење. Обавештења се шаљу само ако ресетујете потписнике.",
     "Existing terms of service" : "Постојећу услови коришћења",
     "We recommend resetting the signatories if legal changes were applied. For minor changes like fixing typos or correcting links, it could be left out, as it would otherwise require all users to accept the Terms of Service again." : "Препоручујемо да потписнике ресетујете ако су унесене правне измене. У случају мањих измена као што су исправка словних грешака или поправка линкова, може да се изостави, јер би у супротном било потребно да сви корисници поново прихвате Услове коришћења.",
     "I acknowledge that I have read and agree to the above terms of service" : "Изјављујем да сам прочитао и да се слажем са изнад наведеним условима коришћења",
     "Edit language {language} for region {country}" : "Уређуј језик {language} за регион {country}",
-    "Deleting …" : "Брисање…",
     "Delete language {language} for region {country}" : "Обриши језик {language} за регион {country}"
 },
 "nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);");

@@ -437,7 +437,6 @@
     "You have to accept the newest version of the terms of service in order to be able to use this service." : "لا بد من قبول شروط الخدمة الجديدة حتى يمكنك استعمال هذه الخدمة.",
     "Requires users to accept the terms of service before accessing data." : "يتوجب على المستخدمين قبول شروط الخدمة قبل الوصول إلى البيانات.",
     "Requires users to accept the terms of service before accessing data.\nThis product includes GeoLite2 data created by MaxMind, available from [maxmind.com](http://www.maxmind.com)" : "يتوجب على المستخدمين قبول شروط الخدمة قبل الوصول إلى البيانات. \nيتضمن هذا المنتج بيانات GeoLite2 التي تم إنشاؤها بواسطة MaxMind ، والمتاحة من [maxmind.com] (http://www.maxmind.com)",
-    "Loading …" : "التحميل جارٍ …",
     "Reset signatories & notify users" : "إعادة تعيين المُوقِّعين و إشعار المستخدِمين",
     "Save terms" : "حفظ الشروط",
     "Ensure that all fields are filled" : "تأكد أن كل الحقول تم ملؤها",
@@ -449,14 +448,12 @@
     "Enter or update terms of service below." : "أدخِل أو عدِّل شروط الخدمة أدناه.",
     "Select a region" : "اختر منطقة",
     "Select a language" : "اختر لغة",
-    "By using this service …" : "باستخدامك لهذه الخدمة ...",
     "For formatting purposes Markdown is supported." : "تنسيق ماركداون Markdown مدعوم.",
     "Saving the terms will update the text but will not send a notification to users. Notifications are only sent if you reset the signatories." : "سيؤدي حفظ الشروط إلى تحديث النص ولكن لن يتم إرسال إشعار للمستخدمين. يتم إرسال الإشعارات فقط إذا قمت بإعادة تعيين الموقعين.",
     "Existing terms of service" : "شروط الخدمة الحالية",
     "We recommend resetting the signatories if legal changes were applied. For minor changes like fixing typos or correcting links, it could be left out, as it would otherwise require all users to accept the Terms of Service again." : "نوصي بإعادة تعيين الموقعين إذا تم تطبيق تغييرات قانونية على اتفاقية الخدمة. بالنسبة للتغييرات البسيطة مثل تصحيح الأخطاء المطبعية أو تصحيح الروابط، فيمكننا تجاوزها، حتى لا نضطر إلى الطلب من جميع المستخدمين تجديد قبولهم لشروط الخدمة من جديد.",
     "I acknowledge that I have read and agree to the above terms of service" : "أقر بأنني قد قرأت ووافقت على شروط الخدمة المذكورة أعلاه",
     "Edit language {language} for region {country}" : "تعديل اللغة {language} للإقليم {country}",
-    "Deleting …" : "حذف ...",
     "Delete language {language} for region {country}" : "حذف اللغة {language} من الإقليم {country}"
 },"pluralForm" :"nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;"
 }

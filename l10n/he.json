@@ -375,13 +375,11 @@
     "You have to accept the newest version of the terms of service in order to be able to use this service." : "עליך לקבל את הגרסה העדכנית ביותר של תנאי השירות כדי שיתאפשר לך להשתמש בשירות הזה.",
     "Requires users to accept the terms of service before accessing data." : "דורש מהמשתמשים לאשר את תנאי השימוש בטרם גישה לנתונים.",
     "Requires users to accept the terms of service before accessing data.\nThis product includes GeoLite2 data created by MaxMind, available from [maxmind.com](http://www.maxmind.com)" : "דורש מהמשתמשים לאשר את תנאי השימוש בטרם גישה לנתונים.\nמוצר זה כולל נתוני GeoLite2 שנוצרו על ידי MaxMind, זמינים תחת [maxmind.com](http://www.maxmind.com)",
-    "Loading …" : "בטעינה",
     "Ensure that all fields are filled" : "נא לוודא שכל השדות מולאו",
     "Require users to accept the terms of service before accessing the service." : "דורש מהמשתמשים לקבל את תנאי השירות בטרם גישה לשירות.",
     "Select a region" : "נא לבחור איזור",
     "Select a language" : "נא לבחור שפה",
     "For formatting purposes Markdown is supported." : "למטרות עיצוב קיימת תמיכה ב־Markdown.",
-    "Existing terms of service" : "תנאי שירות קיימים",
-    "Deleting …" : "מתבצעת מחיקה…"
+    "Existing terms of service" : "תנאי שירות קיימים"
 },"pluralForm" :"nplurals=3; plural=(n == 1 && n % 1 == 0) ? 0 : (n == 2 && n % 1 == 0) ? 1: 2;"
 }

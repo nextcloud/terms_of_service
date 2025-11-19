@@ -437,7 +437,6 @@
     "You have to accept the newest version of the terms of service in order to be able to use this service." : "Трябва да приемете най-новата версия на условията за ползване за да използвате тази услуга.",
     "Requires users to accept the terms of service before accessing data." : "Изисква се потребителите да приемат условията за ползване преди да достъпват данни.",
     "Requires users to accept the terms of service before accessing data.\nThis product includes GeoLite2 data created by MaxMind, available from [maxmind.com](http://www.maxmind.com)" : "Изисква се потребителите да приемат условията за ползване, преди да получат достъп до данните.\nТози продукт включва GeoLite2 данни, създадени от MaxMind, достъпни от [maxmind.com](http://www.maxmind.com)",
-    "Loading …" : "Зарежда …",
     "Ensure that all fields are filled" : "Уверете се, че всички полета са попълнени",
     "Terms saved successfully!" : "Условията са запазени успешно!",
     "All signatories reset!" : "Възстановяване/нулиране/ на всички подписали!",
@@ -446,12 +445,10 @@
     "Show on public shares" : "Показване на публичните споделяния",
     "Select a region" : "Изберете регион",
     "Select a language" : "Изберете език",
-    "By using this service …" : "Ползвайки тази услуга …",
     "For formatting purposes Markdown is supported." : "Може да ползвате Markdown за форматиране.",
     "Existing terms of service" : "Настоящи условия за ползване",
     "I acknowledge that I have read and agree to the above terms of service" : "Потвърждавам, че прочетох и съм съгласен с горните условия за ползване",
     "Edit language {language} for region {country}" : "Редактиране на езика {language} за регион {country}",
-    "Deleting …" : "Изтриване …",
     "Delete language {language} for region {country}" : "Изтриване на езика {language} за регион {country}"
 },"pluralForm" :"nplurals=2; plural=(n != 1);"
 }

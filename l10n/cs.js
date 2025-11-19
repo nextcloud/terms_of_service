@@ -439,7 +439,7 @@ OC.L10N.register(
     "You have to accept the newest version of the terms of service in order to be able to use this service." : "Abyste mohli tuto službu používat je třeba, abyste odsouhlasili novější verzi všeobecných podmínek.",
     "Requires users to accept the terms of service before accessing data." : "Než budou uživatelé moci přistupovat k datům, vyžaduje od nich odsouhlasení všeobecných podmínek.",
     "Requires users to accept the terms of service before accessing data.\nThis product includes GeoLite2 data created by MaxMind, available from [maxmind.com](http://www.maxmind.com)" : "Než budou uživatelé moci přistupovat k datům, vyžaduje od nich odsouhlasení všeobecných podmínek.\nTento produkt obsahuje GeoLite2 data vytvořená u MaxMind, která jsou k dispozici na  [maxmind.com](http://www.maxmind.com)",
-    "Loading …" : "Načítání…",
+    "Loading …" : "Načítání …",
     "Reset signatories & notify users" : "Resetovat stavy přijmutí a upozornit uživatele",
     "Save terms" : "Uložit podmínky",
     "Ensure that all fields are filled" : "Zajistěte, aby byly všechny kolonky vyplněné",
@@ -451,14 +451,12 @@ OC.L10N.register(
     "Enter or update terms of service below." : "Níže zadejte nebo zaktualizujte všeobecné podmínky.",
     "Select a region" : "Vyberte oblast",
     "Select a language" : "Vyberte jazyk",
-    "By using this service …" : "Použitím této služby…",
     "For formatting purposes Markdown is supported." : "Formátovat lze značkami Markdown.",
     "Saving the terms will update the text but will not send a notification to users. Notifications are only sent if you reset the signatories." : "Uložení všeobecných podmínek zaktualizuje text, ale nepošle upozornění uživatelům. Notifikace jsou zaslány pouze v případě, že resetujete stav přijmutí.",
     "Existing terms of service" : "Existující všeobecné podmínky",
     "We recommend resetting the signatories if legal changes were applied. For minor changes like fixing typos or correcting links, it could be left out, as it would otherwise require all users to accept the Terms of Service again." : "V případě, že byly provedeny jakékoli právní změny, doporučujeme resetovat stav přijmutí. V případě drobných změn, jako např. opravy překlepů nebo opravy odkazů, je možné toto vynechat, protože jinak by to znamenalo, že všichni uživatelé by museli všeobecné podmínky znovu odsouhlasit.",
     "I acknowledge that I have read and agree to the above terms of service" : "Potvrzuji, že jsem si přečetl(a) a souhlasím s výše uvedenými všeobecnými podmínkami",
     "Edit language {language} for region {country}" : "Upravit jazyk {language} pro oblast {country}",
-    "Deleting …" : "Mazání…",
     "Delete language {language} for region {country}" : "Smazat jazyk {language} pro oblast {country}"
 },
 "nplurals=4; plural=(n == 1 && n % 1 == 0) ? 0 : (n >= 2 && n <= 4 && n % 1 == 0) ? 1: (n % 1 != 0 ) ? 2 : 3;");

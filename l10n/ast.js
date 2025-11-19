@@ -284,7 +284,6 @@ OC.L10N.register(
     "Ukrainian" : "Ucraín",
     "Vietnamese" : "Vietnamita",
     "Chinese" : "Chinu",
-    "Terms of service" : "Términos del serviciu",
-    "Loading …" : "Cargando…"
+    "Terms of service" : "Términos del serviciu"
 },
 "nplurals=2; plural=(n != 1);");

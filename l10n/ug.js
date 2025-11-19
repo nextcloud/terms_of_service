@@ -439,7 +439,7 @@ OC.L10N.register(
     "You have to accept the newest version of the terms of service in order to be able to use this service." : "بۇ مۇلازىمەتنى ئىشلىتىش ئۈچۈن ئەڭ يېڭى نەشرىدىكى مۇلازىمەت شەرتلىرىنى قوبۇل قىلىشىڭىز كېرەك.",
     "Requires users to accept the terms of service before accessing data." : "ئابونتلارنىڭ سانلىق مەلۇماتقا ئېرىشىشتىن بۇرۇن مۇلازىمەت شەرتلىرىنى قوبۇل قىلىشىنى تەلەپ قىلىدۇ.",
     "Requires users to accept the terms of service before accessing data.\nThis product includes GeoLite2 data created by MaxMind, available from [maxmind.com](http://www.maxmind.com)" : "ئابونتلارنىڭ سانلىق مەلۇماتقا ئېرىشىشتىن بۇرۇن مۇلازىمەت شەرتلىرىنى قوبۇل قىلىشىنى تەلەپ قىلىدۇ.\nبۇ مەھسۇلات MaxMind قۇرغان GeoLite2 سانلىق مەلۇماتلىرىنى ئۆز ئىچىگە ئالىدۇ ، [maxmind.com] دىن كەلگەن (http://www.maxmind.com)",
-    "Loading …" : "Loading…",
+    "Loading …" : "يۈكلەۋاتىدۇ ...",
     "Ensure that all fields are filled" : "ھەممە ساھەنىڭ تولدۇرۇلۇشىغا كاپالەتلىك قىلىڭ",
     "Terms saved successfully!" : "شەرتلەر مۇۋەپپەقىيەتلىك ساقلاندى!",
     "All signatories reset!" : "بارلىق ئىمزا قويغۇچىلار ئەسلىگە كەلدى!",
@@ -448,12 +448,10 @@ OC.L10N.register(
     "Show on public shares" : "ئاممىۋى پاينى كۆرسىتىش",
     "Select a region" : "رايون تاللاڭ",
     "Select a language" : "تىل تاللاڭ",
-    "By using this service …" : "بۇ مۇلازىمەتنى ئىشلىتىش ئارقىلىق…",
     "For formatting purposes Markdown is supported." : "فورماتلاش مەقسىتىدە Markdown نى قوللايدۇ.",
     "Existing terms of service" : "ھازىر بار بولغان مۇلازىمەت شەرتلىرى",
     "I acknowledge that I have read and agree to the above terms of service" : "مەن يۇقىرىدىكى مۇلازىمەت شەرتلىرىنى ئوقۇغانلىقىم ۋە ئۇنىڭغا قوشۇلغانلىقىمنى ئېتىراپ قىلىمەن",
     "Edit language {language} for region {country}" : "رايون {language} ئۈچۈن تىل {country} تەھرىرلەش",
-    "Deleting …" : "ئۆچۈرۈش…",
     "Delete language {language} for region {country}" : "رايون {language} for ئۈچۈن تىل {country} ئۆچۈرۈڭ"
 },
 "nplurals=2; plural=(n != 1);");

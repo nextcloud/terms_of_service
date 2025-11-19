@@ -436,15 +436,12 @@
     "You have to accept the newest version of the terms of service in order to be able to use this service." : "Depes atzetare s'ùltima versione de is cunditziones de servìtziu pro pòdere impreare custu servìtziu.",
     "Requires users to accept the terms of service before accessing data." : "Pedit a is utentes de atzetare is cunditziones de servìtziu antis de atzèdere a is datos.",
     "Requires users to accept the terms of service before accessing data.\nThis product includes GeoLite2 data created by MaxMind, available from [maxmind.com](http://www.maxmind.com)" : "Pedit a is utentes de atzetare is cunditziones de servìtziu antis de atzèdere a is datos.\nCustu produtu includet datos GeoLite2 creados dae MaxMind, disponìbiles in [maxmind.com](http://www.maxmind.com)",
-    "Loading …" : "Carrrighende …",
     "Ensure that all fields are filled" : "Controlla chi totu is campos siant cumpilados",
     "Require users to accept the terms of service before accessing the service." : "Pedit a is utentes de atzetare is cunditziones de servìtziu antis de atzèdere a su servìtziu.",
     "Select a region" : "Seletziona una regione",
     "Select a language" : "Seletziona una limba",
-    "By using this service …" : "Impreende custu servìtziu ...",
     "For formatting purposes Markdown is supported." : "Pro sa formatatzione est suportadu Markdown.",
     "Existing terms of service" : "Cunditziones de servìtziu esistentes",
-    "I acknowledge that I have read and agree to the above terms of service" : "Cunfirmu ca apo lèghidu e so de acòrdiu cun is cunditziones de servìtziu",
-    "Deleting …" : "Cantzellende ... "
+    "I acknowledge that I have read and agree to the above terms of service" : "Cunfirmu ca apo lèghidu e so de acòrdiu cun is cunditziones de servìtziu"
 },"pluralForm" :"nplurals=2; plural=(n != 1);"
 }

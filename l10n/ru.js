@@ -439,7 +439,7 @@ OC.L10N.register(
     "You have to accept the newest version of the terms of service in order to be able to use this service." : "Чтобы продолжить пользоваться сервисом необходимо принять новые условия использования.",
     "Requires users to accept the terms of service before accessing data." : "Требуется, чтобы пользователи приняли условия предоставления услуг перед доступом к данным.",
     "Requires users to accept the terms of service before accessing data.\nThis product includes GeoLite2 data created by MaxMind, available from [maxmind.com](http://www.maxmind.com)" : "Требуется, чтобы пользователи приняли условия предоставления услуг перед доступом к данным.\nЭтот продукт включает данные GeoLite2, созданные MaxMind, доступные с [maxmind.com] (http://www.maxmind.com)",
-    "Loading …" : "Загрузка…",
+    "Loading …" : "Загрузка …",
     "Ensure that all fields are filled" : "Убедитесь, что все поля заполнены",
     "Terms saved successfully!" : "Текст условий использования успешно сохранен!",
     "All signatories reset!" : "Все согласия сброшены!",
@@ -448,12 +448,10 @@ OC.L10N.register(
     "Show on public shares" : "Показывать в общих ресурсах",
     "Select a region" : "Выберите регион",
     "Select a language" : "Выберите язык",
-    "By using this service …" : "Использованием этого ресурса…",
     "For formatting purposes Markdown is supported." : "Поддерживается форматирование текста с использованием разметки Markdown.",
     "Existing terms of service" : "Существующие условия использования",
     "I acknowledge that I have read and agree to the above terms of service" : "Я подтверждаю, что я прочитал и принял приведённые выше правила использования",
     "Edit language {language} for region {country}" : "Редактировать язык {language} для региона {country}",
-    "Deleting …" : "Удаление…",
     "Delete language {language} for region {country}" : "Удалить язык {language} для региона {country}"
 },
 "nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n%100>=11 && n%100<=14)? 2 : 3);");

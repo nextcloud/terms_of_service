@@ -233,7 +233,6 @@ OC.L10N.register(
     "Swedish" : "Swedia",
     "Turkish" : "Turki",
     "Ukrainian" : "Ukraina",
-    "Terms of service" : "Ketentuan layanan",
-    "Loading …" : "Memuat …"
+    "Terms of service" : "Ketentuan layanan"
 },
 "nplurals=1; plural=0;");

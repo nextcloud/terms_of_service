@@ -24,7 +24,6 @@ OC.L10N.register(
     "Ukrainian" : "යුක්රේන",
     "Vietnamese" : "වියට්නාම",
     "Chinese" : "චීන",
-    "Terms of service" : "සේවා කොන්දේසි",
-    "Loading …" : "පූරණය වෙමින් …"
+    "Terms of service" : "සේවා කොන්දේසි"
 },
 "nplurals=2; plural=(n != 1);");

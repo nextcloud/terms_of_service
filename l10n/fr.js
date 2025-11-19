@@ -439,7 +439,7 @@ OC.L10N.register(
     "You have to accept the newest version of the terms of service in order to be able to use this service." : "Vous devez accepter la nouvelle version des conditions d'utilisation pour pouvoir utiliser ce service.",
     "Requires users to accept the terms of service before accessing data." : "Les utilisateurs doivent accepter les conditions d'utilisation avant d’accéder aux données.",
     "Requires users to accept the terms of service before accessing data.\nThis product includes GeoLite2 data created by MaxMind, available from [maxmind.com](http://www.maxmind.com)" : "Exige que les utilisateurs acceptent les conditions d'utilisation avant d'accéder aux données.\nCe produit inclut les données GeoLite2 créées par MaxMind, disponibles sur[maxmind.com] (http://www.maxmind.com).",
-    "Loading …" : "Chargement …",
+    "Loading …" : "Chargement...",
     "Reset signatories & notify users" : "Réinitialiser les signataires & notifier les utilisateurs",
     "Save terms" : "Enregistrer les conditions",
     "Ensure that all fields are filled" : "Assurez-vous que tous les champs soient complétés",
@@ -451,14 +451,12 @@ OC.L10N.register(
     "Enter or update terms of service below." : "Saisir ou mettre à jour les conditions d'utilisation ci-dessous.",
     "Select a region" : "Sélectionner un pays",
     "Select a language" : "Sélectionner une langue",
-    "By using this service …" : "En utilisant ce service …",
     "For formatting purposes Markdown is supported." : "Pour la mise en forme, le format Markdown est pris en charge.",
     "Saving the terms will update the text but will not send a notification to users. Notifications are only sent if you reset the signatories." : "Enregistrer les conditions mettra à jour le texte mais n'enverra pas de notification aux utilisateurs. Des notifications seront envoyées seulement si vous réinitialisez les signataires.",
     "Existing terms of service" : "Conditions d'utilisation existantes",
     "We recommend resetting the signatories if legal changes were applied. For minor changes like fixing typos or correcting links, it could be left out, as it would otherwise require all users to accept the Terms of Service again." : "Nous recommandons de réinitialiser les signatures si vous appliquez des changements légaux. Pour des changements mineurs comme des corrections typographiques ou de lien, vous pouvez laisser en l'état, sinon cela va demander à tous les utilisateurs d'accepter encore les Conditions générales d'utilisation.",
     "I acknowledge that I have read and agree to the above terms of service" : "Je reconnais avoir lu et accepté les conditions d'utilisation ci-dessus",
     "Edit language {language} for region {country}" : "Modifier la langue {language} pour le pays {country}",
-    "Deleting …" : "Suppression …",
     "Delete language {language} for region {country}" : "Supprimer la langue {language} pour le pays {country}"
 },
 "nplurals=3; plural=(n == 0 || n == 1) ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;");

@@ -439,7 +439,7 @@ OC.L10N.register(
     "You have to accept the newest version of the terms of service in order to be able to use this service." : "Inabidi ukubali toleo jipya zaidi la sheria na masharti ili uweze kutumia huduma hii.",
     "Requires users to accept the terms of service before accessing data." : "Inahitaji watumiaji kukubali sheria na masharti kabla ya kufikia data.",
     "Requires users to accept the terms of service before accessing data.\nThis product includes GeoLite2 data created by MaxMind, available from [maxmind.com](http://www.maxmind.com)" : "Inahitaji watumiaji kukubali sheria na masharti kabla ya kufikia data.\nBidhaa hii inajumuisha data ya GeoLite2 iliyoundwa na MaxMind, inayopatikana kutoka [maxmind.com](http://www.maxmind.com)",
-    "Loading …" : "Inapakia",
+    "Loading …" : "Inapakia  …",
     "Reset signatories & notify users" : "Weka upya waliotia saini na uwaarifu watumiaji",
     "Save terms" : "Hifadhi masharti",
     "Ensure that all fields are filled" : "Hakikisha kuwa sehemu zote zimejazwa",
@@ -451,14 +451,12 @@ OC.L10N.register(
     "Enter or update terms of service below." : "Ingiza au usasishe sheria na masharti hapa chini.",
     "Select a region" : "Chagua eneo",
     "Select a language" : "Chagua lugha",
-    "By using this service …" : "Kwa kutumia huduma hii…",
     "For formatting purposes Markdown is supported." : "Kwa madhumuni ya umbizo Markdown inatumika.",
     "Saving the terms will update the text but will not send a notification to users. Notifications are only sent if you reset the signatories." : "Kuhifadhi sheria na masharti kutasasisha maandishi lakini hakutatuma arifa kwa watumiaji. Arifa hutumwa tu ikiwa utaweka upya waliotia saini.",
     "Existing terms of service" : "Sheria na masharti yaliyopo",
     "We recommend resetting the signatories if legal changes were applied. For minor changes like fixing typos or correcting links, it could be left out, as it would otherwise require all users to accept the Terms of Service again." : "Tunapendekeza kuwaweka upya waliotia saini ikiwa mabadiliko ya kisheria yalitekelezwa. Kwa mabadiliko madogo kama vile kurekebisha makosa ya makosa au kusahihisha viungo, inaweza kuachwa, kwani ingewahitaji watumiaji wote kukubali Sheria na Masharti tena.",
     "I acknowledge that I have read and agree to the above terms of service" : "Ninakubali kwamba nimesoma na kukubaliana na sheria na masharti ya hapo juu",
     "Edit language {language} for region {country}" : "Hariri lugha ya {language} ya eneo {country}",
-    "Deleting …" : "Inafuta...",
     "Delete language {language} for region {country}" : "Futa lugha {language} ya eneo {country}"
 },
 "nplurals=2; plural=(n != 1);");

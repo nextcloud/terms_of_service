@@ -439,7 +439,6 @@ OC.L10N.register(
     "You have to accept the newest version of the terms of service in order to be able to use this service." : "Du må akseptere nyeste versjon av betingelsene for å kunne bruke tjenesten.",
     "Requires users to accept the terms of service before accessing data." : "Krever at brukere aksepterer betingelsene for tjenesten før de får tilgang til data.",
     "Requires users to accept the terms of service before accessing data.\nThis product includes GeoLite2 data created by MaxMind, available from [maxmind.com](http://www.maxmind.com)" : "Krever at brukere aksepterer betingelsene for tjenesten før de får tilgang til data. Produktet inkluderer GeoLite2 data laget av MaxMind, tilgjengelig fra [maxmind.com](http://www.maxmind.com)",
-    "Loading …" : "Laster...",
     "Ensure that all fields are filled" : "Sørg for at alle feltene er fylt ut",
     "Terms saved successfully!" : "Vilkårene er lagret!",
     "All signatories reset!" : "Alle underskrivere tilbakestilt!",
@@ -448,12 +447,10 @@ OC.L10N.register(
     "Show on public shares" : "Vis på offentlige delinger",
     "Select a region" : "Velg region",
     "Select a language" : "Velg språk",
-    "By using this service …" : "Ved å bruke denne tjenesten...",
     "For formatting purposes Markdown is supported." : "For korrekt formatering Makdown er støttet.",
     "Existing terms of service" : "Eksisterende betingelser for tjenesten",
     "I acknowledge that I have read and agree to the above terms of service" : "Jeg bekrefter at jeg har lest og er enig i betingelsene for tjenesten",
     "Edit language {language} for region {country}" : "Rediger språket {language} for regionen {country}",
-    "Deleting …" : "Sletter...",
     "Delete language {language} for region {country}" : "Slett språket {language} for regionen {country}"
 },
 "nplurals=2; plural=(n != 1);");

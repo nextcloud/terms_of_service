@@ -438,7 +438,6 @@ OC.L10N.register(
     "You have to accept the newest version of the terms of service in order to be able to use this service." : "Trebuie să accepți noii termeni de serviciu pentru a putea folosi serviciul.",
     "Requires users to accept the terms of service before accessing data." : "Este necesar ca utilizatorii să accepte termenii servicului ca să poată accesa datele.",
     "Requires users to accept the terms of service before accessing data.\nThis product includes GeoLite2 data created by MaxMind, available from [maxmind.com](http://www.maxmind.com)" : "Este necesar ca utilizatorii să accepte termenii servicului înainte să acceze serviciul.\nAcest produs include date GeoLite2 create de MaxMind, disponibil de la [maxmind.com](http://www.maxmind.com)",
-    "Loading …" : "Se încarcă…",
     "Ensure that all fields are filled" : "Asigurați-vă că toate câmpurile sunt completate",
     "Terms saved successfully!" : "Termeni salvați cu succes!",
     "All signatories reset!" : "Toți semnatarii resetați!",
@@ -447,12 +446,10 @@ OC.L10N.register(
     "Show on public shares" : "Arată pe distribuiri publice",
     "Select a region" : "Selectează o regiune",
     "Select a language" : "Selectează o limbă",
-    "By using this service …" : "Folosind acest serviciu ...",
     "For formatting purposes Markdown is supported." : "În scopuri de formatare, Markdown este suportat. ",
     "Existing terms of service" : "Termenii serviciului curenti",
     "I acknowledge that I have read and agree to the above terms of service" : "Am luat la cunoștință faptul că am citit și sunt de accord cu termenii serviciului de mai sus",
     "Edit language {language} for region {country}" : "Modifică limba {limbă} pentru regiunea {țară}",
-    "Deleting …" : "Se șterge ...",
     "Delete language {language} for region {country}" : "Șterge limba {limbă} pentru regiunea {țară} "
 },
 "nplurals=3; plural=(n==1?0:(((n%100>19)||((n%100==0)&&(n!=0)))?2:1));");

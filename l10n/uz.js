@@ -439,7 +439,6 @@ OC.L10N.register(
     "You have to accept the newest version of the terms of service in order to be able to use this service." : "Ushbu xizmatdan foydalanish uchun xizmat shartlarining eng yangi versiyasini qabul qilishingiz kerak.",
     "Requires users to accept the terms of service before accessing data." : "Ma'lumotlarga kirishdan oldin foydalanuvchilardan xizmat shartlarini qabul qilishlarini talab qiladi.",
     "Requires users to accept the terms of service before accessing data.\nThis product includes GeoLite2 data created by MaxMind, available from [maxmind.com](http://www.maxmind.com)" : "Ma'lumotlarga kirishdan oldin foydalanuvchilardan xizmat shartlarini qabul qilishlarini talab qiladi. Bu mahsulot MaxMind tomonidan yaratilgan GeoLite2 maʼlumotlarini oʻz ichiga oladi, [maxmind.com](http://www.maxmind.com)",
-    "Loading …" : "Yuklanmoqda…",
     "Reset signatories & notify users" : "Imzolovchilarni asl holatiga qaytaring va foydalanuvchilarni xabardor qiling",
     "Save terms" : "Save terms",
     "Ensure that all fields are filled" : "Ensure that all fields are filled",
@@ -451,14 +450,12 @@ OC.L10N.register(
     "Enter or update terms of service below." : "Enter or update terms of service below.",
     "Select a region" : "Hududni tanlang",
     "Select a language" : "Tilni tanlang",
-    "By using this service …" : "Ushbu xizmatdan foydalangan holda…",
     "For formatting purposes Markdown is supported." : "Formatlash uchun Markdown qo'llab-quvvatlanadi.",
     "Saving the terms will update the text but will not send a notification to users. Notifications are only sent if you reset the signatories." : "Shartlarni saqlash matnni yangilaydi, lekin foydalanuvchilarga bildirishnoma yubormaydi. Bildirishnomalar faqat imzolovchilarni qayta o'rnatganingizda yuboriladi.",
     "Existing terms of service" : "Mavjud xizmat ko'rsatish shartlari",
     "We recommend resetting the signatories if legal changes were applied. For minor changes like fixing typos or correcting links, it could be left out, as it would otherwise require all users to accept the Terms of Service again." : "Agar qonuniy o''zgarishlar qo'llanilgan bo'lsa, imzolovchilarni qayta tiklashni tavsiya qilamiz. Xatolarni tuzatish yoki havolalarni tuzatish kabi kichik o'zgarishlar uchun u qoldirilishi mumkin, chunki aks holda bu barcha foydalanuvchilardan Xizmat shartlarini qayta qabul qilishini talab qiladi.",
     "I acknowledge that I have read and agree to the above terms of service" : "Men yuqoridagi xizmat ko‘rsatish shartlarini o‘qib chiqqanimni va roziligimni tan olaman",
     "Edit language {language} for region {country}" : "Tilni tahrirlash{language} mintaqa uchun{country}",
-    "Deleting …" : "Oʻchirilmoqda…",
     "Delete language {language} for region {country}" : "Tilni oʻchirish{language} mintaqa uchun{country}"
 },
 "nplurals=1; plural=0;");

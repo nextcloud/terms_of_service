@@ -254,17 +254,14 @@
     "Terms of service have been modified!" : "Pakalpojuma izmantošanas noteikumi tika izmainīti.",
     "You have to accept the newest version of the terms of service in order to be able to use this service." : "Jums ir jāapstiprina jaunākā lietošanas noteikumu versija, lai izmantot šo pakalpojumu.",
     "Requires users to accept the terms of service before accessing data." : "Pieprasa lietotājiem apstiprināt lietošanas noteikumus pirms datu piekļūšanas.",
-    "Loading …" : "Ielādē…",
     "Terms saved successfully!" : "Noteikumi saglabāti sekmīgi",
     "Require users to accept the terms of service before accessing the service." : "Pieprasa lietotājiem apstiprināt lietošanas noteikumus pirms pakalpojuma piekļūšanas.",
     "Show for logged-in users" : "Rādīt pierakstītiem lietotājiem",
     "Select a region" : "Atlasīt apgabalu",
     "Select a language" : "Atlasīt valodu",
-    "By using this service …" : "Izmantojot šo pakalpojumu ...",
     "Existing terms of service" : "Pastāvošie lietošanas noteikumi",
     "I acknowledge that I have read and agree to the above terms of service" : "Es atzīstu, ka es esmu izlasījis un piekrītu augstāk rakstītajiem Lietošanas noteikumiem.",
     "Edit language {language} for region {country}" : "Labot valodu {language} reģionam {country}",
-    "Deleting …" : "Izdzēš ...",
     "Delete language {language} for region {country}" : "Izdzēst valodu {language} reģionam {country}"
 },"pluralForm" :"nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : 2);"
 }

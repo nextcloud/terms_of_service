@@ -281,9 +281,8 @@ OC.L10N.register(
     "Yoruba" : "Yoruba",
     "Chinese" : "Kinesisk",
     "Terms of service" : "Servicebetingelser",
-    "Loading …" : "Indlæser…",
+    "Loading …" : "Indlæser …",
     "Select a region" : "Vælg en region",
-    "Select a language" : "Vælg et sprog",
-    "Deleting …" : "Sletter…"
+    "Select a language" : "Vælg et sprog"
 },
 "nplurals=2; plural=(n != 1);");

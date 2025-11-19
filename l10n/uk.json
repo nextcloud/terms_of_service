@@ -437,7 +437,6 @@
     "You have to accept the newest version of the terms of service in order to be able to use this service." : "Вам потрібно прийняти оновлену версії умови користування послугами, щоби ви могли подалі користуватися цим сервісом.",
     "Requires users to accept the terms of service before accessing data." : "Вимагає, щоби користувачі прийняли умови користування перед тим, як отримати доступ до даних.",
     "Requires users to accept the terms of service before accessing data.\nThis product includes GeoLite2 data created by MaxMind, available from [maxmind.com](http://www.maxmind.com)" : "Вимагає, щоби користувачі прийняли умови користування перед тим, як отримати доступ до даних.\nЦей продукт використовує дані GeoLite2, які було створено MaxMind, доступні на [maxmind.com] (http://www.maxmind.com)",
-    "Loading …" : "Завантаження...",
     "Reset signatories & notify users" : "Скиньте підписників та повідомте користувачів",
     "Save terms" : "Зберегти умови",
     "Ensure that all fields are filled" : "Переконайтеся, що всі поля заповнено",
@@ -449,14 +448,12 @@
     "Enter or update terms of service below." : "Введіть або оновіть умови надання послуг нижче.",
     "Select a region" : "Виберіть регіон",
     "Select a language" : "Виберіть мову",
-    "By using this service …" : "Використання цього сервісу ...",
     "For formatting purposes Markdown is supported." : "Текстове форматування підтримується",
     "Saving the terms will update the text but will not send a notification to users. Notifications are only sent if you reset the signatories." : "Збереження умов оновить текст, але не надішле повідомлення користувачам. Повідомлення надсилаються лише у випадку, якщо ви скинете підписантів.",
     "Existing terms of service" : "Умови користування послугами",
     "We recommend resetting the signatories if legal changes were applied. For minor changes like fixing typos or correcting links, it could be left out, as it would otherwise require all users to accept the Terms of Service again." : "Ми рекомендуємо перезавантажити підписи, якщо були внесені зміни до законодавства. У разі незначних змін, таких як виправлення помилок або посилань, цього можна не робити, оскільки в іншому випадку всім користувачам доведеться знову погоджуватися з Умовами надання послуг.",
     "I acknowledge that I have read and agree to the above terms of service" : "Я визнаю, що я прочитав та приймаю вище зазначені умови користування послугами",
     "Edit language {language} for region {country}" : "Редагувати мову {language} для регіону {country}",
-    "Deleting …" : "Вилучення ...",
     "Delete language {language} for region {country}" : "Вилучити мову {language} для регіону {country}"
 },"pluralForm" :"nplurals=4; plural=(n % 1 == 0 && n % 10 == 1 && n % 100 != 11 ? 0 : n % 1 == 0 && n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 12 || n % 100 > 14) ? 1 : n % 1 == 0 && (n % 10 ==0 || (n % 10 >=5 && n % 10 <=9) || (n % 100 >=11 && n % 100 <=14 )) ? 2: 3);"
 }

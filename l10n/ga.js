@@ -439,7 +439,7 @@ OC.L10N.register(
     "You have to accept the newest version of the terms of service in order to be able to use this service." : "Caithfidh tú glacadh leis an leagan is nuaí de na téarmaí seirbhíse le bheith in ann an tseirbhís seo a úsáid.",
     "Requires users to accept the terms of service before accessing data." : "Éilíonn sé ar úsáideoirí glacadh leis na téarmaí seirbhíse roimh rochtain a fháil ar shonraí.",
     "Requires users to accept the terms of service before accessing data.\nThis product includes GeoLite2 data created by MaxMind, available from [maxmind.com](http://www.maxmind.com)" : "Éilíonn sé ar úsáideoirí glacadh leis na téarmaí seirbhíse roimh rochtain a fháil ar shonraí.\nÁiríonn an táirge seo sonraí GeoLite2 cruthaithe ag MaxMind, ar fáil ó [maxmind.com] (http://www.maxmind.com)",
-    "Loading …" : "Á lódáil…",
+    "Loading …" : "Ag luchtú …",
     "Reset signatories & notify users" : "Athshocraigh sínitheoirí & cuir úsáideoirí ar an eolas",
     "Save terms" : "Sábháil téarmaí",
     "Ensure that all fields are filled" : "Cinntigh go bhfuil gach réimse líonta",
@@ -451,14 +451,12 @@ OC.L10N.register(
     "Enter or update terms of service below." : "Cuir isteach nó nuashonraigh téarmaí seirbhíse thíos.",
     "Select a region" : "Roghnaigh réigiún",
     "Select a language" : "Roghnaigh teanga",
-    "By using this service …" : "Trí úsáid a bhaint as an tseirbhís seo…",
     "For formatting purposes Markdown is supported." : "Chun críocha formáidithe tacaítear le Markdown.",
     "Saving the terms will update the text but will not send a notification to users. Notifications are only sent if you reset the signatories." : "Má shábhálann tú na téarmaí, déanfar an téacs a nuashonrú ach ní sheolfar fógra chuig úsáideoirí. Ní sheoltar fógraí ach amháin má athshocraíonn tú na sínitheoirí.",
     "Existing terms of service" : "Téarmaí seirbhíse atá ann cheana",
     "We recommend resetting the signatories if legal changes were applied. For minor changes like fixing typos or correcting links, it could be left out, as it would otherwise require all users to accept the Terms of Service again." : "Molaimid na sínitheoirí a athshocrú dá gcuirfí athruithe dlíthiúla i bhfeidhm. I gcás mionathruithe ar nós typos a shocrú nó naisc a cheartú, d’fhéadfaí é a fhágáil amach, mar go n-éileodh sé ar gach úsáideoir glacadh leis na Téarmaí Seirbhíse arís.",
     "I acknowledge that I have read and agree to the above terms of service" : "Admhaím go bhfuil na téarmaí seirbhíse thuas léite agam agus go n-aontaím leo",
     "Edit language {language} for region {country}" : "Cuir teanga {language} in eagar do réigiún {country}",
-    "Deleting …" : "Ag scriosadh…",
     "Delete language {language} for region {country}" : "Scrios teanga {language} do réigiún {country}"
 },
 "nplurals=5; plural=(n==1 ? 0 : n==2 ? 1 : n<7 ? 2 : n<11 ? 3 : 4);");
