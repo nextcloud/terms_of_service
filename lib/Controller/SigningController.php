@@ -30,13 +30,13 @@ use OCP\Notification\IManager;
 class SigningController extends OCSController {
 	public function __construct(
 		string $appName,
-		private ?string $userId,
+		private readonly ?string $userId,
 		IRequest $request,
-		private SignatoryMapper $signatoryMapper,
-		private IManager $notificationsManager,
-		private IAppConfig $appConfig,
-		private ISession $session,
-		private IEventDispatcher $eventDispatcher,
+		private readonly SignatoryMapper $signatoryMapper,
+		private readonly IManager $notificationsManager,
+		private readonly IAppConfig $appConfig,
+		private readonly ISession $session,
+		private readonly IEventDispatcher $eventDispatcher,
 		protected IJobList $jobList,
 	) {
 		parent::__construct($appName, $request);

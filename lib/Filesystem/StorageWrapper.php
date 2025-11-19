@@ -13,7 +13,7 @@ use OCP\Files\ForbiddenException;
 
 class StorageWrapper extends Wrapper {
 	public string $mountPoint;
-	private Helper $helper;
+	private readonly Helper $helper;
 
 	public function __construct($parameters) {
 		parent::__construct($parameters);
@@ -82,6 +82,6 @@ class StorageWrapper extends Wrapper {
 			$storage = $this;
 		}
 		$cache = $this->storage->getCache($path, $storage);
-		return new CacheWrapper($cache, $storage, $this->helper);
+		return new CacheWrapper($cache, $this->helper);
 	}
 }

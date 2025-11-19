@@ -1,10 +1,11 @@
 <?php
 
+declare(strict_types=1);
+
 /**
  * SPDX-FileCopyrightText: 2023 Nextcloud GmbH and Nextcloud contributors
  * SPDX-License-Identifier: AGPL-3.0-or-later
  */
-
 namespace OCA\TermsOfService\Tests;
 
 use OCA\TermsOfService\Command\DeleteTermsCommand;
@@ -23,7 +24,7 @@ use Symfony\Component\Console\Output\ConsoleOutput;
 /**
  * @group Command
  */
-class DeleteTermsCommandTest extends TestCase {
+final class DeleteTermsCommandTest extends TestCase {
 
 	protected CountryMapper&MockObject $countryMapper;
 	protected TermsMapper&MockObject $termsMapper;
@@ -83,7 +84,7 @@ class DeleteTermsCommandTest extends TestCase {
 			->with($terms);
 
 		$result = $this->command->run($this->inputInterface, $this->outputInterface);
-		$this->assertSame($result, Command::SUCCESS);
+		$this->assertSame(Command::SUCCESS, $result);
 	}
 
 	public function testFallsBackToGlobalCountry(): void {
@@ -120,7 +121,7 @@ class DeleteTermsCommandTest extends TestCase {
 			->with($terms);
 
 		$result = $this->command->run($this->inputInterface, $this->outputInterface);
-		$this->assertSame($result, Command::SUCCESS);
+		$this->assertSame(Command::SUCCESS, $result);
 	}
 
 	public function testRejectsInvalidCountry(): void {
@@ -152,7 +153,7 @@ class DeleteTermsCommandTest extends TestCase {
 			->method('deleteTerm');
 
 		$result = $this->command->run($this->inputInterface, $this->outputInterface);
-		$this->assertSame($result, Command::FAILURE);
+		$this->assertSame(Command::FAILURE, $result);
 	}
 
 	public function testRejectsInvalidLanguage(): void {
@@ -184,7 +185,7 @@ class DeleteTermsCommandTest extends TestCase {
 			->method('deleteTerm');
 
 		$result = $this->command->run($this->inputInterface, $this->outputInterface);
-		$this->assertSame($result, Command::FAILURE);
+		$this->assertSame(Command::FAILURE, $result);
 	}
 
 	public function testFailsForNonExistingTerms(): void {
@@ -217,6 +218,6 @@ class DeleteTermsCommandTest extends TestCase {
 			->method('deleteTerm');
 
 		$result = $this->command->run($this->inputInterface, $this->outputInterface);
-		$this->assertSame($result, Command::FAILURE);
+		$this->assertSame(Command::FAILURE, $result);
 	}
 }

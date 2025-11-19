@@ -16,8 +16,8 @@ use OCA\TermsOfService\Checker;
 
 class Helper {
 	public function __construct(
-		private Checker $checker,
-		private string $mountPoint,
+		private readonly Checker $checker,
+		private readonly string $mountPoint,
 	) {
 	}
 

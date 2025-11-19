@@ -13,8 +13,8 @@ use OCP\IRequest;
 
 class CountryDetector {
 	public function __construct(
-		private IRequest $request,
-		private CountryMapper $countryMapper,
+		private readonly IRequest $request,
+		private readonly CountryMapper $countryMapper,
 	) {
 	}
 
