@@ -14,6 +14,4 @@ use OCP\EventDispatcher\Event;
  * @package OCA\Terms_Of_Service\Events
  */
 class SignaturesResetEvent extends Event {
-	public function __construct() {
-	}
 }

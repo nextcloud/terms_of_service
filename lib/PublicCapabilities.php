@@ -14,7 +14,7 @@ use OCP\Capabilities\IPublicCapability;
 
 class PublicCapabilities implements IPublicCapability {
 	public function __construct(
-		private IAppConfig $config,
+		private readonly IAppConfig $config,
 	) {
 	}
 

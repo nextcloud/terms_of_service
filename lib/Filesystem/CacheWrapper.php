@@ -17,7 +17,7 @@ class CacheWrapper extends Wrapper {
 	public function __construct(
 		ICache $cache,
 		protected IStorage $storage,
-		private Helper $helper,
+		private readonly Helper $helper,
 	) {
 		parent::__construct($cache);
 
@@ -33,7 +33,7 @@ class CacheWrapper extends Wrapper {
 	public const PERMISSION_UPDATE = 2;
 	public const PERMISSION_DELETE = 8;
 
-	protected function formatCacheEntry($entry) {
+	protected function formatCacheEntry(array $entry): array {
 		if (isset($entry['path'], $entry['permissions'])
 			&& !$this->helper->verifyAccess($entry['path'])) {
 			$entry['permissions'] &= $this->mask;

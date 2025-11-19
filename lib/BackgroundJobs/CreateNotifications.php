@@ -63,7 +63,7 @@ class CreateNotifications extends QueuedJob {
 
 		$this->notificationsManager->defer();
 		$this->currentBatch = 0;
-		$this->userManager->callForSeenUsers(\Closure::fromCallable([$this, 'callForSeenUsers']));
+		$this->userManager->callForSeenUsers($this->callForSeenUsers(...));
 		$this->notificationsManager->flush();
 	}
 

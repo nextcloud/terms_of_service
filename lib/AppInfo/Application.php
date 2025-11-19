@@ -73,9 +73,9 @@ class Application extends App implements IBootstrap {
 			}
 		});
 
-		$context->injectFn([$this, 'registerNotifier']);
-		$context->injectFn([$this, 'createNotificationOnFirstLogin']);
-		$context->injectFn([$this, 'registerFrontend']);
+		$context->injectFn($this->registerNotifier(...));
+		$context->injectFn($this->createNotificationOnFirstLogin(...));
+		$context->injectFn($this->registerFrontend(...));
 	}
 
 	public function registerFrontend(IRequest $request, IAppConfig $appConfig, IUserSession $userSession): void {
@@ -123,7 +123,7 @@ class Application extends App implements IBootstrap {
 
 	public function addStorageWrapper(): void {
 		Filesystem::addStorageWrapper(
-			'terms_of_service', [$this, 'addStorageWrapperCallback'], -10
+			'terms_of_service', $this->addStorageWrapperCallback(...), -10
 		);
 	}
 
@@ -139,12 +139,12 @@ class Application extends App implements IBootstrap {
 					[
 						'storage' => $storage,
 						'mountPoint' => $mountPoint,
-						'request' => \OC::$server->get(IRequest::class),
-						'checker' => \OC::$server->get(Checker::class),
+						'request' => \OCP\Server::get(IRequest::class),
+						'checker' => \OCP\Server::get(Checker::class),
 					]
 				);
 			} catch (ContainerExceptionInterface $e) {
-				\OC::$server->get(LoggerInterface::class)->error(
+				\OCP\Server::get(LoggerInterface::class)->error(
 					$e->getMessage(),
 					['exception' => $e]
 				);

@@ -11,6 +11,7 @@ namespace OCA\TermsOfService\Tests;
 use OCA\TermsOfService\CountryDetector;
 use OCA\TermsOfService\Db\Mapper\CountryMapper;
 use OCP\IRequest;
+use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\MockObject\MockObject;
 
 /**
@@ -31,26 +32,15 @@ class CountryDetectorTest extends \Test\TestCase {
 		);
 	}
 
-	public function dataGetCountry(): array {
-		return [
-			'Local'
-				=> ['127.0.0.1', null, null, '--'],
-			'No country only continent'
-				=> ['138.199.26.4', null, null, '--'],
-			'India'
-				=> ['103.232.172.42', 'IN', true, 'IN'],
-			'Germany'
-				=> ['109.250.68.153', 'DE', true, 'DE'],
-			'France'
-				=> ['88.187.212.139', 'FR', true, 'FR'],
-		];
+	public static function dataGetCountry(): \Generator {
+		yield 'Local' => ['127.0.0.1', null, null, '--'];
+		yield 'No country only continent' => ['138.199.26.4', null, null, '--'];
+		yield 'India' => ['103.232.172.42', 'IN', true, 'IN'];
+		yield 'Germany' => ['109.250.68.153', 'DE', true, 'DE'];
+		yield 'France' => ['88.187.212.139', 'FR', true, 'FR'];
 	}
 
-	/**
-	 * @dataProvider dataGetCountry
-	 * @param string $iso
-	 * @param bool $valid
-	 */
+	#[DataProvider('dataGetCountry')]
 	public function testGetCountry(string $ip, ?string $iso, ?bool $valid, string $expected): void {
 		$this->request->method('getRemoteAddress')
 			->willReturn($ip);

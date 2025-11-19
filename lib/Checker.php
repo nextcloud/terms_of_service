@@ -22,16 +22,16 @@ class Checker {
 	private array $termsCache = [];
 
 	public function __construct(
-		private IRequest $request,
-		private IUserSession $userSession,
-		private ISession $session,
-		private SignatoryMapper $signatoryMapper,
-		private TermsMapper $termsMapper,
-		private CountryDetector $countryDetector,
-		private IAppConfig $appConfig,
-		private \OCP\IAppConfig $globalAppConfig,
-		private LoggerInterface $logger,
-		private IURLGenerator $url,
+		private readonly IRequest $request,
+		private readonly IUserSession $userSession,
+		private readonly ISession $session,
+		private readonly SignatoryMapper $signatoryMapper,
+		private readonly TermsMapper $termsMapper,
+		private readonly CountryDetector $countryDetector,
+		private readonly IAppConfig $appConfig,
+		private readonly \OCP\IAppConfig $globalAppConfig,
+		private readonly LoggerInterface $logger,
+		private readonly IURLGenerator $url,
 	) {
 	}
 

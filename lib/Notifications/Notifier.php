@@ -17,10 +17,10 @@ use Override;
 class Notifier implements INotifier {
 
 	public function __construct(
-		private IFactory $l10nFactory,
-		private IURLGenerator $url,
-		private IManager $notificationManager,
-		private \OCA\TermsOfService\Checker $checker,
+		private readonly IFactory $l10nFactory,
+		private readonly IURLGenerator $url,
+		private readonly IManager $notificationManager,
+		private readonly \OCA\TermsOfService\Checker $checker,
 	) {
 	}
 

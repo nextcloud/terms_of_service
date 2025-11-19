@@ -13,7 +13,7 @@ use OCP\Files\ForbiddenException;
 
 class StorageWrapper extends Wrapper {
 	public string $mountPoint;
-	private Helper $helper;
+	private readonly Helper $helper;
 
 	public function __construct($parameters) {
 		parent::__construct($parameters);
