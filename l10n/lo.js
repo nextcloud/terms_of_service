@@ -1,6 +1,7 @@
 OC.L10N.register(
     "terms_of_service",
     {
+    "Global" : "Global",
     "Afghanistan" : "ອັຟການິສຖານ",
     "Åland Islands" : "ໝູ່ເກາະໂອລັນ",
     "Albania" : "ອານບານີ",
@@ -245,6 +246,8 @@ OC.L10N.register(
     "Yemen" : "ເຢເມນ",
     "Zambia" : "ແຊມເບຍ",
     "Zimbabwe" : "ຊິມບັບເວ",
-    "Terms of service" : "ເງື່ອນໄຂການໃຫ້ບໍລິການ"
+    "Terms of service" : "ເງື່ອນໄຂການໃຫ້ບໍລິການ",
+    "Loading …" : "Loading …",
+    "Select a region" : "Select a region"
 },
 "nplurals=1; plural=0;");

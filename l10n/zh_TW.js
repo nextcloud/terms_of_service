@@ -451,12 +451,14 @@ OC.L10N.register(
     "Enter or update terms of service below." : "在下方輸入或更新服務條款。",
     "Select a region" : "選取區域",
     "Select a language" : "選取語言",
+    "By using this service …" : "使用此服務……",
     "For formatting purposes Markdown is supported." : "出於格式化目的，支持Markdown。",
     "Saving the terms will update the text but will not send a notification to users. Notifications are only sent if you reset the signatories." : "儲存條款會更新文字，但不會傳送通知給使用者。僅當您重設簽署者時才會傳送通知。",
     "Existing terms of service" : "目前的服務條款",
     "We recommend resetting the signatories if legal changes were applied. For minor changes like fixing typos or correcting links, it could be left out, as it would otherwise require all users to accept the Terms of Service again." : "若套用了法律變更，我們建議重設簽署者。對於修正錯字或更正連結等小變更，可以不做，否則會要求所有使用者重新接受服務條款。",
     "I acknowledge that I have read and agree to the above terms of service" : "我確定我已經閱讀並同意以上的服務條款",
     "Edit language {language} for region {country}" : "編輯區域 {country} 的語言 {language}",
+    "Deleting …" : "正在刪除……",
     "Delete language {language} for region {country}" : "刪除區域 {country} 的語言 {language}"
 },
 "nplurals=1; plural=0;");

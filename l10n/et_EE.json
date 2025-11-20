@@ -449,12 +449,14 @@
     "Enter or update terms of service below." : "Sisesta või uuenda järgnevaid kasutustingimusi",
     "Select a region" : "Vali maa või piirkond",
     "Select a language" : "Vali keel",
+    "By using this service …" : "Selle teenuse kasutamisel…",
     "For formatting purposes Markdown is supported." : "Vorminduse huvides on ka markdown-vorming toetatud",
     "Saving the terms will update the text but will not send a notification to users. Notifications are only sent if you reset the signatories." : "Kasutustingimuste salvestamisel nad saavad uuendatud, aga kasutajad ei saa vastavat teavitust, mis saadetakse vaid siis, kui sa kõik allkirjad nullid.",
     "Existing terms of service" : "Olemasolevad kasutustingimused",
     "We recommend resetting the signatories if legal changes were applied. For minor changes like fixing typos or correcting links, it could be left out, as it would otherwise require all users to accept the Terms of Service again." : "Peale juriidiliste tingimuste muutmist soovitame me kõikide seniantud allkirjade nullimist. Pisimuudatuste puhul, nagu trükivigade parandamine ja linkide uuendamine, võid selle sammu tegemata jätta. Vastasel juhul peavad kasutajad ka nende pisimuudatustega eraldi nõustuma.",
     "I acknowledge that I have read and agree to the above terms of service" : "Kinnitan, et olen kasutustingimusi lugenud ja neist aru saanud",
     "Edit language {language} for region {country}" : "Muuda „{language}“ keelt „{country}“ maa jaoks",
+    "Deleting …" : "Kustutan…",
     "Delete language {language} for region {country}" : "Kustuta „{language}“ keel {country} maa jaoks"
 },"pluralForm" :"nplurals=2; plural=(n != 1);"
 }

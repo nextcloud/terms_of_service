@@ -455,6 +455,7 @@
     "We recommend resetting the signatories if legal changes were applied. For minor changes like fixing typos or correcting links, it could be left out, as it would otherwise require all users to accept the Terms of Service again." : "Recomendamos redefinir os signatários se forem aplicadas alterações legais. Para alterações menores, como correção de erros de digitação ou correção de links, isso pode ser ignorado, pois exigiria que todos os usuários aceitassem os Termos de Serviço novamente.",
     "I acknowledge that I have read and agree to the above terms of service" : "Eu confirmo que li e concordo com os termos de serviço acima",
     "Edit language {language} for region {country}" : "Editar idioma {language} para região {country}",
+    "Deleting …" : "Excluindo …",
     "Delete language {language} for region {country}" : "Excluir idioma {language} para região {country}"
 },"pluralForm" :"nplurals=3; plural=(n == 0 || n == 1) ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;"
 }

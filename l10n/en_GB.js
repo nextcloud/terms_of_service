@@ -451,12 +451,14 @@ OC.L10N.register(
     "Enter or update terms of service below." : "Enter or update terms of service below.",
     "Select a region" : "Select a region",
     "Select a language" : "Select a language",
+    "By using this service …" : "By using this service …",
     "For formatting purposes Markdown is supported." : "For formatting purposes Markdown is supported.",
     "Saving the terms will update the text but will not send a notification to users. Notifications are only sent if you reset the signatories." : "Saving the terms will update the text but will not send a notification to users. Notifications are only sent if you reset the signatories.",
     "Existing terms of service" : "Existing terms of service",
     "We recommend resetting the signatories if legal changes were applied. For minor changes like fixing typos or correcting links, it could be left out, as it would otherwise require all users to accept the Terms of Service again." : "We recommend resetting the signatories if legal changes were applied. For minor changes like fixing typos or correcting links, it could be left out, as it would otherwise require all users to accept the Terms of Service again.",
     "I acknowledge that I have read and agree to the above terms of service" : "I acknowledge that I have read and agree to the above terms of service",
     "Edit language {language} for region {country}" : "Edit language {language} for region {country}",
+    "Deleting …" : "Deleting …",
     "Delete language {language} for region {country}" : "Delete language {language} for region {country}"
 },
 "nplurals=2; plural=(n != 1);");
