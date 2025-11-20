@@ -27,10 +27,10 @@ use OCP\Util;
 class RegistrationIntegration implements IEventListener {
 
 	public function __construct(
-		private SignatoryMapper $signatoryMapper,
-		private TermsMapper $termsMapper,
-		private CountryDetector $countryDetector,
-		private IRequest $request,
+		private readonly SignatoryMapper $signatoryMapper,
+		private readonly TermsMapper $termsMapper,
+		private readonly CountryDetector $countryDetector,
+		private readonly IRequest $request,
 	) {
 	}
 

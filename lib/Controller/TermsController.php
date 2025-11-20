@@ -36,14 +36,14 @@ class TermsController extends OCSController {
 	public function __construct(
 		string $appName,
 		IRequest $request,
-		private TermsMapper $termsMapper,
-		private SignatoryMapper $signatoryMapper,
-		private CountryMapper $countryMapper,
-		private LanguageMapper $languageMapper,
-		private CountryDetector $countryDetector,
-		private Checker $checker,
-		private IAppConfig $appConfig,
-		private IEventDispatcher $eventDispatcher,
+		private readonly TermsMapper $termsMapper,
+		private readonly SignatoryMapper $signatoryMapper,
+		private readonly CountryMapper $countryMapper,
+		private readonly LanguageMapper $languageMapper,
+		private readonly CountryDetector $countryDetector,
+		private readonly Checker $checker,
+		private readonly IAppConfig $appConfig,
+		private readonly IEventDispatcher $eventDispatcher,
 		protected IJobList $jobList,
 	) {
 		parent::__construct($appName, $request);

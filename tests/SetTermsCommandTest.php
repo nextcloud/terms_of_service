@@ -1,10 +1,11 @@
 <?php
 
+declare(strict_types=1);
+
 /**
  * SPDX-FileCopyrightText: 2023 Nextcloud GmbH and Nextcloud contributors
  * SPDX-License-Identifier: AGPL-3.0-or-later
  */
-
 namespace OCA\TermsOfService\Tests;
 
 use OCA\TermsOfService\Command\SetTermsCommand;
@@ -22,7 +23,7 @@ use Symfony\Component\Console\Output\ConsoleOutput;
 /**
  * @group Command
  */
-class SetTermsCommandTest extends TestCase {
+final class SetTermsCommandTest extends TestCase {
 
 	protected CountryMapper&MockObject $countryMapper;
 	protected TermsMapper&MockObject $termsMapper;
@@ -77,7 +78,7 @@ class SetTermsCommandTest extends TestCase {
 			->with($terms);
 
 		$result = $this->command->run($this->inputInterface, $this->outputInterface);
-		$this->assertSame($result, Command::SUCCESS);
+		$this->assertSame(Command::SUCCESS, $result);
 	}
 
 	public function testCreatesNewTerms(): void {
@@ -111,7 +112,7 @@ class SetTermsCommandTest extends TestCase {
 			->method('insert');
 
 		$result = $this->command->run($this->inputInterface, $this->outputInterface);
-		$this->assertSame($result, Command::SUCCESS);
+		$this->assertSame(Command::SUCCESS, $result);
 	}
 
 	public function testFallsBackToGlobalCountry(): void {
@@ -146,7 +147,7 @@ class SetTermsCommandTest extends TestCase {
 			->with($terms);
 
 		$result = $this->command->run($this->inputInterface, $this->outputInterface);
-		$this->assertSame($result, Command::SUCCESS);
+		$this->assertSame(Command::SUCCESS, $result);
 	}
 
 	public function testRejectsInvalidCountry(): void {
@@ -173,7 +174,7 @@ class SetTermsCommandTest extends TestCase {
 			->with('invalid', 'en');
 
 		$result = $this->command->run($this->inputInterface, $this->outputInterface);
-		$this->assertSame($result, Command::FAILURE);
+		$this->assertSame(Command::FAILURE, $result);
 	}
 
 	public function testRejectsInvalidLanguage(): void {
@@ -200,7 +201,7 @@ class SetTermsCommandTest extends TestCase {
 			->with('us', 'invalid');
 
 		$result = $this->command->run($this->inputInterface, $this->outputInterface);
-		$this->assertSame($result, Command::FAILURE);
+		$this->assertSame(Command::FAILURE, $result);
 	}
 
 	public function testRejectsInvalidBody(): void {
@@ -227,6 +228,6 @@ class SetTermsCommandTest extends TestCase {
 			->with('us', 'en');
 
 		$result = $this->command->run($this->inputInterface, $this->outputInterface);
-		$this->assertSame($result, Command::FAILURE);
+		$this->assertSame(Command::FAILURE, $result);
 	}
 }
