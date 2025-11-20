@@ -451,12 +451,14 @@ OC.L10N.register(
     "Enter or update terms of service below." : "Die Nutzungsbedingungen unten eingeben oder aktualisieren.",
     "Select a region" : "Eine Region auswählen",
     "Select a language" : "Eine Sprache auswählen",
+    "By using this service …" : "Durch die Nutzung dieses Dienstes …",
     "For formatting purposes Markdown is supported." : "Zur Formatierung kann Markdown verwendet werden.",
     "Saving the terms will update the text but will not send a notification to users. Notifications are only sent if you reset the signatories." : "Durch das Speichern der Bedingungen wird der Text aktualisiert, es wird jedoch keine Benachrichtigung an die Benutzer gesendet. Benachrichtigungen werden nur gesendet, wenn Sie die Unterzeichner zurücksetzen.",
     "Existing terms of service" : "Bestehende Nutzungsbedingungen",
     "We recommend resetting the signatories if legal changes were applied. For minor changes like fixing typos or correcting links, it could be left out, as it would otherwise require all users to accept the Terms of Service again." : "Es empfielt sich, die Liste derjenigen die zugestimmt haben zurückzusetzen, wenn rechtliche Änderungen vorgenommen wurden. Bei kleineren Änderungen wie der Korrektur von Tippfehlern oder Links kann dies weggelassen werden, da sonst alle Benutzer die Nutzungsbedingungen erneut akzeptieren müssen.",
     "I acknowledge that I have read and agree to the above terms of service" : "Ich bestätige, dass ich die obenstehenden Nutzungsbedingungen gelesen habe und ihnen zustimme.",
     "Edit language {language} for region {country}" : "Sprache {language} für das Land {country} bearbeiten",
+    "Deleting …" : "Lösche …",
     "Delete language {language} for region {country}" : "Sprache {language} für das Land {country} löschen"
 },
 "nplurals=2; plural=(n != 1);");

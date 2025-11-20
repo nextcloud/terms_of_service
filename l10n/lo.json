@@ -1,4 +1,5 @@
 { "translations": {
+    "Global" : "Global",
     "Afghanistan" : "ອັຟການິສຖານ",
     "Åland Islands" : "ໝູ່ເກາະໂອລັນ",
     "Albania" : "ອານບານີ",
@@ -243,6 +244,8 @@
     "Yemen" : "ເຢເມນ",
     "Zambia" : "ແຊມເບຍ",
     "Zimbabwe" : "ຊິມບັບເວ",
-    "Terms of service" : "ເງື່ອນໄຂການໃຫ້ບໍລິການ"
+    "Terms of service" : "ເງື່ອນໄຂການໃຫ້ບໍລິການ",
+    "Loading …" : "Loading …",
+    "Select a region" : "Select a region"
 },"pluralForm" :"nplurals=1; plural=0;"
 }
