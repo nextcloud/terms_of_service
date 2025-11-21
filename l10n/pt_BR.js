@@ -451,6 +451,7 @@ OC.L10N.register(
     "Enter or update terms of service below." : "Insira ou atualize os termos de serviço abaixo.",
     "Select a region" : "Selecione uma região",
     "Select a language" : "Selecione um idioma",
+    "By using this service …" : "Ao usar este serviço …",
     "For formatting purposes Markdown is supported." : "Para fins de formatação, o Markdown é suportado.",
     "Saving the terms will update the text but will not send a notification to users. Notifications are only sent if you reset the signatories." : "Salvar os termos atualizará o texto, mas não enviará uma notificação aos usuários. As notificações só serão enviadas se você redefinir os signatários.",
     "Existing terms of service" : "Termos de serviço existentes",
