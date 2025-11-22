@@ -20,7 +20,7 @@
 	},
 	"require": {
 		"erusev/parsedown": "^1.6",
-		"geoip2/geoip2": "~2.0"
+		"geoip2/geoip2": "~3.3"
 	},
 	"require-dev": {
 		"bamarni/composer-bin-plugin": "^1.8",
