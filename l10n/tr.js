@@ -451,12 +451,14 @@ OC.L10N.register(
     "Enter or update terms of service below." : "Aşağıdan hizmet koşullarını yazın veya güncelleyin.",
     "Select a region" : "Bir bölge seçin",
     "Select a language" : "Bir dil seçin",
+    "By using this service …" : "Bu hizmeti kullanarak…",
     "For formatting purposes Markdown is supported." : "Biçimlendirme amacıyla markdown kullanılabilir.",
     "Saving the terms will update the text but will not send a notification to users. Notifications are only sent if you reset the signatories." : "Koşullar kaydedildiğinde yazı güncellenir ancak kullanıcılara bildirim gönderilmez. Bildirimler yalnızca imzalayanlar sıfırlanırsa gönderilir.",
     "Existing terms of service" : "Var olan hizmet koşulları",
     "We recommend resetting the signatories if legal changes were applied. For minor changes like fixing typos or correcting links, it could be left out, as it would otherwise require all users to accept the Terms of Service again." : "Yasal değişiklikler uygulanırsa imzalayanları sıfırlamanızı öneririz. Yazım hatalarını düzeltmek veya bağlantıları düzeltmek gibi küçük değişiklikler için bu işlem yapılmayabilir. Yoksa tüm kullanıcıların hizmet koşulları yazısını yeniden kabul etmesi gerekir.",
     "I acknowledge that I have read and agree to the above terms of service" : "Yukarıdaki hizmet koşulları yazısını okudum ve anladım",
     "Edit language {language} for region {country}" : "{country} bölgesi için {language} dilini düzenle",
+    "Deleting …" : "Siliniyor…",
     "Delete language {language} for region {country}" : "{country} bölgesi için {language} dilini sil"
 },
 "nplurals=2; plural=(n > 1);");
