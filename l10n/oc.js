@@ -286,6 +286,7 @@ OC.L10N.register(
     "Ukrainian" : "Urcraïnian",
     "Vietnamese" : "Vietnamian",
     "Chinese" : "Chinés",
+    "Loading …" : "Cargament …",
     "Select a region" : "Seleccionar una region",
     "Select a language" : "Causir una lenga"
 },
