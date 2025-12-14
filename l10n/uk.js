@@ -439,6 +439,7 @@ OC.L10N.register(
     "You have to accept the newest version of the terms of service in order to be able to use this service." : "Вам потрібно прийняти оновлену версії умови користування послугами, щоби ви могли подалі користуватися цим сервісом.",
     "Requires users to accept the terms of service before accessing data." : "Вимагає, щоби користувачі прийняли умови користування перед тим, як отримати доступ до даних.",
     "Requires users to accept the terms of service before accessing data.\nThis product includes GeoLite2 data created by MaxMind, available from [maxmind.com](http://www.maxmind.com)" : "Вимагає, щоби користувачі прийняли умови користування перед тим, як отримати доступ до даних.\nЦей продукт використовує дані GeoLite2, які було створено MaxMind, доступні на [maxmind.com] (http://www.maxmind.com)",
+    "Loading …" : "Завантаження …",
     "Reset signatories & notify users" : "Скиньте підписників та повідомте користувачів",
     "Save terms" : "Зберегти умови",
     "Ensure that all fields are filled" : "Переконайтеся, що всі поля заповнено",
