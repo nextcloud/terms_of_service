@@ -181,7 +181,10 @@ namespace OC\Files\Storage\Wrapper{
 		public function __call($method, $args) {
 		}
 
-		public function getDirectDownload($path): array|false {
+		public function getDirectDownload(string $path): array|false {
+		}
+
+		public function getDirectDownloadById(string $fileId): array|false {
 		}
 
 		public function getAvailability(): array {
