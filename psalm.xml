@@ -50,5 +50,6 @@
 	<stubs>
 		<file name="tests/stubs/filesystem.php"/>
 		<file name="tests/stubs/registration.php"/>
+		<file name="tests/stubs/oca_dav_events_sabrepluginaddevent.php"/>
 	</stubs>
 </psalm>
