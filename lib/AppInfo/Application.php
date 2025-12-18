@@ -9,6 +9,7 @@ namespace OCA\TermsOfService\AppInfo;
 
 use Exception;
 use OC\Files\Filesystem;
+use OCA\DAV\Events\SabrePluginAddEvent;
 use OCA\Registration\Events\PassedFormEvent;
 use OCA\Registration\Events\ShowFormEvent;
 use OCA\Registration\Events\ValidateFormEvent;
@@ -30,7 +31,6 @@ use OCP\IRequest;
 use OCP\IUser;
 use OCP\IUserSession;
 use OCP\Notification\IManager;
-use OCP\SabrePluginEvent;
 use OCP\User\Events\UserDeletedEvent;
 use OCP\User\Events\UserFirstTimeLoggedInEvent;
 use OCP\Util;
@@ -61,16 +61,14 @@ class Application extends App implements IBootstrap {
 		Util::connectHook('OC_Filesystem', 'preSetup', $this, 'addStorageWrapper');
 
 		$eventDispatcher = $context->getServerContainer()->get(IEventDispatcher::class);
-		$eventDispatcher->addListener('OCA\DAV\Connector\Sabre::addPlugin', function (SabrePluginEvent $event) use ($context): void {
+		$eventDispatcher->addListener(SabrePluginAddEvent::class, function (SabrePluginAddEvent $event) use ($context): void {
 			$eventServer = $event->getServer();
 
-			if ($eventServer !== null) {
-				// We have to register the CheckPlugin here and not info.xml,
-				// because info.xml plugins are loaded, after the
-				// beforeMethod:* hook has already been emitted.
-				$plugin = $context->getAppContainer()->get(CheckPlugin::class);
-				$eventServer->addPlugin($plugin);
-			}
+			// We have to register the CheckPlugin here and not info.xml,
+			// because info.xml plugins are loaded, after the
+			// beforeMethod:* hook has already been emitted.
+			$plugin = $context->getAppContainer()->get(CheckPlugin::class);
+			$eventServer->addPlugin($plugin);
 		});
 
 		$context->injectFn($this->registerNotifier(...));
