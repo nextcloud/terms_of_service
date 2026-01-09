@@ -291,6 +291,7 @@ OC.L10N.register(
     "Zulu" : "Zulų",
     "Terms of service" : "Naudojimosi sąlygos",
     "Terms of service have been modified!" : "Naudojimosi sąlygos modifikuotos!",
+    "Loading …" : "Įkeliama …",
     "Show for logged-in users" : "Rodyti prisijungusiems naudotojams",
     "Select a region" : "Pasirinkti regioną",
     "Select a language" : "Pasirinkti kalbą"
