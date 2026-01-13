@@ -437,6 +437,7 @@
     "You have to accept the newest version of the terms of service in order to be able to use this service." : "서비스를 사용하려면 새로 변경된 이용 약관에 동의해야 합니다.",
     "Requires users to accept the terms of service before accessing data." : "사용자가 데이터에 접근하기 전에 이용 약관에 동의해야 하도록 설정합니다.",
     "Requires users to accept the terms of service before accessing data.\nThis product includes GeoLite2 data created by MaxMind, available from [maxmind.com](http://www.maxmind.com)" : "사용자가 데이터에 접근하기 전에 이용 약관에 동의해야 하도록 설정합니다.\n이 제품은 MaxMind의 GeoLite2 데이터를 사용합니다. [maxmind.com](http://www.maxmind.com) 제공",
+    "Loading …" : "로딩 중 …",
     "Reset signatories & notify users" : "서명자 초기화 & 사용자에게 알림",
     "Save terms" : "약관 저장",
     "Ensure that all fields are filled" : "모든 칸을 채웠는지 확인하세요.",
@@ -448,12 +449,14 @@
     "Enter or update terms of service below." : "아래에서 이용 약관을 입력하거나 갱신하세요.",
     "Select a region" : "지역 선택",
     "Select a language" : "언어 선택",
+    "By using this service …" : "이 서비스를 사용함으로써 ...",
     "For formatting purposes Markdown is supported." : "Markdown으로 형식을 지정할 수 있습니다.",
     "Saving the terms will update the text but will not send a notification to users. Notifications are only sent if you reset the signatories." : "약관을 저장하면 텍스트가 수정되지만 사용자에게 알림을 보내지는 않습니다. 서명자를 초기화해야만 알림이 전송됩니다.",
     "Existing terms of service" : "기존 이용 약관",
     "We recommend resetting the signatories if legal changes were applied. For minor changes like fixing typos or correcting links, it could be left out, as it would otherwise require all users to accept the Terms of Service again." : "법적인 변경 사항이 발생했을 때에 서명자를 초기화하는 것을 권장합니다. 오타를 수정하거나 링크를 정정하는 것 같은 사소한 변경일 때는 모든 사용자가 또 다시 이용 약관에 동의할 필요가 없도록 생략할 수 있습니다.",
     "I acknowledge that I have read and agree to the above terms of service" : "이용 약관을 읽었으며 이에 동의합니다.",
     "Edit language {language} for region {country}" : "{country} 지역의 {language} 언어 편집",
+    "Deleting …" : "삭제하는 중 ...",
     "Delete language {language} for region {country}" : "{country} 지역의 {language} 언어 삭제"
 },"pluralForm" :"nplurals=1; plural=0;"
 }
