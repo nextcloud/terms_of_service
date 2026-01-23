@@ -1,6 +1,7 @@
 OC.L10N.register(
     "terms_of_service",
     {
+    "Global" : "Global",
     "Afghanistan" : "Afganistan",
     "Åland Islands" : "Pulau Åland",
     "Albania" : "Albania",
