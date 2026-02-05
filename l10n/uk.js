@@ -446,7 +446,7 @@ OC.L10N.register(
     "Terms saved successfully!" : "Умови успішно збережено!",
     "All signatories reset!" : "Всіх підписантів скинуто!",
     "Require users to accept the terms of service before accessing the service." : "Вимагає, щоби користувачі прийняли умови користування послугами перед отриманням доступу до цього сервісу.",
-    "Show for logged-in users" : "Показувати для авторизованих користувачів",
+    "Show for logged-in users" : "Показувати для користувачів, які увійшли",
     "Show on public shares" : "Показувати для публічних ресурсів",
     "Enter or update terms of service below." : "Введіть або оновіть умови надання послуг нижче.",
     "Select a region" : "Виберіть регіон",
