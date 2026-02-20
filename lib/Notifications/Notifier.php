@@ -9,9 +9,11 @@ namespace OCA\TermsOfService\Notifications;
 
 use OCP\IURLGenerator;
 use OCP\L10N\IFactory;
+use OCP\Notification\AlreadyProcessedException;
 use OCP\Notification\IManager;
 use OCP\Notification\INotification;
 use OCP\Notification\INotifier;
+use OCP\Notification\UnknownNotificationException;
 use Override;
 
 class Notifier implements INotifier {
@@ -37,7 +39,7 @@ class Notifier implements INotifier {
 	#[Override]
 	public function prepare(INotification $notification, string $languageCode): INotification {
 		if ($notification->getApp() !== 'terms_of_service') {
-			throw new \InvalidArgumentException('Wrong app');
+			throw new UnknownNotificationException('Wrong app');
 		}
 
 		// When we render push notifications, the active user is not the one we are looking for.
@@ -45,7 +47,7 @@ class Notifier implements INotifier {
 		// The user will not see the notification in the end, when it's not necessary.
 		if (!$this->isRenderingPushNotifications() && $this->checker->currentUserHasSigned()) {
 			$this->notificationManager->markProcessed($notification);
-			throw new \InvalidArgumentException('Resolved');
+			throw new AlreadyProcessedException();
 		}
 
 		$l = $this->l10nFactory->get('terms_of_service', $languageCode);
