@@ -449,12 +449,14 @@
     "Enter or update terms of service below." : "以下に利用規約を入力または更新してください。",
     "Select a region" : "地域を選択してください",
     "Select a language" : "言語を選択してください",
+    "By using this service …" : "このサービスを使用すると...",
     "For formatting purposes Markdown is supported." : "フォーマットの目的で、Markdownに対応しています。",
     "Saving the terms will update the text but will not send a notification to users. Notifications are only sent if you reset the signatories." : "規約を保存するとテキストは更新されますが、ユーザーへの通知は送信されません。通知は署名者をリセットした場合にのみ送信されます。",
     "Existing terms of service" : "既存のサービス利用規約",
     "We recommend resetting the signatories if legal changes were applied. For minor changes like fixing typos or correcting links, it could be left out, as it would otherwise require all users to accept the Terms of Service again." : "法的な変更が適用された場合は署名者をリセットすることをお勧めします。誤字脱字の修正やリンクの修正のような軽微な変更の場合は、全ユーザーに利用規約の再承諾を求めることになるため省くことができます。",
     "I acknowledge that I have read and agree to the above terms of service" : "上記のサービス利用規約を読み、同意したことを認めます",
     "Edit language {language} for region {country}" : "地域「{country}」向けの「{language}」を編集",
+    "Deleting …" : "削除しています",
     "Delete language {language} for region {country}" : "地域「{country}」向けの「{language}」を削除"
 },"pluralForm" :"nplurals=1; plural=0;"
 }
