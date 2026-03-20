@@ -30,6 +30,7 @@ class Terms extends Entity implements \JsonSerializable {
 
 	public function jsonSerialize(): array {
 		$parsedown = new \Parsedown();
+		$parsedown->setSafeMode(true);
 
 		return [
 			'id' => $this->getId(),
