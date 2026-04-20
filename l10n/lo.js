@@ -246,6 +246,11 @@ OC.L10N.register(
     "Yemen" : "ເຢເມນ",
     "Zambia" : "ແຊມເບຍ",
     "Zimbabwe" : "ຊິມບັບເວ",
+    "German" : "ພາສາເຢຍລະມັນ",
+    "English" : "ພາສາອັງກິດ",
+    "French" : "ພາສາຝຣັ່ງ",
+    "Italian" : "ພາສາອີຕາລີ",
+    "Portuguese" : "ປອກຕຸຍການ",
     "Terms of service" : "ເງື່ອນໄຂການໃຫ້ບໍລິການ",
     "Loading …" : "Loading …",
     "Select a region" : "Select a region"
