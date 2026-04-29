@@ -6,8 +6,18 @@
 All notable changes to this project will be documented in this file.
 
 ## 4.7.0
+### Added
+- Add Nextcloud 33 and 34 support
+
 ### Changed
 - Migrate to outline icons
+- Port frontend to Vue 3
+- Bump minimal supported Nextcloud version to 30
+
+### Fixed
+- Enable safe mode for markdown parser
+- Update notifier exception handling
+- Add missing user check when signing terms
 
 ## 4.6.0
 ### Changed
