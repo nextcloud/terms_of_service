@@ -45,14 +45,13 @@ class Checker {
 	 */
 	public function currentUserHasSigned(): bool {
 		$uuid = $this->appConfig->getAppValueString('term_uuid');
-		if ($this->userSession->getUser() === null) {
+		$user = $this->userSession->getUser();
+		if ($user === null) {
 			if (!$this->appConfig->getAppValueBool('tos_on_public_shares')) {
 				return true;
 			}
-		} else {
-			if (!$this->appConfig->getAppValueBool('tos_for_users', true)) {
-				return true;
-			}
+		} elseif (!$this->appConfig->getAppValueBool('tos_for_users', true)) {
+			return true;
 		}
 
 		if ($this->isAllowedRequest()) {
@@ -60,7 +59,8 @@ class Checker {
 			return true;
 		}
 
-		if ($this->session->get('term_uuid') === $uuid) {
+		// sign_public only for guests stores acceptance in session, logged in users must have a row in sigs.
+		if ($user === null && $this->session->get('term_uuid') === $uuid) {
 			return true;
 		}
 
@@ -73,7 +73,6 @@ class Checker {
 			return true;
 		}
 
-		$user = $this->userSession->getUser();
 		if (!$user instanceof IUser) {
 			return false;
 		}
