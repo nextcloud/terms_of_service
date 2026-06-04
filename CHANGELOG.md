@@ -5,6 +5,14 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## 4.6.3
+### Fixed
+- Terms bypass
+
+## 4.6.2
+### Fixed
+- Enable safe mode for markdown parser by @backportbot[bot]
+
 ## 4.6.1
 ### Fixed
 - Signing in as an authenticated user through the endpoint for unauthenticated users is no longer possible
