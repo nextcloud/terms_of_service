@@ -242,6 +242,7 @@ OC.L10N.register(
     "Uruguay" : "Urugvajus",
     "Uzbekistan" : "Uzbekistanas",
     "Vanuatu" : "Vanuatu",
+    "Venezuela (Bolivarian Republic of)" : "Venesuela (Bolivaro Respublika)",
     "Viet Nam" : "Vietnamas",
     "Virgin Islands (British)" : "Mergelių Salos (Britų)",
     "Virgin Islands (U.S.)" : "Mergelių Salos (JAV)",
