@@ -119,7 +119,7 @@ OC.L10N.register(
     "Kazakhstan" : "Cazaquistán",
     "Kenya" : "Kenya",
     "Kiribati" : "Kiribatí",
-    "Korea (Democratic People's Republic of)" : "Corea (República democrática popular de)",
+    "Korea (Democratic People's Republic of)" : "Corea (República Democrática Popular de)",
     "Korea (Republic of)" : "Corea (República de)",
     "Kuwait" : "Kuwait",
     "Kyrgyzstan" : "Quirguistán",
