@@ -20,6 +20,7 @@ use Psr\Log\LoggerInterface;
 
 class Checker {
 	private array $termsCache = [];
+	private ?bool $currentUserHasSignedCache = null;
 
 	public function __construct(
 		private readonly IRequest $request,
@@ -44,24 +45,29 @@ class Checker {
 	 * for the login action
 	 */
 	public function currentUserHasSigned(): bool {
+		// return cached result if this request is already computed.
+		if ($this->currentUserHasSignedCache !== null) {
+			return $this->currentUserHasSignedCache;
+		}
+
 		$uuid = $this->appConfig->getAppValueString('term_uuid');
 		$user = $this->userSession->getUser();
 		if ($user === null) {
 			if (!$this->appConfig->getAppValueBool('tos_on_public_shares')) {
-				return true;
+				return $this->currentUserHasSignedCache = true;
 			}
 		} elseif (!$this->appConfig->getAppValueBool('tos_for_users', true)) {
-			return true;
+			return $this->currentUserHasSignedCache = true;
 		}
 
 		if ($this->isAllowedRequest()) {
 			// Services such as Collabora doing requests for the user
-			return true;
+			return $this->currentUserHasSignedCache = true;
 		}
 
 		// sign_public only for guests stores acceptance in session, logged in users must have a row in sigs.
 		if ($user === null && $this->session->get('term_uuid') === $uuid) {
-			return true;
+			return $this->currentUserHasSignedCache = true;
 		}
 
 		$countryCode = $this->countryDetector->getCountry();
@@ -70,11 +76,11 @@ class Checker {
 		}
 		if (empty($this->termsCache[$countryCode])) {
 			// No terms that would need accepting
-			return true;
+			return $this->currentUserHasSignedCache = true;
 		}
 
 		if (!$user instanceof IUser) {
-			return false;
+			return $this->currentUserHasSignedCache = false;
 		}
 
 		$signatories = $this->signatoryMapper->getSignatoriesByUser($user);
@@ -82,12 +88,12 @@ class Checker {
 			foreach ($this->termsCache[$countryCode] as $term) {
 				if ($term->getId() === $signatory->getTermsId()) {
 					$this->session->set('term_uuid', $uuid);
-					return true;
+					return $this->currentUserHasSignedCache = true;
 				}
 			}
 		}
 
-		return false;
+		return $this->currentUserHasSignedCache = false;
 	}
 
 	protected function isAllowedRequest(): bool {
