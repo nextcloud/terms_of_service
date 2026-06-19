@@ -7,7 +7,6 @@
 
 namespace OCA\TermsOfService\AppInfo;
 
-use Exception;
 use OC\Files\Filesystem;
 use OCA\DAV\Events\SabrePluginAddEvent;
 use OCA\Registration\Events\PassedFormEvent;
@@ -120,36 +119,33 @@ class Application extends App implements IBootstrap {
 	}
 
 	public function addStorageWrapper(): void {
+		$request = \OCP\Server::get(IRequest::class);
+		$checker = \OCP\Server::get(Checker::class);
+
 		Filesystem::addStorageWrapper(
-			'terms_of_service', $this->addStorageWrapperCallback(...), -10
+			'terms_of_service', function (string $mountPoint, IStorage $storage) use ($request, $checker): IStorage {
+				/** @psalm-suppress UndefinedClass */
+				if (!\OC::$CLI) {
+					try {
+						return new StorageWrapper(
+							[
+								'storage' => $storage,
+								'mountPoint' => $mountPoint,
+								'request' => $request,
+								'checker' => $checker,
+							]
+						);
+					} catch (ContainerExceptionInterface $e) {
+						\OCP\Server::get(LoggerInterface::class)->error(
+							$e->getMessage(),
+							['exception' => $e]
+						);
+					}
+				}
+
+				return $storage;
+			}, -10
 		);
-	}
-
-	/**
-	 * @return StorageWrapper|IStorage
-	 * @throws Exception
-	 */
-	public function addStorageWrapperCallback(string $mountPoint, IStorage $storage): IStorage {
-		/** @psalm-suppress UndefinedClass */
-		if (!\OC::$CLI) {
-			try {
-				return new StorageWrapper(
-					[
-						'storage' => $storage,
-						'mountPoint' => $mountPoint,
-						'request' => \OCP\Server::get(IRequest::class),
-						'checker' => \OCP\Server::get(Checker::class),
-					]
-				);
-			} catch (ContainerExceptionInterface $e) {
-				\OCP\Server::get(LoggerInterface::class)->error(
-					$e->getMessage(),
-					['exception' => $e]
-				);
-			}
-		}
-
-		return $storage;
 	}
 
 	public function registerNotifier(IManager $notificationManager): void {
