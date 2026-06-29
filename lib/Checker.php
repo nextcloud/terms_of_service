@@ -98,8 +98,8 @@ class Checker {
 
 	protected function isAllowedRequest(): bool {
 		return $this->isRequestAllowedInConfig()
-			|| $this->isValidWOPIRequest('richdocuments')
-			|| $this->isValidWOPIRequest('officeonline');
+			|| $this->isValidWOPIOrSettingsRequest('richdocuments')
+			|| $this->isValidWOPIOrSettingsRequest('officeonline');
 	}
 
 	protected function isRequestAllowedInConfig(): bool {
@@ -110,11 +110,12 @@ class Checker {
 			&& $this->isAllowedScriptName();
 	}
 
-	protected function isValidWOPIRequest(string $app): bool {
-		$allowedPath = '/apps/' . $app . '/wopi/';
+	protected function isValidWOPIOrSettingsRequest(string $app): bool {
+		$allowedPathWOPI = '/apps/' . $app . '/wopi/';
+		$allowedPathSettings = '/apps/' . $app . '/settings/';
 		$allowedRanges = $this->allowedRangeForApp($app, 'wopi_allowlist');
 		return $this->isRemoteAddressInRanges($allowedRanges)
-			&& $this->isPathInfoStartingWith($allowedPath)
+			&& ($this->isPathInfoStartingWith($allowedPathWOPI) || $this->isPathInfoStartingWith($allowedPathSettings))
 			&& $this->isAllowedScriptName();
 	}
 
