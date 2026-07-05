@@ -435,7 +435,7 @@
     "Terms of service" : "Kasutustingimused",
     "Terms of service have been modified!" : "Kasutustingimused on muutunud!",
     "You have to accept the newest version of the terms of service in order to be able to use this service." : "Jätkamaks selle teenuse kasutamist, pead nõustuma kasutustingimuste viimase versiooniga.",
-    "Requires users to accept the terms of service before accessing data." : "Enne teenuse kasutamist kasutajad peavad nõustuvad kasutustingimustega.",
+    "Requires users to accept the terms of service before accessing data." : "Enne teenuse kasutamist kasutajad peavad nõustuma kasutustingimustega.",
     "Requires users to accept the terms of service before accessing data.\nThis product includes GeoLite2 data created by MaxMind, available from [maxmind.com](http://www.maxmind.com)" : "Enne andmetele ligipääsu on nõutav, et kasutajad nõustuvad kasutustingimustega.\nSelles toortes sisalduvad GeoLite2 andmed, mille autoriks on MaxMind, saadaval saidist [maxmind.com](http://www.maxmind.com)",
     "Loading …" : "Andmed on laadimisel…",
     "Reset signatories & notify users" : "Nulli kõik allkirjad ja teata sellest  kasutajaid",
