@@ -457,6 +457,7 @@ OC.L10N.register(
     "We recommend resetting the signatories if legal changes were applied. For minor changes like fixing typos or correcting links, it could be left out, as it would otherwise require all users to accept the Terms of Service again." : "Recomendamos restablecer los signatarios si se aplicaron cambios legales. Para cambios pequeños como corregir errores ortográficos o enlaces, podría no necesitarse, ya que de otra manera requeriría que todos los usuarios acepten los Términos de Servicio nuevamente.",
     "I acknowledge that I have read and agree to the above terms of service" : "Confirmo que he leído y estoy de acuerdo con los términos de servicio descritos anteriormente",
     "Edit language {language} for region {country}" : "Editar lenguaje {language} para la región {country}",
+    "Deleting …" : "Eliminando …",
     "Delete language {language} for region {country}" : "Eliminar lenguaje {language} para la región {country}"
 },
 "nplurals=3; plural=n == 1 ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;");
