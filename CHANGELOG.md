@@ -5,6 +5,10 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## 4.7.1
+### Added
+- Improve performance
+
 ## 4.7.0
 ### Added
 - Add Nextcloud 33 and 34 support
