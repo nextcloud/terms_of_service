@@ -5,7 +5,6 @@ SPDX-License-Identifier: MIT
 SPDX-FileCopyrightText: @nextcloud/dialogs developers
 SPDX-FileCopyrightText: Arnout Kazemier
 SPDX-FileCopyrightText: Borys Serebrov
-SPDX-FileCopyrightText: Christoph Wurst
 SPDX-FileCopyrightText: Eric Norris (https://github.com/ericnorris)
 SPDX-FileCopyrightText: Jeff Sagal <sagalbot@gmail.com>
 SPDX-FileCopyrightText: Joas Schilling <coding@schilljs.com>
@@ -13,7 +12,6 @@ SPDX-FileCopyrightText: Jordan Humphreys <jordan@zurb.com>
 SPDX-FileCopyrightText: Nextcloud GmbH and Nextcloud contributors
 SPDX-FileCopyrightText: Nick Frasser (https://nfrasser.com)
 SPDX-FileCopyrightText: Rob Cresswell <robcresswell@pm.me>
-SPDX-FileCopyrightText: Roeland Jago Douma
 SPDX-FileCopyrightText: Sindre Sorhus
 SPDX-FileCopyrightText: Varun A P
 SPDX-FileCopyrightText: Vuepic
@@ -25,29 +23,29 @@ SPDX-FileCopyrightText: ts-md5 developers
 
 This file is generated from multiple sources. Included packages:
 - @floating-ui/dom
-	- version: 1.7.4
+	- version: 1.7.6
 	- license: MIT
 - @floating-ui/utils
-	- version: 0.2.10
+	- version: 0.2.11
 	- license: MIT
 - @nextcloud/capabilities
-	- version: 1.2.0
+	- version: 1.2.1
 	- license: GPL-3.0-or-later
 - @nextcloud/dialogs
 	- version: 7.1.0
 	- license: AGPL-3.0-or-later
 - @nextcloud/initial-state
-	- version: 2.2.0
-	- license: GPL-3.0-or-later
-- @nextcloud/initial-state
 	- version: 3.0.0
 	- license: GPL-3.0-or-later
 - @nextcloud/l10n
-	- version: 3.4.0
+	- version: 3.4.1
 	- license: GPL-3.0-or-later
 - @nextcloud/vue
-	- version: 9.1.0
+	- version: 9.8.2
 	- license: AGPL-3.0-or-later
+- @nextcloud/vue-select
+	- version: 4.1.0
+	- license: MIT
 - @vuepic/vue-datepicker
 	- version: 11.0.3
 	- license: MIT
@@ -55,19 +53,19 @@ This file is generated from multiple sources. Included packages:
 	- version: 4.1.0
 	- license: MIT
 - debounce
-	- version: 2.2.0
+	- version: 3.0.0
 	- license: MIT
 - emoji-mart-vue-fast
 	- version: 15.0.5
 	- license: BSD-3-Clause
 - eventemitter3
-	- version: 5.0.1
+	- version: 5.0.4
 	- license: MIT
 - linkifyjs
-	- version: 4.3.2
+	- version: 4.3.3
 	- license: MIT
 - p-queue
-	- version: 9.0.0
+	- version: 9.3.1
 	- license: MIT
 - p-timeout
 	- version: 7.0.1
@@ -89,7 +87,4 @@ This file is generated from multiple sources. Included packages:
 	- license: MIT
 - vue-material-design-icons
 	- version: 5.3.1
-	- license: MIT
-- vue-select
-	- version: 4.0.0-beta.6
 	- license: MIT
