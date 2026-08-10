@@ -449,6 +449,7 @@
     "Enter or update terms of service below." : "Saisir ou mettre à jour les conditions d'utilisation ci-dessous.",
     "Select a region" : "Sélectionner un pays",
     "Select a language" : "Sélectionner une langue",
+    "By using this service …" : "En utilisant ce service…",
     "For formatting purposes Markdown is supported." : "Pour la mise en forme, le format Markdown est pris en charge.",
     "Saving the terms will update the text but will not send a notification to users. Notifications are only sent if you reset the signatories." : "Enregistrer les conditions mettra à jour le texte mais n'enverra pas de notification aux utilisateurs. Des notifications seront envoyées seulement si vous réinitialisez les signataires.",
     "Existing terms of service" : "Conditions d'utilisation existantes",
