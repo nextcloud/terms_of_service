@@ -48,28 +48,33 @@ create-tag:
 appstore:
 	mkdir -p $(sign_dir)
 	rsync -a \
-	--exclude=/.github \
-	--exclude=/.tx \
-	--exclude=/build \
-	--exclude=/docs \
-	--exclude=/node_modules \
-	--exclude=/src \
-	--exclude=/tests \
-	--exclude=babel.config.js \
-	--exclude=composer.json \
-	--exclude=.drone.yml \
 	--exclude=.eslintrc.js \
 	--exclude=.git \
 	--exclude=.gitattributes \
 	--exclude=.gitignore \
 	--exclude=.l10nignore \
-	--exclude=l10n/no-php \
+	--exclude=.php-cs-fixer.dist.php \
+	--exclude=/.github \
+	--exclude=/.tx \
+	--exclude=/build \
+	--exclude=/build-js \
+	--exclude=/docs \
+	--exclude=/node_modules \
+	--exclude=/src \
+	--exclude=/tests \
+	--exclude=/vendor-bin \
 	--exclude=Makefile \
-	--exclude=krankerl.toml \
-	--exclude=package.json \
 	--exclude=README.md \
-	--exclude=stylelint.config.js \
-	--exclude=.travis.yml \
+	--exclude=babel.config.js \
+	--exclude=composer.json \
+	--exclude=eslint.config.mjs \
+	--exclude=l10n/no-php \
+	--exclude=package.json \
+	--exclude=psalm.xml \
+	--exclude=rector.php \
+	--exclude=stylelint.config.cjs \
+	--exclude=tsconfig.json \
+	--exclude=vite.config.ts \
 	--exclude=webpack.js \
 	$(project_dir)/  $(sign_dir)/$(app_name)
 	@if [ -f $(cert_dir)/$(app_name).key ]; then \
