@@ -31,6 +31,7 @@
 </template>
 
 <script>
+import { getCurrentUser } from '@nextcloud/auth'
 import axios from '@nextcloud/axios'
 import { t } from '@nextcloud/l10n'
 import { generateOcsUrl } from '@nextcloud/router'
@@ -121,10 +122,9 @@ export default {
 			this.hasSigned = true
 			this.showModal = false
 
-			let url = '/apps/terms_of_service/sign'
-			if (this.$root.source === 'public') {
-				url = '/apps/terms_of_service/sign_public'
-			}
+			const url = getCurrentUser() === null
+				? '/apps/terms_of_service/sign_public'
+				: '/apps/terms_of_service/sign'
 
 			axios.post(
 				generateOcsUrl(url),
