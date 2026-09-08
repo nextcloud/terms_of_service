@@ -5,6 +5,10 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## 4.7.2
+### Fixup
+- Fix: check public links
+
 ## 4.7.1
 ### Added
 - Improve performance
