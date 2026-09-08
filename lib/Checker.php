@@ -70,6 +70,14 @@ class Checker {
 			return $this->currentUserHasSignedCache = true;
 		}
 
+		// Headless clients (e.g. desktop apps uploading to E2E public shares) access
+		// public WebDAV via Basic Auth and have no browser session, so they cannot
+		// display or accept ToS. Allow them through; browser users are already handled
+		// by the session check above.
+		if ($user === null && $this->isPublicDavHeadlessAccess()) {
+			return $this->currentUserHasSignedCache = true;
+		}
+
 		$countryCode = $this->countryDetector->getCountry();
 		if (!array_key_exists($countryCode, $this->termsCache)) {
 			$this->termsCache[$countryCode] = $this->termsMapper->getTermsForCountryCode($countryCode);
@@ -94,6 +102,17 @@ class Checker {
 		}
 
 		return $this->currentUserHasSignedCache = false;
+	}
+
+	protected function isPublicDavHeadlessAccess(): bool {
+		if (!str_ends_with($this->request->getScriptName(), '/public.php')) {
+			return false;
+		}
+		$pathInfo = $this->request->getPathInfo();
+		if ($pathInfo === false || !str_starts_with($pathInfo, '/dav/')) {
+			return false;
+		}
+		return str_starts_with($this->request->getHeader('Authorization'), 'Basic ');
 	}
 
 	protected function isAllowedRequest(): bool {
