@@ -184,7 +184,7 @@ OC.L10N.register(
     "Qatar" : "Катар",
     "Réunion" : "Реюньйон",
     "Romania" : "Румунія",
-    "Russian Federation" : "мордор",
+    "Russian Federation" : "Російська Федерація",
     "Rwanda" : "Руанда",
     "Saint Barthélemy" : "Сен-Бартелемі ",
     "Saint Helena, Ascension and Tristan da Cunha" : "острова Святої Єлени, Вознесіння та Тристан-да-Кунья ",
