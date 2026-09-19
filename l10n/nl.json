@@ -444,6 +444,7 @@
     "Select a language" : "Kies een taal",
     "For formatting purposes Markdown is supported." : "Voor opmaakdoeleinden wordt Markdown ondersteund.",
     "Existing terms of service" : "Bestaande gebruiksvoorwaarden",
-    "I acknowledge that I have read and agree to the above terms of service" : "Ik bevestig dat ik de bovenstaande gebruiksvoorwaarden heb gelezen en ermee instem"
+    "I acknowledge that I have read and agree to the above terms of service" : "Ik bevestig dat ik de bovenstaande gebruiksvoorwaarden heb gelezen en ermee instem",
+    "Deleting …" : "Verwijderen …"
 },"pluralForm" :"nplurals=2; plural=(n != 1);"
 }

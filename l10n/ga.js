@@ -104,7 +104,7 @@ OC.L10N.register(
     "Hong Kong" : "Hong Cong",
     "Hungary" : "an Ungáir",
     "Iceland" : "Íoslainn",
-    "India" : "India",
+    "India" : "An India",
     "Indonesia" : "Indinéis",
     "Iran (Islamic Republic of)" : "An Iaráin (Poblacht Ioslamach)",
     "Iraq" : "Iaráic",
