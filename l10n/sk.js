@@ -246,7 +246,7 @@ OC.L10N.register(
     "Viet Nam" : "Vietnam",
     "Virgin Islands (British)" : "Panenské ostrovy",
     "Virgin Islands (U.S.)" : "Americké Panenské ostrovy",
-    "Wallis and Futuna" : "Wallis and Futuna",
+    "Wallis and Futuna" : "Wallis a Futuna",
     "Western Sahara" : "Západná Sahara",
     "Yemen" : "Jemen",
     "Zambia" : "Zambia",
