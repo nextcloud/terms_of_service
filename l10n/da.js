@@ -80,7 +80,7 @@ OC.L10N.register(
     "France" : "Frankrig",
     "French Guiana" : "Fransk Guyana",
     "French Polynesia" : "Fransk Polynesien",
-    "French Southern Territories" : "De franske sydlige områder",
+    "French Southern Territories" : "De Franske Besiddelser i Det Sydlige Indiske Ocean og Antarktis",
     "Gabon" : "Gabon",
     "Gambia" : "Gambia",
     "Georgia" : "Georgien",
