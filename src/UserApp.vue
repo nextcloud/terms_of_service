@@ -23,6 +23,9 @@
 				<div
 					ref="termsContent"
 					class="text-content"
+					tabindex="0"
+					role="region"
+					:aria-label="t('terms_of_service', 'Terms of service')"
 					@scroll="checkScroll"
 					v-html="termsBody" />
 			</ModalContent>

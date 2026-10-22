@@ -17,6 +17,7 @@ use OCA\TermsOfService\Db\Mapper\SignatoryMapper;
 use OCA\TermsOfService\Db\Mapper\TermsMapper;
 use OCP\EventDispatcher\Event;
 use OCP\EventDispatcher\IEventListener;
+use OCP\IL10N;
 use OCP\IRequest;
 use OCP\IUser;
 use OCP\Util;
@@ -31,6 +32,7 @@ class RegistrationIntegration implements IEventListener {
 		private readonly TermsMapper $termsMapper,
 		private readonly CountryDetector $countryDetector,
 		private readonly IRequest $request,
+		private readonly IL10N $l10n,
 	) {
 	}
 
@@ -72,7 +74,7 @@ class RegistrationIntegration implements IEventListener {
 		}
 
 		if (!$this->request->getParam('terms_of_service_accepted')) {
-			$event->addError('You need to accept the Terms of service.');
+			$event->addError($this->l10n->t('You need to accept the Terms of service.'));
 		}
 	}
 

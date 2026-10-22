@@ -19,11 +19,9 @@
 
 		<!-- Sticky button -->
 		<NcButton
-			ref="acceptButton"
 			class="modal-content__button"
 			variant="primary"
 			:wide="true"
-			autofocus
 			:title="t('terms_of_service', 'I acknowledge that I have read and agree to the above terms of service')"
 			:disabled="!isScrollComplete"
 			@click.prevent.stop="handleClick"
@@ -54,8 +52,9 @@ export default {
 	},
 
 	mounted() {
+		// Start at the beginning of the terms so screen readers read them from the top
 		this.$nextTick(() => {
-			this.$refs.acceptButton.$el.focus()
+			this.$refs.termsContent.firstElementChild?.focus()
 		})
 	},
 
