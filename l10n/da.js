@@ -3,7 +3,7 @@ OC.L10N.register(
     {
     "Global" : "Global",
     "Afghanistan" : "Afghanistan",
-    "Åland Islands" : "Ålandsøerne",
+    "Åland Islands" : "Åland",
     "Albania" : "Albanien",
     "Algeria" : "Algeriet",
     "American Samoa" : "Amerikansk Samoa",
@@ -22,7 +22,7 @@ OC.L10N.register(
     "Bahrain" : "Bahrain",
     "Bangladesh" : "Bangladesh",
     "Barbados" : "Barbados",
-    "Belarus" : "Hviderusland",
+    "Belarus" : "Belarus",
     "Belgium" : "Belgien",
     "Belize" : "Belize",
     "Benin" : "Benin",
