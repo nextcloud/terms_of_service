@@ -34,7 +34,6 @@
 </template>
 
 <script>
-import { getCurrentUser } from '@nextcloud/auth'
 import axios from '@nextcloud/axios'
 import { t } from '@nextcloud/l10n'
 import { generateOcsUrl } from '@nextcloud/router'
@@ -48,6 +47,14 @@ export default {
 	components: {
 		NcModal,
 		ModalContent,
+	},
+
+	props: {
+		source: {
+			type: String,
+			required: true,
+			validator: (value) => ['user', 'public'].includes(value),
+		},
 	},
 
 	data() {
@@ -125,7 +132,7 @@ export default {
 			this.hasSigned = true
 			this.showModal = false
 
-			const url = getCurrentUser() === null
+			const url = this.source === 'public'
 				? '/apps/terms_of_service/sign_public'
 				: '/apps/terms_of_service/sign'
 
