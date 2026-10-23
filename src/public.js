@@ -15,7 +15,5 @@ if (isNotLoggedIn && !isPasswordProtected) {
 	tofc.id = 'terms_of_service_confirm'
 	document.body.insertAdjacentElement('afterbegin', tofc)
 
-	createApp(UserApp, {
-		source: 'public',
-	}).mount('#terms_of_service_confirm')
+	createApp(UserApp).mount('#terms_of_service_confirm')
 }
