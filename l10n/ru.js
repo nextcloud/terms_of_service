@@ -434,6 +434,7 @@ OC.L10N.register(
     "Zhuang; Chuang" : "Чжуанский",
     "Chinese" : "Китайский",
     "Zulu" : "Зулусский",
+    "You need to accept the Terms of service." : "Необходимо принять условия использования.",
     "Terms of service" : "Условия использования",
     "Terms of service have been modified!" : "Изменены условия использования",
     "You have to accept the newest version of the terms of service in order to be able to use this service." : "Чтобы продолжить пользоваться сервисом необходимо принять новые условия использования.",
