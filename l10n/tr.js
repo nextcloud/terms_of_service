@@ -434,6 +434,7 @@ OC.L10N.register(
     "Zhuang; Chuang" : "Zhuangca",
     "Chinese" : "Çince",
     "Zulu" : "Zuluca",
+    "You need to accept the Terms of service." : "Hizmet koşullarını kabul etmelisiniz",
     "Terms of service" : "Hizmet koşulları",
     "Terms of service have been modified!" : "Hizmet koşulları değiştirildi!",
     "You have to accept the newest version of the terms of service in order to be able to use this service." : "Bu hizmeti kullanabilmek için son hizmet koşulları yazısını okuyup kabul etmeniz gerekiyor.",
