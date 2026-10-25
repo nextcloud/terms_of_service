@@ -434,6 +434,7 @@ OC.L10N.register(
     "Zhuang; Chuang" : "Zhuang; Chuang",
     "Chinese" : "Síneach",
     "Zulu" : "Súlúis",
+    "You need to accept the Terms of service." : "Caithfidh tú glacadh leis na Téarmaí Seirbhíse.",
     "Terms of service" : "Tearmaí Seirbhís",
     "Terms of service have been modified!" : "Athraíodh na téarmaí seirbhíse!",
     "You have to accept the newest version of the terms of service in order to be able to use this service." : "Caithfidh tú glacadh leis an leagan is nuaí de na téarmaí seirbhíse le bheith in ann an tseirbhís seo a úsáid.",
