@@ -434,6 +434,7 @@ OC.L10N.register(
     "Zhuang; Chuang" : "Zhuang",
     "Chinese" : "Chineză",
     "Zulu" : "Zulu",
+    "You need to accept the Terms of service." : "Trebuie să accepți termenii serviciului.",
     "Terms of service" : "Termenii serviciului",
     "Terms of service have been modified!" : "Termenii serviciului au fost modificați!",
     "You have to accept the newest version of the terms of service in order to be able to use this service." : "Trebuie să accepți cea mai recentă versiune a termenilor serviciului pentru a putea folosi acest serviciu.",
