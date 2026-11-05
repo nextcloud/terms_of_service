@@ -22,7 +22,7 @@
 		"@nextcloud/logger": "^3.0.3",
 		"@nextcloud/router": "^3.0.1",
 		"@nextcloud/vue": "^9.9.0",
-		"vue": "^3.5.18",
+		"vue": "^3.5.44",
 		"vue-material-design-icons": "^5.3.1"
 	},
 	"browserslist": [
