@@ -7,9 +7,9 @@
 	<div id="terms_of_service_confirm">
 		<NcModal
 			v-if="showModal"
-			:no-close="!hasSigned"
+			:noClose="!hasSigned"
 			@close="handleCloseModal">
-			<ModalContent :is-scroll-complete="hasScrolledToBottom" @click="acceptTerms">
+			<ModalContent :isScrollComplete="hasScrolledToBottom" @click="acceptTerms">
 				<template #header>
 					<h3>{{ t('terms_of_service', 'Terms of service') }}</h3>
 					<select v-if="terms.length > 1" v-model="selectedLanguage">
