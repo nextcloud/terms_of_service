@@ -28,14 +28,14 @@
 				:placeholder="t('terms_of_service', 'Select a region')"
 				:aria-label-combobox="t('terms_of_service', 'Select a region')"
 				label="label"
-				track-by="value" />
+				trackBy="value" />
 			<NcSelect
 				v-model="language"
 				:options="languageOptions"
 				:placeholder="t('terms_of_service', 'Select a language')"
 				:aria-label-combobox="t('terms_of_service', 'Select a language')"
 				label="label"
-				track-by="value" />
+				trackBy="value" />
 		</span>
 
 		<textarea
