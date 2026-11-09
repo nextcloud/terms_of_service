@@ -42,14 +42,14 @@ export default {
 		NcButton,
 	},
 
-	emits: ['click'],
-
 	props: {
 		isScrollComplete: {
 			type: Boolean,
 			default: false,
 		},
 	},
+
+	emits: ['click'],
 
 	mounted() {
 		// Start at the beginning of the terms so screen readers read them from the top
