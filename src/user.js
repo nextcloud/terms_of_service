@@ -11,5 +11,5 @@ tofc.id = 'terms_of_service_confirm'
 document.body.insertAdjacentElement('afterbegin', tofc)
 
 createApp(UserApp, {
-	source: 'public',
+	source: 'user',
 }).mount('#terms_of_service_confirm')
