@@ -5,6 +5,13 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## 4.7.4
+### Added
+- ci: Add release relay job
+
+### Fixup
+- Fix: use server-side context to pick ToS sign endpoint
+
 ## 4.7.2
 ### Fixup
 - Fix: check public links
