@@ -23,7 +23,7 @@
 		"@nextcloud/router": "^3.0.1",
 		"@nextcloud/vue": "^9.11.0",
 		"vue": "^3.5.18",
-		"vue-material-design-icons": "^5.3.1"
+		"vue-material-design-icons": "^5.4.0"
 	},
 	"browserslist": [
 		"extends @nextcloud/browserslist-config"
