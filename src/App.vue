@@ -93,9 +93,6 @@ import NcSelect from '@nextcloud/vue/components/NcSelect'
 import NcSettingsSection from '@nextcloud/vue/components/NcSettingsSection'
 import TermRow from './components/TermRow.vue'
 
-// Styles
-import '@nextcloud/dialogs/style.css'
-
 export default {
 	name: 'App',
 
