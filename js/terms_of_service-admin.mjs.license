@@ -1,11 +1,13 @@
 SPDX-License-Identifier: AGPL-3.0-or-later
+SPDX-License-Identifier: Apache-2.0
+SPDX-License-Identifier: GPL-3.0-or-later
 SPDX-License-Identifier: MIT
 SPDX-FileCopyrightText: @nextcloud/dialogs developers
+SPDX-FileCopyrightText: Austin Andrews
 SPDX-FileCopyrightText: Jeff Sagal <sagalbot@gmail.com>
 SPDX-FileCopyrightText: Joas Schilling <coding@schilljs.com>
 SPDX-FileCopyrightText: Nextcloud GmbH and Nextcloud contributors
 SPDX-FileCopyrightText: Rob Cresswell <robcresswell@pm.me>
-SPDX-FileCopyrightText: Varun A P
 SPDX-FileCopyrightText: atomiks
 
 This file is generated from multiple sources. Included packages:
@@ -15,9 +17,18 @@ This file is generated from multiple sources. Included packages:
 - @floating-ui/utils
 	- version: 0.2.12
 	- license: MIT
+- @mdi/js
+	- version: 7.4.47
+	- license: Apache-2.0
+- @nextcloud/capabilities
+	- version: 1.2.1
+	- license: GPL-3.0-or-later
 - @nextcloud/dialogs
-	- version: 7.6.0
+	- version: 8.0.0
 	- license: AGPL-3.0-or-later
+- @nextcloud/initial-state
+	- version: 3.0.0
+	- license: GPL-3.0-or-later
 - @nextcloud/vue
 	- version: 9.14.1
 	- license: AGPL-3.0-or-later
@@ -27,9 +38,6 @@ This file is generated from multiple sources. Included packages:
 - terms_of_service
 	- version: 4.10.0-dev.0
 	- license: AGPL-3.0-or-later
-- toastify-js
-	- version: 1.12.0
-	- license: MIT
 - vue-material-design-icons
 	- version: 5.4.0
 	- license: MIT

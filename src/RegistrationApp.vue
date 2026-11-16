@@ -60,8 +60,6 @@ import NcModal from '@nextcloud/vue/components/NcModal'
 import ModalContent from './components/ModalContent.vue'
 import logger from './logger.ts'
 
-// Styles
-import '@nextcloud/dialogs/style.css'
 export default {
 	name: 'RegistrationApp',
 
