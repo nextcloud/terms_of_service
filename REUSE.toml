@@ -18,7 +18,7 @@ SPDX-FileCopyrightText = "2017 Nextcloud contributors"
 SPDX-License-Identifier = "AGPL-3.0-or-later"
 
 [[annotations]]
-path = ["js/**.js.map", "js/**.js", "js/**.mjs", "js/**.mjs.map", "js/templates/**.handlebars", "emptyTemplates/**", "vendor/autoload.php", "css/*"]
+path = ["js/**.js.map", "js/**.js", "js/**.mjs", "js/**.mjs.map", "js/templates/**.handlebars", "emptyTemplates/**", "css/*"]
 precedence = "aggregate"
 SPDX-FileCopyrightText = "2017 Nextcloud GmbH and Nextcloud contributors"
 SPDX-License-Identifier = "AGPL-3.0-or-later"
@@ -36,25 +36,7 @@ SPDX-FileCopyrightText = "2018-2024 Google LLC"
 SPDX-License-Identifier = "Apache-2.0"
 
 [[annotations]]
-path = "vendor/composer/**"
-precedence = "aggregate"
-SPDX-FileCopyrightText = "Nils Adermann, Jordi Boggiano"
-SPDX-License-Identifier = "MIT"
-
-[[annotations]]
-path = "vendor/erusev/parsedown/**"
-precedence = "aggregate"
-SPDX-FileCopyrightText = "2013-2018 Emanuil Rusev, erusev.com"
-SPDX-License-Identifier = "MIT"
-
-[[annotations]]
-path = "vendor/maxmind**/**"
-precedence = "aggregate"
-SPDX-FileCopyrightText = "maxmind contributors"
-SPDX-License-Identifier = "Apache-2.0"
-
-[[annotations]]
-path = ["vendor/geoip2/**", "vendor/GeoLite2-Country.mmdb"]
+path = "data/GeoLite2-Country.mmdb"
 precedence = "aggregate"
 SPDX-FileCopyrightText = "geoip2 contributors"
 SPDX-License-Identifier = "Apache-2.0"

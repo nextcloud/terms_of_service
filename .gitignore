@@ -26,3 +26,7 @@ translationfiles
 
 # Development
 /vendor-bin/*/vendor
+
+# Composer dependencies (installed at build time)
+/vendor
+/.php-cs-fixer.cache
