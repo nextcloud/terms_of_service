@@ -15,7 +15,10 @@ version+=master
 
 all: dev-setup build-js-production
 
-dev-setup: clean clean-dev npm-init
+dev-setup: clean clean-dev composer-init npm-init
+
+composer-init:
+	composer install
 
 npm-init:
 	npm ci
@@ -38,6 +41,7 @@ clean:
 clean-dev:
 	rm -rf $(build_dir)
 	rm -rf node_modules
+	rm -rf vendor
 
 release: appstore create-tag
 
@@ -53,6 +57,7 @@ appstore:
 	--exclude=.gitattributes \
 	--exclude=.gitignore \
 	--exclude=.l10nignore \
+	--exclude=.php-cs-fixer.cache \
 	--exclude=.php-cs-fixer.dist.php \
 	--exclude=/.github \
 	--exclude=/.tx \
@@ -62,11 +67,13 @@ appstore:
 	--exclude=/node_modules \
 	--exclude=/src \
 	--exclude=/tests \
+	--exclude=/vendor \
 	--exclude=/vendor-bin \
 	--exclude=Makefile \
 	--exclude=README.md \
 	--exclude=babel.config.js \
 	--exclude=composer.json \
+	--exclude=composer.lock \
 	--exclude=eslint.config.mjs \
 	--exclude=l10n/no-php \
 	--exclude=package.json \
@@ -77,6 +84,11 @@ appstore:
 	--exclude=vite.config.ts \
 	--exclude=webpack.js \
 	$(project_dir)/  $(sign_dir)/$(app_name)
+	# Install production-only composer dependencies into the package
+	cp $(project_dir)/composer.json $(project_dir)/composer.lock $(sign_dir)/$(app_name)/
+	composer install --working-dir=$(sign_dir)/$(app_name) \
+		--no-dev --no-scripts --no-interaction --optimize-autoloader
+	rm -f $(sign_dir)/$(app_name)/composer.json $(sign_dir)/$(app_name)/composer.lock
 	@if [ -f $(cert_dir)/$(app_name).key ]; then \
 		echo "Signing app files…"; \
 		php ../../occ integrity:sign-app \
