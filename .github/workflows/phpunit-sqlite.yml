@@ -54,7 +54,7 @@ jobs:
               - 'lib/**'
               - 'templates/**'
               - 'tests/**'
-              - 'vendor/**'
+              - 'data/**'
               - 'vendor-bin/**'
               - '.php-cs-fixer.dist.php'
               - 'composer.json'

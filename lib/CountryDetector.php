@@ -23,7 +23,7 @@ class CountryDetector {
 	 */
 	public function getCountry(): string {
 		try {
-			$reader = new Reader(__DIR__ . '/../vendor/GeoLite2-Country.mmdb');
+			$reader = new Reader(__DIR__ . '/../data/GeoLite2-Country.mmdb');
 			$record = $reader->get($this->request->getRemoteAddress());
 		} catch (\Exception) {
 			return CountryMapper::GLOBAL;
